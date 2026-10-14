@@ -17,6 +17,12 @@ and retention. Native bundled packaging, publication and synthetic live
 acceptance remain outstanding; infrastructure metadata and three declared
 services do not prove remote calls or private managed-identity storage access.
 
+**Approved lab permission model:** the linked lab now grants its project agents
+account-wide Blob Contributor access. The original container grants remain, but
+do not provide effective per-role isolation. Role ownership, immutable output
+handling and coordinator publication are enforced by trusted application code,
+not by storage permissions. This is not a storage-enforced isolation guarantee.
+
 **Calibration verified:** the first twelve-case evaluation failed with two of
 eight ready cases correct. Routing policy/input v2 clarifies first-draft versus
 review prerequisites and exposes complete verified semantic inputs. A second

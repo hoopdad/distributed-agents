@@ -27,6 +27,9 @@ are retained. Request hashes bind the evaluated policy; no offline fixture is
 release evidence. Application Windows/Linux gates pass; artifact infrastructure
 is applied with scoped zero-change convergence. Native package/publication and
 live acceptance, including managed-identity private-path access, remain pending.
+The approved linked-lab policy gives project agents account-wide Blob
+Contributor: ownership/publication gates remain application-enforced, not
+storage-enforced per-role isolation.
 Do not search ignored `.azure`, `.azure-cli`, `.local`, `.migration` or
 conversation/credential stores.
 

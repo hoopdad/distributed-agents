@@ -82,6 +82,8 @@ accounts, blob paths, tenant IDs, or parent IDs.
 Existing hosted identities were observed and their exact container-scoped
 grants applied. Actual runtime managed-identity Blob access and its private
 network path have **not** been proven; verify them during live acceptance.
+The subsequently approved trusted-lab policy adds account-wide Blob Contributor
+for project agents, superseding effective per-role storage isolation.
 Missing trusted principal context is a fail-closed condition, not permission to
 use a default user. A terminal's UUID alone is not proof of ownership.
 
@@ -103,6 +105,18 @@ resource identities. Use separate managed identities for the three deployments.
 | Coordinator | Read/write | Read | Read |
 | Architect | Read prerequisites | Read/write own outputs | Read assigned prior findings |
 | Reviewer | Read prerequisites | Read assigned candidate | Read/write own outputs |
+
+**Approved trusted-lab exception:** project agents now have account-wide Blob
+Contributor access in the linked lab. The above matrix remains the application
+adapter's ownership contract, not the effective Azure permission matrix.
+Container-scoped grants are retained but cannot restrict an additional broader
+grant. Immutable writes, assignment/parent checks and coordinator-only manifest
+publication depend on trusted application code; an agent identity used outside
+those adapters can read, overwrite or delete other roles' blobs. Do not claim
+storage-enforced single-writer isolation or malicious-host isolation for this
+lab. Live acceptance must report this limitation rather than expect RBAC
+denials for cross-role access. This exception does not weaken schema, hash,
+ETag, fencing, prerequisite or unknown-effect gates.
 
 Use the least-privilege container-scoped data roles available; writer identities
 may have delete permissions under built-in contributor roles. Enforce

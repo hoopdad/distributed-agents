@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "policy_version": "routing-v1",
+  "maximum_calls": 12,
+  "minimum_ready_correct": 6,
+  "maximum_wrong_dispatches": 0,
+  "cases": [
+    {"id": "private-ingress", "expected": "ask_architect", "allowed": ["ask_architect", "request_input"], "state": {"requirements": ["Design a synthetic private HTTPS ingress for an Azure web API. Use managed identity and private endpoints; no deployment actions."], "candidate": null, "review": null}},
+    {"id": "identity-access", "expected": "ask_architect", "allowed": ["ask_architect", "request_input"], "state": {"requirements": ["Design managed-identity access from a synthetic Azure worker to private Blob storage with container-scoped permissions."], "candidate": null, "review": null}},
+    {"id": "revision-blocker", "expected": "ask_architect", "allowed": ["ask_architect", "request_input"], "state": {"requirements": ["All ingress must be private."], "candidate": "Public ingress with token authentication.", "review": {"approved": false, "blocking_findings": ["Replace public ingress with private ingress."]}}},
+    {"id": "durable-journal", "expected": "ask_architect", "allowed": ["ask_architect", "request_input"], "state": {"requirements": ["Design a bounded operation journal. Persist intent before remote calls; hold unknown effects instead of replaying."], "candidate": null, "review": null}},
+    {"id": "review-private", "expected": "ask_reviewer", "allowed": ["ask_reviewer", "request_input"], "state": {"requirements": ["Ingress must be private and TLS authenticated."], "candidate": "Internal ingress uses a private endpoint, validated original-hostname TLS and tenant-authenticated requests.", "review": null}},
+    {"id": "review-identity", "expected": "ask_reviewer", "allowed": ["ask_reviewer", "request_input"], "state": {"requirements": ["Use managed identity and least-privilege container access."], "candidate": "The worker uses its managed identity and a container-scoped Blob Data Reader grant; shared keys are disabled.", "review": null}},
+    {"id": "review-journal", "expected": "ask_reviewer", "allowed": ["ask_reviewer", "request_input"], "state": {"requirements": ["Persist intent before dispatch; never replay an uncertain response."], "candidate": "The coordinator stores operation intent before dispatch, captures the response ID, retrieves that exact response after restart, and holds when no ID can be recovered.", "review": null}},
+    {"id": "review-exact-input", "expected": "ask_reviewer", "allowed": ["ask_reviewer", "request_input"], "state": {"requirements": ["Review the exact immutable candidate and requirements revision."], "candidate": "Assignments carry exact object names, revisions and SHA256 hashes. Consumers verify all inputs, reject stale references and publish through coordinator ETag checks.", "review": null}},
+    {"id": "missing-workload", "expected": "request_input", "allowed": ["ask_architect", "request_input"], "state": {"requirements": ["Build it."], "candidate": null, "review": null}},
+    {"id": "missing-residency", "expected": "request_input", "allowed": ["ask_architect", "request_input"], "state": {"requirements": ["Choose a residency region for regulated data. The permitted jurisdiction has not been supplied and must not be assumed."], "candidate": null, "review": null}},
+    {"id": "missing-critical-choice", "expected": "request_input", "allowed": ["ask_architect", "request_input"], "state": {"requirements": ["Design our migration. Whether customer data may leave the current country is an unresolved mandatory customer decision."], "candidate": null, "review": null}},
+    {"id": "missing-service", "expected": "request_input", "allowed": ["ask_architect", "request_input"], "state": {"requirements": ["Design secure access to the selected service. No service or workload has been named; ask the user before making a material architecture assumption."], "candidate": null, "review": null}}
+  ]
+}

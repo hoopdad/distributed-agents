@@ -1,0 +1,14 @@
+*
+!main.py
+!requirements.txt
+!requirements.lock.txt
+!demo/
+!demo/*.py
+!config/
+!config/routing-corpus.json
+!config/routing-calibration.json
+!packages/
+!packages/**
+demo/__pycache__/
+packages/**/__pycache__/
+packages/**/*.pyc

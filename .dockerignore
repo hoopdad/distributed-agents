@@ -1,0 +1,10 @@
+**
+!requirements.lock.txt
+!demo/
+!demo/*.py
+!config/
+!config/routing-corpus.json
+!config/routing-calibration.json
+!scripts/
+!scripts/calibrate_routing.py
+!Dockerfile

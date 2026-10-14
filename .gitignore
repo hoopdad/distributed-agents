@@ -218,3 +218,20 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Private deployment context, migration snapshots and conversation evidence
+.azure/
+.azure-cli/
+.local/
+.migration/
+.foundry/
+packages/
+*.zip
+*.tfstate*
+*.tfplan
+*.pem
+*.key
+*.pfx
+*.p12
+.env.*
+!.env.example

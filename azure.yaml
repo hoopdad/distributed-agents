@@ -1,0 +1,113 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+requiredVersions:
+  azd: ">=1.34.2"
+  extensions:
+    azure.ai.agents: ">=1.0.0-beta.15"
+    azure.ai.projects: ">=1.0.0-beta.10"
+name: distributed-agents
+services:
+  ai-project:
+    host: azure.ai.project
+    endpoint: ${FOUNDRY_PROJECT_ENDPOINT}
+  multi-agent-architect:
+    host: azure.ai.agent
+    project: .
+    language: python
+    codeConfiguration:
+      runtime: python_3_13
+      entryPoint: main.py
+      dependencyResolution: remote_build
+    uses: [ai-project]
+    kind: hosted
+    name: multi-agent-architect
+    hooks:
+      predeploy:
+        shell: sh
+        run: python3 package_guard.py
+    protocols:
+      - protocol: responses
+        version: "2.0.0"
+    env:
+      DEMO_ROLE: architect
+      DEMO_RUNTIME: native
+      EXPECTED_AZURE_TENANT_ID: ${EXPECTED_AZURE_TENANT_ID}
+      ARTIFACT_STORAGE_ENDPOINT: ${ARTIFACT_STORAGE_ENDPOINT}
+      ARTIFACT_CONTROL_CONTAINER: ${ARTIFACT_CONTROL_CONTAINER}
+      ARTIFACT_CANDIDATES_CONTAINER: ${ARTIFACT_CANDIDATES_CONTAINER}
+      ARTIFACT_REVIEWS_CONTAINER: ${ARTIFACT_REVIEWS_CONTAINER}
+      ARTIFACT_PRIVATE_IPS: ${ARTIFACT_PRIVATE_IPS}
+      FOUNDRY_PROJECT_ENDPOINT: ${FOUNDRY_PROJECT_ENDPOINT}
+      SPECIALIST_MODEL_DEPLOYMENT: ${SPECIALIST_MODEL_DEPLOYMENT}
+    container:
+      resources:
+        cpu: "0.25"
+        memory: 0.5Gi
+  multi-agent-reviewer:
+    host: azure.ai.agent
+    project: .
+    language: python
+    codeConfiguration:
+      runtime: python_3_13
+      entryPoint: main.py
+      dependencyResolution: remote_build
+    uses: [ai-project]
+    kind: hosted
+    name: multi-agent-reviewer
+    hooks:
+      predeploy:
+        shell: sh
+        run: python3 package_guard.py
+    protocols:
+      - protocol: responses
+        version: "2.0.0"
+    env:
+      DEMO_ROLE: reviewer
+      DEMO_RUNTIME: native
+      EXPECTED_AZURE_TENANT_ID: ${EXPECTED_AZURE_TENANT_ID}
+      ARTIFACT_STORAGE_ENDPOINT: ${ARTIFACT_STORAGE_ENDPOINT}
+      ARTIFACT_CONTROL_CONTAINER: ${ARTIFACT_CONTROL_CONTAINER}
+      ARTIFACT_CANDIDATES_CONTAINER: ${ARTIFACT_CANDIDATES_CONTAINER}
+      ARTIFACT_REVIEWS_CONTAINER: ${ARTIFACT_REVIEWS_CONTAINER}
+      ARTIFACT_PRIVATE_IPS: ${ARTIFACT_PRIVATE_IPS}
+      FOUNDRY_PROJECT_ENDPOINT: ${FOUNDRY_PROJECT_ENDPOINT}
+      SPECIALIST_MODEL_DEPLOYMENT: ${SPECIALIST_MODEL_DEPLOYMENT}
+    container:
+      resources:
+        cpu: "0.25"
+        memory: 0.5Gi
+  multi-agent-coordinator:
+    host: azure.ai.agent
+    project: .
+    language: python
+    codeConfiguration:
+      runtime: python_3_13
+      entryPoint: main.py
+      dependencyResolution: remote_build
+    uses: [ai-project]
+    kind: hosted
+    name: multi-agent-coordinator
+    hooks:
+      predeploy:
+        shell: sh
+        run: python3 package_guard.py
+    protocols:
+      - protocol: responses
+        version: "2.0.0"
+    env:
+      DEMO_ROLE: coordinator
+      DEMO_SPECIALIST_MODE: hosted
+      DEMO_RUNTIME: native
+      EXPECTED_AZURE_TENANT_ID: ${EXPECTED_AZURE_TENANT_ID}
+      ARTIFACT_STORAGE_ENDPOINT: ${ARTIFACT_STORAGE_ENDPOINT}
+      ARTIFACT_CONTROL_CONTAINER: ${ARTIFACT_CONTROL_CONTAINER}
+      ARTIFACT_CANDIDATES_CONTAINER: ${ARTIFACT_CANDIDATES_CONTAINER}
+      ARTIFACT_REVIEWS_CONTAINER: ${ARTIFACT_REVIEWS_CONTAINER}
+      ARTIFACT_PRIVATE_IPS: ${ARTIFACT_PRIVATE_IPS}
+      DECISION_REQUESTS_PER_MINUTE: ${DECISION_REQUESTS_PER_MINUTE}
+      FOUNDRY_PROJECT_ENDPOINT: ${FOUNDRY_PROJECT_ENDPOINT}
+      SPECIALIST_MODEL_DEPLOYMENT: ${SPECIALIST_MODEL_DEPLOYMENT}
+      DECISION_MODEL_DEPLOYMENT: ${DECISION_MODEL_DEPLOYMENT}
+    container:
+      resources:
+        cpu: "0.25"
+        memory: 0.5Gi

@@ -64,9 +64,9 @@ registry. The proxy derives its exact allowed origin from the same validated
 project configuration. The terminal's private session path boundary now
 covers the new repository root.
 
-The three-service descriptor stays on the legacy `in_process` baseline until
-the native workflow implementation is ready. Do not imply that this adaptation
-is the requested remote-workflow implementation or a live redeployment.
+The three-service descriptor now selects native orchestration and remote
+specialists. The legacy `in_process` implementation remains a regression adapter;
+the native descriptor is not evidence of a live redeployment.
 
 ## Private context and future cutover
 
@@ -78,11 +78,10 @@ Do not read/display `.azure` `.env` contents or import their entire environment.
 The copied azd state can aid a reviewed future deployment; it does not grant
 mutation permission or correct hardcoded release paths.
 
-Before cutover, parameterize the retained release/build/preflight scripts with
-separate **ApplicationRoot** and **LabRepositoryRoot** inputs. The current WSL
-release wrapper's project staging parameter is not sufficient: its `LAB_APP`,
-registry lookup, source test execution, packaging and prerequisite paths still
-assume the original application tree. Trace and test every such dependency.
+The retained release/build/preflight/WSL scripts now accept separate
+**ApplicationRoot** and **LabRepositoryRoot** inputs, with offline and actual
+Linux checks. Native bundled packaging and publication still require their
+own gates; a project staging parameter alone never establishes source closure.
 Keep infrastructure lookup in the lab and code/package/test lookup in the
 new application. Preserve exact approved package hashes and closure receipts.
 

@@ -24,7 +24,9 @@ from private settings. There is no Terraform root or SSH launcher here.
 evaluation (eight of eight ready cases, threshold 0.9/margin 0) on the unchanged
 frozen corpus. The first evaluation failed (two of eight); both private journals
 are retained. Request hashes bind the evaluated policy; no offline fixture is
-release evidence. Infrastructure, Linux/package and live acceptance remain pending.
+release evidence. Application Windows/Linux gates pass; artifact infrastructure
+is applied with scoped zero-change convergence. Native package/publication and
+live acceptance, including managed-identity private-path access, remain pending.
 Do not search ignored `.azure`, `.azure-cli`, `.local`, `.migration` or
 conversation/credential stores.
 

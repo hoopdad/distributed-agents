@@ -5,8 +5,11 @@
 This is the next-iteration design, not a claim of deployed functionality.
 Native workflow/artifact/routing source and focused offline tests now exist;
 the deployment descriptor selects native hosting and remote specialists.
-Artifact infrastructure, Linux/package gates
-and live restart/private-path acceptance remain outstanding.
+Application tests pass on Windows and Linux/amd64. The lab applied the 14
+artifact resources and verified scoped zero-change convergence; private
+container, identity-grant and retention metadata checks pass. Native bundled
+packaging/publication and live restart/private-path acceptance remain
+outstanding. Metadata is not managed-identity data-plane proof.
 The first real twelve-case calibration failed with two correct ready selections.
 Routing-v2 corrected ambiguous criteria and opaque semantic inputs; a second
 twelve-call evaluation on the unchanged corpus passed eight of eight ready cases
@@ -76,8 +79,9 @@ exact inputs, permitted output type, and deadline. Verify the assignment on
 every call, including resume. Do not let the model choose container names,
 accounts, blob paths, tenant IDs, or parent IDs.
 
-Existing hosted identities and direct Blob permissions have **not** been proven.
-Verify the actual runtime identity and network path before granting permissions.
+Existing hosted identities were observed and their exact container-scoped
+grants applied. Actual runtime managed-identity Blob access and its private
+network path have **not** been proven; verify them during live acceptance.
 Missing trusted principal context is a fail-closed condition, not permission to
 use a default user. A terminal's UUID alone is not proof of ownership.
 

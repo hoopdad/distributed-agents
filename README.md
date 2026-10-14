@@ -6,13 +6,16 @@ generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; Windows offline suites pass.
+artifact-plane source are implemented; 89 application tests pass on Windows
+and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
-**This iteration is not deployed or live-accepted.** Artifact infrastructure,
-Linux/native-package gates and
-synthetic live acceptance are still required; three declared services alone do
-not prove remote calls or private managed-identity storage access.
+**This iteration is not deployed or live-accepted.** The lab's scoped artifact
+infrastructure apply added 14 resources; a subsequent scoped plan/apply confirmed
+zero changes. Read-only metadata verifies private containers, role-scoped grants
+and retention. Native bundled packaging, publication and synthetic live
+acceptance remain outstanding; infrastructure metadata and three declared
+services do not prove remote calls or private managed-identity storage access.
 
 **Calibration verified:** the first twelve-case evaluation failed with two of
 eight ready cases correct. Routing policy/input v2 clarifies first-draft versus

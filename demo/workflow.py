@@ -149,7 +149,9 @@ class NativeRuntime:
     async def resources(self, *, parent_scope: ScopeBinding | None = None):
         async with AsyncExitStack() as stack:
             credential = await stack.enter_async_context(ManagedIdentityCredential())
-            http = await stack.enter_async_context(data_client())
+            http = await stack.enter_async_context(data_client(
+                expected_call_id=self.context.call_id, response_id=self.response_id,
+            ))
             headers = self.context.platform_headers()
             project = await stack.enter_async_context(ProjectClient(credential, http, headers))
             artifacts = await stack.enter_async_context(storage(parent_scope or self.scope, self.role, credential))

@@ -6,7 +6,7 @@ generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; 110 application tests pass on Windows
+artifact-plane source are implemented; 116 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
@@ -66,6 +66,14 @@ SDK propagation change did not resolve the live failure. Its cause remains
 unresolved; neither a platform defect nor a different permission grant has
 been established. Followup, hosting restart and isolation were not reached.
 Both acceptance and observation closed their owned jobs/listeners.
+**Local diagnostics, not deployed:** the native HTTP transport now records only
+fixed-role presence/match booleans at the actual specialist Responses POST
+boundary, correlated by a hash of the parent response ID. It never logs header
+values, tokens, identities, request content or the raw response ID. Read-only
+observation also reads the exact parent's bounded logs when its known child
+fails. This closes an instrumentation gap after publication; it is not a
+verified identity-propagation fix or authorization mechanism. Legacy transport
+and all request/scope gates remain unchanged.
 No failed turn was resent or pending state cleared. The lab's scoped
 artifact infrastructure apply added 14 resources; a subsequent scoped plan/apply
 confirmed zero changes. Read-only metadata verifies private containers, retained grants

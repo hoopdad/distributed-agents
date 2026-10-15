@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import hashlib
 import json
+import logging
 import os
 import uuid
 from contextlib import AsyncExitStack
@@ -29,6 +31,8 @@ TRUSTED_USER_ID_HEADER = "x-ms-user-identity"
 LEGACY_USER_ID_HEADER = "x-agent-user-id"
 SPECIALIST_MODE_ENV = "DEMO_SPECIALIST_MODE"
 SPECIALIST_MODES = {"hosted", "in_process"}
+OUTBOUND_CONTEXT_LOGGER = logging.getLogger(__name__ + ".outbound_context")
+OUTBOUND_CONTEXT_LOGGER.setLevel(logging.INFO)
 
 
 def platform_identity_headers(context) -> dict[str, str]:
@@ -72,8 +76,17 @@ def specialist_instructions(role: Role) -> str:
 class OriginTransport(httpx2.AsyncBaseTransport):
     """No token-bearing request or redirect can escape the selected origin."""
 
-    def __init__(self, inner: httpx2.AsyncBaseTransport):
+    def __init__(
+        self, inner: httpx2.AsyncBaseTransport, *,
+        expected_call_id: str | None = None, response_id: str | None = None,
+    ):
+        if (expected_call_id is not None or response_id is not None) and (
+            not expected_call_id or not response_id
+        ):
+            raise DemoError("OUTBOUND_CONTEXT_CONFIGURATION")
         self.inner = inner
+        self.expected_call_id = expected_call_id
+        self.response_binding = hashlib.sha256(response_id.encode()).hexdigest() if response_id else None
 
     async def handle_async_request(self, request):
         if (
@@ -82,13 +95,27 @@ class OriginTransport(httpx2.AsyncBaseTransport):
             or request.url.port not in (None, 443)
         ):
             raise DemoError("UNAUTHORIZED_ORIGIN")
+        if self.response_binding and request.method == "POST":
+            role = next((role for role, name in AGENTS.items() if request.url.path ==
+                         urlsplit(PROJECT).path + f"/agents/{name}/endpoint/protocols/openai/responses"), None)
+            if role is not None:
+                call_id = request.headers.get("x-agent-foundry-call-id")
+                OUTBOUND_CONTEXT_LOGGER.info(
+                    "Native outbound context response_binding=%s role=%s has_call_id=%s "
+                    "call_matches_context=%s has_delegated_user=%s has_container_user=%s.",
+                    self.response_binding, role, bool(call_id), call_id == self.expected_call_id,
+                    bool(request.headers.get(TRUSTED_USER_ID_HEADER)),
+                    bool(request.headers.get(LEGACY_USER_ID_HEADER)),
+                )
         return await self.inner.handle_async_request(request)
 
     async def aclose(self):
         await self.inner.aclose()
 
 
-def data_client(*, socks: str | None = None) -> httpx2.AsyncClient:
+def data_client(
+    *, socks: str | None = None, expected_call_id: str | None = None, response_id: str | None = None,
+) -> httpx2.AsyncClient:
     if socks:
         uri = urlsplit(socks)
         if (
@@ -99,7 +126,8 @@ def data_client(*, socks: str | None = None) -> httpx2.AsyncClient:
             raise DemoError("SOCKS_SCOPE")
     return httpx2.AsyncClient(
         transport=OriginTransport(
-            httpx2.AsyncHTTPTransport(proxy=socks, verify=True, trust_env=False, retries=0)
+            httpx2.AsyncHTTPTransport(proxy=socks, verify=True, trust_env=False, retries=0),
+            expected_call_id=expected_call_id, response_id=response_id,
         ),
         timeout=120,
         follow_redirects=False,

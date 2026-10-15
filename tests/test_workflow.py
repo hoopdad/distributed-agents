@@ -2,13 +2,15 @@ from __future__ import annotations
 
 import asyncio
 import copy
+import hashlib
+import io
 import json
 import os
 import tempfile
 import unittest
 import uuid
 from pathlib import Path
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, redirect_stdout
 from types import SimpleNamespace
 from unittest.mock import AsyncMock, MagicMock, patch
 from pydantic import ValidationError
@@ -260,6 +262,88 @@ def graph(runtime, checkpoints=None):
     )
 
 
+class NativeOutboundTransportTests(unittest.IsolatedAsyncioTestCase):
+    async def test_outbound_context_reports_wire_presence_and_matches_without_values(self):
+        import httpx2
+        from demo.contracts import PROJECT
+        from demo.foundry import OriginTransport
+        from live_acceptance import outbound_identity
+        private_call, private_response = "synthetic-private-call", "synthetic-private-response"
+        for headers, present, matches, delegated, container in (
+            ({}, False, False, False, False),
+            ({"x-agent-foundry-call-id": "different-private-call"}, True, False, False, False),
+            ({"x-agent-foundry-call-id": private_call}, True, True, False, False),
+            ({"x-agent-foundry-call-id": private_call,
+              "x-ms-user-identity": "synthetic-private-delegated-user",
+              "x-agent-user-id": "synthetic-private-container-user"}, True, True, True, True),
+        ):
+            seen = []
+            def handle(request):
+                seen.append(request)
+                return httpx2.Response(200, json={})
+            transport = OriginTransport(
+                httpx2.MockTransport(handle), expected_call_id=private_call, response_id=private_response,
+            )
+            with self.subTest(present=present, matches=matches, delegated=delegated), \
+                    self.assertLogs("demo.foundry.outbound_context", level="INFO") as logs:
+                async with httpx2.AsyncClient(transport=transport) as http:
+                    response = await http.post(
+                        PROJECT + "/agents/" + AGENTS["architect"] + "/endpoint/protocols/openai/responses",
+                        headers=headers | {"Authorization": "Bearer synthetic-private-token"},
+                        json={"input": "synthetic-private-input"},
+                    )
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(len(seen), 1)
+            self.assertEqual(len(logs.output), 1)
+            self.assertEqual(outbound_identity(logs.output[0], private_response), {
+                "role": "architect", "has_call_id": present, "call_matches_context": matches,
+                "has_delegated_user": delegated, "has_container_user": container,
+            })
+            self.assertNotIn("synthetic-private", logs.output[0])
+            self.assertNotIn("different-private", logs.output[0])
+
+    async def test_outbound_diagnostics_exclude_unrelated_requests_and_reject_other_origins(self):
+        import httpx2
+        from demo.contracts import PROJECT
+        from demo.foundry import OriginTransport
+        from demo.contracts import DemoError
+        seen = []
+        def handle(request):
+            seen.append(request)
+            return httpx2.Response(200, json={})
+        transport = OriginTransport(
+            httpx2.MockTransport(handle), expected_call_id="synthetic-call", response_id="synthetic-response",
+        )
+        with self.assertNoLogs("demo.foundry.outbound_context", level="INFO"):
+            async with httpx2.AsyncClient(transport=transport) as http:
+                await http.get(PROJECT + "/agents/" + AGENTS["architect"] + "/endpoint/protocols/openai/responses")
+                await http.post(PROJECT + "/responses")
+                await http.post(PROJECT + "/agents/unrelated/endpoint/protocols/openai/responses")
+                with self.assertRaisesRegex(DemoError, "UNAUTHORIZED_ORIGIN"):
+                    await http.post("https://example.invalid/responses")
+        self.assertEqual(len(seen), 3)
+
+    async def test_legacy_transport_does_not_emit_native_context_diagnostics(self):
+        import httpx2
+        from demo.contracts import PROJECT
+        from demo.foundry import OriginTransport
+        with self.assertNoLogs("demo.foundry.outbound_context", level="INFO"):
+            async with httpx2.AsyncClient(
+                transport=OriginTransport(httpx2.MockTransport(lambda request: httpx2.Response(200)))
+            ) as http:
+                await http.post(PROJECT + "/agents/" + AGENTS["architect"] + "/endpoint/protocols/openai/responses")
+
+    async def test_outbound_diagnostics_require_both_nonempty_context_bindings(self):
+        import httpx2
+        from demo.foundry import OriginTransport
+        from demo.contracts import DemoError
+        for call, response in ((None, "response"), ("call", None), ("", ""), ("", "response")):
+            with self.subTest(call=call, response=response), \
+                    self.assertRaisesRegex(DemoError, "OUTBOUND_CONTEXT_CONFIGURATION"):
+                OriginTransport(httpx2.MockTransport(lambda request: httpx2.Response(200)),
+                                expected_call_id=call, response_id=response)
+
+
 class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
     def setUp(self):
         self.backend = MemoryBackend()
@@ -281,6 +365,8 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         from azure.core.credentials import AccessToken
         from agent_framework.exceptions import ChatClientException
         from demo.contracts import PROJECT
+        from demo.foundry import data_client
+        from live_acceptance import outbound_identity
         from urllib.parse import urlsplit
         self.runtime.context = FoundryAgentRequestContext(
             session_id=self.runtime.scope.parent_session, user_id=self.runtime.scope.principal,
@@ -305,14 +391,15 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         store.__aenter__ = AsyncMock(return_value=store)
         store.__aexit__ = AsyncMock(return_value=False)
         store.verify_private_path = AsyncMock()
-        http = httpx2.AsyncClient(transport=httpx2.MockTransport(handle))
         session = AgentSession()
         session.state[FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY] = "a" * 32
         child = Child(role="architect", name=AGENTS["architect"], version="1",
                       hosted_id="a" * 32, framework=session.to_dict())
         with patch("demo.workflow.ManagedIdentityCredential", return_value=credential), \
-                patch("demo.workflow.data_client", return_value=http), \
-                patch("demo.workflow.storage", return_value=store):
+                patch("demo.workflow.data_client", wraps=data_client) as data_factory, \
+                patch("demo.foundry.httpx2.AsyncHTTPTransport", return_value=httpx2.MockTransport(handle)), \
+                patch("demo.workflow.storage", return_value=store), \
+                self.assertLogs("demo.foundry.outbound_context", level="INFO") as logs:
             async with NativeRuntime.resources(self.runtime) as (_, remote, _, _, _, _):
                 stream = remote._client(child).run("Synthetic probe.", session=session, stream=True)
                 with self.assertRaises(ChatClientException):
@@ -327,6 +414,15 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
             "session": "a" * 32,
         }])
         store.verify_private_path.assert_awaited_once()
+        data_factory.assert_called_once_with(
+            expected_call_id=self.runtime.context.call_id, response_id=self.runtime.response_id,
+        )
+        self.assertEqual(len(logs.output), 1)
+        self.assertEqual(outbound_identity(logs.output[0], self.runtime.response_id), {
+            "role": "architect", "has_call_id": True, "call_matches_context": True,
+            "has_delegated_user": False, "has_container_user": False,
+        })
+        self.assertNotIn("synthetic-opaque-call", logs.output[0])
 
     async def step_to_call(self):
         await self.runtime.begin("Synthetic requirements.")
@@ -961,6 +1057,81 @@ class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
             "ingress_identity": [{"has_user_id": False, "has_call_id": True}],
         })
         self.assertNotIn("synthetic-private", json.dumps(proof))
+
+    async def test_outbound_observation_is_exact_response_bound_and_allowlisted(self):
+        from live_acceptance import outbound_identity
+        binding = hashlib.sha256(b"known-response").hexdigest()
+        line = (
+            f"Native outbound context response_binding={binding} role=architect "
+            "has_call_id=True call_matches_context=True "
+            "has_delegated_user=False has_container_user=False."
+        )
+        for invalid in (
+            line + " private tail", line.replace("role=architect", "role=private-role"),
+            line.replace("has_call_id=True", "has_call_id=private-value"), '{"message":42}',
+        ):
+            self.assertIsNone(outbound_identity(invalid, "known-response"))
+        self.assertIsNone(outbound_identity(line, "other-response"))
+        self.assertIsNone(outbound_identity(line, None))
+        chunk = ("data: " + json.dumps({"message": line}) + "\n\n").encode()
+        proof = await self.observe([chunk[:30], chunk[30:], chunk], response_id="known-response")
+        self.assertEqual(proof, {
+            "failures": [], "limit": None, "outbound_context": [{
+                "role": "architect", "has_call_id": True, "call_matches_context": True,
+                "has_delegated_user": False, "has_container_user": False,
+            }],
+        })
+        self.assertNotIn(binding, json.dumps(proof))
+
+    async def test_failed_child_observation_also_reads_exact_parent_context_without_resend(self):
+        from live_acceptance import run
+        state = {
+            "schema_version": 1, "tenant": "tenant", "user": "user", "runtime": "native",
+            "bound": True, "pending": True, "pending_response": "known-parent-response", "version": "22",
+            "framework": {"state": {FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY: "known-parent-session"}},
+        }
+        response = SimpleNamespace(
+            id="known-parent-response", status="completed",
+            model_dump=lambda **kwargs: {"id": "known-parent-response", "status": "completed"},
+        )
+        client = SimpleNamespace(responses=SimpleNamespace(
+            retrieve=AsyncMock(return_value=response), create=AsyncMock(),
+        ))
+        project = MagicMock()
+        project.__aenter__ = AsyncMock(return_value=project)
+        project.__aexit__ = AsyncMock(return_value=False)
+        project.get_openai_client.return_value = client
+        child = {
+            "role": "architect", "response_id": "known-child-response", "status": "failed",
+            "agent_session_id": "known-child-session",
+        }
+        output = io.StringIO()
+        with patch("live_acceptance.verify_lab", return_value=("tenant", "subscription", "user")), \
+                patch("live_acceptance.private_state_path",
+                      return_value=SimpleNamespace(read_text=lambda: json.dumps(state))), \
+                patch("live_acceptance.AzureCliCredential"), patch("live_acceptance.data_client"), \
+                patch("live_acceptance.ProjectClient", return_value=project), \
+                patch("live_acceptance.observe_pending_child", AsyncMock(return_value=child)), \
+                patch("live_acceptance.rest", AsyncMock(return_value={
+                    "version_indicator": {"agent_version": "17"},
+                })) as rest, \
+                patch("live_acceptance.observe_host_failure", AsyncMock(side_effect=[
+                    {"failures": []}, {"failures": [], "outbound_context": []},
+                ])) as observe, redirect_stdout(output):
+            await run(SimpleNamespace(scenario="observe", session_file="private-state", socks=None))
+        self.assertEqual(observe.await_count, 2)
+        self.assertEqual(observe.await_args_list[0].args[2:], ("known-child-session", "17"))
+        self.assertEqual(observe.await_args_list[0].kwargs,
+                         {"role": "architect", "response_id": "known-child-response"})
+        self.assertEqual(observe.await_args_list[1].args[2:], ("known-parent-session", "22"))
+        self.assertEqual(observe.await_args_list[1].kwargs,
+                         {"response_id": "known-parent-response"})
+        self.assertIn("parent_host_diagnostics", json.loads(output.getvalue()))
+        client.responses.retrieve.assert_awaited_once_with(
+            "known-parent-response", extra_query={"agent_session_id": "known-parent-session"},
+        )
+        client.responses.create.assert_not_awaited()
+        self.assertEqual(rest.await_args.args[2], "GET")
 
     async def test_host_failure_observation_suppresses_arbitrary_log_content(self):
         line = (

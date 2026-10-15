@@ -54,6 +54,12 @@ The unresolved propagation boundary is not proof of a platform defect or a
 missing permission. Trusted scope gates remain strict; followup, hosting
 stop/resume and isolation were not reached. Owned jobs/listeners closed after
 both acceptance and observation.
+Local, undeployed HTTP-edge diagnostics compare the actual outbound opaque
+call header with the captured request context, exposing only presence/match
+booleans and an allowlisted role. A response-ID hash binds the observation
+without logging raw IDs, identity/header values, tokens or content; it grants
+no authority. Known-child failure observation additionally reads the exact
+parent's bounded logs. No trusted-scope or legacy transport behavior changes.
 Pending states and response IDs remain preserved; no repeat inference was sent.
 Offline construction is not proof of hosted identity/context correctness.
 Completed remote specialist work, end-to-end managed-identity artifact

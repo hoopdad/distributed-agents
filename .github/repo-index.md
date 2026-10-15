@@ -58,6 +58,13 @@ call identity present and user identity absent. Supported opaque propagation
 did not resolve the live failure; its cause remains unresolved. No platform
 defect or missing permission has been established. Followup/restart/isolation
 were not reached; acceptance/observation jobs and listeners closed.
+Local, undeployed HTTP-edge diagnostics report only fixed-role header
+presence/context-match flags correlated by a response-ID hash; no header
+values, raw IDs, tokens or content are logged. Known-child failure observation
+also reads the exact parent's bounded logs. A real native resource/client/
+transport regression verifies this wiring; all 116 application tests pass on
+Windows and Linux. These diagnostics do not authorize calls or resolve the
+propagation failure.
 Known-response stream recovery is deployed. The known
 responses and pending parent are preserved, not resent. Completed remote work, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.

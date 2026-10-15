@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 from contextlib import redirect_stdout
+import hashlib
 import io
 import json
 import math
@@ -65,6 +66,27 @@ def ingress_identity(line, response_id):
     return None
 
 
+def outbound_identity(line, response_id):
+    """Expose only exact-response-bound HTTP-edge context flags."""
+    line = host_log_message(line)
+    if line is None or not response_id:
+        return None
+    binding = hashlib.sha256(response_id.encode()).hexdigest()
+    match = re.search(
+        r"Native outbound context response_binding=" + binding
+        + r" role=(coordinator|architect|reviewer) has_call_id=(True|False)"
+        r" call_matches_context=(True|False) has_delegated_user=(True|False)"
+        r" has_container_user=(True|False)\.$", line,
+    )
+    if match:
+        return {
+            "role": match[1], "has_call_id": match[2] == "True",
+            "call_matches_context": match[3] == "True",
+            "has_delegated_user": match[4] == "True", "has_container_user": match[5] == "True",
+        }
+    return None
+
+
 def workflow_failure(line):
     """Expose only the SDK's fixed phase/type diagnostic, never arbitrary host logs."""
     line = host_log_message(line)
@@ -117,6 +139,11 @@ async def observe_host_failure(http, credential, hosted_id, version, *, role="co
                             observations = diagnostics.setdefault("ingress_identity", [])
                             if identity not in observations:
                                 observations.append(identity)
+                        outbound = outbound_identity(text, response_id)
+                        if outbound is not None:
+                            observations = diagnostics.setdefault("outbound_context", [])
+                            if outbound not in observations:
+                                observations.append(outbound)
                         failure = workflow_failure(text)
                         if failure is not None and failure not in diagnostics["failures"]:
                             diagnostics["failures"].append(failure)
@@ -379,6 +406,10 @@ async def run(args):
                     child["host_diagnostics"] = await observe_host_failure(
                         http, credential, child["agent_session_id"], version, role=child["role"],
                         response_id=child["response_id"],
+                    )
+                if child and child["status"] == "failed":
+                    result["parent_host_diagnostics"] = await observe_host_failure(
+                        http, credential, hosted_id, state["version"], response_id=response.id,
                     )
             print(json.dumps(result))
         return

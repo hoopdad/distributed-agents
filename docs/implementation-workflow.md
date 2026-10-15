@@ -200,6 +200,16 @@ grants, restore an unsupported container-only header, substitute a principal,
 or clear/resend either held operation. Followup, restart and isolation did not
 run. Further remediation requires a supported, evidence-backed propagation
 path; publication alone is not acceptance.
+Local diagnostics now close the missing live outbound-header observation:
+native resources bind the HTTP transport to their captured call context and
+response-ID hash. Only actual POSTs to the three known hosted Responses paths
+emit fixed-role presence/match booleans; no raw values or content are logged.
+The legacy transport is unchanged. Read-only known-child observation also
+reads the exact parent's logs, retaining each stream's 30-second/128-KiB bound.
+This diagnostic change is not deployed and does not prove propagation or
+authorize a replay. Its real-resource/client/transport regression and all
+116 application tests pass on Windows/Linux; guarded publication must precede
+any claim about live outbound headers.
 
 Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
 operation is concealed; rollback/version/session compatibility is documented.

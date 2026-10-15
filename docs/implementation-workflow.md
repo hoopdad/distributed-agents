@@ -250,6 +250,23 @@ provided successful receipt belongs to the previous package, not diagnostic
 empty outer log cannot identify the failed phase; neither is proof that an
 upload occurred or never occurred.
 
+The follow-on read-only Azure Monitor observation binds the exact preserved
+coordinator 22 / architect 17 response pair through the existing observer
+receipt and checkpoint. Within a ten-minute window, coordinator ingress at
+13:20:17.972678Z contains both user and call identity; architect ingress at
+13:20:41.821326Z contains call identity only. The parent-operation-correlated
+POST at 13:20:41.599649Z returned HTTP 200 and matches the expected architect
+Responses path and configured project origin. Two correlated response GETs
+also returned 200. These are 2026-10-15 historical request timestamps, not new
+inference. No outbound context-match diagnostic was captured, and dependency
+properties contain no call-header-name capture; neither absence establishes
+an absent header. Request admission is not successful agent execution.
+This narrows wrong-endpoint/origin and parent-ingress hypotheses without
+proving a platform defect, call-ID expiry, or background-entry behavior.
+Another exact coordinator-23 observation still returns 404 and proves its own
+observer cleanup only, not the original publisher's outcome or mount closure.
+Live wire capture remains blocked on reconciled diagnostic publication.
+
 Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
 operation is concealed; rollback/version/session compatibility is documented.
 If unavailable, state exactly which condition failed. Do not label offline

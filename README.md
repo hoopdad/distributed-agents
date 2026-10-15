@@ -193,6 +193,14 @@ architect 17, reviewer 15 and coordinator 22 are active with Responses protocol
 evidence still shows the architect arriving with call identity but no user
 identity. The live outbound call/context match and background-entry timing
 were not captured, so transport versus platform resolution remains unresolved.
+A subsequent bounded Azure Monitor query for the exact coordinator 22 /
+architect 17 response pair confirms both identities at coordinator ingress,
+call identity only at architect ingress, and a correlated HTTP 200 POST to
+the expected architect Responses endpoint on the configured project origin.
+This rules out a different endpoint/origin in that captured request, not
+incorrect outbound call context: dependency telemetry contains no call-header
+capture. A fresh exact coordinator-23 GET still returns 404; the interrupted
+publication hold remains unresolved and no request was replayed.
 The lab wrapper's explicit `recover` scenario retrieves only a known pending
 response. Known-parent `followup` and opt-in `restart` scenarios do not create a
 replacement parent. `-Mode Acceptance -HostingRestart` additionally tests the

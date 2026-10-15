@@ -75,6 +75,11 @@ probes. Fresh exact-version metadata confirms the three deployed roles use
 Responses 2.0.0 with the expected package and identities; actual nested
 outbound context matching remains uncaptured. The current application suite
 has 132 passing Windows/Linux tests (seven expected Linux skips).
+A bounded Monitor query now independently confirms the exact coordinator22 /
+architect17 ingress discrepancy and a correlated HTTP200 POST to the expected
+architect Responses path on the configured project origin. Actual outgoing
+call-context matching remains uncaptured. A fresh exact coordinator23 GET
+still returns404; no publication or inference was replayed.
 Known-response stream recovery is deployed. The known
 responses and pending parent are preserved, not resent. Completed remote work, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.

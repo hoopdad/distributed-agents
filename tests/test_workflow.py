@@ -562,6 +562,47 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn("checkpoint_store_provider", kwargs)
         self.assertNotIn("agent", kwargs)
 
+    async def test_native_preparation_names_each_rejected_host_check_without_values(self):
+        from demo.workflow import create_native_workflow, PROJECT
+        config = {
+            "is_hosted": True, "session_id": "synthetic-parent", "project_endpoint": PROJECT,
+            "agent_name": AGENTS["coordinator"], "agent_version": "18",
+        }
+        scope = {
+            "is_hosted": True, "session_id": "synthetic-parent",
+            "user_id": "synthetic-user", "call_id": "synthetic-call",
+        }
+        context = SimpleNamespace(**scope)
+        cases = (
+            ({"project_endpoint": "synthetic-private-value"}, {}, "NATIVE_HOST_PROJECT"),
+            ({"agent_name": "synthetic-private-value"}, {}, "NATIVE_HOST_AGENT"),
+            ({"agent_version": ""}, {}, "NATIVE_HOST_VERSION"),
+            ({}, {"is_hosted": False}, "NATIVE_HOST_PLATFORM"),
+            ({}, {"user_id": None}, "NATIVE_HOST_PRINCIPAL"),
+            ({}, {"call_id": None}, "NATIVE_HOST_CALL"),
+            ({"session_id": "synthetic-private-value"}, {}, "NATIVE_HOST_SESSION"),
+        )
+        for changes, scope_changes, code in cases:
+            request = SimpleNamespace(scope=SimpleNamespace(**(scope | scope_changes)), response_id="response")
+            with self.subTest(code=code), \
+                    patch.dict(os.environ, {"DEMO_ROLE": "coordinator", "DEMO_SPECIALIST_MODE": "hosted"}), \
+                    patch("demo.workflow.AgentConfig.from_env", return_value=SimpleNamespace(**(config | changes))), \
+                    patch("demo.workflow.get_request_context", return_value=context), \
+                    self.assertLogs("demo.workflow", level="ERROR") as logs:
+                with self.assertRaisesRegex(ArtifactError, code):
+                    create_native_workflow(request)
+                self.assertEqual(logs.records[0].getMessage(), f"Native workflow preparation rejected ({code}).")
+                self.assertNotIn("synthetic-private-value", str(logs.output))
+
+    async def test_native_preparation_unknown_error_never_logs_its_payload(self):
+        from demo.workflow import create_native_workflow
+        with patch("demo.workflow.NativeRuntime", side_effect=ArtifactError("synthetic-private-value")), \
+                self.assertLogs("demo.workflow", level="ERROR") as logs:
+            with self.assertRaises(ArtifactError):
+                create_native_workflow(None)
+        self.assertEqual(logs.records[0].getMessage(), "Native workflow preparation rejected (UNCLASSIFIED).")
+        self.assertNotIn("synthetic-private-value", str(logs.output))
+
 
 class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
     async def test_observation_requires_owned_bound_pending_native_session(self):
@@ -646,6 +687,12 @@ class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
             "Native Responses workflow failed during preparation (ArtifactError). private tail",
         ):
             self.assertIsNone(workflow_failure(line))
+        self.assertEqual(workflow_failure(
+            'Native workflow preparation rejected (NATIVE_HOST_PROJECT).'
+        ), {"phase": "preparation", "exception_type": "ArtifactError", "check": "NATIVE_HOST_PROJECT"})
+        self.assertIsNone(workflow_failure(
+            'Native workflow preparation rejected (SYNTHETIC_PRIVATE_TOKEN).'
+        ))
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import logging
 import os
 import time
 import uuid
@@ -31,6 +32,16 @@ from .foundry import ProjectClient, RemoteAgents, data_client, platform_identity
 from .routing import Choice, DecisionClient, gated_choice, load_calibration, reserve_decision, routing_state
 
 ROOT = Path(__file__).resolve().parents[1]
+LOGGER = logging.getLogger(__name__)
+PREPARATION_CHECKS = frozenset({
+    "NATIVE_HOST_ROLE", "NATIVE_HOST_PROJECT", "NATIVE_HOST_AGENT", "NATIVE_HOST_VERSION",
+    "NATIVE_HOST_PLATFORM", "NATIVE_HOST_PRINCIPAL", "NATIVE_HOST_CALL", "NATIVE_HOST_SESSION",
+    "TRUSTED_PARENT_REQUIRED", "REMOTE_SPECIALIST_REQUIRED",
+    "DECISION_CALIBRATION_REQUIRED", "DECISION_CALIBRATION_DEPLOYMENT",
+    "DECISION_CALIBRATION_PROVENANCE", "DECISION_CALIBRATION_POLICY",
+    "DECISION_CALIBRATION_CORPUS", "DECISION_CALIBRATION_FAILED",
+    "ARTIFACT_JSON", "ARTIFACT_DEPTH_LIMIT", "ARTIFACT_BYTE_LIMIT", "ARTIFACT_DUPLICATE_KEY",
+})
 
 
 class AssignmentLocator(StrictModel):
@@ -104,13 +115,19 @@ class NativeRuntime:
     def __init__(self, request: HostedResponseRequest):
         self.request, self.config, self.context = request, AgentConfig.from_env(), get_request_context()
         self.role = os.environ["DEMO_ROLE"]
-        if (
-            self.role not in AGENTS or self.config.project_endpoint != PROJECT
-            or self.config.agent_name != AGENTS[self.role] or not self.config.agent_version
-            or not request.scope.is_hosted or not request.scope.user_id or not request.scope.call_id
-            or self.config.session_id != request.scope.session_id
+        if self.role not in AGENTS:
+            raise ArtifactError("NATIVE_HOST_ROLE")
+        for valid, code in (
+            (self.config.project_endpoint == PROJECT, "NATIVE_HOST_PROJECT"),
+            (self.config.agent_name == AGENTS[self.role], "NATIVE_HOST_AGENT"),
+            (bool(self.config.agent_version), "NATIVE_HOST_VERSION"),
+            (request.scope.is_hosted, "NATIVE_HOST_PLATFORM"),
+            (bool(request.scope.user_id), "NATIVE_HOST_PRINCIPAL"),
+            (bool(request.scope.call_id), "NATIVE_HOST_CALL"),
+            (self.config.session_id == request.scope.session_id, "NATIVE_HOST_SESSION"),
         ):
-            raise ArtifactError("NATIVE_HOST_SCOPE")
+            if not valid:
+                raise ArtifactError(code)
         self.scope = ScopeBinding.from_platform(
             self.config, self.context, project=PROJECT, tenant=required("EXPECTED_AZURE_TENANT_ID")
         )
@@ -755,7 +772,12 @@ class SpecialistExecutor(Executor):
 
 
 def create_native_workflow(request: HostedResponseRequest):
-    runtime = NativeRuntime(request)
+    try:
+        runtime = NativeRuntime(request)
+    except ArtifactError as exc:
+        code = exc.code if exc.code in PREPARATION_CHECKS else "UNCLASSIFIED"
+        LOGGER.error("Native workflow preparation rejected (%s).", code)
+        raise
     if runtime.role != "coordinator":
         executor = SpecialistExecutor(runtime)
         return WorkflowBuilder(name=f"distributed-{runtime.role}-v1", start_executor=executor).build()

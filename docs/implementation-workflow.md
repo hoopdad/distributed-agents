@@ -113,6 +113,16 @@ A publish timeout is not permission to resend. Inspect the existing operation/
 receipt/version and reconcile uncertain sends first. Keep retries bounded.
 Record deployed versions and rollback package/versions privately.
 
+For a new diagnostic or corrected release, the lab's `bundle_package.py runtime`
+mode creates an exclusive, deterministic allowlisted source archive using explicit
+application/lab roots and a private `--output`. It does not read or change an
+azd environment or upload code. `Build-BundledCodePackage.ps1 -OutputPackageName`
+selects a new basename inside the existing private output directory, preserving
+the previous ZIP, seals, receipts and pinned private azd configuration. Use a
+new staging directory; verify its exact image, source/archive hashes, package
+closure and preview before the retained publisher. Never edit a sealed stage
+to turn a failed release into a different package.
+
 ## Gate 6: Live acceptance and handoff
 
 Use synthetic requirements only and private evidence outside both repositories.

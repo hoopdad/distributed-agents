@@ -6,7 +6,7 @@ generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; 94 application tests pass on Windows
+artifact-plane source are implemented; 96 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
@@ -105,6 +105,8 @@ The acceptance utility's `observe` scenario retrieves only the preserved pending
 response. For a failed response it reads at most 30 seconds/128 KiB of the pinned
 hosted-session log stream through the same exact-origin transport, exposing only
 allowlisted workflow phase/exception classifications, not arbitrary log content.
+Diagnostic-enabled native versions additionally log an allowlisted failing
+preparation check, never the rejected identity, endpoint, value or exception text.
 This is diagnosis, not retry permission or a hosting restart test.
 
 The baseline terminal is Windows-only because its session lease uses `msvcrt`.

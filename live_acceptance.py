@@ -16,6 +16,7 @@ from azure.identity.aio import AzureCliCredential
 
 from agent_metadata import agent_metadata
 from demo.artifacts import ArtifactRef, Candidate as NativeCandidate, Decision, Review as NativeReview
+from demo.workflow import PREPARATION_CHECKS
 
 
 SCENARIOS = {
@@ -42,6 +43,9 @@ def workflow_failure(line):
         if not isinstance(value, dict) or not isinstance(value.get("message"), str):
             return None
         line = value["message"]
+    check = re.search(r"Native workflow preparation rejected \(([A-Z][A-Z0-9_]{0,63})\)\.$", line)
+    if check and check[1] in PREPARATION_CHECKS:
+        return {"phase": "preparation", "exception_type": "ArtifactError", "check": check[1]}
     match = re.search(
         r"Native Responses workflow failed during "
         r"(preparation|scoped continuation|input parsing|input validation|execution|final output persistence) "

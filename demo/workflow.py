@@ -29,7 +29,7 @@ from .artifacts import (
 )
 from .config import required
 from .contracts import AGENTS, FACTS, ORIGIN, PROJECT, Child, DemoError, alias
-from .foundry import ProjectClient, RemoteAgents, data_client, platform_identity_headers
+from .foundry import ProjectClient, RemoteAgents, data_client
 from .routing import Choice, DecisionClient, gated_choice, load_calibration, reserve_decision, routing_state
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -150,7 +150,7 @@ class NativeRuntime:
         async with AsyncExitStack() as stack:
             credential = await stack.enter_async_context(ManagedIdentityCredential())
             http = await stack.enter_async_context(data_client())
-            headers = platform_identity_headers(self.context)
+            headers = self.context.platform_headers()
             project = await stack.enter_async_context(ProjectClient(credential, http, headers))
             artifacts = await stack.enter_async_context(storage(parent_scope or self.scope, self.role, credential))
             await artifacts.verify_private_path()

@@ -171,7 +171,21 @@ The pinned SDK's offline durable-input/handler-entry regression preserves valid
 identity and rejects either missing user or missing call identity. A subsequent
 read-only observation stopped at SSH because the existing lab command VM was
 deallocated; owned listeners/processes were proven closed. Do not power it on
-without exact operator approval. No live ingress-presence result is claimed.
+without exact operator approval. Existing Azure Monitor query access subsequently
+provided exact-response ingress evidence without that VM: coordinator user/call
+present, architect user absent/call present, correlated Responses POST HTTP 200.
+Queries returned only presence flags and fixed request/status classifications,
+not raw log messages, header values or tokens. No matching service audit record
+or captured live outbound headers was found; absence of capture is not proof of
+header absence.
+The local native correction uses the SDK's opaque-call propagation method,
+`context.platform_headers()`, instead of applying the legacy helper's explicit
+user re-delegation to internal Foundry calls. A real-resource/client transport
+regression verifies exactly one request, correct endpoint, JSON session binding
+and only the SDK's caller-context header; its assertions run outside the SDK
+exception boundary so a wrapped assertion cannot falsely pass the probe.
+This correction is not deployed or live-accepted. Guarded publication still
+requires the approved private route, currently blocked on VM power-on approval.
 
 Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
 operation is concealed; rollback/version/session compatibility is documented.

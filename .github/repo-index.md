@@ -42,8 +42,14 @@ coordinator impersonation permission already exists. A supported platform/SDK
 identity-propagation remedy remains blocked, with no principal substitution.
 The pinned SDK preserves supplied identity through durable task recovery in an
 offline regression. Exact-response read-only ingress-presence observation is
-implemented locally, but its live attempt could not connect because the lab
-command VM is deallocated. Power-on needs separate operator approval.
+implemented locally. The Bastion observation could not connect because the lab
+command VM is deallocated; power-on needs separate operator approval. Existing
+Azure Monitor query access independently confirms user/call present at the
+coordinator and user absent/call present at the architect, with correlated
+Responses POST HTTP 200. Local native calls now forward SDK
+`context.platform_headers()` directly, without re-delegating the derived platform
+user or forwarding the container-only user header. Legacy behavior and strict
+scope checks remain unchanged. This candidate fix is not deployed/live-accepted.
 Known-response stream recovery is deployed. The known
 responses and pending parent are preserved, not resent. Completed remote work, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.

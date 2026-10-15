@@ -36,6 +36,15 @@ authorizes substituting a principal inside the container or weakening
 `FoundryRequestScope`. Supported platform/SDK identity propagation remains a
 live blocker. Known-response stream recovery is deployed; the fresh coordinator
 preserves `SPECIALIST_INCOMPLETE` without resend or concealment.
+Read-only existing Azure Monitor telemetry further confirms the known architect
+enters the SDK with call identity but no user identity, while its coordinator
+enters with both; the correlated architect Responses POST returned HTTP 200.
+This rules out loss solely during background recovery, but is not a live wire
+capture. The local, undeployed correction uses the pinned SDK's
+`context.platform_headers()` for native internal calls rather than re-delegating
+the already-derived user ID or forwarding a container-only identity header.
+The legacy transport is unchanged. Trusted scope gates remain strict; genuine
+remote acceptance must verify the correction after guarded publication.
 Pending states and response IDs remain preserved; no repeat inference was sent.
 Offline construction is not proof of hosted identity/context correctness.
 Completed remote specialist work, end-to-end managed-identity artifact

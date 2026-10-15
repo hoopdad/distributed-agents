@@ -6,7 +6,7 @@ generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; 109 application tests pass on Windows
+artifact-plane source are implemented; 110 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
@@ -43,8 +43,20 @@ Offline regression also verifies that the pinned SDK preserves supplied
 identity through durable background-task serialization and handler entry, and
 rejects missing identity. Local read-only observation can extract only ingress
 identity-presence booleans for the exact known response. The next observation
-could not connect because the approved lab command VM is deallocated; starting
-it requires separate approval, not a VPN or permission change.
+could not connect because the approved lab command VM is deallocated. Existing
+Azure Monitor query access subsequently confirmed the known coordinator's
+ingress has both user and call identity, but the known architect's ingress
+has call identity only; its correlated Responses POST returned HTTP 200.
+Those observations do not expose header values or prove the live outbound
+headers, which telemetry did not capture.
+**Local candidate fix, not deployed:** native internal calls now use the pinned
+SDK's `context.platform_headers()` directly. The opaque call ID carries the
+original caller context; native code no longer re-delegates the already-derived
+platform user ID or forwards the unsupported container-only user header.
+The legacy adapter remains unchanged, and missing trusted identity still fails
+closed. A real resource/client/HTTP-edge regression fails before this fix and
+passes after it, with exact endpoint and JSON session binding. Live validation
+and guarded publication remain blocked on separate command-VM power-on approval.
 No failed turn was resent or pending state cleared. The lab's scoped
 artifact infrastructure apply added 14 resources; a subsequent scoped plan/apply
 confirmed zero changes. Read-only metadata verifies private containers, retained grants

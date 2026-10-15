@@ -275,6 +275,59 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         self.addCleanup(self.router.stop)
         self.addCleanup(self.calibration.stop)
 
+    async def test_native_resources_forward_sdk_context_without_redelegating_platform_user(self):
+        import httpx2
+        from azure.ai.agentserver.core import FoundryAgentRequestContext
+        from azure.core.credentials import AccessToken
+        from agent_framework.exceptions import ChatClientException
+        from demo.contracts import PROJECT
+        from urllib.parse import urlsplit
+        self.runtime.context = FoundryAgentRequestContext(
+            session_id=self.runtime.scope.parent_session, user_id=self.runtime.scope.principal,
+            call_id="synthetic-opaque-call",
+        )
+        seen = []
+        def handle(request):
+            seen.append({"headers": {
+                key: request.headers[key] for key in (
+                    "x-agent-foundry-call-id", "x-ms-user-identity", "x-agent-user-id",
+                ) if key in request.headers
+            }, "method": request.method, "path": request.url.path,
+                "session": json.loads(request.content).get("agent_session_id")})
+            return httpx2.Response(418, json={"error": {
+                "message": "Synthetic context probe.", "type": "probe", "code": "probe",
+            }})
+        credential = MagicMock()
+        credential.__aenter__ = AsyncMock(return_value=credential)
+        credential.__aexit__ = AsyncMock(return_value=False)
+        credential.get_token = AsyncMock(return_value=AccessToken("synthetic-token", 4102444800))
+        store = MagicMock()
+        store.__aenter__ = AsyncMock(return_value=store)
+        store.__aexit__ = AsyncMock(return_value=False)
+        store.verify_private_path = AsyncMock()
+        http = httpx2.AsyncClient(transport=httpx2.MockTransport(handle))
+        session = AgentSession()
+        session.state[FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY] = "a" * 32
+        child = Child(role="architect", name=AGENTS["architect"], version="1",
+                      hosted_id="a" * 32, framework=session.to_dict())
+        with patch("demo.workflow.ManagedIdentityCredential", return_value=credential), \
+                patch("demo.workflow.data_client", return_value=http), \
+                patch("demo.workflow.storage", return_value=store):
+            async with NativeRuntime.resources(self.runtime) as (_, remote, _, _, _, _):
+                stream = remote._client(child).run("Synthetic probe.", session=session, stream=True)
+                with self.assertRaises(ChatClientException):
+                    async with stream:
+                        async for _ in stream:
+                            pass
+        self.assertEqual(seen, [{
+            "headers": {"x-agent-foundry-call-id": "synthetic-opaque-call"},
+            "method": "POST",
+            "path": urlsplit(PROJECT).path + "/agents/" + AGENTS["architect"]
+                    + "/endpoint/protocols/openai/responses",
+            "session": "a" * 32,
+        }])
+        store.verify_private_path.assert_awaited_once()
+
     async def step_to_call(self):
         await self.runtime.begin("Synthetic requirements.")
         action, result = await self.runtime.route(self.runtime.response_id)

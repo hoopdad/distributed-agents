@@ -838,9 +838,11 @@ class StoreAndTransportTests(unittest.IsolatedAsyncioTestCase):
         }
         seen = []
         def handle(request):
-            seen.append({name: request.headers.get(name) for name in headers})
-            self.assertEqual(request.method, "POST")
-            self.assertEqual(request.url.params["agent_session_id"], "a" * 32)
+            seen.append({
+                "headers": {name: request.headers.get(name) for name in headers},
+                "method": request.method, "path": request.url.path,
+                "session": json.loads(request.content).get("agent_session_id"),
+            })
             return httpx2.Response(418, json={"error": {
                 "message": "Synthetic transport probe.", "type": "probe", "code": "probe",
             }})
@@ -859,7 +861,12 @@ class StoreAndTransportTests(unittest.IsolatedAsyncioTestCase):
                     async with stream:
                         async for _ in stream:
                             pass
-        self.assertEqual(seen, [headers])
+        self.assertEqual(seen, [{
+            "headers": headers, "method": "POST",
+            "path": urlsplit(PROJECT).path + "/agents/" + AGENTS["architect"]
+                    + "/endpoint/protocols/openai/responses",
+            "session": "a" * 32,
+        }])
 
     async def test_socks_sends_hostname_to_proxy_without_local_dns_or_direct_fallback(self):
         destinations = []

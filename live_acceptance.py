@@ -61,10 +61,10 @@ def workflow_failure(line):
     return {"phase": match[1], "exception_type": match[2]} if match else None
 
 
-async def observe_host_failure(http, credential, hosted_id, version):
+async def observe_host_failure(http, credential, hosted_id, version, *, role="coordinator"):
     token = await credential.get_token("https://ai.azure.com/.default")
     path = (
-        f"/agents/{quote(AGENTS['coordinator'], safe='')}/versions/{quote(version, safe='')}"
+        f"/agents/{quote(AGENTS[role], safe='')}/versions/{quote(version, safe='')}"
         f"/sessions/{quote(hosted_id, safe='')}:logstream"
     )
     diagnostics = {"failures": [], "limit": None}
@@ -90,14 +90,38 @@ async def observe_host_failure(http, credential, hosted_id, version):
                 while b"\n" in pending:
                     line, pending = pending.split(b"\n", 1)
                     if line.startswith(b"data:"):
-                        failure = workflow_failure(line[5:].strip().decode("utf-8"))
+                        text = line[5:].strip().decode("utf-8")
+                        failure = workflow_failure(text)
                         if failure is not None and failure not in diagnostics["failures"]:
                             diagnostics["failures"].append(failure)
+                        for code in storage_codes(text):
+                            codes = diagnostics.setdefault("storage_codes", [])
+                            if code not in codes:
+                                codes.append(code)
     except TimeoutError:
         if not deadline.expired():
             raise
         diagnostics["limit"] = "time"
     return diagnostics
+
+
+def storage_codes(text):
+    codes = [code for code in (
+        "AuthorizationPermissionMismatch", "AuthorizationFailure", "AuthenticationFailed",
+        "BlobNotFound", "ContainerNotFound", "ResourceNotFoundError", "HttpResponseError",
+        "FoundryStorageError", "FoundryStorageConflictError", "FoundryStoragePreconditionError",
+        "STORAGE_CONTEXT", "ManagedIdentityCredential", "CredentialUnavailableError",
+    ) if re.search(r"\b" + code + r"\b", text)]
+    for message, code in {
+        "Foundry hosted requests require a trusted user ID and call ID.": "NATIVE_HOST_TRUSTED_USER_AND_CALL",
+        "Foundry hosted requests require a platform FOUNDRY_AGENT_SESSION_ID.": "NATIVE_HOST_PLATFORM_SESSION",
+        "The request agent_session_id does not match the platform session ID.": "NATIVE_HOST_SESSION_MISMATCH",
+        "Native hosting requires a freshly built, unrun workflow.": "NATIVE_HOST_FRESH_WORKFLOW",
+        "Native hosting owns checkpoint storage; build the workflow without a store.": "NATIVE_HOST_CHECKPOINT_OWNER",
+    }.items():
+        if message in text:
+            codes.append(code)
+    return codes
 
 
 async def stop_hosting_for_acceptance(http, credential, state, path):
@@ -269,6 +293,28 @@ def validate_exercised_versions(parent_version, metadata, delegations, children)
             raise RuntimeError("EXERCISED_SPECIALIST_PACKAGE_VERSION")
 
 
+async def observe_pending_child(project, response):
+    records = [json.loads(line) for line in response.output_text.splitlines() if line.startswith("{")]
+    results = [record for record in records if record.get("event") == "result"]
+    if len(results) != 1 or results[0].get("native_workflow") != "distributed-agents-v1":
+        return None
+    effect = results[0].get("pending_effect")
+    if not effect or effect.get("role") not in ("architect", "reviewer") or not effect.get("response_id"):
+        return None
+    child = await project.get_openai_client(agent_name=AGENTS[effect["role"]]).responses.retrieve(
+        effect["response_id"],
+    )
+    if child.id != effect["response_id"]:
+        raise RuntimeError("CHILD_RESPONSE_CHANGED")
+    return {
+        "role": effect["role"], "response_id": child.id, "status": child.status,
+        "error_code": child.error.code if child.error else None,
+        "storage_codes": storage_codes(child.error.message) if child.error else [],
+        "agent_session_id": getattr(child, "agent_session_id", None),
+        "parent_hold": results[0]["status"],
+    }
+
+
 async def run(args):
     tenant, subscription, user = verify_lab()
     if args.scenario == "observe":
@@ -294,6 +340,19 @@ async def run(args):
                 result["host_diagnostics"] = await observe_host_failure(
                     http, credential, hosted_id, state["version"],
                 )
+            elif response.status == "completed":
+                result["pending_child"] = await observe_pending_child(project, response)
+                child = result["pending_child"]
+                if child and child["status"] == "failed" and child["agent_session_id"]:
+                    session = await rest(
+                        http, credential, "GET",
+                        f"/agents/{AGENTS[child['role']]}/endpoint/sessions/"
+                        + quote(child["agent_session_id"], safe=""),
+                    )
+                    version = session["version_indicator"]["agent_version"]
+                    child["host_diagnostics"] = await observe_host_failure(
+                        http, credential, child["agent_session_id"], version, role=child["role"],
+                    )
             print(json.dumps(result))
         return
     async with AzureCliCredential(subscription=subscription, process_timeout=30) as credential, \

@@ -27,14 +27,17 @@ and the retired blank-facts calibration are retained. Request hashes bind policy
 and explicit nonempty facts; no offline fixture is
 release evidence. Application Windows/Linux gates pass; artifact infrastructure
 is applied with scoped zero-change convergence. Reproduced native publication
-is complete: architect 14/reviewer 12/coordinator 18 are active with unchanged
-identities; rollback 13/11/17 is retained. Initial live acceptance failed during
-native workflow preparation. Coordinator 19's diagnostic release proves
+is complete: corrected architect 15/reviewer 13/coordinator 20 are active on
+common bundle `eff3a387d933973de582ff64f48373f63c475772bb314f063e0ef9425d488f59`
+with unchanged identities and earlier versions retained. Coordinator 19 proved
 `DECISION_CALIBRATION_PROVENANCE`: absent facts became blank in the Windows
 loader but defaulted nonempty in hosting. The local correction truly unsets
 missing options, forwards explicit facts to all roles and validates the fresh
-genuine calibration before packaging, but is not yet published. The known
-response and pending parent are preserved, not resent. Remote calls, MI private
+genuine calibration before packaging. Live execution now writes requirements and
+a routing decision; the architect fails SDK preparation (`RuntimeError`,
+`storage_error`) and its known operation is explicitly held. Local SDK-scope
+diagnostics and known-response stream recovery are not yet deployed. The known
+responses and pending parent are preserved, not resent. Completed remote work, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.
 The approved linked-lab policy gives project agents account-wide Blob
 Contributor: ownership/publication gates remain application-enforced, not

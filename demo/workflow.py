@@ -10,6 +10,7 @@ from contextlib import AsyncExitStack, asynccontextmanager
 from pathlib import Path
 
 from agent_framework import Agent, AgentSession, Executor, WorkflowBuilder, WorkflowContext, handler
+from agent_framework.exceptions import ChatClientException
 from agent_framework.foundry import FoundryChatClient
 from agent_framework.foundry import FoundryAgent
 from agent_framework_foundry_hosting import (
@@ -78,6 +79,10 @@ class NativeRemoteAgents(RemoteAgents):
         except DemoError as exc:
             if known_id is None or exc.code != "SPECIALIST_INCOMPLETE":
                 raise
+        except (ChatClientException, TimeoutError):
+            if known_id is None:
+                raise
+            LOGGER.warning("Native specialist stream interrupted; retrieving its persisted response without resend.")
         return await self.recover(child, known_id)
 
     async def recover(self, child, response_id):

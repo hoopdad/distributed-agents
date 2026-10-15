@@ -12,6 +12,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 from agent_framework import AgentSession
+from agent_framework.exceptions import ChatClientException
 from agent_framework.foundry import FoundryAgent
 from agent_framework_foundry import FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY
 from azure.identity.aio import AzureCliCredential
@@ -216,16 +217,22 @@ async def chat(args):
                 write_state(state_path, state)
                 stream = agent.run(text, session=session, stream=True)
                 printed = ""
-                async with stream:
-                    async for update in stream:
-                        if update.response_id:
-                            state["pending_response"] = update.response_id
-                            write_state(state_path, state)
-                        if update.text:
-                            print(update.text, end="", flush=True)
-                            printed += update.text
-                    result = await stream.get_final_response()
-                if result.finish_reason != "stop":
+                try:
+                    async with stream:
+                        async for update in stream:
+                            if update.response_id:
+                                state["pending_response"] = update.response_id
+                                write_state(state_path, state)
+                            if update.text:
+                                print(update.text, end="", flush=True)
+                                printed += update.text
+                        result = await stream.get_final_response()
+                except (ChatClientException, TimeoutError) as exc:
+                    if not native or not state.get("pending_response"):
+                        raise
+                    print(f"Recovering known parent after {type(exc).__name__}; no resend.", file=sys.stderr)
+                    result = None
+                if result is None or result.finish_reason != "stop":
                     if not native or not state.get("pending_response"):
                         raise DemoError("PARENT_INCOMPLETE")
                     response = await recover_parent(project, hosted_id, state["pending_response"])

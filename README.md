@@ -6,16 +6,14 @@ generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; 101 application tests pass on Windows
+artifact-plane source are implemented; 106 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
-**Deployed, but not live-accepted:** architect 14, reviewer 12 and coordinator 18
-were published on the reproduced native bundle
-`a86c873ee943f090f0c8e5e20305c92127be1507de00b00f3089b935ff6dd26b`.
-Their identities are unchanged; rollback versions 13/11/17 are retained.
-Coordinator 19 is now active on a diagnostic bundle; architect 14 and reviewer
-12 remain unchanged. This intentionally mixed diagnostic release is not accepted.
+**Deployed, but not live-accepted:** architect 15, reviewer 13 and coordinator 20
+are active on corrected bundle
+`eff3a387d933973de582ff64f48373f63c475772bb314f063e0ef9425d488f59`.
+Their identities are unchanged; earlier versions and diagnostic packages are retained.
 Safe diagnostics identify `DECISION_CALIBRATION_PROVENANCE`: the Windows loader
 represented absent `DEMO_FACT_SHEET` as an empty variable during calibration,
 whereas deployment omitted it and used the public nonempty default. The loader
@@ -23,7 +21,16 @@ now truly removes absent settings; native release requires explicit nonempty
 facts, forwarded to all roles and validated before packaging. A genuine fresh
 calibration with those facts exposed a missing-workload routing ambiguity.
 Routing-v3 clarifies that facts supply constraints, not a missing user purpose.
-The corrected source and calibration have not yet been published.
+The corrected facts and genuine calibration are deployed. The first live turn
+passed preparation, wrote requirements and a routing decision, then held the
+architect operation after timeout. Read-only exact-response observation confirms
+the architect failed during SDK hosting preparation (`RuntimeError`, provider
+`storage_error`), not a proven storage permission failure. The known parent and
+child IDs and uncertain operation remain preserved without resend.
+Additional local diagnostics distinguish missing trusted SDK scope without
+logging values. Native client stream errors with persisted response IDs now
+retrieve only those IDs; unknown effects remain held. These additions are not
+yet deployed.
 No failed turn was resent or pending state cleared. The lab's scoped
 artifact infrastructure apply added 14 resources; a subsequent scoped plan/apply
 confirmed zero changes. Read-only metadata verifies private containers, retained grants

@@ -621,6 +621,109 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
 
 
 class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
+    async def test_sdk_preparation_filter_reports_only_missing_trusted_scope(self):
+        import logging
+        from demo.host import NativePreparationDiagnostics
+        config = SimpleNamespace(session_id="synthetic-session")
+        diagnostic = NativePreparationDiagnostics(config)
+        context = SimpleNamespace(session_id="synthetic-session", user_id=None, call_id="synthetic-private-call")
+        record = logging.LogRecord(
+            "agent_framework_foundry_hosting._workflow_responses", logging.ERROR, "", 1,
+            "Native Responses workflow failed during %s (%s).", ("preparation", "RuntimeError"), None,
+        )
+        with patch("demo.host.get_request_context", return_value=context), \
+                self.assertLogs("demo.host", level="ERROR") as logs:
+            self.assertTrue(diagnostic.filter(record))
+        self.assertIn("NATIVE_HOST_PRINCIPAL", logs.output[0])
+        self.assertNotIn("synthetic-private-call", logs.output[0])
+
+    async def test_native_specialist_stream_failure_recovers_only_a_known_response(self):
+        from agent_framework.exceptions import ChatClientException
+        from demo.workflow import NativeRemoteAgents
+        remote = NativeRemoteAgents(None, {})
+        async def interrupted(child, brief, remember):
+            await remember("known-response")
+            raise ChatClientException("Synthetic parser failure.")
+        remote.recover = AsyncMock(return_value="existing output")
+        observed = AsyncMock()
+        with patch("demo.foundry.RemoteAgents.invoke", side_effect=interrupted) as invoke:
+            self.assertEqual(await remote.invoke(None, {}, observed), "existing output")
+        self.assertEqual(invoke.await_count, 1)
+        remote.recover.assert_awaited_once_with(None, "known-response")
+        with patch("demo.foundry.RemoteAgents.invoke", side_effect=ChatClientException("No known ID.")):
+            with self.assertRaises(ChatClientException):
+                await remote.invoke(None, {}, observed)
+        self.assertEqual(remote.recover.await_count, 1)
+
+    async def test_terminal_parser_failure_recovers_known_parent_without_resend(self):
+        from agent_framework.exceptions import ChatClientException
+        from demo.terminal import chat, write_state
+        class Interrupted:
+            def __init__(self):
+                self.first = True
+            async def __aenter__(self):
+                return self
+            async def __aexit__(self, *args):
+                return False
+            def __aiter__(self):
+                return self
+            async def __anext__(self):
+                if self.first:
+                    self.first = False
+                    return AgentResponseUpdate(response_id="known-parent-response")
+                raise ChatClientException("Synthetic timestamp parser failure.")
+        session = AgentSession()
+        session.state[FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY] = "synthetic-parent"
+        state = dict(schema_version=1, user="user", tenant="tenant", version="20", runtime="native",
+                     framework=session.to_dict(), bound=True, pending=False)
+        agent = MagicMock()
+        agent.run.return_value = Interrupted()
+        recovered = SimpleNamespace(id="known-parent-response", output_text=json.dumps({
+            "event": "result", "status": "ACCEPTED_ADVISORY", "pending_effect": None,
+        }))
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "parent.json"
+            write_state(path, state, new=True)
+            with patch("demo.terminal.verify_lab", return_value=("tenant", "subscription", "user")), \
+                    patch("demo.terminal.AzureCliCredential"), patch("demo.terminal.data_client"), \
+                    patch("demo.terminal.ProjectClient"), patch("demo.terminal.FoundryAgent", return_value=agent), \
+                    patch("demo.terminal.rest", AsyncMock(return_value={
+                        "status": "active", "version_indicator": {"agent_version": "20"},
+                    })), patch("demo.terminal.recover_parent", AsyncMock(return_value=recovered)) as recover:
+                await chat(SimpleNamespace(session_file=str(path), socks=None, native=True,
+                                           recover_only=False, message="Synthetic turn.", show_ids=False))
+            persisted = json.loads(path.read_text())
+        self.assertFalse(persisted["pending"])
+        self.assertEqual(persisted["framework"]["service_session_id"], "known-parent-response")
+        self.assertEqual(agent.run.call_count, 1)
+        self.assertEqual(recover.await_count, 1)
+
+    async def test_storage_and_scope_observation_exposes_only_fixed_codes(self):
+        from live_acceptance import storage_codes
+        self.assertEqual(storage_codes("private-synthetic-value"), [])
+        self.assertEqual(storage_codes(
+            "private-synthetic-value RuntimeError: Foundry hosted requests require a trusted user ID and call ID."
+        ), ["NATIVE_HOST_TRUSTED_USER_AND_CALL"])
+
+    async def test_observation_retrieves_only_the_known_child_response(self):
+        from live_acceptance import observe_pending_child
+        child = SimpleNamespace(
+            id="known-child", status="completed", error=None,
+            model_dump=lambda **kwargs: {"id": "known-child", "status": "completed"},
+        )
+        client = SimpleNamespace(responses=SimpleNamespace(retrieve=AsyncMock(return_value=child)))
+        project = SimpleNamespace(get_openai_client=MagicMock(return_value=client))
+        response = SimpleNamespace(output_text=json.dumps({
+            "event": "result", "native_workflow": "distributed-agents-v1", "status": "TimeoutError",
+            "pending_effect": {"role": "architect", "response_id": "known-child"},
+        }))
+        proof = await observe_pending_child(project, response)
+        self.assertEqual(proof["status"], "completed")
+        client.responses.retrieve.assert_awaited_once_with("known-child")
+        child.id = "different"
+        with self.assertRaisesRegex(RuntimeError, "CHILD_RESPONSE_CHANGED"):
+            await observe_pending_child(project, response)
+
     async def test_hosting_restart_stops_exact_active_parent_and_proves_idle_compute(self):
         from live_acceptance import stop_hosting_for_acceptance
         state = {

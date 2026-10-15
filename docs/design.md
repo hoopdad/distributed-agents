@@ -8,11 +8,11 @@ the deployment descriptor selects native hosting and remote specialists.
 Application tests pass on Windows and Linux/amd64. The lab applied the 14
 artifact resources and verified scoped zero-change convergence; private
 container, identity-grant and retention metadata checks pass. Reproduced bundled
-publication is complete: architect 14, reviewer 12 and coordinator 18 are active
-on SHA256 `a86c873ee943f090f0c8e5e20305c92127be1507de00b00f3089b935ff6dd26b`,
-with unchanged identities and rollback versions 13/11/17 retained.
-Coordinator 19 now runs a safe diagnostic bundle, leaving the other two roles
-unchanged. Its exact preparation failure is
+corrected publication is complete: architect 15, reviewer 13 and coordinator 20
+are active on SHA256
+`eff3a387d933973de582ff64f48373f63c475772bb314f063e0ef9425d488f59`,
+with unchanged identities and earlier/diagnostic versions retained.
+Coordinator 19's earlier diagnostic release established the original failure:
 `DECISION_CALIBRATION_PROVENANCE`: the Windows loader converted an absent fact
 sheet into a blank variable during calibration; deployment omitted it and used
 the nonempty public default. The correction truly removes absent optional
@@ -22,7 +22,13 @@ fact-sheet constraints from missing user purpose; its genuine twelve-call
 calibration passes all eight ready and four missing-input cases. The unchanged
 selection algorithm selects threshold 0.5/margin 0. Historical observations and
 the retired calibration remain intact; the frozen corpus/coverage gates are
-unchanged. Corrected code and calibration are not yet deployed.
+unchanged. Corrected facts and calibration are deployed. Initial live execution
+writes requirements and a routing decision, but the architect fails during SDK
+hosting preparation (`RuntimeError`, provider `storage_error`) and the coordinator
+preserves the known effect as uncertain after timeout. This is not proof of a
+permission problem. Read-only observation retrieves the exact child response and
+bounded sanitized logs. New local trusted-scope diagnostics and known-response
+stream recovery are not yet deployed; no operation is resent or concealed.
 Pending states and response IDs remain preserved; no repeat inference was sent.
 Offline construction is not proof of hosted identity/context correctness.
 Remote specialist calls, private managed-identity Blob access, accepted artifact

@@ -6,15 +6,15 @@ generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; 106 application tests pass on Windows
+artifact-plane source are implemented; 107 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
-**Deployed, but not live-accepted:** architect 15, reviewer 13 and coordinator 20
+**Deployed, but not live-accepted:** architect 16, reviewer 14 and coordinator 21
 are active on corrected bundle
-`eff3a387d933973de582ff64f48373f63c475772bb314f063e0ef9425d488f59`.
+`b3556f4241232bb301c80cfe4a57a726cc7411f2dba105a27fcfb573cb49da86`.
 Their identities are unchanged; earlier versions and diagnostic packages are retained.
-Safe diagnostics identify `DECISION_CALIBRATION_PROVENANCE`: the Windows loader
+Earlier diagnostics identified `DECISION_CALIBRATION_PROVENANCE`: the Windows loader
 represented absent `DEMO_FACT_SHEET` as an empty variable during calibration,
 whereas deployment omitted it and used the public nonempty default. The loader
 now truly removes absent settings; native release requires explicit nonempty
@@ -27,15 +27,23 @@ architect operation after timeout. Read-only exact-response observation confirms
 the architect failed during SDK hosting preparation (`RuntimeError`, provider
 `storage_error`), not a proven storage permission failure. The known parent and
 child IDs and uncertain operation remain preserved without resend.
-Additional local diagnostics distinguish missing trusted SDK scope without
-logging values. Native client stream errors with persisted response IDs now
-retrieve only those IDs; unknown effects remain held. These additions are not
-yet deployed.
+Deployed diagnostics identify the exact architect gate:
+`NATIVE_HOST_PRINCIPAL`. The SDK receives no trusted user identity before the
+application factory can run. An actual pinned-SDK HTTP-edge regression confirms
+the outgoing delegated-identity headers are preserved; read-only role inspection
+confirms the coordinator already has the explicit documented
+`UserIdentityImpersonation/action` permission. The remaining blocker is trusted
+identity propagation, not evidence for additional storage grants.
+Deployed native clients recover stream errors only through persisted response
+IDs; unknown effects remain held. Continuity, hosting stop/resume and isolation
+were not reached. A supported platform/SDK identity-propagation remedy remains
+required; a session string, model output or copied user header cannot replace
+the missing trusted hosting identity.
 No failed turn was resent or pending state cleared. The lab's scoped
 artifact infrastructure apply added 14 resources; a subsequent scoped plan/apply
 confirmed zero changes. Read-only metadata verifies private containers, retained grants
-and retention. Remote specialist execution, private managed-identity Blob
-access, accepted artifact provenance, parent isolation and actual hosting
+and retention. Completed remote specialist work, end-to-end managed-identity
+artifact provenance, parent isolation and actual hosting
 restart remain unverified. Publication and metadata do not establish those gates.
 
 **Approved lab permission model:** the linked lab now grants its project agents

@@ -8,9 +8,9 @@ the deployment descriptor selects native hosting and remote specialists.
 Application tests pass on Windows and Linux/amd64. The lab applied the 14
 artifact resources and verified scoped zero-change convergence; private
 container, identity-grant and retention metadata checks pass. Reproduced bundled
-corrected publication is complete: architect 15, reviewer 13 and coordinator 20
+corrected publication is complete: architect 16, reviewer 14 and coordinator 21
 are active on SHA256
-`eff3a387d933973de582ff64f48373f63c475772bb314f063e0ef9425d488f59`,
+`b3556f4241232bb301c80cfe4a57a726cc7411f2dba105a27fcfb573cb49da86`,
 with unchanged identities and earlier/diagnostic versions retained.
 Coordinator 19's earlier diagnostic release established the original failure:
 `DECISION_CALIBRATION_PROVENANCE`: the Windows loader converted an absent fact
@@ -27,11 +27,18 @@ writes requirements and a routing decision, but the architect fails during SDK
 hosting preparation (`RuntimeError`, provider `storage_error`) and the coordinator
 preserves the known effect as uncertain after timeout. This is not proof of a
 permission problem. Read-only observation retrieves the exact child response and
-bounded sanitized logs. New local trusted-scope diagnostics and known-response
-stream recovery are not yet deployed; no operation is resent or concealed.
+bounded sanitized logs. Deployed SDK-boundary diagnostics identify
+`NATIVE_HOST_PRINCIPAL`: the architect has no trusted user context before the
+application factory. The actual pinned-SDK HTTP-edge test preserves delegated
+headers, and read-only coordinator RBAC inspection confirms the explicit
+`UserIdentityImpersonation/action` grant already exists. Neither observation
+authorizes substituting a principal inside the container or weakening
+`FoundryRequestScope`. Supported platform/SDK identity propagation remains a
+live blocker. Known-response stream recovery is deployed; the fresh coordinator
+preserves `SPECIALIST_INCOMPLETE` without resend or concealment.
 Pending states and response IDs remain preserved; no repeat inference was sent.
 Offline construction is not proof of hosted identity/context correctness.
-Remote specialist calls, private managed-identity Blob access, accepted artifact
+Completed remote specialist work, end-to-end managed-identity artifact
 provenance, two-parent isolation and actual hosting restart/resume remain
 unverified. Metadata is not managed-identity data-plane proof.
 All four real twelve-case calibration journals remain preserved, including both

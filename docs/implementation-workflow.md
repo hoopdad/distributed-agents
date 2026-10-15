@@ -152,6 +152,19 @@ Native acceptance validates returned artifact envelopes/hashes, exact reviewer
 prerequisites, accepted content, producer sessions/versions and decision records,
 not just a success-shaped final message.
 
+Current live blocker: the nested architect fails SDK preparation at
+`NATIVE_HOST_PRINCIPAL`, before the application factory. The pinned-SDK
+HTTP-edge regression preserves the delegated identity headers and read-only
+RBAC inspection confirms the coordinator's explicit impersonation grant.
+Follow the supported [delegated-user isolation contract](https://learn.microsoft.com/azure/foundry/agents/how-to/isolate-sessions-per-user)
+and inspect the platform/SDK propagation path; do not add speculative storage
+grants, synthesize a trusted user or relax the hosting scope gate. The first
+operation remains held, so continuation/restart/isolation were not reached.
+The reviewer release reported a nonzero CLI exit after version 14 became
+active with the exact hash. Its observed receipt was reconciled without
+resending; only the coordinator, explicitly never attempted in that receipt,
+was published separately. Preserve both receipts and all rollback packages.
+
 Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
 operation is concealed; rollback/version/session compatibility is documented.
 If unavailable, state exactly which condition failed. Do not label offline

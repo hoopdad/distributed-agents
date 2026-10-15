@@ -27,16 +27,20 @@ and the retired blank-facts calibration are retained. Request hashes bind policy
 and explicit nonempty facts; no offline fixture is
 release evidence. Application Windows/Linux gates pass; artifact infrastructure
 is applied with scoped zero-change convergence. Reproduced native publication
-is complete: corrected architect 15/reviewer 13/coordinator 20 are active on
-common bundle `eff3a387d933973de582ff64f48373f63c475772bb314f063e0ef9425d488f59`
+is complete: corrected architect 16/reviewer 14/coordinator 21 are active on
+common bundle `b3556f4241232bb301c80cfe4a57a726cc7411f2dba105a27fcfb573cb49da86`
 with unchanged identities and earlier versions retained. Coordinator 19 proved
 `DECISION_CALIBRATION_PROVENANCE`: absent facts became blank in the Windows
 loader but defaulted nonempty in hosting. The local correction truly unsets
 missing options, forwards explicit facts to all roles and validates the fresh
 genuine calibration before packaging. Live execution now writes requirements and
 a routing decision; the architect fails SDK preparation (`RuntimeError`,
-`storage_error`) and its known operation is explicitly held. Local SDK-scope
-diagnostics and known-response stream recovery are not yet deployed. The known
+`storage_error`) and its known operation is explicitly held. Deployed SDK-scope
+diagnostics prove `NATIVE_HOST_PRINCIPAL`: no trusted user reaches the architect.
+An actual HTTP-edge test preserves delegation headers; the required explicit
+coordinator impersonation permission already exists. A supported platform/SDK
+identity-propagation remedy remains blocked, with no principal substitution.
+Known-response stream recovery is deployed. The known
 responses and pending parent are preserved, not resent. Completed remote work, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.
 The approved linked-lab policy gives project agents account-wide Blob

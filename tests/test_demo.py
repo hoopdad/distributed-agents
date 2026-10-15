@@ -827,6 +827,40 @@ class StoreAndTransportTests(unittest.IsolatedAsyncioTestCase):
                 self.assertEqual(client.default_headers["x-agent-user-id"], "trusted-user")
                 self.assertEqual(client.default_headers["x-client-debug"], "preserved")
 
+    async def test_native_agent_wire_request_preserves_trusted_delegation_headers(self):
+        from agent_framework.exceptions import ChatClientException
+        from agent_framework_foundry import FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY
+        from demo.workflow import NativeRemoteAgents
+        headers = {
+            "x-agent-foundry-call-id": "synthetic-call",
+            "x-ms-user-identity": "synthetic-user",
+            "x-agent-user-id": "synthetic-user",
+        }
+        seen = []
+        def handle(request):
+            seen.append({name: request.headers.get(name) for name in headers})
+            self.assertEqual(request.method, "POST")
+            self.assertEqual(request.url.params["agent_session_id"], "a" * 32)
+            return httpx2.Response(418, json={"error": {
+                "message": "Synthetic transport probe.", "type": "probe", "code": "probe",
+            }})
+        credential = SimpleNamespace(get_token=AsyncMock(
+            return_value=AccessToken("synthetic-token", 4102444800),
+        ))
+        session = AgentSession()
+        session.state[FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY] = "a" * 32
+        child = Child(role="architect", name=AGENTS["architect"], version="1",
+                      hosted_id="a" * 32, framework=session.to_dict())
+        async with httpx2.AsyncClient(transport=httpx2.MockTransport(handle)) as http:
+            async with ProjectClient(credential, http, headers) as project:
+                agent = NativeRemoteAgents(project, headers)._client(child)
+                with self.assertRaises(ChatClientException):
+                    stream = agent.run("Synthetic probe.", session=session, stream=True)
+                    async with stream:
+                        async for _ in stream:
+                            pass
+        self.assertEqual(seen, [headers])
+
     async def test_socks_sends_hostname_to_proxy_without_local_dns_or_direct_fallback(self):
         destinations = []
         closed = asyncio.Event()

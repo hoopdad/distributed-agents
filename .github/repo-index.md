@@ -65,6 +65,10 @@ also reads the exact parent's bounded logs. A real native resource/client/
 transport regression verifies this wiring; all 116 application tests pass on
 Windows and Linux. These diagnostics do not authorize calls or resolve the
 propagation failure.
+Read-only exact-version reconciliation confirms coordinator 23 returns HTTP
+404 while coordinator 22 remains active. The original diagnostic publisher's
+owner and outcome are unbound; new retained lab observation/inspection tools
+do not authorize publication replay or establish original mount closure.
 Known-response stream recovery is deployed. The known
 responses and pending parent are preserved, not resent. Completed remote work, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.

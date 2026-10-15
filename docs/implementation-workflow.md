@@ -211,6 +211,21 @@ authorize a replay. Its real-resource/client/transport regression and all
 116 application tests pass on Windows/Linux; guarded publication must precede
 any claim about live outbound headers.
 
+The [runtime contract](https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agent-contract#platform-request-headers-container-protocol-200)
+and [protocol migration guide](https://learn.microsoft.com/azure/foundry/agents/how-to/migrate-hosted-agent-preview#container-protocol-200)
+explicitly include calls to **other agents** in opaque-call propagation.
+They keep the platform-injected user identifier container-side. External
+middle-tier delegation examples do not establish a different supported nested
+identity mechanism or precedence when both headers are supplied. Do not treat
+reintroducing user delegation as an evidenced fix for this failure.
+
+An interrupted diagnostic publication must be reconciled independently of
+inference. Latest-agent metadata establishes the currently active version, not
+the absence of another version or the original publisher's outcome. An empty
+log or missing local PID likewise cannot authorize another publication.
+Inspect exact version metadata and original release ownership through bounded
+read-only tooling; preserve unknown holds when either remains unresolved.
+
 Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
 operation is concealed; rollback/version/session compatibility is documented.
 If unavailable, state exactly which condition failed. Do not label offline

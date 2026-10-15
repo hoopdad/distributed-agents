@@ -61,6 +61,11 @@ without logging raw IDs, identity/header values, tokens or content; it grants
 no authority. Known-child failure observation additionally reads the exact
 parent's bounded logs. No trusted-scope or legacy transport behavior changes.
 Pending states and response IDs remain preserved; no repeat inference was sent.
+Subsequent read-only reconciliation confirms coordinator 22 is still active
+and exact version 23 returns HTTP 404. The interrupted diagnostic publisher
+has no recoverable package-bound owner/completion receipt, so its outcome and
+original mount closure remain unknown. Retained lab exact-version observation
+and independent owner inspection do not grant retry or cleanup authority.
 Offline construction is not proof of hosted identity/context correctness.
 Completed remote specialist work, end-to-end managed-identity artifact
 provenance, two-parent isolation and actual hosting restart/resume remain

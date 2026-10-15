@@ -170,6 +170,12 @@ allowlisted workflow phase/exception classifications, not arbitrary log content.
 Diagnostic-enabled native versions additionally log an allowlisted failing
 preparation check, never the rejected identity, endpoint, value or exception text.
 This is diagnosis, not retry permission or a hosting restart test.
+Read-only reconciliation on 2026-10-15 confirmed coordinator 22 remains active
+and an exact coordinator-version-23 GET returns HTTP 404. The interrupted
+diagnostic publisher has no recoverable package-bound owner/completion receipt;
+its outcome and original mount closure remain unknown. The retained lab now
+has exact-version observation and a separate non-mutating owner inspector.
+Neither negative metadata nor an absent process authorizes publication replay.
 The lab wrapper's explicit `recover` scenario retrieves only a known pending
 response. Known-parent `followup` and opt-in `restart` scenarios do not create a
 replacement parent. `-Mode Acceptance -HostingRestart` additionally tests the

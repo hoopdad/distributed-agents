@@ -10,10 +10,12 @@ artifact-plane source are implemented; 132 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
-**Deployed, but not live-accepted:** architect 17, reviewer 15 and coordinator 22
-are active on bundle
+**Deployed, but not live-accepted:** architect 17 and reviewer 15 retain bundle
 `51064aa426d28d0cfa6b126eac7fce5ab0e9a5a0667267ef105884c1805adde2`.
-Their identities are unchanged; earlier versions and diagnostic packages are retained.
+Coordinator 23 is active on diagnostic bundle
+`03aa0da34942ca66283a37dae8b6edab04ac053291937eebdc2464cdb8f839d9`;
+coordinator 22 and earlier versions/packages are retained. Identities are unchanged.
+This intentional mixed diagnostic deployment is not final common-bundle acceptance.
 Earlier diagnostics identified `DECISION_CALIBRATION_PROVENANCE`: the Windows loader
 represented absent `DEMO_FACT_SHEET` as an empty variable during calibration,
 whereas deployment omitted it and used the public nonempty default. The loader
@@ -66,15 +68,30 @@ SDK propagation change did not resolve the live failure. Its cause remains
 unresolved; neither a platform defect nor a different permission grant has
 been established. Followup, hosting restart and isolation were not reached.
 Both acceptance and observation closed their owned jobs/listeners.
-**Local diagnostics, not deployed:** the native HTTP transport now records only
+**Diagnostic deployed and exercised:** the native HTTP transport records only
 fixed-role presence/match booleans at the actual specialist Responses POST
 boundary, correlated by a hash of the parent response ID. It never logs header
 values, tokens, identities, request content or the raw response ID. Read-only
 observation also reads the exact parent's bounded logs when its known child
-fails. This closes an instrumentation gap after publication; it is not a
+fails. One approved prospective coordinator-only publication succeeded with
+durable pre-dispatch source/package/version/owner evidence and separately proven
+runner and outer process/listener/mount cleanup. One fresh synthetic parent
+then wrote requirements and a genuine Decision-1 result but held
+`SPECIALIST_INCOMPLETE`. Exact-response read-only observation captured the actual
+architect outbound call header: present and equal to the captured SDK context.
+No delegated-user or container-user header was sent. The exact architect child
+still received call identity without trusted user identity and failed
+`NATIVE_HOST_PRINCIPAL`. Diagnostic and observation jobs/listeners closed.
+The instrumentation gap is closed; this is not a
 verified identity-propagation fix or authorization mechanism. Legacy transport
 and all request/scope gates remain unchanged.
-No failed turn was resent or pending state cleared. The lab's scoped
+The single-attempt exception is consumed. The original interrupted publication
+remains `UNKNOWN`, with original ownership/cleanup unproven; the new successful
+attempt does not reconcile it. No held turn was resent or cleared. The next
+step is a provider trace of the exact new pair and a supported platform/SDK
+remedy, not another speculative publication, identity bypass or permission
+change. No platform defect has been proven; the prepared provider case is unsent.
+The lab's scoped
 artifact infrastructure apply added 14 resources; a subsequent scoped plan/apply
 confirmed zero changes. Read-only metadata verifies private containers, retained grants
 and retention. Completed remote specialist work, end-to-end managed-identity
@@ -103,6 +120,16 @@ Open this repository in Copilot and submit the invocation in
 the gated implementation/deployment workflow, safety boundaries, and acceptance
 criteria. Repository instructions, two bounded agents, three project skills,
 and a repository index are included; no external plugin is required.
+
+For the current identity blocker, the
+[recovery design and dependency-analyzed plan](docs/identity-recovery-plan.md)
+defines the application objective, parallel investigation lanes, publication
+reconciliation, diagnostic decision tree and final live acceptance gates.
+The next-session invocation resumes that plan rather than rebuilding the app.
+Its supported-remedy assessment cites the current runtime contract and relevant
+SDK fixes: none reviewed establishes a correction for the captured missing-user
+ingress. The provider-dependent execution gate remains blocked; no speculative
+dependency upgrade or identity-header workaround was applied.
 
 Read the [design](docs/design.md), [migration plan](docs/migration-plan.md), and
 [implementation workflow](docs/implementation-workflow.md) first. The exhaustive
@@ -176,6 +203,25 @@ diagnostic publisher has no recoverable package-bound owner/completion receipt;
 its outcome and original mount closure remain unknown. The retained lab now
 has exact-version observation and a separate non-mutating owner inspector.
 Neither negative metadata nor an absent process authorizes publication replay.
+The operator has explicitly approved ONE prospective coordinator-only lab
+diagnostic risk exception, retaining that original publication as **UNKNOWN**
+with delayed-publication and unproven historical-cleanup risks. Before the new
+attempt, the retained publisher must pass local gates for durable pre-dispatch
+owner/source/package/project/version binding, flushed phases/server IDs and
+independent terminal/cleanup outcomes. The parent owns the private exact
+authority/attempt record and freshly checks all deployed services; version23 is
+not assumed next. The reviewed diagnostic package must match current source;
+any rebuild needs exact provenance/review. New output/stage/ports/owner must be
+isolated and the publisher serialized; only positively identified new owned
+resources may be cleaned. A second unknown outcome or ownership consumes the
+exception and stops further attempts. After exact diagnostic version/package/
+identity and new owned cleanup are verified, ONE fresh synthetic App/native
+parent and read-only exact-response observation may discriminate outbound
+context mismatch from downstream missing identity. A mixed diagnostic bundle is
+not final acceptance. See the [recovery plan](docs/identity-recovery-plan.md)
+for R/L/D gates and finite exits. This documents approval, not execution:
+original inference holds, historical cleanup uncertainty and unmet G1-G8
+remain; no provider submission or speculative further release is authorized.
 For repeatable identity triage, run
 `<absolute-python-path> scripts\diagnose_identity.py` with the existing pinned
 environment. It checks all applicable dependency-lock pins and runs five
@@ -232,6 +278,14 @@ state to force a retry.
 The local handoff includes an ignored `.azure` copy and validated
 `.local\lab-settings.json`. Neither is public configuration, deployment
 permission, nor proof of authentication. No Azure CLI token cache was copied.
+The base settings do not include the native release inputs. After validating
+that scope, load the existing `.local\lab-settings-native.json` through
+`scripts\Use-Settings.ps1`, requiring the same lab, region, project,
+tenant/subscription, dedicated profile and model aliases. Require all six
+artifact/routing settings and explicit nonempty `DEMO_FACT_SHEET`, then run
+`scripts\calibrate_routing.py --validate-runtime` with the pinned Python.
+Do not overwrite either private file or treat a calibration check using
+defaults as proof that the native release environment is loaded.
 For another checkout, `scripts\Initialize-LabSettings.ps1` can derive private
 tenant/subscription context from an explicitly selected external lab registry.
 It does not provision resources, log in, or read copied `.azure` environment

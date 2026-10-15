@@ -8,10 +8,13 @@ the deployment descriptor selects native hosting and remote specialists.
 Application tests pass on Windows and Linux/amd64. The lab applied the 14
 artifact resources and verified scoped zero-change convergence; private
 container, identity-grant and retention metadata checks pass. Reproduced bundled
-publication is complete: architect 17, reviewer 15 and coordinator 22
-are active on SHA256
+publication originally placed architect 17, reviewer 15 and coordinator 22
+on SHA256
 `51064aa426d28d0cfa6b126eac7fce5ab0e9a5a0667267ef105884c1805adde2`,
 with unchanged identities and earlier/diagnostic versions retained.
+The subsequent single approved diagnostic publication activated coordinator 23
+on `03aa0da34942ca66283a37dae8b6edab04ac053291937eebdc2464cdb8f839d9`;
+architect 17/reviewer 15 remain unchanged. This mixed bundle is not live acceptance.
 Coordinator 19's earlier diagnostic release established the original failure:
 `DECISION_CALIBRATION_PROVENANCE`: the Windows loader converted an absent fact
 sheet into a blank variable during calibration; deployment omitted it and used
@@ -54,18 +57,53 @@ The unresolved propagation boundary is not proof of a platform defect or a
 missing permission. Trusted scope gates remain strict; followup, hosting
 stop/resume and isolation were not reached. Owned jobs/listeners closed after
 both acceptance and observation.
-Local, undeployed HTTP-edge diagnostics compare the actual outbound opaque
+Deployed HTTP-edge diagnostics compare the actual outbound opaque
 call header with the captured request context, exposing only presence/match
 booleans and an allowlisted role. A response-ID hash binds the observation
 without logging raw IDs, identity/header values, tokens or content; it grants
 no authority. Known-child failure observation additionally reads the exact
 parent's bounded logs. No trusted-scope or legacy transport behavior changes.
 Pending states and response IDs remain preserved; no repeat inference was sent.
-Subsequent read-only reconciliation confirms coordinator 22 is still active
-and exact version 23 returns HTTP 404. The interrupted diagnostic publisher
+Before the approved prospective attempt, read-only reconciliation found
+coordinator 22 active and exact version 23 returning HTTP 404. The original interrupted publisher
 has no recoverable package-bound owner/completion receipt, so its outcome and
 original mount closure remain unknown. Retained lab exact-version observation
 and independent owner inspection do not grant retry or cleanup authority.
+The operator separately approved ONE prospective coordinator-only lab diagnostic
+risk exception, not a change to runtime unknown-effect handling. The original
+publication remains UNKNOWN, with delayed-publication and unproven historical
+cleanup risks retained. R may record that scope-specific risk disposition
+instead of proving historical closure, but D still requires tested durable
+pre-dispatch owner/source/package/project/version evidence, flushed phases/
+server IDs, independent publication terminal/cleanup findings and all existing
+source/package/trust gates. Freshly verify every deployed role; do not assume
+the next version. Isolate new private output/stage/ports/owner and serialize
+the publisher; clean only positively identified new owned resources.
+Any new unknown outcome/ownership stops the consumed exception without retry.
+Only verified diagnostic identity/package/version and new owned cleanup permit
+ONE fresh synthetic App/native parent plus read-only exact-response observation.
+Outbound mismatch requires a precise wiring fix/regression; matching context
+with missing child user requires supported provider resolution, not guessed
+headers/principals/RBAC or speculative releases. This mixed diagnostic bundle
+cannot establish G1-G8 final acceptance. G8 must disclose the accepted exception
+and historical cleanup limitation, not falsely close them. The parent retains
+the private authority/attempt record and reports actual operational results;
+this documentation is not execution or permission for further releases,
+provider submission or historical cleanup. See
+[identity-recovery-plan.md](identity-recovery-plan.md) for the bounded gates.
+That exception has now been consumed: the corrected publisher durably bound
+the new owner, exact sources/package and 22 -> 23 version before dispatch;
+publication succeeded with unchanged identity and independently proven runner
+and outer cleanup. One fresh App/native parent wrote requirements and a genuine
+Decision-1 result, then held `SPECIALIST_INCOMPLETE`. Its exact read-only
+observation captured the architect outbound call header present and matching
+the SDK context, with delegated/container-user headers absent. The exact child
+still had call identity but no trusted user and failed `NATIVE_HOST_PRINCIPAL`.
+Both diagnostic/observation connection owners closed. The held state and
+original UNKNOWN remain; no further live attempt is authorized by the consumed
+exception. A supported provider/SDK caller-resolution remedy is required, not
+speculative identity/header/RBAC changes. A platform defect is not established
+and the provider packet remains unsent.
 Offline construction is not proof of hosted identity/context correctness.
 Completed remote specialist work, end-to-end managed-identity artifact
 provenance, two-parent isolation and actual hosting restart/resume remain
@@ -346,6 +384,12 @@ bounded 429 handling. Do not create a scaling/benchmark loop or alter quota
 under this task.
 
 ## Compatibility, evidence, and acceptance
+
+The current blocked identity-propagation recovery is specified in
+[identity-recovery-plan.md](identity-recovery-plan.md), including the objective,
+conditional feasibility, dependency graph, safe parallelism and G1-G8 live
+exit criteria. It preserves this architecture rather than replacing user
+identity with a session ID or an assignment field.
 
 Preserve the Responses streaming/final aggregation contract, role routing,
 alias-versus-real-ID distinction, terminal pending-turn holds, strict revision

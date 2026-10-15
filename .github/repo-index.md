@@ -15,6 +15,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Local client/transport | `demo\terminal.py`, `native_proxy.py`, `live_acceptance.py` | Private terminal, exact-origin proxy, bounded diagnostics, artifact-envelope audit and guarded compute stop/resume acceptance |
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Target Blob/native-workflow design, exhaustive copy-first boundary |
+| Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
 | Copilot context | `.github\copilot-instructions.md`, agents and skills | Bounded implementation/review and deployment gates |
@@ -28,9 +29,13 @@ and the retired blank-facts calibration are retained. Request hashes bind policy
 and explicit nonempty facts; no offline fixture is
 release evidence. Application Windows/Linux gates pass; artifact infrastructure
 is applied with scoped zero-change convergence. Reproduced native publication
-is complete: architect 17/reviewer 15/coordinator 22 are active on
+originally placed architect 17/reviewer 15/coordinator 22 on
 common bundle `51064aa426d28d0cfa6b126eac7fce5ab0e9a5a0667267ef105884c1805adde2`
-with unchanged identities and earlier versions retained. Coordinator 19 proved
+with unchanged identities and earlier versions retained. The subsequent approved
+coordinator-only diagnostic activated version 23 on
+`03aa0da34942ca66283a37dae8b6edab04ac053291937eebdc2464cdb8f839d9`;
+architect 17/reviewer 15 retain their prior bundle. This mixed deployment is
+not final common-bundle acceptance. Coordinator 19 proved
 `DECISION_CALIBRATION_PROVENANCE`: absent facts became blank in the Windows
 loader but defaulted nonempty in hosting. The local correction truly unsets
 missing options, forwards explicit facts to all roles and validates the fresh
@@ -59,27 +64,36 @@ call identity present and user identity absent. Supported opaque propagation
 did not resolve the live failure; its cause remains unresolved. No platform
 defect or missing permission has been established. Followup/restart/isolation
 were not reached; acceptance/observation jobs and listeners closed.
-Local, undeployed HTTP-edge diagnostics report only fixed-role header
+Deployed HTTP-edge diagnostics report only fixed-role header
 presence/context-match flags correlated by a response-ID hash; no header
 values, raw IDs, tokens or content are logged. Known-child failure observation
 also reads the exact parent's bounded logs. A real native resource/client/
-transport regression verifies this wiring; all 116 application tests pass on
-Windows and Linux. These diagnostics do not authorize calls or resolve the
+transport regression verifies this wiring. These diagnostics do not authorize calls or resolve the
 propagation failure.
-Read-only exact-version reconciliation confirms coordinator 23 returns HTTP
-404 while coordinator 22 remains active. The original diagnostic publisher's
+Before the new approved diagnostic, exact-version reconciliation found
+coordinator 23 returned HTTP404 while coordinator 22 remained active. The original publisher's
 owner and outcome are unbound; new retained lab observation/inspection tools
 do not authorize publication replay or establish original mount closure.
 Repeatable identity triage verifies 109 local lock pins and five mocked SDK
 probes. Fresh exact-version metadata confirms the three deployed roles use
-Responses 2.0.0 with the expected package and identities; actual nested
-outbound context matching remains uncaptured. The current application suite
+Responses 2.0.0 with the expected package and identities. The current application suite
 has 132 passing Windows/Linux tests (seven expected Linux skips).
 A bounded Monitor query now independently confirms the exact coordinator22 /
 architect17 ingress discrepancy and a correlated HTTP200 POST to the expected
-architect Responses path on the configured project origin. Actual outgoing
-call-context matching remains uncaptured. A fresh exact coordinator23 GET
-still returns404; no publication or inference was replayed.
+architect Responses path on the configured project origin.
+The one approved prospective attempt is consumed: new durable pre-dispatch
+owner/source/package/version evidence, exact active23 and unchanged identity,
+separate runner/outer cleanup proven. One fresh App/native parent wrote
+requirements and genuine Decision-1 routing, then held SPECIALIST_INCOMPLETE.
+Exact-response Observe sent zero inference and captured actual architect
+outbound call present and equal to the SDK context, with delegated/container
+user headers absent. The exact architect child had call identity but no trusted
+user and failed NATIVE_HOST_PRINCIPAL. App/Observe owners closed. The original
+UNKNOWN and historical cleanup uncertainty remain; no held turn was replayed.
+Supported server-side caller-resolution findings and a documented platform/SDK
+remedy are required; no platform defect is proven. The provider packet is unsent,
+and the consumed exception grants no further publication or inference.
+The retained release suite now runs 138 tests on Windows and Linux with expected skips.
 Known-response stream recovery is deployed. The known
 responses and pending parent are preserved, not resent. Completed remote work, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.
@@ -127,6 +141,7 @@ conversation/credential stores.
 - `demo\workflow.py`
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\design.md`
+- `docs\identity-recovery-plan.md`
 - `docs\implementation-workflow.md`
 - `docs\migration-map.json`
 - `docs\migration-plan.md`

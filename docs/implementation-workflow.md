@@ -5,6 +5,11 @@ multi-agent workflow. The native MAF workflow described in `design.md` is the
 application being built. Do not launch a large agent orchestration merely
 because this document says "workflow."
 
+For the current live identity blocker, use
+[identity-recovery-plan.md](identity-recovery-plan.md) for the measured baseline,
+publication/inference separation, dependency-ready parallel lanes and G1-G8
+completion gates. It specializes this workflow without granting new authority.
+
 Each gate self-approves only when its objective evidence passes. Use explicit
 inputs and deterministic checked-in scripts for repeated validation, build,
 comparison, preflight and release steps. No routine approval pauses between
@@ -106,20 +111,36 @@ Pass: all applicable portable and retained release tests pass; package preview
 matches the intended source/lock/roles; the exact publication and existing
 version use are covered by the user's invocation or a new specific approval.
 If the wrapper requires an approval not supplied by that invocation, ask rather
-than bypass it. The next-session prompt authorizes synthetic live acceptance
-and scoped application publication only within the configured existing project.
+than bypass it. The current next-session scope is the single prospective
+coordinator diagnostic exception; final publication/live acceptance require
+separately confirmed authority within the configured existing project.
+That single diagnostic scope is now consumed. The corrected publisher
+successfully activated coordinator 23 on the diagnostic bundle with exact
+source/package/version binding, unchanged identity and independently proven
+runner/outer cleanup. One fresh App/native parent and its read-only observation
+captured matching actual outbound call context but no trusted user at the exact
+architect child (`NATIVE_HOST_PRINCIPAL`). App/Observe owners closed; the held
+parent and original publication UNKNOWN remain. Resume the provider-dependent
+supported-remedy branch, not D/T or another speculative release. The mixed
+diagnostic bundle does not satisfy final G1-G8 acceptance.
 
 A publish timeout is not permission to resend. Inspect the existing operation/
-receipt/version and reconcile uncertain sends first. Keep retries bounded.
+receipt/version and reconcile uncertain sends first. The only alternative here
+is the explicitly approved single prospective diagnostic risk disposition in
+the recovery plan: it retains the original UNKNOWN and does not authorize replay
+or final U. R's exception plus L's local durable publisher/release gates can
+make D ready, not final acceptance. Keep retries bounded; a new unknown outcome
+or ownership consumes this exception and stops further attempts.
 Record deployed versions and rollback package/versions privately.
 
-For a new diagnostic or corrected release, the lab's `bundle_package.py runtime`
+For an authorized new diagnostic or corrected release, the lab's `bundle_package.py runtime`
 mode creates an exclusive, deterministic allowlisted source archive using explicit
 application/lab roots and a private `--output`. It does not read or change an
 azd environment or upload code. `Build-BundledCodePackage.ps1 -OutputPackageName`
 selects a new basename inside the existing private output directory, preserving
 the previous ZIP, seals, receipts and pinned private azd configuration. Use a
-new staging directory; verify its exact image, source/archive hashes, package
+new staging directory for an authorized attempt, not to evade an unknown hold;
+verify its exact image, source/archive hashes, package
 closure and preview before the retained publisher. Never edit a sealed stage
 to turn a failed release into a different package.
 
@@ -219,12 +240,31 @@ middle-tier delegation examples do not establish a different supported nested
 identity mechanism or precedence when both headers are supplied. Do not treat
 reintroducing user delegation as an evidenced fix for this failure.
 
-An interrupted diagnostic publication must be reconciled independently of
+An interrupted diagnostic publication must be disposed independently of
 inference. Latest-agent metadata establishes the currently active version, not
 the absence of another version or the original publisher's outcome. An empty
 log or missing local PID likewise cannot authorize another publication.
 Inspect exact version metadata and original release ownership through bounded
-read-only tooling; preserve unknown holds when either remains unresolved.
+read-only tooling; preserve the original UNKNOWN when either remains unresolved.
+For the operator-approved ONE prospective diagnostic exception, retain the
+delayed-original-publication and unproven historical-cleanup risks in the
+parent's private exact authority/attempt record. Before dispatch, the corrected
+publisher must durably bind owner/launch-source/package/project/service/version,
+persist fixed flushed phases and exposed server IDs, and record publication
+terminal independently of cleanup with explicit unknowns. Local publisher tests
+and all source/package/trust gates must pass; this cannot repair historical loss.
+Freshly check all existing services and reviewed package/source provenance, not
+an assumed next23. Isolate new output/stage/ports/owner; serialize the publisher.
+No unknown-owner cleanup or certification of original mount/cgroup/listener
+closure is allowed. New unknown outcome/ownership means STOP, exception consumed.
+After exact diagnostic version/package/identity and new owned cleanup pass,
+ONE fresh synthetic App/native parent and exact-response read-only observation
+are permitted. Mixed diagnostic deployment is not common-hash final acceptance.
+Mismatch means precise wiring fix/regression; matching context/missing child
+user requires supported provider resolution. Missing capture is not header
+absence and does not authorize speculative releases. Original inference holds
+remain. Provider packets are unsent; no provider-case submission or infra/RBAC/
+network/DNS/quota/VM-power/VPN/secret/`azd up` mutation is included.
 
 Identity troubleshooting is independent of publication reconciliation. Run
 `scripts\diagnose_identity.py` with the pinned Python environment to audit the
@@ -265,10 +305,15 @@ This narrows wrong-endpoint/origin and parent-ingress hypotheses without
 proving a platform defect, call-ID expiry, or background-entry behavior.
 Another exact coordinator-23 observation still returns 404 and proves its own
 observer cleanup only, not the original publisher's outcome or mount closure.
-Live wire capture remains blocked on reconciled diagnostic publication.
+Live wire capture requires verified diagnostic publication/new owned cleanup
+after either strict reconciliation or the recorded single prospective exception
+and durable local release gates; this document does not report execution.
 
 Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
 operation is concealed; rollback/version/session compatibility is documented.
+G8 must disclose any accepted exception and unproven historical cleanup, not
+certify original closure from a new attempt's cleanup. Diagnostic approval
+alone does not pass U or G1-G8.
 If unavailable, state exactly which condition failed. Do not label offline
 coverage or a successful ZIP upload "deployed and verified."
 

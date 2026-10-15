@@ -8,9 +8,9 @@ the deployment descriptor selects native hosting and remote specialists.
 Application tests pass on Windows and Linux/amd64. The lab applied the 14
 artifact resources and verified scoped zero-change convergence; private
 container, identity-grant and retention metadata checks pass. Reproduced bundled
-corrected publication is complete: architect 16, reviewer 14 and coordinator 21
+publication is complete: architect 17, reviewer 15 and coordinator 22
 are active on SHA256
-`b3556f4241232bb301c80cfe4a57a726cc7411f2dba105a27fcfb573cb49da86`,
+`51064aa426d28d0cfa6b126eac7fce5ab0e9a5a0667267ef105884c1805adde2`,
 with unchanged identities and earlier/diagnostic versions retained.
 Coordinator 19's earlier diagnostic release established the original failure:
 `DECISION_CALIBRATION_PROVENANCE`: the Windows loader converted an absent fact
@@ -40,11 +40,20 @@ Read-only existing Azure Monitor telemetry further confirms the known architect
 enters the SDK with call identity but no user identity, while its coordinator
 enters with both; the correlated architect Responses POST returned HTTP 200.
 This rules out loss solely during background recovery, but is not a live wire
-capture. The local, undeployed correction uses the pinned SDK's
+capture. The deployed propagation change uses the pinned SDK's
 `context.platform_headers()` for native internal calls rather than re-delegating
 the already-derived user ID or forwarding a container-only identity header.
-The legacy transport is unchanged. Trusted scope gates remain strict; genuine
-remote acceptance must verify the correction after guarded publication.
+The legacy transport is unchanged. Following explicit approval to start the
+existing command VM, fresh guarded connectivity and all three publications
+passed, with unchanged identities and proven process/mount cleanup.
+Fresh initial acceptance on these versions still holds `SPECIALIST_INCOMPLETE`.
+Read-only exact-response observation confirms architect 17 fails
+`NATIVE_HOST_PRINCIPAL` with call identity present and trusted user absent.
+Thus SDK-supported opaque propagation alone did not resolve the live failure.
+The unresolved propagation boundary is not proof of a platform defect or a
+missing permission. Trusted scope gates remain strict; followup, hosting
+stop/resume and isolation were not reached. Owned jobs/listeners closed after
+both acceptance and observation.
 Pending states and response IDs remain preserved; no repeat inference was sent.
 Offline construction is not proof of hosted identity/context correctness.
 Completed remote specialist work, end-to-end managed-identity artifact

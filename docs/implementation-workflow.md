@@ -178,14 +178,28 @@ Queries returned only presence flags and fixed request/status classifications,
 not raw log messages, header values or tokens. No matching service audit record
 or captured live outbound headers was found; absence of capture is not proof of
 header absence.
-The local native correction uses the SDK's opaque-call propagation method,
-`context.platform_headers()`, instead of applying the legacy helper's explicit
+The deployed native propagation change uses the SDK's opaque-call propagation
+method, `context.platform_headers()`, instead of applying the legacy helper's explicit
 user re-delegation to internal Foundry calls. A real-resource/client transport
 regression verifies exactly one request, correct endpoint, JSON session binding
 and only the SDK's caller-context header; its assertions run outside the SDK
 exception boundary so a wrapped assertion cannot falsely pass the probe.
-This correction is not deployed or live-accepted. Guarded publication still
-requires the approved private route, currently blocked on VM power-on approval.
+Following explicit operator approval, the existing command VM was started and
+fresh guarded connectivity passed. Architect 17/reviewer 15/coordinator 22 are
+active on bundle
+`51064aa426d28d0cfa6b126eac7fce5ab0e9a5a0667267ef105884c1805adde2`.
+All three CLI publications exited zero, exact package hashes were checked
+before upload, identities were unchanged, and cgroup/listener/mount closure
+passed. Fresh full acceptance was requested with `HostingRestart`, but stopped
+on its initial turn: `SPECIALIST_INCOMPLETE`. Read-only observation of the exact
+new child proves architect 17 again receives call identity without user
+identity and fails `NATIVE_HOST_PRINCIPAL`. Both owned connections closed.
+The SDK-supported propagation change did not resolve the live failure.
+Its cause remains unresolved; do not infer a platform defect, add speculative
+grants, restore an unsupported container-only header, substitute a principal,
+or clear/resend either held operation. Followup, restart and isolation did not
+run. Further remediation requires a supported, evidence-backed propagation
+path; publication alone is not acceptance.
 
 Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
 operation is concealed; rollback/version/session compatibility is documented.

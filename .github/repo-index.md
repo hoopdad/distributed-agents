@@ -27,8 +27,8 @@ and the retired blank-facts calibration are retained. Request hashes bind policy
 and explicit nonempty facts; no offline fixture is
 release evidence. Application Windows/Linux gates pass; artifact infrastructure
 is applied with scoped zero-change convergence. Reproduced native publication
-is complete: corrected architect 16/reviewer 14/coordinator 21 are active on
-common bundle `b3556f4241232bb301c80cfe4a57a726cc7411f2dba105a27fcfb573cb49da86`
+is complete: architect 17/reviewer 15/coordinator 22 are active on
+common bundle `51064aa426d28d0cfa6b126eac7fce5ab0e9a5a0667267ef105884c1805adde2`
 with unchanged identities and earlier versions retained. Coordinator 19 proved
 `DECISION_CALIBRATION_PROVENANCE`: absent facts became blank in the Windows
 loader but defaulted nonempty in hosting. The local correction truly unsets
@@ -42,14 +42,22 @@ coordinator impersonation permission already exists. A supported platform/SDK
 identity-propagation remedy remains blocked, with no principal substitution.
 The pinned SDK preserves supplied identity through durable task recovery in an
 offline regression. Exact-response read-only ingress-presence observation is
-implemented locally. The Bastion observation could not connect because the lab
-command VM is deallocated; power-on needs separate operator approval. Existing
+implemented. An earlier Bastion observation could not connect because the lab
+command VM was deallocated. Existing
 Azure Monitor query access independently confirms user/call present at the
 coordinator and user absent/call present at the architect, with correlated
-Responses POST HTTP 200. Local native calls now forward SDK
+Responses POST HTTP 200. Deployed native calls now forward SDK
 `context.platform_headers()` directly, without re-delegating the derived platform
 user or forwarding the container-only user header. Legacy behavior and strict
-scope checks remain unchanged. This candidate fix is not deployed/live-accepted.
+scope checks remain unchanged. Explicit operator approval permitted starting
+the existing command VM; fresh guarded connectivity and three-service
+publication passed with exact hashes, unchanged identities and proven cleanup.
+Fresh initial acceptance still holds `SPECIALIST_INCOMPLETE`; exact-response
+observation confirms architect 17 again fails `NATIVE_HOST_PRINCIPAL`, with
+call identity present and user identity absent. Supported opaque propagation
+did not resolve the live failure; its cause remains unresolved. No platform
+defect or missing permission has been established. Followup/restart/isolation
+were not reached; acceptance/observation jobs and listeners closed.
 Known-response stream recovery is deployed. The known
 responses and pending parent are preserved, not resent. Completed remote work, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.

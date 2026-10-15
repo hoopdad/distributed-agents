@@ -10,9 +10,9 @@ artifact-plane source are implemented; 110 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
-**Deployed, but not live-accepted:** architect 16, reviewer 14 and coordinator 21
-are active on corrected bundle
-`b3556f4241232bb301c80cfe4a57a726cc7411f2dba105a27fcfb573cb49da86`.
+**Deployed, but not live-accepted:** architect 17, reviewer 15 and coordinator 22
+are active on bundle
+`51064aa426d28d0cfa6b126eac7fce5ab0e9a5a0667267ef105884c1805adde2`.
 Their identities are unchanged; earlier versions and diagnostic packages are retained.
 Earlier diagnostics identified `DECISION_CALIBRATION_PROVENANCE`: the Windows loader
 represented absent `DEMO_FACT_SHEET` as an empty variable during calibration,
@@ -42,21 +42,30 @@ the missing trusted hosting identity.
 Offline regression also verifies that the pinned SDK preserves supplied
 identity through durable background-task serialization and handler entry, and
 rejects missing identity. Local read-only observation can extract only ingress
-identity-presence booleans for the exact known response. The next observation
-could not connect because the approved lab command VM is deallocated. Existing
+identity-presence booleans for the exact known response. An earlier observation
+could not connect because the approved lab command VM was deallocated. Existing
 Azure Monitor query access subsequently confirmed the known coordinator's
 ingress has both user and call identity, but the known architect's ingress
 has call identity only; its correlated Responses POST returned HTTP 200.
 Those observations do not expose header values or prove the live outbound
 headers, which telemetry did not capture.
-**Local candidate fix, not deployed:** native internal calls now use the pinned
-SDK's `context.platform_headers()` directly. The opaque call ID carries the
-original caller context; native code no longer re-delegates the already-derived
+**Deployed propagation change, still blocked live:** native internal calls use
+the pinned SDK's `context.platform_headers()` directly. Its documented contract
+resolves caller context from the opaque call ID; native code no longer re-delegates the already-derived
 platform user ID or forwards the unsupported container-only user header.
 The legacy adapter remains unchanged, and missing trusted identity still fails
-closed. A real resource/client/HTTP-edge regression fails before this fix and
-passes after it, with exact endpoint and JSON session binding. Live validation
-and guarded publication remain blocked on separate command-VM power-on approval.
+closed. A real resource/client/HTTP-edge regression fails before this change and
+passes after it, with exact endpoint and JSON session binding. After explicit
+operator approval, the existing command VM was started and fresh guarded
+connectivity passed. Publication of all three versions succeeded with exact
+package hashes, unchanged identities and proven process/mount cleanup.
+Fresh initial acceptance nevertheless held `SPECIALIST_INCOMPLETE`. Read-only
+observation of that exact child confirms `NATIVE_HOST_PRINCIPAL` again:
+architect 17 receives call identity but no trusted user identity. The supported
+SDK propagation change did not resolve the live failure. Its cause remains
+unresolved; neither a platform defect nor a different permission grant has
+been established. Followup, hosting restart and isolation were not reached.
+Both acceptance and observation closed their owned jobs/listeners.
 No failed turn was resent or pending state cleared. The lab's scoped
 artifact infrastructure apply added 14 resources; a subsequent scoped plan/apply
 confirmed zero changes. Read-only metadata verifies private containers, retained grants

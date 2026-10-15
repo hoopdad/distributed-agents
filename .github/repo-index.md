@@ -16,6 +16,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Target Blob/native-workflow design, exhaustive copy-first boundary |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
+| Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
 | Copilot context | `.github\copilot-instructions.md`, agents and skills | Bounded implementation/review and deployment gates |
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
@@ -69,6 +70,11 @@ Read-only exact-version reconciliation confirms coordinator 23 returns HTTP
 404 while coordinator 22 remains active. The original diagnostic publisher's
 owner and outcome are unbound; new retained lab observation/inspection tools
 do not authorize publication replay or establish original mount closure.
+Repeatable identity triage verifies 109 local lock pins and five mocked SDK
+probes. Fresh exact-version metadata confirms the three deployed roles use
+Responses 2.0.0 with the expected package and identities; actual nested
+outbound context matching remains uncaptured. The current application suite
+has 132 passing Windows/Linux tests (seven expected Linux skips).
 Known-response stream recovery is deployed. The known
 responses and pending parent are preserved, not resent. Completed remote work, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.
@@ -129,11 +135,13 @@ conversation/credential stores.
 - `scripts\Test-Repository.ps1`
 - `scripts\Use-Settings.ps1`
 - `scripts\calibrate_routing.py`
+- `scripts\diagnose_identity.py`
 - `scripts\migration.py`
 - `scripts\repo_index.py`
 - `tests\test_artifacts.py`
 - `tests\test_config.py`
 - `tests\test_demo.py`
+- `tests\test_diagnose_identity.py`
 - `tests\test_routing.py`
 - `tests\test_workflow.py`
 

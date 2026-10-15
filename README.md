@@ -6,7 +6,7 @@ generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; 116 application tests pass on Windows
+artifact-plane source are implemented; 132 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
@@ -176,6 +176,23 @@ diagnostic publisher has no recoverable package-bound owner/completion receipt;
 its outcome and original mount closure remain unknown. The retained lab now
 has exact-version observation and a separate non-mutating owner inspector.
 Neither negative metadata nor an absent process authorizes publication replay.
+For repeatable identity triage, run
+`<absolute-python-path> scripts\diagnose_identity.py` with the existing pinned
+environment. It checks all applicable dependency-lock pins and runs five
+synthetic, mocked SDK/HTTP-boundary probes without cloud access. Optional
+`--trace <private-sanitized-trace.json>` analyzes exact-response ingress and
+outbound presence flags; it never consumes raw logs or session state.
+The report distinguishes local contract verification from missing live evidence:
+exit 1 means offline verification failed, and exit 2 means the live cause remains
+unresolved or input inspection failed. Offline success never grants retry,
+identity-substitution or permission-change authority.
+The 2026-10-15 diagnostic run matched all 109 installed lock pins and passed
+all five offline probes. Fresh exact-version metadata independently confirms
+architect 17, reviewer 15 and coordinator 22 are active with Responses protocol
+2.0.0, the expected bundle and unchanged identities. Retained exact-response
+evidence still shows the architect arriving with call identity but no user
+identity. The live outbound call/context match and background-entry timing
+were not captured, so transport versus platform resolution remains unresolved.
 The lab wrapper's explicit `recover` scenario retrieves only a known pending
 response. Known-parent `followup` and opt-in `restart` scenarios do not create a
 replacement parent. `-Mode Acceptance -HostingRestart` additionally tests the

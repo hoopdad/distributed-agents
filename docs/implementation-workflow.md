@@ -226,6 +226,30 @@ log or missing local PID likewise cannot authorize another publication.
 Inspect exact version metadata and original release ownership through bounded
 read-only tooling; preserve unknown holds when either remains unresolved.
 
+Identity troubleshooting is independent of publication reconciliation. Run
+`scripts\diagnose_identity.py` with the pinned Python environment to audit the
+lock and exercise the existing real-SDK mocked HTTP, durable-context,
+missing-principal, diagnostic-redaction and origin-fencing regressions.
+Supply only an explicit sanitized trace to `--trace`: schema version 1,
+boolean `correlation_verified`, `observations` with role, exact-response binding
+and user/call presence, and optional `outbound` with role, exact-response binding,
+call presence/context match and delegated/container user presence.
+Unbound observations or separately observed roles do not establish a call chain.
+An ingress discrepancy does not prove the live outbound call matched its
+captured context. Missing wire evidence remains the next discriminator, not
+proof of a platform defect or permission failure. The script returns exit 2
+while the live cause is unresolved, including when all offline probes pass.
+Optional exact-version deployment metadata is allowlisted separately from
+historical per-response flags; healthy protocol metadata cannot establish
+the identity context of a particular nested request. The retained lab's
+`diagnose_identity_trace.py` extracts bound evidence without replay, and
+`diagnose_release.py` verifies the explicit ZIP/seal and reports publication
+phase hypotheses against a pinned source revision. The latter confirms the
+provided successful receipt belongs to the previous package, not diagnostic
+23. Buffered child output and final-only receipt persistence explain why an
+empty outer log cannot identify the failed phase; neither is proof that an
+upload occurred or never occurred.
+
 Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
 operation is concealed; rollback/version/session compatibility is documented.
 If unavailable, state exactly which condition failed. Do not label offline

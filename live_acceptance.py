@@ -5,9 +5,11 @@ import asyncio
 from contextlib import redirect_stdout
 import io
 import json
+import re
 from types import SimpleNamespace
+from urllib.parse import quote
 
-from demo.contracts import AGENTS, Candidate, Review, alias
+from demo.contracts import AGENTS, PROJECT, Candidate, Review, alias
 from demo.foundry import ProjectClient, data_client
 from demo.terminal import chat, private_state_path, rest, session_lease, verify_lab
 from azure.identity.aio import AzureCliCredential
@@ -28,6 +30,64 @@ SCENARIOS = {
                 "Use managed identities and private TLS endpoints, preserve the curated lab constraints, "
                 "and do not operate on Azure resources. This conversation has no Project Harbor requirements.",
 }
+
+
+def workflow_failure(line):
+    """Expose only the SDK's fixed phase/type diagnostic, never arbitrary host logs."""
+    if line.startswith("{"):
+        try:
+            value = json.loads(line)
+        except ValueError:
+            return None
+        if not isinstance(value, dict) or not isinstance(value.get("message"), str):
+            return None
+        line = value["message"]
+    match = re.search(
+        r"Native Responses workflow failed during "
+        r"(preparation|scoped continuation|input parsing|input validation|execution|final output persistence) "
+        r"\((ArtifactError|ValueError|TypeError|RuntimeError|ConfigurationError|ValidationError)\)\.$",
+        line,
+    )
+    return {"phase": match[1], "exception_type": match[2]} if match else None
+
+
+async def observe_host_failure(http, credential, hosted_id, version):
+    token = await credential.get_token("https://ai.azure.com/.default")
+    path = (
+        f"/agents/{quote(AGENTS['coordinator'], safe='')}/versions/{quote(version, safe='')}"
+        f"/sessions/{quote(hosted_id, safe='')}:logstream"
+    )
+    diagnostics = {"failures": [], "limit": None}
+    # The pinned SDK's log API is a never-ending SSE stream. Bound both time and bytes.
+    deadline = asyncio.timeout(30)
+    try:
+        async with deadline, http.stream(
+            "GET", PROJECT + path, params={"api-version": "v1"},
+            headers={"Authorization": "Bearer " + token.token, "Accept": "text/event-stream"},
+        ) as response:
+            if response.status_code != 200:
+                raise RuntimeError(f"HOST_LOG_HTTP_{response.status_code}")
+            if not response.headers.get("content-type", "").startswith("text/event-stream"):
+                raise RuntimeError("HOST_LOG_SSE_REQUIRED")
+            size = 0
+            pending = b""
+            async for chunk in response.aiter_bytes():
+                size += len(chunk)
+                if size > 131072:
+                    diagnostics["limit"] = "bytes"
+                    break
+                pending += chunk
+                while b"\n" in pending:
+                    line, pending = pending.split(b"\n", 1)
+                    if line.startswith(b"data:"):
+                        failure = workflow_failure(line[5:].strip().decode("utf-8"))
+                        if failure is not None and failure not in diagnostics["failures"]:
+                            diagnostics["failures"].append(failure)
+    except TimeoutError:
+        if not deadline.expired():
+            raise
+        diagnostics["limit"] = "time"
+    return diagnostics
 
 
 def events(text):
@@ -105,9 +165,13 @@ def validate_exercised_versions(parent_version, metadata, delegations, children)
 
 
 async def run(args):
-    _, subscription, _ = verify_lab()
+    tenant, subscription, user = verify_lab()
     if args.scenario == "observe":
         state = json.loads(private_state_path(args.session_file).read_text())
+        if state.get("schema_version") != 1 or state.get("user") != user or state.get("tenant") != tenant:
+            raise RuntimeError("SESSION_OWNER")
+        if state.get("runtime") != "native" or state.get("bound") is not True:
+            raise RuntimeError("BOUND_NATIVE_SESSION_REQUIRED")
         if not state.get("pending") or not state.get("pending_response"):
             raise RuntimeError("KNOWN_PENDING_RESPONSE_REQUIRED")
         hosted_id = state["framework"]["state"]["foundry_hosted_agent_session_id"]
@@ -116,9 +180,16 @@ async def run(args):
             response = await project.get_openai_client(agent_name=AGENTS["coordinator"]).responses.retrieve(
                 state["pending_response"], extra_query={"agent_session_id": hosted_id},
             )
-            print(json.dumps(response.model_dump(mode="json", include={
+            result = response.model_dump(mode="json", include={
                 "id", "status", "error", "incomplete_details", "usage", "created_at",
-            })))
+            })
+            if response.id != state["pending_response"]:
+                raise RuntimeError("PARENT_RESPONSE_CHANGED")
+            if response.status == "failed":
+                result["host_diagnostics"] = await observe_host_failure(
+                    http, credential, hosted_id, state["version"],
+                )
+            print(json.dumps(result))
         return
     async with AzureCliCredential(subscription=subscription, process_timeout=30) as credential, \
             data_client(socks=args.socks) as http:

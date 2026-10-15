@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import copy
+import json
 import os
 import unittest
 import uuid
@@ -560,6 +561,91 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn("workflow", kwargs)
         self.assertIn("checkpoint_store_provider", kwargs)
         self.assertNotIn("agent", kwargs)
+
+
+class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
+    async def test_observation_requires_owned_bound_pending_native_session(self):
+        from live_acceptance import run
+        state = {
+            "schema_version": 1, "tenant": "synthetic-tenant", "user": "synthetic-user",
+            "runtime": "native", "bound": True, "pending": True, "pending_response": "known-response",
+        }
+        for changes, error in (
+            ({"tenant": "other-tenant"}, "SESSION_OWNER"),
+            ({"user": "other-user"}, "SESSION_OWNER"),
+            ({"schema_version": 2}, "SESSION_OWNER"),
+            ({"runtime": "legacy"}, "BOUND_NATIVE_SESSION_REQUIRED"),
+            ({"bound": False}, "BOUND_NATIVE_SESSION_REQUIRED"),
+            ({"pending": False}, "KNOWN_PENDING_RESPONSE_REQUIRED"),
+            ({"pending_response": None}, "KNOWN_PENDING_RESPONSE_REQUIRED"),
+        ):
+            path = SimpleNamespace(read_text=lambda: json.dumps(state | changes))
+            with self.subTest(changes=changes), \
+                    patch("live_acceptance.verify_lab", return_value=(
+                        "synthetic-tenant", "synthetic-subscription", "synthetic-user",
+                    )), patch("live_acceptance.private_state_path", return_value=path), \
+                    patch("live_acceptance.AzureCliCredential") as credential:
+                with self.assertRaisesRegex(RuntimeError, error):
+                    await run(SimpleNamespace(scenario="observe", session_file="private-state"))
+                credential.assert_not_called()
+
+    async def observe(self, chunks, *, status=200, content_type="text/event-stream"):
+        from live_acceptance import observe_host_failure
+
+        async def stream():
+            for chunk in chunks:
+                yield chunk
+
+        response = SimpleNamespace(
+            status_code=status, headers={"content-type": content_type}, aiter_bytes=stream,
+        )
+        manager = MagicMock()
+        manager.__aenter__ = AsyncMock(return_value=response)
+        manager.__aexit__ = AsyncMock(return_value=False)
+        http = SimpleNamespace(stream=MagicMock(return_value=manager))
+        credential = SimpleNamespace(get_token=AsyncMock(return_value=SimpleNamespace(token="synthetic-token")))
+        result = await observe_host_failure(http, credential, "parent/with space", "18")
+        self.assertEqual(http.stream.call_args.args[0], "GET")
+        self.assertTrue(http.stream.call_args.args[1].endswith(
+            "/versions/18/sessions/parent%2Fwith%20space:logstream"
+        ))
+        self.assertEqual(http.stream.call_args.kwargs["params"], {"api-version": "v1"})
+        self.assertEqual(http.stream.call_args.kwargs["headers"]["Accept"], "text/event-stream")
+        manager.__aexit__.assert_awaited_once()
+        return result
+
+    async def test_host_failure_observation_suppresses_arbitrary_log_content(self):
+        line = (
+            b'event: log\r\ndata: {"message":"ERROR: Native Responses workflow failed '
+            b'during preparation (ArtifactError)."}\r\n\r\n'
+        )
+        result = await self.observe([
+            b'data: {"message":"synthetic private token, endpoint and user"}\n\n',
+            line[:40], line[40:], line, b'data: malformed JSON\n\n',
+        ])
+        self.assertEqual(result, {
+            "failures": [{"phase": "preparation", "exception_type": "ArtifactError"}], "limit": None,
+        })
+
+    async def test_host_failure_log_stream_is_byte_bounded(self):
+        result = await self.observe([b"data: " + b"x" * 131073])
+        self.assertEqual(result, {"failures": [], "limit": "bytes"})
+
+    async def test_host_failure_rejects_http_failure_and_non_sse_response(self):
+        with self.assertRaisesRegex(RuntimeError, "HOST_LOG_HTTP_403"):
+            await self.observe([], status=403)
+        with self.assertRaisesRegex(RuntimeError, "HOST_LOG_SSE_REQUIRED"):
+            await self.observe([], content_type="application/json")
+
+    async def test_host_failure_classification_is_allowlisted(self):
+        from live_acceptance import workflow_failure
+        for line in (
+            '{"message":42}', '{"message":"unfinished"', '["invalid shape"]',
+            "Native Responses workflow failed during private-phase (ArtifactError).",
+            "Native Responses workflow failed during preparation (PrivateToken).",
+            "Native Responses workflow failed during preparation (ArtifactError). private tail",
+        ):
+            self.assertIsNone(workflow_failure(line))
 
 
 if __name__ == "__main__":

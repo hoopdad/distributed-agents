@@ -2,14 +2,24 @@
 
 ## Status and intended change
 
-This is the next-iteration design, not a claim of deployed functionality.
+This describes the implemented native design, not a claim of live acceptance.
 Native workflow/artifact/routing source and focused offline tests now exist;
 the deployment descriptor selects native hosting and remote specialists.
 Application tests pass on Windows and Linux/amd64. The lab applied the 14
 artifact resources and verified scoped zero-change convergence; private
-container, identity-grant and retention metadata checks pass. Native bundled
-packaging/publication and live restart/private-path acceptance remain
-outstanding. Metadata is not managed-identity data-plane proof.
+container, identity-grant and retention metadata checks pass. Reproduced bundled
+publication is complete: architect 14, reviewer 12 and coordinator 18 are active
+on SHA256 `a86c873ee943f090f0c8e5e20305c92127be1507de00b00f3089b935ff6dd26b`,
+with unchanged identities and rollback versions 13/11/17 retained.
+The first synthetic native response failed during workflow preparation.
+Read-only response recovery and bounded hosted-session diagnostics confirm a
+terminal failure with exception type `ArtifactError`, but not its exact gate.
+Pending state and the response ID remain preserved; no repeat inference was
+sent. The real factory constructs offline with validated calibration, which is
+not proof of hosted identity/context correctness.
+Remote specialist calls, private managed-identity Blob access, accepted artifact
+provenance, two-parent isolation and actual hosting restart/resume remain
+unverified. Metadata is not managed-identity data-plane proof.
 The first real twelve-case calibration failed with two correct ready selections.
 Routing-v2 corrected ambiguous criteria and opaque semantic inputs; a second
 twelve-call evaluation on the unchanged corpus passed eight of eight ready cases

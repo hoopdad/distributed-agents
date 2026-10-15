@@ -6,16 +6,23 @@ generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; 89 application tests pass on Windows
+artifact-plane source are implemented; 94 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
-**This iteration is not deployed or live-accepted.** The lab's scoped artifact
-infrastructure apply added 14 resources; a subsequent scoped plan/apply confirmed
-zero changes. Read-only metadata verifies private containers, role-scoped grants
-and retention. Native bundled packaging, publication and synthetic live
-acceptance remain outstanding; infrastructure metadata and three declared
-services do not prove remote calls or private managed-identity storage access.
+**Deployed, but not live-accepted:** architect 14, reviewer 12 and coordinator 18
+are active on the reproduced native bundle
+`a86c873ee943f090f0c8e5e20305c92127be1507de00b00f3089b935ff6dd26b`.
+Their identities are unchanged; rollback versions 13/11/17 are retained.
+The first synthetic turn failed during native workflow preparation. Read-only
+observation of its exact preserved response confirms terminal failure, and
+bounded host diagnostics identify `ArtifactError`; the specific failed gate is
+not yet known. No turn was resent or pending state cleared. The lab's scoped
+artifact infrastructure apply added 14 resources; a subsequent scoped plan/apply
+confirmed zero changes. Read-only metadata verifies private containers, retained grants
+and retention. Remote specialist execution, private managed-identity Blob
+access, accepted artifact provenance, parent isolation and actual hosting
+restart remain unverified. Publication and metadata do not establish those gates.
 
 **Approved lab permission model:** the linked lab now grants its project agents
 account-wide Blob Contributor access. The original container grants remain, but
@@ -94,6 +101,11 @@ runtime and versions cannot be silently migrated. `--recover-only` retrieves
 the exact persisted pending parent response instead of sending another request.
 Native checkpoints restore the graph, while the fenced write-ahead journal
 reconciles known response IDs and explicitly holds unknown effects.
+The acceptance utility's `observe` scenario retrieves only the preserved pending
+response. For a failed response it reads at most 30 seconds/128 KiB of the pinned
+hosted-session log stream through the same exact-origin transport, exposing only
+allowlisted workflow phase/exception classifications, not arbitrary log content.
+This is diagnosis, not retry permission or a hosting restart test.
 
 The baseline terminal is Windows-only because its session lease uses `msvcrt`.
 It is a terminal application, not a browser UI:

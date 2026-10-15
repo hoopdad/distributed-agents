@@ -621,6 +621,47 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
 
 
 class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
+    async def test_pinned_sdk_resilient_identity_survives_serialization_and_handler_entry(self):
+        from azure.ai.agentserver.core import get_request_context
+        from azure.ai.agentserver.responses.hosting._orchestrator import _iter_handler_with_request_context
+        from azure.ai.agentserver.responses.hosting._resilient_input import ResilientResponseInput
+        from azure.ai.agentserver.responses.models._generated import CreateResponse
+        from agent_framework_foundry_hosting._scope import FoundryRequestScope
+        original = ResilientResponseInput(
+            request=CreateResponse(input="Synthetic probe.", stream=True, background=True, store=True),
+            response_id="synthetic-response", disposition="re-invoke",
+            agent_session_id="synthetic-session", user_id_key="synthetic-user", call_id="synthetic-call",
+        )
+        restored = ResilientResponseInput.from_task_input(json.loads(json.dumps(original.to_task_input())))
+        ambient = get_request_context()
+        captured = []
+        async def handler(parsed, context, cancellation):
+            captured.append(FoundryRequestScope.from_context(
+                SimpleNamespace(is_hosted=True, session_id="synthetic-session"), get_request_context(),
+            ))
+            yield {"type": "response.completed"}
+        context = SimpleNamespace(platform_context=restored.platform_context())
+        events = [event async for event in _iter_handler_with_request_context(
+            handler, restored.request, context, asyncio.Event(), restored.agent_session_id,
+        )]
+        self.assertEqual(events, [{"type": "response.completed"}])
+        self.assertEqual(len(captured), 1)
+        self.assertEqual((captured[0].user_id, captured[0].call_id, captured[0].session_id),
+                         ("synthetic-user", "synthetic-call", "synthetic-session"))
+        self.assertIs(get_request_context(), ambient)
+        for missing in ("user_id_key", "call_id"):
+            with self.subTest(missing=missing):
+                params = json.loads(json.dumps(original.to_task_input()))
+                params[missing] = None
+                incomplete = ResilientResponseInput.from_task_input(params)
+                context = SimpleNamespace(platform_context=incomplete.platform_context())
+                with self.assertRaisesRegex(RuntimeError, "trusted user ID and call ID"):
+                    async for _ in _iter_handler_with_request_context(
+                        handler, incomplete.request, context, asyncio.Event(), incomplete.agent_session_id,
+                    ):
+                        self.fail("Incomplete platform identity must not produce an event.")
+                self.assertIs(get_request_context(), ambient)
+
     async def test_sdk_preparation_filter_reports_only_missing_trusted_scope(self):
         import logging
         from demo.host import NativePreparationDiagnostics
@@ -822,7 +863,7 @@ class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
                     await run(SimpleNamespace(scenario="observe", session_file="private-state"))
                 credential.assert_not_called()
 
-    async def observe(self, chunks, *, status=200, content_type="text/event-stream"):
+    async def observe(self, chunks, *, status=200, content_type="text/event-stream", response_id=None):
         from live_acceptance import observe_host_failure
 
         async def stream():
@@ -837,7 +878,9 @@ class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
         manager.__aexit__ = AsyncMock(return_value=False)
         http = SimpleNamespace(stream=MagicMock(return_value=manager))
         credential = SimpleNamespace(get_token=AsyncMock(return_value=SimpleNamespace(token="synthetic-token")))
-        result = await observe_host_failure(http, credential, "parent/with space", "18")
+        result = await observe_host_failure(
+            http, credential, "parent/with space", "18", response_id=response_id,
+        )
         self.assertEqual(http.stream.call_args.args[0], "GET")
         self.assertTrue(http.stream.call_args.args[1].endswith(
             "/versions/18/sessions/parent%2Fwith%20space:logstream"
@@ -846,6 +889,25 @@ class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(http.stream.call_args.kwargs["headers"]["Accept"], "text/event-stream")
         manager.__aexit__.assert_awaited_once()
         return result
+
+    async def test_ingress_observation_reports_only_exact_response_presence_flags(self):
+        from live_acceptance import ingress_identity
+        line = (
+            "Creating response known-response: streaming=True background=True store=True "
+            "model=synthetic-private-model conversation_id=synthetic-private-conversation "
+            "previous_response_id=None has_user_id=False has_call_id=True"
+        )
+        self.assertIsNone(ingress_identity(line, "other-response"))
+        self.assertIsNone(ingress_identity(line, None))
+        self.assertIsNone(ingress_identity('{"message":42}', "known-response"))
+        self.assertIsNone(ingress_identity(line + " synthetic-private-tail", "known-response"))
+        chunk = ("data: " + json.dumps({"message": line}) + "\n\n").encode()
+        proof = await self.observe([chunk[:30], chunk[30:], chunk], response_id="known-response")
+        self.assertEqual(proof, {
+            "failures": [], "limit": None,
+            "ingress_identity": [{"has_user_id": False, "has_call_id": True}],
+        })
+        self.assertNotIn("synthetic-private", json.dumps(proof))
 
     async def test_host_failure_observation_suppresses_arbitrary_log_content(self):
         line = (

@@ -40,6 +40,10 @@ diagnostics prove `NATIVE_HOST_PRINCIPAL`: no trusted user reaches the architect
 An actual HTTP-edge test preserves delegation headers; the required explicit
 coordinator impersonation permission already exists. A supported platform/SDK
 identity-propagation remedy remains blocked, with no principal substitution.
+The pinned SDK preserves supplied identity through durable task recovery in an
+offline regression. Exact-response read-only ingress-presence observation is
+implemented locally, but its live attempt could not connect because the lab
+command VM is deallocated. Power-on needs separate operator approval.
 Known-response stream recovery is deployed. The known
 responses and pending parent are preserved, not resent. Completed remote work, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.

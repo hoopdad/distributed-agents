@@ -164,6 +164,14 @@ The reviewer release reported a nonzero CLI exit after version 14 became
 active with the exact hash. Its observed receipt was reconciled without
 resending; only the coordinator, explicitly never attempted in that receipt,
 was published separately. Preserve both receipts and all rollback packages.
+Local observation now accepts only SDK ingress identity-presence booleans bound
+to the exact known response ID. This separates missing inbound platform headers
+from possible later SDK context loss without logging private header values.
+The pinned SDK's offline durable-input/handler-entry regression preserves valid
+identity and rejects either missing user or missing call identity. A subsequent
+read-only observation stopped at SSH because the existing lab command VM was
+deallocated; owned listeners/processes were proven closed. Do not power it on
+without exact operator approval. No live ingress-presence result is claimed.
 
 Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
 operation is concealed; rollback/version/session compatibility is documented.

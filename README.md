@@ -6,7 +6,7 @@ generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; 107 application tests pass on Windows
+artifact-plane source are implemented; 109 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
@@ -39,6 +39,12 @@ IDs; unknown effects remain held. Continuity, hosting stop/resume and isolation
 were not reached. A supported platform/SDK identity-propagation remedy remains
 required; a session string, model output or copied user header cannot replace
 the missing trusted hosting identity.
+Offline regression also verifies that the pinned SDK preserves supplied
+identity through durable background-task serialization and handler entry, and
+rejects missing identity. Local read-only observation can extract only ingress
+identity-presence booleans for the exact known response. The next observation
+could not connect because the approved lab command VM is deallocated; starting
+it requires separate approval, not a VPN or permission change.
 No failed turn was resent or pending state cleared. The lab's scoped
 artifact infrastructure apply added 14 resources; a subsequent scoped plan/apply
 confirmed zero changes. Read-only metadata verifies private containers, retained grants

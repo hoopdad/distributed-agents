@@ -39,8 +39,7 @@ SCENARIOS["restart"] = (
 )
 
 
-def workflow_failure(line):
-    """Expose only the SDK's fixed phase/type diagnostic, never arbitrary host logs."""
+def host_log_message(line):
     if line.startswith("{"):
         try:
             value = json.loads(line)
@@ -49,6 +48,28 @@ def workflow_failure(line):
         if not isinstance(value, dict) or not isinstance(value.get("message"), str):
             return None
         line = value["message"]
+    return line
+
+
+def ingress_identity(line, response_id):
+    """Return only SDK ingress-presence flags for the exact observed response."""
+    line = host_log_message(line)
+    if line is None or not response_id:
+        return None
+    match = re.search(
+        r"Creating response " + re.escape(response_id)
+        + r": [^\r\n]*has_user_id=(True|False) has_call_id=(True|False)$", line,
+    )
+    if match:
+        return {"has_user_id": match[1] == "True", "has_call_id": match[2] == "True"}
+    return None
+
+
+def workflow_failure(line):
+    """Expose only the SDK's fixed phase/type diagnostic, never arbitrary host logs."""
+    line = host_log_message(line)
+    if line is None:
+        return None
     check = re.search(r"Native workflow preparation rejected \(([A-Z][A-Z0-9_]{0,63})\)\.$", line)
     if check and check[1] in PREPARATION_CHECKS:
         return {"phase": "preparation", "exception_type": "ArtifactError", "check": check[1]}
@@ -61,7 +82,7 @@ def workflow_failure(line):
     return {"phase": match[1], "exception_type": match[2]} if match else None
 
 
-async def observe_host_failure(http, credential, hosted_id, version, *, role="coordinator"):
+async def observe_host_failure(http, credential, hosted_id, version, *, role="coordinator", response_id=None):
     token = await credential.get_token("https://ai.azure.com/.default")
     path = (
         f"/agents/{quote(AGENTS[role], safe='')}/versions/{quote(version, safe='')}"
@@ -91,6 +112,11 @@ async def observe_host_failure(http, credential, hosted_id, version, *, role="co
                     line, pending = pending.split(b"\n", 1)
                     if line.startswith(b"data:"):
                         text = line[5:].strip().decode("utf-8")
+                        identity = ingress_identity(text, response_id)
+                        if identity is not None:
+                            observations = diagnostics.setdefault("ingress_identity", [])
+                            if identity not in observations:
+                                observations.append(identity)
                         failure = workflow_failure(text)
                         if failure is not None and failure not in diagnostics["failures"]:
                             diagnostics["failures"].append(failure)
@@ -338,7 +364,7 @@ async def run(args):
                 raise RuntimeError("PARENT_RESPONSE_CHANGED")
             if response.status == "failed":
                 result["host_diagnostics"] = await observe_host_failure(
-                    http, credential, hosted_id, state["version"],
+                    http, credential, hosted_id, state["version"], response_id=response.id,
                 )
             elif response.status == "completed":
                 result["pending_child"] = await observe_pending_child(project, response)
@@ -352,6 +378,7 @@ async def run(args):
                     version = session["version_indicator"]["agent_version"]
                     child["host_diagnostics"] = await observe_host_failure(
                         http, credential, child["agent_session_id"], version, role=child["role"],
+                        response_id=child["response_id"],
                     )
             print(json.dumps(result))
         return

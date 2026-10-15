@@ -556,17 +556,20 @@ class NativeRuntime:
                 return True, self.delegation_event(manifest)
 
     async def result(self, store, manifest: Manifest) -> dict:
+        requirements = await store.read_artifact(manifest.requirements) if manifest.requirements else None
         candidate = await store.read_artifact(manifest.candidate) if manifest.candidate else None
         review = await store.read_artifact(manifest.review) if manifest.review else None
         decision_refs = [
             ref for ref in manifest.accepted if ref.artifact_type == "decision" and ref.requirements_revision == manifest.turn
         ]
         decision_evidence = []
+        decision_artifacts = []
         for ref in decision_refs:
             record = await store.read_artifact(ref)
             if not isinstance(record.content, Decision):
                 raise ArtifactError("DECISION_ARTIFACT_SCHEMA")
             decision_evidence.append(record.content.model_dump(mode="json"))
+            decision_artifacts.append(record.model_dump(mode="json"))
         return {
             "event": "result", "status": manifest.status, "turn": manifest.turn,
             "calls": manifest.calls, "decisions": manifest.decisions,
@@ -580,6 +583,13 @@ class NativeRuntime:
                 ref.model_dump(mode="json") for ref in decision_refs
             ],
             "decision_evidence": decision_evidence,
+            "artifact_evidence": {
+                kind: artifact.model_dump(mode="json") if artifact else None
+                for kind, artifact in (
+                    ("requirements", requirements), ("candidate", candidate), ("review", review),
+                )
+            },
+            "decision_artifacts": decision_artifacts,
             "manifest_generation": manifest.generation, "native_workflow": "distributed-agents-v1",
             "specialists": "hosted", "pending_effect": (
                 manifest.effect.model_dump(mode="json")

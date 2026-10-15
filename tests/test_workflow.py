@@ -4,6 +4,7 @@ import asyncio
 import copy
 import json
 import os
+import tempfile
 import unittest
 import uuid
 from pathlib import Path
@@ -310,6 +311,21 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual((self.remote.calls, self.remote.creates), (2, 2))
         self.assertEqual(final["candidate"]["candidate_revision"], final["review"]["candidate_revision"])
         self.assertEqual(len(final["decision_refs"]), 2)
+        from live_acceptance import events, validate_artifact_evidence
+        self.assertEqual(events("\n".join(json.dumps(item) for item in outputs))["result"], final)
+        for corruption in ("content", "prerequisite", "decision"):
+            changed = copy.deepcopy(final)
+            if corruption == "content":
+                changed["candidate"]["design"] = "Unrelated substituted synthetic design."
+            elif corruption == "prerequisite":
+                artifact = Artifact.model_validate(changed["artifact_evidence"]["review"])
+                artifact = artifact.model_copy(update={"input_refs": []})
+                changed["artifact_evidence"]["review"] = artifact.model_dump(mode="json")
+                changed["artifact_refs"]["review"] = artifact.ref().model_dump(mode="json")
+            else:
+                changed["decision_artifacts"] = []
+            with self.subTest(corruption=corruption), self.assertRaises(RuntimeError):
+                validate_artifact_evidence(changed)
 
     async def test_known_response_reconciles_after_crash_without_new_remote_call(self):
         action = await self.step_to_call()
@@ -605,6 +621,79 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
 
 
 class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
+    async def test_hosting_restart_stops_exact_active_parent_and_proves_idle_compute(self):
+        from live_acceptance import stop_hosting_for_acceptance
+        state = {
+            "runtime": "native", "bound": True, "pending": False, "version": "20",
+            "framework": {"state": {FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY: "synthetic-parent"}},
+        }
+        active = {
+            "agent_session_id": "synthetic-parent", "version_indicator": {"agent_version": "20"},
+            "status": "active", "stopped_at": 100,
+        }
+        idle = dict(active, status="idle", stopped_at=200)
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "parent.json"
+            journal = Path(str(path) + ".hosting-restart.json")
+
+            async def stop(*args, **kwargs):
+                self.assertEqual(json.loads(journal.read_text())["phase"], "stop_pending")
+                self.assertEqual(args[0], "POST")
+                self.assertTrue(args[1].endswith("/endpoint/sessions/synthetic-parent:stop"))
+                return SimpleNamespace(status_code=204)
+
+            http = SimpleNamespace(request=AsyncMock(side_effect=stop))
+            credential = SimpleNamespace(get_token=AsyncMock(return_value=SimpleNamespace(token="synthetic")))
+            with patch("live_acceptance.rest", side_effect=[active, idle]):
+                proof = await stop_hosting_for_acceptance(http, credential, state, path)
+            self.assertEqual(proof["phase"], "stop_confirmed")
+            self.assertEqual(proof["stop_http_status"], 204)
+            self.assertEqual(proof["stopped_at"], 200)
+            with patch("live_acceptance.rest", return_value=idle):
+                with self.assertRaisesRegex(RuntimeError, "RESTART_ALREADY_ATTEMPTED"):
+                    await stop_hosting_for_acceptance(http, credential, state, path)
+            http.request.assert_awaited_once()
+
+    async def test_unknown_host_stop_is_observed_not_sent_again(self):
+        from live_acceptance import stop_hosting_for_acceptance
+        state = {
+            "runtime": "native", "bound": True, "pending": False, "version": "20",
+            "framework": {"state": {FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY: "synthetic-parent"}},
+        }
+        active = {
+            "agent_session_id": "synthetic-parent", "version_indicator": {"agent_version": "20"},
+            "status": "active",
+        }
+        idle = dict(active, status="idle", stopped_at=200)
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "parent.json"
+            http = SimpleNamespace(request=AsyncMock(side_effect=TimeoutError))
+            credential = SimpleNamespace(get_token=AsyncMock(return_value=SimpleNamespace(token="synthetic")))
+            with patch("live_acceptance.rest", return_value=active):
+                with self.assertRaises(TimeoutError):
+                    await stop_hosting_for_acceptance(http, credential, state, path)
+            with patch("live_acceptance.rest", return_value=idle):
+                proof = await stop_hosting_for_acceptance(http, credential, state, path)
+            self.assertEqual(proof["phase"], "stop_confirmed")
+            self.assertNotIn("stop_http_status", proof)
+            http.request.assert_awaited_once()
+
+    async def test_host_stop_requires_completed_native_parent_and_exact_version(self):
+        from live_acceptance import stop_hosting_for_acceptance
+        state = {
+            "runtime": "native", "bound": True, "pending": False, "version": "20",
+            "framework": {"state": {FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY: "synthetic-parent"}},
+        }
+        http = SimpleNamespace(request=AsyncMock())
+        with self.assertRaisesRegex(RuntimeError, "COMPLETED_NATIVE_PARENT_REQUIRED"):
+            await stop_hosting_for_acceptance(http, None, dict(state, pending=True), Path("unused"))
+        with patch("live_acceptance.rest", return_value={
+            "agent_session_id": "synthetic-parent", "version_indicator": {"agent_version": "21"},
+        }):
+            with self.assertRaisesRegex(RuntimeError, "RESTART_PARENT_BINDING"):
+                await stop_hosting_for_acceptance(http, None, state, Path("unused"))
+        http.request.assert_not_called()
+
     async def test_observation_requires_owned_bound_pending_native_session(self):
         from live_acceptance import run
         state = {

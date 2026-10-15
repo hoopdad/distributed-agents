@@ -2,6 +2,7 @@
   "FOUNDRY_PROJECT_ENDPOINT": "https://<account>.services.ai.azure.com/api/projects/<project>",
   "SPECIALIST_MODEL_DEPLOYMENT": "<specialist-deployment-alias>",
   "DECISION_MODEL_DEPLOYMENT": "<Microsoft-Decision-1-deployment-alias>",
+  "DEMO_FACT_SHEET": "Synthetic architecture exercise: application ingress must be private. Use managed identity and private TLS endpoints. Do not invent resource availability, prices, live health or deployment approval. This demo cannot query or mutate Azure.",
   "EXPECTED_AZURE_TENANT_ID": "<tenant-uuid>",
   "EXPECTED_AZURE_SUBSCRIPTION_ID": "<subscription-uuid>",
   "AZURE_CONFIG_DIR": "<absolute-path-to-dedicated-azure-cli-profile>",

@@ -5,17 +5,18 @@ import asyncio
 from contextlib import redirect_stdout
 import io
 import json
+import math
 import re
 from types import SimpleNamespace
 from urllib.parse import quote
 
 from demo.contracts import AGENTS, PROJECT, Candidate, Review, alias
 from demo.foundry import ProjectClient, data_client
-from demo.terminal import chat, private_state_path, rest, session_lease, verify_lab
+from demo.terminal import chat, private_state_path, rest, session_lease, verify_lab, write_state
 from azure.identity.aio import AzureCliCredential
 
 from agent_metadata import agent_metadata
-from demo.artifacts import ArtifactRef, Candidate as NativeCandidate, Decision, Review as NativeReview
+from demo.artifacts import Artifact, ArtifactRef, Candidate as NativeCandidate, Decision, Review as NativeReview
 from demo.workflow import PREPARATION_CHECKS
 
 
@@ -31,6 +32,11 @@ SCENARIOS = {
                 "Use managed identities and private TLS endpoints, preserve the curated lab constraints, "
                 "and do not operate on Azure resources. This conversation has no Project Harbor requirements.",
 }
+SCENARIOS["restart"] = (
+    "Continue the same synthetic Project Harbor design after hosting compute resumes. "
+    "Preserve all earlier requirements, including private ingress and the asynchronous queue. "
+    "Have both specialists revise and review their existing work; do not operate on Azure resources."
+)
 
 
 def workflow_failure(line):
@@ -94,6 +100,59 @@ async def observe_host_failure(http, credential, hosted_id, version):
     return diagnostics
 
 
+async def stop_hosting_for_acceptance(http, credential, state, path):
+    if state.get("runtime") != "native" or state.get("bound") is not True or state.get("pending"):
+        raise RuntimeError("COMPLETED_NATIVE_PARENT_REQUIRED")
+    hosted_id = state["framework"]["state"]["foundry_hosted_agent_session_id"]
+    locator = f"/agents/{AGENTS['coordinator']}/endpoint/sessions/{quote(hosted_id, safe='')}"
+    before = await rest(http, credential, "GET", locator)
+    if (before.get("agent_session_id") != hosted_id
+            or before.get("version_indicator", {}).get("agent_version") != state["version"]):
+        raise RuntimeError("RESTART_PARENT_BINDING")
+    journal_path = private_state_path(str(path) + ".hosting-restart.json")
+    if journal_path.exists():
+        journal = json.loads(journal_path.read_text())
+        if journal.get("parent") != hosted_id or journal.get("version") != state["version"]:
+            raise RuntimeError("RESTART_JOURNAL_BINDING")
+        if journal.get("phase") != "stop_pending":
+            raise RuntimeError("RESTART_ALREADY_ATTEMPTED")
+        # An uncertain stop is observed, never sent again.
+    else:
+        if before["status"] != "active":
+            raise RuntimeError("ACTIVE_COMPUTE_REQUIRED_FOR_RESTART_TEST")
+        journal = {
+            "schema_version": 1, "parent": hosted_id, "version": state["version"],
+            "phase": "stop_pending", "previous_stopped_at": before.get("stopped_at"),
+        }
+        write_state(journal_path, journal, new=True)
+        token = await credential.get_token("https://ai.azure.com/.default")
+        response = await http.request(
+            "POST", PROJECT + locator + ":stop", params={"api-version": "v1"},
+            headers={"Authorization": "Bearer " + token.token},
+        )
+        if response.status_code != 204:
+            raise RuntimeError(f"HOST_STOP_HTTP_{response.status_code}")
+        journal["stop_http_status"] = 204
+        write_state(journal_path, journal)
+    async with asyncio.timeout(120):
+        while True:
+            observed = await rest(http, credential, "GET", locator)
+            if (observed.get("agent_session_id") != hosted_id
+                    or observed.get("version_indicator", {}).get("agent_version") != state["version"]):
+                raise RuntimeError("RESTART_PARENT_BINDING")
+            stopped = observed.get("stopped_at")
+            previous = journal["previous_stopped_at"]
+            if (observed["status"] == "idle" and type(stopped) in (int, float)
+                    and math.isfinite(stopped) and stopped > 0
+                    and (previous is None or stopped > previous)):
+                journal.update(phase="stop_confirmed", stopped_at=stopped)
+                write_state(journal_path, journal)
+                return journal
+            if observed["status"] in ("failed", "expired", "deleted", "deleting"):
+                raise RuntimeError("RESTART_SESSION_UNAVAILABLE")
+            await asyncio.sleep(1)
+
+
 def events(text):
     records = [json.loads(line) for line in text.splitlines() if line.startswith("{")]
     results = [record for record in records if record.get("event") == "result"]
@@ -140,6 +199,7 @@ def events(text):
             decision = Decision.model_validate(value)
             if decision.gated_action != call["action"] or decision.model != "Microsoft-Decision-1":
                 raise RuntimeError("NATIVE_DECISION_DELEGATION_BINDING")
+        validate_artifact_evidence(result)
         if any(call.get("specialist_mode") != "hosted" for call in calls):
             raise RuntimeError("REMOTE_SPECIALISTS_REQUIRED")
     try:
@@ -153,6 +213,47 @@ def events(text):
     if not review.approved:
         raise RuntimeError("LIVE_REVIEW_NOT_APPROVED")
     return {"result": result, "delegations": calls}
+
+
+def validate_artifact_evidence(result):
+    evidence = result.get("artifact_evidence")
+    if not isinstance(evidence, dict) or set(evidence) != {"requirements", "candidate", "review"}:
+        raise RuntimeError("NATIVE_ARTIFACT_EVIDENCE_REQUIRED")
+    artifacts = {kind: Artifact.model_validate(value) for kind, value in evidence.items()}
+    scope = artifacts["requirements"].scope_binding
+    for kind, artifact in artifacts.items():
+        ref = ArtifactRef.model_validate(result["artifact_refs"][kind])
+        role = {"requirements": "coordinator", "candidate": "architect", "review": "reviewer"}[kind]
+        if (artifact.ref() != ref or artifact.scope_binding != scope or artifact.artifact_type != kind
+                or artifact.producer.role != role or artifact.producer.name != AGENTS[role]):
+            raise RuntimeError("NATIVE_ARTIFACT_PROVENANCE")
+        for prerequisite in artifact.input_refs:
+            prerequisite.assert_scope(scope)
+    if (artifacts["requirements"].input_refs
+            or not artifacts["candidate"].input_refs
+            or artifacts["candidate"].input_refs[0] != artifacts["requirements"].ref()
+            or artifacts["review"].input_refs != [
+                artifacts["requirements"].ref(), artifacts["candidate"].ref(),
+            ]):
+        raise RuntimeError("NATIVE_EXACT_PREREQUISITES")
+    for kind in ("candidate", "review"):
+        if artifacts[kind].content.model_dump(mode="json", exclude={"kind"}) != result[kind]:
+            raise RuntimeError("NATIVE_ACCEPTED_CONTENT_CHANGED")
+    decisions = result.get("decision_artifacts")
+    if not isinstance(decisions, list) or len(decisions) != len(result["decision_refs"]):
+        raise RuntimeError("NATIVE_DECISION_PROVENANCE")
+    for value, ref, content in zip(
+        decisions, result["decision_refs"], result["decision_evidence"], strict=True,
+    ):
+        artifact = Artifact.model_validate(value)
+        if (artifact.ref() != ArtifactRef.model_validate(ref) or artifact.scope_binding != scope
+                or artifact.producer.role != "coordinator"
+                or artifact.producer.name != AGENTS["coordinator"]
+                or artifact.content.model_dump(mode="json") != content):
+            raise RuntimeError("NATIVE_DECISION_PROVENANCE")
+        for prerequisite in artifact.input_refs:
+            prerequisite.assert_scope(scope)
+    return artifacts
 
 
 def validate_exercised_versions(parent_version, metadata, delegations, children):
@@ -207,16 +308,26 @@ async def run(args):
                 raise RuntimeError(f"DEPLOYED_BUNDLE_REQUIRED: {name}")
             observed[role] = metadata
     path = private_state_path(args.session_file)
-    if args.scenario != "followup" and path.exists():
+    continuation = args.scenario in ("followup", "recover", "restart")
+    if not continuation and path.exists():
         raise RuntimeError("NEW_ACCEPTANCE_PARENT_REQUIRED")
-    if args.scenario == "followup" and not path.exists():
+    if continuation and not path.exists():
         raise RuntimeError("EXISTING_ACCEPTANCE_PARENT_REQUIRED")
     before = json.loads(path.read_text()) if path.exists() else None
+    if before and (before.get("user") != user or before.get("tenant") != tenant
+                   or before.get("runtime") != "native" or before.get("version") != observed["coordinator"]["version"]):
+        raise RuntimeError("OWNED_NATIVE_CONTINUATION_REQUIRED")
     output = io.StringIO()
+    restart_proof = None
     try:
         with session_lease(path), redirect_stdout(output):
+            if args.scenario == "restart":
+                async with AzureCliCredential(subscription=subscription, process_timeout=30) as credential, \
+                        data_client(socks=args.socks) as http:
+                    restart_proof = await stop_hosting_for_acceptance(http, credential, before, path)
             await chat(SimpleNamespace(
-                socks=args.socks, session_file=str(path), message=SCENARIOS[args.scenario], show_ids=True, native=True,
+                socks=args.socks, session_file=str(path), message=SCENARIOS.get(args.scenario),
+                show_ids=True, native=True, recover_only=args.scenario == "recover",
             ))
     finally:
         private_state_path(args.evidence).write_text(output.getvalue(), encoding="utf-8")
@@ -225,6 +336,13 @@ async def run(args):
     if proof["result"].get("native_workflow") != "distributed-agents-v1":
         raise RuntimeError("NATIVE_ACCEPTANCE_REQUIRED")
     after = json.loads(path.read_text())
+    artifacts = validate_artifact_evidence(proof["result"])
+    binding = artifacts["requirements"].scope_binding
+    if (binding.project != PROJECT or binding.tenant != tenant
+            or binding.parent_session != after["framework"]["state"]["foundry_hosted_agent_session_id"]
+            or artifacts["requirements"].producer.session_id != binding.parent_session
+            or artifacts["requirements"].producer.version != after["version"]):
+        raise RuntimeError("NATIVE_PARENT_ARTIFACT_BINDING")
     if after["pending"]:
         raise RuntimeError("PARENT_TURN_UNCERTAIN")
     if before and before["framework"]["session_id"] != after["framework"]["session_id"]:
@@ -256,10 +374,16 @@ async def run(args):
                 raise RuntimeError("EXACT_CHILD_SESSION_UNPROVEN")
             children[role] = matches[0]
     validate_exercised_versions(after["version"], observed, proof["delegations"], children)
+    for role, kind in (("architect", "candidate"), ("reviewer", "review")):
+        producer = artifacts[kind].producer
+        if (producer.version != observed[role]["version"]
+                or producer.session_id != children[role]["agent_session_id"] or not producer.response_id):
+            raise RuntimeError("NATIVE_CHILD_ARTIFACT_BINDING")
     proof.update(scenario=args.scenario, metadata=observed,
                  framework=after["framework"], version=after["version"],
                  child_sessions=children,
-                 terminal_process_restarted=args.scenario == "followup")
+                 terminal_process_restarted=continuation,
+                 hosting_restart=restart_proof)
     print(json.dumps(proof))
 
 
@@ -269,7 +393,7 @@ def main():
     parser.add_argument("--sha256", required=True)
     parser.add_argument("--session-file", required=True)
     parser.add_argument("--evidence", required=True)
-    parser.add_argument("--scenario", choices=(*SCENARIOS, "observe"), required=True)
+    parser.add_argument("--scenario", choices=(*SCENARIOS, "observe", "recover"), required=True)
     asyncio.run(run(parser.parse_args()))
 
 

@@ -95,15 +95,31 @@ def export_successful(source_path, output_path):
     }
 
 
+def validate_runtime():
+    calibration = load_calibration(
+        ROOT / "config" / "routing-calibration.json", ROOT / "config" / "routing-corpus.json",
+        required("DECISION_MODEL_DEPLOYMENT"),
+    )
+    return {"status": "RUNTIME_CALIBRATION_VALIDATED", "calibration_sha256": digest(calibration),
+            "policy_version": calibration.policy_version, "corpus_sha256": calibration.corpus_sha256}
+
+
 def main():
     parser = argparse.ArgumentParser(description="Twelve bounded synthetic Decision-1 calibration calls; no retries.")
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--socks")
     mode.add_argument("--export-successful")
-    parser.add_argument("--output", required=True)
+    mode.add_argument("--validate-runtime", action="store_true")
+    parser.add_argument("--output")
     args = parser.parse_args()
+    if not args.validate_runtime and args.output is None:
+        parser.error("Calibration/export requires an explicit output.")
+    if args.validate_runtime and args.output is not None:
+        parser.error("Read-only runtime validation does not write an output.")
     try:
-        if args.export_successful:
+        if args.validate_runtime:
+            print(json.dumps(validate_runtime()))
+        elif args.export_successful:
             print(json.dumps(export_successful(args.export_successful, args.output)))
         else:
             asyncio.run(calibrate(args))

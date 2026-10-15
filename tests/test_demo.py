@@ -148,6 +148,7 @@ function Start-CapturedChild([string]$Executable, [string[]]$Arguments, [string]
 }
 function Read-CapturedResult($Capture, $TimeoutSeconds) {
     if ($script:failInitial) { throw 'Synthetic initial failure.' }
+    if ($Capture.child.name -eq 'acceptance-restart' -and $TimeoutSeconds -ne 650) { throw 'Restart bound changed.' }
     $suffix = if ($Capture.child.name -eq 'acceptance-isolated') { 'isolated' } else { 'shared' }
     $children = @{}
     $delegations = @()
@@ -155,7 +156,8 @@ function Read-CapturedResult($Capture, $TimeoutSeconds) {
         $children[$role] = @{ agent_session_id = "$role-$suffix" }
         $delegations += @{ role = $role; hosted_session = "$role-$suffix"; framework_session = "$role-$suffix" }
     }
-    @{ framework = @{ session_id = $suffix }; child_sessions = $children; delegations = $delegations }
+    @{ framework = @{ session_id = $suffix }; child_sessions = $children; delegations = $delegations;
+       hosting_restart = @{ phase = 'stop_confirmed' } }
 }
 function Stop-LabChild($Child) { $script:stopped++ }
 foreach ($InitialTurnOnly in @($true, $false)) {
@@ -170,6 +172,18 @@ foreach ($InitialTurnOnly in @($true, $false)) {
     }
     if ($script:dispatched[0] -cne 'acceptance-initial') { throw 'Initial dispatch missing.' }
 }
+$HostingRestart = $true; $InitialTurnOnly = $false; $receipt = @{}
+$script:dispatched.Clear(); $script:stopped = 0
+& $block
+if ($script:dispatched.Count -ne 4 -or $script:stopped -ne 4 -or
+    $script:dispatched[2] -cne 'acceptance-restart') { throw 'Explicit restart scope changed.' }
+$HostingRestart = $false; $AcceptanceScenario = 'recover'
+$ParentStatePath = "$capturePrefix-known-parent.json"; $receipt = @{}
+$script:dispatched.Clear(); $script:stopped = 0
+& $block
+if ($script:dispatched.Count -ne 1 -or $script:stopped -ne 1 -or
+    $script:dispatched[0] -cne 'acceptance-recover') { throw 'Recovery expanded or replayed initial work.' }
+$AcceptanceScenario = ''
 $InitialTurnOnly = $true; $receipt = @{}
 $script:dispatched.Clear(); $script:stopped = 0; $script:failInitial = $true
 $failed = $false

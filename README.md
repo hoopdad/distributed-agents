@@ -6,18 +6,25 @@ generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; 96 application tests pass on Windows
+artifact-plane source are implemented; 101 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).
 `azure.yaml` selects native orchestration and remote hosted specialists; the
 legacy handwritten/in-process adapter remains available for regression tests.
 **Deployed, but not live-accepted:** architect 14, reviewer 12 and coordinator 18
-are active on the reproduced native bundle
+were published on the reproduced native bundle
 `a86c873ee943f090f0c8e5e20305c92127be1507de00b00f3089b935ff6dd26b`.
 Their identities are unchanged; rollback versions 13/11/17 are retained.
-The first synthetic turn failed during native workflow preparation. Read-only
-observation of its exact preserved response confirms terminal failure, and
-bounded host diagnostics identify `ArtifactError`; the specific failed gate is
-not yet known. No turn was resent or pending state cleared. The lab's scoped
+Coordinator 19 is now active on a diagnostic bundle; architect 14 and reviewer
+12 remain unchanged. This intentionally mixed diagnostic release is not accepted.
+Safe diagnostics identify `DECISION_CALIBRATION_PROVENANCE`: the Windows loader
+represented absent `DEMO_FACT_SHEET` as an empty variable during calibration,
+whereas deployment omitted it and used the public nonempty default. The loader
+now truly removes absent settings; native release requires explicit nonempty
+facts, forwarded to all roles and validated before packaging. A genuine fresh
+calibration with those facts exposed a missing-workload routing ambiguity.
+Routing-v3 clarifies that facts supply constraints, not a missing user purpose.
+The corrected source and calibration have not yet been published.
+No failed turn was resent or pending state cleared. The lab's scoped
 artifact infrastructure apply added 14 resources; a subsequent scoped plan/apply
 confirmed zero changes. Read-only metadata verifies private containers, retained grants
 and retention. Remote specialist execution, private managed-identity Blob
@@ -30,13 +37,14 @@ do not provide effective per-role isolation. Role ownership, immutable output
 handling and coordinator publication are enforced by trusted application code,
 not by storage permissions. This is not a storage-enforced isolation guarantee.
 
-**Calibration verified:** the first twelve-case evaluation failed with two of
-eight ready cases correct. Routing policy/input v2 clarifies first-draft versus
-review prerequisites and exposes complete verified semantic inputs. A second
-evaluation on the unchanged frozen corpus passed all eight ready cases, with no
-wrong dispatches, at threshold 0.9 and margin 0. Both private journals are
-retained (24 real calls total); no coverage gate or expected label was changed.
-The validated successful result is `config\routing-calibration.json`.
+**Calibration verified:** four twelve-case evaluations are preserved (48 real
+calls): the first failed, the second passed with blank facts, the third
+identified a missing-workload error with nonempty facts, and routing-v3 passed
+all eight ready and four missing-input cases. The unchanged selection algorithm
+chose threshold 0.5/margin 0 for the new observations; no expected label, corpus,
+coverage requirement or observation was edited. The historical calibration is
+retained byte-for-byte privately and in Git history. The genuine new result is
+`config\routing-calibration.json`.
 
 ## Start the next implementation session
 
@@ -88,13 +96,17 @@ model. Never guess private IPs, capacity or a confidence threshold.
 
 Native packages additionally require the exact public `config\routing-corpus.json`
 and `config\routing-calibration.json`. The latter contains the successful real
-routing-v2 evaluation of the frozen twelve-case corpus, whose v1 dataset metadata
+routing-v3 evaluation of the frozen twelve-case corpus, whose v1 dataset metadata
 remains unchanged. Request hashes bind instructions, criteria, alias and state.
 `scripts\calibrate_routing.py` retains a private, flushed observation
 journal even on failure; an existing output/journal cannot be silently reused.
 Offline synthetic fixtures are tests, never release calibration. Its
 `--export-successful <private-result> --output config\routing-calibration.json`
 mode validates provenance and permits only identical idempotent re-export.
+Run `--validate-runtime` after loading the intended settings to check the
+existing calibration without authentication, model calls or file writes.
+The calibrated `DEMO_FACT_SHEET` must also be forwarded to every hosted role;
+changing facts requires genuine calibration, not editing observation hashes.
 
 Add `--native` only for a verified native deployment. A client state's recorded
 runtime and versions cannot be silently migrated. `--recover-only` retrieves
@@ -108,6 +120,12 @@ allowlisted workflow phase/exception classifications, not arbitrary log content.
 Diagnostic-enabled native versions additionally log an allowlisted failing
 preparation check, never the rejected identity, endpoint, value or exception text.
 This is diagnosis, not retry permission or a hosting restart test.
+The lab wrapper's explicit `recover` scenario retrieves only a known pending
+response. Known-parent `followup` and opt-in `restart` scenarios do not create a
+replacement parent. `-Mode Acceptance -HostingRestart` additionally tests the
+supported hosted-session compute stop/resume API with a durable no-resend
+marker. This preserves the session volume and is not a hard-crash recovery test.
+These expanded live gates have not yet been run successfully.
 
 The baseline terminal is Windows-only because its session lease uses `msvcrt`.
 It is a terminal application, not a browser UI:

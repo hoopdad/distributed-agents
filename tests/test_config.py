@@ -93,7 +93,7 @@ class ConfigurationTests(unittest.TestCase):
             command = (
                 f"& '{script}' -Path '{settings_path}'; "
                 "if ($env:DECISION_MODEL_DEPLOYMENT -ne 'decision') { throw 'Not loaded' }; "
-                "if ($env:DEMO_FACT_SHEET) { throw 'Optional value leaked' }"
+                "if (Test-Path Env:DEMO_FACT_SHEET) { throw 'Absent optional value must be removed, not blank' }"
             )
             path.write_text(json.dumps(settings), encoding="utf-8")
             env = dict(os.environ, DEMO_FACT_SHEET="stale facts")

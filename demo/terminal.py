@@ -72,10 +72,14 @@ def write_state(path: Path, state: dict, *, new=False):
     if new:
         with path.open("x", encoding="utf-8") as file:
             file.write(encoded)
+            file.flush()
+            os.fsync(file.fileno())
     else:
         temporary = path.with_name(path.name + ".tmp")
         with temporary.open("x", encoding="utf-8") as file:
             file.write(encoded)
+            file.flush()
+            os.fsync(file.fileno())
         temporary.replace(path)
 
 

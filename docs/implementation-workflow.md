@@ -123,6 +123,14 @@ new staging directory; verify its exact image, source/archive hashes, package
 closure and preview before the retained publisher. Never edit a sealed stage
 to turn a failed release into a different package.
 
+Load the exact calibrated `DEMO_FACT_SHEET` with the native settings before
+packaging. `scripts\calibrate_routing.py --validate-runtime` is an offline,
+read-only gate; retained packaging invokes it before dependency extraction.
+Facts are allowlisted, committed into the private settings proof and forwarded
+to all roles. Historical ten-field snapshots remain verifiable but do not
+authorize a new descriptor requiring facts. Do not recalibrate or rewrite
+observations merely to bypass configuration drift.
+
 ## Gate 6: Live acceptance and handoff
 
 Use synthetic requirements only and private evidence outside both repositories.
@@ -131,6 +139,18 @@ remote invocation, exact artifact prerequisites/hashes, conditional coordinator
 publication, Decision-1 outcomes, private MI Blob access, and isolation between
 parents. Verify actual service versions/health and the terminal path. A live
 test must not query secrets or use real customer documents.
+
+The retained wrapper supports individual `-AcceptanceScenario` selections.
+`followup`, `recover` and `restart` require an existing private parent within
+the evidence directory. `recover` retrieves its known pending response only.
+`restart` requires `-HostingRestart`; full Acceptance with that switch runs
+initial/followup/restart/isolated and checks parent/child continuity and
+separation. The supported hosted-compute stop/resume API preserves the session
+volume; it does not prove hard-crash recovery. Preserve uncertain stop markers
+and pending responses rather than sending either operation again.
+Native acceptance validates returned artifact envelopes/hashes, exact reviewer
+prerequisites, accepted content, producer sessions/versions and decision records,
+not just a success-shaped final message.
 
 Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
 operation is concealed; rollback/version/session compatibility is documented.

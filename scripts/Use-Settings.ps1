@@ -71,7 +71,11 @@ if ($nativeKeys.Count -gt 0) {
 }
 # Validate the complete document before changing any process configuration.
 foreach ($name in $allowed) {
-    [Environment]::SetEnvironmentVariable($name, $settings[$name], 'Process')
+    if ($settings.ContainsKey($name)) {
+        [Environment]::SetEnvironmentVariable($name, $settings[$name], 'Process')
+    } else {
+        Remove-Item -LiteralPath "Env:$name" -ErrorAction SilentlyContinue
+    }
 }
 $env:AZURE_EXTENSION_USE_DYNAMIC_INSTALL = 'no'
 Write-Host 'Loaded validated settings into this process; no authentication or Azure changes performed.'

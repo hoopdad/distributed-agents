@@ -29,6 +29,30 @@ def outcome():
 
 
 class RoutingTests(unittest.IsolatedAsyncioTestCase):
+    async def test_runtime_validation_rejects_fact_drift_without_recalibration_or_writes(self):
+        corpus = (Path(__file__).resolve().parents[1] / "config" / "routing-corpus.json").read_bytes()
+        with patch("demo.contracts.FACTS", "Synthetic calibrated facts with spaces."):
+            calibration = synthetic_calibration()
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "config").mkdir()
+            (root / "config" / "routing-corpus.json").write_bytes(corpus)
+            path = root / "config" / "routing-calibration.json"
+            original = canonical_bytes(calibration)
+            path.write_bytes(original)
+            with patch.object(calibrate_routing, "ROOT", root), \
+                    patch.object(calibrate_routing, "required", return_value=calibration.deployment):
+                with patch("demo.contracts.FACTS", "Synthetic calibrated facts with spaces."):
+                    self.assertEqual(calibrate_routing.validate_runtime()["calibration_sha256"], digest(calibration))
+                with patch("demo.contracts.FACTS", "Different synthetic facts."):
+                    with self.assertRaisesRegex(ArtifactError, "DECISION_CALIBRATION_PROVENANCE"):
+                        calibrate_routing.validate_runtime()
+            self.assertEqual(path.read_bytes(), original)
+
+    async def test_all_native_roles_forward_the_same_calibrated_fact_sheet(self):
+        descriptor = (Path(__file__).resolve().parents[1] / "azure.yaml").read_text()
+        self.assertEqual(descriptor.count("DEMO_FACT_SHEET: ${DEMO_FACT_SHEET}"), 3)
+
     async def test_calibration_export_is_validated_exact_and_idempotent(self):
         corpus = (Path(__file__).resolve().parents[1] / "config" / "routing-corpus.json").read_bytes()
         calibration = synthetic_calibration()

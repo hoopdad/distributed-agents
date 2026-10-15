@@ -12,7 +12,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Contracts/configuration | `demo\artifacts.py`, `demo\contracts.py`, `demo\config.py`, `config\settings.example.json` | Strict artifacts/assignments and atomic generic native settings |
 | Blob/routing | `demo\artifact_store.py`, `demo\routing.py`, `config\routing-corpus.json`, `scripts\calibrate_routing.py` | Role-owned immutable outputs, fenced journal/manifest, typed calibrated Decision-1 and shared admission |
 | Foundry integration | `demo\foundry.py`, `agent_metadata.py`, `azure.yaml` | Trusted host/state/provider adapters; three native remote-mode services deployed, not live-accepted |
-| Local client/transport | `demo\terminal.py`, `native_proxy.py`, `live_acceptance.py` | Windows private-session terminal, exact-origin proxy and bounded sanitized read-only failure observation |
+| Local client/transport | `demo\terminal.py`, `native_proxy.py`, `live_acceptance.py` | Private terminal, exact-origin proxy, bounded diagnostics, artifact-envelope audit and guarded compute stop/resume acceptance |
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Target Blob/native-workflow design, exhaustive copy-first boundary |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
@@ -20,15 +20,20 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
-`config\routing-calibration.json` records the successful real routing-v2
-evaluation (eight of eight ready cases, threshold 0.9/margin 0) on the unchanged
-frozen corpus. The first evaluation failed (two of eight); both private journals
-are retained. Request hashes bind the evaluated policy; no offline fixture is
+`config\routing-calibration.json` records the successful real routing-v3
+evaluation (eight ready and four missing-input cases correct, selected threshold
+0.5/margin 0) on the unchanged frozen corpus. All four real evaluation journals
+and the retired blank-facts calibration are retained. Request hashes bind policy
+and explicit nonempty facts; no offline fixture is
 release evidence. Application Windows/Linux gates pass; artifact infrastructure
 is applied with scoped zero-change convergence. Reproduced native publication
 is complete: architect 14/reviewer 12/coordinator 18 are active with unchanged
 identities; rollback 13/11/17 is retained. Initial live acceptance failed during
-native workflow preparation (`ArtifactError`, exact gate unresolved). The known
+native workflow preparation. Coordinator 19's diagnostic release proves
+`DECISION_CALIBRATION_PROVENANCE`: absent facts became blank in the Windows
+loader but defaulted nonempty in hosting. The local correction truly unsets
+missing options, forwards explicit facts to all roles and validates the fresh
+genuine calibration before packaging, but is not yet published. The known
 response and pending parent are preserved, not resent. Remote calls, MI private
 Blob access, artifact provenance, isolation and actual hosting restart are unverified.
 The approved linked-lab policy gives project agents account-wide Blob

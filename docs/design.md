@@ -11,21 +11,27 @@ container, identity-grant and retention metadata checks pass. Reproduced bundled
 publication is complete: architect 14, reviewer 12 and coordinator 18 are active
 on SHA256 `a86c873ee943f090f0c8e5e20305c92127be1507de00b00f3089b935ff6dd26b`,
 with unchanged identities and rollback versions 13/11/17 retained.
-The first synthetic native response failed during workflow preparation.
-Read-only response recovery and bounded hosted-session diagnostics confirm a
-terminal failure with exception type `ArtifactError`, but not its exact gate.
-Pending state and the response ID remain preserved; no repeat inference was
-sent. The real factory constructs offline with validated calibration, which is
-not proof of hosted identity/context correctness.
+Coordinator 19 now runs a safe diagnostic bundle, leaving the other two roles
+unchanged. Its exact preparation failure is
+`DECISION_CALIBRATION_PROVENANCE`: the Windows loader converted an absent fact
+sheet into a blank variable during calibration; deployment omitted it and used
+the nonempty public default. The correction truly removes absent optional
+settings, requires explicit nonempty release facts and forwards them to all roles.
+A fresh evaluation exposed a missing-workload ambiguity. Routing-v3 distinguishes
+fact-sheet constraints from missing user purpose; its genuine twelve-call
+calibration passes all eight ready and four missing-input cases. The unchanged
+selection algorithm selects threshold 0.5/margin 0. Historical observations and
+the retired calibration remain intact; the frozen corpus/coverage gates are
+unchanged. Corrected code and calibration are not yet deployed.
+Pending states and response IDs remain preserved; no repeat inference was sent.
+Offline construction is not proof of hosted identity/context correctness.
 Remote specialist calls, private managed-identity Blob access, accepted artifact
 provenance, two-parent isolation and actual hosting restart/resume remain
 unverified. Metadata is not managed-identity data-plane proof.
-The first real twelve-case calibration failed with two correct ready selections.
-Routing-v2 corrected ambiguous criteria and opaque semantic inputs; a second
-twelve-call evaluation on the unchanged corpus passed eight of eight ready cases
-at threshold 0.9/margin 0, above the unchanged six-of-eight minimum. Both private
-journals remain preserved. The public calibration binds full request hashes to
-the current policy; the corpus's v1 dataset metadata is not a policy downgrade.
+All four real twelve-case calibration journals remain preserved, including both
+failed evaluations and the earlier blank-facts success. The public routing-v3
+calibration binds full request hashes to the current policy and explicit facts;
+the corpus's v1 dataset metadata is not a policy downgrade.
 The preserved baseline has a handwritten coordinator, durable operation ledger,
 Foundry parent/child session handling, strict specialist contracts, and optional
 remote Responses transport. Its explicit legacy adapter still supports
@@ -103,6 +109,11 @@ ungraceful crash. In the next iteration configure supported resilient hosting,
 verify its storage integration, and test hard-kill/restart behavior. Where a
 remote response remains unrecoverable, retain the explicit uncertain hold.
 Neither a workflow checkpoint nor a stored conversation fixes this by itself.
+The explicit acceptance restart uses the pinned hosted-session `:stop` API,
+requires HTTP 204 and a new provider `stopped_at` in idle state, then continues
+the same parent. Its durable write-ahead marker prevents resending an uncertain
+stop. This tests supported compute deprovision/rehydration with persistent
+volume, not an ungraceful hard kill or in-flight crash recovery.
 
 ## Blob access and network boundaries
 

@@ -1,5 +1,117 @@
 # Distributed agents: native workflow and shared artifacts
 
+## Following a request through the source
+
+For native hosting, `demo\host.py` hands request parsing and graph construction
+to the top-level `parse_native_turn()` and `create_native_workflow()` functions
+in `demo\workflow.py`. The coordinator graph reads in order:
+
+1. **Begin:** append the user requirement to the shared artifact history.
+2. **Route:** load accepted prerequisites, apply deterministic gates, and
+   record a validated Decision-1 choice.
+3. **Effect:** prepare and dispatch the selected remote specialist operation.
+4. **Publish:** validate its assigned output, update the coordinator manifest,
+   then return to routing or finish with a result.
+
+For a teaching-oriented reading path, follow `NativeRuntime.begin()`, `route()`,
+`execute()`, and `publish()` in `demo\workflow.py`. Numbered stage comments keep
+each event's sequence visible inline. In particular, `route()` reads top to bottom:
+resume the turn, validate prerequisites and deterministic finish/budget gates,
+recover or prepare the journaled decision, request a model choice only if needed,
+then validate and accept that choice. There is no private routing pipeline to
+trace through. Shared helpers retain the storage, provenance and journal rules;
+this readability refactor does not remove recovery or authorization checks.
+
+Coordinator events open `BlobArtifacts` via `NativeRuntime.resources()`;
+specialist classes construct their Azure SDK clients in their role-local code. The
+`control` container holds requirements, decisions, operation records, and the
+coordinator manifest; architect outputs go to `candidates`, and reviewer
+outputs go to `reviews`. The coordinator owns manifest publication. These Blob
+documents are distinct from MAF workflow checkpoints and Foundry agent-session
+history; neither checkpoint nor conversation state replaces the write-ahead
+effect record.
+
+The legacy adapter has a separate invocation path: `create_hosted_agent()`
+creates a `HostedCoordinator` from `demo\coordinator_agent.py`, and its `run()` resolves the parent `AgentSession`
+before loading the ledger and entering the turn/decision/delegation lifecycle.
+It uses the hosting session store for its ledger, not the native Blob artifact
+flow. `demo\architect_agent.py` and `demo\reviewer_agent.py` define the two
+specialist agent classes, used by both native and legacy hosting, and contain
+their complete native assignment lifecycles:
+
+- **Architect:** `ArchitectAgent.run_assignment()` validates the assignment, reads
+  requirements and any assigned prior design/review from Blob Storage, generates
+  a `Candidate` design, validates its revisions, and writes an immutable candidate
+  JSON artifact before returning its reference.
+- **Reviewer:** `ReviewerAgent.run_assignment()` validates the assignment, reads the
+  exact requirements and candidate from Blob Storage, generates a `Review`,
+  validates its revisions/approval, and writes an immutable review JSON artifact
+  before returning its reference.
+
+The architect's `run_assignment()` is a five-stage recipe. The five methods sit
+directly beneath it in execution order:
+
+1. `connect_and_load_assignment()` registers Azure clients on the caller's
+   `AsyncExitStack`, verifies the private storage path and assignment, and returns
+   the Blob store, Foundry project, headers, assignment and any existing design.
+2. `read_requirements_and_prior_work()` returns the model's input brief.
+3. `load_or_create_llm_session()` returns the LLM conversation session store,
+   session and model deployment, reconciling any completed design or pending call.
+4. `design_solution()` generates design text or recovers a known model response.
+5. `store_design()` validates and writes the candidate, saves the session, and
+   returns its artifact reference.
+
+The reviewer's `run_assignment()` uses the same five-stage pattern, with its
+methods also directly beneath it:
+
+1. `connect_and_load_assignment()` returns the Blob store, Foundry project,
+   headers, validated assignment and any existing review, registering clients on
+   the caller's `AsyncExitStack`.
+2. `read_requirements_and_design()` returns a brief containing the exact
+   requirements and candidate design.
+3. `load_or_create_llm_session()` returns the reviewer's LLM conversation session
+   store, session and deployment, reconciling any completed review or pending call.
+4. `review_solution()` generates review text or recovers a known model response.
+5. `store_review()` validates the review/revisions, writes the immutable review,
+   saves the session, and returns its artifact reference.
+
+Only each role's `run_assignment()` invokes its stage methods; stages do not call
+each other. Completed-design/review early returns remain visible after session
+reconciliation, without repeating inference or storage. Each orchestrator owns its
+`AsyncExitStack`, including cleanup when connection setup fails partway through.
+No pipeline framework or shared runtime wrapper is involved.
+
+Both roles keep their own
+pending-model journal, known-response recovery and existing-output reconciliation;
+the read/generate/write sequence remains understandable within each role's file.
+Both roles' first stages explicitly construct
+Azure SDK `ManagedIdentityCredential`, `BlobServiceClient`, and the Foundry
+`ProjectClient` (an `AIProjectClient` subclass). The stack closes these clients
+on success, failure, or cancellation.
+Private-path verification precedes artifact reads. The existing exact-origin,
+no-retry Foundry transport is retained, as are Blob timeouts, private-network
+checks and disabled proxy inheritance. There is no specialist dependency on
+`NativeRuntime`, resource tuple, or new service abstraction.
+The model itself receives input content and returns JSON; it has no storage tools.
+Shared scoped access, serialization and immutable writes remain in
+`demo\artifact_store.py`. `demo\specialist.py` shares only model instruction
+formatting and agent resource cleanup; it is not another deployed agent.
+`NativeRuntime.specialize()` passes explicit trusted hosting values to the appropriate class method.
+Native graph execution, trusted hosting checks, coordinator resource setup and coordinator
+publication remain in `demo\workflow.py`. Locator contracts live with the
+artifact/assignment schemas in `demo\artifacts.py`. Routing helpers remain in
+`demo\routing.py`; Decision-1 is not a fourth hosted service.
+Assignment/output locators require integer schema version 1 in their Pydantic
+contracts, so agent/coordinator flows do not repeat version branches. Unsupported
+versions fail as `ValidationError`; the coordinator retains an uncertain effect
+without accepting the output. Deployment checks can validate fixed configuration,
+but cannot replace request-time identity/scope, revision, deadline, artifact
+integrity or model-response recovery checks. Those gates remain in the live path.
+The migration map retains the original source filenames and hashes as history,
+not as a current application-file inventory.
+This source map describes code paths; it is not evidence that live
+managed-identity Blob access or hosted acceptance has passed.
+
 ## Status and intended change
 
 This describes the implemented native design, not a claim of live acceptance.

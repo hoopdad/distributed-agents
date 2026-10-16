@@ -325,6 +325,17 @@ class Assignment(ImmutableModel):
             raise ArtifactError("ASSIGNMENT_PREREQUISITES")
 
 
+class AssignmentLocator(StrictModel):
+    schema_version: int = Field(ge=1, le=1)
+    scope_binding: ScopeBinding
+    operation_id: str
+
+
+class OutputLocator(StrictModel):
+    schema_version: int = Field(ge=1, le=1)
+    artifact_ref: ArtifactRef
+
+
 class ChildBinding(StrictModel):
     role: Literal["architect", "reviewer"]
     name: BoundedId

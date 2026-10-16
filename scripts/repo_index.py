@@ -15,7 +15,10 @@ def render() -> str:
         ["git", "-C", str(ROOT), "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
         check=True, capture_output=True,
     )
-    names = sorted({name.decode("utf-8") for name in result.stdout.split(b"\0") if name})
+    names = sorted({
+        name.decode("utf-8") for name in result.stdout.split(b"\0")
+        if name and (ROOT / name.decode("utf-8")).is_file()
+    })
     if any(any(part in PRIVATE for part in Path(name).parts) for name in names):
         raise RuntimeError("PRIVATE_PATH_VISIBLE_TO_GIT")
     current = INDEX.read_text(encoding="utf-8")

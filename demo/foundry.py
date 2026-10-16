@@ -22,10 +22,10 @@ from azure.identity.aio import ManagedIdentityCredential
 
 from .config import required
 from .contracts import (
-    AGENTS, FACTS, LEDGER_KEY, ORIGIN, PROJECT,
-    Action, Candidate, Child, DemoError, Ledger, Review, Role, read_choice,
+    AGENTS, LEDGER_KEY, ORIGIN, PROJECT,
+    Action, Child, DemoError, Ledger, Role, read_choice,
 )
-from .coordinator import Coordinator
+from .coordinator_agent import HostedCoordinator
 
 TRUSTED_USER_ID_HEADER = "x-ms-user-identity"
 LEGACY_USER_ID_HEADER = "x-agent-user-id"
@@ -50,27 +50,14 @@ def specialist_mode() -> str:
     return mode
 
 
-def specialist_instructions(role: Role) -> str:
-    schema = Candidate if role == "architect" else Review
-    return (
-        f"{FACTS}\nYou are the {role}. No tools or infrastructure actions are available. "
-        "Maintain your own conversation context. Follow current supplied requirements; "
-        "later changes override earlier constraints. Return only JSON matching this "
-        f"schema: {json.dumps(schema.model_json_schema())}. "
-        "Use exactly the supplied requirements_revision and candidate_revision. "
-        + (
-            "Produce a complete candidate, revising blocking findings. Keep design concise and "
-            "implementation-ready; design must be at most 10000 characters. Do not add open "
-            "questions or TODO placeholders when you can provide a concrete design decision."
-            if role == "architect" else
-            "Review the exact supplied candidate. Report unresolved requirements and "
-            "blocking findings explicitly. If either list is non-empty, approved must be false. "
-            "Approval is advisory, not deployment approval. Keep recommendation concise and "
-            "at most 2000 characters. Mark approved=true when the candidate satisfies the "
-            "explicit user requirements and any remaining notes are implementation-time "
-            "validation steps rather than missing requirements."
-        )
-    )
+def create_specialist_agent(role: Role, **kwargs) -> Agent:
+    from .architect_agent import ArchitectAgent
+    from .reviewer_agent import ReviewerAgent
+
+    if role not in ("architect", "reviewer"):
+        raise DemoError("ROLE_CONFIGURATION")
+    agent_type = ArchitectAgent if role == "architect" else ReviewerAgent
+    return agent_type(**kwargs)
 
 
 class OriginTransport(httpx2.AsyncBaseTransport):
@@ -381,14 +368,12 @@ class InProcessAgents:
 
     def _agent(self, role: Role) -> Agent:
         if role not in self.sessions:
-            self.sessions[role] = Agent(
+            self.sessions[role] = create_specialist_agent(
+                role,
                 client=FoundryChatClient(
                     project_client=self.project, model=required("SPECIALIST_MODEL_DEPLOYMENT"),
                     default_headers=self.headers
                 ),
-                name=AGENTS[role],
-                instructions=specialist_instructions(role),
-                default_options={"max_tokens": 2500},
             )
         return self.sessions[role]
 
@@ -415,30 +400,6 @@ class InProcessAgents:
         return self.responses[key]
 
 
-class HostedCoordinator(Coordinator):
-    def __init__(self, journal, remote, router, stack):
-        super().__init__(journal, remote, router)
-        self.stack = stack
-
-    async def __aenter__(self):
-        return self
-
-    async def __aexit__(self, *args):
-        await self.stack.aclose()
-
-
-class HostedSpecialist(Agent):
-    def __init__(self, *, stack, **kwargs):
-        super().__init__(**kwargs)
-        self.stack = stack
-
-    async def __aexit__(self, *args):
-        try:
-            await super().__aexit__(*args)
-        finally:
-            await self.stack.aclose()
-
-
 async def create_hosted_agent():
     role = os.environ["DEMO_ROLE"]
     if role not in AGENTS:
@@ -462,14 +423,13 @@ async def create_hosted_agent():
                 HostedJournal(config, context), remote,
                 DecisionRouter(http, credential, headers), stack,
             )
-        return HostedSpecialist(
+        return create_specialist_agent(
+            role,
             stack=stack,
             client=FoundryChatClient(
                 project_client=project, model=required("SPECIALIST_MODEL_DEPLOYMENT"),
                 default_headers=headers
             ),
-            name=AGENTS[role], instructions=specialist_instructions(role),
-            default_options={"max_tokens": 2500},
         )
     except BaseException:
         await stack.aclose()

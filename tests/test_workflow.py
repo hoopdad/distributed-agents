@@ -10,7 +10,7 @@ import tempfile
 import unittest
 import uuid
 from pathlib import Path
-from contextlib import asynccontextmanager, redirect_stdout
+from contextlib import ExitStack, asynccontextmanager, redirect_stdout
 from types import SimpleNamespace
 from unittest.mock import AsyncMock, MagicMock, patch
 from pydantic import ValidationError
@@ -359,6 +359,134 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         self.addCleanup(self.router.stop)
         self.addCleanup(self.calibration.stop)
 
+    async def test_architect_runs_five_stages_with_explicit_handoffs_and_owned_cleanup(self):
+        await self.check_specialist_stage_handoffs("architect")
+
+    async def test_reviewer_runs_five_stages_with_explicit_handoffs_and_owned_cleanup(self):
+        await self.check_specialist_stage_handoffs("reviewer")
+
+    async def check_specialist_stage_handoffs(self, role):
+        from demo.architect_agent import ArchitectAgent
+        from demo.reviewer_agent import ReviewerAgent
+
+        agent_class = ArchitectAgent if role == "architect" else ReviewerAgent
+        scope = self.runtime.scope
+        content = Candidate(
+            requirements_revision=1, candidate_revision=1, design="Synthetic staged design.",
+        ) if role == "architect" else Review(
+            requirements_revision=1, candidate_revision=1, approved=True,
+            blocking_findings=[], unresolved_requirements=[], recommendation="Synthetic staged review.",
+        )
+        artifact = Artifact(
+            artifact_type="candidate" if role == "architect" else "review", scope_binding=scope, operation_id="a" * 32,
+            producer={
+                "role": role, "name": AGENTS[role], "version": "2",
+                "session_id": "child", "response_id": "outer-response",
+            },
+            input_refs=[], requirements_revision=1, candidate_revision=1,
+            content=content, content_sha256=digest(content),
+        )
+        stage_names = (
+            "connect_and_load_assignment", "read_requirements_and_prior_work",
+            "load_or_create_llm_session", "design_solution", "store_design",
+        ) if role == "architect" else (
+            "connect_and_load_assignment", "read_requirements_and_design",
+            "load_or_create_llm_session", "review_solution", "store_review",
+        )
+        existing_key = "existing_design" if role == "architect" else "existing_review"
+        for completed in (False, True):
+            with self.subTest(completed=completed), ExitStack() as patches:
+                calls = MagicMock()
+                stages = [
+                    patches.enter_context(patch.object(agent_class, name, new_callable=AsyncMock))
+                    for name in stage_names
+                ]
+                for name, stage in zip(stage_names, stages):
+                    calls.attach_mock(stage, name)
+                store, project, assignment, session_store, session = (object() for _ in range(5))
+                headers = {"x-agent-foundry-call-id": "synthetic-call"}
+                brief = {"inputs": ["Synthetic requirements."]}
+                resource = MagicMock()
+
+                async def connect(stack, *_args, **_kwargs):
+                    await stack.enter_async_context(resource)
+                    return store, project, headers, assignment, artifact if completed else None
+
+                stages[0].side_effect = connect
+                stages[1].return_value = brief
+                stages[2].return_value = session_store, session, "synthetic-model"
+                stages[3].return_value = "synthetic-model-output"
+                stages[4].return_value = artifact.ref()
+                result = await agent_class.run_assignment(
+                    "synthetic-locator", config=self.runtime.config, context=SimpleNamespace(),
+                    scope=scope, response_id="outer-response",
+                )
+                self.assertEqual([call[0] for call in calls.mock_calls], list(stage_names[:3 if completed else 5]))
+                stages[1].assert_awaited_once_with(store, assignment)
+                self.assertIs(stages[2].await_args.kwargs["brief"], brief)
+                self.assertIs(stages[2].await_args.kwargs["assignment"], assignment)
+                self.assertIs(stages[2].await_args.kwargs[existing_key], artifact if completed else None)
+                if completed:
+                    stages[3].assert_not_awaited()
+                    stages[4].assert_not_awaited()
+                else:
+                    self.assertIs(stages[3].await_args.kwargs["session"], session)
+                    self.assertIs(stages[3].await_args.kwargs["session_store"], session_store)
+                    self.assertIs(stages[3].await_args.kwargs["project"], project)
+                    self.assertEqual(stages[4].await_args.kwargs["text"], "synthetic-model-output")
+                    self.assertIs(stages[4].await_args.kwargs["store"], store)
+                self.assertEqual(OutputLocator.model_validate(decode_document(result.encode())).artifact_ref, artifact.ref())
+                resource.__aenter__.assert_awaited_once()
+                resource.__aexit__.assert_awaited_once()
+
+    async def test_architect_closes_connections_when_any_stage_fails(self):
+        await self.check_specialist_stage_cleanup("architect")
+
+    async def test_reviewer_closes_connections_when_any_stage_fails(self):
+        await self.check_specialist_stage_cleanup("reviewer")
+
+    async def check_specialist_stage_cleanup(self, role):
+        from demo.architect_agent import ArchitectAgent
+        from demo.reviewer_agent import ReviewerAgent
+
+        agent_class = ArchitectAgent if role == "architect" else ReviewerAgent
+        stage_names = (
+            "connect_and_load_assignment", "read_requirements_and_prior_work",
+            "load_or_create_llm_session", "design_solution", "store_design",
+        ) if role == "architect" else (
+            "connect_and_load_assignment", "read_requirements_and_design",
+            "load_or_create_llm_session", "review_solution", "store_review",
+        )
+        for failing_stage in range(5):
+            with self.subTest(stage=stage_names[failing_stage]), ExitStack() as patches:
+                stages = [
+                    patches.enter_context(patch.object(agent_class, name, new_callable=AsyncMock))
+                    for name in stage_names
+                ]
+                resource = MagicMock()
+
+                async def connect(stack, *_args, **_kwargs):
+                    await stack.enter_async_context(resource)
+                    if failing_stage == 0:
+                        raise RuntimeError("Synthetic stage failure")
+                    return object(), object(), {}, object(), None
+
+                stages[0].side_effect = connect
+                stages[1].return_value = {}
+                stages[2].return_value = object(), object(), "synthetic-model"
+                stages[3].return_value = "synthetic-output"
+                if failing_stage:
+                    stages[failing_stage].side_effect = RuntimeError("Synthetic stage failure")
+                with self.assertRaisesRegex(RuntimeError, "Synthetic stage failure"):
+                    await agent_class.run_assignment(
+                        "synthetic-locator", config=self.runtime.config, context=SimpleNamespace(),
+                        scope=self.runtime.scope, response_id="outer-response",
+                    )
+                resource.__aenter__.assert_awaited_once()
+                resource.__aexit__.assert_awaited_once()
+                for stage in stages[failing_stage + 1:]:
+                    stage.assert_not_awaited()
+
     async def test_native_resources_forward_sdk_context_without_redelegating_platform_user(self):
         import httpx2
         from azure.ai.agentserver.core import FoundryAgentRequestContext
@@ -398,7 +526,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         with patch("demo.workflow.ManagedIdentityCredential", return_value=credential), \
                 patch("demo.workflow.data_client", wraps=data_client) as data_factory, \
                 patch("demo.foundry.httpx2.AsyncHTTPTransport", return_value=httpx2.MockTransport(handle)), \
-                patch("demo.workflow.storage", return_value=store), \
+                patch("demo.workflow.create_artifact_store", return_value=store), \
                 self.assertLogs("demo.foundry.outbound_context", level="INFO") as logs:
             async with NativeRuntime.resources(self.runtime) as (_, remote, _, _, _, _):
                 stream = remote._client(child).run("Synthetic probe.", session=session, stream=True)
@@ -449,6 +577,131 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
                     await self.runtime.route(self.runtime.response_id)
                 client.assert_not_called()
                 self.assertEqual(self.remote.calls, 0)
+
+    async def test_recorded_routing_action_resumes_without_another_decision(self):
+        action = await self.step_to_call()
+        store = make_store(self.backend, self.runtime.scope, "coordinator")
+        before = await store.read_manifest()
+        with patch("demo.workflow.DecisionClient") as client:
+            self.assertEqual(await self.runtime.route(self.runtime.response_id), (action, None))
+            client.assert_not_called()
+        self.assertEqual(await store.read_manifest(), before)
+
+    async def test_routing_limits_stop_before_requesting_a_decision(self):
+        for limit in ("decisions", "calls", "rounds", "deadline"):
+            with self.subTest(limit=limit):
+                runtime = TestRuntime(self.backend, self.remote, parent=f"limit-{limit}")
+                await runtime.begin("Synthetic requirements.")
+                store = make_store(self.backend, runtime.scope, "coordinator")
+                async with store.lock_manifest() as document:
+                    manifest = document.value
+                    if limit == "decisions":
+                        manifest.decisions = 10
+                    elif limit == "calls":
+                        manifest.calls = 6
+                    elif limit == "rounds":
+                        manifest.rounds = 3
+                    else:
+                        manifest.deadline_epoch = 1
+                    await runtime.save(document, manifest)
+                with patch("demo.workflow.DecisionClient") as client:
+                    action, result = await runtime.route(runtime.response_id)
+                    client.assert_not_called()
+                self.assertIsNone(action)
+                self.assertEqual(result["status"], "LIMIT_REACHED")
+                self.assertIsNone(result["pending_effect"])
+                self.assertEqual(result["decision_refs"], [])
+        self.assertEqual(self.remote.calls, 0)
+
+    async def test_current_approval_finishes_before_checking_exhausted_budgets(self):
+        await graph(self.runtime).run("Synthetic requirements.")
+        store = make_store(self.backend, self.runtime.scope, "coordinator")
+        async with store.lock_manifest() as document:
+            manifest = document.value
+            manifest.status = "RUNNING"
+            manifest.decisions, manifest.calls, manifest.rounds = 10, 6, 3
+            manifest.deadline_epoch = 1
+            await self.runtime.save(document, manifest)
+        with patch("demo.workflow.DecisionClient") as client:
+            action, result = await self.runtime.route(self.runtime.response_id)
+            client.assert_not_called()
+        self.assertIsNone(action)
+        self.assertEqual(result["status"], "ACCEPTED_ADVISORY")
+        self.assertTrue(result["review"]["approved"])
+        self.assertEqual(self.remote.calls, 2)
+
+    async def test_prepared_decision_resumes_without_counting_a_second_decision(self):
+        await self.runtime.begin("Synthetic requirements.")
+        with patch("demo.workflow.reserve_decision", side_effect=ProcessCrash):
+            with self.assertRaises(ProcessCrash):
+                await self.runtime.route(self.runtime.response_id)
+        store = make_store(self.backend, self.runtime.scope, "coordinator")
+        before = await store.read_manifest()
+        self.assertEqual(before.effect.status, "prepared")
+        resumed = TestRuntime(self.backend, self.remote)
+        router = FakeRouter()
+        with patch.object(router, "choose", wraps=router.choose) as choose, \
+                patch("demo.workflow.DecisionClient", return_value=router):
+            self.assertEqual(await resumed.route(resumed.response_id), ("ask_architect", None))
+            choose.assert_awaited_once()
+        after = await store.read_manifest()
+        self.assertEqual(after.decisions, 1)
+        self.assertEqual(after.effect.operation_id, before.effect.operation_id)
+        self.assertEqual(after.effect.status, "accepted")
+
+    async def test_dispatched_decision_without_output_is_held_without_resend(self):
+        await self.runtime.begin("Synthetic requirements.")
+        with patch.object(FakeRouter, "choose", side_effect=ProcessCrash):
+            with self.assertRaises(ProcessCrash):
+                await self.runtime.route(self.runtime.response_id)
+        store = make_store(self.backend, self.runtime.scope, "coordinator")
+        self.assertEqual((await store.read_manifest()).effect.status, "dispatched")
+        resumed = TestRuntime(self.backend, self.remote)
+        with patch("demo.workflow.DecisionClient") as client:
+            action, result = await resumed.route(resumed.response_id)
+            self.assertEqual(await resumed.route(resumed.response_id), (action, result))
+            client.assert_not_called()
+        self.assertIsNone(action)
+        self.assertEqual(result["status"], "DECISION_EFFECT_UNCERTAIN")
+        self.assertEqual(result["pending_effect"]["kind"], "decision")
+        self.assertEqual(result["pending_effect"]["status"], "unknown")
+        self.assertEqual(result["decisions"], 1)
+        self.assertEqual(self.remote.calls, 0)
+
+    async def test_completed_decision_recovers_after_crash_without_another_model_call(self):
+        await self.runtime.begin("Synthetic requirements.")
+        with patch.object(self.runtime, "accept_decision", side_effect=ProcessCrash):
+            with self.assertRaises(ProcessCrash):
+                await self.runtime.route(self.runtime.response_id)
+        store = make_store(self.backend, self.runtime.scope, "coordinator")
+        before = await store.read_manifest()
+        proposal = await store.read_output(
+            artifact_type="decision", revision=before.turn, operation_id=before.effect.operation_id,
+        )
+        self.assertIsNotNone(proposal)
+        resumed = TestRuntime(self.backend, self.remote)
+        with patch("demo.workflow.DecisionClient") as client, \
+                patch("demo.workflow.reserve_decision") as reserve:
+            self.assertEqual(await resumed.route(resumed.response_id), ("ask_architect", None))
+            client.assert_not_called()
+            reserve.assert_not_awaited()
+        after = await store.read_manifest()
+        self.assertEqual(after.decisions, 1)
+        self.assertEqual(after.effect.status, "accepted")
+        self.assertEqual(after.effect.output_ref, proposal.ref())
+        self.assertIn(proposal.ref(), after.accepted)
+
+    async def test_routing_provider_error_remains_an_explicit_unknown_effect(self):
+        await self.runtime.begin("Synthetic requirements.")
+        with patch.object(FakeRouter, "choose", side_effect=ArtifactError("DECISION_HTTP_429")) as choose:
+            action, result = await self.runtime.route(self.runtime.response_id)
+            choose.assert_awaited_once()
+        self.assertIsNone(action)
+        self.assertEqual(result["status"], "DECISION_HTTP_429")
+        self.assertEqual(result["pending_effect"]["status"], "unknown")
+        self.assertEqual(result["pending_effect"]["failure"], "DECISION_HTTP_429")
+        self.assertEqual(result["decision_refs"], [])
+        self.assertEqual(self.remote.calls, 0)
 
     async def test_native_graph_reaches_current_accepted_remote_outputs(self):
         result = await graph(self.runtime).run("Synthetic requirements.")
@@ -510,15 +763,83 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
     async def test_specialist_publication_crash_reconciles_history_before_followup(self):
         await self.check_specialist_model_recovery(known=True, publication_crash=True)
 
-    async def check_specialist_model_recovery(self, *, known, publication_crash=False):
+    async def test_architect_reads_requirements_and_writes_design_artifact(self):
+        await self.check_specialist_model_recovery(known=True, fresh=True)
+
+    async def test_specialists_reject_unsupported_locator_version_before_opening_azure_clients(self):
+        from demo.architect_agent import ArchitectAgent
+        from demo.reviewer_agent import ReviewerAgent
+
+        for agent in (ArchitectAgent, ReviewerAgent):
+            module = agent.__module__
+            locator = canonical_bytes({
+                "schema_version": 2, "scope_binding": self.runtime.scope.model_dump(mode="json"),
+                "operation_id": "a" * 32,
+            }).decode()
+            with self.subTest(agent=agent.__name__), patch(f"{module}.ManagedIdentityCredential") as credential:
+                with self.assertRaises(ValidationError):
+                    await agent.run_assignment(
+                        locator, config=self.runtime.config, context=SimpleNamespace(),
+                        scope=self.runtime.scope, response_id="synthetic-response",
+                    )
+                credential.assert_not_called()
+
+    async def test_unsupported_specialist_output_version_is_held_without_acceptance(self):
         action = await self.step_to_call()
+        invoke = self.remote.invoke
+
+        async def unsupported_output(*args):
+            output = decode_document((await invoke(*args)).encode())
+            output["schema_version"] = 2
+            return canonical_bytes(output).decode()
+
+        with patch.object(self.remote, "invoke", side_effect=unsupported_output):
+            operation = await self.runtime.execute(action)
+        store = make_store(self.backend, self.runtime.scope, "coordinator")
+        manifest = await store.read_manifest()
+        self.assertEqual(manifest.effect.status, "unknown")
+        self.assertEqual(manifest.status, "ValidationError")
+        self.assertIsNone(manifest.effect.output_ref)
+        self.assertIsNone(manifest.candidate)
+        continuing, result = await self.runtime.publish(operation)
+        self.assertFalse(continuing)
+        self.assertEqual(result["status"], "ValidationError")
+
+    async def test_reviewer_reads_requirements_and_design_and_writes_review_artifact(self):
+        await self.check_specialist_model_recovery(role="reviewer", known=True, fresh=True)
+
+    async def test_reviewer_recovers_observed_model_response_without_replay(self):
+        await self.check_specialist_model_recovery(role="reviewer", known=True)
+
+    async def test_reviewer_holds_unobserved_model_response_without_replay(self):
+        await self.check_specialist_model_recovery(role="reviewer", known=False)
+
+    async def test_reviewer_publication_crash_reconciles_history(self):
+        await self.check_specialist_model_recovery(role="reviewer", known=True, publication_crash=True)
+
+    async def test_specialists_close_azure_clients_when_private_storage_verification_fails(self):
+        for role in ("architect", "reviewer"):
+            with self.subTest(role=role):
+                self.backend = MemoryBackend()
+                self.remote = FakeRemote(self.backend)
+                self.runtime = TestRuntime(self.backend, self.remote)
+                await self.check_specialist_model_recovery(role=role, known=True, private_path_failure=True)
+
+    async def check_specialist_model_recovery(
+        self, *, known, role="architect", publication_crash=False, fresh=False, private_path_failure=False,
+    ):
+        action = await self.step_to_call()
+        if role == "reviewer":
+            operation = await self.runtime.execute(action)
+            await self.runtime.publish(operation)
+            action, _ = await self.runtime.route(self.runtime.response_id)
         self.remote.crash = "unknown_response"
         with self.assertRaises(ProcessCrash):
             await self.runtime.execute(action)
         store = make_store(self.backend, self.runtime.scope, "coordinator")
         manifest = await store.read_manifest()
         assignment = await store.read_assignment(manifest.effect.operation_id)
-        child = manifest.children["architect"]
+        child = manifest.children[role]
         session_store = SimpleNamespace(snapshot=None, crash=publication_crash)
 
         async def get(_key):
@@ -534,6 +855,10 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         content = Candidate(
             requirements_revision=assignment.requirements_revision,
             candidate_revision=assignment.candidate_revision, design="Synthetic recovered model design.",
+        ) if role == "architect" else Review(
+            requirements_revision=assignment.requirements_revision,
+            candidate_revision=assignment.candidate_revision, approved=True,
+            blocking_findings=[], unresolved_requirements=[], recommendation="Synthetic review.",
         )
         retrieve = AsyncMock(return_value=SimpleNamespace(
             id="inner-model-response", status="completed", output_text=canonical_bytes(content).decode(),
@@ -542,7 +867,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
             responses=SimpleNamespace(retrieve=retrieve),
         ))
         worker = TestRuntime(self.backend, self.remote)
-        worker.role = "architect"
+        worker.role = role
         worker.response_id = "trusted-worker-outer-response"
         worker.config = SimpleNamespace(
             is_hosted=True, session_id=child.hosted_id, project_endpoint=self.runtime.scope.project,
@@ -550,13 +875,17 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         )
         worker.context = SimpleNamespace(
             session_id=child.hosted_id, user_id=self.runtime.scope.principal, call_id="trusted-worker-call",
+            platform_headers=lambda: {"x-agent-foundry-call-id": "trusted-worker-call"},
         )
 
-        @asynccontextmanager
-        async def resources(**_kwargs):
-            yield make_store(self.backend, self.runtime.scope, "architect"), None, project, None, None, {}
-
-        worker.resources = resources
+        specialist_store = make_store(self.backend, self.runtime.scope, role)
+        specialist_store.verify_private_path = AsyncMock(
+            side_effect=ArtifactError("ARTIFACT_PRIVATE_DNS_MISMATCH") if private_path_failure else None,
+        )
+        specialist_store.read_assignment = AsyncMock(wraps=specialist_store.read_assignment)
+        specialist_store.read_artifact = AsyncMock(wraps=specialist_store.read_artifact)
+        specialist_store.write_artifact = AsyncMock(wraps=specialist_store.write_artifact)
+        worker.resources = MagicMock(side_effect=AssertionError("Specialists must open Azure clients inline."))
         locator = canonical_bytes({
             "schema_version": 1, "scope_binding": self.runtime.scope.model_dump(mode="json"),
             "operation_id": assignment.operation_id,
@@ -572,37 +901,120 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
             async def __aiter__(self):
                 if known:
                     yield AgentResponseUpdate(response_id="inner-model-response")
-                raise ProcessCrash()
+                if not fresh:
+                    raise ProcessCrash()
+
+            async def get_final_response(self):
+                return SimpleNamespace(finish_reason="stop", text=canonical_bytes(content).decode())
 
         agent = MagicMock()
         agent.__aenter__ = AsyncMock(return_value=agent)
         agent.__aexit__ = AsyncMock(return_value=None)
         agent.run.return_value = InterruptedStream()
-        with patch("demo.workflow.AgentSessionStoreProvider") as provider, \
-                patch("demo.workflow.Agent", return_value=agent), \
-                patch("demo.workflow.FoundryChatClient"):
+        module = f"demo.{role}_agent"
+        from demo.architect_agent import ArchitectAgent
+        from demo.reviewer_agent import ReviewerAgent
+        agent_class = ArchitectAgent if role == "architect" else ReviewerAgent
+        credential, http = MagicMock(), MagicMock()
+        credential.__aenter__.return_value = credential
+        http.__aenter__.return_value = http
+        project_context, blob_context = MagicMock(), MagicMock()
+        project_context.__aenter__.return_value = project
+        blob_context.__aenter__.return_value = self.backend
+        with patch(f"{module}.AgentSessionStoreProvider") as provider, \
+                patch.object(agent_class, "__new__", return_value=agent), \
+                patch(f"{module}.FoundryChatClient"), \
+                patch(f"{module}.ManagedIdentityCredential", return_value=credential), \
+                patch(f"{module}.data_client", return_value=http) as http_factory, \
+                patch(f"{module}.ProjectClient", return_value=project_context) as project_factory, \
+                patch(f"{module}.BlobServiceClient", return_value=blob_context) as blob_factory, \
+                patch(f"{module}.AioHttpTransport") as blob_transport, \
+                patch(f"{module}.BlobArtifacts", return_value=specialist_store) as store_factory, \
+                patch.dict(os.environ, {
+                    "ARTIFACT_STORAGE_ENDPOINT": "https://syntheticstorage.blob.core.windows.net",
+                    "ARTIFACT_CONTROL_CONTAINER": "control",
+                    "ARTIFACT_CANDIDATES_CONTAINER": "candidates",
+                    "ARTIFACT_REVIEWS_CONTAINER": "reviews",
+                    "ARTIFACT_PRIVATE_IPS": "10.0.0.4",
+                }):
             provider.return_value.get_store.return_value = session_store
-            with self.assertRaises(ProcessCrash):
-                await worker.specialize(locator)
-            self.assertEqual(
-                session_store.snapshot["state"]["pending_operation"]["response_id"],
-                "inner-model-response" if known else None,
-            )
-            if known:
+            if private_path_failure:
+                with self.assertRaisesRegex(ArtifactError, "ARTIFACT_PRIVATE_DNS_MISMATCH"):
+                    await worker.specialize(locator)
+                specialist_store.read_assignment.assert_not_awaited()
+                specialist_store.read_artifact.assert_not_awaited()
+                specialist_store.write_artifact.assert_not_awaited()
+                provider.assert_not_called()
+                agent.run.assert_not_called()
+                for resource in (credential, http, project_context, blob_context):
+                    resource.__aenter__.assert_awaited_once()
+                    resource.__aexit__.assert_awaited_once()
+                return
+            if fresh:
+                result = OutputLocator.model_validate(decode_document((await worker.specialize(locator)).encode()))
+                retrieve.assert_not_awaited()
+            else:
+                with self.assertRaises(ProcessCrash):
+                    await worker.specialize(locator)
+                self.assertEqual(
+                    session_store.snapshot["state"]["pending_operation"]["response_id"],
+                    "inner-model-response" if known else None,
+                )
+            if known and not fresh:
                 if publication_crash:
                     with self.assertRaises(ProcessCrash):
                         await worker.specialize(locator)
                 result = OutputLocator.model_validate(decode_document((await worker.specialize(locator)).encode()))
-                self.assertEqual(result.artifact_ref.artifact_type, "candidate")
                 retrieve.assert_awaited_once_with("inner-model-response")
-                self.assertNotIn("pending_operation", session_store.snapshot["state"])
-            else:
+            elif not known:
                 with self.assertRaises(ArtifactError) as caught:
                     await worker.specialize(locator)
                 self.assertEqual(caught.exception.code, "SPECIALIST_MODEL_EFFECT_UNCERTAIN")
                 retrieve.assert_not_awaited()
             agent.run.assert_called_once()
-            if publication_crash:
+            expected_inputs = [await store.read_artifact(ref) for ref in assignment.input_refs]
+            self.assertEqual(
+                decode_document(agent.run.call_args.args[0].encode())["inputs"],
+                [value.content.model_dump(mode="json") for value in expected_inputs],
+            )
+            self.assertEqual(
+                [call.args[0] for call in specialist_store.read_artifact.await_args_list[:len(assignment.input_refs)]],
+                assignment.input_refs,
+            )
+            if known:
+                self.assertEqual(result.artifact_ref.artifact_type, assignment.output_type)
+                self.assertEqual(result.artifact_ref.container, "candidates" if role == "architect" else "reviews")
+                specialist_store.write_artifact.assert_awaited_once()
+                artifact = await store.read_artifact(result.artifact_ref)
+                self.assertEqual(artifact.content, content)
+                self.assertEqual(artifact.input_refs, assignment.input_refs)
+                self.assertEqual(artifact.producer.role, role)
+                self.assertEqual(artifact.producer.response_id, worker.response_id)
+                self.assertNotIn("pending_operation", session_store.snapshot["state"])
+            else:
+                specialist_store.write_artifact.assert_not_awaited()
+            worker.resources.assert_not_called()
+            http_factory.assert_called_with(
+                expected_call_id=worker.context.call_id, response_id=worker.response_id,
+            )
+            project_factory.assert_called_with(credential, http, worker.context.platform_headers())
+            blob_transport.assert_called_with(use_env_settings=False)
+            blob_factory.assert_called_with(
+                "https://syntheticstorage.blob.core.windows.net", credential=credential,
+                retry_total=0, connection_timeout=10, read_timeout=30,
+                logging_enable=False, max_single_get_size=131072,
+                transport=blob_transport.return_value,
+            )
+            store_factory.assert_called_with(
+                role=role, scope=self.runtime.scope, endpoint="https://syntheticstorage.blob.core.windows.net",
+                containers={"control": "control", "candidates": "candidates", "reviews": "reviews"},
+                credential=credential, service=self.backend, expected_private_ips=["10.0.0.4"],
+            )
+            self.assertEqual(specialist_store.verify_private_path.await_count, blob_factory.call_count)
+            for resource in (credential, http, project_context, blob_context):
+                self.assertEqual(resource.__aenter__.await_count, blob_factory.call_count)
+                self.assertEqual(resource.__aexit__.await_count, blob_factory.call_count)
+            if publication_crash and role == "architect":
                 async with store.lock_manifest() as document:
                     saved = document.value
                     saved.effect.response_id = worker.response_id

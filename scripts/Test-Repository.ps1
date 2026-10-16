@@ -11,6 +11,7 @@ $files = & git -C $root ls-files --cached --others --exclude-standard
 if ($LASTEXITCODE -ne 0) { throw 'Cannot enumerate public files.' }
 foreach ($relative in ($files | Sort-Object -Unique)) {
     $path = Join-Path $root $relative
+    if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { continue }
     if ($relative.EndsWith('.ps1')) {
         $tokens = $null; $errors = $null
         [Management.Automation.Language.Parser]::ParseFile($path, [ref]$tokens, [ref]$errors) | Out-Null

@@ -8,7 +8,8 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 | Area | Entry points | Responsibility |
 |---|---|---|
-| Orchestration | `main.py`, `demo\host.py`, `demo\workflow.py`, `demo\coordinator.py` | Native checkpointed MAF graph; explicit preserved legacy coordinator |
+| Orchestration | `main.py`, `demo\host.py`, `demo\workflow.py`, `demo\coordinator_agent.py` | Native checkpointed MAF graph; begin/route/execute/publish use numbered inline stages, shared correctness helpers and trusted resources; explicit preserved legacy coordinator |
+| Specialist agents | `demo\architect_agent.py`, `demo\reviewer_agent.py`, `demo\specialist.py` | Each role's run_assignment orchestrates five typed stage methods directly below it; explicit role-local Azure SDK setup, input reads, LLM session/recovery and immutable writes without NativeRuntime dependency |
 | Contracts/configuration | `demo\artifacts.py`, `demo\contracts.py`, `demo\config.py`, `config\settings.example.json` | Strict artifacts/assignments and atomic generic native settings |
 | Blob/routing | `demo\artifact_store.py`, `demo\routing.py`, `config\routing-corpus.json`, `scripts\calibrate_routing.py` | Role-owned immutable outputs, fenced journal/manifest, typed calibrated Decision-1 and shared admission |
 | Foundry integration | `demo\foundry.py`, `agent_metadata.py`, `azure.yaml` | Trusted host/state/provider adapters; three native remote-mode services deployed, not live-accepted |
@@ -129,14 +130,17 @@ conversation/credential stores.
 - `config\routing-corpus.json`
 - `config\settings.example.json`
 - `demo\__init__.py`
+- `demo\architect_agent.py`
 - `demo\artifact_store.py`
 - `demo\artifacts.py`
 - `demo\config.py`
 - `demo\contracts.py`
-- `demo\coordinator.py`
+- `demo\coordinator_agent.py`
 - `demo\foundry.py`
 - `demo\host.py`
+- `demo\reviewer_agent.py`
 - `demo\routing.py`
+- `demo\specialist.py`
 - `demo\terminal.py`
 - `demo\workflow.py`
 - `docs\NEXT-SESSION-PROMPT.md`

@@ -5,6 +5,36 @@ reviewer. This repository owns reusable application code, contracts, tests, and
 generic configuration. Infrastructure and environment-specific connectivity
 remain in the separate Azure lab repository.
 
+Agent definitions use Python's underscore naming convention:
+`demo\coordinator_agent.py`, `demo\architect_agent.py`, and
+`demo\reviewer_agent.py`. Follow `ArchitectAgent.run_assignment()` in
+`demo\architect_agent.py` to see requirements and prior findings read from Blob
+Storage, a design generated, and its candidate JSON artifact written back.
+`ReviewerAgent.run_assignment()` in `demo\reviewer_agent.py` similarly reads the exact
+requirements and candidate, generates findings, and writes the review JSON.
+These intentionally explicit role-local flows favor readability over deduplicating
+their validation and recovery steps. Each specialist's `run_assignment()` calls five
+stage methods, defined directly below it in execution order: connect/load the
+assignment, read the assigned inputs, load/create its LLM conversation session,
+generate or recover the model response, and store the output. The architect designs
+the solution; the reviewer reads the exact requirements/candidate and reviews it.
+Only `run_assignment()` calls these stages, owns client cleanup, and short-circuits
+an already completed design or review. Each role's first stage explicitly
+construct Azure SDK `ManagedIdentityCredential`, the Foundry project client, and
+`BlobServiceClient`, then read and write through the typed `BlobArtifacts` adapter in
+`demo\artifact_store.py`. Specialists do not depend on `NativeRuntime` or its
+resource helper. Native graph orchestration, trusted hosting checks, and
+coordinator manifest publication remain in `demo\workflow.py`.
+Routing is a helper in `demo\routing.py`, not a separate hosted agent.
+For teaching, follow `NativeRuntime.begin()`, `route()`, `execute()`, and
+`publish()` in `demo\workflow.py`. Each method has numbered stages with the
+control flow inline: record requirements, choose the next step, call a specialist,
+then validate and publish its output. Routing's deterministic gates, decision
+recovery, model request, and acceptance are one readable sequence, rather than a
+chain of private orchestration helpers. Shared storage and provenance helpers
+remain separate so the correctness rules are consistent.
+See [the source lifecycle map](docs/design.md#following-a-request-through-the-source).
+
 **Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
 artifact-plane source are implemented; 132 application tests pass on Windows
 and Linux/amd64 (seven expected Windows-only skips on Linux).

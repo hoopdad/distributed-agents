@@ -67,22 +67,23 @@ class Coordinator:
         self.remote = remote
         self.router = router
 
+    def run(self, messages=None, *, stream=False, session=None, **kwargs):
+        """Framework entry point: resolve the parent session and start its response stream."""
+        parent = session if session is not None else self.create_session()
+        updates = self._stream(messages, parent)
+        if stream:
+            return ResponseStream(updates, finalizer=AgentResponse.from_updates)
+        return self._complete(updates)
+
+    @staticmethod
+    async def _complete(updates: AsyncIterator[AgentResponseUpdate]) -> AgentResponse:
+        return AgentResponse.from_updates([update async for update in updates])
+
     def create_session(self, *, session_id: str | None = None) -> AgentSession:
         return AgentSession(session_id=session_id)
 
     def get_session(self, service_session_id: str, *, session_id: str | None = None) -> AgentSession:
         return AgentSession(session_id=session_id, service_session_id=service_session_id)
-
-    def run(self, messages=None, *, stream=False, session=None, **kwargs):
-        parent = session if session is not None else self.create_session()
-        updates = self._stream(messages, parent)
-        if stream:
-            return ResponseStream(updates, finalizer=AgentResponse.from_updates)
-
-        async def complete():
-            return AgentResponse.from_updates([update async for update in updates])
-
-        return complete()
 
     async def _save(self, parent: AgentSession, ledger: Ledger) -> None:
         ledger.generation += 1
@@ -242,6 +243,21 @@ class Coordinator:
         }
 
     async def _stream(self, messages, parent: AgentSession) -> AsyncIterator[AgentResponseUpdate]:
+        text = self._input_text(messages)
+        ledger = await self.journal.load(parent)
+        error = None
+        try:
+            async with asyncio.timeout(360):
+                async for update in self._run_turn(parent, ledger, text):
+                    yield update
+        except (DemoError, TimeoutError) as exc:
+            error = self._record_turn_error(ledger, exc)
+        # Unexpected SDK/storage errors propagate; no successful-looking fallback.
+        await self._save(parent, ledger)
+        yield self._result_update(ledger, error)
+
+    @staticmethod
+    def _input_text(messages) -> str:
         if isinstance(messages, str):
             text = messages
         elif isinstance(messages, Message):
@@ -252,66 +268,94 @@ class Coordinator:
             raise DemoError("INPUT_SCHEMA")
         if not text.strip() or len(text) > 4000:
             raise DemoError("INPUT_LIMIT")
-        ledger = await self.journal.load(parent)
-        error = None
-        try:
-            async with asyncio.timeout(360):
-                recovered = await self._recover(parent, ledger)
-                if recovered:
-                    # Reconciliation is a turn of its own, not permission to dispatch more work.
-                    ledger.status = "RECOVERED"
-                else:
-                    if (
-                        len(ledger.requirements) >= 50
-                        or sum(len(item) for item in ledger.requirements) + len(text) > 24000
-                    ):
-                        raise DemoError("CONVERSATION_LIMIT")
-                    ledger.turn += 1
-                    ledger.requirements.append(text)
-                    ledger.calls = ledger.rounds = ledger.decisions = 0
-                    ledger.status = "RUNNING"
-                    await self._save(parent, ledger)
-                    while True:
-                        allowed = ledger.allowed()
-                        if ledger.decisions >= 10:
-                            ledger.status = "LIMIT_REACHED"
-                            break
-                        ledger.decisions += 1
-                        await self._save(parent, ledger)
-                        action, confidence = await self.router.choose(ledger, allowed)
-                        if action not in allowed or not 0 <= confidence <= 1:
-                            raise DemoError("DECISION_SCHEMA")
-                        yield self._update({
-                            "event": "decision",
-                            "action": action,
-                            "confidence": confidence,
-                            "turn": ledger.turn,
-                        })
-                        if confidence < 0.8 or action == "request_input":
-                            ledger.status = "REQUEST_INPUT"
-                            break
-                        if action == "finish":
-                            ledger.status = "ACCEPTED_ADVISORY"
-                            break
-                        if ledger.calls >= 6 or (action == "ask_architect" and ledger.rounds >= 3):
-                            ledger.status = "LIMIT_REACHED"
-                            break
-                        role: Role = "architect" if action == "ask_architect" else "reviewer"
-                        event = await self._call(parent, ledger, role)
-                        event["confidence"] = confidence
-                        yield self._update(event)
-        except (DemoError, TimeoutError) as exc:
-            ledger.status = exc.code if isinstance(exc, DemoError) else "TURN_TIMEOUT"
-            error = exc.details if isinstance(exc, DemoError) else None
-            if ledger.operation and ledger.operation.status != "completed":
-                ledger.operation.status = "uncertain"
-                if ledger.operation.response_id is None and ledger.status not in (
-                    "SESSION_EXPIRED", "CHILD_NOT_READY", "CHILD_VERSION_CHANGED",
-                ):
-                    ledger.status = "DELEGATION_UNCERTAIN"
-        # Unexpected SDK/storage errors propagate; no successful-looking fallback.
+        return text
+
+    async def _run_turn(
+        self, parent: AgentSession, ledger: Ledger, text: str
+    ) -> AsyncIterator[AgentResponseUpdate]:
+        if await self._recover(parent, ledger):
+            # Reconciliation is a turn of its own, not permission to dispatch more work.
+            ledger.status = "RECOVERED"
+            return
+        await self._start_turn(parent, ledger, text)
+        async for update in self._run_decision_loop(parent, ledger):
+            yield update
+
+    async def _start_turn(self, parent: AgentSession, ledger: Ledger, text: str) -> None:
+        if (
+            len(ledger.requirements) >= 50
+            or sum(len(item) for item in ledger.requirements) + len(text) > 24000
+        ):
+            raise DemoError("CONVERSATION_LIMIT")
+        ledger.turn += 1
+        ledger.requirements.append(text)
+        ledger.calls = ledger.rounds = ledger.decisions = 0
+        ledger.status = "RUNNING"
         await self._save(parent, ledger)
-        yield self._update({
+
+    async def _run_decision_loop(
+        self, parent: AgentSession, ledger: Ledger
+    ) -> AsyncIterator[AgentResponseUpdate]:
+        while ledger.status == "RUNNING":
+            decision = await self._choose_action(parent, ledger)
+            if decision is None:
+                break
+            action, confidence = decision
+            yield self._update({
+                "event": "decision",
+                "action": action,
+                "confidence": confidence,
+                "turn": ledger.turn,
+            })
+            if self._finish_for_decision(ledger, action, confidence):
+                break
+            role: Role = "architect" if action == "ask_architect" else "reviewer"
+            event = await self._call(parent, ledger, role)
+            event["confidence"] = confidence
+            yield self._update(event)
+
+    async def _choose_action(
+        self, parent: AgentSession, ledger: Ledger
+    ) -> tuple[Action, float] | None:
+        if ledger.decisions >= 10:
+            ledger.status = "LIMIT_REACHED"
+            return None
+        allowed = ledger.allowed()
+        ledger.decisions += 1
+        await self._save(parent, ledger)
+        action, confidence = await self.router.choose(ledger, allowed)
+        if action not in allowed or not 0 <= confidence <= 1:
+            raise DemoError("DECISION_SCHEMA")
+        return action, confidence
+
+    @staticmethod
+    def _finish_for_decision(ledger: Ledger, action: Action, confidence: float) -> bool:
+        if confidence < 0.8 or action == "request_input":
+            ledger.status = "REQUEST_INPUT"
+            return True
+        if action == "finish":
+            ledger.status = "ACCEPTED_ADVISORY"
+            return True
+        if ledger.calls >= 6 or (action == "ask_architect" and ledger.rounds >= 3):
+            ledger.status = "LIMIT_REACHED"
+            return True
+        return False
+
+    @staticmethod
+    def _record_turn_error(ledger: Ledger, exc: DemoError | TimeoutError) -> Any:
+        ledger.status = exc.code if isinstance(exc, DemoError) else "TURN_TIMEOUT"
+        error = exc.details if isinstance(exc, DemoError) else None
+        if ledger.operation and ledger.operation.status != "completed":
+            ledger.operation.status = "uncertain"
+            if ledger.operation.response_id is None and ledger.status not in (
+                "SESSION_EXPIRED", "CHILD_NOT_READY", "CHILD_VERSION_CHANGED",
+            ):
+                ledger.status = "DELEGATION_UNCERTAIN"
+        return error
+
+    @staticmethod
+    def _result_update(ledger: Ledger, error: Any) -> AgentResponseUpdate:
+        return Coordinator._update({
             "event": "result",
             "status": ledger.status,
             "turn": ledger.turn,
@@ -333,3 +377,15 @@ class Coordinator:
             contents=[Content.from_text(json.dumps(payload, allow_nan=False) + "\n")],
             finish_reason="stop" if final else None,
         )
+
+
+class HostedCoordinator(Coordinator):
+    def __init__(self, journal, remote, router, stack):
+        super().__init__(journal, remote, router)
+        self.stack = stack
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, *args):
+        await self.stack.aclose()

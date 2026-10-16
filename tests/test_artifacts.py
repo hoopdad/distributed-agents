@@ -12,6 +12,8 @@ from azure.core.exceptions import ResourceExistsError
 from demo.artifacts import (
     Artifact,
     ArtifactError,
+    AssignmentLocator,
+    OutputLocator,
     Producer,
     Requirements,
     ScopeBinding,
@@ -77,6 +79,29 @@ class ArtifactContractTests(unittest.TestCase):
             self.binding().parent_session = "replacement"
         with self.assertRaises(ValidationError):
             ScopeBinding(**{**self.binding().model_dump(), "authorization": True})
+
+    def test_locators_require_integer_schema_version_one(self):
+        content = Requirements(chunks=["Synthetic requirement."])
+        artifact = Artifact(
+            artifact_type="requirements", scope_binding=self.binding(), operation_id="a" * 32,
+            producer=Producer(
+                role="coordinator", name="coordinator", version="2", session_id="platform-parent",
+                response_id="response-one",
+            ),
+            input_refs=[], requirements_revision=1, content=content, content_sha256=digest(content),
+        )
+        for model, fields in (
+            (AssignmentLocator, {"scope_binding": self.binding().model_dump(), "operation_id": "a" * 32}),
+            (OutputLocator, {"artifact_ref": artifact.ref().model_dump()}),
+        ):
+            with self.subTest(model=model.__name__, version=1):
+                locator = model.model_validate({"schema_version": 1, **fields})
+                self.assertEqual(decode_document(canonical_bytes(locator)), {"schema_version": 1, **fields})
+            for version in (0, 2, -1, "1", True, False, 1.0, None):
+                with self.subTest(model=model.__name__, version=version), self.assertRaises(ValidationError):
+                    model.model_validate({"schema_version": version, **fields})
+            with self.subTest(model=model.__name__, version="missing"), self.assertRaises(ValidationError):
+                model.model_validate(fields)
 
     def test_canonical_serialization_is_stable_and_rejects_nonfinite_values(self):
         self.assertEqual(canonical_bytes({"b": 1, "a": "test"}), b'{"a":"test","b":1}')

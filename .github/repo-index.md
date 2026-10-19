@@ -17,6 +17,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | October 19 full-scope release design, parent/child/model continuation contracts, bounded downstream handoffs and AC1-AC9 evidence map |
+| Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
@@ -113,6 +114,11 @@ Historical deployment/test numbers above are context, not freshly validated
 release evidence. Use the October 19 invocation's authority within its exact
 scope; the older consumed exception cannot authorize unknown-effect replay.
 
+UX handoff freshness: based on architecture commit
+`1f690f5011bef61494b8181fd14e779fa55d858e` and the existing 17 dirty paths.
+Added `docs\customer-prototype-ux.md`; no runtime, dependency or public event
+contract changed. Human-view CLI syntax in that document is explicitly proposed.
+
 <!-- inventory:start -->
 
 ## Public file inventory
@@ -154,6 +160,7 @@ scope; the older consumed exception cannot authorize unknown-effect replay.
 - `demo\workflow.py`
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
+- `docs\customer-prototype-ux.md`
 - `docs\design.md`
 - `docs\identity-recovery-plan.md`
 - `docs\implementation-workflow.md`

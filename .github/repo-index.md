@@ -8,14 +8,15 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 | Area | Entry points | Responsibility |
 |---|---|---|
-| Orchestration | `main.py`, `demo\host.py`, `demo\workflow.py`, `demo\coordinator_agent.py` | Native checkpointed MAF graph; begin/route/execute/publish use numbered inline stages, shared correctness helpers and trusted resources; explicit preserved legacy coordinator |
-| Specialist agents | `demo\architect_agent.py`, `demo\reviewer_agent.py`, `demo\specialist.py` | Each role's run_assignment orchestrates five typed stage methods directly below it; explicit role-local Azure SDK setup, input reads, LLM session/recovery and immutable writes without NativeRuntime dependency |
-| Contracts/configuration | `demo\artifacts.py`, `demo\contracts.py`, `demo\config.py`, `config\settings.example.json` | Strict artifacts/assignments and atomic generic native settings |
+| Orchestration | `main.py`, `demo\host.py`, `demo\workflow.py`, `demo\coordinator_agent.py` | Checkpointed MAF/Foundry graph; consecutive begin/route/execute/publish lifecycle methods precede shared correctness helpers, with numbered inline stages and explicit handoffs |
+| Specialist agents | `demo\architect_agent.py`, `demo\reviewer_agent.py`, `demo\specialist.py` | Each role's run_assignment orchestrates five typed stage methods directly below it; explicit role-local Azure SDK setup, input reads, LLM session/recovery and immutable writes without WorkflowRuntime dependency |
+| Contracts/configuration | `demo\artifacts.py`, `demo\contracts.py`, `demo\config.py`, `config\settings.example.json` | Strict artifacts/assignments and atomic artifact/routing settings |
 | Blob/routing | `demo\artifact_store.py`, `demo\routing.py`, `config\routing-corpus.json`, `scripts\calibrate_routing.py` | Role-owned immutable outputs, fenced journal/manifest, typed calibrated Decision-1 and shared admission |
-| Foundry integration | `demo\foundry.py`, `agent_metadata.py`, `azure.yaml` | Trusted host/state/provider adapters; three native remote-mode services deployed, not live-accepted |
+| Foundry integration | `demo\foundry.py`, `agent_metadata.py`, `azure.yaml` | Trusted host/state/provider adapters; three MAF/Foundry remote-mode services deployed, not live-accepted |
 | Local client/transport | `demo\terminal.py`, `native_proxy.py`, `live_acceptance.py` | Private terminal, exact-origin proxy, bounded diagnostics, artifact-envelope audit and guarded compute stop/resume acceptance |
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
-| Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Target Blob/native-workflow design, exhaustive copy-first boundary |
+| Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
+| Customer prototype architecture | `docs\customer-prototype-architecture.md` | October 19 full-scope release design, parent/child/model continuation contracts, bounded downstream handoffs and AC1-AC9 evidence map |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
@@ -29,7 +30,7 @@ evaluation (eight ready and four missing-input cases correct, selected threshold
 and the retired blank-facts calibration are retained. Request hashes bind policy
 and explicit nonempty facts; no offline fixture is
 release evidence. Application Windows/Linux gates pass; artifact infrastructure
-is applied with scoped zero-change convergence. Reproduced native publication
+is applied with scoped zero-change convergence. Reproduced hosted publication
 originally placed architect 17/reviewer 15/coordinator 22 on
 common bundle `51064aa426d28d0cfa6b126eac7fce5ab0e9a5a0667267ef105884c1805adde2`
 with unchanged identities and earlier versions retained. The subsequent approved
@@ -53,10 +54,10 @@ implemented. An earlier Bastion observation could not connect because the lab
 command VM was deallocated. Existing
 Azure Monitor query access independently confirms user/call present at the
 coordinator and user absent/call present at the architect, with correlated
-Responses POST HTTP 200. Deployed native calls now forward SDK
+Responses POST HTTP 200. Deployed Foundry calls now forward SDK
 `context.platform_headers()` directly, without re-delegating the derived platform
-user or forwarding the container-only user header. Legacy behavior and strict
-scope checks remain unchanged. Explicit operator approval permitted starting
+user or forwarding the container-only user header. Strict scope checks
+remain unchanged. Explicit operator approval permitted starting
 the existing command VM; fresh guarded connectivity and three-service
 publication passed with exact hashes, unchanged identities and proven cleanup.
 Fresh initial acceptance still holds `SPECIALIST_INCOMPLETE`; exact-response
@@ -68,7 +69,7 @@ were not reached; acceptance/observation jobs and listeners closed.
 Deployed HTTP-edge diagnostics report only fixed-role header
 presence/context-match flags correlated by a response-ID hash; no header
 values, raw IDs, tokens or content are logged. Known-child failure observation
-also reads the exact parent's bounded logs. A real native resource/client/
+also reads the exact parent's bounded logs. A real workflow resource/client/
 transport regression verifies this wiring. These diagnostics do not authorize calls or resolve the
 propagation failure.
 Before the new approved diagnostic, exact-version reconciliation found
@@ -84,7 +85,7 @@ architect17 ingress discrepancy and a correlated HTTP200 POST to the expected
 architect Responses path on the configured project origin.
 The one approved prospective attempt is consumed: new durable pre-dispatch
 owner/source/package/version evidence, exact active23 and unchanged identity,
-separate runner/outer cleanup proven. One fresh App/native parent wrote
+separate runner/outer cleanup proven. One fresh MAF/Foundry parent wrote
 requirements and genuine Decision-1 routing, then held SPECIALIST_INCOMPLETE.
 Exact-response Observe sent zero inference and captured actual architect
 outbound call present and equal to the SDK context, with delegated/container
@@ -103,6 +104,14 @@ Contributor: ownership/publication gates remain application-enforced, not
 storage-enforced per-role isolation.
 Do not search ignored `.azure`, `.azure-cli`, `.local`, `.migration` or
 conversation/credential stores.
+
+Architecture handoff freshness: inspected base commit
+`1dfb7fed6fdeb3cc506b5394927fdfcebe39a4bc` plus the pre-existing readability
+worktree changes. Added `docs\customer-prototype-architecture.md`; no runtime,
+entry-point, dependency or ownership boundary changed by that document.
+Historical deployment/test numbers above are context, not freshly validated
+release evidence. Use the October 19 invocation's authority within its exact
+scope; the older consumed exception cannot authorize unknown-effect replay.
 
 <!-- inventory:start -->
 
@@ -144,6 +153,7 @@ conversation/credential stores.
 - `demo\terminal.py`
 - `demo\workflow.py`
 - `docs\NEXT-SESSION-PROMPT.md`
+- `docs\customer-prototype-architecture.md`
 - `docs\design.md`
 - `docs\identity-recovery-plan.md`
 - `docs\implementation-workflow.md`

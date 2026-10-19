@@ -15,6 +15,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Foundry integration | `demo\foundry.py`, `agent_metadata.py`, `azure.yaml` | Trusted host/state/provider adapters; three MAF/Foundry remote-mode services deployed, not live-accepted |
 | Local client/transport | `demo\terminal.py`, `native_proxy.py`, `live_acceptance.py` | Private terminal, exact-origin proxy, bounded diagnostics, artifact-envelope audit and guarded compute stop/resume acceptance |
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
+| Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | October 19 full-scope release design, parent/child/model continuation contracts, bounded downstream handoffs and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
@@ -150,6 +151,15 @@ six initially ready non-overlapping lanes, explicit source/Git integration and
 separate original DevOps ownership. Dispatch and planning reviewer agreement
 remain the existing orchestrator's next actions; no implementation is claimed.
 
+S1-MODEL freshness: based on assignment baseline `8759b7f` and the two
+pre-existing role-local `artifact_mode`/`SessionCandidate`/`SessionReview`
+terminology diffs, deliberately reviewed for integration. Added
+`tests\test_specialist_continuity.py`; no dependency, history schema, runtime
+boundary or live capability changed. `S1-INTEGRATE` must reconcile the matching
+pre-existing `demo\specialist.py` terminology change owned by that task.
+The new fixtures exercise actual role stages and `Agent.run`; only connection
+setup, persisted storage and external model transport are controlled.
+
 <!-- inventory:start -->
 
 ## Public file inventory
@@ -222,6 +232,7 @@ remain the existing orchestrator's next actions; no implementation is claimed.
 - `tests\test_demo.py`
 - `tests\test_diagnose_identity.py`
 - `tests\test_routing.py`
+- `tests\test_specialist_continuity.py`
 - `tests\test_workflow.py`
 
 <!-- inventory:end -->

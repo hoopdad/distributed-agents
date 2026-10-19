@@ -20,16 +20,16 @@ from .artifacts import (
     canonical_bytes, decode_document, digest,
 )
 from .config import required
-from .contracts import Candidate as LegacyCandidate
+from .contracts import Candidate as SessionCandidate
 from .foundry import ProjectClient, data_client
 from .specialist import SpecialistAgent
 
 
 class ArchitectAgent(SpecialistAgent):
-    def __init__(self, *, native: bool = False, **kwargs):
+    def __init__(self, *, artifact_mode: bool = False, **kwargs):
         super().__init__(
-            role="architect", native=native,
-            schema=Candidate if native else LegacyCandidate,
+            role="architect", artifact_mode=artifact_mode,
+            schema=Candidate if artifact_mode else SessionCandidate,
             guidance=(
                 "Produce a complete candidate, revising blocking findings. Keep design concise and "
                 "implementation-ready; design must be at most 10000 characters. Do not add open "
@@ -191,7 +191,7 @@ class ArchitectAgent(SpecialistAgent):
     ) -> str:
         pending = session.state["pending_operation"]
         agent = cls(
-            native=True,
+            artifact_mode=True,
             client=FoundryChatClient(
                 project_client=project, model=model_deployment, default_headers=headers,
             ),

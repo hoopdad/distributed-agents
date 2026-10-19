@@ -20,16 +20,16 @@ from .artifacts import (
     canonical_bytes, decode_document, digest,
 )
 from .config import required
-from .contracts import Review as LegacyReview
+from .contracts import Review as SessionReview
 from .foundry import ProjectClient, data_client
 from .specialist import SpecialistAgent
 
 
 class ReviewerAgent(SpecialistAgent):
-    def __init__(self, *, native: bool = False, **kwargs):
+    def __init__(self, *, artifact_mode: bool = False, **kwargs):
         super().__init__(
-            role="reviewer", native=native,
-            schema=Review if native else LegacyReview,
+            role="reviewer", artifact_mode=artifact_mode,
+            schema=Review if artifact_mode else SessionReview,
             guidance=(
                 "Review the exact supplied candidate. Report unresolved requirements and "
                 "blocking findings explicitly. If either list is non-empty, approved must be false. "
@@ -192,7 +192,7 @@ class ReviewerAgent(SpecialistAgent):
     ) -> str:
         pending = session.state["pending_operation"]
         agent = cls(
-            native=True,
+            artifact_mode=True,
             client=FoundryChatClient(
                 project_client=project, model=model_deployment, default_headers=headers,
             ),

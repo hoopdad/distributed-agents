@@ -1,332 +1,198 @@
 # distributed-agents
 
-Three Microsoft Foundry hosted agents: a coordinator, an architect, and a
-reviewer. This repository owns reusable application code, contracts, tests, and
-generic configuration. Infrastructure and environment-specific connectivity
-remain in the separate Azure lab repository.
+A hosted coordinator repeatedly calls remote architect and reviewer agents,
+keeping each specialist's session within the same parent conversation.
+This educational Python solution uses Microsoft Agent Framework (MAF) and
+Microsoft Foundry with exactly three hosted roles:
 
-Agent definitions use Python's underscore naming convention:
-`demo\coordinator_agent.py`, `demo\architect_agent.py`, and
-`demo\reviewer_agent.py`. Follow `ArchitectAgent.run_assignment()` in
-`demo\architect_agent.py` to see requirements and prior findings read from Blob
-Storage, a design generated, and its candidate JSON artifact written back.
-`ReviewerAgent.run_assignment()` in `demo\reviewer_agent.py` similarly reads the exact
-requirements and candidate, generates findings, and writes the review JSON.
-These intentionally explicit role-local flows favor readability over deduplicating
-their validation and recovery steps. Each specialist's `run_assignment()` calls five
-stage methods, defined directly below it in execution order: connect/load the
-assignment, read the assigned inputs, load/create its LLM conversation session,
-generate or recover the model response, and store the output. The architect designs
-the solution; the reviewer reads the exact requirements/candidate and reviews it.
-Only `run_assignment()` calls these stages, owns client cleanup, and short-circuits
-an already completed design or review. Each role's first stage explicitly
-construct Azure SDK `ManagedIdentityCredential`, the Foundry project client, and
-`BlobServiceClient`, then read and write through the typed `BlobArtifacts` adapter in
-`demo\artifact_store.py`. Specialists do not depend on `NativeRuntime` or its
-resource helper. Native graph orchestration, trusted hosting checks, and
-coordinator manifest publication remain in `demo\workflow.py`.
-Routing is a helper in `demo\routing.py`, not a separate hosted agent.
-For teaching, follow `NativeRuntime.begin()`, `route()`, `execute()`, and
-`publish()` in `demo\workflow.py`. Each method has numbered stages with the
-control flow inline: record requirements, choose the next step, call a specialist,
-then validate and publish its output. Routing's deterministic gates, decision
-recovery, model request, and acceptance are one readable sequence, rather than a
-chain of private orchestration helpers. Shared storage and provenance helpers
-remain separate so the correctness rules are consistent.
-See [the source lifecycle map](docs/design.md#following-a-request-through-the-source).
+```text
+User -> coordinator (MAF workflow)
+          -> architect: design / revise
+          -> reviewer: review the exact candidate
+          <- coordinator: validate, accept or repeat
+```
 
-**Status:** native Microsoft Agent Framework (MAF) workflow and shared Blob
-artifact-plane source are implemented; 132 application tests pass on Windows
-and Linux/amd64 (seven expected Windows-only skips on Linux).
-`azure.yaml` selects native orchestration and remote hosted specialists; the
-legacy handwritten/in-process adapter remains available for regression tests.
-**Deployed, but not live-accepted:** architect 17 and reviewer 15 retain bundle
-`51064aa426d28d0cfa6b126eac7fce5ab0e9a5a0667267ef105884c1805adde2`.
-Coordinator 23 is active on diagnostic bundle
-`03aa0da34942ca66283a37dae8b6edab04ac053291937eebdc2464cdb8f839d9`;
-coordinator 22 and earlier versions/packages are retained. Identities are unchanged.
-This intentional mixed diagnostic deployment is not final common-bundle acceptance.
-Earlier diagnostics identified `DECISION_CALIBRATION_PROVENANCE`: the Windows loader
-represented absent `DEMO_FACT_SHEET` as an empty variable during calibration,
-whereas deployment omitted it and used the public nonempty default. The loader
-now truly removes absent settings; native release requires explicit nonempty
-facts, forwarded to all roles and validated before packaging. A genuine fresh
-calibration with those facts exposed a missing-workload routing ambiguity.
-Routing-v3 clarifies that facts supply constraints, not a missing user purpose.
-The corrected facts and genuine calibration are deployed. The first live turn
-passed preparation, wrote requirements and a routing decision, then held the
-architect operation after timeout. Read-only exact-response observation confirms
-the architect failed during SDK hosting preparation (`RuntimeError`, provider
-`storage_error`), not a proven storage permission failure. The known parent and
-child IDs and uncertain operation remain preserved without resend.
-Deployed diagnostics identify the exact architect gate:
-`NATIVE_HOST_PRINCIPAL`. The SDK receives no trusted user identity before the
-application factory can run. An actual pinned-SDK HTTP-edge regression confirms
-the outgoing delegated-identity headers are preserved; read-only role inspection
-confirms the coordinator already has the explicit documented
-`UserIdentityImpersonation/action` permission. The remaining blocker is trusted
-identity propagation, not evidence for additional storage grants.
-Deployed native clients recover stream errors only through persisted response
-IDs; unknown effects remain held. Continuity, hosting stop/resume and isolation
-were not reached. A supported platform/SDK identity-propagation remedy remains
-required; a session string, model output or copied user header cannot replace
-the missing trusted hosting identity.
-Offline regression also verifies that the pinned SDK preserves supplied
-identity through durable background-task serialization and handler entry, and
-rejects missing identity. Local read-only observation can extract only ingress
-identity-presence booleans for the exact known response. An earlier observation
-could not connect because the approved lab command VM was deallocated. Existing
-Azure Monitor query access subsequently confirmed the known coordinator's
-ingress has both user and call identity, but the known architect's ingress
-has call identity only; its correlated Responses POST returned HTTP 200.
-Those observations do not expose header values or prove the live outbound
-headers, which telemetry did not capture.
-**Deployed propagation change, still blocked live:** native internal calls use
-the pinned SDK's `context.platform_headers()` directly. Its documented contract
-resolves caller context from the opaque call ID; native code no longer re-delegates the already-derived
-platform user ID or forwards the unsupported container-only user header.
-The legacy adapter remains unchanged, and missing trusted identity still fails
-closed. A real resource/client/HTTP-edge regression fails before this change and
-passes after it, with exact endpoint and JSON session binding. After explicit
-operator approval, the existing command VM was started and fresh guarded
-connectivity passed. Publication of all three versions succeeded with exact
-package hashes, unchanged identities and proven process/mount cleanup.
-Fresh initial acceptance nevertheless held `SPECIALIST_INCOMPLETE`. Read-only
-observation of that exact child confirms `NATIVE_HOST_PRINCIPAL` again:
-architect 17 receives call identity but no trusted user identity. The supported
-SDK propagation change did not resolve the live failure. Its cause remains
-unresolved; neither a platform defect nor a different permission grant has
-been established. Followup, hosting restart and isolation were not reached.
-Both acceptance and observation closed their owned jobs/listeners.
-**Diagnostic deployed and exercised:** the native HTTP transport records only
-fixed-role presence/match booleans at the actual specialist Responses POST
-boundary, correlated by a hash of the parent response ID. It never logs header
-values, tokens, identities, request content or the raw response ID. Read-only
-observation also reads the exact parent's bounded logs when its known child
-fails. One approved prospective coordinator-only publication succeeded with
-durable pre-dispatch source/package/version/owner evidence and separately proven
-runner and outer process/listener/mount cleanup. One fresh synthetic parent
-then wrote requirements and a genuine Decision-1 result but held
-`SPECIALIST_INCOMPLETE`. Exact-response read-only observation captured the actual
-architect outbound call header: present and equal to the captured SDK context.
-No delegated-user or container-user header was sent. The exact architect child
-still received call identity without trusted user identity and failed
-`NATIVE_HOST_PRINCIPAL`. Diagnostic and observation jobs/listeners closed.
-The instrumentation gap is closed; this is not a
-verified identity-propagation fix or authorization mechanism. Legacy transport
-and all request/scope gates remain unchanged.
-The single-attempt exception is consumed. The original interrupted publication
-remains `UNKNOWN`, with original ownership/cleanup unproven; the new successful
-attempt does not reconcile it. No held turn was resent or cleared. The next
-step is a provider trace of the exact new pair and a supported platform/SDK
-remedy, not another speculative publication, identity bypass or permission
-change. No platform defect has been proven; the prepared provider case is unsent.
-The lab's scoped
-artifact infrastructure apply added 14 resources; a subsequent scoped plan/apply
-confirmed zero changes. Read-only metadata verifies private containers, retained grants
-and retention. Completed remote specialist work, end-to-end managed-identity
-artifact provenance, parent isolation and actual hosting
-restart remain unverified. Publication and metadata do not establish those gates.
+1. **Initial turn:** Design a synthetic application with private ingress only.
+2. **Follow-up:** Add an asynchronous queue; keep private ingress and all earlier requirements.
 
-**Approved lab permission model:** the linked lab now grants its project agents
-account-wide Blob Contributor access. The original container grants remain, but
-do not provide effective per-role isolation. Role ownership, immutable output
-handling and coordinator publication are enforced by trusted application code,
-not by storage permissions. This is not a storage-enforced isolation guarantee.
+**Continuity invariant:** the parent and both specialists keep their hosted
+session IDs, framework session IDs and pinned deployed versions. New
+invocations get new response IDs and produce current design/review artifacts.
+A separate parent gets its own child bindings and artifact scope.
 
-**Calibration verified:** four twelve-case evaluations are preserved (48 real
-calls): the first failed, the second passed with blank facts, the third
-identified a missing-workload error with nonempty facts, and routing-v3 passed
-all eight ready and four missing-input cases. The unchanged selection algorithm
-chose threshold 0.5/margin 0 for the new observations; no expected label, corpus,
-coverage requirement or observation was edited. The historical calibration is
-retained byte-for-byte privately and in Git history. The genuine new result is
-`config\routing-calibration.json`.
+**Live status — historical, not freshly verified by this documentation:**
+remote collaboration remains blocked at `NATIVE_HOST_PRINCIPAL`, before the
+architect application executes. Follow-up, supported compute stop/resume and
+isolation remain unverified. The mixed diagnostic deployment is not a final
+common-bundle release. [Recovery evidence and gates](docs/identity-recovery-plan.md)
+retain the publication **UNKNOWN**, held parents and unproven historical
+cleanup; none may be cleared or replayed to make a demo pass.
 
-## Start the next implementation session
+**Read the source:** [workflow](demo/workflow.py) (`begin` -> `route` ->
+`execute` -> `publish`) -> [remote session restore/invoke](demo/foundry.py)
+-> [architect](demo/architect_agent.py) / [reviewer](demo/reviewer_agent.py)
+model-history stages. [State and source map](docs/design.md#how-the-same-specialist-session-is-reused).
 
-Open this repository in Copilot and submit the invocation in
-[docs/NEXT-SESSION-PROMPT.md](docs/NEXT-SESSION-PROMPT.md). It establishes scope,
-the gated implementation/deployment workflow, safety boundaries, and acceptance
-criteria. Repository instructions, two bounded agents, three project skills,
-and a repository index are included; no external plugin is required.
+## Setup and offline checks
 
-For the current identity blocker, the
-[recovery design and dependency-analyzed plan](docs/identity-recovery-plan.md)
-defines the application objective, parallel investigation lanes, publication
-reconciliation, diagnostic decision tree and final live acceptance gates.
-The next-session invocation resumes that plan rather than rebuilding the app.
-Its supported-remedy assessment cites the current runtime contract and relevant
-SDK fixes: none reviewed establishes a correction for the captured missing-user
-ingress. The provider-dependent execution gate remains blocked; no speculative
-dependency upgrade or identity-header workaround was applied.
+This repository owns portable application code, contracts, tests and generic
+configuration. Infrastructure, private connectivity and guarded release tooling
+remain in the separate lab repository; no infrastructure is provisioned here.
 
-Read the [design](docs/design.md), [migration plan](docs/migration-plan.md), and
-[implementation workflow](docs/implementation-workflow.md) first. The exhaustive
-[migration map](docs/migration-map.json) accounts for every original application
-file. Originals and lab release tooling have not been deleted.
-
-## Configure the baseline
-
-Use Python 3.13 and PowerShell 7.2+. The hosting SDK is preview and its existing
-dependency versions are pinned in `requirements.txt` and `requirements.lock.txt`.
-Review the configured package index before installing in a new environment.
+The hosting descriptor targets Linux/amd64/Python 3.13. Existing Windows
+validation uses a pinned Python 3.12.10 environment; it does not replace the
+hosting-package gate. Use PowerShell 7.2+ and the existing validated Python
+absolute path when available. Do not reinstall dependencies for documentation
+changes. For a **new environment**, review the package index and existing pins
+in `requirements.txt` and `requirements.lock.txt` before installation:
 
 ```powershell
 python -m venv .venv
-& .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\Test-Demo.ps1 -Python .\.venv\Scripts\python.exe
+$python = (Resolve-Path .\.venv\Scripts\python.exe).Path
+& $python -m pip install -r requirements.txt
 ```
 
-Offline tests use synthetic configuration and mocked Foundry/storage boundaries;
-they do not need Azure login. Windows connectivity wrapper regression cases
-require the optional `-LabRepositoryRoot <absolute-lab-path>` argument.
+With the existing validated environment selected:
 
-Copy `config\settings.example.json` to an ignored `.local\settings.json`, replace
-all placeholders, and create a dedicated Azure CLI profile directory. Then:
+```powershell
+$python = '<absolute-path-to-validated-python.exe>'
+$lab = '<absolute-lab-repository-path>'
+.\Test-Demo.ps1 -Python $python -LabRepositoryRoot $lab
+.\scripts\Test-Repository.ps1 -Python $python
+```
+
+Offline tests use synthetic inputs and mocked Foundry/storage boundaries;
+they need no Azure login and are **not live acceptance evidence**. The explicit
+lab root enables Windows retained-connectivity wrapper regressions; omitting it
+reports those cases as skipped. Linux hosting-package checks and affected lab
+release regressions remain separate required release gates.
+
+Copy `config\settings.example.json` to ignored `.local\settings.json` and replace
+the placeholders with verified configuration. Use a dedicated Azure CLI profile,
+never a production profile. Import only through the allowlisted loader:
 
 ```powershell
 .\scripts\Use-Settings.ps1 -Path .\.local\settings.json
 ```
 
-The loader validates an allowlisted configuration document before changing
-process variables. `.env.example` is reference documentation, not an
-automatically loaded environment. Deployment **aliases**, not model catalog
-names, are required. The decision alias must resolve to Microsoft-Decision-1.
-Do not use the normal Azure CLI production profile.
+`.env.example` is reference documentation, not an automatically loaded
+environment. Model deployment **aliases**, not model catalog names, are
+required; the decision alias must resolve to Microsoft-Decision-1.
+The six artifact/routing settings are required together. Container names must
+be distinct, private IPv4 addresses must match the managed Blob private endpoint,
+and the request limit must match verified Decision capacity. Do not guess
+private addresses, capacity or confidence thresholds.
 
-The six artifact/routing settings in the example are required together for
-native hosting. Legacy clients may omit all six. Container names must be distinct,
-private IPv4 addresses must match the Terraform-managed Blob private endpoint
-exactly, and the request limit must be verified against the deployed Decision
-model. Never guess private IPs, capacity or a confidence threshold.
+For this linked-lab checkout, use the existing ignored
+`.local\lab-settings-native.json` with `Use-Settings.ps1`; do not overwrite it or
+inspect copied `.azure` environment files. Validate the configured project,
+tenant/subscription, lab root and dedicated profile without displaying values.
+Do not substitute another project or CLI profile. Authenticate the dedicated
+profile using device code when needed, then verify its tenant/subscription.
+The loader validates local configuration; it is not cloud authentication proof.
 
-Native packages additionally require the exact public `config\routing-corpus.json`
-and `config\routing-calibration.json`. The latter contains the successful real
-routing-v3 evaluation of the frozen twelve-case corpus, whose v1 dataset metadata
-remains unchanged. Request hashes bind instructions, criteria, alias and state.
-`scripts\calibrate_routing.py` retains a private, flushed observation
-journal even on failure; an existing output/journal cannot be silently reused.
-Offline synthetic fixtures are tests, never release calibration. Its
-`--export-successful <private-result> --output config\routing-calibration.json`
-mode validates provenance and permits only identical idempotent re-export.
-Run `--validate-runtime` after loading the intended settings to check the
-existing calibration without authentication, model calls or file writes.
-The calibrated `DEMO_FACT_SHEET` must also be forwarded to every hosted role;
-changing facts requires genuine calibration, not editing observation hashes.
+## Two-turn terminal demonstration
 
-Add `--native` only for a verified native deployment. A client state's recorded
-runtime and versions cannot be silently migrated. `--recover-only` retrieves
-the exact persisted pending parent response instead of sending another request.
-Native checkpoints restore the graph, while the fenced write-ahead journal
-reconciles known response IDs and explicitly holds unknown effects.
-The acceptance utility's `observe` scenario retrieves only the preserved pending
-response. For a failed response it reads at most 30 seconds/128 KiB of the pinned
-hosted-session log stream through the same exact-origin transport, exposing only
-allowlisted workflow phase/exception classifications, not arbitrary log content.
-Diagnostic-enabled native versions additionally log an allowlisted failing
-preparation check, never the rejected identity, endpoint, value or exception text.
-This is diagnosis, not retry permission or a hosting restart test.
-Read-only reconciliation on 2026-10-15 confirmed coordinator 22 remains active
-and an exact coordinator-version-23 GET returns HTTP 404. The interrupted
-diagnostic publisher has no recoverable package-bound owner/completion receipt;
-its outcome and original mount closure remain unknown. The retained lab now
-has exact-version observation and a separate non-mutating owner inspector.
-Neither negative metadata nor an absent process authorizes publication replay.
-The operator has explicitly approved ONE prospective coordinator-only lab
-diagnostic risk exception, retaining that original publication as **UNKNOWN**
-with delayed-publication and unproven historical-cleanup risks. Before the new
-attempt, the retained publisher must pass local gates for durable pre-dispatch
-owner/source/package/project/version binding, flushed phases/server IDs and
-independent terminal/cleanup outcomes. The parent owns the private exact
-authority/attempt record and freshly checks all deployed services; version23 is
-not assumed next. The reviewed diagnostic package must match current source;
-any rebuild needs exact provenance/review. New output/stage/ports/owner must be
-isolated and the publisher serialized; only positively identified new owned
-resources may be cleaned. A second unknown outcome or ownership consumes the
-exception and stops further attempts. After exact diagnostic version/package/
-identity and new owned cleanup are verified, ONE fresh synthetic App/native
-parent and read-only exact-response observation may discriminate outbound
-context mismatch from downstream missing identity. A mixed diagnostic bundle is
-not final acceptance. See the [recovery plan](docs/identity-recovery-plan.md)
-for R/L/D gates and finite exits. This documents approval, not execution:
-original inference holds, historical cleanup uncertainty and unmet G1-G8
-remain; no provider submission or speculative further release is authorized.
-For repeatable identity triage, run
-`<absolute-python-path> scripts\diagnose_identity.py` with the existing pinned
-environment. It checks all applicable dependency-lock pins and runs five
-synthetic, mocked SDK/HTTP-boundary probes without cloud access. Optional
-`--trace <private-sanitized-trace.json>` analyzes exact-response ingress and
-outbound presence flags; it never consumes raw logs or session state.
-The report distinguishes local contract verification from missing live evidence:
-exit 1 means offline verification failed, and exit 2 means the live cause remains
-unresolved or input inspection failed. Offline success never grants retry,
-identity-substitution or permission-change authority.
-The 2026-10-15 diagnostic run matched all 109 installed lock pins and passed
-all five offline probes. Fresh exact-version metadata independently confirms
-architect 17, reviewer 15 and coordinator 22 are active with Responses protocol
-2.0.0, the expected bundle and unchanged identities. Retained exact-response
-evidence still shows the architect arriving with call identity but no user
-identity. The live outbound call/context match and background-entry timing
-were not captured, so transport versus platform resolution remains unresolved.
-A subsequent bounded Azure Monitor query for the exact coordinator 22 /
-architect 17 response pair confirms both identities at coordinator ingress,
-call identity only at architect ingress, and a correlated HTTP 200 POST to
-the expected architect Responses endpoint on the configured project origin.
-This rules out a different endpoint/origin in that captured request, not
-incorrect outbound call context: dependency telemetry contains no call-header
-capture. A fresh exact coordinator-23 GET still returns 404; the interrupted
-publication hold remains unresolved and no request was replayed.
-The lab wrapper's explicit `recover` scenario retrieves only a known pending
-response. Known-parent `followup` and opt-in `restart` scenarios do not create a
-replacement parent. `-Mode Acceptance -HostingRestart` additionally tests the
-supported hosted-session compute stop/resume API with a durable no-resend
-marker. This preserves the session volume and is not a hard-crash recovery test.
-These expanded live gates have not yet been run successfully.
+This is the **implemented command shape**, not a claim the blocked live
+demonstration has passed. The Windows-only terminal uses `msvcrt` for its
+session lease. It requires compatible deployed agents and an already established
+owned SOCKS tunnel to the configured project. `--socks` is mandatory; substitute
+the verified local port from the retained lab connectivity tooling, not a new
+public route or an ad hoc tunnel.
 
-The baseline terminal is Windows-only because its session lease uses `msvcrt`.
-It is a terminal application, not a browser UI:
+Run from the application root after loading settings and authenticating:
 
 ```powershell
-# Authenticate the dedicated profile to the configured tenant using device code;
-# verify the tenant and subscription before continuing.
 $sessionDirectory = Join-Path $env:LOCALAPPDATA 'distributed-agents'
 New-Item -ItemType Directory -Path $sessionDirectory -Force | Out-Null
-& .\.venv\Scripts\python.exe -m demo.terminal `
-    --session-file (Join-Path $sessionDirectory 'session.json')
+# Choose a new filename for this synthetic parent; preserve every existing file.
+$session = Join-Path $sessionDirectory 'synthetic-private-ingress-01.json'
+$socks = 'socks5h://127.0.0.1:<verified-owned-port>'
+
+& $python -m demo.terminal --native --socks $socks --session-file $session `
+    --message 'Design a synthetic application with private ingress only.'
+
+# Only after the first turn completes with no pending/held effect:
+& $python -m demo.terminal --native --socks $socks --session-file $session `
+    --message 'Add an asynchronous queue; keep private ingress and all earlier requirements.'
 ```
 
-The configured project must already contain compatible hosted agent deployments
-and be reachable. For a private project, add `--socks socks5h://127.0.0.1:1080`
-only when the separately managed tunnel is ready. `/quit` ends the client; it
-does not stop separately managed tunnels. Session files must be outside this
-repository, even in Git-ignored directories. Do not delete uncertain pending
-state to force a retry.
+Do not issue the follow-up if the first turn fails or is held. Reuse the same
+private session file for a completed conversation; never delete uncertain state
+to force another request. Omit `--message` for interactive input; `/quit` closes
+the client, not its separately managed tunnel. Use only synthetic text in
+shareable demonstrations and omit `--show-ids`.
 
-## Private lab handoff
+The default terminal prints a parent alias and existing machine
+delegation/result records; stdout is not pure JSONL. Repeated calls remain in
+chronological order. Matching display aliases or plausible memory text alone
+do **not** verify exact continuity, new child creation counts or model history.
+Private acceptance evidence must compare actual parent/child hosted and
+framework IDs, pinned versions, fresh response IDs and current artifact refs.
+Useful design/review content is part of the result, not proof of live release
+acceptance by itself.
 
-The local handoff includes an ignored `.azure` copy and validated
-`.local\lab-settings.json`. Neither is public configuration, deployment
-permission, nor proof of authentication. No Azure CLI token cache was copied.
-The base settings do not include the native release inputs. After validating
-that scope, load the existing `.local\lab-settings-native.json` through
-`scripts\Use-Settings.ps1`, requiring the same lab, region, project,
-tenant/subscription, dedicated profile and model aliases. Require all six
-artifact/routing settings and explicit nonempty `DEMO_FACT_SHEET`, then run
-`scripts\calibrate_routing.py --validate-runtime` with the pinned Python.
-Do not overwrite either private file or treat a calibration check using
-defaults as proof that the native release environment is loaded.
-For another checkout, `scripts\Initialize-LabSettings.ps1` can derive private
-tenant/subscription context from an explicitly selected external lab registry.
-It does not provision resources, log in, or read copied `.azure` environment
-values.
+**Integration handoff:** the accepted terminal design proposes `--view human`
+on both commands for separate stderr summaries, leaving stdout and the
+acceptance parser unchanged. That flag is not a prerequisite for these baseline
+commands and is not certified here; S1-INTEGRATE must reconcile its actual
+implementation and tests with S1-TERMINAL before documenting it as runnable.
 
-Do not run `azd up` or `azd provision` here. Before using the lab's retained
-release tools, verify their explicit cross-repository application root support
-as described in the workflow. That support has been added to the linked lab's
-retained source and tested offline; Linux/WSL publication and existing trust
-receipt validation remain separate gates. An azd environment copy alone does
-not establish those gates.
+## What is preserved, and what changes?
 
-License: [MIT](LICENSE). Environment state, private evidence, SSH identities,
-and infrastructure are not part of the portable application distribution.
+| State | Stable within one parent | Advances |
+|---|---|---|
+| Coordinator conversation | Hosted/framework session IDs, pinned version | User turns and response continuation |
+| Architect child | Own hosted/framework IDs and pinned version | Design/revision calls and responses |
+| Reviewer child | Own hosted/framework IDs and pinned version | Reviews of exact current prerequisites and responses |
+| Artifacts | Immutable accepted object references and provenance | Requirements/candidate revisions; old approval is invalidated |
+| Workflow recovery | Trusted scope and durable operation records | MAF checkpoint position and reconciled effect state |
+
+The parent's manifest holds `children[role]`; `WorkflowRuntime.execute()` looks
+there before creating a child. `RemoteAgents.invoke()` restores that child's
+`AgentSession` and passes it to the remote agent. Each specialist separately
+loads its own persisted model history before generating or recovering a model
+response. These are distinct mechanisms, not replayed requirements masquerading
+as session continuity. See the [full source explanation](docs/design.md).
+
+`--native`, `DEMO_RUNTIME=native`, `native_workflow` and `NATIVE_*` retain their
+compatibility spellings; they do not denote another framework. Saved runtime or
+version bindings cannot be silently migrated. `--recover-only` retrieves the
+exact persisted pending parent response without sending another turn; it does
+not resolve a held unknown specialist effect or authorize retry. MAF checkpoints
+do not replace the fenced write-ahead journal.
+
+## Release boundaries and current limitations
+
+- Exactly three hosted services; no hidden local specialist fallback.
+  Decision-1 is a routing helper/model, not a fourth agent deployment.
+- Managed-identity private Blob access and exact immutable provenance must pass
+  **live**, alongside remote collaboration, continuity, supported compute
+  stop/resume and separate-parent isolation. An upload, HTTP 200, metadata or
+  passing mocks is insufficient.
+- The linked lab grants account-wide Blob Contributor access. Role ownership
+  and parent isolation are **application-enforced**, not storage-RBAC or
+  malicious-host isolation.
+- Preserve unknown publications, held sessions, old versions/packages and
+  historical cleanup uncertainty. The supported compute stop/resume gate is not
+  hard-crash recovery.
+- Release packages require the exact routing corpus/calibration and explicit
+  nonempty calibrated `DEMO_FACT_SHEET`, forwarded to all roles. The offline
+  `scripts\calibrate_routing.py --validate-runtime` check validates loaded
+  settings without model calls; never edit observations/hashes to pass it.
+- Use only the retained lab packaging/preflight/WSL publication chain with
+  explicit application/lab roots and current user authority. No `azd up`,
+  `azd provision`, speculative identity headers/grants or unknown-effect replay.
+
+For engineering/release gates, read the [implementation workflow](docs/implementation-workflow.md).
+The [recovery plan](docs/identity-recovery-plan.md) owns detailed diagnostic
+chronology and historical version/package bindings; those are not a fresh
+deployment inventory. The [release plan](docs/customer-prototype-release-plan.md)
+maps the customer outcome to source, exact-package and live acceptance.
+The [migration plan](docs/migration-plan.md) and
+[migration map](docs/migration-map.json) retain original-source preservation
+history, not permission to reseal changed source or deploy a stale lab copy.
+
+License: [MIT](LICENSE). Private settings/evidence, session files, SSH identities,
+packages, infrastructure and workflow control-plane tooling do not belong in
+the customer application distribution.

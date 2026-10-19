@@ -1,9 +1,74 @@
-# Distributed agents: native workflow and shared artifacts
+# Distributed agents: MAF/Foundry workflow and shared artifacts
+
+## How the same specialist session is reused
+
+The customer invariant is one hosted coordinator conversation repeatedly
+invoking the same remote architect and reviewer sessions. The three hosted
+roles are not three in-process objects. Read the following path in order:
+
+1. [`demo/terminal.py`](../demo/terminal.py) restores the parent's framework
+   `AgentSession` from its private session file, verifies the hosted session's
+   pinned coordinator version and sends the next user turn with that session.
+   A pending or held turn is not permission to send a follow-up.
+2. [`demo/workflow.py`](../demo/workflow.py) derives the artifact scope from
+   trusted hosting context. In `WorkflowRuntime.execute()`, the locked
+   parent-scoped manifest's `children.get(role)` is the create-or-reuse lookup.
+   Only a missing role calls `RemoteAgents.prepare()`; the resulting hosted ID,
+   framework representation and pinned version are persisted before creation.
+   `remote.create()` binds that exact child to its version. An uncertain create
+   is inspected through `recover_creation()`, not blindly repeated.
+3. [`demo/foundry.py`](../demo/foundry.py), `RemoteAgents.invoke()`, verifies the
+   child still exists at its pinned version, restores
+   `AgentSession.from_dict(child.framework)` and calls the remote
+   `FoundryAgent.run(..., session=session, stream=True)`. The completed session
+   representation is saved back to the child; coordinator publication persists
+   the binding with the accepted effect. The same lookup and restored session
+   apply on a within-turn revision and on a later completed user turn.
+4. Inside each remote specialist, `load_or_create_llm_session()` loads
+   `"history"` through `AgentSessionStoreProvider`'s `specialist_history_v2`
+   store scoped by the hosting context. A new model `AgentSession` is created
+   only if history is absent. The architect's `design_solution()` and reviewer's
+   `review_solution()` pass that session to their model call; `store_design()`
+   and `store_review()` persist it after validating/writing the immutable
+   output. Follow these stages in
+   [`architect_agent.py`](../demo/architect_agent.py) and
+   [`reviewer_agent.py`](../demo/reviewer_agent.py).
+
+The coordinator-to-specialist framework session and the specialist's internal
+model-history session are distinct. Hosted/framework **identity fields** and
+pinned versions remain stable within a parent; response IDs and service
+continuations advance. Do not compare entire serialized sessions as if every
+field should stay constant. Known model-response recovery retrieves the exact
+journaled response and updates continuation without another model send; unknown
+effects remain held.
+
+The requirements artifact also carries earlier requirements, but replaying that
+brief or producing plausible memory text does not prove model continuation.
+Proof needs actual binding comparisons plus direct restored-history tests and
+fresh-history controls for both specialists. Offline fixtures are not live
+proof. A separate parent must have separate children and artifact scope; a
+model-provided ID cannot establish trusted scope.
+
+### Conversations, checkpoints and artifacts are different state
+
+| Concern | Responsible source | Purpose |
+|---|---|---|
+| Parent and child conversations | `demo/terminal.py`, `demo/foundry.py`, each specialist's history stages | Keep hosted/framework identities and model continuation for the appropriate conversation |
+| MAF checkpoints | `demo/host.py`, `create_workflow()` in `demo/workflow.py` | Resume graph/executor position at supported boundaries |
+| Blob artifacts, manifest and effects | `demo/artifact_store.py`, `demo/artifacts.py`, `WorkflowRuntime` | Preserve exact requirements/outputs, accepted revisions, provenance, fenced publication and write-ahead effect reconciliation |
+
+None substitutes for the others. New requirements invalidate the prior
+candidate/review approval, not the parent/child session bindings. Checkpoints
+alone cannot make a remote send exactly once. Application ownership/scope
+checks are not storage-RBAC isolation under the linked lab's account-wide
+Blob Contributor policy. See [recovery gates](identity-recovery-plan.md) for
+the historical live blocker and [the terminal example](../README.md#two-turn-terminal-demonstration)
+for baseline syntax, not a live-success transcript.
 
 ## Following a request through the source
 
-For native hosting, `demo\host.py` hands request parsing and graph construction
-to the top-level `parse_native_turn()` and `create_native_workflow()` functions
+For Foundry hosting, `demo\host.py` hands request parsing and graph construction
+to the top-level `parse_turn()` and `create_workflow()` functions
 in `demo\workflow.py`. The coordinator graph reads in order:
 
 1. **Begin:** append the user requirement to the shared artifact history.
@@ -13,16 +78,21 @@ in `demo\workflow.py`. The coordinator graph reads in order:
 4. **Publish:** validate its assigned output, update the coordinator manifest,
    then return to routing or finish with a result.
 
-For a teaching-oriented reading path, follow `NativeRuntime.begin()`, `route()`,
-`execute()`, and `publish()` in `demo\workflow.py`. Numbered stage comments keep
-each event's sequence visible inline. In particular, `route()` reads top to bottom:
+For a teaching-oriented reading path, follow `WorkflowRuntime.begin()`, `route()`,
+`execute()`, and `publish()` in `demo\workflow.py`. These lifecycle methods are
+consecutive, in execution order; shared resource, provenance, journal and result
+helpers follow them. Numbered stage comments keep each event's sequence visible
+inline. `begin()` names the requirements content, immutable artifact and accepted
+reference separately, then resets each turn field explicitly. `execute()` spells
+out each role's output type/path and whether the candidate revision advances.
+In particular, `route()` reads top to bottom:
 resume the turn, validate prerequisites and deterministic finish/budget gates,
 recover or prepare the journaled decision, request a model choice only if needed,
 then validate and accept that choice. There is no private routing pipeline to
 trace through. Shared helpers retain the storage, provenance and journal rules;
 this readability refactor does not remove recovery or authorization checks.
 
-Coordinator events open `BlobArtifacts` via `NativeRuntime.resources()`;
+Coordinator events open `BlobArtifacts` via `WorkflowRuntime.resources()`;
 specialist classes construct their Azure SDK clients in their role-local code. The
 `control` container holds requirements, decisions, operation records, and the
 coordinator manifest; architect outputs go to `candidates`, and reviewer
@@ -31,13 +101,8 @@ documents are distinct from MAF workflow checkpoints and Foundry agent-session
 history; neither checkpoint nor conversation state replaces the write-ahead
 effect record.
 
-The legacy adapter has a separate invocation path: `create_hosted_agent()`
-creates a `HostedCoordinator` from `demo\coordinator_agent.py`, and its `run()` resolves the parent `AgentSession`
-before loading the ledger and entering the turn/decision/delegation lifecycle.
-It uses the hosting session store for its ledger, not the native Blob artifact
-flow. `demo\architect_agent.py` and `demo\reviewer_agent.py` define the two
-specialist agent classes, used by both native and legacy hosting, and contain
-their complete native assignment lifecycles:
+`demo\architect_agent.py` and `demo\reviewer_agent.py` define the two
+specialist agent classes and contain their complete assignment lifecycles:
 
 - **Architect:** `ArchitectAgent.run_assignment()` validates the assignment, reads
   requirements and any assigned prior design/review from Blob Storage, generates
@@ -91,13 +156,13 @@ on success, failure, or cancellation.
 Private-path verification precedes artifact reads. The existing exact-origin,
 no-retry Foundry transport is retained, as are Blob timeouts, private-network
 checks and disabled proxy inheritance. There is no specialist dependency on
-`NativeRuntime`, resource tuple, or new service abstraction.
+`WorkflowRuntime`, resource tuple, or new service abstraction.
 The model itself receives input content and returns JSON; it has no storage tools.
 Shared scoped access, serialization and immutable writes remain in
 `demo\artifact_store.py`. `demo\specialist.py` shares only model instruction
 formatting and agent resource cleanup; it is not another deployed agent.
-`NativeRuntime.specialize()` passes explicit trusted hosting values to the appropriate class method.
-Native graph execution, trusted hosting checks, coordinator resource setup and coordinator
+`WorkflowRuntime.specialize()` passes explicit trusted hosting values to the appropriate class method.
+MAF graph execution, trusted hosting checks, coordinator resource setup and coordinator
 publication remain in `demo\workflow.py`. Locator contracts live with the
 artifact/assignment schemas in `demo\artifacts.py`. Routing helpers remain in
 `demo\routing.py`; Decision-1 is not a fourth hosted service.
@@ -112,124 +177,37 @@ not as a current application-file inventory.
 This source map describes code paths; it is not evidence that live
 managed-identity Blob access or hosted acceptance has passed.
 
-## Status and intended change
+## Implementation status
 
-This describes the implemented native design, not a claim of live acceptance.
-Native workflow/artifact/routing source and focused offline tests now exist;
-the deployment descriptor selects native hosting and remote specialists.
-Application tests pass on Windows and Linux/amd64. The lab applied the 14
-artifact resources and verified scoped zero-change convergence; private
-container, identity-grant and retention metadata checks pass. Reproduced bundled
-publication originally placed architect 17, reviewer 15 and coordinator 22
-on SHA256
-`51064aa426d28d0cfa6b126eac7fce5ab0e9a5a0667267ef105884c1805adde2`,
-with unchanged identities and earlier/diagnostic versions retained.
-The subsequent single approved diagnostic publication activated coordinator 23
-on `03aa0da34942ca66283a37dae8b6edab04ac053291937eebdc2464cdb8f839d9`;
-architect 17/reviewer 15 remain unchanged. This mixed bundle is not live acceptance.
-Coordinator 19's earlier diagnostic release established the original failure:
-`DECISION_CALIBRATION_PROVENANCE`: the Windows loader converted an absent fact
-sheet into a blank variable during calibration; deployment omitted it and used
-the nonempty public default. The correction truly removes absent optional
-settings, requires explicit nonempty release facts and forwards them to all roles.
-A fresh evaluation exposed a missing-workload ambiguity. Routing-v3 distinguishes
-fact-sheet constraints from missing user purpose; its genuine twelve-call
-calibration passes all eight ready and four missing-input cases. The unchanged
-selection algorithm selects threshold 0.5/margin 0. Historical observations and
-the retired calibration remain intact; the frozen corpus/coverage gates are
-unchanged. Corrected facts and calibration are deployed. Initial live execution
-writes requirements and a routing decision, but the architect fails during SDK
-hosting preparation (`RuntimeError`, provider `storage_error`) and the coordinator
-preserves the known effect as uncertain after timeout. This is not proof of a
-permission problem. Read-only observation retrieves the exact child response and
-bounded sanitized logs. Deployed SDK-boundary diagnostics identify
-`NATIVE_HOST_PRINCIPAL`: the architect has no trusted user context before the
-application factory. The actual pinned-SDK HTTP-edge test preserves delegated
-headers, and read-only coordinator RBAC inspection confirms the explicit
-`UserIdentityImpersonation/action` grant already exists. Neither observation
-authorizes substituting a principal inside the container or weakening
-`FoundryRequestScope`. Supported platform/SDK identity propagation remains a
-live blocker. Known-response stream recovery is deployed; the fresh coordinator
-preserves `SPECIALIST_INCOMPLETE` without resend or concealment.
-Read-only existing Azure Monitor telemetry further confirms the known architect
-enters the SDK with call identity but no user identity, while its coordinator
-enters with both; the correlated architect Responses POST returned HTTP 200.
-This rules out loss solely during background recovery, but is not a live wire
-capture. The deployed propagation change uses the pinned SDK's
-`context.platform_headers()` for native internal calls rather than re-delegating
-the already-derived user ID or forwarding a container-only identity header.
-The legacy transport is unchanged. Following explicit approval to start the
-existing command VM, fresh guarded connectivity and all three publications
-passed, with unchanged identities and proven process/mount cleanup.
-Fresh initial acceptance on these versions still holds `SPECIALIST_INCOMPLETE`.
-Read-only exact-response observation confirms architect 17 fails
-`NATIVE_HOST_PRINCIPAL` with call identity present and trusted user absent.
-Thus SDK-supported opaque propagation alone did not resolve the live failure.
-The unresolved propagation boundary is not proof of a platform defect or a
-missing permission. Trusted scope gates remain strict; followup, hosting
-stop/resume and isolation were not reached. Owned jobs/listeners closed after
-both acceptance and observation.
-Deployed HTTP-edge diagnostics compare the actual outbound opaque
-call header with the captured request context, exposing only presence/match
-booleans and an allowlisted role. A response-ID hash binds the observation
-without logging raw IDs, identity/header values, tokens or content; it grants
-no authority. Known-child failure observation additionally reads the exact
-parent's bounded logs. No trusted-scope or legacy transport behavior changes.
-Pending states and response IDs remain preserved; no repeat inference was sent.
-Before the approved prospective attempt, read-only reconciliation found
-coordinator 22 active and exact version 23 returning HTTP 404. The original interrupted publisher
-has no recoverable package-bound owner/completion receipt, so its outcome and
-original mount closure remain unknown. Retained lab exact-version observation
-and independent owner inspection do not grant retry or cleanup authority.
-The operator separately approved ONE prospective coordinator-only lab diagnostic
-risk exception, not a change to runtime unknown-effect handling. The original
-publication remains UNKNOWN, with delayed-publication and unproven historical
-cleanup risks retained. R may record that scope-specific risk disposition
-instead of proving historical closure, but D still requires tested durable
-pre-dispatch owner/source/package/project/version evidence, flushed phases/
-server IDs, independent publication terminal/cleanup findings and all existing
-source/package/trust gates. Freshly verify every deployed role; do not assume
-the next version. Isolate new private output/stage/ports/owner and serialize
-the publisher; clean only positively identified new owned resources.
-Any new unknown outcome/ownership stops the consumed exception without retry.
-Only verified diagnostic identity/package/version and new owned cleanup permit
-ONE fresh synthetic App/native parent plus read-only exact-response observation.
-Outbound mismatch requires a precise wiring fix/regression; matching context
-with missing child user requires supported provider resolution, not guessed
-headers/principals/RBAC or speculative releases. This mixed diagnostic bundle
-cannot establish G1-G8 final acceptance. G8 must disclose the accepted exception
-and historical cleanup limitation, not falsely close them. The parent retains
-the private authority/attempt record and reports actual operational results;
-this documentation is not execution or permission for further releases,
-provider submission or historical cleanup. See
-[identity-recovery-plan.md](identity-recovery-plan.md) for the bounded gates.
-That exception has now been consumed: the corrected publisher durably bound
-the new owner, exact sources/package and 22 -> 23 version before dispatch;
-publication succeeded with unchanged identity and independently proven runner
-and outer cleanup. One fresh App/native parent wrote requirements and a genuine
-Decision-1 result, then held `SPECIALIST_INCOMPLETE`. Its exact read-only
-observation captured the architect outbound call header present and matching
-the SDK context, with delegated/container-user headers absent. The exact child
-still had call identity but no trusted user and failed `NATIVE_HOST_PRINCIPAL`.
-Both diagnostic/observation connection owners closed. The held state and
-original UNKNOWN remain; no further live attempt is authorized by the consumed
-exception. A supported provider/SDK caller-resolution remedy is required, not
-speculative identity/header/RBAC changes. A platform defect is not established
-and the provider packet remains unsent.
-Offline construction is not proof of hosted identity/context correctness.
-Completed remote specialist work, end-to-end managed-identity artifact
-provenance, two-parent isolation and actual hosting restart/resume remain
-unverified. Metadata is not managed-identity data-plane proof.
-All four real twelve-case calibration journals remain preserved, including both
-failed evaluations and the earlier blank-facts success. The public routing-v3
-calibration binds full request hashes to the current policy and explicit facts;
-the corpus's v1 dataset metadata is not a policy downgrade.
-The preserved baseline has a handwritten coordinator, durable operation ledger,
-Foundry parent/child session handling, strict specialist contracts, and optional
-remote Responses transport. Its explicit legacy adapter still supports
-`in_process` specialists for regression coverage. The target replaces orchestration with a native Microsoft Agent
-Framework workflow and explicitly deploys remote specialists. Keep the baseline
-available until the new implementation passes offline and live acceptance.
+This describes implemented source, not live acceptance or a fresh deployment
+inventory. The workflow/artifact/routing code and offline tests exist; the
+descriptor configures MAF hosting and remote specialists. Historical live
+execution reached requirements and Decision-1 routing but held
+`SPECIALIST_INCOMPLETE`: the architect failed `NATIVE_HOST_PRINCIPAL` before its
+application executed. Matching outbound opaque call context did not supply the
+missing trusted user at child ingress. Neither a provider defect nor a missing
+grant is established. Reviewer completion, end-to-end managed-identity private
+Blob provenance, continuity, supported compute stop/resume and isolation remain
+unverified.
+
+The [recovery plan](identity-recovery-plan.md#measured-baseline-not-assumptions)
+retains exact historical versions/packages, diagnostics and the consumed
+one-attempt exception. Its mixed diagnostic bundle is not final common-bundle
+acceptance. The original publication UNKNOWN, held parents and historical
+cleanup uncertainty remain preserved. No new diagnostic chronology or cloud
+observation is asserted here.
+
+The October 19 invocation authorizes new evidence-backed scoped corrective
+work and guarded releases in the existing project; the older consumed exception
+neither forbids all such work nor permits unknown-effect replay. Deployment and
+live acceptance remain with DevOps. No speculative principal/header/grant
+substitution or provider submission is authorized. See
+[the implementation workflow](implementation-workflow.md) for source/package
+gates and [G1-G8](identity-recovery-plan.md#application-objective-and-definition-of-done)
+for the actual release proof.
+The solution uses a Microsoft Agent Framework workflow, Foundry parent/child
+sessions, strict specialist contracts, a durable operation journal and remote
+Responses transport.
 
 Exactly three hosted agent deployments are intended:
 
@@ -261,7 +239,7 @@ Three independent state planes have different purposes:
 Use a request-aware workflow factory and the supported
 `CheckpointStoreProvider` integration if supported by the pinned hosting SDK.
 Do not base the host on deprecated `workflow.as_agent()` APIs. If the pins cannot
-support native hosting, document the exact incompatibility and make the smallest
+support Foundry workflow hosting, document the exact incompatibility and make the smallest
 coherent dependency update with compatibility tests and a regenerated lock.
 
 The artifact conversation key is the **coordinator's trusted parent Foundry
@@ -424,8 +402,7 @@ candidate/review chain. No previous approval carries over automatically.
 
 MAF superstep checkpoints are not a distributed transaction with Foundry
 Responses or Blob publication. **Keep an application write-ahead journal** and
-stable operation IDs; replacing the handwritten coordinator does not eliminate
-uncertain remote side effects.
+stable operation IDs to reconcile uncertain remote side effects.
 
 | Observed recovery state | Safe action |
 |---|---|
@@ -439,7 +416,7 @@ uncertain remote side effects.
 Retries are bounded and permitted only where idempotency/recovery is established.
 Record retry budgets and reconcile before resending. Resume restores child IDs,
 deployed versions, requirements revision, artifact refs, pending effect,
-manifest generation, and native workflow position. A new process must not
+manifest generation, and MAF workflow position. A new process must not
 clear pending state or switch from remote to in-process to appear successful.
 
 Define retention, user deletion/export, and encryption policies across all

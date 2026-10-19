@@ -79,7 +79,7 @@
       "id": "S1-TERMINAL",
       "title": "Implement opt-in evidence-qualified human continuity view",
       "kind": "ui",
-      "owner": "UI Developer",
+      "owner": "Developer",
       "dependsOn": [],
       "exclusiveResources": ["application-terminal-source"],
       "estimatedMinutes": {"implementation": 75, "review": 25, "integration": 10},

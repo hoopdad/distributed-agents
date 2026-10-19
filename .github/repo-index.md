@@ -19,6 +19,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | October 19 full-scope release design, parent/child/model continuation contracts, bounded downstream handoffs and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three initial sprint goals/acceptance contracts, independent offline work, supported-repair critical path, exact release/live gates and original-owner closeout |
+| RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Sprint-specific README/terminal screens, ordered revision trace, incomplete/recovered-event behavior and fixture-to-display implementation handoff |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
@@ -127,6 +128,12 @@ boundary changed. Scrum Master retains task decomposition/Git reconciliation;
 DevOps retains publication/live acceptance. Sprint acceptance is planned, not
 executed or waived by a bounded research exit.
 
+Sprint-design freshness: based on release-plan commit `a2d0f9a` and accepted
+architecture/UX above, with the same 17 pre-existing dirty paths preserved.
+Added `docs\customer-prototype-sprint-design.md` for RP-S1 flows and screens;
+no runtime/CLI/schema change. Human view remains a proposed implementation,
+and Designer handoff is distinct from downstream source/live acceptance.
+
 <!-- inventory:start -->
 
 ## Public file inventory
@@ -169,6 +176,7 @@ executed or waived by a bounded research exit.
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
 - `docs\customer-prototype-release-plan.md`
+- `docs\customer-prototype-sprint-design.md`
 - `docs\customer-prototype-ux.md`
 - `docs\design.md`
 - `docs\identity-recovery-plan.md`

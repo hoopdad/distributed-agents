@@ -20,6 +20,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three initial sprint goals/acceptance contracts, independent offline work, supported-repair critical path, exact release/live gates and original-owner closeout |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Sprint-specific README/terminal screens, ordered revision trace, incomplete/recovered-event behavior and fixture-to-display implementation handoff |
+| RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative design and logical-tier contracts for exact binding fixtures, direct model continuation, unchanged terminal projection and independent supported-remedy assessment |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
@@ -134,6 +135,13 @@ Added `docs\customer-prototype-sprint-design.md` for RP-S1 flows and screens;
 no runtime/CLI/schema change. Human view remains a proposed implementation,
 and Designer handoff is distinct from downstream source/live acceptance.
 
+Sprint-architecture freshness: based on accepted SprintDesign `4c8511d` and
+the accepted release architecture/plan, preserving the same 17 dirty paths.
+Added `docs\customer-prototype-sprint-architecture.md` and three derived
+logical-tier architecture files under `docs\requirements`; no prior sprint
+was supplied. These are not copied delivery requirements or new services.
+No runtime, dependency, event schema or deployment ownership changed.
+
 <!-- inventory:start -->
 
 ## Public file inventory
@@ -176,6 +184,7 @@ and Designer handoff is distinct from downstream source/live acceptance.
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
 - `docs\customer-prototype-release-plan.md`
+- `docs\customer-prototype-sprint-architecture.md`
 - `docs\customer-prototype-sprint-design.md`
 - `docs\customer-prototype-ux.md`
 - `docs\design.md`
@@ -183,6 +192,9 @@ and Designer handoff is distinct from downstream source/live acceptance.
 - `docs\implementation-workflow.md`
 - `docs\migration-map.json`
 - `docs\migration-plan.md`
+- `docs\requirements\client-release\architecture.md`
+- `docs\requirements\coordinator\architecture.md`
+- `docs\requirements\specialists\architecture.md`
 - `live_acceptance.py`
 - `main.py`
 - `native_proxy.py`

@@ -9,17 +9,18 @@ architecture changes with `scripts\repo_index.py`.
 ## Scope and status
 
 This repository owns portable application code, strict contracts, generic
-config, tests, and design. The current baseline is handwritten orchestration
-and `in_process` deployment mode. Do not claim native MAF workflow/Blob exchange
-or remote live acceptance until implemented and verified.
+config, tests, and design. Present it as an educational Microsoft Agent Framework
+(MAF) and Microsoft Foundry solution, without migration comparisons or a redundant
+"native" qualifier. Workflow and Blob exchange source are implemented; do not
+claim remote live acceptance until verified.
 
-Exactly three production deployments are intended: coordinator with native
+Exactly three production deployments are intended: coordinator with a
 MAF workflow, architect, reviewer. Use Microsoft-Decision-1 for semantic
 coordinator choices only after deterministic gates. Do not replace remote
 specialists with hidden local instances or add a fourth service.
 
 Follow the design's trusted parent binding, per-role immutable outputs,
-exact prerequisite refs, coordinator ETag manifest, native checkpoints,
+exact prerequisite refs, coordinator ETag manifest, MAF checkpoints,
 write-ahead effects and explicit unknown-effect holds. A model output, session
 ID string, or artifact document never grants authorization.
 
@@ -44,7 +45,7 @@ ad hoc Azure mutation, secret retrieval, quota change or destructive migration.
 
 Use deterministic checked-in scripts with explicit roots, idempotent local
 generation, nonzero failure, no secrets and stable evidence. Preserve baseline
-test cases and retained lab release safeguards. Keep native hosting compatible
+test cases and retained lab release safeguards. Keep Foundry hosting compatible
 with pinned SDKs; update the dependency lock deliberately if required.
 
 Run `Test-Demo.ps1 -Python <absolute-python-path>`; include

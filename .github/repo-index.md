@@ -13,7 +13,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Contracts/configuration | `demo\artifacts.py`, `demo\contracts.py`, `demo\config.py`, `config\settings.example.json` | Strict artifacts/assignments and atomic artifact/routing settings |
 | Blob/routing | `demo\artifact_store.py`, `demo\routing.py`, `config\routing-corpus.json`, `scripts\calibrate_routing.py` | Role-owned immutable outputs, fenced journal/manifest, typed calibrated Decision-1 and shared admission |
 | Foundry integration | `demo\foundry.py`, `agent_metadata.py`, `azure.yaml` | Trusted host/state/provider adapters; three MAF/Foundry remote-mode services deployed, not live-accepted |
-| Local client/transport | `demo\terminal.py`, `native_proxy.py`, `live_acceptance.py` | Private terminal, exact-origin proxy, bounded diagnostics, artifact-envelope audit and guarded compute stop/resume acceptance |
+| Local client/transport | `demo\terminal.py`, `native_proxy.py`, `live_acceptance.py` | Private terminal with opt-in `--native --view human` stderr projection, unchanged stdout/parser, exact-origin proxy, bounded diagnostics, artifact-envelope audit and guarded compute stop/resume acceptance |
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
@@ -159,6 +159,18 @@ boundary or live capability changed. `S1-INTEGRATE` must reconcile the matching
 pre-existing `demo\specialist.py` terminology change owned by that task.
 The new fixtures exercise actual role stages and `Agent.run`; only connection
 setup, persisted storage and external model transport are controlled.
+
+S1-INTEGRATE freshness: inspected same-branch S1-COORD `6614440`,
+S1-MODEL `c454e50`, S1-TERMINAL `56b762e` and S1-DOCS `e24fcb9`.
+Reconciles the remaining seven assigned readability diffs, including host
+factory/parser wiring and the shared specialist `artifact_mode` keyword.
+README commands now use the implemented opt-in human view; earlier design
+documents retain their historical proposal wording. No added/deleted files,
+dependency, machine schema, migration seal or deployment boundary changes.
+Recovery chronology remains owned by S1-REMEDY (`39c3b4e`), not this task.
+Offline integrated-source validation does not establish live acceptance or a
+final Linux hosting package. Exact baseline/task path accounting is retained
+in the S1-INTEGRATE commit message.
 
 <!-- inventory:start -->
 

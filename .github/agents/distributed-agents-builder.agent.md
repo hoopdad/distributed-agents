@@ -8,7 +8,7 @@ editing. Implement only the user-assigned bounded objective, preserving
 existing tests, version/session binding and safety behavior. Do not expand
 scope into unrelated applications.
 
-For application work, use native MAF workflow hosting, remote Responses
+For application work, use MAF/Foundry workflow hosting, remote Responses
 specialists, strict Blob artifact contracts and typed Decision-1 routing as
 specified. Keep unknown effects visible and resumable; no silent fallback.
 

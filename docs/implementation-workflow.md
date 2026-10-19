@@ -24,9 +24,12 @@ work and reconcile side effects. None replaces another.
 For documentation/terminal work, keep the baseline CLI runnable and machine
 delegation/result output and acceptance parsing unchanged. Human summaries are
 an opt-in stderr projection, not a new evidence contract. Exact continuity needs
-actual binding checks, not alias equality. S1-INTEGRATE reconciles the reviewed
-documentation with S1-TERMINAL's implemented human command; documentation work
-does not depend on that flag already existing. A follow-up is allowed only after
+actual binding checks, not alias equality. The integrated README commands use
+the implemented `--native --view human` option; omitting `--view human` retains
+the default presentation. Capture tests verify identical stdout and unchanged
+acceptance parsing, including fragmented streams and known-response recovery.
+These are offline checks, not final-package or live certification.
+A follow-up is allowed only after
 a completed, non-held initial turn. A known-response retrieval is not a new send
 and must not be counted as a new specialist invocation.
 

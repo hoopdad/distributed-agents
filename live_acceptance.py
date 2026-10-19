@@ -17,7 +17,7 @@ from demo.terminal import chat, private_state_path, rest, session_lease, verify_
 from azure.identity.aio import AzureCliCredential
 
 from agent_metadata import agent_metadata
-from demo.artifacts import Artifact, ArtifactRef, Candidate as NativeCandidate, Decision, Review as NativeReview
+from demo.artifacts import Artifact, ArtifactRef, Candidate as ArtifactCandidate, Decision, Review as ArtifactReview
 from demo.workflow import PREPARATION_CHECKS
 
 
@@ -243,13 +243,13 @@ def events(text):
     if any(call.get("status") != "completed" for call in calls):
         raise RuntimeError("LIVE_DELEGATION_INCOMPLETE")
     result = results[0]
-    native = result.get("native_workflow") == "distributed-agents-v1"
+    workflow_mode = result.get("native_workflow") == "distributed-agents-v1"
     turn, decisions = result.get("turn"), result.get("decisions")
     if (type(turn) is not int or turn < 1 or type(result.get("calls")) is not int or
             result.get("calls") != len(calls) or
-            type(decisions) is not int or not len(calls) + (not native) <= decisions <= 10):
+            type(decisions) is not int or not len(calls) + (not workflow_mode) <= decisions <= 10):
         raise RuntimeError("LIVE_RESULT_COUNTERS")
-    if native:
+    if workflow_mode:
         if result.get("pending_effect") is not None or result.get("specialists") != "hosted":
             raise RuntimeError("NATIVE_REMOTE_EFFECT_HOLD")
         if (result.get("artifact_authentication") != "managed_identity"
@@ -280,8 +280,8 @@ def events(text):
         if any(call.get("specialist_mode") != "hosted" for call in calls):
             raise RuntimeError("REMOTE_SPECIALISTS_REQUIRED")
     try:
-        candidate = (NativeCandidate if native else Candidate).model_validate(result.get("candidate"))
-        review = (NativeReview if native else Review).model_validate(result.get("review"))
+        candidate = (ArtifactCandidate if workflow_mode else Candidate).model_validate(result.get("candidate"))
+        review = (ArtifactReview if workflow_mode else Review).model_validate(result.get("review"))
     except ValueError as exc:
         raise RuntimeError("LIVE_ARTIFACT_SCHEMA") from exc
     if (candidate.requirements_revision != turn or review.requirements_revision != turn or
@@ -469,10 +469,10 @@ async def run(args):
             data_client(socks=args.socks) as http:
         for role in ("architect", "reviewer"):
             role_events = [event for event in proof["delegations"] if event["role"] == role]
-            native = proof["result"].get("native_workflow") == "distributed-agents-v1"
-            if not native and len(role_events) != 1:
+            workflow_mode = proof["result"].get("native_workflow") == "distributed-agents-v1"
+            if not workflow_mode and len(role_events) != 1:
                 raise RuntimeError("MULTIPLE_CHILD_SESSIONS_PER_ROLE")
-            if native and len({
+            if workflow_mode and len({
                 (event["hosted_session"], event["framework_session"], event["version"]) for event in role_events
             }) != 1:
                 raise RuntimeError("CHILD_BINDING_CHANGED_WITHIN_TURN")

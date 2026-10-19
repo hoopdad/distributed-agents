@@ -109,11 +109,11 @@ New-Item -ItemType Directory -Path $sessionDirectory -Force | Out-Null
 $session = Join-Path $sessionDirectory 'synthetic-private-ingress-01.json'
 $socks = 'socks5h://127.0.0.1:<verified-owned-port>'
 
-& $python -m demo.terminal --native --socks $socks --session-file $session `
+& $python -m demo.terminal --native --view human --socks $socks --session-file $session `
     --message 'Design a synthetic application with private ingress only.'
 
 # Only after the first turn completes with no pending/held effect:
-& $python -m demo.terminal --native --socks $socks --session-file $session `
+& $python -m demo.terminal --native --view human --socks $socks --session-file $session `
     --message 'Add an asynchronous queue; keep private ingress and all earlier requirements.'
 ```
 
@@ -132,11 +132,13 @@ framework IDs, pinned versions, fresh response IDs and current artifact refs.
 Useful design/review content is part of the result, not proof of live release
 acceptance by itself.
 
-**Integration handoff:** the accepted terminal design proposes `--view human`
-on both commands for separate stderr summaries, leaving stdout and the
-acceptance parser unchanged. That flag is not a prerequisite for these baseline
-commands and is not certified here; S1-INTEGRATE must reconcile its actual
-implementation and tests with S1-TERMINAL before documenting it as runnable.
+`--view human` is implemented: both commands add a separate stderr summary
+after complete records are finalized, showing ordered specialist calls and
+current design/review output. Omit it to retain the default presentation;
+stdout and the acceptance parser are unchanged. The summary labels exact
+continuity and child creation counts as unverified/not observed because aliases
+cannot establish them. Known-response retrieval is labeled as recovery, not a
+new invocation. Offline capture tests cover these behaviors, not live success.
 
 ## What is preserved, and what changes?
 

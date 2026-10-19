@@ -9,12 +9,13 @@ from azure.ai.agentserver.core import AgentConfig, get_request_context
 from .foundry import create_hosted_agent
 
 
-class NativePreparationDiagnostics(logging.Filter):
+class WorkflowPreparationDiagnostics(logging.Filter):
     def __init__(self, config):
         super().__init__()
         self.config = config
 
     def filter(self, record):
+        # SDK log text and diagnostic codes are consumed by existing observation tools.
         if (record.msg == "Native Responses workflow failed during %s (%s)."
                 and record.args == ("preparation", "RuntimeError")):
             context = get_request_context()
@@ -33,13 +34,13 @@ def main():
     runtime = os.environ.get("DEMO_RUNTIME", "legacy")
     if runtime == "native":
         if os.environ.get("AGENTSERVER_TASKS_BACKEND", "hosted") != "hosted":
-            raise RuntimeError("Native hosting requires the hosted resilient task backend.")
-        from .workflow import create_native_workflow, parse_native_turn
+            raise RuntimeError("Foundry workflow hosting requires the hosted resilient task backend.")
+        from .workflow import create_workflow, parse_turn
         logger = logging.getLogger("agent_framework_foundry_hosting._workflow_responses")
-        if not any(isinstance(item, NativePreparationDiagnostics) for item in logger.filters):
-            logger.addFilter(NativePreparationDiagnostics(AgentConfig.from_env()))
+        if not any(isinstance(item, WorkflowPreparationDiagnostics) for item in logger.filters):
+            logger.addFilter(WorkflowPreparationDiagnostics(AgentConfig.from_env()))
         ResponsesHostServer(
-            workflow=create_native_workflow, parse_response=parse_native_turn,
+            workflow=create_workflow, parse_response=parse_turn,
             checkpoint_store_provider=CheckpointStoreProvider(),
             options=ResponsesServerOptions(resilient_background=True),
             unsupported_options="error",

@@ -18,6 +18,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | October 19 full-scope release design, parent/child/model continuation contracts, bounded downstream handoffs and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
+| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three initial sprint goals/acceptance contracts, independent offline work, supported-repair critical path, exact release/live gates and original-owner closeout |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
@@ -119,6 +120,13 @@ UX handoff freshness: based on architecture commit
 Added `docs\customer-prototype-ux.md`; no runtime, dependency or public event
 contract changed. Human-view CLI syntax in that document is explicitly proposed.
 
+Release-plan freshness: based on accepted architecture `1f690f5` and UX
+`0f2a2b2`, preserving the existing 17 dirty paths. Added
+`docs\customer-prototype-release-plan.md`; no runtime, dependency or ownership
+boundary changed. Scrum Master retains task decomposition/Git reconciliation;
+DevOps retains publication/live acceptance. Sprint acceptance is planned, not
+executed or waived by a bounded research exit.
+
 <!-- inventory:start -->
 
 ## Public file inventory
@@ -160,6 +168,7 @@ contract changed. Human-view CLI syntax in that document is explicitly proposed.
 - `demo\workflow.py`
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
+- `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-ux.md`
 - `docs\design.md`
 - `docs\identity-recovery-plan.md`

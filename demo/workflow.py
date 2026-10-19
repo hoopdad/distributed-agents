@@ -1,7 +1,9 @@
-"""Native hosting flow:
+"""MAF workflow hosted in Microsoft Foundry:
 
 The host parses each turn, builds a role-specific workflow, then runs the
 coordinator graph: requirements -> routing -> effect -> publication -> routing.
+Read WorkflowRuntime.begin(), route(), execute(), and publish() in that order;
+shared storage, validation, and recovery helpers follow the four lifecycle methods.
 Each event opens the shared Blob artifact plane through the role's managed
 identity; workflow checkpoints and agent-session history are separate stores.
 """
@@ -15,6 +17,7 @@ import time
 import uuid
 from contextlib import AsyncExitStack, asynccontextmanager
 from pathlib import Path
+from typing import Literal
 
 from agent_framework import Executor, WorkflowBuilder, WorkflowContext, handler
 from agent_framework.exceptions import ChatClientException
@@ -53,10 +56,10 @@ PREPARATION_CHECKS = frozenset({
 })
 
 
-def create_native_workflow(request: HostedResponseRequest):
+def create_workflow(request: HostedResponseRequest):
     """Build the coordinator graph or a specialist's assigned-output workflow."""
     try:
-        runtime = NativeRuntime(request)
+        runtime = WorkflowRuntime(request)
     except ArtifactError as exc:
         code = exc.code if exc.code in PREPARATION_CHECKS else "UNCLASSIFIED"
         LOGGER.error("Native workflow preparation rejected (%s).", code)
@@ -78,7 +81,7 @@ def create_native_workflow(request: HostedResponseRequest):
     )
 
 
-async def parse_native_turn(request: HostedResponseRequest) -> WorkflowTurn[str]:
+async def parse_turn(request: HostedResponseRequest) -> WorkflowTurn[str]:
     """Validate the stored, resilient request and expose its user text as workflow input."""
     if request.request.get("store") is False or request.request.get("background") is not True:
         raise ArtifactError("STORED_RESILIENT_BACKGROUND_REQUIRED")
@@ -88,7 +91,7 @@ async def parse_native_turn(request: HostedResponseRequest) -> WorkflowTurn[str]
     return WorkflowTurn(input=text)
 
 
-class NativeRemoteAgents(RemoteAgents):
+class WorkflowRemoteAgents(RemoteAgents):
     def _client(self, child: Child):
         if child.role not in self.clients:
             self.clients[child.role] = FoundryAgent(
@@ -114,7 +117,7 @@ class NativeRemoteAgents(RemoteAgents):
         except (ChatClientException, TimeoutError):
             if known_id is None:
                 raise
-            LOGGER.warning("Native specialist stream interrupted; retrieving its persisted response without resend.")
+            LOGGER.warning("Specialist stream interrupted; retrieving its persisted response without resend.")
         return await self.recover(child, known_id)
 
     async def recover(self, child, response_id):
@@ -148,7 +151,7 @@ def create_artifact_store(scope: ScopeBinding, role: str, credential) -> BlobArt
     )
 
 
-class NativeRuntime:
+class WorkflowRuntime:
     """Coordinator recipe: begin -> route -> execute -> publish -> route."""
 
     def __init__(self, request: HostedResponseRequest):
@@ -181,73 +184,6 @@ class NativeRuntime:
                 required("DECISION_MODEL_DEPLOYMENT"),
             )
 
-    @asynccontextmanager
-    async def resources(self):
-        async with AsyncExitStack() as stack:
-            credential = await stack.enter_async_context(ManagedIdentityCredential())
-            http = await stack.enter_async_context(data_client(
-                expected_call_id=self.context.call_id, response_id=self.response_id,
-            ))
-            headers = self.context.platform_headers()
-            project = await stack.enter_async_context(ProjectClient(credential, http, headers))
-            artifact_store = await stack.enter_async_context(
-                create_artifact_store(self.scope, self.role, credential)
-            )
-            await artifact_store.verify_private_path()
-            yield artifact_store, NativeRemoteAgents(project, headers), project, credential, http, headers
-
-    def producer(self, *, response_id: str | None = None) -> Producer:
-        return Producer(
-            role=self.role, name=self.config.agent_name, version=self.config.agent_version,
-            session_id=self.scope.parent_session, response_id=response_id or self.response_id,
-        )
-
-    async def save(self, document, manifest: Manifest):
-        if manifest.coordinator_version != self.config.agent_version:
-            raise ArtifactError("PARENT_VERSION_CHANGED")
-        manifest.generation += 1
-        validated = Manifest.model_validate(manifest.model_dump(mode="json"))
-        await document.save(validated)
-
-    def assert_turn(self, manifest: Manifest) -> None:
-        if (
-            manifest.scope_binding != self.scope or manifest.coordinator_version != self.config.agent_version
-            or manifest.active_response_id != self.response_id
-        ):
-            raise ArtifactError("PARENT_TURN_BINDING")
-
-    async def transition(self, store, document, manifest: Manifest, status: str):
-        if manifest.effect is None:
-            raise ArtifactError("OPERATION_REQUIRED")
-        manifest.effect.status = status
-        await store.write_operation(
-            manifest.effect.operation_id, status,
-            {"scope_binding": self.scope.model_dump(mode="json"), "effect": manifest.effect.model_dump(mode="json")},
-        )
-        await self.save(document, manifest)
-
-    async def inputs(self, store, manifest: Manifest) -> tuple[list[ArtifactRef], dict]:
-        refs = [ref for ref in (manifest.requirements, manifest.candidate, manifest.review) if ref is not None]
-        if not refs or refs[0] != manifest.requirements:
-            raise ArtifactError("REQUIREMENTS_REQUIRED")
-        if any(ref not in manifest.accepted for ref in refs):
-            raise ArtifactError("ROUTING_PREREQUISITES_NOT_ACCEPTED")
-        for kind, ref in (
-            ("requirements", manifest.requirements), ("candidate", manifest.candidate), ("review", manifest.review),
-        ):
-            if ref is not None and (
-                ref.artifact_type != kind or ref.requirements_revision != manifest.turn
-                or kind != "requirements" and ref.candidate_revision != manifest.candidate_revision
-            ):
-                raise ArtifactError("ROUTING_PREREQUISITE_REVISION")
-        values = [await store.read_artifact(ref) for ref in refs]
-        state = routing_state(
-            refs, [value.content for value in values],
-            candidate_revision=manifest.candidate_revision,
-            remaining_calls=6 - manifest.calls, remaining_rounds=3 - manifest.rounds,
-        )
-        return refs, state
-
     async def begin(self, text: str) -> str:
         """Append this turn's requirements and invalidate the previous design/review."""
         if not text.strip() or len(text) > 4000:
@@ -269,30 +205,36 @@ class NativeRuntime:
                     raise ArtifactError("PARENT_TURN_UNCERTAIN")
 
                 # STAGE 2: Read earlier requirements and append the user's new text.
-                chunks = []
+                requirement_chunks = []
                 if manifest.requirements is not None:
-                    original = await store.read_artifact(manifest.requirements)
-                    if not isinstance(original.content, Requirements):
+                    previous_requirements = await store.read_artifact(manifest.requirements)
+                    if not isinstance(previous_requirements.content, Requirements):
                         raise ArtifactError("REQUIREMENTS_SCHEMA")
-                    chunks = list(original.content.chunks)
-                content = Requirements(chunks=[*chunks, text])
+                    requirement_chunks = list(previous_requirements.content.chunks)
+                requirements = Requirements(chunks=[*requirement_chunks, text])
 
                 # STAGE 3: Store the immutable requirements before publishing their reference.
-                op = operation_id(self.scope, self.response_id, "requirements")
-                artifact = Artifact(
-                    artifact_type="requirements", scope_binding=self.scope, operation_id=op,
-                    producer=self.producer(), input_refs=[], requirements_revision=len(content.chunks),
-                    content=content, content_sha256=digest(content),
+                requirements_operation = operation_id(self.scope, self.response_id, "requirements")
+                requirements_artifact = Artifact(
+                    artifact_type="requirements", scope_binding=self.scope, operation_id=requirements_operation,
+                    producer=self.producer(), input_refs=[], requirements_revision=len(requirements.chunks),
+                    content=requirements, content_sha256=digest(requirements),
                 )
-                ref = await store.write_artifact(artifact)
+                requirements_ref = await store.write_artifact(requirements_artifact)
 
                 # STAGE 4: Start a fresh revision, keeping the existing specialist sessions.
-                manifest.accepted.append(ref)
-                manifest.requirements, manifest.candidate, manifest.review = ref, None, None
-                manifest.turn = len(content.chunks)
-                manifest.calls = manifest.rounds = manifest.decisions = 0
+                manifest.accepted.append(requirements_ref)
+                manifest.requirements = requirements_ref
+                manifest.candidate = None
+                manifest.review = None
+                manifest.turn = len(requirements.chunks)
+                manifest.calls = 0
+                manifest.rounds = 0
+                manifest.decisions = 0
                 manifest.active_response_id = self.response_id
-                manifest.status, manifest.effect, manifest.next_action = "RUNNING", None, None
+                manifest.status = "RUNNING"
+                manifest.effect = None
+                manifest.next_action = None
                 manifest.routing_operation_id = None
                 manifest.deadline_epoch = int(time.time()) + 360
                 await self.save(document, manifest)
@@ -313,7 +255,7 @@ class NativeRuntime:
                     return manifest.next_action, None
 
                 # STAGE 2: Validate accepted inputs, finish an approval, and enforce budgets.
-                refs, state = await self.inputs(store, manifest)
+                input_refs, routing_inputs = await self.inputs(store, manifest)
                 if manifest.review is not None:
                     review = await store.read_artifact(manifest.review)
                     if not isinstance(review.content, Review):
@@ -323,7 +265,10 @@ class NativeRuntime:
                         await self.save(document, manifest)
                         return None, await self.result(store, manifest)
 
-                action = "ask_architect" if manifest.candidate is None or manifest.review is not None else "ask_reviewer"
+                if manifest.candidate is None or manifest.review is not None:
+                    action = "ask_architect"
+                else:
+                    action = "ask_reviewer"
                 if (
                     manifest.decisions >= 10 or manifest.calls >= 6
                     or action == "ask_architect" and manifest.rounds >= 3
@@ -339,31 +284,32 @@ class NativeRuntime:
                     required("DECISION_MODEL_DEPLOYMENT"),
                 )
                 effect = manifest.effect
-                proposal = None
+                decision_artifact = None
                 if effect and effect.kind == "decision" and effect.status != "accepted":
-                    decision_op = effect.operation_id
-                    proposal = await store.read_output(
-                        artifact_type="decision", revision=manifest.turn, operation_id=decision_op
+                    decision_operation = effect.operation_id
+                    decision_artifact = await store.read_output(
+                        artifact_type="decision", revision=manifest.turn, operation_id=decision_operation
                     )
-                    if proposal is None and effect.status != "prepared":
+                    if decision_artifact is None and effect.status != "prepared":
                         await self.hold(store, document, manifest, "DECISION_EFFECT_UNCERTAIN")
                         return None, await self.result(store, manifest)
                 else:
                     manifest.decisions += 1
-                    decision_op = operation_id(self.scope, self.response_id, f"decision-{manifest.decisions}")
+                    decision_operation = operation_id(self.scope, self.response_id, f"decision-{manifest.decisions}")
                     manifest.effect = Effect(
-                        operation_id=decision_op, kind="decision", status="prepared", role="coordinator", input_refs=refs,
-                        reserved_name=f"{self.scope.prefix}decisions/{manifest.turn}/{decision_op}.json",
+                        operation_id=decision_operation, kind="decision", status="prepared",
+                        role="coordinator", input_refs=input_refs,
+                        reserved_name=f"{self.scope.prefix}decisions/{manifest.turn}/{decision_operation}.json",
                     )
                     await self.transition(store, document, manifest, "prepared")
 
                 # STAGE 4: Request and store a decision only when no completed decision exists.
-                if proposal is None:
+                if decision_artifact is None:
                     limit_text = required("DECISION_REQUESTS_PER_MINUTE")
                     if not limit_text.isdecimal() or not 1 <= int(limit_text) <= 1000:
                         raise ArtifactError("DECISION_ADMISSION_CONFIGURATION")
                     await reserve_decision(
-                        store, operation_id=decision_op, deployment=required("DECISION_MODEL_DEPLOYMENT"),
+                        store, operation_id=decision_operation, deployment=required("DECISION_MODEL_DEPLOYMENT"),
                         limit=int(limit_text), deadline=min(time.time() + 65, manifest.deadline_epoch),
                     )
                     await self.transition(store, document, manifest, "dispatched")
@@ -374,81 +320,40 @@ class NativeRuntime:
                     try:
                         async with asyncio.timeout(min(120, max(0, manifest.deadline_epoch - time.time()))):
                             choice = await router.choose(
-                                state=state, allowed=[action, "request_input"], calibration=calibration
+                                state=routing_inputs, allowed=[action, "request_input"], calibration=calibration
                             )
                     except (ArtifactError, ValidationError, TimeoutError) as exc:
                         code = exc.code if isinstance(exc, ArtifactError) else type(exc).__name__
                         await self.hold(store, document, manifest, code)
                         return None, await self.result(store, manifest)
-                    proposal = Artifact(
-                        artifact_type="decision", scope_binding=self.scope, operation_id=decision_op,
-                        producer=self.producer(), input_refs=refs, requirements_revision=manifest.turn,
+                    decision_artifact = Artifact(
+                        artifact_type="decision", scope_binding=self.scope, operation_id=decision_operation,
+                        producer=self.producer(), input_refs=input_refs, requirements_revision=manifest.turn,
                         candidate_revision=manifest.candidate_revision or None,
                         content=choice, content_sha256=digest(choice),
                     )
-                    await store.write_artifact(proposal)
+                    await store.write_artifact(decision_artifact)
 
                 # STAGE 5: Validate the decision's provenance and publish its action or hold.
-                await self.accept_decision(store, document, manifest, proposal, refs, state)
+                await self.accept_decision(store, document, manifest, decision_artifact, input_refs, routing_inputs)
                 if manifest.next_action is not None:
                     return manifest.next_action, None
                 return None, await self.result(store, manifest)
-
-    async def accept_decision(self, store, document, manifest, proposal: Artifact, refs, state):
-        effect = manifest.effect
-        choice = proposal.content
-        if (
-            effect is None or proposal.operation_id != effect.operation_id or proposal.input_refs != refs
-            or proposal.producer != self.producer() or not isinstance(choice, Decision)
-            or choice.state_sha256 != digest(state)
-            or choice.deployment != required("DECISION_MODEL_DEPLOYMENT")
-            or proposal.requirements_revision != manifest.turn
-            or choice.alternatives != [
-                "ask_architect" if manifest.candidate is None or manifest.review is not None else "ask_reviewer",
-                "request_input",
-            ]
-        ):
-            raise ArtifactError("DECISION_PROVENANCE")
-        answer = Choice(
-            type="choice", choice=choice.action, confidence=choice.confidence, probabilities=choice.probabilities
-        )
-        answer.validate_choices(choice.alternatives)
-        calibration = load_calibration(
-            ROOT / "config" / "routing-calibration.json", ROOT / "config" / "routing-corpus.json",
-            required("DECISION_MODEL_DEPLOYMENT"),
-        )
-        if (
-            choice.calibration_sha256 != digest(calibration)
-            or choice.gated_action != gated_choice(answer, calibration.threshold, calibration.margin)
-        ):
-            raise ArtifactError("DECISION_POLICY_PROVENANCE")
-        ref = proposal.ref()
-        if ref not in manifest.accepted:
-            manifest.accepted.append(ref)
-        effect.output_ref = ref
-        manifest.routing_operation_id = effect.operation_id
-        if choice.gated_action in ("hold", "request_input"):
-            manifest.status = "ROUTING_HOLD" if choice.gated_action == "hold" else "REQUEST_INPUT"
-            manifest.next_action = None
-        elif choice.gated_action in ("ask_architect", "ask_reviewer"):
-            manifest.next_action = choice.gated_action
-        else:
-            raise ArtifactError("DECISION_ACTION")
-        await self.transition(store, document, manifest, "accepted")
-
-    async def hold(self, store, document, manifest: Manifest, code: str):
-        manifest.status, manifest.next_action = code, None
-        if manifest.effect:
-            manifest.effect.failure = code
-            await self.transition(store, document, manifest, "unknown")
-        else:
-            await self.save(document, manifest)
 
     async def execute(self, action: str) -> str:
         """Bind a specialist, journal its assignment, and invoke or recover its response."""
         if action not in ("ask_architect", "ask_reviewer"):
             raise ArtifactError("SPECIALIST_ACTION")
-        role = "architect" if action == "ask_architect" else "reviewer"
+        role: Literal["architect", "reviewer"]
+        output_type: Literal["candidate", "review"]
+        if action == "ask_architect":
+            role = "architect"
+            output_type = "candidate"
+            output_collection = "candidates"
+        else:
+            role = "reviewer"
+            output_type = "review"
+            output_collection = "reviews"
         async with self.resources() as (store, remote, *_):
             async with store.lock_manifest() as document:
                 # STAGE 1: Verify that the accepted routing decision authorizes this action.
@@ -499,14 +404,16 @@ class NativeRuntime:
                     refs = [ref for ref in (manifest.requirements, manifest.candidate, manifest.review) if ref is not None]
                     if role == "reviewer":
                         refs = refs[:2]
-                    revision = manifest.candidate_revision + (role == "architect")
+                    candidate_revision = manifest.candidate_revision
+                    if role == "architect":
+                        candidate_revision += 1
                     producer = Producer(
                         role=role, name=child.name, version=child.version, session_id=child.hosted_id
                     )
                     assignment = Assignment(
                         scope_binding=self.scope, operation_id=call_op, producer=producer, input_refs=refs,
-                        requirements_revision=manifest.turn, candidate_revision=revision,
-                        output_type="candidate" if role == "architect" else "review",
+                        requirements_revision=manifest.turn, candidate_revision=candidate_revision,
+                        output_type=output_type,
                         deadline_epoch=manifest.deadline_epoch,
                     )
                     await store.write_assignment(assignment)
@@ -514,7 +421,7 @@ class NativeRuntime:
                     manifest.effect = Effect(
                         operation_id=call_op, routing_operation_id=route_op, kind="call", status="prepared",
                         role=role, input_refs=refs, assignment_sha256=digest(assignment),
-                        reserved_name=f"{self.scope.prefix}{'candidates' if role == 'architect' else 'reviews'}/{manifest.turn}/{call_op}.json",
+                        reserved_name=f"{self.scope.prefix}{output_collection}/{manifest.turn}/{call_op}.json",
                     )
                     await self.transition(store, document, manifest, "prepared")
                 effect = manifest.effect
@@ -534,7 +441,7 @@ class NativeRuntime:
                     if effect.status != "prepared":
                         if effect.response_id is None:
                             proposal = await store.read_output(
-                                artifact_type="candidate" if role == "architect" else "review",
+                                artifact_type=output_type,
                                 revision=manifest.turn, operation_id=call_op,
                             )
                             if proposal is None:
@@ -543,17 +450,17 @@ class NativeRuntime:
                             assignment = await store.read_assignment(call_op)
                             self.verify_proposal(proposal, assignment, manifest)
                             await remember(proposal.producer.response_id)
-                        text = await remote.recover(target, effect.response_id)
+                        output_text = await remote.recover(target, effect.response_id)
                     else:
                         await self.transition(store, document, manifest, "dispatched")
                         locator = AssignmentLocator(
                             schema_version=1, scope_binding=self.scope, operation_id=call_op
                         )
                         async with asyncio.timeout(min(120, max(0, manifest.deadline_epoch - time.time()))):
-                            text = await remote.invoke(target, locator.model_dump(mode="json"), remember)
+                            output_text = await remote.invoke(target, locator.model_dump(mode="json"), remember)
 
                     # STAGE 5: Record the output reference; publication validates the artifact itself.
-                    output = OutputLocator.model_validate(decode_document(text.encode("utf-8")))
+                    output = OutputLocator.model_validate(decode_document(output_text.encode("utf-8")))
                     output.artifact_ref.assert_scope(self.scope)
                     if output.artifact_ref.name != effect.reserved_name:
                         raise ArtifactError("SPECIALIST_OUTPUT_BINDING")
@@ -564,32 +471,6 @@ class NativeRuntime:
                     code = exc.code if isinstance(exc, (DemoError, ArtifactError)) else type(exc).__name__
                     await self.hold(store, document, manifest, code)
                 return call_op
-
-    def verify_proposal(self, proposal: Artifact, assignment: Assignment, manifest: Manifest):
-        expected = assignment.producer.model_copy(update={"response_id": proposal.producer.response_id})
-        if (
-            proposal.scope_binding != self.scope or proposal.operation_id != assignment.operation_id
-            or proposal.producer != expected or proposal.input_refs != assignment.input_refs
-            or proposal.artifact_type != assignment.output_type
-            or proposal.requirements_revision != assignment.requirements_revision
-            or proposal.candidate_revision != assignment.candidate_revision
-            or any(ref not in manifest.accepted for ref in proposal.input_refs)
-            or assignment.requirements_revision != manifest.turn
-            or assignment.candidate_revision != manifest.candidate_revision + (assignment.output_type == "candidate")
-        ):
-            raise ArtifactError("SPECIALIST_ARTIFACT_PROVENANCE")
-
-    def delegation_event(self, manifest: Manifest) -> dict:
-        effect = manifest.effect
-        child = manifest.children[effect.role]
-        return {
-            "event": "delegation", "role": effect.role, "action": f"ask_{effect.role}",
-            "specialist_mode": "hosted", "status": "completed", "round": manifest.rounds,
-            "candidate_revision": manifest.candidate_revision,
-            "hosted_session": alias(child.hosted_id), "framework_session": alias(child.framework["session_id"]),
-            "response": alias(effect.response_id), "version": child.version,
-            "artifact_ref": effect.output_ref.model_dump(mode="json"),
-        }
 
     async def publish(self, call_op: str) -> tuple[bool, dict | None]:
         """Validate the specialist's immutable output and accept it into the manifest."""
@@ -636,6 +517,157 @@ class NativeRuntime:
                 # STAGE 4: Publish through the fenced manifest and return to routing.
                 await self.transition(store, document, manifest, "accepted")
                 return True, self.delegation_event(manifest)
+
+    @asynccontextmanager
+    async def resources(self):
+        """Own the Azure clients and verify private storage before yielding to an event."""
+        async with AsyncExitStack() as stack:
+            credential = await stack.enter_async_context(ManagedIdentityCredential())
+            http = await stack.enter_async_context(data_client(
+                expected_call_id=self.context.call_id, response_id=self.response_id,
+            ))
+            headers = self.context.platform_headers()
+            project = await stack.enter_async_context(ProjectClient(credential, http, headers))
+            artifact_store = await stack.enter_async_context(
+                create_artifact_store(self.scope, self.role, credential)
+            )
+            await artifact_store.verify_private_path()
+            yield artifact_store, WorkflowRemoteAgents(project, headers), project, credential, http, headers
+
+    def producer(self, *, response_id: str | None = None) -> Producer:
+        return Producer(
+            role=self.role, name=self.config.agent_name, version=self.config.agent_version,
+            session_id=self.scope.parent_session, response_id=response_id or self.response_id,
+        )
+
+    async def save(self, document, manifest: Manifest):
+        if manifest.coordinator_version != self.config.agent_version:
+            raise ArtifactError("PARENT_VERSION_CHANGED")
+        manifest.generation += 1
+        validated = Manifest.model_validate(manifest.model_dump(mode="json"))
+        await document.save(validated)
+
+    def assert_turn(self, manifest: Manifest) -> None:
+        if (
+            manifest.scope_binding != self.scope or manifest.coordinator_version != self.config.agent_version
+            or manifest.active_response_id != self.response_id
+        ):
+            raise ArtifactError("PARENT_TURN_BINDING")
+
+    async def transition(self, store, document, manifest: Manifest, status: str):
+        """Write the immutable operation transition before saving the fenced manifest."""
+        if manifest.effect is None:
+            raise ArtifactError("OPERATION_REQUIRED")
+        manifest.effect.status = status
+        await store.write_operation(
+            manifest.effect.operation_id, status,
+            {"scope_binding": self.scope.model_dump(mode="json"), "effect": manifest.effect.model_dump(mode="json")},
+        )
+        await self.save(document, manifest)
+
+    async def inputs(self, store, manifest: Manifest) -> tuple[list[ArtifactRef], dict]:
+        refs = [ref for ref in (manifest.requirements, manifest.candidate, manifest.review) if ref is not None]
+        if not refs or refs[0] != manifest.requirements:
+            raise ArtifactError("REQUIREMENTS_REQUIRED")
+        if any(ref not in manifest.accepted for ref in refs):
+            raise ArtifactError("ROUTING_PREREQUISITES_NOT_ACCEPTED")
+        for kind, ref in (
+            ("requirements", manifest.requirements), ("candidate", manifest.candidate), ("review", manifest.review),
+        ):
+            if ref is not None and (
+                ref.artifact_type != kind or ref.requirements_revision != manifest.turn
+                or kind != "requirements" and ref.candidate_revision != manifest.candidate_revision
+            ):
+                raise ArtifactError("ROUTING_PREREQUISITE_REVISION")
+        input_artifacts = []
+        for ref in refs:
+            input_artifacts.append(await store.read_artifact(ref))
+        state = routing_state(
+            refs, [artifact.content for artifact in input_artifacts],
+            candidate_revision=manifest.candidate_revision,
+            remaining_calls=6 - manifest.calls, remaining_rounds=3 - manifest.rounds,
+        )
+        return refs, state
+
+    async def accept_decision(self, store, document, manifest, proposal: Artifact, refs, state):
+        effect = manifest.effect
+        choice = proposal.content
+        if (
+            effect is None or proposal.operation_id != effect.operation_id or proposal.input_refs != refs
+            or proposal.producer != self.producer() or not isinstance(choice, Decision)
+            or choice.state_sha256 != digest(state)
+            or choice.deployment != required("DECISION_MODEL_DEPLOYMENT")
+            or proposal.requirements_revision != manifest.turn
+            or choice.alternatives != [
+                "ask_architect" if manifest.candidate is None or manifest.review is not None else "ask_reviewer",
+                "request_input",
+            ]
+        ):
+            raise ArtifactError("DECISION_PROVENANCE")
+        answer = Choice(
+            type="choice", choice=choice.action, confidence=choice.confidence, probabilities=choice.probabilities
+        )
+        answer.validate_choices(choice.alternatives)
+        calibration = load_calibration(
+            ROOT / "config" / "routing-calibration.json", ROOT / "config" / "routing-corpus.json",
+            required("DECISION_MODEL_DEPLOYMENT"),
+        )
+        if (
+            choice.calibration_sha256 != digest(calibration)
+            or choice.gated_action != gated_choice(answer, calibration.threshold, calibration.margin)
+        ):
+            raise ArtifactError("DECISION_POLICY_PROVENANCE")
+        ref = proposal.ref()
+        if ref not in manifest.accepted:
+            manifest.accepted.append(ref)
+        effect.output_ref = ref
+        manifest.routing_operation_id = effect.operation_id
+        if choice.gated_action in ("hold", "request_input"):
+            manifest.status = "ROUTING_HOLD" if choice.gated_action == "hold" else "REQUEST_INPUT"
+            manifest.next_action = None
+        elif choice.gated_action in ("ask_architect", "ask_reviewer"):
+            manifest.next_action = choice.gated_action
+        else:
+            raise ArtifactError("DECISION_ACTION")
+        await self.transition(store, document, manifest, "accepted")
+
+    async def hold(self, store, document, manifest: Manifest, code: str):
+        manifest.status = code
+        manifest.next_action = None
+        if manifest.effect:
+            manifest.effect.failure = code
+            await self.transition(store, document, manifest, "unknown")
+        else:
+            await self.save(document, manifest)
+
+    def verify_proposal(self, proposal: Artifact, assignment: Assignment, manifest: Manifest):
+        expected = assignment.producer.model_copy(update={"response_id": proposal.producer.response_id})
+        expected_candidate_revision = manifest.candidate_revision
+        if assignment.output_type == "candidate":
+            expected_candidate_revision += 1
+        if (
+            proposal.scope_binding != self.scope or proposal.operation_id != assignment.operation_id
+            or proposal.producer != expected or proposal.input_refs != assignment.input_refs
+            or proposal.artifact_type != assignment.output_type
+            or proposal.requirements_revision != assignment.requirements_revision
+            or proposal.candidate_revision != assignment.candidate_revision
+            or any(ref not in manifest.accepted for ref in proposal.input_refs)
+            or assignment.requirements_revision != manifest.turn
+            or assignment.candidate_revision != expected_candidate_revision
+        ):
+            raise ArtifactError("SPECIALIST_ARTIFACT_PROVENANCE")
+
+    def delegation_event(self, manifest: Manifest) -> dict:
+        effect = manifest.effect
+        child = manifest.children[effect.role]
+        return {
+            "event": "delegation", "role": effect.role, "action": f"ask_{effect.role}",
+            "specialist_mode": "hosted", "status": "completed", "round": manifest.rounds,
+            "candidate_revision": manifest.candidate_revision,
+            "hosted_session": alias(child.hosted_id), "framework_session": alias(child.framework["session_id"]),
+            "response": alias(effect.response_id), "version": child.version,
+            "artifact_ref": effect.output_ref.model_dump(mode="json"),
+        }
 
     async def result(self, store, manifest: Manifest) -> dict:
         requirements = await store.read_artifact(manifest.requirements) if manifest.requirements else None

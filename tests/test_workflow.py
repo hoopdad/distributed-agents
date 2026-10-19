@@ -29,7 +29,7 @@ from demo.artifacts import (
 )
 from demo.contracts import AGENTS, Child
 from demo.workflow import (
-    BeginExecutor, EffectExecutor, NativeRuntime, OutputLocator, PublishExecutor, RouteExecutor,
+    BeginExecutor, EffectExecutor, WorkflowRuntime, OutputLocator, PublishExecutor, RouteExecutor,
 )
 from demo.routing import Calibration, CalibrationObservation, calibration_state, decision_request
 
@@ -194,16 +194,7 @@ class FakeRemote:
         )
         response_id = "synthetic-" + uuid.uuid4().hex
         await callback(response_id)
-        content = (
-            Candidate(
-                requirements_revision=assignment.requirements_revision,
-                candidate_revision=assignment.candidate_revision, design="Synthetic private design.",
-            ) if child.role == "architect" else Review(
-                requirements_revision=assignment.requirements_revision, candidate_revision=assignment.candidate_revision,
-                approved=True, blocking_findings=["blocker"] if self.contradict_review else [],
-                unresolved_requirements=[], recommendation="Synthetic current approval.",
-            )
-        )
+        content = self.output_content(child, assignment)
         producer = assignment.producer.model_copy(update={"response_id": response_id})
         if self.corrupt_producer:
             producer = producer.model_copy(update={"version": "unassigned-version"})
@@ -221,9 +212,79 @@ class FakeRemote:
             raise ProcessCrash()
         return text
 
+    def output_content(self, child, assignment):
+        return (
+            Candidate(
+                requirements_revision=assignment.requirements_revision,
+                candidate_revision=assignment.candidate_revision, design="Synthetic private design.",
+            ) if child.role == "architect" else Review(
+                requirements_revision=assignment.requirements_revision, candidate_revision=assignment.candidate_revision,
+                approved=True, blocking_findings=["blocker"] if self.contradict_review else [],
+                unresolved_requirements=[], recommendation="Synthetic current approval.",
+            )
+        )
+
     async def recover(self, child, response_id):
         self.recoveries += 1
         return self.responses[response_id]
+
+
+class RecordingRemote(FakeRemote):
+    """Offline remote boundary, not live hosting or specialist model-memory proof.
+
+    Snapshot by value at each send/return. Advance the simulated service response
+    independently of stable hosted/framework identities, like the remote adapter.
+    """
+
+    def __init__(self, backend, *, reject_first_review=False):
+        super().__init__(backend)
+        self.reject_first_review = reject_first_review
+        self.prepared, self.created, self.invocations = [], [], []
+
+    async def prepare(self, role):
+        child = await super().prepare(role)
+        self.prepared.append(copy.deepcopy(child.model_dump(mode="json")))
+        return child
+
+    async def create(self, child):
+        self.created.append(copy.deepcopy(child.model_dump(mode="json")))
+        await super().create(child)
+
+    def output_content(self, child, assignment):
+        content = super().output_content(child, assignment)
+        if child.role == "reviewer" and self.reject_first_review:
+            self.reject_first_review = False
+            return content.model_copy(update={
+                "approved": False, "blocking_findings": ["Add the missing private ingress boundary."],
+                "recommendation": "Revise the exact current candidate before approval.",
+            })
+        return content
+
+    async def invoke(self, child, locator, callback):
+        scope = ScopeBinding.model_validate(locator["scope_binding"])
+        store = make_store(self.backend, scope, "coordinator")
+        manifest = await store.read_manifest()
+        assignment = await store.read_assignment(locator["operation_id"])
+        requirements = await store.read_artifact(manifest.requirements)
+        observation = copy.deepcopy({
+            "scope": scope.model_dump(mode="json"),
+            "before": child.model_dump(mode="json"),
+            "assignment": assignment.model_dump(mode="json"),
+            "manifest": manifest.model_dump(mode="json"),
+            "requirements": requirements.content.model_dump(mode="json"),
+        })
+        text = await super().invoke(child, locator, callback)
+        ref = OutputLocator.model_validate(decode_document(text.encode())).artifact_ref
+        output = await store.read_artifact(ref)
+        session = AgentSession.from_dict(child.framework)
+        session.service_session_id = output.producer.response_id
+        child.framework = session.to_dict()
+        observation.update(copy.deepcopy({
+            "after": child.model_dump(mode="json"), "response_id": output.producer.response_id,
+            "output": output.model_dump(mode="json"), "output_ref": ref.model_dump(mode="json"),
+        }))
+        self.invocations.append(observation)
+        return text
 
 
 def make_store(backend, scope, role):
@@ -234,7 +295,7 @@ def make_store(backend, scope, role):
     )
 
 
-class TestRuntime(NativeRuntime):
+class TestRuntime(WorkflowRuntime):
     def __init__(self, backend, remote, *, parent="parent-one", response="response-one"):
         self.backend, self.remote = backend, remote
         self.scope = ScopeBinding(
@@ -528,7 +589,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
                 patch("demo.foundry.httpx2.AsyncHTTPTransport", return_value=httpx2.MockTransport(handle)), \
                 patch("demo.workflow.create_artifact_store", return_value=store), \
                 self.assertLogs("demo.foundry.outbound_context", level="INFO") as logs:
-            async with NativeRuntime.resources(self.runtime) as (_, remote, _, _, _, _):
+            async with WorkflowRuntime.resources(self.runtime) as (_, remote, _, _, _, _):
                 stream = remote._client(child).run("Synthetic probe.", session=session, stream=True)
                 with self.assertRaises(ChatClientException):
                     async with stream:
@@ -557,6 +618,97 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         action, result = await self.runtime.route(self.runtime.response_id)
         self.assertIsNone(result)
         return action
+
+    async def test_recorded_begin_does_not_append_requirements_or_reset_the_turn(self):
+        await self.step_to_call()
+        store = make_store(self.backend, self.runtime.scope, "coordinator")
+        before = await store.read_manifest()
+        stored_blobs = dict(self.backend.blobs)
+
+        response_id = await self.runtime.begin("Do not append this replayed text.")
+
+        self.assertEqual(response_id, self.runtime.response_id)
+        self.assertEqual(await store.read_manifest(), before)
+        self.assertEqual(self.backend.blobs, stored_blobs)
+
+    async def test_assignment_and_response_journals_are_saved_before_specialist_handoffs(self):
+        action = await self.step_to_call()
+        store = make_store(self.backend, self.runtime.scope, "coordinator")
+        invoke = self.remote.invoke
+        observed_roles = []
+
+        async def inspect_handoff(child, locator, on_response):
+            manifest = await store.read_manifest()
+            effect = manifest.effect
+            assignment = await store.read_assignment(locator["operation_id"])
+            expected_refs = [manifest.requirements]
+            if child.role == "reviewer":
+                expected_refs.append(manifest.candidate)
+                expected_output_type = "review"
+                expected_collection = "reviews"
+            else:
+                expected_output_type = "candidate"
+                expected_collection = "candidates"
+            self.assertEqual(effect.status, "dispatched")
+            self.assertEqual(effect.assignment_sha256, digest(assignment))
+            self.assertEqual(assignment.input_refs, expected_refs)
+            self.assertEqual(assignment.output_type, expected_output_type)
+            self.assertEqual(assignment.candidate_revision, 1)
+            self.assertEqual(assignment.deadline_epoch, manifest.deadline_epoch)
+            self.assertEqual(assignment.producer.session_id, child.hosted_id)
+            self.assertEqual(assignment.producer.version, child.version)
+            self.assertEqual(
+                effect.reserved_name,
+                f"{self.runtime.scope.prefix}{expected_collection}/{manifest.turn}/{effect.operation_id}.json",
+            )
+            journal_prefix = f"{self.runtime.scope.prefix}operations/{effect.operation_id}/"
+            dispatched = decode_document(self.backend.blobs[("control", journal_prefix + "dispatched.json")])
+            self.assertEqual(dispatched["effect"], effect.model_dump(mode="json"))
+
+            async def inspect_response(response_id):
+                await on_response(response_id)
+                observed = await store.read_manifest()
+                self.assertEqual(observed.effect.status, "response_observed")
+                self.assertEqual(observed.effect.response_id, response_id)
+                response_record = decode_document(
+                    self.backend.blobs[("control", journal_prefix + "response_observed.json")]
+                )
+                self.assertEqual(response_record["effect"], observed.effect.model_dump(mode="json"))
+
+            observed_roles.append(child.role)
+            return await invoke(child, locator, inspect_response)
+
+        with patch.object(self.remote, "invoke", side_effect=inspect_handoff):
+            for role in ("architect", "reviewer"):
+                self.assertEqual(action, f"ask_{role}")
+                operation = await self.runtime.execute(action)
+                continuing, event = await self.runtime.publish(operation)
+                self.assertTrue(continuing)
+                self.assertEqual(event["role"], role)
+                action, result = await self.runtime.route(self.runtime.response_id)
+
+        self.assertIsNone(action)
+        self.assertEqual(result["status"], "ACCEPTED_ADVISORY")
+        self.assertEqual(observed_roles, ["architect", "reviewer"])
+        self.assertEqual(self.remote.calls, 2)
+
+    async def test_observed_output_resumes_execution_without_another_remote_effect(self):
+        action = await self.step_to_call()
+        operation = await self.runtime.execute(action)
+        store = make_store(self.backend, self.runtime.scope, "coordinator")
+        before = await store.read_manifest()
+
+        with patch.object(self.remote, "invoke") as invoke, \
+                patch.object(self.remote, "recover") as recover:
+            self.assertEqual(await self.runtime.execute(action), operation)
+            invoke.assert_not_awaited()
+            recover.assert_not_awaited()
+
+        self.assertEqual(await store.read_manifest(), before)
+        continuing, event = await self.runtime.publish(operation)
+        self.assertTrue(continuing)
+        self.assertEqual(event["role"], "architect")
+        self.assertEqual(self.remote.calls, 1)
 
     async def test_unaccepted_or_mistyped_prerequisite_never_reaches_router(self):
         await self.runtime.begin("Synthetic requirements.")
@@ -708,6 +860,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         outputs = [decode_document(item.strip().encode()) for item in result.get_outputs()]
         final = outputs[-1]
         self.assertEqual(final["status"], "ACCEPTED_ADVISORY")
+        self.assertEqual(final["native_workflow"], "distributed-agents-v1")
         self.assertIsNone(final["pending_effect"])
         self.assertEqual({item["role"] for item in outputs[:-1]}, {"architect", "reviewer"})
         self.assertEqual((self.remote.calls, self.remote.creates), (2, 2))
@@ -1101,21 +1254,164 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
             await store.read_artifact(second.candidate)
 
     async def test_followup_invalidates_old_approval_and_preserves_children(self):
-        await graph(self.runtime).run("First requirements.")
+        self.remote = RecordingRemote(self.backend)
+        self.runtime = TestRuntime(self.backend, self.remote)
+        initial = "Design a synthetic application with private ingress."
+        update = "Add an asynchronous queue while preserving all earlier requirements."
+        first_result = await graph(self.runtime).run(initial)
         store = make_store(self.backend, self.runtime.scope, "coordinator")
         first = await store.read_manifest()
+        first_snapshot = copy.deepcopy(first.model_dump(mode="json"))
+        first_calls = copy.deepcopy(self.remote.invocations)
+        self.assertEqual(decode_document(first_result.get_outputs()[-1].strip().encode())["status"],
+                         "ACCEPTED_ADVISORY")
+        self.assertEqual([call["before"]["role"] for call in first_calls], ["architect", "reviewer"])
+        self.assertEqual(first.calls, 2)
+        self.assertEqual(first.turn, 1)
+        self.assertEqual(first.review, Artifact.model_validate(first_calls[-1]["output"]).ref())
         followup = TestRuntime(self.backend, self.remote, response="followup-response")
-        await followup.begin("Add a queue while preserving all earlier requirements.")
+        self.assertEqual(followup.scope, self.runtime.scope)
+        self.assertNotEqual(followup.response_id, self.runtime.response_id)
+        await followup.begin(update)
         pending = await store.read_manifest()
         self.assertIsNone(pending.candidate)
         self.assertIsNone(pending.review)
         self.assertEqual(pending.turn, 2)
         self.assertEqual(pending.children, first.children)
-        await graph(followup).run("Add a queue while preserving all earlier requirements.")
+        self.assertNotEqual(pending.requirements, first.requirements)
+        self.assertEqual(pending.calls, 0)
+        self.assertEqual(pending.active_response_id, followup.response_id)
+        requirements = await store.read_artifact(pending.requirements)
+        self.assertEqual(requirements.content.chunks, [initial, update])
+        second_result = await graph(followup).run(update)
         final = await store.read_manifest()
         self.assertEqual(final.candidate_revision, 2)
-        self.assertEqual(self.remote.creates, 2)
-        self.assertEqual(final.children["architect"].hosted_id, first.children["architect"].hosted_id)
+        self.assertEqual(final.turn, 2)
+        self.assertEqual(final.calls, 2)
+        self.assertEqual(first.model_dump(mode="json"), first_snapshot)
+        self.assertEqual(self.remote.invocations[:2], first_calls)
+        self.assert_recorded_bindings(final, ["architect", "reviewer", "architect", "reviewer"])
+
+        for index, call in enumerate(self.remote.invocations):
+            turn = 1 if index < 2 else 2
+            self.assertEqual(call["assignment"]["requirements_revision"], turn)
+            self.assertEqual(call["assignment"]["candidate_revision"], turn)
+            self.assertEqual(call["requirements"]["chunks"], [initial] if turn == 1 else [initial, update])
+            expected = [call["manifest"]["requirements"]]
+            if call["before"]["role"] == "reviewer":
+                expected.append(self.remote.invocations[index - 1]["output_ref"])
+            self.assertEqual(call["assignment"]["input_refs"], expected)
+        # These are the actual persisted refs at the follow-up send, not just a
+        # reset observed before route/execute could accidentally restore approval.
+        second_architect = self.remote.invocations[2]
+        self.assertIsNone(second_architect["manifest"]["candidate"])
+        self.assertIsNone(second_architect["manifest"]["review"])
+        self.assertEqual(second_architect["assignment"]["input_refs"],
+                         [pending.requirements.model_dump(mode="json")])
+        self.assertNotEqual(final.candidate, first.candidate)
+        self.assertNotEqual(final.review, first.review)
+        self.assert_current_acceptance(second_result, final)
+
+    def assert_recorded_bindings(self, final, roles):
+        remote = self.remote
+        self.assertEqual((remote.calls, remote.creates, remote.recoveries), (len(roles), 2, 0))
+        self.assertEqual([call["before"]["role"] for call in remote.invocations], roles)
+        self.assertEqual([child["role"] for child in remote.created], ["architect", "reviewer"])
+        self.assertEqual(len(remote.prepared), 2)
+        self.assertEqual(len({call["response_id"] for call in remote.invocations}), len(roles))
+        self.assertEqual(set(final.children), {"architect", "reviewer"})
+
+        def stable(child):
+            # Service response state must advance; never compare all framework
+            # state as if it were an immutable binding.
+            return {
+                "role": child["role"], "name": child["name"], "version": child["version"],
+                "hosted_id": child["hosted_id"], "framework_id": child["framework"]["session_id"],
+                "stored_hosted_id": child["framework"]["state"][FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY],
+            }
+
+        baselines = {child["role"]: stable(child) for child in remote.prepared}
+        self.assertEqual(len({child["hosted_id"] for child in baselines.values()}), 2)
+        self.assertEqual(len({child["framework_id"] for child in baselines.values()}), 2)
+        continuations = dict.fromkeys(baselines)
+        for child in remote.created:
+            self.assertEqual(stable(child), baselines[child["role"]])
+        for call in remote.invocations:
+            role = call["before"]["role"]
+            self.assertEqual(call["scope"], self.runtime.scope.model_dump(mode="json"))
+            self.assertEqual(call["manifest"]["scope_binding"], call["scope"])
+            self.assertEqual(stable(call["before"]), baselines[role])
+            self.assertEqual(stable(call["after"]), baselines[role])
+            self.assertEqual(stable(call["manifest"]["children"][role]), baselines[role])
+            self.assertEqual(call["manifest"]["children"][role]["framework"], call["before"]["framework"])
+            self.assertEqual(call["before"]["framework"].get("service_session_id"), continuations[role])
+            self.assertEqual(call["after"]["framework"]["service_session_id"], call["response_id"])
+            self.assertNotEqual(call["response_id"], continuations[role])
+            self.assertEqual(call["assignment"]["producer"]["session_id"], baselines[role]["hosted_id"])
+            self.assertEqual(call["assignment"]["producer"]["name"], AGENTS[role])
+            self.assertEqual(call["assignment"]["producer"]["version"], baselines[role]["version"])
+            self.assertEqual(call["output"]["producer"]["response_id"], call["response_id"])
+            self.assertEqual(call["output"]["input_refs"], call["assignment"]["input_refs"])
+            continuations[role] = call["response_id"]
+        for role, child in final.children.items():
+            self.assertEqual(stable(child.model_dump(mode="json")), baselines[role])
+            self.assertEqual(child.framework["service_session_id"], continuations[role])
+            self.assertTrue(child.bound)
+            self.assertEqual(baselines[role]["hosted_id"], baselines[role]["stored_hosted_id"])
+            self.assertEqual(baselines[role]["name"], AGENTS[role])
+            self.assertEqual(baselines[role]["version"], "2")
+
+    def assert_current_acceptance(self, result, manifest):
+        outputs = [decode_document(item.strip().encode()) for item in result.get_outputs()]
+        final = outputs[-1]
+        self.assertEqual(final["event"], "result")
+        self.assertEqual(final["status"], "ACCEPTED_ADVISORY")
+        self.assertEqual(manifest.status, "ACCEPTED_ADVISORY")
+        self.assertIsNone(final["pending_effect"])
+        for kind in ("requirements", "candidate", "review"):
+            ref = getattr(manifest, kind)
+            self.assertEqual(final["artifact_refs"][kind], ref.model_dump(mode="json"))
+            artifact = Artifact.model_validate(final["artifact_evidence"][kind])
+            self.assertEqual(artifact.ref(), ref)
+            self.assertIn(ref, manifest.accepted)
+            self.assertEqual(artifact.requirements_revision, manifest.turn)
+        self.assertTrue(final["review"]["approved"])
+        self.assertEqual(final["candidate"]["candidate_revision"], manifest.candidate_revision)
+        self.assertEqual(final["review"]["candidate_revision"], manifest.candidate_revision)
+
+    async def test_reject_revise_review_reuses_both_children_with_fresh_responses(self):
+        self.remote = RecordingRemote(self.backend, reject_first_review=True)
+        self.runtime = TestRuntime(self.backend, self.remote)
+        initial = "Design a synthetic application with private ingress."
+        result = await graph(self.runtime).run(initial)
+        store = make_store(self.backend, self.runtime.scope, "coordinator")
+        final = await store.read_manifest()
+        self.assert_recorded_bindings(final, ["architect", "reviewer", "architect", "reviewer"])
+        self.assertEqual((final.turn, final.candidate_revision, final.rounds, final.calls), (1, 2, 2, 4))
+        a1, r1, a2, r2 = self.remote.invocations
+        requirements_ref = final.requirements.model_dump(mode="json")
+        for call, revision in zip(self.remote.invocations, (1, 1, 2, 2)):
+            self.assertEqual(call["requirements"]["chunks"], [initial])
+            self.assertEqual(call["assignment"]["requirements_revision"], 1)
+            self.assertEqual(call["assignment"]["candidate_revision"], revision)
+            self.assertEqual(call["output"]["candidate_revision"], revision)
+        self.assertEqual(a1["assignment"]["input_refs"], [requirements_ref])
+        self.assertEqual(r1["assignment"]["input_refs"], [requirements_ref, a1["output_ref"]])
+        self.assertFalse(r1["output"]["content"]["approved"])
+        self.assertTrue(r1["output"]["content"]["blocking_findings"])
+        self.assertEqual(a2["manifest"]["candidate"], a1["output_ref"])
+        self.assertEqual(a2["manifest"]["review"], r1["output_ref"])
+        self.assertEqual(a2["assignment"]["input_refs"],
+                         [requirements_ref, a1["output_ref"], r1["output_ref"]])
+        self.assertIsNone(r2["manifest"]["review"])
+        self.assertEqual(r2["assignment"]["input_refs"], [requirements_ref, a2["output_ref"]])
+        self.assertTrue(r2["output"]["content"]["approved"])
+        self.assertEqual(final.candidate.model_dump(mode="json"), a2["output_ref"])
+        self.assertEqual(final.review.model_dump(mode="json"), r2["output_ref"])
+        outputs = [decode_document(item.strip().encode()) for item in result.get_outputs()]
+        self.assertEqual([item["role"] for item in outputs[:-1]],
+                         ["architect", "reviewer", "architect", "reviewer"])
+        self.assert_current_acceptance(result, final)
 
     async def test_wrong_producer_version_cannot_publish(self):
         action = await self.step_to_call()
@@ -1129,6 +1425,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_native_host_enables_checkpoint_and_resilient_background_apis(self):
         from demo.host import main
+        from demo.workflow import create_workflow, parse_turn
         with patch.dict(os.environ, {"DEMO_ROLE": "coordinator", "DEMO_RUNTIME": "native"}):
             with patch("demo.host.ResponsesHostServer") as server:
                 main()
@@ -1136,11 +1433,13 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(kwargs["options"].resilient_background)
         self.assertEqual(kwargs["unsupported_options"], "error")
         self.assertIn("workflow", kwargs)
+        self.assertIs(kwargs["workflow"], create_workflow)
+        self.assertIs(kwargs["parse_response"], parse_turn)
         self.assertIn("checkpoint_store_provider", kwargs)
         self.assertNotIn("agent", kwargs)
 
     async def test_native_preparation_names_each_rejected_host_check_without_values(self):
-        from demo.workflow import create_native_workflow, PROJECT
+        from demo.workflow import create_workflow, PROJECT
         config = {
             "is_hosted": True, "session_id": "synthetic-parent", "project_endpoint": PROJECT,
             "agent_name": AGENTS["coordinator"], "agent_version": "18",
@@ -1167,21 +1466,34 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
                     patch("demo.workflow.get_request_context", return_value=context), \
                     self.assertLogs("demo.workflow", level="ERROR") as logs:
                 with self.assertRaisesRegex(ArtifactError, code):
-                    create_native_workflow(request)
+                    create_workflow(request)
                 self.assertEqual(logs.records[0].getMessage(), f"Native workflow preparation rejected ({code}).")
                 self.assertNotIn("synthetic-private-value", str(logs.output))
 
     async def test_native_preparation_unknown_error_never_logs_its_payload(self):
-        from demo.workflow import create_native_workflow
-        with patch("demo.workflow.NativeRuntime", side_effect=ArtifactError("synthetic-private-value")), \
+        from demo.workflow import create_workflow
+        with patch("demo.workflow.WorkflowRuntime", side_effect=ArtifactError("synthetic-private-value")), \
                 self.assertLogs("demo.workflow", level="ERROR") as logs:
             with self.assertRaises(ArtifactError):
-                create_native_workflow(None)
+                create_workflow(None)
         self.assertEqual(logs.records[0].getMessage(), "Native workflow preparation rejected (UNCLASSIFIED).")
         self.assertNotIn("synthetic-private-value", str(logs.output))
 
 
 class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
+    def test_terminal_help_describes_maf_foundry_and_preserves_existing_switch(self):
+        from demo.terminal import main
+        output = io.StringIO()
+        with patch("sys.argv", ["demo.terminal", "--help"]), redirect_stdout(output), \
+                self.assertRaises(SystemExit) as exit_status:
+            main()
+        self.assertEqual(exit_status.exception.code, 0)
+        help_text = output.getvalue()
+        self.assertIn("--native", help_text)
+        self.assertIn("MAF/Foundry workflow", help_text)
+        self.assertNotIn("new native runtime", help_text)
+        self.assertNotIn("legacy", help_text)
+
     async def test_pinned_sdk_resilient_identity_survives_serialization_and_handler_entry(self):
         from azure.ai.agentserver.core import get_request_context
         from azure.ai.agentserver.responses.hosting._orchestrator import _iter_handler_with_request_context
@@ -1225,9 +1537,9 @@ class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_sdk_preparation_filter_reports_only_missing_trusted_scope(self):
         import logging
-        from demo.host import NativePreparationDiagnostics
+        from demo.host import WorkflowPreparationDiagnostics
         config = SimpleNamespace(session_id="synthetic-session")
-        diagnostic = NativePreparationDiagnostics(config)
+        diagnostic = WorkflowPreparationDiagnostics(config)
         context = SimpleNamespace(session_id="synthetic-session", user_id=None, call_id="synthetic-private-call")
         record = logging.LogRecord(
             "agent_framework_foundry_hosting._workflow_responses", logging.ERROR, "", 1,
@@ -1241,8 +1553,8 @@ class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_native_specialist_stream_failure_recovers_only_a_known_response(self):
         from agent_framework.exceptions import ChatClientException
-        from demo.workflow import NativeRemoteAgents
-        remote = NativeRemoteAgents(None, {})
+        from demo.workflow import WorkflowRemoteAgents
+        remote = WorkflowRemoteAgents(None, {})
         async def interrupted(child, brief, remember):
             await remember("known-response")
             raise ChatClientException("Synthetic parser failure.")

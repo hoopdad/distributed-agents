@@ -29,6 +29,139 @@ hard-crash recovery. The lab's approved account-wide Blob Contributor grants
 mean per-role write ownership and per-parent isolation are application-enforced,
 not storage-RBAC or malicious-host isolation guarantees.
 
+## RP-S1 supported-remedy handoff (2026-10-19, S1-REMEDY)
+
+**Research outcome: actionable unresolved finding, not a live repair.**
+The current public contracts and inspected installed identity path do not
+establish a cause-specific correction for the historical matching-outbound /
+missing-child-user boundary. No new live observation, provider answer or
+deployed-version inventory was obtained by this task. The measured results
+below remain historical; the separate S1-INVENTORY assignment owns fresh
+deployed/rollback bindings. Research completion cannot pass AC1-AC5 or G1-G8.
+
+### Current authority versus historical chronology
+
+The October 19 invocation authorizes new, supported scoped corrective work and
+guarded release/live checks through their original owners. Older statements
+below that prohibit all further publication/inference or VM startup describe
+the consumed October 15 diagnostic authority, not a blanket restriction on
+this new invocation. That authority still cannot justify a speculative repair,
+replay an uncertain effect, reconcile the original publication UNKNOWN, close
+historical resources or clear held parents. Exactly three existing hosted roles
+and all original release/identity safeguards remain required.
+
+This assignment is narrower: only this recovery document is owned. No runtime,
+dependency, permission, release, inference or support-submission change is made.
+Provider submission and private evidence transfer remain excluded by the new
+invocation too; no historical support-route selection grants that permission.
+
+### Source/date/version applicability
+
+Inspected application baseline: `8759b7f17de2e292f8f5c166fc47873daeea0a76`
+plus its disclosed pre-existing readability worktree. Installed versions were
+read from the existing validated Windows AMD64 Python 3.12.10 environment:
+Core **2.2.0**, Responses **2.3.0**, Foundry hosting **1.0.0b261002**,
+Foundry integration **1.14.0**, AI Projects **2.7.0**. These match the lock;
+they are not freshly verified container versions.
+
+| Evidence checked on October 19 | Applicability and bounded conclusion |
+|---|---|
+| [Runtime contract](https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agent-contract#platform-request-headers-container-protocol-200), page source revision `69a226754528e8d4d032ec652eba7d82e584f648`, updated September 28 | Protocol 2.0.0 explicitly includes other agents in unchanged opaque-call forwarding; the user header is container-only. The managed-identity credential and opaque caller context are separate inputs, not interchangeable identities. |
+| [User-isolation guidance](https://learn.microsoft.com/azure/foundry/agents/how-to/isolate-sessions-per-user#isolate-sessions-for-your-own-users), page source revision `f5104405dfd0231d706f8198fb841f45826595b9`, updated October 13 | Trusted middle-tier `x-ms-user-identity` delegation is a different contract. The documented built-in-role renames keep role IDs/core permissions unchanged; renaming is not evidence of a missing grant. Neither this page nor its delegation example establishes a correction for this nested opaque-context pair. |
+| [Core 2.2.0 request context](https://github.com/Azure/azure-sdk-for-python/blob/azure-ai-agentserver-core_2.2.0/sdk/agentserver/azure-ai-agentserver-core/azure/ai/agentserver/core/_request_context.py) | Installed bytes match the public release tag. The module introduction ambiguously says to forward both values, but `platform_headers()` lines 71-89 explicitly emits only the call ID, matching the runtime contract. The introductory wording is not justification to restore the container-only user header. |
+| [Responses 2.3.0 ingress](https://github.com/Azure/azure-sdk-for-python/blob/azure-ai-agentserver-responses_2.3.0/sdk/agentserver/azure-ai-agentserver-responses/azure/ai/agentserver/responses/hosting/_endpoint_handler.py) and [durable input](https://github.com/Azure/azure-sdk-for-python/blob/azure-ai-agentserver-responses_2.3.0/sdk/agentserver/azure-ai-agentserver-responses/azure/ai/agentserver/responses/hosting/_resilient_input.py) | Both installed files match their public release tag byte-for-byte. Ingress reads `request.headers.get(USER_ID)` (line 600); durable input captures/restores the supplied user/call pair. Restoring a supplied identity is not evidence that Python can reconstruct an absent trusted ingress user. |
+| [Core changelog at October 16 revision](https://github.com/Azure/azure-sdk-for-python/blob/56c7f8139e0998e44bc8e70c8b8d1d12052e115b/sdk/agentserver/azure-ai-agentserver-core/CHANGELOG.md) | Latest entry is empty/unreleased 2.3.0b2; released 2.3.0b1 adds lifecycle/readiness/replay changes. No described fix resolves this measured missing-ingress-user boundary. An unreleased heading is not a supported remedy. |
+| [Responses changelog at October 15 release revision](https://github.com/Azure/azure-sdk-for-python/blob/6e503f485786035f08a6d905e1ff118f063972cf/sdk/agentserver/azure-ai-agentserver-responses/CHANGELOG.md) | 2.4.0b1 changes user partitions, replay and durable ownership. It does not document a cause-specific fix for this pair and explicitly does not adopt existing identified-user task/replay chains. Draining/migrating held work is a material compatibility decision, not an authorized speculative upgrade. |
+
+For reproducible source comparison, SHA256 of the three installed files above,
+in table order (context, ingress, durable input):
+
+```text
+ba9507de05a38f6f485d01090ef09f3c4d785bc1294f651801417a105f561ea6
+fe8f7404efdc50917ec6443afd2329ca8b0476e06c4f57de99c4e9b0b1b8a671
+2c622a9bc8ed5127dd57b888a7a985431b7ba2461099ee6495d4debe5544a24b
+```
+
+The current application `WorkflowRuntime.resources()` in
+[`demo/workflow.py`](../demo/workflow.py) uses the SDK `platform_headers()`
+directly. Its diagnostic transport in [`demo/foundry.py`](../demo/foundry.py)
+compares actual outbound call context at the expected role endpoint.
+The separate legacy `platform_identity_headers()` helper does add user headers,
+but it is not the inspected workflow resource path or a repair candidate.
+This distinction prevents mistaking a legacy helper or the SDK introduction
+for evidence to change the deployed opaque-context contract.
+
+### Exact missing external finding and closing action
+
+Use the already preserved diagnostic parent/architect child pair and private
+locators listed in the handoff below; **do not send another inference request
+to reproduce it**. A provider finding must bind that exact pair, project,
+agent versions, protocol, request timestamps and server correlation, and answer:
+
+1. Did server-side resolution accept the exact forwarded opaque call ID and
+   resolve a trusted user before dispatch to the architect? If not, at which
+   resolution stage and for what documented reason did it stop?
+2. Which authenticated agent caller and user/delegation context were applied
+   at the downstream authorization boundary, and what context reached the child
+   container? Explain the observed call-present/user-absent ingress rather than
+   inferring successful execution from HTTP 200.
+3. What supported platform rollout/configuration or SDK/application correction
+   applies to these exact versions, with an authoritative reference, required
+   state/identity implications and a non-replaying verification procedure?
+
+A generic upgrade/grant recommendation, assumed expiry, or an unrelated issue
+does not close these questions. No platform defect or missing grant is proven.
+The local probes cannot inspect server-side caller resolution.
+
+The operator must separately authorize a named support destination and the
+specific sanitized private locators to disclose, then supply any required
+support contact fields or submit the existing unsent packet themselves.
+No packet, identifier, transcript, header value or private source was sent
+externally during this research. After an actual answer, the original Developer
+and DevOps can define the smallest failing-before/passing-after reproducer and
+fresh supported live verification; if the answer changes held-state migration,
+contracts or architecture, use existing Scrum Master reconciliation and
+Architect-advised Product Owner scope decisions first. Ordinary already-authorized
+scoped repairs need no new routine approval stage.
+
+### Local verification and baseline disposition
+
+`scripts/diagnose_identity.py` ran using the existing validated absolute Python
+path: all **109 lock pins** match and all **five offline SDK/transport probes**
+pass. Its exit **2**, status `OFFLINE_VERIFIED_LIVE_UNRESOLVED`, is intentional,
+not a live PASS. No `--trace` was supplied: the report's absent-trace findings
+describe that invocation, not a contradiction of the preserved historical
+capture. Private settings were loaded solely through `Use-Settings.ps1`;
+local schema/project syntax and explicit lab linkage passed without values
+being displayed. Authenticated cloud context was not queried.
+
+The required `Test-Demo.ps1 -Python <absolute-validated-python>
+-LabRepositoryRoot <explicit-lab-root>` was also attempted against the shared,
+in-progress worktree: **168 tests in 57.893 seconds, one failure and two
+errors**. The new narrow-terminal fixture split `not observed` across lines;
+the two new specialist-continuation fixtures rejected a `default_headers`
+keyword in their mocked `get_openai_client`. These belong to S1-TERMINAL and
+S1-MODEL respectively, not this document's research scope. Dependency checking
+passed; the runner stopped before compilation. `Test-Repository.ps1 -Python
+<absolute-validated-python>` stopped at `REPOSITORY_INDEX_STALE` while the new
+specialist test module was unindexed. Its index ownership remains S1-MODEL,
+then S1-INTEGRATE. These are actual failed integrated checks, not release
+certification or permission for this owner to edit other tasks' files.
+Targeted checks of this handoff's required fields, local links, source digests,
+unchanged historical chronology, original G1-G8 text and owned-path whitespace
+passed. The identity-analysis regression module separately passed **16 tests
+in 0.797 seconds**, and `scripts/migration.py public-check` passed across
+**70 public files**. Neither independent check overrides the failed integrated
+gates. Integration must rerun the required suites against completed source.
+
+The pre-existing one-line `NativeRuntime` -> `WorkflowRuntime` documentation
+correction was inspected against current source and deliberately integrated.
+Its original file bytes were preserved outside both repositories before editing.
+No other pre-existing dirty path is owned or committed by this task. The
+substantive new evidence is the version-tag byte comparison and resolution of
+the SDK introductory-wording ambiguity against its actual method and current
+public contract; repeated probe success alone is not new live progress.
+
 ## Measured baseline, not assumptions
 
 As last verified on 2026-10-15:
@@ -102,7 +235,7 @@ user identifier. Foundry injects the coordinator's user/call context.
 The hosting SDK maps the user header through execution context, resilient
 input and ambient `FoundryAgentRequestContext`; the workflow captures it.
 
-`NativeRuntime.resources()` intentionally calls `context.platform_headers()`.
+`WorkflowRuntime.resources()` intentionally calls `context.platform_headers()`.
 The pinned method forwards only the opaque call ID. Foundry is expected to
 resolve the caller and inject the specialist's trusted user identity:
 

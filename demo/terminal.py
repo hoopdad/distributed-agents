@@ -4,8 +4,12 @@ import argparse
 import asyncio
 import json
 import os
+import re
+import shutil
 import subprocess
 import sys
+import textwrap
+import unicodedata
 import uuid
 from contextlib import contextmanager
 from pathlib import Path
@@ -16,9 +20,10 @@ from agent_framework.exceptions import ChatClientException
 from agent_framework.foundry import FoundryAgent
 from agent_framework_foundry import FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY
 from azure.identity.aio import AzureCliCredential
+from pydantic import ValidationError
 
 from .config import ConfigurationError, required
-from .contracts import AGENTS, PROJECT, DemoError, alias
+from .contracts import AGENTS, PROJECT, Candidate, DemoError, Review, alias
 from .foundry import ProjectClient, data_client
 
 
@@ -33,7 +38,6 @@ def verify_lab() -> tuple[str, str, str]:
         raise DemoError("CLIENT_CONFIGURATION", {"validation": str(exc)}) from exc
     os.environ["AZURE_CONFIG_DIR"] = str(profile.resolve())
     os.environ["AZURE_EXTENSION_USE_DYNAMIC_INSTALL"] = "no"
-    import shutil
     az = shutil.which("az")
     if not az:
         raise DemoError("AZURE_CLI_MISSING")
@@ -109,7 +113,7 @@ async def recover_parent(project, hosted_id: str, response_id: str):
             await asyncio.sleep(1)
 
 
-def finish_native_turn(path: Path, state: dict, session: AgentSession, text: str):
+def finish_workflow_turn(path: Path, state: dict, session: AgentSession, text: str):
     records = [json.loads(line) for line in text.splitlines() if line.startswith("{")]
     results = [record for record in records if record.get("event") == "result"]
     if len(results) != 1:
@@ -122,6 +126,124 @@ def finish_native_turn(path: Path, state: dict, session: AgentSession, text: str
     state.pop("pending_response", None)
     state.pop("operation_hold", None)
     write_state(path, state)
+
+
+class HumanView:
+    """A presentation of existing records, never a continuity/acceptance verifier."""
+
+    def __init__(self, *, width: int | None = None):
+        self.width = max(24, width or shutil.get_terminal_size((80, 24)).columns)
+
+    def line(self, text: str):
+        # Neutralize C0/C1, bidi/format controls, CR and backspace before wrapping.
+        # Generated lines always retain their data prefix, including forged banners.
+        for line in str(text).split("\n"):
+            safe = "".join(
+                char if not unicodedata.category(char).startswith("C")
+                and unicodedata.category(char) not in ("Zl", "Zp") else "?"
+                for char in line
+            )
+            for part in textwrap.wrap(safe, self.width - 4) or [""]:
+                print("  | " + part, file=sys.stderr)
+
+    @staticmethod
+    def observed(value, pattern: str) -> str:
+        return value if isinstance(value, str) and re.fullmatch(pattern, value) else "not observed"
+
+    def render(self, text: str, session: AgentSession, *, finalized: bool, recovered: bool):
+        self.line("HOSTED COLLABORATION | observed records")
+        self.line("Parent hosted alias: " + str(alias(session.state.get(FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY))))
+        self.line("Parent framework alias: " + str(alias(session.session_id)))
+        if recovered:
+            self.line("Retrieved known response; no resend. Retrieval is not a new invocation.")
+        try:
+            records = [json.loads(line) for line in text.splitlines() if line.startswith("{")]
+            if any(not isinstance(record, dict) for record in records):
+                raise ValueError("record")
+            results = [record for record in records if record.get("event") == "result"]
+            if len(results) != 1:
+                raise ValueError("result")
+            result = results[0]
+            calls = [record for record in records if record.get("event") == "delegation"]
+        except (ValueError, TypeError):
+            self.line("BLOCKED: result unavailable or invalid; no accepted summary.")
+            return
+        if result.get("status") == "ACCEPTED_ADVISORY":
+            try:
+                candidate = Candidate.model_validate(result.get("candidate"))
+                review = Review.model_validate(result.get("review"))
+                if (type(result.get("turn")) is not int or
+                        candidate.requirements_revision != result["turn"] or
+                        review.requirements_revision != result["turn"] or
+                        review.candidate_revision != candidate.candidate_revision or not review.approved or
+                        records[-1] is not result or
+                        type(result.get("calls")) is not int or result["calls"] != len(calls) or
+                        not 2 <= len(calls) <= 6 or
+                        {call.get("role") for call in calls} != {"architect", "reviewer"} or
+                        any(call.get("status") != "completed" for call in calls) or
+                        type(result.get("decisions")) is not int or
+                        not len(calls) <= result["decisions"] <= 10):
+                    raise ValueError("revisions")
+            except (ValidationError, ValueError, TypeError):
+                self.line("BLOCKED: result unavailable or invalid; no accepted summary.")
+                return
+        number = lambda value: str(value) if type(value) is int and value > 0 else "not observed"
+        self.line("Turn " + number(result.get("turn")) + " | requirements revision " + number(result.get("turn")))
+        for index, call in enumerate(calls, 1):
+            role = call.get("role") if call.get("role") in ("architect", "reviewer") else "unknown role"
+            self.line(f"{index}. {role} | candidate revision {number(call.get('candidate_revision'))}")
+            for label, key, pattern in (
+                ("stable hosted alias", "hosted_session", r"[0-9a-f]{12}"),
+                ("stable framework alias", "framework_session", r"[0-9a-f]{12}"),
+                ("pinned version", "version", r"[0-9]{1,10}"),
+                ("advancing response alias", "response", r"[0-9a-f]{12}"),
+            ):
+                self.line(f"  {label}: {self.observed(call.get(key), pattern)}")
+        self.line("Child bindings: observed aliases; exact continuity UNVERIFIED")
+        self.line("New child creations / exact response inequality: not observed")
+        if not finalized or result.get("pending_effect") is not None:
+            status = result.get("status")
+            if status not in ("SPECIALIST_INCOMPLETE", "ROUTING_HOLD", "REQUEST_INPUT", "LIMIT_REACHED"):
+                status = "unavailable"
+            self.line(f"HELD / BLOCKED: {status}; turn not finalized; output unaccepted.")
+            self.line("Preserve pending state; do not resend uncertain work.")
+            return
+        candidate, review = result.get("candidate"), result.get("review")
+        if isinstance(candidate, dict):
+            self.line(f"Design r{number(candidate.get('requirements_revision'))}/c{number(candidate.get('candidate_revision'))}")
+            self.line(candidate.get("design", "not observed"))
+        if isinstance(review, dict):
+            approval = "approved" if review.get("approved") is True else "not approved"
+            self.line(f"Review r{number(review.get('requirements_revision'))}/c{number(review.get('candidate_revision'))}: {approval}")
+            for key in ("blocking_findings", "unresolved_requirements"):
+                values = review.get(key)
+                if isinstance(values, list):
+                    for finding in values:
+                        self.line(f"{key}: {finding}")
+            self.line(review.get("recommendation", "not observed"))
+        status = result.get("status")
+        if status not in ("ACCEPTED_ADVISORY", "REQUEST_INPUT", "ROUTING_HOLD", "LIMIT_REACHED"):
+            status = "unrecognized status"
+        self.line(f"Coordinator: {status} | current result finalized")
+        # Request-input explanations are model-generated data, not UI instructions.
+        if status == "REQUEST_INPUT":
+            decisions = result.get("decision_evidence")
+            for decision in decisions if isinstance(decisions, list) else []:
+                if isinstance(decision, dict) and isinstance(decision.get("reason"), str):
+                    self.line("Request input reason: " + decision["reason"])
+        self.line("Model-history / restart / isolation: not established by this display")
+        self.line("Release acceptance: separate private report; not certified here")
+
+
+def finalize_workflow_turn(path, state, session, text, view, *, recovered=False):
+    try:
+        finish_workflow_turn(path, state, session, text)
+    except Exception:
+        if view:
+            view.render(text, session, finalized=False, recovered=recovered)
+        raise
+    if view:
+        view.render(text, session, finalized=True, recovered=recovered)
 
 
 async def rest(http, credential, method: str, path: str, *, body=None):
@@ -138,8 +260,9 @@ async def rest(http, credential, method: str, path: str, *, body=None):
 async def chat(args):
     tenant, subscription, user = verify_lab()
     state_path = private_state_path(args.session_file)
-    native = getattr(args, "native", False)
+    workflow_mode = getattr(args, "native", False)
     recover_only = getattr(args, "recover_only", False)
+    view = HumanView() if getattr(args, "view", None) == "human" else None
     # CLI token acquisition forbids combining tenant and subscription selectors.
     # verify_lab checks the registered tenant before selecting its subscription.
     async with AzureCliCredential(
@@ -150,9 +273,9 @@ async def chat(args):
                 state = json.loads(state_path.read_text(encoding="utf-8"))
                 if state.get("schema_version") != 1 or state.get("user") != user or state.get("tenant") != tenant:
                     raise DemoError("SESSION_OWNER")
-                if state.get("runtime", "legacy") != ("native" if native else "legacy"):
+                if state.get("runtime", "legacy") != ("native" if workflow_mode else "legacy"):
                     raise DemoError("SESSION_RUNTIME_CHANGED")
-                if state.get("pending") and not (native and recover_only and state.get("pending_response")):
+                if state.get("pending") and not (workflow_mode and recover_only and state.get("pending_response")):
                     raise DemoError("PARENT_TURN_UNCERTAIN")
                 session = AgentSession.from_dict(state["framework"])
             else:
@@ -164,7 +287,7 @@ async def chat(args):
                 state = {
                     "schema_version": 1, "tenant": tenant, "user": user,
                     "framework": session.to_dict(), "bound": False, "pending": False,
-                    "runtime": "native" if native else "legacy",
+                    "runtime": "native" if workflow_mode else "legacy",
                 }
                 details = await rest(http, credential, "GET", f"/agents/{AGENTS['coordinator']}")
                 state["version"] = details["versions"]["latest"]["version"]
@@ -198,12 +321,12 @@ async def chat(args):
                 response = await recover_parent(project, hosted_id, state["pending_response"])
                 print(response.output_text, end="", flush=True)
                 session.service_session_id = response.id
-                finish_native_turn(state_path, state, session, response.output_text)
+                finalize_workflow_turn(state_path, state, session, response.output_text, view, recovered=True)
                 return
             agent = FoundryAgent(
                 project_client=project, agent_name=AGENTS["coordinator"],
                 allow_preview=True, default_options={
-                    "store": True, **({"background": True} if native else {}),
+                    "store": True, **({"background": True} if workflow_mode else {}),
                 }, timeout=400,
             )
             print(f"Parent hosted={alias(hosted_id)} framework={alias(session.session_id)}")
@@ -217,6 +340,7 @@ async def chat(args):
                 write_state(state_path, state)
                 stream = agent.run(text, session=session, stream=True)
                 printed = ""
+                recovered = False
                 try:
                     async with stream:
                         async for update in stream:
@@ -228,12 +352,12 @@ async def chat(args):
                                 printed += update.text
                         result = await stream.get_final_response()
                 except (ChatClientException, TimeoutError) as exc:
-                    if not native or not state.get("pending_response"):
+                    if not workflow_mode or not state.get("pending_response"):
                         raise
                     print(f"Recovering known parent after {type(exc).__name__}; no resend.", file=sys.stderr)
                     result = None
                 if result is None or result.finish_reason != "stop":
-                    if not native or not state.get("pending_response"):
+                    if not workflow_mode or not state.get("pending_response"):
                         raise DemoError("PARENT_INCOMPLETE")
                     response = await recover_parent(project, hosted_id, state["pending_response"])
                     if not response.output_text.startswith(printed):
@@ -241,10 +365,11 @@ async def chat(args):
                     print(response.output_text[len(printed):], end="", flush=True)
                     printed = response.output_text
                     session.service_session_id = response.id
+                    recovered = True
                 if session.state.get(FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY) != hosted_id:
                     raise DemoError("PARENT_SESSION_CHANGED")
-                if native:
-                    finish_native_turn(state_path, state, session, printed)
+                if workflow_mode:
+                    finalize_workflow_turn(state_path, state, session, printed, view, recovered=recovered)
                 else:
                     state.update(framework=session.to_dict(), pending=False)
                     state.pop("pending_response", None)
@@ -259,9 +384,12 @@ def main():
     parser.add_argument("--session-file", required=True, help="Private file outside the repository")
     parser.add_argument("--message", help="One synthetic turn, then exit")
     parser.add_argument("--show-ids", action="store_true")
-    parser.add_argument("--native", action="store_true", help="Use the new native runtime; never reinterpret a legacy session.")
-    parser.add_argument("--recover-only", action="store_true", help="Retrieve the exact persisted native response; never create another.")
+    parser.add_argument("--view", choices=("human",), help="Opt-in workflow continuity presentation on stderr; stdout is unchanged.")
+    parser.add_argument("--native", action="store_true", help="Use the MAF/Foundry workflow; never reinterpret saved session state.")
+    parser.add_argument("--recover-only", action="store_true", help="Retrieve the exact persisted workflow response; never create another.")
     args = parser.parse_args()
+    if args.view and not args.native:
+        parser.error("--view human requires --native workflow records")
     try:
         with session_lease(private_state_path(args.session_file)):
             asyncio.run(chat(args))

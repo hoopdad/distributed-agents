@@ -1,0 +1,230 @@
+{
+  "sprintId": "RP-S1",
+  "goal": "Complete offline continuity proof and customer clarity while independently establishing the next supported live action.",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "acceptedInputs": {
+    "Architecture": "1f690f5011bef61494b8181fd14e779fa55d858e",
+    "UserExperience": "0f2a2b22a23fdb614e666274eec29c612da0a92f",
+    "ReleasePlan": "a2d0f9a06bfa9fd6df7fd932c94491eccb87035d",
+    "SprintDesign": "4c8511d374c16219fccb93a722d10e9fb1245f50",
+    "SprintArchitecture": "202e381ed8c4d21c26ebf3dc3e60b7c3551bfc32"
+  },
+  "governance": {
+    "priorDispositions": [],
+    "feedback": "None supplied; preserve accepted upstream handoffs without reopening them.",
+    "dispatch": "Return these assignments to the existing orchestrator. It dispatches dependency-ready original work loops concurrently before planning review. No substitute agents or deployment outside the original DevOps loop.",
+    "readyInParallel": ["S1-COORD", "S1-MODEL", "S1-TERMINAL", "S1-DOCS", "S1-INVENTORY", "S1-REMEDY"],
+    "sharedCheckout": "Application branch was freshly verified. No worktree isolation is supplied. File ownership below is exclusive through review; do not switch branches beneath writers. Resource labels do not provide OS or cross-run isolation.",
+    "labBranch": "Lab checkout is on another feature branch with unrelated dirty work. No RP-S1 task writes lab source or switches that checkout. Before any later lab edit, Scrum Master assigns reconciliation and establishes the authorized feature branch only when no active writers exist; contention is internal replanning, not permission to move another writer.",
+    "git": "Each owner reviews its assigned pre-existing diff, preserves originals in private storage outside both repositories without copying secrets, and commits only deliberately integrated related changes plus its implementation using git commit --only with explicit paths. Never sweep the index, stash, reset, remove locks, amend or force-push. Include the required Copilot trailer and available observed usage metadata. Ordinary transient Git contention is retried without discarding work.",
+    "integrationOwner": "S1-INTEGRATE owns application Git reconciliation and the durable disposition of every task commit. All application work uses the authorized feature branch. Any retained unmerged task branch must be kept and its task, branch, commits and abandonment reason recorded in a feature-branch commit message.",
+    "reviewAndPush": "Existing original task reviewers inspect actual commits; accepted implementation commits are integrated before S1-CHECKS performs reviewed scoped push. Do not invent another approval stage or infer agreement from a passing test.",
+    "indexOwnership": "Scrum Master owns the index for this planning commit. S1-MODEL exclusively refreshes it for its new test module during parallel implementation; other ready tasks add no files. S1-INTEGRATE owns subsequent index reconciliation. A new file outside this allocation requires a brief ownership handoff, not broad task serialization.",
+    "runtimeDefects": "Assigned source owners may fix demonstrated offline defects within existing contracts, with failing-before/passing-after evidence. Do not implement a speculative identity remedy. Material architecture, contract, held-state migration or scope findings go through Scrum Master reconciliation and Architect-advised Product Owner decisions.",
+    "stopRule": "Five consecutive rounds without reviewer-verified new progress stop blocked. Productive rounds and sprints are uncapped. A genuine missing provider remedy may stop the live critical path earlier; bounded negative research is not release acceptance.",
+    "limits": "Estimated minutes below are rough planning estimates, not timeouts, spending limits or concurrency ceilings.",
+    "authority": "October 19 authority governs new supported scoped operations; older consumed diagnostic authority neither forbids all new work nor authorizes replay of historical UNKNOWNs. Provider submission, private evidence transfer, new grants, infrastructure/network changes and speculative publication remain excluded."
+  },
+  "contracts": {
+    "fixture": "Accepted SprintArchitecture cross-tier table and coordinator/specialists tier files are the working interface now. Record snapshots by value, exact parent/role hosted/framework IDs and versions, response continuations, creates, ordered calls and current artifact refs. No new production schema is needed.",
+    "presentation": "Accepted SprintDesign Screens A-D and client-release tier file are sufficient to start now. Existing complete delegation/result records feed opt-in stderr; stdout and acceptance parser stay unchanged. Aliases alone cannot verify continuity or creation counts.",
+    "sourceIntegration": "A task handoff contains reviewed explicit-path commit IDs, targeted command/results, assigned baseline-diff disposition and known limitations. Source/tests are offline evidence only.",
+    "privateInventory": "Exact target, active/rollback versions, package hashes, identity comparisons and unresolved-operation locators remain in restricted evidence outside both repositories. Public handoff contains only sanitized classifications and precise missing observations.",
+    "research": "Source/date/installed-version applicability plus a supported correction/reproducer and held-state implications, or the exact missing server-side caller-resolution trace and documented remedy. An unsupported or unresolved actionable finding can complete research, never AC1-AC5."
+  },
+  "tasks": [
+    {
+      "id": "S1-COORD",
+      "title": "Prove two-turn and repeated workflow delegation",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-coordinator-source"],
+      "estimatedMinutes": {"implementation": 65, "review": 20, "integration": 10},
+      "inputs": ["SprintArchitecture coordinator tier and cross-tier fixture contract", "Existing tests/test_workflow.py follow-up and recovery cases"],
+      "ownedPaths": ["demo/workflow.py", "tests/test_workflow.py"],
+      "produces": ["Recorded two-turn fixture", "Controlled four-call revision fixture", "Reviewed coordinator source/test commits"],
+      "acceptanceCriteria": [
+        "Exercise the real workflow with controlled offline adapters: both roles on both turns, stable parent and both hosted/framework IDs, stored hosted key, names and pinned versions, exactly two creations and distinct responses for new invocations.",
+        "Snapshot by value before/after calls and in final manifest; verify queue addition preserves prior requirements and stale candidate/review approval is invalidated before follow-up sends.",
+        "Force architect c1, blocked reviewer c1, same architect c2, same reviewer c2 through routing/publication gates; assert four causal calls, same bindings, fresh responses and exact current prerequisite refs.",
+        "Keep baseline checkpoint, fencing, recovery, parsing, transport and isolation tests; deliberately review and account for pre-existing changes in these two paths."
+      ],
+      "doneWhen": "Both strengthened workflow fixtures and affected regressions pass and intended coordinator changes are committed for original review, with exact call/binding assertions and baseline-diff disposition.",
+      "exclusions": ["No live proof", "No toy orchestration, new schema or SessionManager", "No hidden local fallback, identity bypass or historical effect replay", "No edits to specialist or terminal test ownership"],
+      "handoff": "S1-INTEGRATE receives reviewed commit IDs, targeted results and recording-fixture observations; S1-TERMINAL may use the accepted record examples without waiting for these fixtures."
+    },
+    {
+      "id": "S1-MODEL",
+      "title": "Verify both real specialist model continuations",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-specialist-source"],
+      "estimatedMinutes": {"implementation": 65, "review": 20, "integration": 10},
+      "inputs": ["SprintArchitecture specialist tier", "Actual role-local load/model/store and recovery stages"],
+      "ownedPaths": ["demo/architect_agent.py", "demo/reviewer_agent.py", "tests/test_specialist_continuity.py", ".github/repo-index.md"],
+      "produces": ["Independent both-role continuation tests", "Fresh-history controls and exact-response no-resend tests", "Reviewed specialist commits and refreshed index"],
+      "acceptanceCriteria": [
+        "Execute each real role's load/model/store path with controlled external adapters; persist first-operation history, reload it, and inspect the exact restored framework identity/state/service continuation passed to the second model call.",
+        "For each role, use the identical second brief with absent history as a negative control; snapshot values rather than mutable references and assert persistence after current immutable output.",
+        "Known pending response recovery retrieves the exact ID with zero model sends; mismatched/unknown pending state stays held and existing output reconciliation remains intact.",
+        "Review assigned pre-existing role refactors explicitly; add tests in the owned new module rather than competing for tests/test_workflow.py or tests/test_demo.py. Refresh the public index."
+      ],
+      "doneWhen": "Both real specialist paths have passing continuation, fresh-history and no-resend recovery assertions and reviewed intended commits with pre-existing diff disposition.",
+      "exclusions": ["No live model-memory claim", "No new history store/schema or dependency upgrade by guess", "No workflow/terminal edits", "No provider or infrastructure mutation"],
+      "handoff": "S1-INTEGRATE receives reviewed commits, model-boundary value snapshots and exact targeted checks; a demonstrated runtime defect is fixed only within this owned existing contract."
+    },
+    {
+      "id": "S1-TERMINAL",
+      "title": "Implement opt-in evidence-qualified human continuity view",
+      "kind": "ui",
+      "owner": "UI Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-terminal-source"],
+      "estimatedMinutes": {"implementation": 75, "review": 25, "integration": 10},
+      "inputs": ["Accepted SprintDesign Screens B-D", "Existing delegation/result schema and parser contract"],
+      "ownedPaths": ["demo/terminal.py", "tests/test_demo.py"],
+      "produces": ["Implemented --view human stderr presentation", "Compatibility, recovery and terminal-safety tests", "Reviewed terminal commits"],
+      "acceptanceCriteria": [
+        "Preserve default behavior and identical stdout bytes for identical records with or without human view; keep machine schemas and live_acceptance.events parsing compatible.",
+        "Render complete parsed records in chronological order including repeated role calls; show useful current design/review output, stable-versus-advancing labels and truthful unverified/not-observed evidence gaps.",
+        "Finalize before accepted summaries; fragmented/recovered prefixes, malformed/multiple/missing results, pending effects and finalization failures cannot become success or duplicate invocation counts.",
+        "Neutralize control sequences and prefix every generated line; cover hostile/multiline content, narrow widths, non-color statuses and known-response retrieval without resend.",
+        "Review and deliberately integrate the assigned pre-existing terminal/test diffs; keep renderer in the existing terminal module and tests in the owned existing test file."
+      ],
+      "doneWhen": "Opt-in human view and required display/compatibility regressions pass, intended changes are committed for original review against accepted Designer screens, and no raw private identifiers are introduced.",
+      "exclusions": ["No browser UI, extra service, dependency or public evidence schema", "No verified continuity from aliases", "No compute stop command or external calls for presentation", "No changes to live_acceptance.py"],
+      "handoff": "S1-INTEGRATE receives reviewed implementation and capture-based parser/stdout evidence; S1-DOCS can write the existing runnable command now, and integration adds the human flag only after this handoff."
+    },
+    {
+      "id": "S1-DOCS",
+      "title": "Make README and source path explain the customer invariant",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-customer-docs"],
+      "estimatedMinutes": {"implementation": 35, "review": 15, "integration": 5},
+      "inputs": ["Accepted SprintDesign Screen A", "Accepted architecture and existing source lifecycle map"],
+      "ownedPaths": ["README.md", "docs/design.md", "docs/implementation-workflow.md"],
+      "produces": ["Customer-first README and concise two-turn setup/example", "Accurate state/source navigation", "Reviewed documentation commits"],
+      "acceptanceCriteria": [
+        "First screen leads with customer goal, three-agent diagram, synthetic initial/follow-up example, stable parent/child hosted/framework bindings and pinned versions versus new responses, short source path and truthful historical live-status notice.",
+        "Link detailed chronology to the existing recovery document; retain historical UNKNOWNs and application-enforced Blob isolation limitation without claiming freshly verified deployment.",
+        "Explain parent-scoped manifest children, create/reuse lookup, restored AgentSession remote invocation and both specialist history paths; separate conversations, checkpoints and artifacts.",
+        "Use currently implemented command syntax and generic setup/private state; follow-up requires a non-held completed first turn. Supply the intended human-view command as conditional handoff, not as already runnable before terminal integration.",
+        "Review and integrate related existing changes in owned paths; validate local source links and do not rewrite accepted design documents."
+      ],
+      "doneWhen": "Customer opening and source/state explanation meet accepted screens, links and runnable baseline syntax are checked, and intended documentation changes are committed for original review.",
+      "exclusions": ["No live success claim or new diagnostic chronology", "No copied private settings/lab literals", "No dependency on completed terminal implementation", "No edits to recovery research ownership"],
+      "handoff": "S1-INTEGRATE reconciles the final implemented human command with S1-TERMINAL and reviewed documentation; Designer guidance is the already accepted design, not a new task or approval stage."
+    },
+    {
+      "id": "S1-INVENTORY",
+      "title": "Freshly inventory the sole configured target without inference",
+      "kind": "devops",
+      "owner": "DevOps Engineer",
+      "dependsOn": [],
+      "exclusiveResources": ["lab-hosted-release", "lab-private-transport"],
+      "estimatedMinutes": {"implementation": 40, "review": 15, "integration": 5},
+      "inputs": ["Existing native settings through scripts/Use-Settings.ps1 only", "Retained lab startup, metadata, owner-inspection and connectivity procedures"],
+      "ownedPaths": [],
+      "produces": ["Fresh private target/version/package/identity/rollback inventory", "Unresolved publication/held-parent preservation and owned cleanup report"],
+      "acceptanceCriteria": [
+        "Validate settings schema/linkage and sole project, tenant/subscription and dedicated CLI context without printing private values; device-code authentication is the only permitted interactive login.",
+        "Use retained explicit-root read-only tools to freshly observe exactly three configured roles, active/exact and rollback bindings, packages and identity equality; distinguish current metadata from historical request evidence.",
+        "Record exact private evidence locators outside both repositories and preserve historical UNKNOWN publication and held parents; missing owner/terminal evidence is not safe replay.",
+        "Use only established trust/temporary read-only transport if required; start only the exact existing command VM through the approved mechanism if needed. Record closure only for positively owned new processes/listeners/mounts.",
+        "Do not edit or switch the dirty lab checkout; a necessary tooling change returns a concrete bounded replan for lab branch/reconciliation ownership."
+      ],
+      "doneWhen": "Fresh verified-context inventory and exact private baseline locators are available for original review, or an actual authentication/provider/retained-tool stop is precisely evidenced with missing observation and next action; historical numbers are not reused as fresh results.",
+      "exclusions": ["No inference, publication, packaging or stop/resume in this inventory task", "No secret reads or private full identifiers in public output", "No lab file edits or branch switch", "No new permissions, infrastructure, network or provider submission"],
+      "handoff": "S1-REMEDY may consume sanitized new observations when available but does not wait for inventory to begin public-contract research. Scrum Master receives private inventory/stop classification for RP-S1 closeout and original DevOps receives baseline locators for RP-S2."
+    },
+    {
+      "id": "S1-REMEDY",
+      "title": "Assess a supported identity remedy or exact missing finding",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-recovery-document"],
+      "estimatedMinutes": {"implementation": 50, "review": 20, "integration": 5},
+      "inputs": ["Historical exact-pair NATIVE_HOST_PRINCIPAL boundary in recovery plan", "Installed dependency pins and authoritative public runtime/user-isolation contracts"],
+      "ownedPaths": ["docs/identity-recovery-plan.md"],
+      "produces": ["Dated version-applicable supported-remedy assessment", "Supported correction/reproducer handoff or actionable negative finding"],
+      "acceptanceCriteria": [
+        "Research current public supported contracts against installed pins and actual inspected identity path; record source/date/version applicability and what new evidence changes or confirms the bounded conclusion.",
+        "If supported correction exists, specify smallest correction, failing reproducer, exact observation to verify it and held-state implications for original Developer/DevOps tasks.",
+        "Otherwise identify the exact missing server-side caller-resolution trace for the preserved pair and documented platform/SDK remedy, with the required separate human/provider disclosure action; do not assert a platform defect or missing grant.",
+        "Use sanitized inventory findings opportunistically, not a dependency on completed inventory. If materially contradictory observations arrive, reconcile through existing Scrum Master/Architect/PO scope decisions.",
+        "Deliberately review related pre-existing recovery-document changes; preserve unknowns, distinguish new October 19 authority from consumed historical authority, and do not count rewording old research as new progress."
+      ],
+      "doneWhen": "Original reviewers can inspect a committed source/date/version-specific supported correction handoff or precise actionable unresolved/unsupported finding; an actionable negative finding completes this research assignment, not live release acceptance.",
+      "exclusions": ["No provider submission or private evidence transfer", "No speculative header/grant/SDK upgrade or identity substitution", "No runtime edits, publication, inference or unknown-effect replay", "No endless research once the exact external finding is established"],
+      "handoff": "Scrum Master uses this outcome for sprint review and RP-S2 feasibility; original Developer and DevOps receive supported correction/reproducer if established, otherwise the live path remains honestly blocked with exact missing provider action."
+    },
+    {
+      "id": "S1-INTEGRATE",
+      "title": "Reconcile reviewed source and all pre-existing readability work",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": ["S1-COORD", "S1-MODEL", "S1-TERMINAL", "S1-DOCS"],
+      "exclusiveResources": ["application-git-integration", "application-coordinator-source", "application-specialist-source", "application-terminal-source", "application-customer-docs"],
+      "estimatedMinutes": {"implementation": 45, "review": 20, "integration": 15},
+      "inputs": ["Four reviewed implementation/documentation handoffs", "Fresh Git status and all 17 pre-existing dirty application paths", "Current accepted research commit if already available"],
+      "ownedPaths": [".env.example", ".github/agents/distributed-agents-builder.agent.md", ".github/copilot-instructions.md", ".github/skills/distributed-agent-implementation/SKILL.md", "demo/host.py", "demo/specialist.py", "live_acceptance.py", ".github/repo-index.md"],
+      "produces": ["Reconciled reviewed source commit set on authorized feature branch", "Durable baseline/path and task-commit disposition", "Integrated runnable demonstration command"],
+      "acceptanceCriteria": [
+        "Account for every pre-existing dirty application path: upstream owners cover workflow/tests, both roles, terminal/tests, README/design/workflow docs and recovery document; this task reviews remaining owned paths. Never silently adopt unrelated work.",
+        "Review preservation snapshots and actual baseline diffs before integrating related refactors. Leave unrelated work intact and disclose exact path disposition. Recovery document remains S1-REMEDY-owned and is not needed to begin source integration.",
+        "Resolve actual cross-task source/test and README command conflicts after handoffs; may edit completed upstream-owned paths for focused integration repairs, but not the concurrently owned recovery document.",
+        "Refresh index and reconcile tests/parser without freezing evolving response continuations or broad refactoring; preserve dependency pins, allowlists and historical migration seals.",
+        "Ensure each task code commit is on the authorized feature branch or durably recorded as retained on its named branch with task/commits/reason in a feature-branch commit message. Record same-branch commits as already integrated, not invented merge operations."
+      ],
+      "doneWhen": "Reviewed offline implementation and related baseline refactors are coherently integrated with explicit path/commit accounting, runnable implemented demo syntax, passing targeted checks and committed integration repairs for original review.",
+      "exclusions": ["No sweeping staged/dirty work, resets, stashes or history rewrite", "No runtime identity remedy without evidenced scoped handoff", "No final-package or live certification", "No lab edits"],
+      "handoff": "S1-CHECKS receives exact reviewed source commit set and focused checks. S1-INVENTORY and S1-REMEDY remain independent; their missing results do not block source validation but remain required for truthful sprint closeout."
+    },
+    {
+      "id": "S1-CHECKS",
+      "title": "Validate integrated source and deliver reviewed Git handoff",
+      "kind": "devops",
+      "owner": "DevOps Engineer",
+      "dependsOn": ["S1-INTEGRATE"],
+      "exclusiveResources": ["application-git-integration"],
+      "estimatedMinutes": {"implementation": 30, "review": 15, "integration": 5},
+      "inputs": ["Reviewed integrated exact source commits", "Existing validated absolute Python and explicit lab root"],
+      "ownedPaths": [],
+      "produces": ["Integrated application/repository and targeted check results", "Reviewed feature-branch push outcome", "Exact-source offline handoff to original DevOps release loop"],
+      "acceptanceCriteria": [
+        "Run Test-Demo.ps1 -Python <absolute validated interpreter> -LabRepositoryRoot <explicit root>, scripts/Test-Repository.ps1 -Python <absolute interpreter> and affected targeted checks; do not install dependencies unless manifest changed or a tool is missing.",
+        "Record exact tested commit set, relevant dirty-input diffs and scope. When concurrent docs/index changes alter tested public inputs, rerun affected final repository checks after their original review; do not certify changed runtime inputs from stale results.",
+        "If directly coupled lab tooling later changes under a reconciled task, require its retained regression suite and authorized lab branch; no such edits are planned here.",
+        "Push only reviewed intended application commits on the authorized feature branch after checking all outgoing commits and public-boundary gates. An unreviewed unrelated outgoing commit or auth failure is an explicit delivery stop, not permission to push it or switch accounts.",
+        "Report checks actually run and actual push/commit IDs; keep exact Linux/amd64/hosting-Python package checks, preview/publication and live acceptance in RP-S2/RP-S3 DevOps tasks."
+      ],
+      "doneWhen": "Required integrated-source checks pass for disclosed exact inputs, reviewed scoped feature-branch push succeeds or a precise external delivery stop is recorded, and original DevOps has the exact-source offline handoff without a release-readiness claim.",
+      "exclusions": ["No deployment, inference, packaging, compute stop/resume or hidden local fallback", "No claim that mocks or Windows checks satisfy Linux-package/live gates", "No mutation of private settings or historical receipts", "No claiming unknown historical cleanup"],
+      "handoff": "Existing sprint review/retro receives check and Git evidence plus independent inventory/research outcomes; RP-S2 DevOps owns exact Linux package/build/preview/publication and G1-G4, RP-S3 owns G5-G8 and final AC1-AC9 closure."
+    }
+  ],
+  "criticalPath": {
+    "sprintSource": "Longest rough lane is terminal implementation/review/integration (110 minutes), then integration (80 minutes), then integrated checks/delivery (50 minutes): approximately 240 minutes, not a bound or promise.",
+    "sprintJoin": "Six initial lanes are ready now. Integration joins only four source/clarity lanes. Inventory and remedy assessment join at existing sprint review, not at offline source implementation.",
+    "liveRelease": "Supported correction plus reviewed source integration -> exact source/Linux/amd64/hosting-Python/common-package gates -> fresh preview and guarded publication -> initial remote acceptance -> follow-up -> once-only supported stop/resume. Separate-parent comparison needs initial evidence, not restart.",
+    "providerBoundary": "If no supported correction exists, preserve completed offline work and record exact external finding. This completes bounded research only; it cannot satisfy RP-S2, G1-G8 or full product acceptance."
+  },
+  "acceptanceMapping": {
+    "AC1": "S1 preserves remote-only design; real collaboration remains RP-S2.",
+    "AC2": "S1-COORD exact offline bindings; live continuity remains RP-S3.",
+    "AC3": "S1-COORD repeated calls and S1-MODEL direct continuation controls, explicitly offline.",
+    "AC4": "Preserved recovery/isolation regressions; actual supported stop/resume and separate parent remain RP-S3.",
+    "AC5": "G1-G4 live release/provenance/routing remain RP-S2; G5-G8 live continuity/recovery/isolation/truthful closure remain RP-S3.",
+    "AC6": "S1-TERMINAL and S1-DOCS implement accepted clarity; actual live demonstration remains downstream.",
+    "AC7": "S1-INTEGRATE/S1-CHECKS exact integrated source checks; final Linux package and release checks remain DevOps downstream.",
+    "AC8": "Owned baseline review, integration, public boundaries, scoped commits/push and unrelated dirt preservation.",
+    "AC9": "Sanitized command and exact offline handoff now; final/rollback bindings, actual proof, cleanup and limitations remain truthful release closeout."
+  },
+  "designerAssignment": "No new Designer task: accepted UX and SprintDesign already supply the required contract. Original design-related review uses existing work loops; do not reopen accepted handoffs or invent a browser deliverable.",
+  "planningCompletion": "Dispatch-ready assignments, not implementation completion. Existing orchestrator performs actual parallel dispatch and collects original Product Owner, Architect and Critic agreement. This file does not assert those events already occurred."
+}

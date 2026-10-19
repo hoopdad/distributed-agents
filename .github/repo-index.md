@@ -21,6 +21,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three initial sprint goals/acceptance contracts, independent offline work, supported-repair critical path, exact release/live gates and original-owner closeout |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Sprint-specific README/terminal screens, ordered revision trace, incomplete/recovered-event behavior and fixture-to-display implementation handoff |
 | RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative design and logical-tier contracts for exact binding fixtures, direct model continuation, unchanged terminal projection and independent supported-remedy assessment |
+| RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Dispatch-ready original-role tasks, minimal handoff dependencies, parallel file ownership, shared release resources and explicit Git/source integration |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
@@ -142,6 +143,13 @@ logical-tier architecture files under `docs\requirements`; no prior sprint
 was supplied. These are not copied delivery requirements or new services.
 No runtime, dependency, event schema or deployment ownership changed.
 
+Sprint-plan freshness: based on accepted SprintArchitecture `202e381` and
+SprintDesign `4c8511d`, with the same 17 pre-existing dirty paths preserved.
+Added `docs\customer-prototype-sprint-plan.json`: eight bounded assignments,
+six initially ready non-overlapping lanes, explicit source/Git integration and
+separate original DevOps ownership. Dispatch and planning reviewer agreement
+remain the existing orchestrator's next actions; no implementation is claimed.
+
 <!-- inventory:start -->
 
 ## Public file inventory
@@ -186,6 +194,7 @@ No runtime, dependency, event schema or deployment ownership changed.
 - `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-sprint-architecture.md`
 - `docs\customer-prototype-sprint-design.md`
+- `docs\customer-prototype-sprint-plan.json`
 - `docs\customer-prototype-ux.md`
 - `docs\design.md`
 - `docs\identity-recovery-plan.md`

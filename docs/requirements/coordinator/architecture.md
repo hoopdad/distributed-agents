@@ -9,6 +9,11 @@ and its referenced canonical `solutionModel`. **Hosted coordinator**
 implementations and shared support links; this tier creates no duplicate
 conversation/artifact/identity structures.
 
+Current input is Architecture `5f9c384` and SprintDesign `84d2ec3`, joined by
+the current RP-S1 sprint entry. Accessible root evidence is an attributed
+handoff for originating review, not permission to execute a runner or proof of
+trusted specialist entry. No coordinator contract or implementation changes.
+
 RP-S1 scopes **Remote design and review** (`collaboration-bind`,
 `collaboration-route`, `collaboration-design`, `collaboration-review`,
 `collaboration-return`) and **Same-parent specialist continuation**

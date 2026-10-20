@@ -11,6 +11,11 @@ continuation** use the same pinned children for `collaboration-design`,
 `collaboration-review` and `continuity-invoke`; no hidden local fallback,
 history rekey, fourth service or generic session abstraction is introduced.
 
+Current input is Architecture `5f9c384` and SprintDesign `84d2ec3`, joined by
+the current RP-S1 sprint entry. Its accessible ownership/root capture does not
+select A or B, prove live history loading or change either specialist's trust
+contract. Both-role history controls remain retained offline evidence.
+
 Each remote child's restored hosted/framework binding differs from its internal
 `specialist_history_v2` model session. Each role loads that session, supplies
 it to its model call and persists validated output/history. Retain both-role

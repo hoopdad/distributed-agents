@@ -3,13 +3,15 @@
 ## Sprint architecture entry: RP-S1 canonical continuity contracts (October 20, 2026)
 
 The current packet selects **RP-S1**, not the older RP-S3 overlay below.
-Inspected application baseline `59a6a63c523ea3a42e89e04d751c5c063af72987`
-on `feature/customer-hosted-session-prototype`; only untracked workflow context
-was present. Consume Architecture `35d526ae3a9e722ebe633ba60e2ca572182a5d1e`,
-UX `c70571186564cf293a63b00f08511a560b7deb11`, ReleasePlan
-`8343d48b310e4d79b7d1de7b133f483475c054f7` and SprintDesign
-`59a6a63c523ea3a42e89e04d751c5c063af72987`. Their supplied outcome JSON files
-record original reviewer agreement for those bounded artifacts. Those votes
+Inspected clean application baseline `84d2ec352b6a31af2375d5e6e709c4e5cbf883e8`
+on `feature/customer-hosted-session-prototype`. Consume Architecture
+`5f9c38437102f67fd40a78d7debdaa099ba4ff44`, UX
+`053070d38ea77920a4ddbf1eacf643e8152e8fae`, ReleasePlan
+`9aad84a66e5555d08e61822032951e90572cb3ad` and SprintDesign
+`84d2ec352b6a31af2375d5e6e709c4e5cbf883e8`. Independently opened all four
+supplied outcome JSON files under the application's workflow context:
+their original reviewers record `agree=true`, `taskComplete=true` and no
+unmet criteria for those bounded artifacts. Those votes
 do not transfer to this SprintArchitecture or establish live execution.
 The packet supplies no completed sprints, assignments, separate blocked-decision
 list, reconciled feedback or prior dispositions. Historical overlays retain
@@ -75,10 +77,18 @@ existing Scrum reconciliation and Architect-advised Product Owner decisions.
 For exact originating ownership reference
 `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`,
 consume supplied `ownershipRecoveryDefaults` as acknowledgement/designation,
-not substantive ownership acceptance. Existing Developer completes attributable
-owned-path/resolver/root evidence for original Architect/Critic review before
-eight-path sibling runner writes. This turn does not retry earlier denied
-inspection, certify current sibling state or reopen that task's acceptance.
+not substantive ownership acceptance. Architecture `5f9c384` inspected the now
+accessible mirrored capture: complete-file hash comparison, direct sibling
+branch/HEAD/status, embedded resolver contents and four Python plus four
+PowerShell matched/crossed-root results. These remain attributed captured
+observations, not execution or independent hash recomputation by this sprint
+refinement. The earlier unavailable-evidence boundary is historical.
+Existing Developer/Scrum return that capture and supplied designations to the
+originating Architect/Critic against their original safe-writing/root criteria.
+Preserve the originating five-round stop and dependent-write block until
+substantive acceptance. Do not recreate setup, duplicate capture, reset the stop
+or request renewed designations. Clean captured status is not ownership and
+recorded source equality is not actual operational installation.
 Use approved mirrored evidence and accepted fingerprint references first;
 no renewed user authority is missing for that bounded read-only work.
 
@@ -94,34 +104,46 @@ G1-G8 after exact-source, retained-suite, Linux hosting-package and preview gate
 Scrum owns minimal dependencies, path ownership, real shared exclusive resources
 and Git reconciliation; this architecture assigns no competing task graph.
 
-Preserved untracked workflow context currently causes repository-index drift.
-Scrum/integration coordinates its preservation and exclusion from customer Git
-then reruns the unchanged `scripts/Test-Repository.ps1`; do not index private
-workflow control-plane output, remove unowned files or waive AC7. This does
-not require changing the portable application or extending RP-S1 to all live
-criteria. All AC1-AC9/G1-G8 remain required for release. Preserve UNKNOWNs,
+The current ReleasePlan/SprintDesign consume the closed workflow-context
+exclusion and successful unchanged repository checks. The older index-drift
+failure below is attributed history, not a current blocker or new cleanup
+assignment. Preserve ignored context; do not index it, delete unowned files or
+redispatch accepted source-exclusion work. Current checks still apply to this
+edit and subsequent integrated source; no AC7 waiver is implied.
+All AC1-AC9/G1-G8 remain required for release. Preserve UNKNOWNs,
 held parents, rollback assets, unrelated work and historical cleanup uncertainty.
 Blob Contributor remains account-wide: isolation is application-enforced,
 not storage-RBAC or malicious-host isolation.
 
 ### Validation of this sprint refinement
 
-An in-memory document check verified all ten canonical components, five flows,
-eighteen steps, three tier entries and seven resolving local/anchor links.
-The existing absolute validated Python 3.12.10 executable ran `Test-Demo.ps1`
-with an explicit canonical lab root: dependency checks, **204 offline tests
-in 53.413 seconds** and compilation passed (exit 0). No dependencies were
-installed. Standalone `scripts/migration.py public-check` passed across
-**83 Git-visible files**; owned Git whitespace checks passed.
+The in-memory model/document check passed ten canonical components, five flows,
+eighteen unique steps, four input commits, three tier contracts and four
+resolving local/anchor links, plus bounded ownership/source-exclusion routing.
+Its first attempt incorrectly matched a wrapped tier phrase literally;
+whitespace-normalized comparison passed without changing the contract.
 
-The unchanged `scripts/Test-Repository.ps1` failed its first gate with
-`REPOSITORY_INDEX_STALE` (exit 1); its later gates did not execute. Read-only
-comparison found four added untracked workflow-audit JSON inventory entries
-and zero removals, not added customer source. Those unowned files remain
-preserved/excluded from this commit and the public inventory. The closing
-action above remains required. No lab source changed; the full retained lab
-suite and actual Linux/amd64/hosting-Python package checks were not run.
-These local checks validate the documented source boundary, not live progress.
+The first offline invocation selected a registered base Python 3.12.10 rather
+than the existing validated lab environment. Dependency consistency passed,
+but test discovery/execution reported **47 tests, nine import errors in
+4.501 seconds**: missing `httpx2` and unavailable framework exports. This
+establishes an interpreter/environment mismatch, not a source regression or
+permission failure. Nothing was installed or upgraded. Selecting the existing
+lab virtual environment's absolute Python 3.12.10 path and explicit lab root,
+`Test-Demo.ps1` passed dependency checks, **204 offline tests in 44.614 seconds**
+and compilation (exit 0). The unchanged `scripts/Test-Repository.ps1` passed
+index, 79-file public-boundary, JSON, PowerShell, context and whitespace checks.
+The index was refreshed with the retained generator; no public paths changed.
+
+Input audit inspection establishes only their original document acceptance,
+not this deliverable's votes, originating ownership acceptance or live readiness.
+No recovery capture was rerun and no new sibling state is certified here.
+The previous refinement's 204 offline tests (53.413 seconds), compilation and
+public check across 83 Git-visible files remain historical. Its then-current
+`REPOSITORY_INDEX_STALE` failure is superseded only for the source-exclusion
+closing action by the accepted current-input handoff, not waived for new edits.
+No lab source changed; retained lab and actual Linux hosting-package checks
+remain with the original execution owners.
 
 Architect accepts this bounded current-sprint/cumulative/tier design for
 original Product Owner, Critic and Red Team review; their votes for this loop

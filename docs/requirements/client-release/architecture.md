@@ -25,8 +25,17 @@ integration before formal local-script E2E, and original serialized DevOps
 publication/live gates. Independent containment/trust/inventory preparation
 does not wait for runner coding. Supplied trust/designations are available
 inputs, not current transport, ownership acceptance or installed-source proof.
-Scrum/integration must preserve/exclude unowned workflow context then rerun the
-original repository check; no private inventory insertion or AC7 waiver.
+Architecture `5f9c384` inspected the accessible mirrored capture's direct sibling
+Git/status, resolver contents and eight captured root cases. Existing
+Developer/Scrum submit that attributed evidence and supplied designations to
+originating Architect/Critic at
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+Preserve its five-round stop and dependent-write block until substantive
+acceptance; do not recreate setup, capture or designation requests. Clean
+status/source equality are not ownership or operational installation.
+The accepted current inputs consume the closed workflow-context exclusion;
+do not redispatch it. Preserve ignored context and rerun unchanged repository
+checks for current edits; no private inventory insertion or AC7 waiver.
 Exact retained-suite/Linux hosting-package/common-bundle checks and scoped
 reviewed push remain downstream. Report unresolved identity selection and all
 unmet live gates truthfully; preserve UNKNOWNs, held parents, rollback, unrelated

@@ -1,5 +1,25 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current RP-S2 trusted ingress boundary
+
+Consume the [current RP-S2 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s2-joined-execution-inputs-and-independent-trust-october-20-2026).
+Retain both five-stage flows, `specialist_history_v2`, persisted-value snapshots,
+identical-brief fresh-history controls and exact-response zero-send recovery.
+Hosted/framework binding, internal model history and response continuation are
+separate observations; replayed requirements cannot prove model memory.
+No new specialist endpoint, history schema or implementation dispatch.
+
+Supplied coordination, another role's receipt inspection, ARM readiness and
+current strict-trust preparation cannot establish either specialist's entry.
+The finite trial observes architect trusted ingress and receiver equality
+before reviewer dispatch with exact accepted prerequisites; reviewer needs its
+own observed entry/output. Preparation rejection leaves the receiver unreached,
+not failed. Preserve trusted principal equality and per-role immutable private
+MI Blob provenance. Namespace mismatch stops the candidate for existing
+Architect-advised PO/Scrum reconciliation, never rekeying history, assignment-
+as-authority or adopting held children. Selected ingress is not complete G1-G4
+or RP-S3 live continuation/recovery/isolation.
+
 ## Current RP-S1 ownership-designation boundary
 
 Consume the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-ownership-designation-architecture-october-20-2026).

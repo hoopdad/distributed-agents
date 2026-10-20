@@ -1,5 +1,25 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current RP-S2 joined execution boundary
+
+Consume the [current RP-S2 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s2-joined-execution-inputs-and-independent-trust-october-20-2026).
+Retain accepted parent/both-child hosted/framework bindings, pinned versions,
+two-turn/four-call fixtures, exactly two child creations, fresh responses and
+stale-approval invalidation. No coordinator rewrite or duplicate fixture task.
+The specialist-only B client is a candidate; A needs its own supported corrected
+source. Runner/root/scenario/package/version rejection must precede parent
+creation; local preparation is not observed receiver entry.
+
+Original ownership acceptance still gates runner writes, not independent
+application checks. Reviewed application/runner/required operational bytes must
+match actual loaded roots before original E2E and DevOps execution. Record both
+roles independently; architect-only success is not collaboration acceptance.
+Exact immutable inputs, producer/version/revision/hash checks, private MI Blob,
+Decision-1 and coordinator ETag/fencing remain required for actual G1-G4.
+Uncertain effects remain held; no substitute parent, equality relaxation or
+automatic A/B fallback. RP-S3 consumes a completed non-held initial parent,
+not an agreed prerequisite-stop report, for live continuity/recovery/isolation.
+
 ## Current RP-S1 ownership-designation boundary
 
 Consume the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-ownership-designation-architecture-october-20-2026)

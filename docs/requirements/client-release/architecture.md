@@ -1,5 +1,34 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current RP-S2 trust and release join
+
+Consume the [current RP-S2 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s2-joined-execution-inputs-and-independent-trust-october-20-2026)
+and accepted current SprintDesign. Retain README/customer screens, Screens F/G,
+safe aliases, useful opt-in human stderr and unchanged stdout/parser. No new
+public fields, flag, renderer, comparison ledger or implementation dispatch.
+Bounded partial-inventory, unresolved-baseline and prerequisite-stop reports
+can be complete while DevOps cloud-pass remains false; do not redispatch
+accepted reports or turn them into demonstration output.
+
+Ownership/root acceptance and strict transport trust are independent lanes.
+Developer substantiates current sibling/path/resolver evidence through original
+ownership review before eight-path runner writes. DevOps recovers the previously
+accepted ED25519 fingerprint and acceptance reference, then runs retained
+strict-trust/authenticated private inventory scripts. Current known-host content,
+ARM readiness or another role's receipt reads cannot supply those missing gates.
+
+Designated Developer integration joins reviewed application, runner and required
+operational-wrapper source at actual loaded roots, preserves root guards and
+canonical dirty work, records durable task/branch/commit accounting and scoped
+push. Sibling commits are not canonical installation. Original E2E validates
+exact joined inputs; original DevOps serializes actual release/transport/profile/
+mount/stage mutation and performs final-source Linux/amd64/hosting-Python,
+package/version, guarded publication and live G1-G4 through local scripts.
+RP-S3 receives actual common-bundle, non-held initial bindings, not selected
+ingress alone. Current final/rollback bindings and cleanup remain unobserved by
+this architecture turn. Preserve held effects, historical UNKNOWNs and all
+AC1-AC9/G1-G8; account-wide Blob access remains application-enforced isolation.
+
 ## Current RP-S1 ownership-designation boundary
 
 Consume the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-ownership-designation-architecture-october-20-2026)

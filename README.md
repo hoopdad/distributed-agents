@@ -21,22 +21,28 @@ invocations get new response IDs and produce current design/review artifacts.
 A separate parent gets its own child bindings and artifact scope.
 
 **Release status — blocked, not customer-ready (October 20, 2026):**
-accepted offline assertions are not a live demonstration. Reviewed joined
-runner integration and the current containment-source/resource handoff remain missing;
-substantive originating ownership acceptance is still unavailable, so runner
-writes remain blocked. Existing writer/integration designations suffice; this
-is not a request for renewed authority. Accepted host trust is supplied; it
-does not establish current transport execution or operational source ownership.
-No successful live identity-path
-selection is established. The historical
-remote failure was `NATIVE_HOST_PRINCIPAL`, before the architect application
-executed; this is not a fresh observation of the current candidate. Follow-up,
-supported compute stop/resume and isolation remain unverified. The mixed
-diagnostic deployment is not a final common-bundle release.
+originating ownership, runner corrections and source integration handoffs are
+accepted, but a release-tooling configuration correction is still required.
+Reviewed tool source and the existing dedicated operational context must be
+selected separately, without copying credentials or substituting profiles.
+The predecessor check failed before deployment on that configuration mismatch;
+it did not establish an authentication failure or specialist rejection.
+The changed exact source join must pass original E2E validation, followed by
+serialized guarded Linux/package, publication and live gates. Current
+containment/resource readiness and deployed/rollback inventory also require
+DevOps verification; supplied host trust alone is not current transport proof.
+
+Accepted offline assertions are not a live demonstration. Neither identity
+path is live-selected; live two-turn continuity, supported compute stop/resume
+and separate-parent isolation remain unverified. The historical remote failure
+was `NATIVE_HOST_PRINCIPAL`, before the architect application executed; this
+is not a fresh observation of the current candidate. The mixed diagnostic
+deployment is not a final common-bundle release.
 [Release notes and requirement status](docs/customer-prototype-release-notes.md)
-record the current RP-S3 blocked closeout, accepted offline handoffs and
-existing owners' next actions separately from unmet live gates. Final deployed
-and rollback bindings and final scoped push remain unverified.
+retain the earlier blocked closeout; the
+[current release plan](docs/customer-prototype-release-plan.md) routes the
+configuration correction and remaining gates. Final deployed and rollback
+bindings remain unverified.
 [Recovery evidence and gates](docs/identity-recovery-plan.md)
 retain the publication **UNKNOWN**, held parents and unproven historical
 cleanup; none may be cleared or replayed to make a demo pass.

@@ -19,7 +19,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; installed `3aca5dc` B candidate versus live selection, scenario/source/package join and Developer-runner/DevOps-trial ownership; authorized A/B paths, principal discriminator, continuation and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
-| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three sprint goals/acceptance contracts; October 20 parallel isolated-candidate, inventory and lab-runner work packages; explicit Git/source integration, conditional permission edge, finite ingress decision and unchanged E2E/DevOps final gates |
+| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three sprint goals/acceptance contracts; installed B candidate review, safe lab checkout and pre-E2E Developer runner/integration; later DevOps inventory/trial, scenario/source/package join, truthful preparation/receiver outcomes and unchanged final gates |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Sprint-specific README/terminal screens, ordered revision trace, incomplete/recovered-event behavior and fixture-to-display implementation handoff |
 | RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative retained fixtures/presentation; October 20 RP-S2 specialist-only client, receiver/history compatibility, finite lab decision runner and integration joins |
 | RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Phase-compatible pre-E2E Developer checkout/client/runner/integration lanes; deferred original DevOps inventory/status and guarded trial; retained real dependencies and observed-versus-eligible dispatch distinction |
@@ -135,7 +135,7 @@ prerequisite; no branch switch, lab write or substitute dispatcher here.
 Actual dispatch/votes remain distinct from plan readiness and local validation.
 No runtime/dependency/architecture change, cloud observation or live acceptance.
 
-Current ReleasePlanLoop revision freshness: inspected clean application base
+Historical ReleasePlanLoop revision freshness: inspected clean application base
 `3ee9798afa4a419be87bcb68fdfc3540875d171a`. No added/deleted paths,
 runtime, dependency or deployment boundary changes. Release planning retains
 the integrated RP-S1 source and accepted architecture/UX handoffs; it adds the
@@ -176,12 +176,14 @@ event contract changed. Human-view syntax is implemented; exact continuity
 claims and live release acceptance still require separate private evidence.
 
 Current release-plan freshness: inspected clean baseline
-`ef5c79d94114f156ab0d03497fafffd1e348aabf`, accepted architecture `0a24470`
-and UX `ef5c79d`, for the October 20 release delta. Retained RP-S1 source and
-offline identity handoff; planned parallel specialist-only runtime candidate,
-lab decision runner and fresh inventory with explicit Git/source integration
-and a conditional permission dependency. Scrum Master assigns actual tasks
-and lab reconciliation; original E2E/DevOps acceptance remains unchanged.
+`c17813567e7d3db09abe1d2403b948c98131c24f`, accepted architecture `cde7638`
+and UX `c178135`, for the source-to-trial release delta. Retain installed
+candidate `3aca5dc` for original review/integration, not redispatch. Developer
+safe lab ownership precedes runner coding and source integration before E2E;
+fresh inventory/status and guarded trial remain later original DevOps work.
+Require scenario/source/package/deployed-version consistency before parent
+creation and distinguish local preparation rejection from observed receiver
+failure. Scrum Master retains task decomposition and lab reconciliation.
 No paths added/deleted or runtime/dependency contracts changed by this plan.
 Identity selection and live release remain unresolved.
 

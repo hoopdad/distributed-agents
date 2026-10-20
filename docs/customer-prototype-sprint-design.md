@@ -1,11 +1,11 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Sprint design entry: RP-S1 canonical continuity screens (October 20, 2026)
+## Sprint design entry: RP-S1 continuity screens and operational-context handoff (October 20, 2026)
 
 The current task selects **RP-S1**, not the older RP-S3 entry below. Consume
-Architecture `5f9c38437102f67fd40a78d7debdaa099ba4ff44`, UserExperience
-`053070d38ea77920a4ddbf1eacf643e8152e8fae` and ReleasePlan
-`9aad84a66e5555d08e61822032951e90572cb3ad`. Designer inspected that clean
+Architecture `f5fc1dec9b01e98745268e359808f3021a8906de`, UserExperience
+`063787500eb3404c1932ff921af5079a170d90ac` and ReleasePlan
+`7a43d1fcab694fd1e3ce3532a144b3e5bdb92739`. Designer inspected that clean
 feature baseline and all three supplied originating outcome JSON files under
 the application's workflow context: Architecture, UX and ReleasePlan record
 agreement with their original reviewers and no unmet criteria. Their votes do not accept
@@ -15,7 +15,9 @@ dispositions. Retain historical entries as attributed context, not new task
 requirements, fresh observations or superseding scope decisions.
 
 This sprint-level design specializes the accepted UX to the two RP-S1
-canonical flows and eight steps. Reuse Screens A-D and the implemented
+canonical flows and eight steps, with a supporting F/G operator handoff for
+**Exact-source guarded release** (`release-join`, `release-package`).
+Reuse Screens A-D and the implemented
 `HumanView` / `finalize_workflow_turn` path; no duplicate renderer, fixtures,
 browser UI, public evidence field, dependency or new CLI flag is assigned.
 Design is complete when these flows, screen states, evidence limits and
@@ -61,7 +63,7 @@ delegation/result contract and acceptance parser remain unchanged.
 |---|---|
 | Two-turn identities, pins and revisions | B shows useful current output and observational aliases. Developer/integration retains the existing both-role binding/creation/response and invalidated-approval assertions; E2E checks relevant integrated source. No whole serialized-session equality or alias-based proof. |
 | Controlled repetition and real history loading | C preserves architect/reviewer/architect/reviewer order and final revised output. Retain existing both-specialist history tests, fresh-history controls and exact-known-response recovery without new sends. Fixture success is offline, never a live transcript. |
-| README/terminal clarity and unchanged parser | A leads with customer goal, diagram, two turns, invariant, dated status and source path. B includes design and recommendation, not just IDs. Retain capture tests for identical stdout, fragmented streams, finalization failures, recovered responses and control neutralization. No duplicate implementation. |
+| README/terminal clarity and unchanged parser | A leads with customer goal, diagram, two turns, invariant, dated status and source path. Existing clarity/closeout ownership corrects the stale pending-ownership notice using the status copy below. B includes design and recommendation, not just IDs. Retain capture tests for identical stdout, fragmented streams, finalization failures, recovered responses and control neutralization. No duplicate implementation. |
 | Checks and supported identity assessment | F/G distinguish attributed historical failure, source candidate, observed preparation/ingress, and selected or unresolved action. Source/repository checks remain required; Linux/package and live gates remain downstream. An actionable negative assessment may finish its bounded task, not the release. |
 
 Preserve terminal-default light/dark appearance, no color-only meaning,
@@ -73,42 +75,80 @@ locators stay outside customer output/Git. A known-response retrieval says
 no resend and is not counted as a new invocation; absent observations are
 not measured zero calls, creates or sends.
 
-### Blocked-item routing without expanding the design assignment
+### Blocked-item routing without reopening accepted work
 
-The current Architecture/UX inputs report **accessible mirrored recovery
-evidence**, not the older denied-access boundary. Architecture inspected the
-complete-file hash, direct sibling Git/status, embedded resolver sources and
-eight captured matched/crossed-root results. Designer consumes that attributed
-handoff; this turn neither re-executes nor independently certifies the capture.
-Keep Screens F/G as an operator report, separate from the customer terminal:
+Current Architecture/UX/ReleasePlan consume predecessor
+`bb3af682-2d1c-41cf-97e7-312f624ea669/result.json` and substantive original
+Architect/Critic acceptance of these exact originating boundaries:
+`sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop`,
+`sprint/1/RP-S1/task/RP-S2-DECISION-RUNNER/AssignedWorkDeveloperLoop`, and
+`sprint/1/RP-S1/task/RP-S2-SOURCE-INTEGRATE/AssignedWorkDeveloperLoop`.
+Lab correction `1842984` and application integration `1bd157d` are accepted
+source handoffs, not new Designer observations of external execution. Earlier
+pending-ownership/write-block wording is historical within those boundaries.
+Do not reopen the originating ownership assessment, renew designations or
+redispatch unchanged runner, continuity, history or presentation work.
+
+The accepted predecessor E2E outcome is an actionable **predeployment FAIL**.
+Architecture identifies a tooling-checkout versus existing dedicated-context
+configuration defect, not expired authentication or a specialist rejection.
+Keep F/G as existing operator reports, separate from customer terminal output:
 
 | Reached boundary | Screen wording and existing closing action |
 |---|---|
-| Recovery evidence accessible; architecture inspection recorded | Evidence available for originating assessment. Existing Developer/Scrum submit it with the supplied writer acknowledgement and integration designation to original Architect/Critic. No duplicate capture or renewed designation request. |
-| Originating safe-writing/root acceptance pending | Runner writes BLOCKED. Clean captured status and accepted planning reports are not task acceptance. Preserve the originating five-round stop. |
-| Original acceptance subsequently recorded | Designated Developer performs the existing eight-path sibling work, then designated integration joins reviewed commits with actual loaded operational roots, bytes/hashes and durable Git accounting. This is conditional, not an observed installation. |
-| Operational join or trusted ingress unverified | Demonstration BLOCKED. Original E2E validates the joined source; original DevOps owns exact-package checks, serialized publication and architect-before-reviewer discrimination followed by actual live gates. |
+| Accepted ownership, runner and integration handoffs | Source handoffs accepted; release BLOCKED. Scrum assigns precise new correction paths to the existing Developer in the authorized feature sibling. Earlier eight-path ownership does not grant all affected wrapper paths. |
+| Tooling/profile mismatch before dispatch | Predeployment configuration FAIL; remote role execution not established. Developer propagates the explicit operational-context contract through the five retained entry points and callers, preserving loaded-tool equality and negative guards. |
+| Correction reviewed and exact source joined | Source correction accepted is not operational PASS. Designated integration Developer records actual loaded roots/raw hashes, scoped feature push/readback (including accepted `1bd157d` if absent), then original E2E validates the changed exact join. |
+| Operational prerequisites not established | Demonstration BLOCKED. Serialized DevOps verifies existing Windows/WSL context, containment-source/resource readiness and current target/rollback inventory; actual Linux/package gates precede guarded publication and finite architect-before-reviewer discrimination, then live G1-G8. |
+| Supported authentication actually requests user action | Surface the real device URL/code privately when produced for the existing dedicated context. Path separation alone warrants neither a hypothetical login request nor renewed authority. |
 
-Apply this routing to the exact originating reference
-`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
-No replacement ownership task or stop reset is designed. Supplied host trust
-is an input, not current SSH success, containment readiness or ingress proof.
-Independent containment-source/resource and trusted-inventory preparation
-remain with Scrum/transport/DevOps, not a runner-coding dependency. Captured
-root success is not actual loaded-source integration.
+Private operator setup distinguishes `ApplicationRoot` (application source),
+`LabRepositoryRoot` (reviewed loaded-tool owner) and `OperationalLabRoot`
+(existing dedicated context). The last is an accepted architecture contract
+awaiting implementation, **not a runnable new customer flag**. Five affected
+entry points are `Test-LabPrerequisites.ps1`, `Test-PrivateConnectivity.ps1`,
+`Build-CodePackage.ps1`, `Build-BundledCodePackage.ps1` and
+`Invoke-WslCodeRelease.ps1`. Caller/regression detail stays in Architecture and
+Scrum's correction assignment, not a new Designer task or public setup command.
+Use only the unchanged checked-in settings importer and existing dedicated
+context; no credential inspection/copy/symlink, duplicate/default/production
+profile, private-settings edit, crossed-tool loading or relaxed root guard.
+Windows and WSL readiness require retained checks, not inferred cache equality.
+Actual roots/profile/scope values remain private, outside customer output/Git.
 
-Current ReleasePlan records successful repository checks and consumes the
-closed source-exclusion handoff without redispatch. Earlier
+Replace only Screen A's status portion through existing clarity/closeout
+ownership. The observed README still has obsolete pending-ownership/write-block
+copy; this is its concrete implementation handoff, not a README edit in this
+Designer deliverable. Retain the goal-first hierarchy, existing source path,
+conditional commands and historical recovery link. Suggested opening notice:
+
+> Release BLOCKED, not customer-ready: source handoffs are accepted, but a
+> release-tooling configuration correction is needed before the changed source
+> join and final package/live gates can be validated. Live two-turn continuity,
+> supported compute stop/resume and isolation remain unverified.
+
+Keep the historical `NATIVE_HOST_PRINCIPAL` failure explicitly historical.
+Do not replace the stale ownership notice with a successful-deployment claim
+or present the proposed operational-root contract as implemented syntax.
+README correction and independent containment-source/resource/inventory
+preparation can proceed independently of correction coding; publication stays
+serialized under original DevOps. Supplied host trust is an input, not current
+SSH success or ingress proof. Source acceptance is not authentication proof.
+
+Current ReleasePlan consumes the closed source-exclusion handoff without
+redispatch. Earlier
 `REPOSITORY_INDEX_STALE` failures below remain attributed history, not a current
 failure or a reason to adopt ignored workflow context into public Git.
 Neither identity path is live-selected; preparation rejection is not specialist
 ingress failure. Historical UNKNOWNs, held parents, rollback assets and cleanup
-uncertainty remain preserved. Account-wide Blob Contributor permits
+uncertainty remain preserved. The original five-consecutive-no-progress stop
+remains binding; this amendment resets no stop or counter. Account-wide Blob Contributor permits
 application-enforced isolation only.
 
-Scrum consumes this bounded design during existing decomposition; Developer
+Scrum consumes this bounded design during existing decomposition and aligns
+the stale client-release sprint contract through SprintArchitecture; Developer
 retains accepted presentation/fixture behavior without redispatch. Original
-E2E validates the actual joined implementation and original DevOps owns
+E2E validates the changed exact source join and original DevOps owns
 serialized guarded publication and live G1-G8. Follow-up/recovery requires
 its real completed non-held entry; independent isolation retains its own
 prerequisites, not a recovery dependency. No current Product Owner/Critic votes,
@@ -116,27 +156,34 @@ live AC1-AC9 success, cloud diagnosis or deployment is claimed here.
 
 ### Validation of this RP-S1 design entry
 
-Designer inspected README's customer-first opening and the implemented
-`HumanView.render()` / `finalize_workflow_turn()` source: chronological calls,
-finalization-first accepted output, alias-only continuity, useful design/review,
-held-state precedence and prefixed control-neutralized generated text match
-the retained A-D layouts. No renderer or machine contract was changed.
+Designer inspected the current accepted input documents and all three supplied
+audits under current context
+`bf0d82d9-657b-4055-9f7c-6306ce08163d`: Architecture
+`44d8ba586176db02e3079782dd51160199f0dafb69e621b0bd4c38f12678257e.json`,
+UX `f8e505196488d5b4e277a4b4f93d47f05de0f7c5f8e64e8f215152ca2dc19bf6.json`,
+and ReleasePlan
+`f108457884c76c9420ff5d169cc23811693266d0516274388eed368e54d0a1ec.json`.
+Each records agreement, original votes true, taskComplete true and no unmet
+criteria. Those accept the input documents, not this SprintDesign or live
+execution. The current source baseline is the ReleasePlan commit above.
 
-Current in-memory document checks passed for ten component names, two canonical
-flows, eight unique step references, four resolving screen anchors, three input
-commits and the bounded evidence/ownership routing. Initial text assertions
-failed on line wrapping and an absent literal phrase; whitespace normalization
-and checking the actual exclusion wording corrected the checker, not the design
-contract. Using the existing absolute Python 3.12.10 executable,
-`Test-Demo.ps1` with explicit lab root passed dependency checks, **204 offline
-tests in 48.066 seconds** and compilation. `scripts/Test-Repository.ps1` passed
-index, 79-file public-boundary, JSON, PowerShell, context and whitespace checks.
+This update retains the two-flow/eight-step table and A-D screen layouts,
+including alias-only human stderr, unchanged stdout/parser, useful output,
+chronological repeated calls, held precedence and accessibility. Current
+document and repository validation is recorded with this turn's handoff;
+older runtime-suite totals below are attributed history, not fresh results.
+Unchanged runtime tests are not rerun for progress credit. No runtime,
+dependency, lab, README, settings, workflow or cloud change is made.
+Original Product Owner/Critic votes remain to be collected. Linux/package,
+authentication, transport, deployment and live AC1-AC9 remain downstream.
 
-Older test totals/failures remain historical and are not current results.
-No dependencies, lab source, settings or cloud state changed. Full retained
-lab, Linux/package, usability timing and live checks are outside this bounded
-documentation validation. Original Product Owner/Critic review remains to be
-collected; owner acceptance is not their vote.
+Current `scripts/Test-Repository.ps1` passed with the existing absolute lab-root
+virtual-environment Python (80 public files; current index, public/private
+boundary, JSON, PowerShell, context frontmatter and whitespace checks).
+An initial in-memory design assertion caught the missing explicit no-progress
+stop wording in this updated entry; the sentence above restores that binding
+rule rather than changing the criterion. Final targeted document checks and
+commit identity are reported in the handoff.
 
 ## Historical RP-S3: gated continuity, recovery, isolation and delivery (October 20, 2026)
 

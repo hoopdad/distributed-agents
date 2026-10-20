@@ -89,6 +89,13 @@ package validation, formal E2E, fresh runtime progress or live release proof.
 
 ## Current RP-S1 retrospective — inspectable evidence is not transitive
 
+Recovery-entry input is accepted SprintReview
+`ca4345d5761d053e201747da4018e29c7720dd25`. Its current ownership
+task remains unaccepted; DevOps reports historical-file access and an exit-2
+strict-trust stop, not current ingress. Earlier successful sibling Git reads
+and older denied reads are separately dated observations, not a combined
+current safe-writing proof. This clarification changes no architecture contract.
+
 The [current retrospective](customer-prototype-release-plan.md#current-rp-s1-retrospective--closure-and-inspectable-handoffs-october-20-2026)
 refines evidence handoff practice, not the accepted architecture. Supplied writer
 and integration-owner designations resolve coordination input; they do not prove

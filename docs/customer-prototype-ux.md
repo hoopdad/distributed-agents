@@ -60,6 +60,13 @@ Linux hosting-package validation or live acceptance.
 
 ## Current RP-S1 retrospective — report completion without implying execution
 
+Recovery-entry input is accepted SprintReview
+`ca4345d5761d053e201747da4018e29c7720dd25`: demo BLOCKED, E2E FAIL,
+DevOps incomplete and ownership unaccepted. Report those outcomes alongside
+bounded report agreement. Attribute exit 2 / shellId 209 to the current
+DevOps report; do not display older exit codes or timings as current evidence.
+No new customer output or presentation implementation is requested.
+
 The [current retrospective](customer-prototype-release-plan.md#current-rp-s1-retrospective--closure-and-inspectable-handoffs-october-20-2026)
 retains existing screens and machine contracts. Operator handoffs should separate
 the bounded deliverable's status from the execution outcome and state evidence

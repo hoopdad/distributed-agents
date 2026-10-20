@@ -184,10 +184,10 @@ runtime progress.
 
 ## Current RP-S1 retrospective — closure and inspectable handoffs (October 20, 2026)
 
-Product Owner input baseline: accepted SprintReview commit
-`1ceeb96671c446a9c0770bdbd0141f08c7ae9b77`, its corrected structured
-ReleasePlan handoff, the supplied original reviews, current-source and E2E
-reports, and the DevOps prerequisite stop. Application Git inspection found
+Product Owner input baseline: accepted recovery-entry SprintReview commit
+`ca4345d5761d053e201747da4018e29c7720dd25`, its ReleasePlan handoff,
+the supplied original reviews, current-source and E2E reports, and the
+incomplete DevOps prerequisite-stop report. Application Git inspection found
 that commit on `feature/customer-hosted-session-prototype` with a clean index
 and worktree. This retrospective does not repeat private evidence inspection,
 sibling/root probes or cloud operations. Older retrospectives below are dated
@@ -197,11 +197,11 @@ observations, not current execution records or reasons to repeat stopped work.
 
 | Input / observed scope | Finding and decision |
 |---|---|
-| Supplied Architecture, UX, ReleasePlan, SprintDesign, SprintArchitecture and E2E outcomes each record two rounds, including agreement/status reconciliation | Consume collected originating votes once in the existing loop. Owner-ready, reviewer agreement and downstream execution acceptance are distinct. Do not rerun checks or create a status-only commit just to acknowledge already collected votes. These counts are not a measured error rate or elapsed delay. |
-| Supplied SprintReview records three rounds; its transport rejected the omitted `ReleasePlan.sprints`, subsequently restored with the existing RP-S1/RP-S2/RP-S3 definitions | Treat payload validity as part of the existing handoff, not a new approval stage. Before returning an updated ReleasePlan, check nonempty sprints and unique string IDs alongside retained goals/criteria. A report can be substantively accepted but undeliverable until its envelope is corrected. |
-| Current-source and E2E reports separately record 204 offline tests in 47.492 and 48.016 seconds; SprintReview records a further 204-test run in 54.968 seconds | Attribute each run to its source and purpose; do not sum durations into product latency, treat repeats as new progress, or substitute Windows/offline results for exact joined/Linux/package/live gates. |
+| Supplied Architecture, UX, ReleasePlan, SprintDesign, SprintArchitecture, current-source, E2E and SprintReview outcomes each record two rounds; SprintPlan records one | Eight accepted boundaries include a completion-status reconciliation. Consume collected originating votes once in the existing loop. Owner-ready, reviewer agreement and downstream execution acceptance are distinct. Do not rerun checks or create a status-only commit just to acknowledge collected votes. Counts describe supplied loop rounds, not a measured error rate, causal delay or runtime progress. |
+| Current ReleasePlan handoff retains three unique sprint IDs; an older retrospective below recorded an omitted-sprints transport rejection | Retain envelope checks, but do not attribute that historical rejection to this invocation or invent a new occurrence. Before returning an updated ReleasePlan, check nonempty sprints and unique string IDs with retained goals/criteria. Payload validation is part of the existing handoff, not a new approval stage. |
+| Current-source and E2E each report 204 offline tests at source `b13670e354102f922994ac1a1e82cf07243b2abe`; the committed SprintReview records another 204-test run in 58.179 seconds | The current-source and E2E supplied reports give no exact durations. Do not borrow timings from older overlays, sum repeats into product latency, credit repeated checks as progress, or substitute Windows/offline results for exact joined/Linux/package/live gates. Execution transcripts were not independently verified here. |
 | Developer and originating reviewers were denied exact recovery reads/direct sibling inspection; DevOps reports successful parsing of the seven named files, while its reviewers disclose denied independent reads | Evidence availability is execution-session-specific. Pass exact inspectable evidence to the existing ownership review in a permission-capable session, without requesting supplied designations again. Another role's successful read is neither sibling safety nor originating acceptance. |
-| Current DevOps report: retained prerequisite script exited 1 at `HOST_TRUST_EVIDENCE_REQUIRED`; ARM/context checks reportedly passed | Keep the current exit/result distinct from older reports below. The supplied files reportedly contain no accepted fingerprint comparison value; this does not prove no such receipt exists elsewhere. Recover only the exact established value/reference or locator, then resume retained strict-trust inventory. |
+| Current DevOps report: retained prerequisite script exited 2 at `HOST_TRUST_EVIDENCE_REQUIRED`, shellId 209; ARM/context checks reportedly passed | Keep the current exit/result distinct from older exit-1 reports below. The supplied files reportedly contain no accepted fingerprint comparison value; this does not prove no such receipt exists elsewhere. Recover only the exact established value/reference or locator, then resume retained strict-trust inventory. ARM readiness is not private project access. |
 | Original reviews accept three bounded DevOps reporting alternatives, but DevOps cloud-pass remains false | Preserve completed partial-inventory/unresolved/prerequisite-stop deliverables while carrying their execution closing actions. Do not redispatch the same research solely because live acceptance remains unmet. |
 
 These observations use supplied reports, not newly authenticated private/cloud
@@ -221,7 +221,7 @@ credit.
 | [UserExperience](customer-prototype-ux.md#current-rp-s1-retrospective--report-completion-without-implying-execution), Designer; existing owners supply observations | Report bounded deliverable completion separately from its blocked execution outcome, attribution and next action. Preserve the customer-facing three-role journey and safe aliases; no new CLI/event fields. | Existing reviews verify truthful handoffs; existing presentation tests remain retained. Only actual later live bindings and artifacts can support a demonstration, not illustrative rows or report agreement. |
 | ReleasePlan, Product Owner; Scrum Master coordinates | Preserve two independent P0 lanes: ownership evidence before runner writing, and accepted host trust before authenticated inventory. Check the existing structured handoff before return; consume originating agreements without closure churn. | Existing task reviews close concrete gaps, then runner -> integration -> original joined-input E2E -> guarded DevOps package/live gates. No new task IDs, dependencies, approval stage, runner command or public evidence ledger. |
 
-Priority and owners remain those in the current sprint-review backlog below:
+Priority and owners remain those in the recovery-entry sprint-review backlog above:
 DevOps/established transport owner recovers the accepted fingerprint/reference;
 Developer completes originating ownership substantiation before runner work;
 the designated Developer integrates reviewed source/operational roots and
@@ -231,12 +231,13 @@ decomposition, resource coordination and assignment of Git reconciliation.
 Do not duplicate accepted implementation, fixtures or presentation.
 
 Apply exact references
-`["yaml-loops-v1:sprint/1/RP-S1/SprintReviewLoop","sprint-review-restore-release-plan-sprints"]`
-and
-`["yaml-loops-v1:sprint/1/RP-S1/SprintReviewLoop","sprint-review-close-agreed-deliverable"]`
-to the accepted review/envelope only. Apply
+`["yaml-loops-v1:sprint/1/RP-S1/SprintReviewLoop","sprint-review-close-agreed-backlog-report"]`
+to the accepted blocked review/backlog only, not successful execution. Apply
 `["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-close-agreed-failure-report"]`
 to completed predeployment FAIL reporting, not future joined-input PASS.
+Apply
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S1-CURRENT-SOURCE-CHECKS/AssignedWorkDeveloperLoop","current-source-checks-close-completed-deliverable"]`
+to the accepted unchanged-source validation handoff, not the subsequent join.
 Preserve the unresolved ownership boundary under
 `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
 Architecture, UX, ReleasePlan, SprintDesign and SprintArchitecture closure
@@ -255,14 +256,20 @@ Historical UNKNOWNs, held parents, rollback assets, unrelated work and cleanup
 uncertainty remain preserved. No code is abandoned or merged by this
 documentation-only change; existing integration retains task-commit accounting.
 
-Local validation for this retrospective used the existing absolute validated
-Python with explicit lab root: `Test-Demo.ps1` exited 0 with 204 offline tests
-passing in 43.859 seconds and no broken requirements. `Test-Repository.ps1`
-passed index, 79-file public boundary, JSON, PowerShell, frontmatter and
-whitespace checks. Four current retrospective links/anchors and balanced fences
-in all three artifacts passed a local check. No dependencies were installed;
-no lab source, Linux/package, private-evidence or live operation was performed.
-These checks protect documentation/source, not new product progress.
+Validation for this recovery-entry retrospective: `scripts/Test-Repository.ps1`
+with the existing absolute validated Python exited 0 (shellId 254): index,
+79-file public boundary, JSON, PowerShell, frontmatter and whitespace passed.
+A read-only local check passed four retrospective links/anchors, balanced
+fences in the three artifacts, current exit attribution and retained sprint IDs
+(shellId 256). Git reported CRLF-to-LF normalization warnings, not check failures.
+The older 43.859-second retrospective
+test run is historical, not rerun or claimed here. This delta changes only
+the existing three retrospective artifact sections and navigation; it introduces
+no runtime, dependency or lab-tool change. Do not rerun the application suite
+solely for closure status. Existing integration still owes joined-source checks;
+original DevOps still owes retained-tooling and Linux/package/live gates.
+No private-evidence, transport, publication or cloud operation is performed.
+Documentation refresh and repeated checks are not new product progress.
 
 ## Current RP-S1 sprint review — trust and ownership stops (October 20, 2026)
 

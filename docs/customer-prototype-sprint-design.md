@@ -1,6 +1,78 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Current RP-S2: preparation reports versus hosted collaboration (October 20, 2026)
+## Current RP-S1: accepted inputs and evidence-qualified screens (October 20, 2026)
+
+This invocation's sprint is **RP-S1: evidence-ready source and understandable
+continuity**. Inspected clean application baseline
+`2f22642e6f68d841c7ef40097fe1299ccd366dd8` on
+`feature/customer-hosted-session-prototype`. Its accepted inputs are Architecture
+`45318a50098c44843643ef1a7c5479edb4dfbd38`, UserExperience
+`b7aa978584b144c1cb485bec5b54e9c8da989964` and ReleasePlan at that baseline.
+No assignments or additional blocked-backlog list were supplied. Retain the
+existing screens, renderer and fixture contracts; the dated RP-S2/RP-S3 sections
+below are downstream design history, not this invocation's sprint selection.
+
+The exact prior references
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-completed-deliverable"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-close-completed-deliverable"]` and
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-close-completed-deliverable"]`
+close only their originating deliverables. Consume those agreements without
+reopening them or borrowing their reviewer votes for this SprintDesign.
+
+### RP-S1 flow and screen-to-criterion handoff
+
+```text
+Screen A: customer goal -> three-role diagram -> two-turn invariant/source map
+  -> validated setup and compatible release, owned by execution roles
+Screen B: initial private-ingress design/review -> finalized, non-held result
+  -> same private session file -> queue follow-up with current design/review
+Screen C: offline architect -> blocked reviewer -> same architect -> same reviewer
+Screen D: held/invalid/incomplete outcome overrides success; preserve, do not resend
+```
+
+| RP-S1 acceptance slice | Retained design and downstream check |
+|---|---|
+| Both-role two-turn proof | Screen B and the fixture handoff below require actual stable parent/both-role hosted/framework bindings and pins, exactly two child creations, fresh responses, current requirements and stale-approval invalidation. Human aliases alone remain UNVERIFIED. |
+| Repeated calls and model continuation | Screen C retains all four ordered calls and useful final output. Existing both-role history fixtures require restored model history and fresh-history controls; label these offline, not live memory proof. |
+| Customer clarity and parser preservation | Screens A-D retain README-first explanation, opt-in human stderr, identical machine stdout/parser behavior, plain-text wrapping, terminal-default light/dark appearance and control neutralization. |
+| Supported decision or unresolved handoff | Screens F/G remain separate operator reports: state reached boundary, attributed evidence and existing closing action. Neither identity path is live-selected by this design. |
+
+### Blocked-item interpretation and original-owner handoff
+
+Apply the accepted architecture's narrower observation: direct sibling Git
+inspection succeeded, but complete resolver/loaded-root verification remains
+incomplete after denied reads. Do not repeat the older blanket statement that
+all sibling inspection was denied. This is attributed Architecture evidence;
+Designer has not independently inspected the sibling, private receipts or
+cloud. Supplied Developer writer/integration designations are coordination
+evidence, not missing customer approval or originating ownership acceptance.
+The existing Developer completes bounded resolver/owned-path verification and
+original review before runner writes, then reviewed matched-source integration.
+Independent strict-trust inventory remains with DevOps. No root picker, override,
+new UI, public field, dependency or duplicate implementation task is introduced.
+
+Scrum retains decomposition, resource serialization and Git reconciliation.
+Original E2E and DevOps retain joined-source validation, exact Linux/package
+checks, guarded publication and live gates through local repository scripts.
+Keep full bindings, trust material, transcripts and private locators outside
+customer output/Git. Preserve UNKNOWN effects, held parents, rollback assets
+and historical cleanup uncertainty; isolation remains application-enforced
+under account-wide Blob access. This design does not pass AC1-AC9/G1-G8.
+Designer agrees with this RP-S1 handoff; current Product Owner/Critic review
+must inspect its commit rather than inherit upstream or historical votes.
+
+### Checks for this RP-S1 handoff
+
+The existing absolute lab Python executable ran `Test-Demo.ps1` with the
+explicit lab root: dependency checking, **204 offline tests in 61.398 seconds**
+and the script completed with exit 0. `scripts/Test-Repository.ps1` passed
+index, **79-public-file** boundary, syntax/context and whitespace checks.
+No dependencies were installed. Only this document and navigation changed;
+no lab source changed. No retained lab suite, Linux hosting-package validation,
+formal E2E, cloud operation or push was performed. These repeated local checks
+are not new runtime progress or live acceptance evidence.
+
+## Historical RP-S2: preparation reports versus hosted collaboration (October 20, 2026)
 
 This current **RP-S2 SprintDesign** consumes the Architecture, UserExperience
 and ReleasePlan retrospective updates at inspected clean application HEAD

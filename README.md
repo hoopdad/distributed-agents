@@ -22,15 +22,21 @@ A separate parent gets its own child bindings and artifact scope.
 
 **Release status — blocked, not customer-ready (October 20, 2026):**
 originating ownership, runner corrections and source integration handoffs are
-accepted, but a release-tooling configuration correction is still required.
-Reviewed tool source and the existing dedicated operational context must be
-selected separately, without copying credentials or substituting profiles.
-The predecessor check failed before deployment on that configuration mismatch;
-it did not establish an authentication failure or specialist rejection.
-The changed exact source join must pass original E2E validation, followed by
-serialized guarded Linux/package, publication and live gates. Current
-containment/resource readiness and deployed/rollback inventory also require
-DevOps verification; supplied host trust alone is not current transport proof.
+accepted, including the operational-context correction and local integration.
+The predecessor Linux build failed at the unavailable selected Docker
+Linux-engine endpoint, before image/container validation; the underlying cause
+is not established. Bounded recovery of the existing engine is specified, not
+yet verified as implemented, reviewed or executed. Its changed exact source
+join must pass original E2E validation before DevOps execution. Actual
+Linux/hosting-package checks remain outstanding.
+
+The selected WSL route previously passed authenticated private read-only
+checks and closed that operation's newly owned resources. This is bounded
+route-readiness evidence, not final runtime health or collaboration proof;
+operational freshness must be revalidated before external effects. Complete
+rollback-version/package and unresolved-effect inventory remains outstanding
+independently of engine recovery. Both actual readiness gates must pass before
+one serialized guarded publisher proceeds to final common-bundle live checks.
 
 Accepted offline assertions are not a live demonstration. Neither identity
 path is live-selected; live two-turn continuity, supported compute stop/resume
@@ -41,8 +47,8 @@ deployment is not a final common-bundle release.
 [Release notes and requirement status](docs/customer-prototype-release-notes.md)
 retain the earlier blocked closeout; the
 [current release plan](docs/customer-prototype-release-plan.md) routes the
-configuration correction and remaining gates. Final deployed and rollback
-bindings remain unverified.
+existing-engine recovery, independent inventory and remaining gates. Final
+deployed and rollback bindings remain unverified.
 [Recovery evidence and gates](docs/identity-recovery-plan.md)
 retain the publication **UNKNOWN**, held parents and unproven historical
 cleanup; none may be cleared or replayed to make a demo pass.

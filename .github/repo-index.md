@@ -19,7 +19,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; accepted trust input matches both supplied private references, distinct from current strict-trust execution; fresh clean sibling Git versus denied resolver reads, supplied designations and original ownership review; matched operational roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
-| Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; current attributed successful sibling Git versus incomplete resolver proof, supplied designations versus original ownership acceptance, unchanged machine contract |
+| Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; accepted trust input versus current strict transport, attributed sibling Git versus incomplete resolver proof, designations versus ownership acceptance; unchanged machine contract |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current recovery-entry RP-S3 review at `89dfd9f`: blocked demo, accepted executable/observation handoff and E2E FAIL versus attributed local-only DevOps observations; existing ownership-evidence access, independent trust, actual integration, G1-G4 and continuity/recovery/isolation/delivery closing actions; older overlays remain history |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Current RP-S3 blocked closeout at `b809cb9`: per-criterion AC1-AC9/G1-G8 ledger, accepted source/audit/observation handoffs versus missing substantive ownership acceptance, independent trust and actual operational join; attributed 204-test Windows result, conditional demo, unknown final/rollback bindings and unverified final push |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S3 maps absent initial-parent handoff to blocked F/K, conditional H two-turn comparison, I once-only supported recovery, J independent isolation and K truthful delivery; retains accepted A-D/F-G/parser/privacy contracts, attributed RP-S2 exit-2 stop and original execution owners; older overlays remain history |
@@ -40,6 +40,13 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+UserExperienceLoop recovery-handoff freshness: inspected clean feature baseline
+`25d182245a1bb40b842f5787196bd8f8244c4a7d`, committed architecture and
+existing terminal render/finalization path; refreshed only the existing UX
+handoff and this navigation, no added/deleted paths. Consumes accepted
+architecture without transferring votes; supplied accepted trust input is not
+current SSH validation or receipt authentication. No private/sibling/cloud
+inspection, runtime change, deployment or live demonstration is claimed.
 ArchitectureLoop recovery-handoff freshness: inspected clean feature baseline
 `a1bca5d`; no added/deleted paths. Eight named external recovery files parsed;
 value-suppressed comparisons matched the user-accepted fingerprint to both

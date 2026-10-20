@@ -48,10 +48,10 @@ UX implementation is introduced; existing live demonstration obligations remain.
 ## Current User Experience Loop: evidence-qualified handoff (October 20, 2026)
 
 This Designer handoff consumes accepted architecture commit
-`45318a50098c44843643ef1a7c5479edb4dfbd38`, also the inspected clean
+`25d182245a1bb40b842f5787196bd8f8244c4a7d`, also the inspected clean
 application baseline on `feature/customer-hosted-session-prototype`.
 Prior reference
-`["yaml-loops-v1:ArchitectureLoop","architecture-close-completed-deliverable"]`
+`["yaml-loops-v1:ArchitectureLoop","architecture-completion-status"]`
 closes its originating architecture acceptance only. Retain that agreement;
 it neither supplies Product Owner/Critic votes for this UX handoff nor passes
 ownership or release acceptance.
@@ -59,16 +59,18 @@ ownership or release acceptance.
 The full UX principles, existing toolsets/frameworks, journeys, README and
 terminal wireframes, accessibility and evidence-to-display contract below
 remain the deliverable. Older dated overlays are historical observations,
-not the current inspection result. In particular, the accepted architecture
-now reports successful direct sibling Git inspection, followed by denied
-complete resolver reads. Use the following operator interpretation instead
-of the earlier blanket description of denied sibling inspection:
+not the current inspection result. The accepted architecture reports matching
+user-accepted trust inputs, successful direct sibling Git inspection and denied
+complete resolver reads. Designer inspected the committed architecture and
+existing human-view source, not the private mirror or sibling checkout.
+Use the following operator interpretation:
 
 | Available observation | Interpretation and existing closing action |
 |---|---|
 | Architecture reports current sibling branch/HEAD and clean status | Attributed point-in-time Git evidence, not exclusive path ownership, complete root verification or permission for runner writes. Designer has not repeated that inspection. |
 | Complete resolver reads were denied after partial output | Resolver/loaded-root proof remains incomplete; do not describe all Git inspection as denied or claim wrapper compatibility. Existing Developer completes bounded verification and presents it through original ownership review. |
-| Supplied writer/integration designations and recovery-file availability | Coordination and locator availability are supplied evidence, not receipt authentication, current strict trust, accepted ownership or missing user approval. |
+| Architecture compared both named historical fingerprint fields to the supplied user-accepted value | Accepted comparison input and reference are available; do not request them again. This attributed comparison is not a current host-key observation, SSH success or authentication of historical receipts. Original DevOps verifies current source/trust through the retained strict wrapper. |
+| Supplied writer/integration designations and recovery-file availability | Coordination and locator availability are supplied evidence, not receipt authentication, current strict trust or accepted ownership. Missing substantive verification is not missing user approval. |
 | Architecture owner and original reviewers agree | Architecture deliverable complete; current ownership, source integration and actual release gates remain separate, not reasons to reopen it. |
 
 These are interpretations of existing reports, not new terminal fields,
@@ -76,6 +78,13 @@ banners, root controls or evidence storage. Private roots, full bindings,
 trust material and receipt locators stay outside customer output. Keep the
 originating ownership review and the existing integration, E2E and DevOps
 handoffs; no UX change authorizes a runner write or substitutes for their gates.
+
+For operator wording, prefer: "Accepted trust input supplied; current strict
+transport validation remains unverified." Do not say "fingerprint needed" when
+the supplied input is available, or "SSH verified" because its fields match.
+Similarly, designation supplied is not ownership accepted, and a source/root
+preparation stop is not a fresh specialist ingress failure. These distinctions
+belong in the existing operator report, not new public fields or terminal rows.
 
 Customer direction remains README goal/diagram/two-turn invariant/source map
 -> validated setup -> fresh synthetic initial conversation -> completed,
@@ -95,13 +104,11 @@ No new UI, framework, dependency, CLI flag, schema or runtime work is assigned.
 The Designer agrees with this bounded deliverable; original Product Owner
 and Critic verification is requested against the committed UX handoff.
 
-Validation for this documentation-only handoff used the existing absolute
-lab Python executable and explicit lab root: `Test-Demo.ps1` passed dependency
-checking, **204 offline tests in 57.817 seconds**, and compilation (exit 0).
-`scripts/Test-Repository.ps1` passed index, **79-public-file** boundary,
-syntax/context and whitespace checks. No dependencies were installed or lab
-source changed. These local results are not new runtime progress, formal E2E,
-Linux hosting-package validation or live acceptance.
+This invocation retains the full principles, tools, flows, wireframes,
+accessibility, evidence-to-display contract and owner handoffs below. It
+changes no README command, renderer, parser, dependency or acceptance criterion.
+The current validation results are recorded with this handoff's owner report;
+older measured checks below remain historical, not fresh execution evidence.
 
 ## Current RP-S1 retrospective — report completion without implying execution
 

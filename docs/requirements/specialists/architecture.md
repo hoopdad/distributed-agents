@@ -52,6 +52,24 @@ cases in [`tests/test_workflow.py`](../../../tests/test_workflow.py).
 
 ## Ownership and doneWhen
 
+### RP-S2 compatibility boundary, not a specialist rewrite
+
+The isolated candidate is coordinator-owned; it does not change either role's
+history-store construction, five-stage flow or `Assignment.validate_receiver()`.
+Retain both roles' existing continuation/fresh-history/no-resend fixtures when
+the candidate changes callers. The live discriminator must establish actual
+trusted ingress **and** successful receiver validation per reached role before
+claiming identity compatibility; a user-presence flag or model-generated
+identity assertion cannot do so. Architect success does not imply reviewer
+entry. Do not create a diagnostic endpoint, rekey history or import tooling.
+
+A missing/changed child principal rejects the candidate. Record the exact
+reached gate and private binding locator; carry an evidenced namespace mismatch
+to existing Architect-advised PO/Scrum scope reconciliation. Old pinned sessions
+and held operations are not adopted by a new candidate. Application-enforced
+scope ownership under account-wide Blob Contributor remains a disclosed
+limitation, not a claim of storage-RBAC isolation.
+
 Retained Developer handoff: both roles have direct continuation, fresh-history control
 and no-resend recovery assertions with existing dependency pins. Coordinate
 shared test-file ownership with the coordinator fixture work through Scrum Master.

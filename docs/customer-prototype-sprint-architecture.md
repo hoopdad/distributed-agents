@@ -10,12 +10,12 @@ Exactly three hosted deployments remain.
 
 Accepted inputs are retained, not reopened:
 
-- [Release architecture](customer-prototype-architecture.md), `2a736d94cb99c01aca0c516aeaf920e61ddb8fbd`.
-- [UX](customer-prototype-ux.md), `3ee9798afa4a419be87bcb68fdfc3540875d171a`.
-- [Release plan](customer-prototype-release-plan.md), `b0d73b07247bbadbbab9afa9a1bb85b8fa32d480`.
-- [Sprint design](customer-prototype-sprint-design.md), `46a1b50f336bb37dd1109dd062e0e654dc30ff0b`.
+- [Release architecture](customer-prototype-architecture.md), `0a244702c7ccf01f1916c4b3a2580346ffb02fea`.
+- [UX](customer-prototype-ux.md), `ef5c79d94114f156ab0d03497fafffd1e348aabf`.
+- [Release plan](customer-prototype-release-plan.md), `5449ff49af6a79dbc9fef75c1314d6689cdba6d3`.
+- [Sprint design](customer-prototype-sprint-design.md), `6d5df4256cf9239f491528226dd9502c1c185e37`.
 
-This revision inspected clean application baseline `46a1b50` on
+This revision inspected clean application baseline `6d5df4256cf9239f491528226dd9502c1c185e37` on
 `feature/customer-hosted-session-prototype`. No completed prior sprint was
 supplied. Retain the integrated RP-S1 work: coordinator fixtures `6614440`,
 direct model-continuation fixtures `c454e50`, human view `56b762e`, documentation
@@ -101,6 +101,70 @@ their actual arguments and persistence with controlled offline boundaries.
 load/model/store execution, identical-brief fresh-history controls, exact-response
 no-send recovery and failed-retrieval/existing-output cases. Preserve that
 handoff; only a concrete uncovered defect justifies a new fixture task.
+
+## October 20 cross-sprint executable handoff
+
+The accepted release architecture now distinguishes the integrated offline
+identity handoff (`13203ac`, reconciled by `bb1743d`) from a hosted candidate.
+`scripts/identity_handoff.py` has no live mode; its unresolved exit is not a
+runtime fix. The missing specialist-only client and retained decision runner
+are RP-S2 implementation deltas, not unfinished RP-S1 continuity/UX work.
+No completed prior sprint was supplied; this section carries the cumulative
+design forward without declaring RP-S1 or RP-S2 accepted.
+
+### Runtime boundary carried into RP-S2
+
+Within the existing request-owned `WorkflowRuntime.resources()` stack, keep
+the original opaque-only project/header resources and yielded tuple semantics
+for routing, parent/model/history/checkpoint operations. B receives a distinct
+specialist-only `ProjectClient`, copied headers and independent OpenAI-client
+cache, passed only to `WorkflowRemoteAgents`. Do not mutate shared headers,
+ambient hosting context or the non-specialist project. A shared credential/
+transport is allowed only with regression coverage for safe close ordering
+and cleanup on setup failure, cancellation and normal exit.
+
+Before deriving B delegation, reconstruct the full trusted
+`ScopeBinding.from_platform(...)` from captured authenticated hosting context
+and compare it to runtime scope. Move only necessary pure candidate logic to
+runtime-owned source; hosted code cannot import the offline runner. Preserve
+opaque-call forwarding and reject container-user headers, absent/forged users
+and call-ID-as-user substitution. Receiver principal equality is unchanged.
+The coordinator and specialist tier files specify the corresponding tests.
+
+There is no new runtime path selector. DevOps binds a named candidate trial
+to reviewed source, one common bundle and exact three-role versions in private
+evidence. Existing deployed A remains until deliberate guarded publication;
+no automatic switch after an error. A later required selector/settings change
+is an explicit Architect/Scrum delta, not an undeclared environment option.
+Old pinned/held conversations keep their versions, histories and journals.
+Only a fresh synthetic parent may enter this candidate; no implicit migration.
+
+### Contract-first lanes and true joins
+
+These are handoff contracts, not task IDs or new assignments. Scrum Master
+owns decomposition, actual dependencies, exclusive resources and integration.
+
+| Lane / original owner | Bounded doneWhen | Join or exclusion |
+|---|---|---|
+| RP-S1 retained source / Developer | Preserve integrated binding, revision, history and presentation fixtures; repair only affected concrete failures; hand off current checks | Do not redispatch accepted implementation or claim live proof |
+| RP-S1 fresh inventory / DevOps | Privately bind sole-target current/rollback versions, packages, protocol, identities, caller/effective action and unresolved owners/effects | Independent of candidate/runner coding; no assumed missing grant |
+| RP-S2 isolated runtime / Developer | Real resource-factory regressions prove specialist isolation, both-role lifecycle paths, trusted negatives, cleanup and exact-response zero-send recovery; application/repository gates pass | No deployment, namespace relaxation, schema/dependency/history migration or UX rewrite |
+| RP-S2 local decision tooling / DevOps | Retained runner satisfies the client-release tier contract with offline ownership, failure, redaction and unknown-effect regressions plus affected retained suite | Coding can overlap runtime/inventory; live execution cannot |
+| Git/source integration / Scrum-assigned owner | Reviewed task commits joined on the authorized feature branch, exact joined source checked; named retained branches/task/commit/reason recorded for any abandoned code | Establish lab writing ownership safely; never switch its shared dirty checkout under writers |
+| Bounded decision / DevOps | Joined runtime/tooling, fresh inventory and exact-source/Linux/package gates precede retained publication and finite trusted-ingress trial | Conditional permission plan/write/readback joins only if a required delta is evidenced; no formal E2E/cloud-pass credit |
+
+The lab was observed on `feature/swc-think-fast-aca-dns` with eight dirty/
+untracked paths. None is adopted here. Scrum must assign safe lab feature-
+branch/worktree reconciliation before any lab writing; no new human approval
+is required for that internal ownership action.
+
+The decision handoff names each reached/unreached role and returns `selected-A`,
+`selected-B` or actionable `unresolved`. Architect-only entry is not both-role
+selection or remote collaboration. Missing/changed principal, receiver rejection,
+version drift or an unknown effect stops that candidate without another send.
+A namespace or held-state contract change returns to existing Architect-advised
+PO/Scrum reconciliation; an unavailable supported provider finding is an exact
+external stop, not a reason to repeat old research or block remaining artifacts.
 
 ## Cross-tier fixture contract
 
@@ -273,7 +337,7 @@ Required source checks use existing validated Python by absolute path:
 tool changes. Revalidate final changed source/package, not historical counts.
 No dependency install without manifest change or missing-tool failure.
 
-### Verification of this documentation revision
+### Historical verification of the preceding documentation revision
 
 Using the existing validated absolute Python 3.12.10 executable, without
 dependency installation, `Test-Demo.ps1` with explicit lab root passed dependency
@@ -289,6 +353,26 @@ discrimination, permission write, publication, Linux hosting-package validation,
 formal E2E acceptance, stop/resume or live continuity/isolation occurred.
 The pre-existing unrelated lab worktree remains untouched. Final exact-source/
 common-bundle and AC1-AC9/G1-G8 live gates remain downstream obligations.
+
+### Verification of the October 20 cross-sprint refinement
+
+Using the existing absolute validated Python 3.12.10 executable with the
+explicit lab root, `Test-Demo.ps1` passed dependency checking, **186 offline
+tests in 18.803 seconds**, and compilation. `scripts/Test-Repository.ps1`
+passed index, public-boundary (**73 public files**), JSON, PowerShell, context
+frontmatter and whitespace checks. A local read-only documentation check passed
+**34 relative links/anchors across all four architecture documents**, the four
+accepted input commit references, lane/join fields and AC1-AC9/G1-G8 coverage.
+The index was refreshed using `scripts/repo_index.py`; no paths were added or
+deleted. No dependencies were installed.
+
+These source/document results do not select A or B or close AC7's final Linux/
+hosting-package requirement. No runtime, lab tooling or permission changed;
+the full retained lab suite was therefore not rerun. No settings import, cloud
+inventory, permission readback/write, inference, deployment, Linux package
+check, formal E2E or live continuity/recovery/isolation test occurred.
+The original UNKNOWN and held state are preserved; existing accepted upstream
+votes do not supply votes for this sprint architecture refinement.
 
 Architect handoff is this cumulative sprint design, navigable tier contracts
 and concrete unresolved-blocker disposition, committed for original Product

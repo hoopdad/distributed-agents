@@ -68,6 +68,34 @@ to a new namespace by inference.
 
 ## Recovery and handoff
 
+### Executable candidate handoff to RP-S2
+
+The accepted [request-local client design](../../customer-prototype-architecture.md#request-local-client-ownership-and-unchanged-trust)
+replaces the earlier conditional isolation advice with a concrete B candidate
+contract. Keep the original resources tuple and opaque-only client authority.
+Create a separate specialist `ProjectClient`, copied header mapping and
+OpenAI-client cache inside the same request-owned stack, supplying only
+`WorkflowRemoteAgents`. Validate the complete captured platform-derived
+`ScopeBinding` against runtime scope before building delegation. Pure runtime
+logic may be extracted from the offline handoff; production cannot import it.
+
+Real `WorkflowRuntime.resources()` tests must inspect routing/non-specialist
+resources as well as remote ones, not merely stub the resource factory:
+
+| Boundary | Required observation |
+|---|---|
+| prepare / metadata | Raw SDK requests retain opaque call context and candidate-only user delegation |
+| create / check / recover_creation | Both roles retain the exact pinned child/version and header authority; unknown create is inspected, not repeated |
+| invoke / recover | Responses default-header path is isolated; restored framework identity is retained and known-response retrieve performs zero sends |
+| Non-specialist operations | Original header values/client cache/ambient context are unchanged; no specialist delegation reaches routing, model or parent state |
+| Lifetime / negatives | Independent caches and cleanup on success, setup failure and cancellation; missing/forged/changed binding and cross-parent inputs fail closed |
+
+Bind the trial to source/package/versions, not a new selector or automatic A/B
+fallback. Use a fresh synthetic parent only. The runtime handoff ends at reviewed
+source/tests and passing local checks; DevOps joins it with retained tooling,
+inventory and package gates. Existing fixture doneWhen below remains accepted
+implementation history, not the new candidate's completion evidence.
+
 Known hosted response recovery retrieves the exact response for the pinned
 child, advances its framework continuation and sends nothing. Unknown effect,
 expired/mismatched binding, uncertain creation and provenance failure stay held.

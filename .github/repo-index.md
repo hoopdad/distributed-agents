@@ -21,7 +21,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three sprint goals/acceptance contracts; October 20 parallel isolated-candidate, inventory and lab-runner work packages; explicit Git/source integration, conditional permission edge, finite ingress decision and unchanged E2E/DevOps final gates |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Sprint-specific README/terminal screens, ordered revision trace, incomplete/recovered-event behavior and fixture-to-display implementation handoff |
-| RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative design and logical-tier contracts for exact binding fixtures, direct model continuation, unchanged terminal projection and independent supported-remedy assessment |
+| RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative retained fixtures/presentation; October 20 RP-S2 specialist-only client, receiver/history compatibility, finite lab decision runner and integration joins |
 | RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Dispatch-ready original-role tasks, minimal handoff dependencies, parallel file ownership, shared release resources and explicit Git/source integration |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
@@ -181,7 +181,19 @@ No paths added/deleted, runtime/CLI/schema/ownership boundary changes.
 Prior-loop completion dispositions remain confined to their originating work;
 SprintDesign review and downstream live/package gates remain separate.
 
-Current SprintArchitectureLoop freshness: inspected clean baseline `46a1b50`,
+Current SprintArchitectureLoop freshness: inspected clean baseline
+`6d5df4256cf9239f491528226dd9502c1c185e37`, accepted release architecture
+`0a24470`, UX `ef5c79d`, release plan `5449ff4` and sprint design `6d5df42`.
+Updated the existing cumulative sprint and three logical-tier contracts with
+concrete RP-S2 isolated-client/resource-factory tests, unchanged specialist
+receiver/history boundary, deterministic lab-runner implementation and true
+integration joins. Retain accepted RP-S1 fixtures/UX; no redispatch or new
+runtime selector. Lab dirty branch/files remain untouched; Scrum assigns safe
+lab writing/Git reconciliation. No added/deleted paths, runtime, dependency
+or schema changes. Identity selection, formal E2E and DevOps cloud-pass remain
+unresolved downstream, not claims of this architecture revision.
+
+Previous SprintArchitectureLoop freshness: inspected clean baseline `46a1b50`,
 accepted release architecture `2a736d9`, UX `3ee9798`, release plan `b0d73b0`
 and sprint design `46a1b50`. Reconciled the cumulative sprint and three existing
 logical-tier contracts with integrated fixtures (`6614440`, `c454e50`), human

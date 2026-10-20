@@ -68,6 +68,41 @@ Completed research does not pass the live release goal.
 
 ## Release ownership and later gates
 
+### RP-S2 deterministic local runner: implementation contract
+
+The accepted [decision-runner design](../../customer-prototype-architecture.md#deterministic-decision-runner-contract)
+is required behavior, not an implemented CLI. `scripts/identity_handoff.py`
+remains offline-only. Original DevOps implements the retained lab runner,
+independently of runtime coding and fresh inventory, with these joined inputs:
+absolute application/lab roots and validated Python, explicit `A-correction`
+or `B-candidate` scenario, reviewed source/common package/exact role versions,
+fresh context/inventory and private evidence destination outside both repos.
+No new deployment owner or acceptance ledger is introduced.
+
+| Phase | Fail-closed contract |
+|---|---|
+| Preflight | Use only application settings loader/native settings; verify sole target and dedicated authenticated context; read back actual caller/effective grants and rollback/held records |
+| Ownership | Serialize actual publisher/CLI/transport/mount mutation across runs; scheduler names alone are insufficient; journal intended effects and exact bindings before dispatch |
+| Finite trial | Predeclare one fresh synthetic parent and architect-then-reviewer sequence using existing assignments/exact prerequisites; reviewer waits for trusted architect entry/receiver success; retain routing/deadline/admission budgets |
+| Observation/recovery | Bind private actual role/version/parent/child/framework/response/artifact scope; public presence/match/entry classes only; known exact response retrieval sends nothing; absent observation stays unknown |
+| Stop/result | Missing/changed principal, receiver failure, version drift or uncertain create/send holds; return selected-A/selected-B/unresolved, reached/unreached roles, permission delta/readback, private locators, owned cleanup and next action |
+
+Offline runner tests cover competing owner, failure before/after dispatch,
+unknown publication/create/send, known-response zero-send inspection, redaction
+and partial-role results. Extend retained App/Observe tools if necessary;
+never substitute ad hoc commands or an unprotected diagnostic endpoint.
+Reviewed runtime and tooling integrate before any trial, followed by exact
+source/Linux/package gates and retained preview/publication in DevOps.
+Only a demonstrated necessary permission delta adds scripted plan/write/readback
+as a dependency. Permission readback is not runtime success. No unchanged A
+retry, automatic path fallback or automatic new parent after failure is permitted.
+
+Scrum assigns actual lab file/Git ownership before writing: the observed shared
+lab branch has unrelated dirty work and must not be switched under writers.
+Keep reviewed task commits or durably record task, retained branch, commits
+and abandonment reason on the feature branch. This implementation handoff
+does not move formal E2E validation or DevOps cloud-pass into architecture.
+
 Formal integration validation remains in the original E2E loop. Bounded scripted
 decision tests during architecture/planning establish selection evidence only.
 Use local repository scripts for E2E and DevOps, never GitHub Actions; a needed

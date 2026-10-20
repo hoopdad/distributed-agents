@@ -1,6 +1,190 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Sprint design entry: RP-S1 continuity screens and operational-context handoff (October 20, 2026)
+## Current RP-S2: validated source to guarded collaboration (October 20, 2026)
+
+This invocation selects **RP-S2**. Application baseline is clean feature commit
+`8e4019bd45dfbfb0ed1063523685b779f445f95d`. Consume Architecture and
+UserExperience at that retrospective commit, ReleasePlan at `835713a`, and the
+accepted structured RP-S2 status returned by the retrospective. The retained
+[RP-S2 contract](customer-prototype-release-plan.md#product-priority-and-bounded-increments)
+still requires actual final common-bundle G1-G4 and a completed non-held
+initial parent. Its source-correction clauses are already satisfied handoffs,
+not work to repeat. The latest review's Linux-engine readiness, fresh inventory
+and measured-status refinements remain with their original execution owners.
+
+Designer opened the supplied original review, retrospective, E2E, DevOps and
+RP-S1 SprintDesign outcome JSONs under run
+`bf0d82d9-657b-4055-9f7c-6306ce08163d/context`. All record agreement and their
+original reviewers' taskComplete votes with no unmet criteria for those
+bounded deliverables. In particular, E2E accepted **local integration PASS /
+release acceptance FAIL**; DevOps accepted preparation, not cloud-pass.
+Those votes neither accept this RP-S2 design nor prove live collaboration.
+Earlier entries below are retained history; this entry governs current
+RP-S2 screen/status routing without rewriting their historical observations.
+
+### Current journey and canonical screen map
+
+```text
+A customer entry: goal -> three hosted roles -> stable-session invariant
+  -> dated BLOCKED notice -> conditional setup/demo and short source path
+F operator entry: accepted exact source join -> current execution readiness
+  -> Linux engine/hosting-package gates + selected private-route inventory
+  -> exact common package, source/settings/ZIP closure and fresh preview
+G serialized guarded publication -> architect trusted ingress -> reviewer
+  -> supported identity decision -> accepted artifacts/private Blob/Decision-1
+  -> completed non-held initial parent and final common-bundle G1-G4?
+     no: precise reached boundary/hold -> existing closing owner; no blind retry
+     yes: B useful initial design/review -> RP-S3 continuity/recovery/isolation
+```
+
+This is navigation guidance, not an executed transcript or a new script.
+Inventory and Linux readiness may be prepared independently with appropriate
+resource ownership; do not add an identity-trial dependency to inventory.
+Publication/transport/context/mount effects remain serialized under one
+original DevOps owner. Isolation later consumes its own final-release
+prerequisites, not successful recovery.
+
+| RP-S2 canonical flow / steps | Components and retained screen behavior |
+|---|---|
+| **Exact-source guarded release** / `release-join` | **Guarded lab release toolchain** consumes accepted correction/integration and original E2E. F states the exact reviewed source boundary and outstanding operational evidence; it does not reopen ownership or advertise context propagation as unimplemented. |
+| **Exact-source guarded release** / `release-package` | **Guarded lab release toolchain** and **Trusted identity and private transport** establish actual selected-route prerequisites, fresh target/rollback/effect inventory, Linux/amd64/hosting-Python checks and immutable common-package closure. F separates each observed result from unreached gates. |
+| **Exact-source guarded release** / `release-discriminate` | Toolchain serializes publication and finite source-bound architect-before-reviewer trials through the three hosted roles, identity boundary and **Private Blob artifacts and effect journal**. G separates preparation, partial ingress, selected path and final G1-G4 evidence. |
+| **Remote design and review** / `collaboration-bind`, `collaboration-route` | **Terminal client** submits synthetic requirements to **Hosted coordinator** through trusted transport. Artifact scope, **Decision-1 routing and admission** and **MAF workflow checkpoints** support deterministic gates and genuine routing. A is conditional entry; F/G must not invent a parent or routing success when execution is unreached. |
+| **Remote design and review** / `collaboration-design`, `collaboration-review` | **Hosted coordinator** calls **Hosted architect**, then **Hosted reviewer**, with **Parent and specialist conversation state** and exact current artifacts. G records only actually reached roles; B retains chronological completed-call observations, including repeated specialists. |
+| **Remote design and review** / `collaboration-return` | Coordinator validates current provenance/revisions and fenced acceptance; B returns useful design/recommendation through Terminal client. D takes precedence for held or invalid finalization. Advisory acceptance alone is not release success. |
+
+### Screen F: readiness evidence without stale configuration claims
+
+Reuse the existing operator report channel and
+[F layout](#screen-f-operator-boundary-report), not terminal stderr events or
+a new evidence schema. Read top to bottom: current boundary/status, evidence
+scope/attribution, what is missing, then next owner/action. Concrete example
+copy below is a design illustration based on the opened audits, **not fresh
+Designer execution output**:
+
+```text
+RP-S2 | release BLOCKED | source join locally validated
+Source: accepted context correction + changed-source E2E; not cloud acceptance
+Preparation: DevOps reports prerequisite ARM/model metadata/host-trust checks
+Linux engine: DevOps reports docker info exit 1; selected endpoint missing
+Not established: Linux hosting package, selected private route and fresh
+  deployed/rollback inventory, final publication and live G1-G4
+Next: original DevOps resolves current readiness through retained local scripts
+Identity decision: unresolved; historical ingress failure is not a new result
+```
+
+Do not collapse these observations into "all authentication unverified":
+DevOps reports successful dedicated-context account/ARM checks. They do not
+establish WSL authentication, SSH transport, managed-identity Blob operations
+or hosted specialist ingress. Supplied accepted host trust is not SSH success.
+The missing Docker Linux-engine endpoint establishes engine unavailability
+for that observation, not its cause, a required installation or a user-only
+action. Do not turn it into an invented missing permission or provider defect.
+
+Windows helper source/pin acceptance is relevant **only if that transport is
+selected**. The retained WSL route has its own user/systemd/containment,
+profile/azd and read-only-mount guards; it does not depend on unused Windows
+helper acceptance. Never offer the unaccepted standalone launcher as a third
+route. Developer context propagation is accepted, including its packaging
+caller; no duplicate implementation, recapture, new profile or credential copy.
+
+Keep `ApplicationRoot` (source), `LabRepositoryRoot` (reviewed loaded tools)
+and `OperationalLabRoot` (existing imported dedicated context) separate in the
+private operator handoff. The explicit context contract is now implemented,
+not a customer terminal flag or proof of account/package/live success. Actual
+roots, profile values, target identifiers and evidence paths remain private.
+
+### Screen G: observed role outcomes and the initial-parent exit
+
+Reuse [G's outcome table](#screen-g-finite-trial-outcome-and-transition).
+Preparation rejection has no fabricated architect/reviewer result; show
+"not observed" rather than zero creates/sends unless measured counters exist.
+An architect-only result leaves the reviewer unreached. An observed receiver
+rejection names its actual role/gate, not an inferred platform cause.
+Unknown effects or version drift preserve the exact held state; no resend,
+replacement parent or automatic A/B fallback.
+
+Both-role trusted ingress/equality evidence can select a supported identity
+path, but is **not G1-G4 completion**. G must distinguish that decision from:
+three healthy exact deployed versions on one final verified common bundle;
+rollback preserved; exact current remote artifact acceptance; actual private
+managed-identity Blob provenance; genuine Decision-1 and deterministic final
+gates; and a completed non-held initial parent. HTTP 200, a package upload,
+metadata or agreed reports cannot supply those observations. Never relabel
+unconditional B candidate source as a tested A correction.
+
+Only that real exit hands the original acceptance parent to RP-S3. Preserve
+the existing same-file queue follow-up guard and independent binding checks.
+No new follow-up, supported stop/resume or isolation control is implemented
+or executed in this design. Historical UNKNOWN operations, held parents,
+rollback assets and historical cleanup uncertainty remain visible; no display
+or later cleanup certifies their closure.
+
+### Screen A/B/D presentation and existing-owner handoff
+
+Retain goal/diagram/two turns/invariant before diagnostics, short source path
+and existing conditional `--native --view human` commands. The accepted README
+still says the configuration correction is required; existing measured-status
+closeout updates it without reopening accepted README `f4ec1496`. Suggested
+status copy, consistent with the accepted retrospective UX:
+
+> Release BLOCKED, not customer-ready. The operational-context correction and
+> local source-join checks are complete. Actual Linux hosting-package checks,
+> selected private-route readiness, fresh deployed/rollback inventory, final
+> common-bundle publication and live collaboration/continuity/recovery/isolation
+> remain outstanding. The historical ingress failure is not a fresh test result.
+
+README and the release ledger should agree at measured closeout; this is no
+new UI assignment or deployment gate. B still renders useful finalized current
+design/review, ordered repeated calls and safe aliases on opt-in human stderr;
+stdout, default parent header, machine delegation/result contract and parser
+remain unchanged. Alias equality is not exact continuity proof. D's held/
+invalid/incomplete state overrides success-looking prose; known-response
+retrieval is no resend, not a new invocation.
+
+Retain terminal-default light/dark colors, explicit status words rather than
+color-only meaning, narrow-width stacked/wrapped details and control-character
+neutralization with a data prefix on every generated line. No progress spinner,
+new public fields, identifier disclosure, fabricated transcript, browser UI,
+new renderer, model call or dependency is required. Share only synthetic
+content; omit `--show-ids`. Account-wide Blob Contributor provides
+application-enforced role/parent isolation, not malicious-host storage isolation.
+
+Scrum owns precise tasks, minimal edges, exclusive resources and Git
+reconciliation. Original E2E checks any relevant changed join; original DevOps
+alone executes readiness, Linux/package, guarded publication and live trials.
+The existing clarity/closeout owner refreshes measured status later. Product
+Owner/Critic review this bounded screen/flow deliverable, not a live release.
+No user-only action is established; show an actual supported device URL/code
+privately only if authentication actually requests it.
+
+### Prior dispositions and bounded design validation
+
+Read all supplied prior dispositions by provenance. The two references under
+`yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop` (`sprint-plan-output-shape`,
+`sprint-plan-original-dispatch`) apply to their originating planning boundary.
+The three under
+`yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-OPERATIONAL-CONTEXT/plan-round/2/AssignedWorkDeveloperLoop`
+(`operational-context-caller-completion`, `operational-context-final-checks-handoff`,
+`operational-context-package-caller-ownership`) are consumed through accepted
+correction/integration and original E2E, not reopened or waived.
+`["yaml-loops-v1:sprint/1/RP-S1/SprintRetroLoop","retrospective-release-plan-response-shape"]`
+is satisfied in the opened accepted retrospective response and does not
+require returning or editing ReleasePlan in this SprintDesign loop.
+No disposition supersedes unrelated Linux/live acceptance. The original
+five-consecutive-no-progress rule and originating stops remain binding.
+
+Inspection references: original RP-S1 SprintDesign `1d7bad13…`, E2E
+`abd55a79…`, DevOps `b53113c5…`, SprintReview `f2f25e66…` and SprintRetro
+`01e02e83…` in the supplied run context. This design independently inspects
+their agreements and scoped findings, not the original execution records or
+private state. No lab, runtime, README, settings, workflow/input or operational
+resource changes are made. No unchanged runtime suites are repeated for
+progress credit. Current document/repository checks and the scoped design
+commit are reported in the owner response. Original Product Owner/Critic
+votes remain pending; design completion does not satisfy the live sprint goal.
+
+## Historical RP-S1: continuity screens and operational-context handoff (October 20, 2026)
 
 The current task selects **RP-S1**, not the older RP-S3 entry below. Consume
 Architecture `f5fc1dec9b01e98745268e359808f3021a8906de`, UserExperience

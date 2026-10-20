@@ -1,5 +1,109 @@
 # Sprint design: understandable, evidence-ready continuity
 
+## Current RP-S1 recovery-entry design (October 20, 2026)
+
+This is the current **RP-S1 SprintDesign** overlay. Inspected clean application
+baseline `68c5bd8d8b2835b0f329b4bac5821ddb78809b36` on
+`feature/customer-hosted-session-prototype`. Consume agreed Architecture
+`2f62e3ca5353fdbc3433e1f49fdf9133f95dacbc`, UserExperience
+`8d6d6e05469e6a180db5cba0f77e07f7ff21a3af` and ReleasePlan
+`68c5bd8d8b2835b0f329b4bac5821ddb78809b36` through their linked documents
+below. Older RP-S1/RP-S2/RP-S3 slices and verification snapshots remain
+historical or retained contracts, not fresh observations or new assignments.
+
+Apply exact prior references
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-agreed-deliverable"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-close-agreed-deliverable"]` and
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-close-agreed-deliverable"]`
+within their originating boundaries. None is reopened or supplies this
+SprintDesign's Product Owner/Critic votes. No new assignments, distinct blocked
+backlog list or reconciled correction feedback was supplied for this turn.
+The remaining design decision is how to interpret recovery preparation in the
+retained screens, not how to redesign accepted customer presentation.
+
+### Current sprint flow and screen selection
+
+```text
+Customer: Screen A goal/diagram + blocked notice + implemented demo syntax
+  -> validated setup and current compatible release evidence (execution owners)
+  -> Screen B initial turn, useful current design/review
+  -> completed and non-held only: same-session queue follow-up, Screen B
+  -> exact continuity comparisons stay in the separate private report
+
+RP-S1 engineering, independent of that currently unreached live journey:
+  accepted README/terminal + two-turn/revision/history fixtures -> retain/check
+  supplied historical recovery locator -> existing bounded read-only inspection
+    +-> Developer/Scrum: point-in-time writing ownership -> runner/integration
+    +-> transport owner/DevOps: current strict trust -> authenticated inventory
+  matched operational wrapper/source + reviewed runner -> formal E2E/DevOps
+  -> supported identity decision or actionable unresolved finding -> RP-S2
+```
+
+These are journey lanes, not task dispatch or extra dependency gates. Inventory
+does not wait for runner coding; accepted source/fixtures do not wait for either.
+No new web screen, identity selector, root picker, retry button, banner, public
+event, ledger or renderer behavior is requested. Keep existing plain text,
+default light/dark colors, explicit status words and control neutralization.
+Stdout/delegation/result parsing remains unchanged; the opt-in human view
+remains a finalized stderr projection, not streaming proof or verified badges.
+
+### Recovery-entry report states using existing screens
+
+The following table defines report content, not literal new terminal output.
+It applies Screens D and F to the current accepted recovery-entry inputs.
+Historical evidence availability supersedes only older missing-locator
+descriptions, not the stopped ownership task or current trust requirements.
+
+| Reached boundary | Report interpretation and existing next owner |
+|---|---|
+| Historical summaries/receipts now locatable through the supplied private handoff | Historical evidence available; current writer ownership, source/trust and inventory unverified. Developer/Scrum and transport owner/DevOps inspect their respective evidence. Do not ask for already-authorized bounded read-only inspection. |
+| Registered sibling and resolver matrix available, no point-in-time writing handoff | Preparation incomplete, no runner writes. Developer/Scrum reconciles actual owned paths/preservation and originating review; registration is not exclusivity. |
+| Runner and operational wrapper roots mismatch, or required wrapper revision absent at execution root | Preparation/integration incomplete; no inference/publication. Integration supplies reviewed matched source and operational wrapper roots, preserving `LAB_TOOL_OWNER_MISMATCH`. A customer root override is not a repair. |
+| Historical trust receipt available, current module/source/fingerprint not established | Current transport unverified; transport owner/DevOps verifies existing approved source and strict trust before Metadata. Historical closure does not certify current or original-UNKNOWN cleanup. |
+| Preparation passes but architect trusted ingress is not reached | Report the actual preparation/transport boundary, not a new `NATIVE_HOST_PRINCIPAL` diagnosis. Original DevOps supplies the finite trial result when enabled. |
+| Architect succeeds, reviewer not reached or fails | Partial-role decision evidence only; reviewer and three-role acceptance remain unmet. No follow-up demonstration or README success claim. |
+| Both trusted receiver checks succeed | Supported identity decision evidence, not final G1-G4 or continuity. Original E2E/DevOps still supply exact integrated-source/package and live release gates. |
+| Publication/invocation outcome uncertain or existing effect held | Screen D hold precedence: preserve state, no blind resend, no replacement parent to conceal uncertainty; known-response retrieval only where supported. |
+
+Keep exact roots, receipts, trust material, full bindings and transcripts in the
+private handoff. Shareable reports identify evidence scope, reached/unreached
+roles and the existing closing owner/action, not private locators or raw logs.
+Preserve the historical stopped ownership reference documented in the accepted
+architecture; this overlay does not reopen that assignment or claim its review.
+
+### RP-S1 exit and implementation handoff
+
+| Sprint acceptance slice | Retained screen/fixture and bounded handoff |
+|---|---|
+| Two-turn parent/both-child hosted/framework bindings and pins, two creations, new responses, current requirements and stale-approval invalidation | Screen B; Developer/integration retains existing assertions. Aliases remain observations; private exact comparisons supply proof. Live AC1/AC2 remains downstream. |
+| Repeated architect/reviewer calls and direct model-history continuation | Screen C's offline four-call trace and both-role restored-history/fresh-history controls remain separate evidence. Do not infer history from a replayed brief or collapse repeated calls. |
+| Readable README and opt-in presentation, unchanged machine contract | Screens A-D and implemented README commands remain the implementation direction. No duplicate presentation task; update release status only from actual dated evidence. |
+| Applicable checks and supported decision baseline or actionable unresolved finding | Original owners report checks actually run and the exact unresolved boundary/closing action. RP-S1 preparation may finish without identity selection; this cannot satisfy RP-S2 live goals. |
+
+Designer owns this overlay and navigation only. Scrum Master assigns remaining
+work, minimal dependencies, exclusive resources and Git reconciliation; reviewed
+integration/push, formal E2E and guarded local-script DevOps execution retain
+their original owners. No deployment, live test, private receipt authentication
+or measured customer usability is performed by this design assignment.
+Historical UNKNOWN effects, held parents and rollback assets remain preserved.
+Account-wide Blob access means application-enforced isolation, not storage-RBAC
+or malicious-host isolation. Designer accepts this bounded flow/screen handoff;
+current Product Owner and Critic agreement is still required.
+
+### Checks for this recovery-entry overlay
+
+With the existing absolute canonical-lab Python 3.12.10 executable and explicit
+lab root, `Test-Demo.ps1` passed dependency checking, **204 offline tests in
+52.185 seconds**, and compilation. `scripts/Test-Repository.ps1` passed index,
+**78-public-file** boundary, JSON/PowerShell/context and whitespace checks.
+Structural checks passed all 18 relative links, balanced fences and current
+scope/disposition/root-boundary references. No dependencies were installed.
+These repeated local checks validate retained source and documentation, not
+new runtime capability or live acceptance. No lab source changed; retained lab
+release and Linux hosting-package suites were not run. No cloud operation,
+private receipt inspection, identity trial, deployment, stop/resume or push
+was performed. The historical verification sections below remain historical.
+
 ## RP-S3: continuity, supported recovery and truthful delivery
 
 This is the **RP-S3 SprintDesign** slice, based on inspected clean application

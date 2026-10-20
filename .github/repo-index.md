@@ -160,12 +160,17 @@ No paths added/deleted, runtime/CLI/schema/ownership boundary changes.
 Prior-loop completion dispositions remain confined to their originating work;
 SprintDesign review and downstream live/package gates remain separate.
 
-Sprint-architecture freshness: based on accepted SprintDesign `4c8511d` and
-the accepted release architecture/plan, preserving the same 17 dirty paths.
-Added `docs\customer-prototype-sprint-architecture.md` and three derived
-logical-tier architecture files under `docs\requirements`; no prior sprint
-was supplied. These are not copied delivery requirements or new services.
-No runtime, dependency, event schema or deployment ownership changed.
+Current SprintArchitectureLoop freshness: inspected clean baseline `46a1b50`,
+accepted release architecture `2a736d9`, UX `3ee9798`, release plan `b0d73b0`
+and sprint design `46a1b50`. Reconciled the cumulative sprint and three existing
+logical-tier contracts with integrated fixtures (`6614440`, `c454e50`), human
+view (`56b762e`) and source reconciliation (`24b883f`); do not redispatch them.
+Added the authorized A/B/unresolved scripted selection handoff, lifecycle/
+principal-namespace compatibility and exact scoped permission/readback boundary.
+Prior completion dispositions remain confined to their originating outputs.
+No added/deleted paths, runtime, dependency or event schema changes; E2E and
+DevOps retain formal validation and publication/cloud-pass respectively.
+Neither identity path nor final package/live gates are proven by this revision.
 
 Sprint-plan freshness: based on accepted SprintArchitecture `202e381` and
 SprintDesign `4c8511d`, with the same 17 pre-existing dirty paths preserved.

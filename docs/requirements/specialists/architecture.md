@@ -24,7 +24,13 @@ After exact immutable output writes, `store_design()` / `store_review()` clear
 pending state and persist history. Existing-output recovery checks provenance
 and reconciles history; it is not permission to generate another output.
 
-## RP-S1 proof boundary
+## Retained RP-S1 proof boundary
+
+[`tests/test_specialist_continuity.py`](../../../tests/test_specialist_continuity.py)
+already implements the direct continuation/fresh-history/recovery fixtures
+below for both real roles (`c454e50`, integrated by `24b883f`).
+Retain these tests and their negative controls; source presence is not fresh
+execution or live specialist success.
 
 For each real role, use controlled external model/session-store/Blob adapters
 but execute the actual load, model and store stages. Capture store config/context,
@@ -46,7 +52,7 @@ cases in [`tests/test_workflow.py`](../../../tests/test_workflow.py).
 
 ## Ownership and doneWhen
 
-Developer handoff: both roles have direct continuation, fresh-history control
+Retained Developer handoff: both roles have direct continuation, fresh-history control
 and no-resend recovery assertions with existing dependency pins. Coordinate
 shared test-file ownership with the coordinator fixture work through Scrum Master.
 Exclusions: no new history store/schema, model-memory claim from artifacts,
@@ -57,3 +63,16 @@ Historical missing trusted user fails before these stages execute. Passing
 offline history tests does not repair that host gate or prove live MI Blob
 operations. Supported-remedy research remains independent; remote accepted
 outputs and private provenance must pass live AC1/AC5 G2-G3 downstream.
+
+For either authorized A/B repair, preserve trusted platform identity and
+`Assignment.validate_receiver()` principal/version/child/prerequisite checks.
+A nonempty child user does not prove it matches the parent namespace.
+If delegation changes that namespace, stop the candidate and use the existing
+Architect/PO contract decision; do not trust the assignment's claimed identity,
+rekey history or adopt held sessions under a different principal. Both roles'
+hosted/framework and model-history boundaries require compatible identity
+through creation, send and exact-response recovery. No specialist impersonation
+grant is needed merely to receive a call. Required coordinator grants are
+narrowly authorized and documented under the
+[sprint decision contract](../../customer-prototype-sprint-architecture.md#identity-path-decision-contract-for-this-sprint);
+permission presence/readback alone cannot prove specialist execution.

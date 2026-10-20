@@ -7,11 +7,12 @@ This logical tier adds neither a service nor a release owner.
 ## Presentation contract
 
 [`demo/terminal.py`](../../../demo/terminal.py) remains the Windows terminal.
-`--view human` is proposed, not implemented by this document. Developer implements
-the accepted opt-in view on stderr; identical input keeps identical stdout,
+`--native --view human` is implemented (`56b762e`, integrated by `24b883f`).
+Retain the opt-in, finalization-evaluated view on stderr; identical input keeps identical stdout,
 existing default behavior, delegation/result schemas and
 [`live_acceptance.py`](../../../live_acceptance.py) parsing unchanged.
 
+This is one finalized summary, not streaming or invented intermediate findings.
 Use complete parsed records, preserve repeated calls in order, and finalize
 before an accepted summary. Fragmented/recovered prefixes cannot become duplicate
 invocations; missing/multiple/malformed results or pending effects cannot become
@@ -31,10 +32,11 @@ truthful historical live status. Keep chronology in the recovery plan.
 Shareable commands use synthetic input, private state, safe aliases and only
 implemented syntax. Follow-up requires a completed, non-held first turn.
 
-Developer doneWhen: implemented view/README plus fixtures for stdout/parser
+Retained Developer doneWhen: implemented view/README plus fixtures for stdout/parser
 compatibility, missing evidence, fragmented/recovered streams, finalization,
 holds and hostile/multiline content. Designer reviews against accepted screens.
-No browser UI, parser replacement, live success from aliases or CLI stop command.
+Do not redispatch that integrated implementation. No browser UI, parser
+replacement, live success from aliases or CLI stop command.
 
 ## Fresh inventory and supported-remedy research
 
@@ -45,16 +47,33 @@ Architect/Developer research source/date/version-specific supported remedies;
 historical matching call context/missing trusted user is unresolved, not proof
 of missing RBAC or a provider defect.
 
-Research doneWhen: supported correction with a concrete reproducer and held-state
+Use the [sprint A/B/unresolved decision contract](../../customer-prototype-sprint-architecture.md#identity-path-decision-contract-for-this-sprint)
+and accepted release architecture, including trusted namespace compatibility at
+every SDK lifecycle boundary. Neither path is currently live-proven.
+The prior bounded remedy research is retained but does not dispose of the newly
+authorized delegation path. Necessary lab RBAC/permission changes for a supported
+path are already authorized when exact scope and rationale are documented.
+Resolve the actual caller/targets/effective action first; avoid duplicate grants.
+Reviewed deterministic lab scripts own plan/write/readback and unknown holds.
+No new infrastructure, identities or broad convenience roles are authorized.
+
+Research/decision doneWhen: supported correction with a concrete reproducer and held-state
 implications, or actionable negative finding specifying the missing exact-pair
-caller-resolution trace/documented remedy. No provider submission/private transfer,
-speculative publication, new permission/network/infra or uncertain-effect replay.
+caller-resolution trace/documented remedy after evaluating the supported
+alternatives. Record selected-A/selected-B/unresolved, actual tests, exact private
+evidence locators, principal compatibility, permission scope/rationale, held
+effects and closing action. No provider submission/private transfer,
+speculative publication, unrelated permission/network/infra or uncertain-effect replay.
 Completed research does not pass the live release goal.
 
 ## Release ownership and later gates
 
+Formal integration validation remains in the original E2E loop. Bounded scripted
+decision tests during architecture/planning establish selection evidence only.
+Use local repository scripts for E2E and DevOps, never GitHub Actions; a needed
+deployment still follows DevOps source/Linux/package gates and retained publisher.
 Original DevOps exclusively owns retained packaging, preview, WSL publication
-and live testing with explicit ApplicationRoot/LabRepositoryRoot. Serialize
+and cloud-pass with explicit ApplicationRoot/LabRepositoryRoot. Serialize
 publisher/shared CLI/stage and transport/mount resources. Preserve strict SSH,
 read-only mount, private evidence outside both repositories, exact source/settings/
 ZIP hashes, allowlists, dependency provenance, actual Linux/amd64/hosting-Python

@@ -20,7 +20,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current successful direct sibling Git inspection versus denied complete resolver reads, supplied writer/integration designations and unchanged originating ownership review; matched operational roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; current attributed successful sibling Git versus incomplete resolver proof, supplied designations versus original ownership acceptance, unchanged machine contract |
-| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current recovery-entry RP-S2 review at `61a99cb`: blocked demo, accepted outgoing application audit and E2E FAIL versus attributed exit-2 trust stop; existing ownership/trust/runner/integration/actual G1-G4 closing lanes and unavailable RP-S3 initial-parent handoff; older overlays remain history |
+| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current recovery-entry RP-S3 review at `89dfd9f`: blocked demo, accepted executable/observation handoff and E2E FAIL versus attributed local-only DevOps observations; existing ownership-evidence access, independent trust, actual integration, G1-G4 and continuity/recovery/isolation/delivery closing actions; older overlays remain history |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S3 maps absent initial-parent handoff to blocked F/K, conditional H two-turn comparison, I once-only supported recovery, J independent isolation and K truthful delivery; retains accepted A-D/F-G/parser/privacy contracts, attributed RP-S2 exit-2 stop and original execution owners; older overlays remain history |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S3 consumes accepted RP-S2 architecture/retro and RP-S3 design; missing non-held initial parent blocks live continuation, actual both-role continuity, once-only supported recovery, independent isolation and truthful exact-release delivery; retains ownership/trust/integration and original E2E/DevOps gates without duplicate offline implementation; prior overlays retain history |
@@ -40,6 +40,14 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+RP-S3 SprintReview freshness: inspected clean authorized feature HEAD
+`89dfd9f94fbbdcb96d1264e96fb53f3224a5831c`; updated only release-plan
+review and this navigation, no added/deleted paths. Supplied original
+Developer/E2E/DevOps outcomes remain attributed, not fresh private/cloud proof.
+Retains substantive originating ownership acceptance, independent strict trust,
+actual loaded-root integration, formal E2E and exact-package/live gates.
+No completed non-held initial parent, task-code reconciliation, deployment,
+push or successful demonstration is established by this documentation review.
 RP-S3 SprintPlan freshness: inspected clean authorized feature HEAD
 `cb85ce076592454dfc5d2e3ac6b657a06b554cfa`; refreshed only the existing
 RP-S3 plan and this navigation; no added/deleted paths. Consumes accepted

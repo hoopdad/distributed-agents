@@ -1,5 +1,85 @@
 # Customer hosted-session prototype: release plan
 
+## RP-S3 sprint review at recovery-entry baseline (October 20, 2026)
+
+**Demonstration: BLOCKED; customer-ready: no.** This Product Owner review
+consumes the supplied RP-S3 Developer, E2E and DevOps reports and their
+original reviews. Fresh application inspection found clean feature HEAD
+`89dfd9f94fbbdcb96d1264e96fb53f3224a5831c`. No live demonstration,
+transport, inference, stop/resume or publication was attempted by this review:
+the actual reviewed operational/source join and completed non-held initial
+parent remain unavailable. Older sprint reviews and retrospectives remain
+historical; their agreement is not current RP-S3 review agreement.
+
+### Demonstration findings and evidence attribution
+
+The customer's goal remains a hosted coordinator repeatedly invoking the
+remote architect and reviewer while retaining each specialist's session within
+the same parent conversation. Exactly three hosted roles, with no hidden local
+fallback, remain required. The queue follow-up must preserve earlier private
+ingress requirements, actual parent/both-role hosted and framework bindings
+and pins, while invocation response IDs and current accepted outputs advance.
+
+| Input or criterion | Review finding; not a new execution claim |
+|---|---|
+| Retained application and AC3 evidence | Original Architect/Critic accepted the revision-bound executable/observation handoff at `89dfd9f`, including scenario, repeated-call and direct model-history controls. Consume it once; it is not live proof or a new implementation requirement. |
+| RP-S3 E2E / AC7 | Accepted actionable predeployment **FAIL**. The owner reported 204 Windows offline tests in 61.937 seconds and compilation (shellId 561), plus repository checks (562). These transcripts were not independently inspected here. They do not validate the missing joined operational source or final Linux/amd64/hosting-Python package. |
+| Ownership / AC8 prerequisites | Original Architect/Critic agree with the qualified report but withhold substantive ownership acceptance: underlying captured sibling inventory, resolver assertions and recovery comparisons remain inaccessible to them. Command exit status and registration alone do not supply that acceptance. Runner writes remain blocked. |
+| DevOps / inventory | Supplied shellId 584 reports local settings-linkage validation and seven parsed/hashed recovery records with no SHA256-form fingerprint. This review did not inspect those private records or authenticate that execution. Local linkage is not authenticated cloud context; no fresh wrapper or ARM run was claimed. Existing independently accepted fingerprint and acceptance reference remain missing. |
+| AC1, AC5 / G1-G4 | No live-selected identity path, final verified common bundle, remote artifact acceptance, private managed-identity provenance, genuine Decision-1 proof or completed non-held initial parent is established. Historical `NATIVE_HOST_PRINCIPAL` is not a new observation of the candidate or proof of a provider defect. |
+| AC2, AC4 / G5-G7 | Live initial/follow-up comparisons, supported recovery and independent-parent isolation remain unreached. Matching aliases, replayed requirements, synthetic stop fixtures or consistent JSON cannot substitute for actual observations. |
+| AC6 | Existing README and opt-in terminal presentation remain retained and accepted within their original boundaries. No successful workstation-to-cloud customer demonstration or new usability measurement was observed. |
+| AC8, AC9 / G8 | Application status was freshly clean at the reported feature HEAD. Final scoped push, actual final/rollback bindings and complete delivery evidence remain unverified. DevOps reports no newly started transport resources; this is attributed, not historical cleanup certification. |
+
+### Existing backlog refinements and closing actions
+
+No new task IDs, collectors, UI, flags, evidence ledger or approval stages are
+introduced. These findings refine existing assignments, not their acceptance
+contracts. Scrum Master retains decomposition, minimal dependencies, shared
+mutation serialization and Git-reconciliation assignment.
+
+| Existing item | Closing owner and action |
+|---|---|
+| RP-S2-LAB-OWNERSHIP | Existing Developer makes already-produced sibling branch/base/eight-path inventory, loaded-resolver matrix assertions and sanitized recovery comparisons accessible to the original Architect/Critic in a permission-capable review session. Perform only bounded current Git inspection needed for continuing applicability. Do not recreate setup, repeat unattended denied probes, perform write probes or request renewed designation. Substantive originating acceptance still precedes runner writes. |
+| RP-S2-DECISION-RUNNER | Existing Developer completes the retained eight-path runner and offline fixtures after ownership acceptance, with original review. Live inventory is not a prerequisite for offline development. |
+| RP-S2-SOURCE-INTEGRATE | Designated Developer consumes accepted outgoing application audit and RP-S3 executable/observation handoff without redispatch. Reconcile reviewed runner/wrapper commits, actual loaded roots/bytes/hashes, joined checks and scoped push outcomes; submit the actual reviewed join to original formal E2E. Unresolved operational installation remains not execution-ready. |
+| RP-S2-FRESH-INVENTORY | Established transport owner or user privately supplies the existing independently accepted command-VM fingerprint and acceptance reference, or their exact existing locator. Original DevOps compares through the retained strict wrapper before current private project, three-role version/package/identity, rollback and held-effect inventory. Do not derive acceptance from known_hosts or replace trust. |
+| RP-S2-INGRESS-TRIAL / RP-S2-G1-G4 | Original DevOps requires trusted inventory, reviewed integration, subsequent formal E2E, retained regressions, Linux/amd64/hosting-Python checks, immutable package joins and fresh previews before guarded publication. Verify architect trusted ingress before reviewer, then actual three-role common-bundle collaboration, provenance and Decision-1/final gates. Hand off an actual completed non-held initial parent, not an agreed blocked report. |
+| RP-S3-TWO-TURN | Original DevOps consumes that completed parent and captures actual both-turn/both-role hosted/framework bindings and pins, exactly two child creations, fresh responses, current prerequisites and sanitized useful output. Independent request-boundary captures must substantiate sends; journal intentions alone cannot do so. |
+| RP-S3-SUPPORTED-RECOVERY | Original DevOps consumes completed two-turn state, records once-only supported stop intent and confirmed stopped/idle state, then proves original binding/checkpoint/effect preservation and no duplicate sends through retained local scripts. No hard-kill claim or uncertain replay. |
+| RP-S3-ISOLATION | Original DevOps independently consumes G1-G4, not recovery success. Verify distinct parent/children/artifact scope and first-parent content exclusion; attribute offline cross-scope regressions separately. |
+| RP-S3-DELIVERY | Original DevOps and designated integration owner retain final exact-source/common-bundle checks, actual final/rollback and push outcomes, evidence-attributed AC1-AC9/G1-G8 status, reproducible setup/demo commands and positively identified owned cleanup. The README two-turn command remains conditional on release/trust prerequisites and a completed non-held initial turn; do not run it to fill missing captures. |
+
+### Disposition and Git boundaries
+
+Apply prior reference
+`["yaml-loops-v1:sprint/3/RP-S3/EndToEndTestLoop","rp-s3-e2e-close-agreed-failure-report"]`
+only to the accepted accurate FAIL report, not integration or release PASS.
+Apply
+`["yaml-loops-v1:sprint/3/RP-S3/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","ownership-originating-evidence-review-access"]`
+to reuse existing evidence and preserve substantive originating acceptance.
+The registration/status and reported exit results above do not supersede it.
+Prior reference
+`["yaml-loops-v1:sprint/2/RP-S2/SprintReviewLoop","rp-s2-review-close-agreed-backlog-report"]`
+keeps RP-S2 review closed; no votes transfer to this review. Accepted source
+checks, outgoing audit, RP-S3 evidence handoff, design and architecture remain
+closed within their own boundaries without duplicate work or status-only tests.
+
+The designated integration owner must reconcile every subsequent task commit
+to authorized feature history, or retain named branches and record task IDs,
+commit IDs and concrete abandonment reasons in a feature-branch commit message.
+Preserve unrelated dirty/staged work; this documentation-only review creates
+or abandons no task code and does not certify the missing cross-repository join.
+No push is claimed by this review.
+
+All AC1-AC9 and G1-G8 remain required. Preserve historical UNKNOWN effects,
+held parents, rollback assets and historical cleanup uncertainty. No automatic
+identity fallback, trust replacement or uncertain resend is authorized.
+Account-wide Blob Contributor isolation remains application-enforced, not
+storage-RBAC or malicious-host isolation. Agreement on this bounded backlog
+report cannot establish successful demonstration, sprint live acceptance,
+DevOps cloud-pass or customer readiness.
+
 ## Current RP-S2 retrospective — evidence reuse and executable handoffs (October 20, 2026)
 
 Product Owner inputs: accepted recovery-entry SprintReview

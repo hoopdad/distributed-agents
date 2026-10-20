@@ -22,7 +22,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; current attributed successful sibling Git versus incomplete resolver proof, supplied designations versus original ownership acceptance, unchanged machine contract |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current recovery-entry RP-S2 review at `61a99cb`: blocked demo, accepted outgoing application audit and E2E FAIL versus attributed exit-2 trust stop; existing ownership/trust/runner/integration/actual G1-G4 closing lanes and unavailable RP-S3 initial-parent handoff; older overlays remain history |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
-| Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S2 maps independent ownership/trust preparation, reviewed operational/source join, reached-role F/G outcomes and separate actual G1-G4 handoff; attributes current DevOps exit 2 versus historical observations, retains accepted A-D/parser/privacy contracts and original execution owners; older overlays remain history |
+| Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S3 maps absent initial-parent handoff to blocked F/K, conditional H two-turn comparison, I once-only supported recovery, J independent isolation and K truthful delivery; retains accepted A-D/F-G/parser/privacy contracts, attributed RP-S2 exit-2 stop and original execution owners; older overlays remain history |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S2 consumes accepted RP-S1 architecture/retro and RP-S2 design; independent ownership/trust lanes, reviewed actual loaded-source integration, finite both-role ingress versus actual common-bundle G1-G4, original E2E/DevOps and RP-S3 continuity/recovery/isolation gates; prior overlays retain history |
 | Historical RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Completed-workflow assignment/audit contract, not deployment acceptance; original ownership history remains unresolved, accepted source-check handoff consumed by current RP-S2 plan |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
@@ -40,6 +40,14 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+RP-S3 SprintDesign freshness: inspected clean authorized feature HEAD
+`dd7728cb80b503883d96d3317a3dd5dee28f1c6e`; refreshed only current sprint
+design mapping and this navigation, no paths added/deleted. Retains H-K layouts
+and accepted prior design/UX without transferred votes or duplicate implementation.
+Supplied RP-S2 outcomes remain attributed: no completed non-held initial parent,
+ownership acceptance, actual loaded-root join or established strict-trust handoff.
+Original formal E2E, exact-package/live gates and scoped Git reconciliation remain.
+No sibling/private/cloud inspection, deployment or runtime progress is claimed.
 RP-S2 SprintRetro freshness: inspected clean authorized feature HEAD
 `16a57b6f6a77d4d2e8fbb58ecd179d115cf4e0b8`; updated only the existing
 Architecture, UserExperience and ReleasePlan retrospective sections plus this

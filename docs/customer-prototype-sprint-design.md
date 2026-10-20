@@ -1,6 +1,99 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Current RP-S2: supported repair to evidence-backed collaboration (October 20, 2026)
+## Current RP-S3: evidence-qualified demonstration and delivery (October 20, 2026)
+
+Current sprint: **RP-S3, live continuity, recovery, isolation and truthful
+customer delivery**. Inspected clean application baseline
+`dd7728cb80b503883d96d3317a3dd5dee28f1c6e` on
+`feature/customer-hosted-session-prototype`. Inputs are the retained
+Architecture, UserExperience, ReleasePlan and accepted RP-S2 retrospective
+at that baseline. No Designer implementation assignments are supplied.
+Retain [Screens H-K](#rp-s3-continuity-supported-recovery-and-truthful-delivery)
+and implemented README/terminal Screens A-D. This mapping is current;
+earlier overlays retain their historical observations, not current execution.
+
+### Entry decision and current screen routing
+
+```text
+README: customer goal -> three roles -> two turns -> source reading path
+  -> actual completed, non-held initial-parent handoff available?
+     no: Screen F/K BLOCKED; attribute last boundary and existing closing action
+     yes: Screen H initial proof -> same-session queue follow-up and comparison
+          Screen I once-only supported stop/confirmed stopped or idle/resume
+          Screen J separate synthetic parent and independent isolation proof
+          Screen K exact-release, cleanup and all-criteria delivery report
+```
+
+This is a presentation journey, not a new scheduling dependency. Independent
+isolation can proceed when its own execution prerequisites pass; never continue
+an absent or held parent to make a demonstration look complete. The supplied
+RP-S2 reports establish **no completed initial-parent handoff**. Therefore the
+current customer demonstration is BLOCKED, not a successful Screen H sequence.
+Keep the README's truthful blocked notice. No new runtime UI is required.
+
+| Screen / sprint evidence | Current interpretation and original-owner handoff |
+|---|---|
+| F/G: remaining ownership, trust and release preparation | Supplied RP-S2 ownership reports seven records structurally checked but no substantive reconciliation or complete sibling/root proof; runner writes remain blocked. Existing Developer completes authorized eight-path and no-write Python/PowerShell root verification for originating Architect/Critic acceptance, then runner and actual loaded-root integration. Existing transport owner/user supplies the independently accepted fingerprint/reference or exact private locator; DevOps compares through the strict wrapper. No renewed designation, trust replacement or unattended denied probe. |
+| H: live two-turn continuity, AC2/G5 | Only actual initial completion allows the same private session-file follow-up adding a queue. Privately compare parent and both roles' hosted/framework identity fields and pins; require both roles on both turns, exactly two child creations, fresh invocation responses, current prerequisites and invalidated stale approval. Safe aliases or repeated briefs do not prove continuity. |
+| I: supported recovery, AC4/G6 | Use the existing durable once-only marker and confirmed stopped/idle state. Report stop, resume and accepted same-conversation continuation separately. Check checkpoints/effects and no duplicate sends; known-response retrieval is not another invocation. Missing proof is unverified, not permission to repeat the stop. No hard-crash or exactly-once claim. |
+| J: separate-parent isolation, AC4/G7 | Another private session file and distinct synthetic brief start a different parent, not another turn. Require distinct parent/both-child bindings and artifact scope, exclusion of the first brief and passing cross-scope rejection checks. Filenames and aliases alone prove nothing. |
+| K: truthful delivery, AC6-AC9/G8 | Lead with actual PASS only when every required criterion passes, otherwise BLOCKED with exact unmet gates and existing owner/action. Separate local/mocked checks from hosted evidence, private exact final/rollback inventory from sanitized public outcomes, and newly owned cleanup from unproven historical cleanup. |
+
+### Evidence attribution and retained layout
+
+The latest supplied DevOps stop is shellId **389**, outer exit **2**,
+`HOST_TRUST_EVIDENCE_REQUIRED`; it is attributed evidence, not a Designer
+execution or a new specialist rejection. Successful ARM prerequisites do not
+establish private inventory. Historical receipt strings and structural JSON
+validity do not establish accepted trust, safe-writing ownership or a provider
+defect. Supplied RP-S2 E2E is an accepted actionable **FAIL** report; it does not
+certify the missing operational/source join. Neither identity path is selected.
+
+Use the retained H-K layouts for a separate sanitized evidence companion, not
+new terminal fields or verified badges. Useful current design/review and
+chronological calls remain in opt-in human stderr; stdout, delegation/result
+contracts and acceptance parsing remain unchanged. Keep plain-text wrapping,
+no-color labels, terminal-default light/dark appearance and control
+neutralization. Full bindings, private paths, trust material, transcripts and
+evidence locators remain outside customer output/Git. No browser UI, renderer,
+dependency, flag, root/identity picker or comparison ledger is introduced.
+
+### Dispositions, design exit and downstream responsibilities
+
+Apply exact prior references
+`["yaml-loops-v1:sprint/2/RP-S2/SprintDesignLoop","rp-s2-design-close-completed-deliverable"]`
+and
+`["yaml-loops-v1:UserExperienceLoop","ux-close-completed-deliverable"]`
+only to their accepted design/UX boundaries. RP-S2 design votes do not transfer
+to RP-S3. Likewise preserve accepted Architecture, ReleasePlan, RP-S1 design,
+RP-S2 architecture, source-check, failure-report, review and retrospective
+handoffs within their originating boundaries; none substitutes for live proof.
+This overlay neither reopens them nor supersedes a disposition.
+
+Designer doneWhen is the current RP-S3 flow/screen mapping and retained H-K
+layouts committed for the original Product Owner/Critic review. No current
+RP-S3 reviewer votes are supplied. Design closure must not imply successful
+execution or require execution merely to accept these flows.
+
+Scrum retains bounded decomposition, minimal dependency edges, shared-resource
+serialization and Git reconciliation assignment. Developer retains accepted
+implementation and the existing ownership/runner/integration closing actions.
+The designated integration owner reconciles task commits to authorized feature
+branches or records retained named branches, task IDs, commits and abandonment
+reasons in a feature-branch commit message. Original E2E validates the actual
+reviewed join; DevOps retains exact-source/tooling/Linux/amd64/hosting-Python
+checks, immutable package joins, previews, guarded publication and all live
+gates through local repository scripts. Actual G1-G4 and a non-held initial
+parent are required before the RP-S3 continuation handoff.
+
+Preserve historical UNKNOWN effects, held parents, rollback assets, unrelated
+dirty/staged work and historical cleanup uncertainty. Account-wide Blob
+Contributor isolation is application-enforced, not storage-RBAC or
+malicious-host isolation. All AC1-AC9/G1-G8 remain required; no current final/
+rollback bindings, live continuity, recovery, isolation or customer readiness
+were verified here. No substantive runtime progress is claimed.
+
+## Historical RP-S2: supported repair to evidence-backed collaboration (October 20, 2026)
 
 Current sprint: **RP-S2, supported repair and exact three-role remote
 collaboration**. Inspected clean application baseline
@@ -669,9 +762,9 @@ Keep the README historical notice until measured evidence supports updating it.
   solely to make the report look complete.
 - **Product Owner/Critic:** review this RP-S3 slice against its sprint flows
   and screen guidance. RP-S2 design closure under
-  `["yaml-loops-v1:sprint/2/RP-S2/SprintDesignLoop","rp-s2-sprint-design-close-agreed-deliverable"]`
+  `["yaml-loops-v1:sprint/2/RP-S2/SprintDesignLoop","rp-s2-design-close-completed-deliverable"]`
   and UX closure under
-  `["yaml-loops-v1:UserExperienceLoop","ux-close-agreed-deliverable"]`
+  `["yaml-loops-v1:UserExperienceLoop","ux-close-completed-deliverable"]`
   remain accepted within their boundaries; their votes are not RP-S3 votes.
   Operational blockers remain real downstream criteria, not reasons to invent
   new screens or waive failures.

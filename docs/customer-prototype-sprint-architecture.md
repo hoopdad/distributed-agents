@@ -1,6 +1,101 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
-## Current RP-S2: ownership evidence, exact execution join and initial collaboration (October 20, 2026)
+## Current RP-S3: gated continuation, recovery, isolation and delivery (October 20, 2026)
+
+Current sprint is **RP-S3: live continuity, recovery, isolation and customer
+delivery**. Inspected clean authorized feature baseline
+`23a4d9a950a73a57c13f6b29a9ca6da685e5c987`, containing accepted current RP-S3
+SprintDesign. Consume accepted RP-S2 architecture
+`1bce6e1c4fe9e8deb8382fa02c44392bc2d25aea`, SprintReview
+`1e5eb2adc7714875e07ed69ffd2e2db0ab8c7877` and retrospective
+`afe6d4dba937102e12821d770c1f7da4788f1c2c`. Completed RP-S1/RP-S2 workflow
+history does not establish their live release goals. Earlier overlays retain
+their original attribution; this section governs the current sprint mapping.
+
+### Cumulative design and entry boundary
+
+Retain exactly three remote hosted roles and explicit coordinator
+begin/route/execute/publish. The trusted parent manifest's `children.get(role)`
+creates or reuses each specialist binding; `RemoteAgents.invoke()` restores
+its framework `AgentSession` and pinned version. Each specialist separately
+restores `specialist_history_v2` before its model call and persists history
+after validated immutable output. Conversation/model history, MAF checkpoints,
+immutable artifacts and fenced write-ahead effects are distinct responsibilities.
+Keep trusted receiver equality, exact prerequisite/producer/version/revision/hash
+checks, coordinator ETag/fencing, Decision-1 after deterministic gates and
+unknown-effect holds. No runtime rewrite, new service, generic session manager,
+schema, collector, ledger, flag, dependency or duplicate fixture work is needed.
+
+**Entry is BLOCKED:** verified common-bundle G1-G4 and a completed non-held
+initial parent are not established. Neither identity path is live-selected.
+The latest ownership outcome remains substantively incomplete; runner writes
+remain blocked. Supplied coordination and accepted host-trust references are
+available, not missing authority. The reported prerequisite PASS remains
+owner-attributed: inspected script scope is not independently inspected execution
+or current deployment/rollback proof. This task does not refresh private evidence,
+earlier access denials, operational installation or cloud state.
+
+### RP-S3 evidence joins and execution dependencies
+
+| Boundary | Required evidence and existing owner |
+|---|---|
+| Initial-parent readiness | Existing ownership Developer supplies actual nonsecret resolver/Git/path/hash/root-matrix evidence or restores already-authorized bounded read access; originating Architect/Critic substantive acceptance precedes eight-path sibling runner writes. Designated integration Developer reconciles reviewed commits and actual loaded roots/bytes/hashes with durable Git accounting. Original E2E validates that exact join. DevOps independently completes current trust/inventory/rollback/effect preparation, exact-source/retained-suite/Linux hosting-package gates and serialized guarded release; G1-G4 must establish one final common bundle, both remote artifacts, private managed-identity Blob provenance, genuine Decision-1 and the completed non-held initial parent. Accepted blocked reports do not supply readiness. |
+| Queue follow-up / AC2, G5 | Original DevOps uses the same private session file and completed parent, not a replacement or held parent. Both roles execute on both turns: compare actual parent and both children's hosted/framework identity fields and pinned versions; continuation fields may advance. Exactly two child creations across the pair, fresh invocation response IDs, current queue-plus-private-ingress requirements and stale-approval invalidation are required. Useful output and safe aliases are presentation, not proof. |
+| Repeated calls / AC3 | Consume accepted offline architect -> blocked reviewer -> same architect revision -> same reviewer controls and both-role restored-history/fresh-history tests. Direct model continuation is separate from replayed briefs; do not relabel mocked calls live or reimplement accepted tests. Live AC1/AC2 remain independent obligations. |
+| Supported recovery / AC4, G6 | Once the original parent is completed and non-held, use the retained local stop/resume script path and durable once-only marker. Independently observe the same pinned parent stopped/idle with advanced stop metadata before continuation. Verify original parent/both-child bindings, retained checkpoints and reconciled cumulative effects with no duplicate creates/sends. A known-response GET is not a new invocation. Missing confirmation or unknown effects hold execution; no repeated stop, blind resend, hard kill or hard-crash claim. |
+| Separate parent / AC4, G7 | DevOps creates a separate synthetic parent on the verified release only when its own source, trust, effect and resource prerequisites pass. Compare distinct child/history/artifact scope and exclusion of the first parent's requirements. This does not depend on successful recovery; serialize shared mutation without inventing a recovery dependency. Account-wide Blob Contributor means application-enforced isolation, not storage-RBAC or malicious-host isolation. |
+| Delivery / AC6-AC9, G8 | Keep Screens H-K, README source path, useful current output and opt-in human stderr with unchanged stdout/parser. Private machine observations back a separate sanitized companion; no full identifiers, private roots, transcripts or evidence locators enter customer output/Git. Final exact-source/common-package checks, reviewed scoped feature push and durable integration or retained-branch accounting remain required. Record all AC/G outcomes, reproducible setup/command, exact final/rollback bindings, limitations and positively identified new owned cleanup separately from historical cleanup uncertainty. Missing proof yields BLOCKED, never customer-ready. |
+
+### Observation contract, not a new acceptance implementation
+
+Consume `live_acceptance.validate_scenario_evidence()` and
+`tests/test_scenario_evidence.py`, documented in
+[design.md](design.md#offline-cross-scenario-evidence-assertions). The existing
+private inputs `initial`, `followup`, `restart`, `isolated` and `stopped_session`
+join per-scenario proof, scoped manifests, complete cumulative operations,
+independent create/send captures, checkpoints and confirmed stop observations.
+Capture completeness and association with actual scoped stores remain execution
+owner obligations. Do not synthesize requests from journal intentions, deduplicate
+duplicate sends, omit unresolved transitions or infer measured zeroes from
+missing observations. Caller-supplied JSON passing assertions proves internal
+consistency, not independent provenance or live capability.
+
+Original E2E validates the reviewed operational join through local scripts;
+original DevOps owns actual collection, serialized release and live acceptance.
+Scrum retains contract-first decomposition, minimal dependencies, named exclusive
+resources for shared CLI/transport/mount/publication mutation and assignment of
+Git reconciliation. Inventory remains independent of runner coding. No substitute
+agents, extra approval stage, GitHub Actions or deployment occurs here.
+
+### Dispositions and bounded architecture handoff
+
+Preserve `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`:
+actual evidence and substantive originating acceptance remain required; do not
+repeat denied probes or substitute summaries/trust receipts. Preserve accepted
+source checks under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S1-CURRENT-SOURCE-CHECKS/AssignedWorkDeveloperLoop","current-source-checks-completion-status"]`
+and accepted FAIL reporting under
+`["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-report-completion-status"]`.
+Keep bounded DevOps reports closed under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-bounded-assessment-completion-status"]`
+while actual cloud-pass obligations remain under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-exact-release-cloud-pass"]`.
+Upstream Architecture/UX/ReleasePlan and prior sprint design/architecture,
+review and retrospective agreements remain closed within their originating
+boundaries; no votes transfer to this RP-S3 architecture loop. No disposition
+is superseded or actual acceptance failure waived.
+
+The cumulative design and current [coordinator](requirements/coordinator/architecture.md),
+[specialists](requirements/specialists/architecture.md) and
+[client/release](requirements/client-release/architecture.md) slices are complete
+for original Product Owner, Critic and Red Team assessment. Their current RP-S3
+votes are not yet supplied. AC1-AC9/G1-G8 remain unestablished as a release;
+preserve UNKNOWNs, held parents, rollback assets, unrelated work, originating
+stops and no-progress history. Documentation changes are not runtime progress.
+
+<a id="current-rp-s2-ownership-evidence-exact-execution-join-and-initial-collaboration-october-20-2026"></a>
+
+## Historical RP-S2: ownership evidence, exact execution join and initial collaboration (October 20, 2026)
 
 Current sprint is **RP-S2: supported repair and exact three-role remote
 collaboration**. Inspected clean authorized feature baseline

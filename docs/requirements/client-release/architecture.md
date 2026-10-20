@@ -1,6 +1,35 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
-## Current RP-S2 ownership, loaded-source and live-proof boundary
+## Current RP-S3 exact-observation and delivery join
+
+Consume the [current RP-S3 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s3-gated-continuation-recovery-isolation-and-delivery-october-20-2026)
+and accepted Screens H-K. Missing G1-G4/non-held initial-parent proof routes to
+BLOCKED, not a follow-up send. Preserve the same private session file, README
+source path, useful current output, opt-in human stderr and unchanged machine
+stdout/parser. Actual private binding/pin/response/create/send/checkpoint/stop
+comparisons back a sanitized companion, not new public fields or a ledger.
+Retained assertions check supplied consistency, not collection completeness or
+independent provenance. Missing observations do not establish zero effects.
+
+Existing Developer retains actual ownership/root evidence recovery and
+originating substantive review before eight-path sibling writes. Integration
+joins reviewed actual loaded roots/bytes/hashes and durable task/branch/commit
+accounting; original E2E validates that exact join. DevOps independently completes
+strict trust, inventory/rollback/effect preparation and exact-source/retained-suite/
+Linux hosting-package gates, then serializes guarded publication and actual live
+G1-G8 through local scripts. Script inspection, attributed prerequisite PASS and
+accepted blocked reports remain distinct from independently verified execution.
+Isolation has its own prerequisites, not a dependency on completed recovery.
+
+Final delivery needs reviewed scoped feature push, exact final/common-package
+and rollback bindings, all AC/G outcomes, reproducible generic setup/command,
+limitations and positively identified new owned cleanup. Keep private evidence
+outside both repositories and customer output. Preserve historical UNKNOWNs,
+held parents, rollback assets, unrelated dirty work and historical cleanup
+uncertainty. No new renderer, collector, schema, approval stage or live-success
+claim; customer-ready remains false while any required gate is unmet.
+
+## Historical RP-S2 ownership, loaded-source and live-proof boundary
 
 Consume the [current RP-S2 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s2-ownership-evidence-exact-execution-join-and-initial-collaboration-october-20-2026)
 and current SprintDesign Screens A-D/F-G. Preserve customer-first README,

@@ -1,6 +1,30 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
-## Current RP-S2 evidence-to-execution boundary
+## Current RP-S3 continuation and recovery join
+
+Consume the [current RP-S3 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s3-gated-continuation-recovery-isolation-and-delivery-october-20-2026).
+Keep explicit begin/route/execute/publish, trusted parent scope and manifest
+child lookup, restored remote sessions and immutable version pins. Missing
+verified common-bundle G1-G4 and a completed non-held initial parent means
+BLOCKED: no substitute parent or send into held state. On actual readiness,
+both roles execute the queue follow-up with stable parent/both-child
+hosted/framework identity fields and pins, fresh responses, exactly two child
+creations across the pair and current immutable prerequisites invalidating stale
+approval. Continuation fields may advance. Retain accepted four-call revision
+and direct-history controls as offline proof, not live memory evidence.
+
+Once-only supported stop/resume needs the durable marker and independently
+confirmed pinned-parent stopped/idle observation before continuation. Preserve
+checkpoints, ETag/fencing and cumulative effect reconciliation without duplicate
+creates/sends; known-response GETs are not sends and unknown effects hold.
+Separate-parent scope/content isolation has its own release prerequisites,
+not a dependency on successful recovery. The existing scenario assertion helper
+checks supplied observations, not their independent provenance. Original
+integration/E2E/DevOps retain loaded-source, exact-package and live gates;
+Decision-1 and trusted receiver equality remain unchanged. No runtime rewrite,
+schema, fixture duplication, held-parent adoption or hard-crash claim.
+
+## Historical RP-S2 evidence-to-execution boundary
 
 Consume the [current RP-S2 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s2-ownership-evidence-exact-execution-join-and-initial-collaboration-october-20-2026).
 Keep explicit begin/route/execute/publish, parent-scoped child lookup, restored

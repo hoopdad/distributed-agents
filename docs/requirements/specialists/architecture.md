@@ -1,6 +1,29 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
-## Current RP-S2 trusted receiver and history boundary
+## Current RP-S3 both-role continuation and isolation join
+
+Consume the [current RP-S3 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s3-gated-continuation-recovery-isolation-and-delivery-october-20-2026).
+Retain both five-stage flows and `specialist_history_v2`. Each child's remote
+hosted/framework binding and version pin are distinct from internal model
+history and advancing response continuation. Both roles execute initial and
+queue follow-up turns on their original bindings with fresh invocation responses
+and exact current immutable requirements/candidate references. Accepted direct
+load/model/store, persisted-history, identical-brief fresh-history and exact
+known-response zero-send controls remain offline evidence. Replayed briefs and
+plausible memory text cannot prove continuation.
+
+Only verified G1-G4 and a completed non-held initial parent enable continuation.
+After once-only confirmed supported recovery, reuse original children/history
+and reconcile effects without duplicate sends; do not rekey, recreate or adopt
+held children. Separately verify distinct child/history/artifact scope and
+first-parent requirement exclusion for a new synthetic parent; recovery success
+is not its prerequisite. Neither identity path is live-selected. Preserve
+specialist-only conditional delegation, trusted receiver equality, exact output
+provenance and unknown-effect holds. No hidden local specialist, automatic
+fallback, endpoint/history schema change or duplicate implementation is added.
+Account-wide Blob permissions provide application-enforced isolation only.
+
+## Historical RP-S2 trusted receiver and history boundary
 
 Consume the [current RP-S2 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s2-ownership-evidence-exact-execution-join-and-initial-collaboration-october-20-2026).
 Keep both five-stage flows, child hosted/framework bindings and pins distinct

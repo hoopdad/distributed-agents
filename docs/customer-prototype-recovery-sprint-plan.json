@@ -2,13 +2,13 @@
   "sprintId": "RP-S1",
   "goal": "Evidence-ready source and understandable continuity, with an actionable supported identity baseline or unresolved finding.",
   "featureBranch": "feature/customer-hosted-session-prototype",
-  "baseline": "c888336b1741dd5cbf77f0209749620949301adb",
+  "baseline": "302d8866d3c4f4c4d61b7c63c7f4d24196da664d",
   "acceptedInputs": {
-    "Architecture": "45318a50098c44843643ef1a7c5479edb4dfbd38",
-    "UserExperience": "b7aa978584b144c1cb485bec5b54e9c8da989964",
-    "ReleasePlan": "2f22642e6f68d841c7ef40097fe1299ccd366dd8",
-    "SprintDesign": "00b228bb78842df3289008be3c99ad6a88d3efe4",
-    "SprintArchitecture": "c888336b1741dd5cbf77f0209749620949301adb"
+    "Architecture": "25d182245a1bb40b842f5787196bd8f8244c4a7d",
+    "UserExperience": "c5e7189252886a653daa42cbf9021f0cf59691b2",
+    "ReleasePlan": "0d0f17b928ba99517551ba20a0c0201801148d9d",
+    "SprintDesign": "a1e85442a90a2333bedd6e4beed1d8d849a68ad9",
+    "SprintArchitecture": "302d8866d3c4f4c4d61b7c63c7f4d24196da664d"
   },
   "scope": {
     "current": "Retain accepted continuity, revision, history, candidate, presentation and scenario assertions. Check the current source and provide fresh inventory plus a supported baseline or actionable unresolved finding.",
@@ -18,23 +18,23 @@
   },
   "dispositionsApplied": [
     {
-      "reference": "[\"yaml-loops-v1:ArchitectureLoop\",\"architecture-close-completed-deliverable\"]",
+      "reference": "[\"yaml-loops-v1:ArchitectureLoop\",\"architecture-completion-status\"]",
       "application": "Retain accepted architecture and matched operational-wrapper boundary; no renewed architecture experiment or borrowed SprintPlan vote."
     },
     {
-      "reference": "[\"yaml-loops-v1:UserExperienceLoop\",\"ux-close-completed-deliverable\"]",
+      "reference": "[\"yaml-loops-v1:UserExperienceLoop\",\"ux-completion-status\"]",
       "application": "Retain accepted README and opt-in human stderr; no duplicate presentation assignment or machine-contract change."
     },
     {
-      "reference": "[\"yaml-loops-v1:ReleasePlanLoop\",\"release-plan-close-completed-deliverable\"]",
+      "reference": "[\"yaml-loops-v1:ReleasePlanLoop\",\"release-plan-completion-status\"]",
       "application": "Retain three sprint contracts, original execution owners and live acceptance; planning is not implementation."
     },
     {
-      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop\",\"sprint-design-close-completed-deliverable\"]",
+      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop\",\"sprint-design-completion-status\"]",
       "application": "Consume accepted screens and recovery-state distinctions without reopening design or redispatching fixtures."
     },
     {
-      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/SprintArchitectureLoop\",\"sprint-architecture-close-completed-deliverable\"]",
+      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/SprintArchitectureLoop\",\"sprint-architecture-completion-status\"]",
       "application": "Assign original-owner closing actions, independent checks and inventory, matched source integration and later release joins; do not reopen architecture."
     }
   ],
@@ -63,7 +63,7 @@
     "semanticGates": "An agreed unresolved report allows reporting, not missing prerequisite effects. Runner independently requires accepted safe-writing proof; integration requires actual reviewed commits and matched loaded roots. Trial requires exact-source/E2E/package and current trust/inventory gates, even when scheduler dependencies report agreed.",
     "fileOwnership": "Scrum owns this JSON and application index. Current-source checks own focused application repairs only for concrete failures. Runner owns only scoped retained tooling/tests/index in the substantiated sibling checkout. Integration owns handed-off paths and both indexes after task reviews. DevOps writes private evidence, never unreviewed source or sealed stages.",
     "git": "Owners inspect fresh status and commit explicit owned paths with git commit --only before review; required Copilot trailer and observed usage metadata only. No shared branch switch, stash/reset, amend, force-push, foreign lock removal or deletion. Integration reconciles every task commit to feature/customer-hosted-session-prototype in affected repos, or records retained branch/task/commits/abandonment reason in a feature-branch commit message. Preserve abandoned branches. Scoped reviewed push belongs to integration; existing sprint review/retro and closeout reconcile accounting.",
-    "canonicalLab": "Fresh read-only status shows six modified and two untracked canonical paths. Preserve its index, network design, README, SSH launcher, registry, Bastion test and untracked quickstart/scratch script; do not adopt them. Worktree registration identifies the authorized feature sibling as the candidate writing location, not OS isolation or proof of exclusivity. Canonical branch/HEAD must be verified by the ownership owner, not inferred from an old plan.",
+    "canonicalLab": "Fresh read-only status shows six modified and two untracked canonical paths on feature/swc-think-fast-aca-dns. Preserve its index, network design, README, SSH launcher, registry, Bastion test and untracked quickstart/scratch script; do not adopt them. Registration lists the authorized feature sibling at bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703. Canonical HEAD is now b7a47edf6172b1dd5dc4b0dc5a3db555fe762b2f, not the older bb6f64f baseline. Registration is navigation, not OS isolation or proof of exclusivity; the original ownership owner verifies direct current sibling status and resolver evidence before writing.",
     "resources": "Matching resource names cover assignment plus reviews only. Actual cross-run locks/ownership are retained-tool responsibilities. One DevOps publication owner; serialize publication, CLI, transport, mount and private package stage. Do not hold live resources during offline runner development.",
     "authority": "Use only local in-repo deterministic scripts, explicit roots, existing absolute pinned Python and sole validated lab settings imported through Use-Settings.ps1. No GitHub Actions, credential retrieval, profile/target substitution, replacement trust, new infrastructure, provider submission or opaque call-ID delegation. Necessary evidenced chosen-path permission changes are already authorized but require exact scope/rationale and deterministic plan/write/readback.",
     "stops": "Preserve historical UNKNOWNs, held parents, rollback and cleanup uncertainty. Missing supported remedy can yield bounded actionable unresolved findings; genuine external human/provider input is explicit needs-input, material internal contract change is needs-replan. Preserve originating stops; five consecutive rounds without reviewer-verified new progress stop blocked, not a total productive-round cap.",
@@ -76,7 +76,7 @@
       "kind": "developer",
       "owner": "Developer",
       "dependsOn": [],
-      "exclusiveResources": ["lab-git-integration"],
+      "exclusiveResources": ["lab-git-integration", "lab-decision-tooling-source", "lab-public-index"],
       "estimatedMinutes": {"implementation": 15, "review": 10, "integration": 0},
       "priorOrigin": "yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop",
       "ownedPaths": [],
@@ -104,6 +104,7 @@
       "produces": ["Exact current-source check results and accepted-commit ancestry/drift handoff", "Only necessary focused repair commits, if a concrete current failure is observed"],
       "acceptanceCriteria": [
         "Consume accepted source and application-preparation handoffs without repeating their acceptance or reimplementing fixtures/UI. Compare current ancestry and changed inputs; preserve accepted two-turn, repeated-role, model-history, parser, recovery and isolation coverage.",
+        "Map retained tests explicitly to stable parent and both roles' hosted/framework identity fields and pinned versions, exactly two child creations, fresh responses, updated requirements and stale-approval invalidation. Retain the four-call reject/revise/review sequence, both specialists' actual history load/model/store assertions, identical-brief fresh-history controls and exact-response recovery without resend. Check README and opt-in human stderr against accepted Screens A-D, including held/invalid precedence and unchanged stdout/parser. Only an actually missing or failing criterion warrants repair.",
         "Run Test-Demo.ps1 with existing validated absolute Python and explicit operational LabRepositoryRoot, plus scripts/Test-Repository.ps1. Report actual pass/fail and source identity, not historical counts. Install dependencies only after manifest change or missing-tool failure.",
         "Fix only concrete current regression failures within owned application paths and rerun affected checks; otherwise deliver a no-change handoff without artificial commit. Any material runtime/contract change goes through existing Architect-advised PO/Scrum reconciliation."
       ],
@@ -162,10 +163,10 @@
       "exclusiveResources": ["lab-hosted-release", "lab-private-transport", "lab-cli-context", "lab-ssh-mount"],
       "estimatedMinutes": {"implementation": 45, "review": 15, "integration": 5},
       "ownedPaths": [],
-      "inputs": ["Supplied recovery receipt locators via private workflow context", "Canonical retained transport sources and existing accepted host trust"],
+      "inputs": ["Supplied recovery receipt locators via private workflow context", "Canonical retained transport sources and input.acceptedHostFingerprint with acceptedHostFingerprintEvidence/fingerprintReferenceCandidates"],
       "produces": ["Fresh authenticated private inventory or exact actionable reached/missing-observation report"],
       "acceptanceCriteria": [
-        "Use the supplied recovery locator first. Substantiate existing approved transport module/source and fingerprint, compare actual hashes and verify current strict trust before authenticated Metadata. Historical receipt closure does not prove current trust or original UNKNOWN cleanup.",
+        "Use the supplied recovery locator first. Consume the supplied independently accepted host fingerprint and both reference candidates before requesting human input; do not substitute a newly observed key. Substantiate approved transport module/source, compare actual hashes and verify current strict trust before authenticated Metadata. Historical receipt closure does not prove current trust or original UNKNOWN cleanup.",
         "Load only existing native settings through application Use-Settings.ps1, validate sole project/tenant/subscription/lab linkage without printing values and use the dedicated lab profile. Perform retained scripted inventory with explicit roots; authenticate by device code only if required.",
         "Record exact deployed/rollback versions/packages, role identities, protocol, actual caller/effective action and held/publisher ownership observations privately. Distinguish reached, missing and provider-only facts. No inference/publication or assumed missing grant.",
         "Serialize actual CLI/transport/mount ownership, preserve held parents and old effects and close only positively identified newly owned resources. An actionable partial inventory with exact supported next action can complete this bounded task."
@@ -224,6 +225,13 @@
     "minimalEdges": "Ownership gates only runner writing. Agreed interfaces/fixtures permit runner work without full runtime implementation or live inventory. Integration joins current application evidence and reviewed runner. Inventory has no coding dependency but follows installed YAML phase order. Recovery/isolation remain future independent checks sharing serialized live resources, not dependent on each other's success.",
     "limits": "Rough implementation/review/integration minutes are planning estimates, not timeouts, caps or promised durations. No new concurrency, sprint, spend or attempt limit is introduced."
   },
+  "acceptanceBoundaries": {
+    "RP-S1": "Current-source coverage/clarity checks and supported identity baseline reporting satisfy this sprint only when reviewed against its five criteria. Do not make early-start RP-S2 successful deployment an RP-S1 criterion.",
+    "earlyStartRP-S2": ["RP-S2-LAB-OWNERSHIP", "RP-S2-DECISION-RUNNER", "RP-S2-SOURCE-INTEGRATE", "RP-S2-INGRESS-TRIAL"],
+    "unresolved": "A precise unresolved research/inventory/trial report can finish only its stated bounded assessment. Unmet ownership still blocks writing; unmet integration/E2E/trust/package gates still block external execution. Remaining independent artifacts continue. Reconcile stops through existing sprint review/retro and release closeout.",
+    "live": "Actual common-bundle release, both-role ingress, private artifact provenance and Decision-1 remain RP-S2 obligations. Live two-turn continuity, supported recovery, independent isolation and final AC1-AC9/G1-G8 closure remain RP-S3 obligations.",
+    "gitReconciliation": "RP-S2-SOURCE-INTEGRATE is the designated Developer integration assignment for every task's intended commits, including useful partial work; preserve retained branches and record any abandonment durably on the authorized feature branch."
+  },
   "AssignedWorkUIDeveloper": [],
   "AssignedWorkDeveloper": ["RP-S2-LAB-OWNERSHIP", "RP-S1-CURRENT-SOURCE-CHECKS", "RP-S2-DECISION-RUNNER", "RP-S2-SOURCE-INTEGRATE"],
   "AssignedWorkDevOpsEngineer": ["RP-S1-FRESH-INVENTORY", "RP-S1-STATUS-HANDOFF", "RP-S2-INGRESS-TRIAL"],
@@ -236,10 +244,10 @@
     "meaning": "Dispatch-ready complete is returned under the supplied SprintPlan protocol. The orchestrator dispatches ready original loops before planning reviewers verify actual dispatch; no such observation or reviewer vote is fabricated here."
   },
   "verificationThisPlanningTurn": {
-    "application": "Fresh clean feature/customer-hosted-session-prototype at c888336b1741dd5cbf77f0209749620949301adb before planning edits. All five accepted input commits are present. Only this existing assignment JSON and navigation are Scrum-owned changes.",
-    "lab": "Read-only canonical status and worktree registration: canonical feature/swc-think-fast-aca-dns at bb6f64fa842b85cccc6ea26c6c10dbdd1b78535b retains six modified/two untracked paths. Registered feature sibling lists feature/customer-hosted-session-prototype at bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703. No direct sibling status, resolver execution or writing exclusivity is inferred; original ownership task must verify current paths before runner writes.",
+    "application": "Fresh clean feature/customer-hosted-session-prototype at 302d8866d3c4f4c4d61b7c63c7f4d24196da664d before planning edits. Uses the five supplied accepted input commits without reopening their agreement. Only this existing assignment JSON and navigation are Scrum-owned changes.",
+    "lab": "Read-only canonical status and worktree registration: canonical feature/swc-think-fast-aca-dns at b7a47edf6172b1dd5dc4b0dc5a3db555fe762b2f retains six modified/two untracked paths. Registered feature sibling lists feature/customer-hosted-session-prototype at bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703. No direct sibling status, resolver execution or writing exclusivity is inferred; original ownership task must verify current paths before runner writes.",
     "recovery": "Consumed supplied coordination defaults and accepted architecture handoff. Private evidence was not independently reauthenticated this planning turn; original ownership task uses the supplied recoveryExceptionV1 locator first. No historical receipt is current trust or live acceptance.",
-    "checks": "Fresh installed read-only sprintTasks validation accepted seven bounded tasks, complete role lists, doneWhen/exclusions/handoffs, input/output contracts, all three duration estimates, the eight-path runner scope and two resource-disjoint initial Developer assignments. Negative controls rejected a dependency cycle and implementation-on-DevOps dependency. criticalPathPriorities reports 350 estimated task-minutes through ownership/runner/integration/trial, excluding formal E2E. Test-Repository.ps1 passed using the existing absolute lab Python 3.12.10: current index, 79 public files, JSON, PowerShell, context frontmatter and whitespace. No dependencies installed. These repeated planning checks are not new runtime progress. Current-source Test-Demo remains assigned to RP-S1-CURRENT-SOURCE-CHECKS and joined checks to integration; no application, Linux/package or live test is newly claimed.",
+    "checks": "Fresh installed sprintTasks validation accepted seven bounded tasks and complete role lists, required task boundaries, inputs/outputs and three duration fields. Two initial Developer tasks have disjoint resources; the runner retains exactly eight owned paths. Negative controls rejected a cycle and implementation dependency on DevOps. criticalPathPriorities reports 350 estimated task-minutes through ownership/runner/integration/trial, excluding formal E2E. Test-Repository.ps1 passed with the existing absolute lab Python: current index, 79 public files, JSON/PowerShell/context/whitespace checks. Git merge-base verified all five accepted input commits as HEAD ancestors. No dependencies were installed. These planning checks are not new runtime proof. Current-source Test-Demo remains assigned to RP-S1-CURRENT-SOURCE-CHECKS and joined checks to integration. No application, Linux/package or live result is claimed by planning.",
     "inspectionLimit": "No cloud operation, private settings import, sibling write probe or operational-wrapper installation was performed. Existing registration is point-in-time navigation evidence only.",
     "limits": "Planning changes only. No runner implementation, repeated resolver experiment, settings import, cloud operation, new task acceptance, push, package or live release observation is established here."
   }

@@ -27,6 +27,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Stopped evidence-only ownership carryover and independent application integration preparation; runner/source join, later strict-trust inventory, exact publication/finite trial and explicit actual G1-G4 handoff; accepted candidate/UX and RP-S1 audit contract retained |
 | RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Evidence-only stopped carryover alongside independent missing scripted-comparison work; reviewed runner/source integration consumes accepted application preparation; original DevOps gates actual G1-G4, two-turn continuity, once-only supported recovery, independent isolation and truthful exact-source delivery |
 | RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Supplied review/process observations, metric limits, bounded evidence-handoff improvements and existing-owner actions; no reset of stopped ownership or live acceptance waiver |
+| RP-S3 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted offline assertion/repair lessons, meaningful negative controls and separate observation provenance; unreached live demonstration, current originating votes, preserved stopped lanes and existing integration/release ownership |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
@@ -36,6 +37,10 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+RP-S3 retrospective freshness: inspected clean baseline
+`12e2a2a5b3c97268d3b9ba8c631ed483c35762df`; updated only the three
+retrospective document slices and navigation, with no added/deleted paths,
+runtime changes, new evidence collector or live capability.
 RP-S3 design freshness: inspected clean baseline
 `585601f4ad3e8d87c029a6fdca2d0326a403e142`; updated only the sprint-design
 navigation and its RP-S3 section, with no added/deleted paths or runtime changes.

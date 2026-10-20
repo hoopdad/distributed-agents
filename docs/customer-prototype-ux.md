@@ -1,5 +1,31 @@
 # Customer hosted-session prototype: user experience
 
+## RP-S3 retrospective: separate assertion results from live demonstration
+
+The [RP-S3 retrospective](customer-prototype-release-plan.md#rp-s3-retrospective--offline-proof-and-unreached-live-outcomes)
+retains accepted Screens H-K and the existing README command shape. Use separate
+statements for accepted offline assertions, formal joined-source readiness and
+actual customer demonstration. For this sprint: "Offline comparisons accepted;
+live two-turn demonstration unreached; no completed initial-parent handoff."
+Do not populate example screens with synthetic PASS rows as if they were live
+observations, or label the historical ingress diagnosis as a newly observed
+failure when execution stopped before authenticated inventory.
+
+The documented assertion invocation checks supplied private evidence; it does
+not collect or authenticate that evidence. Keep exact bindings, transcripts,
+trust receipts and locators private. Aliases and useful design/review prose
+remain presentation, not session-continuity proof. Attribute reported test
+execution separately from reviewer source inspection; measured live usability
+remains unreached.
+
+Name existing closing owners/actions without implying retry authority:
+Developer/Scrum delivers stopped ownership/root evidence; transport-owner/Scrum
+delivers established trust evidence; integration joins reviewed source; original
+E2E and DevOps own their respective validation and execution. Recovery needs
+verified two-turn state; isolation needs actual G1-G4 entry, not recovery success.
+This is reporting guidance only: no new banner, CLI option, public event,
+renderer, customer control or implementation assignment.
+
 ## RP-S2 retrospective: report the boundary, not an implied retry
 
 The [RP-S2 retrospective](customer-prototype-release-plan.md#rp-s2-retrospective--stopped-prerequisites-and-evidence-delivery)

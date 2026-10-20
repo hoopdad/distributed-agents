@@ -1,5 +1,33 @@
 # Customer hosted-session prototype: release architecture
 
+## RP-S3 retrospective: assertion correctness is not observation provenance
+
+The [RP-S3 retrospective](customer-prototype-release-plan.md#rp-s3-retrospective--offline-proof-and-unreached-live-outcomes)
+consumes accepted assertion commits `dcdb5e4` and `552e466`; it does not reopen
+their implementation acceptance. The repaired join binds each final artifact
+to exactly one current producing operation and identical ordered `input_refs`.
+Consistent negative fixtures must change cumulative transitions together while
+preserving valid artifact envelopes, so rejection exercises the intended join
+rather than unrelated malformed evidence. Retain the legitimate revision and
+JSON round-trip controls.
+
+Passing these assertions proves consistency of supplied observations, not their
+collection, authenticity or live origin. Integration consumes the accepted
+executable/private-input contract, revalidates source drift and joins the reviewed
+runner; original E2E validates exact joined revisions. DevOps separately supplies
+actual private observations and exact-source/Linux/package/version provenance.
+An accepted prerequisite FAIL supplies neither integration readiness nor a
+completed non-held initial parent. Actual G1-G4 entry remains necessary for
+continuity and independently for isolation; supported recovery additionally
+requires verified two-turn completion.
+
+Keep ownership/root evidence and established transport trust as independent
+stopped lanes. Preserve the originating stop and runner-writing block under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+No new collector, ledger, public field, identity rule or approval stage is
+introduced. Trusted receiver equality, checkpoints, fencing and UNKNOWN-effect
+holds remain unchanged.
+
 ## RP-S2 retrospective: evidence joins remain independent
 
 The [RP-S2 retrospective](customer-prototype-release-plan.md#rp-s2-retrospective--stopped-prerequisites-and-evidence-delivery)

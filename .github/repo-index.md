@@ -20,7 +20,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current successful direct sibling Git inspection versus denied complete resolver reads, supplied writer/integration designations and unchanged originating ownership review; matched operational roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; current attributed successful sibling Git versus incomplete resolver proof, supplied designations versus original ownership acceptance, unchanged machine contract |
-| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Recovery-entry RP-S1 review at `b13670e`: blocked demo, accepted offline handoff versus reported exit-2 trust stop, existing ownership/trust/runner/integration closing lanes, three retained sprint contracts and unchanged live final gates; older overlays remain history |
+| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current recovery-entry RP-S2 review at `61a99cb`: blocked demo, accepted outgoing application audit and E2E FAIL versus attributed exit-2 trust stop; existing ownership/trust/runner/integration/actual G1-G4 closing lanes and unavailable RP-S3 initial-parent handoff; older overlays remain history |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S2 maps independent ownership/trust preparation, reviewed operational/source join, reached-role F/G outcomes and separate actual G1-G4 handoff; attributes current DevOps exit 2 versus historical observations, retains accepted A-D/parser/privacy contracts and original execution owners; older overlays remain history |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S2 consumes accepted RP-S1 architecture/retro and RP-S2 design; independent ownership/trust lanes, reviewed actual loaded-source integration, finite both-role ingress versus actual common-bundle G1-G4, original E2E/DevOps and RP-S3 continuity/recovery/isolation gates; prior overlays retain history |
@@ -39,6 +39,14 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+RP-S2 SprintReview freshness: inspected clean authorized feature HEAD
+`61a99cba878b62fe5df0d1de361a178d87c273a9`; updated only release-plan review
+and this navigation, no paths added/deleted. Consumes accepted outgoing audit
+and RP-S2 E2E FAIL without reopening them; private/ARM/exit observations remain
+attributed to DevOps, not freshly verified. Original ownership/root acceptance,
+strict trust, reviewed operational integration and exact-package/live gates
+remain unmet; no completed initial parent is handed to RP-S3. This review
+creates or abandons no task code and supplies no runtime progress or cloud-pass.
 RP-S2 SprintPlan freshness: inspected clean authorized feature HEAD
 `74130a8bbda12c32ac8e84523b93b8f5e09794c0`; refreshed only existing RP-S2
 plan and this navigation, no paths added/deleted. Carries seven existing

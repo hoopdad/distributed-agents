@@ -19,7 +19,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | October 19 full-scope release design, authorized authentication/delegation alternatives, principal-namespace discriminator, least-privilege exception, continuation contracts and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
-| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three initial sprint goals/acceptance contracts, independent offline work, supported-repair critical path, exact release/live gates and original-owner closeout |
+| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three initial sprint goals/acceptance contracts, retained RP-S1 integration, authorized A/B identity discriminator/permission handoff, unresolved-path artifact continuation, exact release/live gates and original-owner closeout |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Sprint-specific README/terminal screens, ordered revision trace, incomplete/recovered-event behavior and fixture-to-display implementation handoff |
 | RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative design and logical-tier contracts for exact binding fixtures, direct model continuation, unchanged terminal projection and independent supported-remedy assessment |
 | RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Dispatch-ready original-role tasks, minimal handoff dependencies, parallel file ownership, shared release resources and explicit Git/source integration |
@@ -110,6 +110,14 @@ Contributor: ownership/publication gates remain application-enforced, not
 storage-enforced per-role isolation.
 Do not search ignored `.azure`, `.azure-cli`, `.local`, `.migration` or
 conversation/credential stores.
+
+Current ReleasePlanLoop revision freshness: inspected clean application base
+`3ee9798afa4a419be87bcb68fdfc3540875d171a`. No added/deleted paths,
+runtime, dependency or deployment boundary changes. Release planning retains
+the integrated RP-S1 source and accepted architecture/UX handoffs; it adds the
+new authorized A/B selection and scoped permission work to the sprint handoff.
+Formal E2E validation and DevOps publication/cloud-pass remain separate;
+unresolved selection does not block remaining artifacts or waive live gates.
 
 Current ArchitectureLoop revision freshness: inspected integrated base
 `24b883f910dedbc8dc524177f29f59e061be265e`, with a clean application worktree.

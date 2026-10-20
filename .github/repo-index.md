@@ -18,7 +18,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
-| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design and unchanged canonical `solutionModel` IDs; newly accessible mirrored direct sibling Git/resolver/eight-case root evidence versus pending originating ownership acceptance, existing designations and preserved stop; actual loaded roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
+| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design and unchanged canonical `solutionModel` IDs; current operational-context amendment consumes accepted ownership/runner/integration and actionable E2E FAIL. Explicit OperationalLabRoot separates existing dedicated context from sibling-owned tools; five affected callers, negative controls, original-owner correction and exact-source/package/live handoff. Earlier evidence-access entries remain history |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Current canonical five-flow/eighteen-step journey-to-screen map from architecture `5f9c384`; README/terminal hierarchy, retained wireframes/accessibility and evidence-to-display contract; accessible capture versus originating ownership acceptance versus operational/live proof, unchanged stdout/parser and no new UI |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current canonical release-planning entry consumes architecture `5f9c384` and UX `053070d`; machine-readable RP-S1/RP-S2/RP-S3 goals, acceptance, exclusions and handoffs map all five flows/eighteen steps. Accessible capture and supplied designations go through original ownership reviewers with the existing stop preserved, then gated eight-path sibling runner/actual loaded-source/E2E/serialized DevOps. Independent preparation remains independent; accepted source exclusion is not redispatched and live acceptance remains unmet. Older reviews/retrospectives remain attributed history |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Current blocked closeout at `23e7d48`: AC1-AC9/G1-G8 ledger; accepted application/observation/review/retro handoffs versus missing substantive ownership and actual operational join; supplied host trust distinct from containment-source/resource readiness; separately attributed Windows checks, conditional demo, unknown final/rollback bindings and unverified final push |
@@ -38,6 +38,16 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Identity candidate handoff | `scripts\identity_handoff.py`, `tests\test_identity_handoff.py`, `docs\identity-candidate-handoff.md` | Offline-only A/B candidate, lifecycle header plumbing and receiver namespace negative controls; no installed runtime change or live selection |
 | Isolated runtime candidate | `demo\foundry.py:specialist_identity_headers`, `demo\workflow.py:WorkflowRuntime.resources`, `tests\test_isolated_client.py`, `docs\design.md` | B specialist-only project/header/cache; original resource tuple and opaque-only non-specialist authority retained; actual resource lifecycle/cleanup regressions, no live selection |
 | Copilot context | `.github\copilot-instructions.md`, agents and skills | Bounded implementation/review and deployment gates |
+
+Operational-context architecture freshness: inspected clean application
+`1bd157d` and registered feature lab sibling `1842984`; no public paths added
+or deleted. Read predecessor original task votes and E2E FAIL, independently
+matched supplied operational-profile evidence hash, and inspected all five
+affected wrapper contracts. Architecture now separates operational context
+from unchanged tool-source ownership with an explicit caller/regression
+handoff. Accepted ownership/runner work is not reopened. No credentials,
+settings, lab source, runtime, workflow or cloud effects changed; current
+architecture validation is recorded in the amendment's handoff/report.
 
 Reviewed-source integration freshness: consumed application baseline `f43e58e`
 and original-reviewed lab sibling commits `58e2b32` / `1842984`; no runtime,

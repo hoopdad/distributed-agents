@@ -1,6 +1,156 @@
 # Customer hosted-session prototype: release architecture
 
-## Architecture entry: canonical solution model (October 20, 2026)
+## Current architecture amendment: operational context is not tooling ownership
+
+This entry supersedes only the pending ownership/runner and operational-root
+handoffs in the earlier entry below. Inspected application baseline:
+`1bd157d05116b076b0aa45b4fb6bfe531e5d28d0`, clean on
+`feature/customer-hosted-session-prototype`. The registered feature lab sibling
+is clean at `18429840e86d92c26611bae3ffdc7095ca87592d`. No runtime, settings,
+credentials, lab source or cloud resources changed in this Architect turn.
+The existing solutionModel below remains canonical: ten components, five flows,
+eighteen steps. This amendment affects `release-toolchain`, `guarded-release`,
+principally `release-join` and `release-package`; it adds no service/framework.
+
+### Accepted predecessor and concrete defect
+
+The predecessor `bb3af682-2d1c-41cf-97e7-312f624ea669/result.json` records
+substantive original Architect/Critic acceptance (`agree` and `taskComplete`
+true, no unmet criteria) for these exact originating boundaries:
+
+- `sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop`;
+- `sprint/1/RP-S1/task/RP-S2-DECISION-RUNNER/AssignedWorkDeveloperLoop`;
+- `sprint/1/RP-S1/task/RP-S2-SOURCE-INTEGRATE/AssignedWorkDeveloperLoop`.
+
+Do not reopen them, renew designations, repeat unchanged runner fixes, or
+redispatch accepted application continuity/history/presentation work. The
+predecessor's `sprint/1/RP-S1/EndToEndTestLoop` has original Architect/Critic/
+Product Owner agreement on an actionable **predeployment FAIL**, not live PASS.
+Earlier pending-vote/write-block statements below are historical within those
+accepted boundaries, not current prerequisites. All historical UNKNOWN effects,
+held parents, rollback assets and original no-progress stop semantics survive.
+
+The supplied operational-profile evidence's SHA256 was independently matched
+to `38ec94d9d218e25791b60a2ed0dac80877538b0dcb128e94452aac077571f8b2`.
+It records an existing configured dedicated profile matching the canonical lab
+and no profile at the sibling-derived location. No credentials were inspected
+or copied. Current sibling source inspection confirms:
+
+| Entry point | Confirmed coupling that the correction must cover |
+|---|---|
+| `Test-LabPrerequisites.ps1` | Overwrites imported `AZURE_CONFIG_DIR` with tooling-root `.azure-cli` before account verification |
+| `Test-PrivateConnectivity.ps1` | Calibration requires that same tooling-derived profile; calls prerequisites without an independent operational-context input |
+| `Build-CodePackage.ps1` | Selects tooling-root `.azure-cli` before Azure CLI / azd bridge checks |
+| `Build-BundledCodePackage.ps1` | Exports tooling-root `.azure-cli/wsl` into WSL |
+| `Invoke-WslCodeRelease.ps1` | Calls prerequisites and exports tooling-root `.azure-cli/wsl` for publication |
+
+This is a configuration/tooling contract defect, not evidence of an expired
+credential, missing grant, unavailable transport or provider identity remedy.
+Directory/linkage evidence establishes none of those live conditions. Separating
+paths alone is not a user-only blocker and does not select identity path A/B.
+
+### Smallest supported contract correction
+
+Keep `ApplicationRoot` as application source and `LabRepositoryRoot` as the
+selected **tool-source owner**. Every loaded wrapper, Python module and
+PowerShell resolver must still belong to the selected reviewed feature sibling;
+retain matched-root success, crossed-root `LAB_TOOL_OWNER_MISMATCH` rejection,
+raw-byte source seals and actual loaded-source verification.
+
+Add an explicit `OperationalLabRoot` input to the affected retained entry points
+and propagate it through their callers. It selects only the existing dedicated
+lab operational context, never wrapper/module/package source. For this delivery,
+derive the supplied argument from the unchanged checked-in
+`scripts/Use-Settings.ps1` import of `.local/lab-settings-native.json`:
+the imported `LAB_REPOSITORY_ROOT` identifies that existing context and imported
+`AZURE_CONFIG_DIR` identifies its dedicated Windows profile. Do not rewrite
+private settings to make the feature sibling look like the operational root.
+If preserving legacy callers with an omitted argument, default only to the
+selected lab root's existing dedicated context, with the same validation;
+never search for another profile or silently fall back.
+
+Before Azure/azd/transport operations, validate canonical absolute paths,
+reject reparse/escape substitutions and missing directories, and require the
+selected Windows profile to equal the imported dedicated profile and the
+operational root's `.azure-cli`. Compare the operational registry's registered
+lab tenant/subscription with the selected tool registry and imported expected
+scope; reject divergence before external operations. Preserve project/region/
+model and exact target checks. Registry scope equality authorizes no adoption
+of dirty registry/source changes, and does not replace account readback.
+Do not output private values or inspect profile contents. Never accept a
+default/production/arbitrary existing profile merely because account IDs match.
+
+Windows callers reuse that existing profile. WSL callers must explicitly map
+the same operational root's retained `.azure-cli/wsl` context, preserving WSL
+path translation, Azure CLI/azd credential-selection checks and environment
+save/restore on success and failure. Do not assume Windows and WSL token caches
+are interchangeable. Do not copy, inspect or symlink credentials or create a
+duplicate profile. DevOps must establish actual existing WSL-context readiness
+through retained checks; if supported authentication is genuinely required,
+surface the actual device URL/code when produced, not a hypothetical request.
+An unavailable supported arrangement returns a precise failed prerequisite
+for existing Scrum/Architect resolution, not automatic human escalation.
+
+Keep operational-root/profile metadata private and outside the runtime bundle.
+Do not replace `LAB_TOOLS`/selected resolver roots with `OperationalLabRoot`.
+Calibration's profile equality must compare against the validated operational
+profile rather than weakening equality; preserve its project, scope, source
+and no-replay checks. Continue excluding evidence/stages/packages from both
+source repositories and credential/private context trees. Retain source hash,
+package, containment-source, strict host trust and read-only mount gates.
+
+### Original-owner implementation and verification handoff
+
+1. **ReleasePlan/Scrum Master:** assign the existing Developer one bounded
+   operational-context correction in the authorized feature sibling. Own the
+   five entry points above, their precise caller/retained regression files,
+   and only directly necessary shared helper/docs/index paths. Establish that
+   exact path set before writes; the earlier eight-path runner designation
+   alone does not own these new paths. No canonical dirty checkout writes,
+   branch switching, infrastructure/permission changes or workflow/input edits.
+2. **Developer:** implement explicit context propagation and tests with
+   synthetic profiles/CLI boundaries, then original Architect/Critic review.
+   Required coverage: legacy matched-root behavior; feature tooling with the
+   existing distinct operational root; missing/relative/reparse/default/
+   mismatched profile and tenant/subscription rejection before effects;
+   calibration and every affected caller including WSL mapping/azd selection;
+   environment restoration; unchanged crossed-tool rejection and loaded-source
+   equality. Run targeted plus affected retained suite and application/repository
+   checks. Report skips/exclusions, do not count them as covered Linux gates.
+3. **Designated integration Developer:** join reviewed correction commits and
+   exact loaded wrapper/helper roots and raw hashes. Commit/push scoped reviewed
+   feature refs, including accepted application integration commit `1bd157d`
+   if not already remote, with readback. Preserve unrelated work and durable
+   task/branch/commit accounting. This is a changed exact join requiring fresh
+   validation, not a repeat execution-unready integration report.
+4. **Original E2E then serialized DevOps:** run local-script validation of the
+   corrected exact join. DevOps independently resolves retained containment
+   source/resource readiness and current target/rollback inventory; runs actual
+   Linux/amd64/Python package gates; binds exact common bundle/version preview;
+   then guarded publication, finite architect-before-reviewer identity decision
+   and live G1-G8/AC1-AC9. No concurrent deployer or uncertain-effect replay.
+5. **Existing clarity/closeout owner:** remove the stale README ownership/write
+   block after accepted handoffs, without replacing it with a live-success
+   notice. Keep conditional demonstration commands and unmet live criteria.
+
+Done for this architecture amendment means a concrete supported separation,
+owned downstream correction and regression/caller contract, preserved canonical
+model and original gates. It does not require implementing the Developer task
+here. Source inspection and architecture checks cannot establish authentication,
+cloud readiness, identity-path selection, Linux package or live acceptance.
+Original Product Owner, Red Team and Critic review this deliverable next.
+
+Validation in this turn: `scripts/Test-Repository.ps1` passed with the existing
+validated absolute Python interpreter (80 public files, current inventory,
+public/private boundary, JSON, PowerShell and whitespace). A direct architecture
+check compared the parsed solutionModel with `HEAD`: unchanged ten components,
+five flows and eighteen steps; IDs are unique, component references resolve,
+and all five affected callers appear in this handoff. No dependencies were
+installed. Unchanged runtime suites were not rerun for progress credit; targeted
+and retained implementation regressions remain required for the actual fix.
+No Linux/package, authentication, transport, deployment or inference check ran.
+
+## Earlier architecture entry: canonical solution model (October 20, 2026)
 
 This Architecture Loop inspected clean application baseline
 `08ac1e71956c3f212f059b445c90b2fa40fa8aca` on

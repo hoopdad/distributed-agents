@@ -1,5 +1,48 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current RP-S2 selected-route and exact-package contract
+
+Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-validated-source-to-initial-hosted-collaboration-october-20-2026)
+and accepted SprintDesign `4a1b1add` Screens A/B/D/F/G. Earlier entries are
+historical, not instructions to repeat accepted context callers or README work.
+**Guarded lab release toolchain**, **Terminal client** and shared **Trusted
+identity and private transport** keep canonical IDs and machine contracts.
+`release-join` consumes accepted integration/local E2E; `release-package` and
+`release-discriminate` require actual execution evidence, not report agreement.
+
+Preserve implemented source/tool/operational three-root separation, unchanged
+settings import and actual loaded-source equality. The former source mismatch
+is locally closed. DevOps-attributed account/ARM/model/host-trust checks narrow
+readiness uncertainty, but do not prove WSL authentication or transport.
+DevOps-attributed missing Docker Linux-engine endpoint means that observation
+failed; cause/remedy and actual Linux/amd64/hosting-Python package remain open.
+No required host installation, missing permission or human-only action is proven.
+
+Linux-engine and selected-route/inventory readiness may prepare independently.
+Selected WSL must pass retained user/systemd/cgroup, dedicated WSL profile,
+pinned azd, read-only-mount and cleanup gates. Only selected Windows transport
+requires independently accepted external helper bytes and exact module/C# pins.
+Do not make unused Windows-helper acceptance a WSL dependency or substitute
+the standalone launcher. Keep supplied accepted SSH fingerprint and strict
+trust; fingerprint agreement alone is not current connectivity.
+
+Original DevOps serializes shared release/transport/context/mount effects,
+reads fresh exact three-role deployed/rollback/effect inventory and runs retained
+Linux checks, common-package closure, exact preview and guarded publication.
+Fresh source changes require their relevant original E2E/checks. Preserve raw
+source/settings/ZIP binding, dependency provenance, private-output exclusions,
+rollback and no uncertain-effect replay. Actual architect-before-reviewer trials
+may select a supported path, but G1-G4 and a completed non-held initial parent
+are the RP-S2 exit. Report unreached roles/gates, not fabricated zero effects.
+
+Existing closeout owner measures README/release status without reopening
+accepted clarity. Keep useful design/review, human stderr separate from unchanged
+stdout/parser, conditional demo and exact private binding checks behind safe
+aliases. Original integration/closeout owns reviewed feature push/readback.
+No credentials, private evidence or operational identifiers enter customer Git.
+RP-S3 retains G5-G8/AC1-AC9, once-only supported recovery and independent
+isolation; historical UNKNOWNs and cleanup uncertainty remain visible.
+
 ## Scoped operational-context packaging caller amendment
 
 Consume the [scoped sprint amendment](../../customer-prototype-sprint-architecture.md#scoped-amendment-operational-context-packaging-caller-october-20-2026)

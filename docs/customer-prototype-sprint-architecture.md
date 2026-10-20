@@ -1,5 +1,136 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Current RP-S2: validated source to initial hosted collaboration (October 20, 2026)
+
+This entry governs **RP-S2**; earlier entries preserve their originating
+observations and acceptance boundaries, not current implementation instructions.
+Baseline is clean application feature `4a1b1addd2811b3c0524e75741ea54659d2eb873`.
+Consume Architecture/UX retrospective `8e4019b`, ReleasePlan review `835713a`
+and SprintDesign `4a1b1add`. The RP-S1 offline continuity, revision/history
+controls and terminal work remain accepted source. Operational-context caller
+correction `42a70533c567a8aed29f0ca076c0b5d58381fc77` and integration
+`576b613eea651d21c712490bb3e84eadf5bcbbb6` are accepted handoffs, not assignments
+to repeat. The tool/profile source-contract mismatch is **closed locally**;
+runtime identity selection and the actual Linux/package/live exit remain open.
+
+### Evidence consumed and disposition boundaries
+
+Opened original outcome JSONs under the supplied run
+`bf0d82d9-657b-4055-9f7c-6306ce08163d/context`, including original votes:
+
+| Audit prefix | Accepted boundary used here |
+|---|---|
+| `e4962cb0` | Packaging-caller architecture amendment; Product Owner, Critic and Red Team agree. |
+| `e0001d3b` | Changed-source integration; Architect/Critic agree. |
+| `abd55a79` | E2E: local integration PASS / release acceptance FAIL; Architect/Critic/Product Owner agree. |
+| `b53113c5` | DevOps preparation, not cloud-pass; Architect/Critic/Developer agree. |
+| `f2f25e66`, `01e02e83` | Original sprint review and retrospective agree on unchanged sprint contracts and existing-owner closing actions. |
+| `40236938` | RP-S2 SprintDesign; Product Owner/Critic agree on Screens A/B/D/F/G. |
+
+Agreement accepts those bounded deliverables, not their unreached cloud gates.
+ARM/account/model-metadata/host-trust observations and Docker Linux-engine
+endpoint failure are **DevOps-owner-attributed**, not independently rerun here.
+The Docker failure establishes unavailable selected engine, not a missing
+permission, required installation or user-only remedy. Windows context account
+checks are not WSL authentication, private transport or specialist ingress.
+
+Apply the three exact references under
+`yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-OPERATIONAL-CONTEXT/plan-round/2/AssignedWorkDeveloperLoop`:
+`operational-context-caller-completion`, `operational-context-final-checks-handoff`
+and `operational-context-package-caller-ownership`. Accepted correction,
+integration and E2E consume them; do not reopen caller ownership or coding.
+The exact prior references
+`["yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop","sprint-plan-output-shape"]`,
+`["yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop","sprint-plan-original-dispatch"]`
+and
+`["yaml-loops-v1:sprint/1/RP-S1/SprintRetroLoop","retrospective-release-plan-response-shape"]`
+retain their originating response/dispatch boundaries. None is a new RP-S2
+architecture criterion or waiver. No disposition is superseded here.
+
+### solutionModel and current cross-tier contract
+
+The authoritative [solutionModel](customer-prototype-architecture.md#solutionmodel)
+remains unchanged: ten components, five triggered flows and eighteen steps,
+including shared support links. Current scope is **Exact-source guarded release**
+(`release-join`, `release-package`, `release-discriminate`) and **Remote design
+and review** (all five `collaboration-*` steps). RP-S1 contracts remain cumulative;
+`release-close`, continuity, supported recovery and isolation retain RP-S3's
+actual prerequisites. No new service, framework, public schema or session manager.
+
+| Tier | Current RP-S2 interface and closing observation |
+|---|---|
+| [Client/release](requirements/client-release/architecture.md#current-rp-s2-selected-route-and-exact-package-contract) | **Terminal client**, **Guarded lab release toolchain**, shared **Trusted identity and private transport**: consume exact source/local E2E; establish route-specific readiness, fresh inventory and immutable Linux common-package closure before serialized effects. F/G distinguish each reached boundary. |
+| [Coordinator](requirements/coordinator/architecture.md#current-rp-s2-initial-parent-and-acceptance-contract) | **Hosted coordinator**, **Decision-1 routing and admission**, **MAF workflow checkpoints**: bind a fresh synthetic parent, gate genuine routing, call both remote roles and accept exact current immutable artifacts through ETag/fencing. Return useful result only with trustworthy finalization. |
+| [Specialists](requirements/specialists/architecture.md#current-rp-s2-independent-trusted-ingress-contract) | **Hosted architect**, **Hosted reviewer**, shared **Parent and specialist conversation state**: prove architect entry before reviewer dispatch, then independently prove reviewer entry/current prerequisites. Preserve restored remote sessions and distinct internal model-history state. |
+| Shared artifact support | **Private Blob artifacts and effect journal** remains one shared component. Actual private-path managed-identity operations, producer/hash/version/revision checks and effect reconciliation are required; no new store or inferred zero-effect observation. |
+
+Keep implemented `ApplicationRoot` for portable source, `LabRepositoryRoot`
+for reviewed loaded tools, and `OperationalLabRoot` for only the existing
+dedicated context imported by unchanged `scripts/Use-Settings.ps1`. Preserve
+profile/registry/imported scope equality, actual account/project/target checks,
+WSL profile/azd selection, restoration, private-output exclusions and crossed-tool
+rejection. Context never selects code. E2E's inspected source closure is
+`8974f4cdae0850f8528d1261e6d9617e756e157316449385875d55e05f29b6f3`;
+it is an attributed exact-join reference, not a seal for a future changed stage.
+
+### Readiness branches, release order and original-owner handoff
+
+1. **Existing Scrum Master** decomposes remaining work, owns Git reconciliation
+   assignment and minimal dependencies. Linux-engine readiness and selected-route/
+   fresh inventory preparation may proceed independently; no identity-trial
+   dependency precedes read-only inventory. Names coordinate the scheduler,
+   not OS/cross-run isolation. Serialize shared effects with `lab-hosted-release`,
+   `lab-private-transport`, `lab-cli-context` and `lab-ssh-mount`.
+2. **Original DevOps** restores existing Linux-engine availability within actual
+   authority, then runs retained Linux/amd64/hosting-Python checks and exact
+   common-package build. Executable presence or Windows skips cannot pass this.
+   If recovery needs an unapproved host change, report its exact requirement;
+   do not infer one from endpoint absence.
+3. **Selected private route** must pass its own guards: retained WSL requires
+   actual user/systemd/cgroup containment, dedicated WSL profile/authentication,
+   pinned azd and read-only mount/owned cleanup. Windows requires independently
+   accepted external helper source plus exact module/C# pins before import.
+   Unused Windows-helper acceptance is not a WSL prerequisite. Do not use the
+   unaccepted standalone launcher or adopt canonical dirty source/registry.
+   Supplied accepted fingerprint is the trust input, not proof of SSH success.
+4. **Original serialized DevOps** verifies current exact three-role targets,
+   deployed/rollback bindings and unresolved effects through retained scripts;
+   binds exact source/settings/ZIP and preview approvals; publishes only the
+   intended package. Consume accepted E2E; if source changes, relevant exact-join
+   E2E/checks must cover the new join, not merely an old accepted report.
+5. **Finite identity discrimination** proves architect trusted ingress/equality
+   before reviewer, then independently proves reviewer. Neither A nor B is
+   live-selected. Existing specialist-only B source is not a tested A remedy
+   or automatic fallback. Opaque call IDs are not delegated user identity.
+   Current replan forbids infrastructure/permission mutation; a newly necessary
+   material remedy returns through existing scope reconciliation, not an ad hoc
+   grant. No provider submission or uncertain-effect replay.
+6. **RP-S2 exit** requires three healthy exact versions on one final verified
+   common bundle and retained rollback assets (G1), real remote current-artifact
+   coordinator acceptance (G2), actual private MI Blob provenance (G3), genuine
+   Decision-1 after deterministic gates (G4), and a completed non-held initial
+   parent. Path selection, HTTP 200, upload and accepted reports are insufficient.
+   Record precise unreached/held boundary on failure; do not manufacture another
+   parent to hide failure or send follow-up into held state.
+
+Only the actual exit supplies RP-S3's original parent/both-child bindings, pins,
+current artifact refs, checkpoints and reconciled effects. Follow-up compares
+stable identity fields with advancing response IDs; supported stop/resume retains
+its once-only marker/confirmed stopped state. Separate-parent isolation has its
+own release prerequisites and does not depend on recovery success. Account-wide
+Blob Contributor gives application-enforced ownership/isolation, not malicious-host
+or storage-RBAC isolation. Preserve historical UNKNOWNs, held parents, rollback
+assets, unrelated work, historical cleanup uncertainty and original five-round
+no-progress semantics; no productive-round cap or stop reset.
+
+Existing measured-status closeout owner updates stale README/release notices
+from actual results; do not redispatch accepted README or renderer work.
+Retain Screens A/B/D/F/G, conditional human-view demonstration, unchanged
+stdout/parser and private evidence outside customer Git. Integration/closeout
+pushes reviewed architecture commits with exact ref readback after original
+review. This documentation turn creates no deployment, authentication, package,
+transport, inference or live proof and establishes no human-only action.
+
 ## Scoped amendment: operational-context packaging caller (October 20, 2026)
 
 This amendment changes only the affected release-tier ownership handoff for

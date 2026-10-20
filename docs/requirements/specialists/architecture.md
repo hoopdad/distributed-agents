@@ -1,5 +1,33 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current RP-S2 independent trusted-ingress contract
+
+Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-validated-source-to-initial-hosted-collaboration-october-20-2026).
+Earlier entries preserve historical acceptance boundaries, not open source tasks.
+**Hosted architect**, **Hosted reviewer** and **Parent and specialist conversation
+state** retain their canonical IDs, shared support and five-stage implementations.
+Operational-context caller correction and loaded-source E2E are accepted;
+they neither repair nor freshly reproduce historical `NATIVE_HOST_PRINCIPAL`.
+
+For **Remote design and review**, `collaboration-design` requires actual trusted
+architect application entry/equality and an immutable current candidate before
+`collaboration-review` dispatch. Reviewer independently proves trusted entry and
+consumption of exact requirements/candidate refs. Coordinator then validates
+current producer/version/hash/revision acceptance. Preparation failure is not
+receiver rejection; metadata/account checks are not specialist ingress.
+Neither identity path is live-selected. Retain specialist-only conditional
+delegation, receiver equality and no call-ID-as-user or automatic A/B fallback.
+
+Restore pinned remote hosted/framework sessions separately from each role's
+internal `specialist_history_v2`. Retain direct persisted-history/fresh-history
+and exact-known-response zero-send offline controls without redispatch.
+Actual outputs, new invocation responses and private MI Blob provenance remain
+live obligations; replayed briefs cannot prove model continuation. Preserve
+unknown-effect holds, no history rekey/held-child adoption and no local specialist.
+RP-S2's completed non-held parent gates later same-parent continuation/recovery.
+Isolation has independent prerequisites and remains application-enforced under
+account-wide Blob permissions, not a malicious-host guarantee.
+
 ## RP-S1 canonical specialist contract
 
 Consume the [current sprint architecture](../../customer-prototype-sprint-architecture.md#sprint-architecture-entry-rp-s1-canonical-continuity-contracts-october-20-2026)

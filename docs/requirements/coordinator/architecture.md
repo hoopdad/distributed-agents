@@ -1,5 +1,33 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current RP-S2 initial-parent and acceptance contract
+
+Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-validated-source-to-initial-hosted-collaboration-october-20-2026).
+This entry governs current execution; earlier RP-S1/RP-S2/RP-S3 entries remain
+historical within their original boundaries. Accepted source integration and
+local E2E no longer require operational-context implementation or ownership
+recapture. Neither acceptance nor dedicated-context account/ARM observations
+prove coordinator or specialist execution.
+
+**Hosted coordinator**, **Decision-1 routing and admission** and **MAF workflow
+checkpoints** retain canonical IDs, support links and explicit begin/route/
+execute/publish. **Remote design and review** uses all five `collaboration-*`
+steps: trusted fresh parent -> exact current requirements -> deterministic
+effect/readiness gates and genuine Decision-1 -> pinned remote architect ->
+independent reviewer -> fenced current-artifact acceptance and terminal return.
+Keep producer/version/hash/prerequisite/revision checks and stale-approval
+invalidation; neither advisory acceptance nor HTTP success is a final result.
+
+Original DevOps must establish common-bundle G1-G4 and a completed non-held
+initial parent for RP-S2 exit. Trusted architect entry precedes reviewer dispatch;
+unknown create/send effects hold without replay. No hidden local fallback,
+substitute parent, duplicate fixture or runtime rewrite. RP-S3 receives actual
+parent/both-child bindings and pins, current artifacts, checkpoints and reconciled
+effects, not invented counters or proof reconstructed from alias equality.
+Conversations, model history, checkpoints and journal/artifacts remain distinct.
+Follow-up/recovery remain downstream; separate-parent isolation does not depend
+on recovery success. External three-root selection never changes hosted scope.
+
 ## RP-S1 canonical coordinator contract
 
 Consume the [current sprint architecture](../../customer-prototype-sprint-architecture.md#sprint-architecture-entry-rp-s1-canonical-continuity-contracts-october-20-2026)

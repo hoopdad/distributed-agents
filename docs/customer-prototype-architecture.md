@@ -1,5 +1,32 @@
 # Customer hosted-session prototype: release architecture
 
+## Current RP-S2 retrospective — separate evidence joins
+
+Recovery-entry input is accepted SprintReview
+`16a57b6f6a77d4d2e8fbb58ecd179d115cf4e0b8`. The
+[current retrospective](customer-prototype-release-plan.md#current-rp-s2-retrospective--evidence-reuse-and-executable-handoffs-october-20-2026)
+consumes the accepted revision-bound application outgoing audit without
+repeating unchanged checks. Local-reference ancestry and drift acceptance do
+not establish current server state, a push, sibling ownership or installation
+of reviewed wrappers at their actual loaded operational roots.
+
+Keep structural recovery-file validity separate from substantive reconciliation
+and current no-write resolver/owned-path proof. Existing Developer supplies that
+proof for originating Architect/Critic ownership acceptance before runner
+writes; the supplied designations already satisfy coordination input. Another
+role's successful evidence read cannot supply the missing acceptance.
+Independent established host trust/current private inventory remains DevOps-owned
+and is not a prerequisite for offline runner implementation.
+
+Integration still joins reviewed application/runner/operational bytes, roots
+and hashes with joined checks and durable task/branch/commit and scoped push
+accounting. Original formal E2E and DevOps exact-package/live gates remain.
+Per-role ingress selection alone does not prove actual common-bundle G1-G4
+or provide the completed non-held initial parent required by RP-S3.
+No session, identity, provenance, root guard, dependency or architecture contract
+changes. All accepted architecture handoffs remain closed; private observations
+are attributed, not refreshed by this documentation delta.
+
 ## Current Architecture Loop: partial direct inspection (October 20, 2026)
 
 Inspected application baseline `6e08b5470f7cd21ba46505e0c8628d8f1185bc34`

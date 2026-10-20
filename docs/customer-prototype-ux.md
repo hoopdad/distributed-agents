@@ -1,5 +1,30 @@
 # Customer hosted-session prototype: user experience
 
+## Current RP-S2 retrospective — qualified outcomes and next actions
+
+Accepted recovery-entry SprintReview
+`16a57b6f6a77d4d2e8fbb58ecd179d115cf4e0b8` remains blocked, not a
+successful customer demonstration. The
+[current retrospective](customer-prototype-release-plan.md#current-rp-s2-retrospective--evidence-reuse-and-executable-handoffs-october-20-2026)
+retains existing README/terminal screens and unchanged machine parsing.
+Use operator handoffs that separately state bounded report agreement,
+execution outcome, attributed source and the existing owner/closing action.
+
+For example: "RP-S2 E2E failure report accepted; reviewed operational/source
+join still missing. Existing Developer completes ownership, runner and
+integration; formal E2E then validates the actual join." Attribute the exit-2
+strict-trust stop to supplied DevOps shellId 389, not a fresh observation or
+another receiver failure. Original DevOps needs the previously accepted
+fingerprint/reference or exact private locator, not a new customer trust choice.
+
+An accepted outgoing source audit is not a pushed release or live continuity
+view. Do not invent successful call rows, advertise an unreviewed runner
+command, infer zero sends from preparation alone, or offer follow-up on an
+absent/held initial parent. Keep private roots, full bindings, transcripts and
+trust evidence outside customer output/Git. Safe aliases do not prove actual
+bindings or pinned-version continuity. No field, flag, UI, renderer or duplicate
+UX implementation is introduced; existing live demonstration obligations remain.
+
 ## Current User Experience Loop: evidence-qualified handoff (October 20, 2026)
 
 This Designer handoff consumes accepted architecture commit

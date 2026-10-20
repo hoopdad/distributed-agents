@@ -1,12 +1,12 @@
 # Customer hosted-session prototype: release plan
 
-## Current recovery-entry release plan (October 20, 2026)
+## Current ownership-designation release plan (October 20, 2026)
 
 This is the current Product Owner planning overlay. It consumes agreed
 [Architecture](customer-prototype-architecture.md) commit
-`2f62e3ca5353fdbc3433e1f49fdf9133f95dacbc` and agreed
+`f72b0f3c1206418f08fc62a149e80f7c12c55e81` and agreed
 [UserExperience](customer-prototype-ux.md) commit
-`8d6d6e05469e6a180db5cba0f77e07f7ff21a3af`, the clean application baseline
+`87253d3f5003d1d6f34724401b33c3b5ced2e64a`, the clean application baseline
 inspected for this turn on `feature/customer-hosted-session-prototype`.
 Requirements remain the supplied customer specification and the derived
 [coordinator](requirements/coordinator/architecture.md),
@@ -21,20 +21,58 @@ their experiments or borrow their votes for ReleasePlan agreement.
 The retained three sprint IDs, detailed acceptance criteria, exclusions and
 handoffs below remain binding. Older status snapshots and missing-locator
 statements are historical where the accepted recovery-entry architecture now
-supplies evidence; neither that evidence nor this plan closes stopped tasks.
+supplies evidence and explicit coordination designations; neither that evidence
+nor this plan closes stopped tasks. Current coordination below supersedes older
+missing-designation requests only, not their substantive acceptance criteria.
 No runtime, identity, schema, UX or release-acceptance change is made here.
 
 ### Recovery delta and bounded closing work
 
 The accepted architecture supplies historical recovery-summary/trust receipt
-locators and the executed canonical/sibling resolver matrix. This planning
+locators, the dated canonical/sibling resolver matrix and the current user's
+explicit writer/integration-owner designations. This planning
 turn consumes that handoff without independently authenticating private
 receipts or repeating resolver tests. Historical receipt availability is
 progress in recovery preparation, not current SSH trust, exclusive writing
 ownership, authenticated inventory, successful ingress or final deployment.
 Identity selection remains unresolved; installed B is only a candidate.
-Fresh Git inspection here found the canonical lab's six modified and two
-untracked paths; all remain untouched, on its existing branch.
+Fresh application Git inspection here found clean HEAD at the accepted UX
+commit on the authorized feature branch. Architecture reports the canonical
+lab's six modified and two untracked paths and a tool-denied direct sibling
+inspection; these are supplied observations, not fresh verification here.
+No lab Git/sibling ownership inspection or mutation is repeated for this
+planning deliverable.
+
+The user's `ownershipRecoveryDefaults` is explicit in-run coordination
+evidence, not a missing human decision. Consume it together with the supplied
+recovery evidence for `RP-S2-LAB-OWNERSHIP`:
+
+- Developer is the tooling writer for `RP-S2-DECISION-RUNNER`, only in the
+  registered feature sibling, never the dirty canonical lab checkout.
+  The exact eight-path allowlist is retained in
+  [accepted architecture](customer-prototype-architecture.md#current-ownership-designation-architecture-october-20-2026):
+  `identity_decision.py`, `Invoke-IdentityDecision.ps1`,
+  `tests/test_release_identity_decision.py`, `Test-PrivateConnectivity.ps1`,
+  `observe_agent.py`, `release_roots.py`, `Release-Roots.ps1` under
+  `foundry-tf/multi-agent/`, plus `.github/repo-index.md`.
+- Developer is integration owner for `RP-S2-SOURCE-INTEGRATE` in application
+  and lab. Scrum retains decomposition, critical-path planning, reconciliation
+  assignment and exclusive-resource coordination; it consumes this designation
+  rather than asking the user to designate an owner again.
+- Supplied writer acknowledgements preserve canonical dirty/staged paths,
+  task-owned writes, explicit path ownership and `git commit --only`; forbid
+  shared branch switching, force-push, destructive cleanup and ownership
+  inferred from registration/clean status.
+
+Original ownership review still checks actual current checkout/path
+coordination and preservation evidence before runner writes. If the supplied
+acknowledgements/designations were the only missing input, present them to the
+original reviewers now; do not restart a missing-user-approval loop. A remaining
+tool-denied observation gets its exact existing-owner closing action, not a
+claim of safe writing or an invented need for expanded product authority.
+Older work-package wording about another writable arrangement does not expand
+this designation: any necessary new writable location or changed root guard
+returns to existing Architect-advised PO/Scrum scope reconciliation before use.
 
 Use the provided recovery-exception locator first through the existing bounded
 read-only mechanism. Current user approval already covers bounded read-only
@@ -47,10 +85,10 @@ converted into accepted writing authority or a reset of the five-round stop.
 
 | Existing boundary / priority | Original owner and doneWhen | Exclusions and handoff |
 |---|---|---|
-| P0: writing ownership | Developer/Scrum reconciles the supplied registered sibling branch/HEAD/status and resolver evidence with actual point-in-time writer ownership; originating reviewers can inspect it before runner writes | No worktree recreation, write probe, shared branch switch or registration-as-exclusivity claim; supply actual owned paths and preservation inventory to runner/integration |
+| P0: writing ownership | Developer/Scrum presents supplied designations, acknowledgements and recovery evidence to the original ownership reviewers, closes any concrete current checkout/path verification gap, and obtains originating acceptance before runner writes | No repeated designation request, worktree recreation, write probe, shared branch switch or registration-as-exclusivity claim; supply actual owned paths and preservation inventory to runner/integration |
 | P0: transport and inventory | Transport owner/DevOps consumes historical receipts, substantiates the already approved module/source and fingerprint, verifies current exact hashes and strict trust, then performs fresh sole-target authenticated Metadata inventory | No replacement trust, credential scan or inferred grant; hand off exact private deployed/rollback/package/identity/caller/action/held-owner observations; inventory is independent of runner coding |
 | P1: deterministic runner | Developer implements the retained runner after verified writing ownership, using the accepted matched wrapper/root boundary and existing finite-trial contract; offline root-mismatch, scenario/source mismatch, partial-role, preparation/receiver, unknown and zero-send controls pass | Canonical wrappers run only with their canonical operational root; sibling wrapper changes are not installed canonical changes. No bypass of owner guards, automatic fallback, second ledger or cloud effect |
-| P1: reviewed integration | Scrum-assigned integration owner joins reviewed application/runner/required operational-wrapper revisions, checks drift and retained regressions, accounts for every task commit, and prepares scoped feature-branch delivery | Consume accepted candidate, history/continuity, presentation and assertion work without redispatch. A missing required operational-wrapper revision blocks execution; record retained branch/task/commit/reason durably for abandoned code |
+| P1: reviewed integration | Designated Developer for RP-S2-SOURCE-INTEGRATE joins reviewed application/runner/required operational-wrapper revisions, checks drift and retained regressions, accounts for every task commit, and prepares scoped feature-branch delivery under Scrum reconciliation | Consume accepted candidate, history/continuity, presentation and assertion work without redispatch. A missing required operational-wrapper revision blocks execution; record retained branch/task/commit/reason durably for abandoned code |
 | P1: exact execution | Original E2E validates joined source through local repository scripts. Original DevOps joins fresh inventory with exact-source/Linux/package gates, then guarded publication, finite ingress decision and final G1-G4 initial collaboration | An agreed predeployment E2E FAIL is not readiness. Architect trusted ingress/receiver success precedes reviewer. Scoped necessary permission plan/write/readback is included only when evidenced; no uncertain-effect replay |
 | P2: customer outcome | Original DevOps proves two-turn continuity, once-only supported recovery and independent separate-parent isolation, then exact-source handoff; PO evaluates all release criteria in existing review/closeout | No hard-crash/exactly-once claim, alias-as-proof, public private identifiers or cleanup claim for historical unknowns |
 
@@ -77,7 +115,8 @@ satisfying RP-S2's live goal or release acceptance.
 ### Minimal edges, execution ownership and release decision
 
 ```text
-writing ownership -> Developer runner -> reviewed source integration
+supplied designations + recovery evidence + current coordination
+  -> original ownership acceptance -> Developer runner -> reviewed source integration
 accepted application handoffs --------> reviewed source integration
 reviewed source integration -> original E2E joined validation
 historical trust handoff -> current strict trust -> fresh DevOps inventory
@@ -124,7 +163,7 @@ role/parent isolation, not storage-RBAC or malicious-host isolation.
 Current deployed/rollback bindings, successful A/B selection, push and live
 AC1-AC9 are not established by this planning turn.
 
-### Checks performed for this planning revision
+### Historical checks for the preceding recovery-entry revision
 
 Using the existing absolute validated canonical-lab Python executable and
 explicit lab root, `Test-Demo.ps1` passed dependency checking, **204 offline
@@ -142,9 +181,44 @@ publication, inference, Linux hosting-package validation or compute stop
 was performed here. No lab source changed, so the retained lab suite was
 not rerun. Reviewed scoped push remains with the integration handoff.
 
-The Product Owner accepts this release-plan overlay for the original
-Stakeholder, Architect, Designer and Critic to review. Their current agreement
-is not yet supplied; accepted upstream votes are not substitutes.
+Those results belong to the preceding revision, not the current source.
+Current ownership-designation checks and reviewer handoff are recorded below;
+no historical count certifies this revision.
+
+### Current planning verification and original-review handoff
+
+This revision changes only the release plan and repository navigation.
+It retains all three sprint goals, doneWhen, exclusions, handoffs and
+AC1-AC9/G1-G8 gates; no new task dispatch, approval stage, runner write,
+permission change or cloud operation follows from planning acceptance.
+Scrum carries the specific designations into existing task contracts and
+original ownership review. Developer reconciles reviewed source and actual
+operational roots; original E2E owns formal integrated validation; original
+DevOps owns exact Linux/package checks, publication and live acceptance.
+
+Using the existing absolute canonical-lab Python 3.12.10 executable and explicit
+lab root, `Test-Demo.ps1` passed dependency checking, **204 offline tests in
+45.517 seconds**, and compilation. No dependencies were installed. An initial
+existence probe found no executable at the nested multi-agent environment path;
+the existing lab-root environment was then located and used, without creating
+or changing an environment. After deterministic index refresh,
+`scripts/Test-Repository.ps1` passed index, **79-public-file** boundary,
+JSON/PowerShell/context and whitespace checks. A structural assertion passed
+three unique sprint contracts with goals, doneWhen, exclusions and handoffs,
+current upstream references, designation/acceptance boundaries, independent
+inventory/isolation edges and current-overlay relative file links.
+
+These checks are local/offline only. No settings import, private receipt
+authentication, resolver experiment, current lab inventory, permission mutation,
+publication, live inference, Linux hosting-package validation or compute stop
+was performed. No lab source changed, so the retained full lab suite was not
+rerun. No push or deployed/rollback binding is established here.
+
+The Product Owner accepts this release-plan deliverable for the original
+Stakeholder, Architect, Designer and Critic to review. Their current ReleasePlan
+agreement is not supplied; accepted Architecture/UX votes are not substitutes.
+Until those votes arrive, the concrete remaining loop criterion is original
+reviewer agreement, not further architecture research or live delivery.
 
 ## RP-S3 retrospective — offline proof and unreached live outcomes
 

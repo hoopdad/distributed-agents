@@ -1,4 +1,30 @@
-# Client and release boundary: RP-S1 projection and evidence architecture
+# Client and release boundary: cumulative RP-S1/RP-S2 evidence architecture
+
+## RP-S2 separate evidence lanes and release join
+
+The [current cumulative joins](../../customer-prototype-sprint-architecture.md#preparation-execution-and-acceptance-joins)
+retain the stopped ownership/root setup and independent transport-trust handoff.
+Developer/Scrum supplies the existing bounded checkout/resolver evidence for
+original-reviewer inspection before runner writing. DevOps separately obtains
+the existing accepted private fingerprint/transport-owner receipt locator before
+strict-trust Metadata inventory. Registration alone proves neither safe writing
+nor root compatibility; ARM checks prove neither SSH trust nor hosted ingress.
+Do not recreate setup, regenerate trust or expose private evidence in Git.
+
+Retain separate canonical operational and verified writable tooling roots in
+the runner handoff; their compatibility must be tested, not assumed from worktree
+registration. Joined reviewed source checks precede formal E2E. Inventory then
+joins exact Linux/package/preview/publication gates in original DevOps ownership,
+with actual cross-run publisher/CLI/transport/mount serialization. Architecture
+adds no runner flags, public events, duplicate acceptance ledger or approval stage.
+
+The retained RP-S2 design's boundary report is guidance, not a new mandatory
+banner. Preserve stdout/parser and opt-in stderr presentation. Report preparation
+rejection, partial ingress, observed receiver rejection, unknown outcome or
+successful selection truthfully; none alone establishes G1-G4. Final/rollback
+bindings and newly owned cleanup require private actual evidence, and new cleanup
+cannot certify historical UNKNOWN outcomes. RP-S3 continuity/recovery/isolation
+and final delivery obligations remain unchanged.
 
 Derived from [RP-S1 sprint architecture](../../customer-prototype-sprint-architecture.md)
 and the accepted [SprintDesign](../../customer-prototype-sprint-design.md).

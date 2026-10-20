@@ -1,4 +1,90 @@
-# RP-S1 sprint architecture: prove continuity without changing the runtime model
+# Cumulative sprint architecture: RP-S1 continuity and RP-S2 gated identity trial
+
+## RP-S2 current sprint: evidence joins without a runtime rewrite
+
+This cumulative `SprintArchitecture` carries forward accepted RP-S1 architecture
+`4b3d0a4ecfda090f4721008de7c301e3fdf34cbc` and the retrospective
+`b43f5569b97c37427cf7f1b47d103846dd350dca`. The RP-S1 sections below retain
+their historical scope and observations; their earlier pending-review and
+no-completed-sprint statements do not describe this RP-S2 handoff.
+The current [RP-S2 design](customer-prototype-sprint-design.md#rp-s2-gated-identity-trial-and-truthful-collaboration-handoff)
+is accepted at `9dfb73d5477994128b3d3136eee1a4bf9441314d`, the clean
+application baseline inspected for this revision on the authorized feature
+branch. RP-S1 process completion is not successful product delivery.
+
+The technical design remains exactly three remote hosted roles, parent-scoped
+children with pinned versions, restored framework sessions and specialist model
+history. Immutable prerequisites/outputs, trusted receiver equality, coordinator
+ETag/fencing, checkpoints, write-ahead effects and explicit unknown holds remain
+unchanged. No new runtime selector, public field, CLI, history schema or service
+is introduced. The tier contracts below carry the current sprint joins.
+
+### Accepted work and unresolved prerequisite lanes
+
+Apply the following exact prior references within their originating boundaries:
+
+- `["yaml-loops-v1:sprint/1/RP-S1/SprintArchitectureLoop","sprint-architecture-close-agreed-deliverable"]`:
+  retain accepted RP-S1 architecture; its votes are not RP-S2 approval.
+- `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-ISOLATED-CLIENT/AssignedWorkDeveloperLoop","isolated-client-close-agreed-handoff"]`:
+  candidate `3aca5dc236695c5ec7eac98d0cd03bced40da7b8` and original
+  both-role resource-factory review are accepted; do not duplicate them.
+- `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`:
+  ownership/root setup remains incomplete despite agreement with its blocked
+  report. Preserve the five-round stop and runner-writing block. Existing
+  Developer/Scrum coordination supplies registration, branch/HEAD/status,
+  canonical-work preservation, point-in-time writing ownership and positive/
+  negative resolver evidence for permitted original-reviewer inspection.
+  Do not restart unattended denied probes or recreate the checkout here.
+- `["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-close-agreed-failure-assessment"]`:
+  retain the closed predeployment FAIL assessment, not integration PASS.
+- `["yaml-loops-v1:sprint/1/RP-S1/SprintRetroLoop","sprint-retro-close-agreed-deliverable"]`
+  and `["yaml-loops-v1:sprint/2/RP-S2/SprintDesignLoop","rp-s2-sprint-design-close-agreed-deliverable"]`:
+  retain accepted evidence-boundary guidance and screens without duplicate work.
+
+The independent transport lane needs the **existing independently accepted**
+private fingerprint/transport-owner receipt locator before strict-trust
+Metadata inventory. The supplied DevOps report stopped at
+`HOST_TRUST_EVIDENCE_REQUIRED`; no invocation receipt was independently inspected
+here. ARM readiness is not authenticated SSH readiness, and neither establishes
+hosted version inventory or specialist ingress. Do not derive trust from a newly
+observed key, retrieve key material or put private locators in shareable output.
+Missing evidence delivery is not a newly established provider defect.
+
+### Preparation, execution and acceptance joins
+
+| Boundary / existing owner | Required handoff | Failure meaning |
+|---|---|---|
+| Checkout/root evidence / Developer and Scrum | Substantiated ownership plus canonical operational-root versus writable tooling-root contract, accepted by original setup reviewers | Setup remains unmet; runner writing blocked, not a remote runtime rejection |
+| Runner / Developer | Reviewed retained executable and offline root, ownership, mismatch, redaction, partial-role, unknown-effect and zero-create/send fixtures | Coding failure; no inference or publication is authorized by a fixture |
+| Joined source / assigned integration owner | Candidate ancestry, reviewed application/lab commits, exact joined checks, durable Git accounting and scoped push outcomes | Predeployment integration prerequisite failure |
+| Inventory / DevOps, independent of coding | Strict-trust private current/rollback, package, identity, caller/effective-action and held-effect observations | Explicit missing observation, not evidence of absent permission |
+| Formal integration / original E2E | Validate the reviewed joined source through local repository scripts | Accurate FAIL is actionable assessment, not cloud-pass |
+| Exact release / original DevOps | Actual Linux/amd64/hosting-Python checks, final source/settings/package hashes, retained preview and guarded publication | Do not create a trial parent from an unjoined or drifted release |
+| Finite trial / original DevOps | Rejoin scenario, reviewed source, final common package and actual three-role versions before parent creation; architect trusted ingress/receiver success before reviewer | Preparation rejection, observed receiver rejection, partial ingress and unknown outcomes remain distinct |
+| RP-S2 acceptance / original E2E and DevOps | Three healthy common-bundle roles, accepted remote artifacts, private MI Blob provenance and genuine Decision-1 plus deterministic gates G1-G4 | Identity selection alone is insufficient |
+
+The installed source is unconditional B, not a scenario switch. An A trial
+requires its own supported corrected source/regression; relabeling B as A or
+retrying unchanged A must fail before create/send. A permission write is a
+conditional join only when fresh effective-action evidence establishes the
+necessary authorized delta; document exact scope/rationale and deterministic
+plan/write/readback. No speculative grants or new permission approval stage.
+
+A selected path requires both roles' observed ingress and receiver validation.
+Accepted remote collaboration additionally requires the exact candidate/review
+prerequisites and coordinator acceptance, private managed-identity artifact
+operations and genuine routing records. Preserve historical UNKNOWN publications,
+held parents, rollback assets and cleanup uncertainty regardless of the result.
+Known-response inspection retrieves the exact response without another send.
+No automatic fallback, replacement parent or adoption of held histories.
+
+RP-S3 still owns live two-turn continuity, once-only supported compute stop/resume,
+separate-parent isolation and final AC1-AC9/G1-G8 closure. Account-wide Blob
+Contributor provides application-enforced scope, not malicious-host/storage-RBAC
+isolation. Material namespace/held-state changes return to the existing
+Architect-advised PO/Scrum process; ordinary implementation stays with the
+retained owners. This architecture revision neither resolves the stopped setup
+task nor certifies live selection, transport, deployment or release acceptance.
 
 ## Scope, accepted baseline and cumulative design
 

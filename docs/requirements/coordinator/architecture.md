@@ -1,4 +1,23 @@
-# Coordinator tier: RP-S1 continuity and acceptance architecture
+# Coordinator tier: cumulative RP-S1/RP-S2 acceptance architecture
+
+## RP-S2 joined-source boundary
+
+Carry forward the accepted isolated-client handoff at `3aca5dc`; its original
+review is closed, not pending implementation. The
+[current cumulative sprint joins](../../customer-prototype-sprint-architecture.md#preparation-execution-and-acceptance-joins)
+place retained runner/source integration before formal E2E and DevOps release.
+The stopped lab ownership/root handoff blocks runner writing, not acceptance
+of this coordinator design; fresh cloud inventory is not a coding dependency.
+
+Keep both-role resource-factory authority/lifecycle/cleanup and zero-send
+recovery fixtures against the exact joined source. The runner rejects mismatched
+scenario/source/common-package/actual-role versions before parent creation.
+Coordinator resource-construction failure is preparation rejection; only an
+observed child result can establish receiver failure. Architect-only success
+does not authorize claiming reviewer ingress or accepted collaboration.
+Successful ingress still needs exact immutable candidate/review validation,
+private MI provenance, genuine Decision-1 and final deterministic gates.
+No runtime/header/receiver-equality change is specified by this sprint slice.
 
 Derived from the accepted release architecture and
 [RP-S1 sprint architecture](../../customer-prototype-sprint-architecture.md).

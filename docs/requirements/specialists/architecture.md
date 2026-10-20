@@ -1,4 +1,21 @@
-# Specialist tier: RP-S1 direct model-history architecture
+# Specialist tier: cumulative RP-S1/RP-S2 history and ingress architecture
+
+## RP-S2 observed ingress is a separate boundary
+
+Use the [current cumulative joins](../../customer-prototype-sprint-architecture.md#preparation-execution-and-acceptance-joins)
+without rewriting either specialist's five-stage lifecycle. Retain accepted
+history/fresh-history/no-resend fixtures and installed B caller isolation.
+Neither candidate review nor an authenticated transport establishes specialist
+entry. Record reached and unreached roles separately: architect trusted entry
+and receiver success precede reviewer dispatch; reviewer success requires its
+own observed result and exact accepted architect prerequisites.
+
+Preparation rejection has no receiver result; unknown observation must remain
+unknown. If the actual child principal differs from the trusted parent binding,
+stop and retain the exact private evidence for existing Architect/PO/Scrum
+reconciliation. Do not relax equality, rekey history, adopt held sessions or
+add a diagnostic endpoint. An ingress success is not direct model-history,
+private MI Blob or accepted-output proof; those gates remain separately required.
 
 Derived from [RP-S1 sprint architecture](../../customer-prototype-sprint-architecture.md).
 Architect and reviewer remain two separate existing hosted roles, not extra

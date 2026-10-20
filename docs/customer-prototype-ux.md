@@ -3,7 +3,7 @@
 ## UX entry: canonical journeys and presentation boundaries (October 20, 2026)
 
 This is the current User Experience Loop entry. It consumes accepted Architecture
-`35d526ae3a9e722ebe633ba60e2ca572182a5d1e` and its
+`5f9c38437102f67fd40a78d7debdaa099ba4ff44` and its
 [canonical solution model](customer-prototype-architecture.md#solutionmodel).
 The originating ArchitectureLoop audit in the supplied workflow context records
 Product Owner, Red Team and Critic agreement on that architecture deliverable.
@@ -11,10 +11,10 @@ Those votes do not accept this UX deliverable or prove executed flows.
 This packet supplies no prior dispositions or reconciled feedback. Retained
 dated entries below are historical handoffs, not current observations.
 
-Designer inspected application HEAD `35d526ae3a9e722ebe633ba60e2ca572182a5d1e`
-on `feature/customer-hosted-session-prototype`. Git status showed only the
-untracked workflow-context directory; it is not owned, indexed or committed by
-this work. The scope is the existing README/terminal experience, not a browser
+Designer inspected application HEAD `5f9c38437102f67fd40a78d7debdaa099ba4ff44`
+on `feature/customer-hosted-session-prototype`; initial Git status was clean.
+Ignored workflow context is not owned, indexed or committed by this work.
+The scope is the existing README/terminal experience, not a browser
 UI, runtime implementation, new evidence schema or identity selector.
 
 ### Design system and reading order
@@ -90,13 +90,31 @@ states, parser fields, automatic operations or approval stages:
 
 ### Current evidence and bounded completion
 
-The accepted architecture reports denied separate sibling Git/resolver
-inspection and available, value-suppressed comparisons of the supplied accepted
-trust references. These are attributed architecture results, not Designer
-inspection or fresh transport proof. Do not propagate older sibling-cleanliness
-claims as current. Supplied writer/integration designations are coordination
-evidence; originating ownership/root acceptance and actual loaded-source
-integration remain separate. Neither requires renewed user designation.
+The accepted architecture now reports accessible mirrored ownership/root
+evidence: complete-file hash comparison, direct sibling Git snapshots,
+embedded resolver contents and eight captured matched/crossed-root outcomes.
+These are architecture-attributed inspections of an external capture, not
+Designer execution or originating ownership acceptance. The earlier access
+block is not the current evidence boundary. No raw capture, private root or
+full identifier belongs in the customer README or terminal.
+
+Use the following operator wording through the existing handoff, not new
+terminal fields or customer controls:
+
+| Reached boundary | Wording and existing next owner |
+|---|---|
+| Recovery capture is accessible and architecture-inspected | Evidence available for originating assessment; existing Developer/Scrum return it with supplied designations to original Architect/Critic. Do not request another capture merely to replace attribution. |
+| Originating safe-writing/root acceptance is still pending | Runner writes remain blocked; a clean snapshot or agreement on a blocked report does not grant ownership. Preserve the originating five-round stop. |
+| Originating acceptance is subsequently recorded | Designated Developer may perform the existing eight-path sibling work and reviewed actual loaded-root integration. This conditional next step is not a present execution claim. |
+| Integrated source, identity selection or live gates are unverified | Demonstration remains BLOCKED; original E2E/DevOps own their checks. Independent containment-source/resource and inventory preparation need not wait for runner coding. |
+
+This applies to the exact originating reference
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+Supplied writer/integration designations are coordination evidence;
+originating ownership acceptance and actual loaded-source integration remain
+separate. Neither requires renewed user designation. Captured matched-root
+success is not operational installation, current SSH success or trusted
+specialist ingress. Accepted host trust remains a supplied input, not execution.
 
 Designer inspected the current `HumanView` / `finalize_workflow_turn` source and
 README command shape. No settings import, private recovery inspection, sibling
@@ -118,21 +136,20 @@ Product Owner/Critic review; their UX votes are still to be collected.
 
 ### Validation of this canonical UX entry
 
-An in-memory document check using the existing absolute Python 3.12.10 AMD64
-executable passed: all ten canonical component names and five flow names are
-present, all eighteen canonical step references occur exactly once in the
-entry, six local links resolve, and presentation/reviewer boundaries are
-retained. `git diff --check` passed for the owned changes. Python version and
-the installed Agent Framework import were checked; no dependency was installed.
+Using the existing absolute Python 3.12.10 executable, the current in-memory
+document check passed: ten component names, five flow names, eighteen canonical
+step references appearing exactly once in the entry, six resolving local links,
+and retained evidence/presentation boundaries. `Test-Demo.ps1` with that Python
+and the explicit canonical lab root passed dependency checks, 204 offline tests
+in 51.342 seconds and compilation. `scripts/Test-Repository.ps1` passed index,
+79-file public-boundary, JSON, PowerShell, context and whitespace checks.
+The preceding UX entry's suite denials remain historical; current invocations
+executed successfully and did not require dependency installation.
 
-Both requested suite invocations were denied because interactive tool approval
-was unavailable: `Test-Demo.ps1` with the absolute Python and explicit canonical
-lab root, and `scripts/Test-Repository.ps1` with that Python. Neither suite
-executed in this UX turn; historical architecture test results are not fresh
-UX validation. No alternate route was used to run them. This limits validation
-to document/source consistency, not application, repository-suite, Linux package
-or live flow certification. Original execution owners retain final exact-source
-checks; this bounded design handoff requests no new project authority.
+No lab source, settings, runtime or machine-output contracts changed here.
+Linux package certification, actual loaded-source integration, usability timing
+and live flows remain outside this validation. These successful local checks
+do not close originating ownership or AC1-AC9/G1-G8 live gates.
 
 ## Current RP-S3 retrospective — conditional instructions are not an executed demonstration (October 20, 2026)
 

@@ -72,12 +72,23 @@ Completed research does not pass the live release goal.
 
 The accepted [decision-runner design](../../customer-prototype-architecture.md#deterministic-decision-runner-contract)
 is required behavior, not an implemented CLI. `scripts/identity_handoff.py`
-remains offline-only. Original DevOps implements the retained lab runner,
+remains offline-only. The SprintPlan assigns Developer to implement the runner;
+original DevOps retains its live execution and package/publication ownership.
+Develop the retained lab runner
 independently of runtime coding and fresh inventory, with these joined inputs:
 absolute application/lab roots and validated Python, explicit `A-correction`
 or `B-candidate` scenario, reviewed source/common package/exact role versions,
 fresh context/inventory and private evidence destination outside both repos.
 No new deployment owner or acceptance ledger is introduced.
+
+The [current source-to-trial contract](../../customer-prototype-architecture.md#source-identity-is-part-of-the-scenario-contract)
+is mandatory at integration: `3aca5dc` installs unconditional B specialist
+delegation, not an A/B switch. Reject a scenario that does not match the actual
+reviewed source/package/role versions before dispatch. A requires its own
+evidenced corrected source, not relabeling B or retrying unchanged opaque A.
+Distinguish local resource-preparation rejection from observed remote receiver
+failure; missing observation remains unknown. No automatic fallback or held-parent
+adoption is introduced.
 
 | Phase | Fail-closed contract |
 |---|---|

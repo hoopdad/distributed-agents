@@ -30,7 +30,98 @@ No new infrastructure, quota, network, DNS, VPN, provider submission, new
 service, or alternate project is in scope. Do not replace existing identities
 merely to obtain a different caller.
 
-## Current architecture decision and inspected baseline
+## Current source-to-trial decision (October 20, 2026)
+
+This owner inspected clean application HEAD
+`3aca5dc236695c5ec7eac98d0cd03bced40da7b8` on
+`feature/customer-hosted-session-prototype`. The isolated runtime candidate is
+now implemented there; the earlier baseline sections below are historical.
+`WorkflowRuntime.resources()` unconditionally builds B's specialist-only
+headers/client for this source. The original six-resource tuple still exposes
+opaque-only authority to non-specialist callers. No runtime A/B selector exists.
+Installed source is **not** live selection: principal compatibility, effective
+permission and both specialist receivers remain unmeasured in this turn.
+
+### Source identity is part of the scenario contract
+
+The required runner's scenario label must describe the actual reviewed source,
+not configure behavior that this runtime cannot select:
+
+| Trial | Required source/package join | Fail-closed result |
+|---|---|---|
+| `B-candidate` | Reviewed `3aca5dc` candidate or its reviewed descendant, integrated with the lab runner, then exact-source Linux/common-package/version closure | A pre-candidate package is not B even if the runner labels it B |
+| `A-correction` | A separate reviewed source revision containing a concrete supported opaque-path correction, with its own regression and package/version closure | Current unconditional B source cannot be relabeled A; unchanged historical A is not a correction |
+| Existing held parent or unknown operation | Retain its original exact source/version/session binding and inspect only known effects | Neither scenario adopts it, changes its identity namespace or sends again |
+
+This is an input-consistency rule for retained local runner/preflight tooling, not a
+new receipt protocol, runtime selector, acceptance ledger or approval stage.
+Reject mismatched scenario/source/package/actual-version joins before creating
+a trial parent. Record the mismatch without dispatch. If A becomes the smallest
+evidenced repair, implement it as ordinary reviewed source through the existing
+Developer/DevOps loops; do not silently toggle a private environment variable,
+edit a sealed stage or switch the shared checkout to an old revision.
+
+The candidate's guards run while resources are constructed, before remote
+dispatch. A missing/invalid captured user, full-scope mismatch or forbidden
+header is therefore a **local preparation rejection**, not evidence of remote
+ingress absence or a denied permission. Only an observed child result can
+classify child receiver failure. An absent observation remains unknown.
+Keep these distinctions in existing sanitized decision outcomes; no raw identity
+or header values belong in the public report.
+
+### Current ownership and readiness join
+
+The existing SprintPlan at `4f2e02d` assigns
+`RP-S2-DECISION-RUNNER` to **Developer**, after
+`RP-S2-LAB-OWNERSHIP`; DevOps retains inventory, package/publication and the
+live trial. This supersedes only the earlier architecture's suggested coding
+owner, not the runner contract or DevOps execution ownership.
+`RP-S2-ISOLATED-CLIENT` has implementation commit `3aca5dc`; retain it for
+original review/integration, without redispatching candidate or RP-S1 UX/
+continuity work. This turn does not assert that its task reviews are accepted.
+
+The current minimal join is:
+
+```text
+lab writing ownership -> Developer runner ------------------+
+implemented B source -> original review -------------------+-> source integration
+fresh inventory (DevOps, independent) --------------------------+
+source integration -> final-source/Linux/package gates --------+-> DevOps trial
+```
+
+Source integration must cover the reviewed application commit and reviewed
+lab-tool commit on their authorized feature branches. Existing lab checkout
+`feature/swc-think-fast-aca-dns` and its unrelated dirty files remain untouched
+here. Establish safe lab writing ownership rather than switching it underneath
+another writer. An evidenced permission delta adds only its own scripted
+plan/write/readback edge. Scheduler resource names do not provide OS exclusion.
+
+The lab file inventory inspected here contains retained App/Observe and
+publisher tooling but no new decision-runner entry point. That does not prove
+no task exists on another worktree; require the actual named commit/entry point
+at integration, not a guessed command. Before the finite live trial, DevOps
+must demonstrate scenario/source mismatch rejection, pre-dispatch preparation
+failure, competing owner, unknown effect hold, exact-response zero-send
+recovery, redaction and partial-role outcomes in the retained runner tests.
+Architect success alone leaves reviewer unverified. All original AC1-AC9 and
+G1-G8 remain downstream and unchanged; this architecture makes no cloud claim.
+
+### Local verification of this source-to-trial update
+
+Using the existing absolute validated Python 3.12.10 executable and explicit
+lab root, `Test-Demo.ps1` passed dependency checking, **192 offline tests in
+23.678 seconds** and compilation. `scripts/Test-Repository.ps1` passed index,
+public-boundary (**74 public files**), JSON, PowerShell, context and whitespace
+checks. No dependency installation or runtime change was needed. These repeat
+local checks are not new live progress or selection of B.
+
+No settings import, authenticated cloud query, permission change, deployment,
+inference, Linux hosting-package gate or release acceptance was performed in
+this architecture turn. Lab sources were not changed; the retained full lab
+suite was not rerun. Original Product Owner, Red Team and Critic review of this
+delta remains required; owner documentation does not assert their agreement.
+
+## Previous architecture decision and inspected baseline
 
 The preceding architecture revision started from application commit
 `24b883f910dedbc8dc524177f29f59e061be265e` on
@@ -88,8 +179,8 @@ offline probes in `13203ac`, reconciled by `bb1743d`. Its current executable
 has **no live mode** and intentionally returns exit 2 with unresolved selection.
 Neither that command nor this architecture executes a hosted B candidate.
 
-The handoff identifies a concrete implementation gap: production
-`WorkflowRuntime.resources()` still supplies one `ProjectClient`/header set
+At that inspected baseline, the handoff identified a concrete implementation gap:
+`WorkflowRuntime.resources()` supplied one `ProjectClient`/header set
 to both `WorkflowRemoteAgents` and non-specialist operations. Runtime candidate
 installation and a journaled live decision runner are absent. Resolve that
 internal design gap here rather than sending the same unresolved research
@@ -150,9 +241,10 @@ ingress selection and full release gates; no old-state migration is implied.
 
 ### Deterministic decision runner contract
 
-The original DevOps owner supplies the missing local, lab-owned runner using
-the retained wrappers; this section is its required behavior, **not an existing
-command**. Formal E2E and deployment/cloud-pass ownership do not move.
+The assigned Developer supplies the local, lab-owned runner using retained
+wrappers; original DevOps executes it. This section defines required behavior,
+**not an existing command**. Formal E2E and deployment/cloud-pass ownership
+do not move. The current source/scenario join above also applies.
 
 | Input / stage | Required behavior |
 |---|---|
@@ -183,7 +275,7 @@ following bounded contracts refine the existing release plan, not replace it:
 |---|---|---|
 | Isolated B runtime / Developer | Exact-source candidate wires specialist-only clients; real resource-factory tests prove both-role lifecycle headers, unmodified non-specialist context, cleanup, trusted binding negatives and known-response zero-send recovery; complete application/repository checks pass | Uses integrated offline handoff; excludes deployment, namespace relaxation, dependency migration and duplicate continuity/UX implementation |
 | Fresh inventory / DevOps | Sole-target active/rollback package/version/identity/protocol, actual caller/effective explicit action and unresolved operation records are current and privately bound | Independent of runtime coding; no assumed missing grant or mutation from metadata alone |
-| Decision tooling / DevOps | Retained local runner implements the table above; offline failure/unknown/ownership/redaction fixtures and affected retained suite pass | Runner coding can parallel runtime coding against this contract; live execution waits for inventory plus reviewed candidate/source/Linux/package gates |
+| Decision tooling / assigned Developer | Retained local runner implements the table above; offline failure/unknown/ownership/redaction fixtures and affected retained suite pass | Runner coding can parallel runtime coding against this contract; live execution remains DevOps and waits for inventory plus reviewed candidate/source/Linux/package gates |
 | Bounded ingress decision / DevOps | Execute the finite trial under existing authority and record selected/unresolved with receiver evidence for each reached role | No formal acceptance credit; stop on held/unknown work. Unsupported namespace requires an explicit end-to-end authenticated design through Architect-advised PO/Scrum, never an equality bypass. |
 | Integration / Scrum-assigned owner | All reviewed task commits are on the authorized feature branch, or named retained branches/commit IDs/reasons are recorded in a feature-branch commit; exact integrated source rechecked | Do not switch a shared lab checkout underneath other work; establish its feature branch safely before writing, or use a separate branch/worktree with explicit integration ownership |
 
@@ -382,11 +474,11 @@ A valid B design must use one stable, authenticated delegation scheme across
 the affected lifecycle. Verify all existing boundaries: `RemoteAgents.prepare`,
 `create`, `_check` / `recover_creation`, `invoke` and `recover`; raw Azure SDK
 session operations and OpenAI Responses clients use different header plumbing.
-`WorkflowRuntime.resources()` currently shares a project/header client with
-routing and other project operations. A repair must explicitly separate the
-specialist-only delegated headers if applying them globally would change model,
-checkpoint, history or parent authorization context. Preserve the explicit
-execution order; no generic session manager or second protocol is needed.
+At the earlier baseline `WorkflowRuntime.resources()` shared a project/header
+client with routing and other project operations. Candidate `3aca5dc` now
+separates specialist delegation while retaining original model, checkpoint,
+history and parent authority. Preserve that explicit separation and execution
+order; no generic session manager or second protocol is needed.
 
 If B changes the principal namespace, do not remove the equality assertion,
 trust the supplied assignment principal, migrate old histories or silently

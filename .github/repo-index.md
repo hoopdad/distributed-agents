@@ -18,7 +18,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
-| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current recovery-entry evidence and executed canonical/sibling resolver matrix, matched operational-wrapper boundary; installed B candidate versus live selection, source/package join, original-owner handoffs and AC1-AC9 evidence map |
+| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current explicit writer/integration designation overlay, unchanged original ownership review and matched operational-wrapper boundary; historical resolver evidence versus current verification, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, current recovery-entry matched-root/trust interpretations, unchanged machine contract and bounded implementation checks |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current recovery-entry overlay and three retained sprint goals/acceptance contracts; historical receipts/resolver evidence versus writing/current trust, matched operational-wrapper integration, minimal original-owner dependencies and unchanged live final gates |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
@@ -39,6 +39,17 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Ownership-designation architecture freshness: inspected clean application
+baseline `4212a7b59270a0fe791735385a4359a6ab30cb68`; updated only release
+architecture and this navigation, with no added/deleted paths. Consumes the
+current user's exact RP-S2 ownership coordination defaults without passing the
+originating review or permitting runner writes prematurely. Seven named
+private evidence files parsed; allowlisted local linkage/hold checks passed.
+Canonical status/worktree registration were observed; direct sibling inspection
+was tool-denied, so current sibling status/exclusivity is not asserted.
+Retains accepted runtime/UX/assertion handoffs, matched loaded-source roots,
+original E2E/DevOps gates and truthful unresolved live status. No lab mutation,
+runtime/schema change, new stage or cloud operation is inferred.
 Recovery-entry SprintPlan freshness: inspected clean agreed-sprint-architecture
 baseline `095ced1cbb8258eaed6e1bf11beeb19a8b36f08d`; added only the current
 recovery-entry assignment JSON and updated navigation/inventory. Preserves the

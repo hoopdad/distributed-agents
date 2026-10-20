@@ -24,6 +24,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Retained fixtures/candidate and stopped prerequisite lanes; actual G1-G4 entry, both-turn binding/response/current-output joins, once-only supported recovery, separate-parent isolation and exact-source truthful delivery; unchanged runtime and public contracts |
 | RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Phase-compatible Developer checkout verification, installed-candidate review/checks, runner and integration; deferred DevOps inventory/status/trial; pre-parent scenario/source/package/version join and truthful preparation/receiver/unknown outcomes |
 | RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Stopped evidence-only ownership carryover and independent application integration preparation; runner/source join, later strict-trust inventory, exact publication/finite trial and explicit actual G1-G4 handoff; accepted candidate/UX and RP-S1 audit contract retained |
+| RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Evidence-only stopped carryover alongside independent missing scripted-comparison work; reviewed runner/source integration consumes accepted application preparation; original DevOps gates actual G1-G4, two-turn continuity, once-only supported recovery, independent isolation and truthful exact-source delivery |
 | RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Supplied review/process observations, metric limits, bounded evidence-handoff improvements and existing-owner actions; no reset of stopped ownership or live acceptance waiver |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
@@ -42,6 +43,16 @@ RP-S3 architecture freshness: inspected clean baseline
 architecture slices and this navigation. Considered no added/deleted paths;
 retained runtime, acceptance parser and package boundaries. Per-scenario
 acceptance output does not itself establish the full cross-scenario proof.
+RP-S3 planning freshness: inspected clean baseline
+`77454900c853e5787eda21f5139cc969976e332a`; added only the RP-S3 assignment
+JSON and updated this index. Prior plans remain unchanged. Preserve originating
+ownership stop and separate accepted transport-trust handoff; consume accepted
+application preparation without redispatch. Missing comparison implementation
+is independent of lab ownership and inventory. Reviewed integration owns Git
+accounting/push, original E2E owns formal joined validation, and original DevOps
+owns all cloud effects and live gates. Recovery and isolation share serialized
+resources without an invented dependency; an agreed blocked report enables no
+missing prerequisite effects. No dispatch or live capability is inferred here.
 `config\routing-calibration.json` records the successful real routing-v3
 evaluation (eight ready and four missing-input cases correct, selected threshold
 0.5/margin 0) on the unchanged frozen corpus. All four real evaluation journals
@@ -351,6 +362,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-architecture.md`
 - `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
+- `docs\customer-prototype-rp-s3-sprint-plan.json`
 - `docs\customer-prototype-sprint-architecture.md`
 - `docs\customer-prototype-sprint-design.md`
 - `docs\customer-prototype-sprint-plan.json`

@@ -18,7 +18,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
-| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design and canonical `solutionModel` component/flow IDs; supplied trust comparisons versus current execution, sibling registration versus denied direct Git/resolver inspection, existing ownership designations and original review; actual loaded roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
+| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design and unchanged canonical `solutionModel` IDs; newly accessible mirrored direct sibling Git/resolver/eight-case root evidence versus pending originating ownership acceptance, existing designations and preserved stop; actual loaded roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Current canonical five-flow/eighteen-step journey-to-screen map from architecture `35d526a`; README/terminal hierarchy, interaction/failure rules, retained wireframes/accessibility and evidence-to-display contract; attributed inspection versus execution, unchanged stdout/parser and no new UI |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current canonical release-planning entry consumes architecture `35d526a` and UX `c705711`; machine-readable RP-S1/RP-S2/RP-S3 goals, acceptance, exclusions and handoffs map all five flows/eighteen steps. Independent preparation versus ownership/runner/loaded-source/E2E/DevOps critical path; accepted work retained, current separate sibling inspection unavailable, no live acceptance. Older sprint reviews/retrospectives remain attributed history |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Current blocked closeout at `23e7d48`: AC1-AC9/G1-G8 ledger; accepted application/observation/review/retro handoffs versus missing substantive ownership and actual operational join; supplied host trust distinct from containment-source/resource readiness; separately attributed Windows checks, conditional demo, unknown final/rollback bindings and unverified final push |
@@ -37,6 +37,19 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Identity candidate handoff | `scripts\identity_handoff.py`, `tests\test_identity_handoff.py`, `docs\identity-candidate-handoff.md` | Offline-only A/B candidate, lifecycle header plumbing and receiver namespace negative controls; no installed runtime change or live selection |
 | Isolated runtime candidate | `demo\foundry.py:specialist_identity_headers`, `demo\workflow.py:WorkflowRuntime.resources`, `tests\test_isolated_client.py`, `docs\design.md` | B specialist-only project/header/cache; original resource tuple and opaque-only non-specialist authority retained; actual resource lifecycle/cleanup regressions, no live selection |
 | Copilot context | `.github\copilot-instructions.md`, agents and skills | Bounded implementation/review and deployment gates |
+
+Architecture recovery-evidence freshness: inspected clean feature baseline
+`08ac1e71956c3f212f059b445c90b2fa40fa8aca`; updated only the existing
+architecture entry and this navigation, with no added/deleted public paths.
+The supplied nonsecret ownership/root capture is now accessible: inspected
+direct sibling Git/status, actual resolver contents and source-bound eight-case
+matrix; complete-file hash matched the supplied comparison. Embedded-source
+hash recomputation and current model/repository/offline checks were tool-denied.
+Recorded before/after preservation and normalized source hashes agree. Captured
+execution is attributed, not a fresh execution or originating acceptance vote.
+Existing Developer/Scrum return it to original Architect/Critic before dependent
+runner writes; no reset of the originating stop, duplicate setup, runtime change,
+cloud claim or private evidence copied into Git.
 
 Developer current-source freshness (RP-S1): inspected feature baseline
 `a30291e65213340cd2e05ff4a06492bc211d678c`. Retained continuity fixtures

@@ -3,7 +3,7 @@
 ## Architecture entry: canonical solution model (October 20, 2026)
 
 This Architecture Loop inspected clean application baseline
-`87f1b358d067ad0a2035c1d4915a181730bf652b` on
+`08ac1e71956c3f212f059b445c90b2fa40fa8aca` on
 `feature/customer-hosted-session-prototype`. No reconciled feedback or
 `priorDispositions` is supplied in this packet. Existing dated handoffs below
 remain attributed history, not freshly collected acceptance votes or cloud
@@ -11,9 +11,10 @@ observations. Retain their principles, toolsets, identity selection contract,
 bounded runner contract and AC1-AC9 matrix; do not redispatch implemented
 continuity, specialist-history or terminal work merely because live gates fail.
 
-The existing architecture describes the full release but has no explicit
-`solutionModel`. The model below establishes canonical IDs for that existing
-design, not new services, storage, framework abstractions or runtime contracts.
+The existing explicit `solutionModel` below remains unchanged: ten components,
+five flows and eighteen steps. This revision consumes newly accessible
+ownership/root evidence for `release-join`, not new services, storage,
+framework abstractions or runtime contracts.
 Downstream Architecture/SprintArchitecture artifacts and work cards reuse these
 IDs and names. Implementation files remain mapped in the source trace below;
 these names do not rename Python classes, CLI flags or diagnostic codes.
@@ -99,30 +100,46 @@ these names do not rename Python classes, CLI flags or diagnostic codes.
 
 ### Current evidence and bounded handoff
 
-Fresh canonical lab Git inspection observed the unrelated active branch with
-six modified and two untracked paths; all were preserved. Worktree registration
-lists the feature sibling at `bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703`.
-A separate sibling Git inspection and the requested sibling resolver inspection
-were denied because interactive tool approval was unavailable. No alternate
-resolver reader or execution was attempted. Registration is not a fresh sibling
-status check, inspected resolver proof, exclusive ownership or operational
-installation. Do not propagate earlier clean-sibling observations as current.
+Fresh direct canonical lab Git inspection observed the unrelated active branch
+with six modified and two untracked paths; all were preserved. The new
+user-supplied mirrored ownership/root capture, collected October 20 at 18:30 UTC,
+is accessible and its complete-file SHA256 matches the supplied comparison.
+Its embedded sources and execution results were inspected, not rerun. This is
+substantive new evidence availability, not another denied-inspection report.
+The originating blocked result and original Architect/Critic unmet criteria
+were also inspected; their agreement was explicitly not task acceptance.
 
-The eight explicitly supplied nonsecret recovery JSON files parsed successfully.
-Value-suppressed checks confirm both supplied fingerprint reference fields match
-the user-accepted host fingerprint. This establishes available accepted trust
-input, not current SSH success, independent receipt authentication, source
-ownership, cloud inventory or permission readback. No private evidence or values
-are copied into customer Git. No settings were imported in this turn.
+| Originating unmet evidence | Newly inspected capture | Remaining boundary |
+|---|---|---|
+| Direct sibling branch, HEAD/base and owned-path status | Direct Git snapshots show the feature sibling at `bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703`, the same merge base, empty full status and empty eight-path status | A point-in-time snapshot does not grant ownership or prove absence of later writers; use the supplied explicit designations, not cleanliness |
+| Actual resolver contents, hashes and line endings | Canonical and sibling Python/PowerShell contents are included with raw and LF-normalized hashes; recorded normalized hashes match within each canonical/sibling pair | Contents and recorded hashes were inspected; independent embedded-source hash recomputation was tool-denied. Source inspection does not prove operational installation of future runner commits |
+| Source-bound positive and negative controls | Four Python and four PowerShell results bind the loaded resolver and selected root: both matched roots succeed; both crossed roots reject with `LAB_TOOL_OWNER_MISMATCH` | These are inspected captured executions, not newly executed tests in this Architecture turn; formal exact-join E2E remains downstream |
+| Preservation and safe-writing handoff | Before/after branch, HEAD and full status agree for application, canonical lab and sibling; all eight designated paths are listed | Original Developer/Scrum must submit this evidence and existing designations to originating Architect/Critic before dependent writes |
+
+The recorded eight-case root results and normalized source comparisons agree.
+No capture contents, private absolute roots or private settings are copied into
+customer Git; the external evidence locator/hash belongs in the workflow
+handoff. Earlier sections describing unavailable direct evidence remain
+attributed historical observations and do not override this accessible capture.
+Do not recreate setup or repeat the same capture merely to replace attribution.
+No settings were imported in this turn.
+
+Accepted host fingerprint and reference remain supplied trust inputs; their
+earlier comparisons are historical observations, not rerun here. They do not
+establish current SSH success, containment-source/resource readiness, inventory,
+effective permission or live specialist entry. Use the supplied trust first
+under the retained strict wrapper; do not request renewed trust authority.
 
 For the exact originating ownership reference
 `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`,
 use this packet's `ownershipRecoveryDefaults` as writer acknowledgement and
-integration designation. Existing Developer supplies the remaining attributable
-owned-path/resolver evidence for originating Architect/Critic review before
-the eight-path sibling runner writes. Neither unavailable inspection nor supplied
-coordination alone proves substantive acceptance. This architecture deliverable
-does not require that downstream task to finish, and requests no renewed authority.
+integration designation. Existing Developer/Scrum consume the accessible capture
+through that originating task's original Architect/Critic review; do not create
+a replacement ownership task or reset its five-round stop. This Architecture
+Loop does not cast those task votes. Dependent eight-path runner writes remain
+blocked until substantive originating acceptance. No renewed authority or
+designation is needed. This architecture deliverable does not require that
+downstream task to finish.
 
 Scrum retains the existing bounded contracts below: ownership verification and
 independent containment-source/resource plus trusted-inventory preparation can
@@ -135,25 +152,61 @@ The current specialist-only B source remains an unselected candidate, not an A
 selector or a live fix. Unsupported namespace change returns to existing
 Architect-advised Product Owner/Scrum scope decisions, never relaxed equality.
 
+The minimal downstream handoff is evidence consumption, then gated execution:
+
+1. **Developer/Scrum:** return the new capture and existing designations to the
+   originating ownership reviewers against their exact unmet criteria. Done
+   means substantive safe-writing/root acceptance, not agreement on a blocked
+   report. Exclude renewed setup, application redispatch and runner writes
+   before that decision.
+2. **Developer:** after that acceptance, implement the existing finite runner
+   contract on its eight designated sibling paths, run targeted and retained
+   regressions and commit only owned paths. Designated integration joins
+   reviewed task commits and the actually loaded wrapper roots/hashes, retaining
+   abandoned branches and durable task/commit/reason accounting. Matched-root
+   evidence does not authorize crossed-root execution or canonical dirty writes.
+3. **E2E/DevOps:** validate the actual joined source in the original E2E loop;
+   independently finish containment-source/resource and inventory preparation.
+   Original DevOps then owns serialized exact-package publication and bounded
+   architect-before-reviewer ingress selection, followed by final common-bundle
+   G1-G8. A/B remains unresolved until actual trusted receiver success.
+4. **Release closeout:** only an accepted non-held initial parent permits the
+   queue follow-up and supported once-only stop/resume. Separate-parent isolation
+   has its own release prerequisites, not a recovery-success dependency.
+   Preserve AC1-AC9, historical UNKNOWNs, held parents and rollback assets.
+
 The solution model and evidence matrix are owner-ready for original Product
 Owner, Red Team and Critic review. This is architectural completion, not agreement
 on release acceptance. No deployment, permissions, cloud inference, stop/resume,
 push or live AC1-AC9 verification is claimed; historical UNKNOWNs, held parents,
 rollback assets and application-enforced Blob-isolation limits remain unchanged.
 
-### Validation of the canonical model
+### Validation and attribution of this revision
 
-An in-memory Python check parsed this section's JSON: ten unique component IDs,
-five unique triggered flows, eighteen unique step IDs and all component/support
-references resolved. It also checked the source entry paths and retained
-AC1-AC9/G1-G8 matrix. This checks model consistency, not executed flow behavior.
-Using the existing absolute Python 3.12.10 executable, `Test-Demo.ps1` with
-explicit canonical lab root passed dependency checks, 204 offline tests in
-47.820 seconds and compilation (exit 0). `scripts/Test-Repository.ps1` passed
-index, public-boundary (79 files), JSON, PowerShell, context and whitespace
-checks. No dependencies were installed. No lab source changed; full retained
-lab and Linux hosting-package checks were not run. Repeated offline checks
-are validation, not new live progress.
+Current read-only operations succeeded for application/canonical lab Git,
+the originating outcome and original ownership reviews, the capture's complete
+SHA256, embedded resolver contents and recorded matrix. The external capture
+hash matches the user's supplied comparison. Its execution results remain
+attributed to that capture, not this turn. Original ownership acceptance is
+still pending; no reviewer vote is inferred from this architecture.
+
+A mixed evidence-consistency/model/check command was denied by the tool layer
+because no interactive response was available. A separate repository-local
+model/check attempt, then isolated `scripts/Test-Repository.ps1` and
+`Test-Demo.ps1` invocations with the existing absolute Python and explicit lab
+root were also denied. No script execution or independent embedded-source hash
+recomputation succeeded in this turn. The underlying access-policy requirement
+is unidentified; this does not establish a missing Azure permission, project
+authority, designation or user-only remedy. Do not bypass those denials.
+
+The canonical model is retained unchanged, including ten components, five flows,
+eighteen steps and the AC1-AC9/G1-G8 matrix. The previous architecture reported
+an in-memory model check, 204 offline tests in 47.820 seconds, compilation and
+repository checks; these remain historical results, not checks of this edit.
+Current validation must be rerun through the authorized execution mechanism
+before this revision is treated as newly repository-verified. No dependency,
+runtime or lab source changed; no dependency installation, retained lab suite,
+Linux hosting-package gate, settings import or cloud operation was performed.
 
 ## Current RP-S3 retrospective — preserve observation provenance and independent preparation (October 20, 2026)
 

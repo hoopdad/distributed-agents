@@ -1,5 +1,160 @@
 # Customer hosted-session prototype: release architecture
 
+## Architecture entry: canonical solution model (October 20, 2026)
+
+This Architecture Loop inspected clean application baseline
+`87f1b358d067ad0a2035c1d4915a181730bf652b` on
+`feature/customer-hosted-session-prototype`. No reconciled feedback or
+`priorDispositions` is supplied in this packet. Existing dated handoffs below
+remain attributed history, not freshly collected acceptance votes or cloud
+observations. Retain their principles, toolsets, identity selection contract,
+bounded runner contract and AC1-AC9 matrix; do not redispatch implemented
+continuity, specialist-history or terminal work merely because live gates fail.
+
+The existing architecture describes the full release but has no explicit
+`solutionModel`. The model below establishes canonical IDs for that existing
+design, not new services, storage, framework abstractions or runtime contracts.
+Downstream Architecture/SprintArchitecture artifacts and work cards reuse these
+IDs and names. Implementation files remain mapped in the source trace below;
+these names do not rename Python classes, CLI flags or diagnostic codes.
+
+### solutionModel
+
+```json
+{
+  "components": [
+    {"id": "terminal-client", "name": "Terminal client", "supports": []},
+    {"id": "coordinator", "name": "Hosted coordinator", "supports": []},
+    {"id": "architect", "name": "Hosted architect", "supports": []},
+    {"id": "reviewer", "name": "Hosted reviewer", "supports": []},
+    {"id": "conversation-state", "name": "Parent and specialist conversation state", "supports": ["coordinator", "architect", "reviewer"]},
+    {"id": "workflow-checkpoints", "name": "MAF workflow checkpoints", "supports": ["coordinator"]},
+    {"id": "artifact-plane", "name": "Private Blob artifacts and effect journal", "supports": ["coordinator", "architect", "reviewer"]},
+    {"id": "identity-boundary", "name": "Trusted identity and private transport", "supports": ["terminal-client", "coordinator", "architect", "reviewer", "artifact-plane"]},
+    {"id": "decision-routing", "name": "Decision-1 routing and admission", "supports": ["coordinator"]},
+    {"id": "release-toolchain", "name": "Guarded lab release toolchain", "supports": ["terminal-client", "coordinator", "architect", "reviewer"]}
+  ],
+  "flows": [
+    {
+      "id": "remote-collaboration",
+      "name": "Remote design and review",
+      "persona": "Prototype evaluator",
+      "trigger": "A synthetic initial user requirement arrives in a fresh parent conversation.",
+      "steps": [
+        {"id": "collaboration-bind", "description": "Terminal submits the requirement; coordinator validates trusted parent scope and persists the current requirements revision.", "components": ["terminal-client", "coordinator", "identity-boundary", "artifact-plane"]},
+        {"id": "collaboration-route", "description": "Coordinator applies deterministic readiness and effect gates, records a genuine Decision-1 choice when needed, and checkpoints graph progress.", "components": ["coordinator", "decision-routing", "artifact-plane", "workflow-checkpoints"]},
+        {"id": "collaboration-design", "description": "Coordinator creates or reuses the pinned architect binding and restores its remote session; architect loads model history and exact inputs, then writes an immutable candidate.", "components": ["coordinator", "architect", "conversation-state", "identity-boundary", "artifact-plane"]},
+        {"id": "collaboration-review", "description": "Coordinator invokes the pinned reviewer with restored history and exact current requirements/candidate; reviewer writes an immutable review. A rejection can repeat the same specialist bindings.", "components": ["coordinator", "reviewer", "conversation-state", "identity-boundary", "artifact-plane"]},
+        {"id": "collaboration-return", "description": "Coordinator validates producer, hashes, prerequisites and revisions before fenced acceptance; terminal returns design/review content with separate truthful continuity presentation.", "components": ["coordinator", "artifact-plane", "terminal-client"]}
+      ]
+    },
+    {
+      "id": "two-turn-continuity",
+      "name": "Same-parent specialist continuation",
+      "persona": "Prototype evaluator",
+      "trigger": "After a completed non-held initial turn, the evaluator adds an asynchronous queue to the same parent.",
+      "steps": [
+        {"id": "continuity-revise", "description": "Terminal reuses its parent binding; coordinator retains earlier requirements, appends the follow-up and invalidates stale candidate/review approval.", "components": ["terminal-client", "coordinator", "conversation-state", "artifact-plane"]},
+        {"id": "continuity-invoke", "description": "Remote design and review runs again with the same parent, both hosted/framework child identities and pinned versions; model histories and response continuations advance.", "components": ["coordinator", "architect", "reviewer", "conversation-state", "artifact-plane", "identity-boundary"]},
+        {"id": "continuity-verify", "description": "Compare actual binding identities, exactly two child creations across the pair, fresh invocation response IDs and current artifacts; return the revised result without treating aliases or recalled text as proof.", "components": ["coordinator", "artifact-plane", "terminal-client", "release-toolchain"]}
+      ]
+    },
+    {
+      "id": "supported-recovery",
+      "name": "Supported compute stop and resume",
+      "persona": "Lab operator",
+      "trigger": "The retained local acceptance script requests one supported compute stop for a completed non-held parent.",
+      "steps": [
+        {"id": "recovery-stop", "description": "Persist the once-only stop marker and confirm the exact parent's stopped/idle state through the retained wrapper; an uncertain stop remains held.", "components": ["release-toolchain", "identity-boundary", "conversation-state", "artifact-plane"]},
+        {"id": "recovery-resume", "description": "Continue that parent with retained checkpoints, pinned children and history; retrieve known responses or reconcile outputs instead of resending effects.", "components": ["coordinator", "architect", "reviewer", "conversation-state", "workflow-checkpoints", "artifact-plane"]},
+        {"id": "recovery-verify", "description": "Independently compare checkpoint retention and actual create/send observations, then report continuity and no duplicate effects or the precise unmet gate.", "components": ["release-toolchain", "artifact-plane", "terminal-client"]}
+      ]
+    },
+    {
+      "id": "parent-isolation",
+      "name": "Separate-parent isolation",
+      "persona": "Prototype evaluator",
+      "trigger": "After final-release prerequisites are met, a separate synthetic parent starts independently of recovery success.",
+      "steps": [
+        {"id": "isolation-bind", "description": "Create a distinct trusted parent scope and its own two specialist bindings; never adopt held children or copy another parent's scope.", "components": ["terminal-client", "coordinator", "conversation-state", "identity-boundary"]},
+        {"id": "isolation-execute", "description": "Run remote design and review in the separate artifact namespace and enforce cross-scope rejection at assignment and artifact boundaries.", "components": ["coordinator", "architect", "reviewer", "artifact-plane", "identity-boundary"]},
+        {"id": "isolation-verify", "description": "Compare both parents' actual child/scope bindings and verify exclusion of first-parent requirements; disclose that Blob isolation is application-enforced.", "components": ["release-toolchain", "artifact-plane", "terminal-client"]}
+      ]
+    },
+    {
+      "id": "guarded-release",
+      "name": "Exact-source guarded release",
+      "persona": "Lab operator",
+      "trigger": "Reviewed owned task commits are ready for integration and the next scoped release attempt.",
+      "steps": [
+        {"id": "release-join", "description": "Designated integration owner joins reviewed application and lab commits with actual loaded roots and hashes, preserves unrelated work and records retained or abandoned task branches durably.", "components": ["release-toolchain"]},
+        {"id": "release-package", "description": "Formal E2E validates the joined source through local scripts; DevOps verifies current target/rollback inventory, source tests, Linux hosting checks, immutable common bundle and exact-version preview.", "components": ["release-toolchain", "identity-boundary"]},
+        {"id": "release-discriminate", "description": "DevOps serializes guarded publication and the finite source-bound identity trial, architect before reviewer; select A or B only on trusted receiver evidence and hold unknown effects.", "components": ["release-toolchain", "coordinator", "architect", "reviewer", "identity-boundary", "artifact-plane"]},
+        {"id": "release-close", "description": "Run live G1-G8 against the final common bundle, join independent provenance with scenario assertions, and return AC1-AC9 status, exact final/rollback bindings, scoped push and owned cleanup without clearing historical unknowns.", "components": ["release-toolchain", "terminal-client", "artifact-plane"]}
+      ]
+    }
+  ]
+}
+```
+
+### Current evidence and bounded handoff
+
+Fresh canonical lab Git inspection observed the unrelated active branch with
+six modified and two untracked paths; all were preserved. Worktree registration
+lists the feature sibling at `bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703`.
+A separate sibling Git inspection and the requested sibling resolver inspection
+were denied because interactive tool approval was unavailable. No alternate
+resolver reader or execution was attempted. Registration is not a fresh sibling
+status check, inspected resolver proof, exclusive ownership or operational
+installation. Do not propagate earlier clean-sibling observations as current.
+
+The eight explicitly supplied nonsecret recovery JSON files parsed successfully.
+Value-suppressed checks confirm both supplied fingerprint reference fields match
+the user-accepted host fingerprint. This establishes available accepted trust
+input, not current SSH success, independent receipt authentication, source
+ownership, cloud inventory or permission readback. No private evidence or values
+are copied into customer Git. No settings were imported in this turn.
+
+For the exact originating ownership reference
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`,
+use this packet's `ownershipRecoveryDefaults` as writer acknowledgement and
+integration designation. Existing Developer supplies the remaining attributable
+owned-path/resolver evidence for originating Architect/Critic review before
+the eight-path sibling runner writes. Neither unavailable inspection nor supplied
+coordination alone proves substantive acceptance. This architecture deliverable
+does not require that downstream task to finish, and requests no renewed authority.
+
+Scrum retains the existing bounded contracts below: ownership verification and
+independent containment-source/resource plus trusted-inventory preparation can
+proceed separately; Developer runner coding waits only for its real ownership
+prerequisite. Designated Developer then reconciles reviewed commits and actual
+loaded operational roots, preserving `LAB_TOOL_OWNER_MISMATCH`. Formal local-script
+E2E checks the exact join. Original DevOps alone serializes publication/transport,
+exact Linux/package/version gates, finite identity trial and live acceptance.
+The current specialist-only B source remains an unselected candidate, not an A
+selector or a live fix. Unsupported namespace change returns to existing
+Architect-advised Product Owner/Scrum scope decisions, never relaxed equality.
+
+The solution model and evidence matrix are owner-ready for original Product
+Owner, Red Team and Critic review. This is architectural completion, not agreement
+on release acceptance. No deployment, permissions, cloud inference, stop/resume,
+push or live AC1-AC9 verification is claimed; historical UNKNOWNs, held parents,
+rollback assets and application-enforced Blob-isolation limits remain unchanged.
+
+### Validation of the canonical model
+
+An in-memory Python check parsed this section's JSON: ten unique component IDs,
+five unique triggered flows, eighteen unique step IDs and all component/support
+references resolved. It also checked the source entry paths and retained
+AC1-AC9/G1-G8 matrix. This checks model consistency, not executed flow behavior.
+Using the existing absolute Python 3.12.10 executable, `Test-Demo.ps1` with
+explicit canonical lab root passed dependency checks, 204 offline tests in
+47.820 seconds and compilation (exit 0). `scripts/Test-Repository.ps1` passed
+index, public-boundary (79 files), JSON, PowerShell, context and whitespace
+checks. No dependencies were installed. No lab source changed; full retained
+lab and Linux hosting-package checks were not run. Repeated offline checks
+are validation, not new live progress.
+
 ## Current RP-S3 retrospective — preserve observation provenance and independent preparation (October 20, 2026)
 
 Consume accepted SprintReview `be996f84694f9c94f163448f8afcc3ddce095223`

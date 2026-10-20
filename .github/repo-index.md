@@ -214,6 +214,15 @@ Candidate B is not installed; both paths remain live-unresolved. Tests observe
 raw SDK operation arguments and mocked Responses HTTP, not platform ingress.
 Original reviewers and downstream runtime/lab integration retain their roles.
 
+RP-S1-ID-INTEGRATE freshness: inspected clean `13203ac6f902c6c573a34aed6e04cf09bb4a94b7`
+on the authorized feature branch. Reviewed identity source is already integrated;
+prior `24b883f` integration and all five recorded task commits are ancestors.
+No unmerged local task branch or abandoned source was found. The integration
+section in `docs\identity-candidate-handoff.md` records exact-source checks and
+the offline/unresolved downstream contract. No paths added/deleted, runtime,
+dependency, lab or contract changes. Fresh inventory, isolated runtime/lab-runner
+replanning and formal E2E/DevOps release gates remain separate.
+
 <!-- inventory:start -->
 
 ## Public file inventory

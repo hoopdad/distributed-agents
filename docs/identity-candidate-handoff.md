@@ -192,3 +192,70 @@ rerun because no lab tooling changed. Final common-bundle/Linux checks, fresh
 cloud inventory, permission readback, actual child ingress and release
 acceptance remain downstream obligations. This artifact is ready for the
 original Architect and Critic review; their agreement is not asserted here.
+
+## RP-S1-ID-INTEGRATE: reviewed source reconciliation
+
+The integration assignment inspected clean application HEAD
+`13203ac6f902c6c573a34aed6e04cf09bb4a94b7` on
+`feature/customer-hosted-session-prototype`. The supplied original Architect
+and Critic reviews accept that identity-handoff commit. It is already on the
+authorized branch: no cherry-pick, merge, branch switch or runtime edit is
+needed. The reviewed source set is:
+
+- `scripts/identity_handoff.py`
+- `tests/test_identity_handoff.py`
+- this document and `.github/repo-index.md`
+
+Fresh ancestry checks also confirm the prior integration
+`24b883f910dedbc8dc524177f29f59e061be265e` and all its recorded task commits:
+`66144401bb9713922ef27c0418c793c3edb570f9` (coordinator),
+`c454e500b8a43edb4dc79ab4d7d2360a823d63dd` (specialist continuation),
+`56b762e6b67e96169eb216a4b0ebf9486beb3907` (terminal),
+`e24fcb96de7ecdc9bb334d033aa067d6b7564aee` (documentation) and
+`39c3b4e67fa01120c059e6dbd6115752d19d0376` (remedy research).
+`git branch --no-merged HEAD` returned no local branches. No task source was
+abandoned, no retained unmerged task branch needs an abandonment reason, and
+no branch was deleted. Existing implementation is retained, not new progress.
+
+The exact prior disposition
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S1-ID-HANDOFF/AssignedWorkDeveloperLoop","identity-handoff-status-reconciliation"]`
+keeps the handoff complete within its offline boundary. It is not authority
+to install candidate B or to claim either path works live. The five upstream
+dispositions listed above likewise stay confined to their original outputs.
+
+### Exact-source checks and reproducible downstream handoff
+
+Using the existing absolute pinned Python 3.12.10 and explicit lab root,
+integration reran `Test-Demo.ps1`: dependency check, **186 offline tests in
+25.580 seconds**, and compilation passed. No dependencies were installed.
+The executable command above was also rerun with **7/7/7 as synthetic declared
+version labels**, not inventory: **109 installed pins** matched and all
+**nine probes** passed. Intentional exit **2** and `selection: unresolved`
+were preserved. The runner fingerprints the exact runtime/candidate/test/lock
+source; downstream checks must regenerate and compare those fingerprints,
+not substitute historical deployment labels.
+
+The integration commit changes only this handoff and index freshness.
+Candidate, tests, runtime, dependency pins, CLI and acceptance contracts are
+byte-unchanged from the reviewed source. Its commit message records the exact
+integrated commit set and repository-check result. Source checks receive that
+commit together with `13203ac6f902c6c573a34aed6e04cf09bb4a94b7`.
+These existing public commands reproduce the checks; the lab root and Python
+are supplied by the operator, not embedded private settings.
+
+Bounded decision receives the executable **offline** contract and the precise
+unresolved execution boundary above. Join fresh inventory separately; this
+assignment did not obtain it. Isolated runtime/package wiring and a deterministic
+lab decision runner still require the existing Architect-advised Product Owner
+and Scrum Master replanning handoff. This is internal scope coordination, not
+a request for new user permission. No such architecture or contract decision
+is made by integration.
+
+No lab files, migration seals, settings, private evidence or held state were
+changed. No cloud call, permission mutation, publication, live inference,
+Linux hosting-package test or push was performed by this assignment.
+Historical UNKNOWN effects, held parents, rollback bindings and historical
+cleanup uncertainty remain preserved, not independently reconciled.
+Formal integration acceptance remains with E2E and publication/cloud-pass
+with DevOps. This reconciliation does not prove live AC1-AC9/G1-G8 or supply
+new Architect/Critic votes for the integration deliverable.

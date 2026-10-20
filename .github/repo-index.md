@@ -22,7 +22,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three sprint goals/acceptance contracts; October 20 parallel isolated-candidate, inventory and lab-runner work packages; explicit Git/source integration, conditional permission edge, finite ingress decision and unchanged E2E/DevOps final gates |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Sprint-specific README/terminal screens, ordered revision trace, incomplete/recovered-event behavior and fixture-to-display implementation handoff |
 | RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative retained fixtures/presentation; October 20 RP-S2 specialist-only client, receiver/history compatibility, finite lab decision runner and integration joins |
-| RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Current inventory/status handoff plus explicitly tagged RP-S2 early-start client/runner lanes; safe lab checkout prerequisite, parallel coding, exact-source integration and serialized gated ingress trial |
+| RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Phase-compatible pre-E2E Developer checkout/client/runner/integration lanes; deferred original DevOps inventory/status and guarded trial; retained real dependencies and observed-versus-eligible dispatch distinction |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
@@ -113,14 +113,17 @@ Do not search ignored `.azure`, `.azure-cli`, `.local`, `.migration` or
 conversation/credential stores.
 
 Current SprintPlanLoop revision freshness: inspected clean application base
-`2b9cedffa5fc3a8229eb44188088dc223ce4b1e7` and canonical lab HEAD
-`bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703`. No paths added/deleted.
-Reconciled stale planning inputs and completed offline handoff against accepted
-release/sprint contracts. RP-S1 inventory/status closes independently of the
-explicit RP-S2 early-start runtime/runner/integration/trial assignments.
-Authorized lab feature ref established without switching its dirty shared
-checkout; attempted linked-worktree creation was execution-denied, so verified
-safe writing ownership is an assigned prerequisite, not assumed isolation.
+`eaa5c930225fe781d20031d58b90087076771481`; canonical lab still has its eight
+dirty/untracked paths. No paths added/deleted. Applied reconciled SprintPlan
+phase correction: offline checkout setup and runner coding are Developer work
+alongside the isolated client; integration retains both reviewed dependencies.
+Fresh cloud inventory and its dependent RP-S1 status assessment are deferred
+to the original post-E2E DevOps phase, as is guarded publication/trial.
+Installed `sprintTasks` rejects implementation dependencies on DevOps; generic
+DAG validity alone was insufficient. RP-S1 status needs no successful trial,
+but the real YAML phase barrier remains. Safe lab checkout remains an assigned
+prerequisite; no branch switch, lab write or substitute dispatcher here.
+Actual dispatch/votes remain distinct from plan readiness and local validation.
 No runtime/dependency/architecture change, cloud observation or live acceptance.
 
 Current ReleasePlanLoop revision freshness: inspected clean application base

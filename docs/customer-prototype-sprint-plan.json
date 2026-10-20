@@ -2,7 +2,7 @@
   "sprintId": "RP-S1",
   "goal": "Preserve evidence-ready source, offline continuity proof and customer clarity; carry unresolved identity selection downstream.",
   "featureBranch": "feature/customer-hosted-session-prototype",
-  "baseline": "2b9cedffa5fc3a8229eb44188088dc223ce4b1e7",
+  "baseline": "eaa5c930225fe781d20031d58b90087076771481",
   "acceptedInputs": {
     "Architecture": "0a244702c7ccf01f1916c4b3a2580346ffb02fea",
     "UserExperience": "ef5c79d94114f156ab0d03497fafffd1e348aabf",
@@ -12,7 +12,7 @@
   },
   "scope": {
     "currentSprint": "RP-S1 inventory and actionable selected-A/selected-B/unresolved handoff remain outstanding. Retained fixture/presentation implementation is not reassigned.",
-    "earlyStart": "The accepted ReleasePlan Sprint sequence permits ready independent work without a global sprint barrier. Tasks explicitly tagged RP-S2 below implement its accepted runtime/runner delta early; they do not change RP-S1 acceptance or make RP-S1 closure wait for deployment. Their implementation and live outcomes remain RP-S2 obligations.",
+    "earlyStart": "The accepted ReleasePlan permits independent early work, within the installed YAML phase order. RP-S2 offline setup, runtime, runner and source integration execute in Developer loops before E2E. Fresh cloud inventory and its RP-S1 status consumption execute in the later original DevOps loop, independently of a successful RP-S2 trial. Sprint acceptance is unchanged; no pre-E2E task consumes a deferred DevOps result.",
     "currentSprintTasks": ["RP-S1-FRESH-INVENTORY", "RP-S1-STATUS-HANDOFF"],
     "earlyStartTasks": ["RP-S2-LAB-OWNERSHIP", "RP-S2-ISOLATED-CLIENT", "RP-S2-DECISION-RUNNER", "RP-S2-SOURCE-INTEGRATE", "RP-S2-INGRESS-TRIAL"],
     "futureAcceptance": "Original EndToEndTestLoop owns formal integration validation. Original DevOpsWorkLoop owns deployment and cloud-pass. After the bounded trial, RP-S2 still requires actual G1-G4 collaboration/provenance/routing acceptance; RP-S3 owns two-turn continuity, supported stop/resume, isolation and final closure. A selected ingress path alone does not close either sprint's live goal."
@@ -23,16 +23,26 @@
       "[\"yaml-loops-v1:UserExperienceLoop\",\"ux-loop-status-reconciliation\"]",
       "[\"yaml-loops-v1:ReleasePlanLoop\",\"release-plan-loop-status-reconciliation\"]",
       "[\"yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop\",\"sprint-design-loop-status-reconciliation\"]",
-      "[\"yaml-loops-v1:sprint/1/RP-S1/SprintArchitectureLoop\",\"sprint-architecture-loop-status-reconciliation\"]"
+      "[\"yaml-loops-v1:sprint/1/RP-S1/SprintArchitectureLoop\",\"sprint-architecture-loop-status-reconciliation\"]",
+      "[\"yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop\",\"sprint-plan-phase-compatible-assignments\"]",
+      "[\"yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop\",\"sprint-plan-observed-dispatch-and-closure\"]"
     ],
     "application": "Each disposition preserves only its originating accepted deliverable. None supplies SprintPlan votes, selects an identity path, closes implementation or waives AC1-AC9/G1-G8. No accepted terminal, README, continuity or offline identity-handoff implementation is redispatched.",
     "dispatch": "Return this assigned plan to the existing orchestrator. It dispatches dependency-ready original work loops in parallel before Product Owner, Architect and Critic planning review. Scrum Master launches no substitute agents. This file asserts readiness, not observed dispatch or reviewer votes.",
-    "readyInParallel": ["RP-S2-LAB-OWNERSHIP", "RP-S2-ISOLATED-CLIENT", "RP-S1-FRESH-INVENTORY"],
+    "readyInParallel": ["RP-S2-LAB-OWNERSHIP", "RP-S2-ISOLATED-CLIENT"],
+    "phaseCompatibility": "Installed sprintTasks rejects non-devops dependencies on devops; assignedWork defers every devops task until the original post-E2E DevOps loop. Offline lab setup and runner coding are Developer work. Cloud inventory and its dependent status assessment are DevOps work. Preserve both real integration dependencies and STATUS-HANDOFF -> FRESH-INVENTORY.",
+    "dispatchObservation": {
+      "status": "awaiting-existing-orchestrator",
+      "observedDispatchedTaskIds": [],
+      "eligibleInitialImplementationTaskIds": ["RP-S2-LAB-OWNERSHIP", "RP-S2-ISOLATED-CLIENT"],
+      "deferredDevOpsTaskIds": ["RP-S1-FRESH-INVENTORY", "RP-S1-STATUS-HANDOFF", "RP-S2-INGRESS-TRIAL"],
+      "reviewerAgreement": "Prior round rejected the phase graph; corrected graph awaits original Product Owner, Architect and Critic reviews. No dispatch or votes are asserted by this file."
+    },
     "git": "Owners inspect fresh status and commit explicit owned paths with git commit --only before original review, preserving others' staged work. Include Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com> and available observed model/token/time metadata. No stash, reset, force push, amend, foreign-lock removal or branch deletion. RP-S2-SOURCE-INTEGRATE owns cross-repository reconciliation and reviewed scoped push.",
     "accounting": "Every new task code commit must be on the authorized feature branch or retained on a named branch with task/branch/commit IDs and abandonment reason in a feature-branch commit message. Keep abandoned branches. Already-shared feature-branch commits are accounted for by ancestry, not fabricated merges. Existing sprint review/retro and release closeout reconcile this accounting; no extra approval stage.",
     "labOwnership": "The canonical lab checkout remains on feature/swc-think-fast-aca-dns with eight pre-existing dirty/untracked paths. Scrum Master created the authorized feature branch ref at bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703 without switching that checkout. An attempted linked-worktree creation was execution-permission denied; no isolated writable checkout was established. RP-S2-LAB-OWNERSHIP must supply a verified safe feature-branch checkout before runner writing. It must not switch the shared dirty checkout or adopt its edits. Setup failure is an exact task execution stop, not missing product permission.",
     "resources": "Resource names coordinate assignments including reviews, not cross-run/OS locks. Actual publication/CLI/transport/mount ownership must also be enforced by retained tools. One DevOps publisher only; no publisher races acceptance. Inventory owns lab-hosted-release, lab-private-transport and lab-cli-context while observing, even though it sends no inference. Runner coding requires none of these live resources.",
-    "fileOwnership": "ISOLATED-CLIENT owns application runtime, affected fixtures and application index until its reviewed handoff. DECISION-RUNNER owns retained lab runner/helpers/tests and lab index in the safe feature checkout, excluding all original dirty paths. STATUS-HANDOFF writes no source and returns a structured artifact. SOURCE-INTEGRATE takes both indexes and completed-task paths after the two code handoffs. Planning JSON remains Scrum-owned; downstream owners report rather than rewrite assignments.",
+    "fileOwnership": "Developer LAB-OWNERSHIP owns only offline checkout setup, not cloud transport. ISOLATED-CLIENT owns application runtime, affected fixtures and application index until its reviewed handoff. Developer DECISION-RUNNER owns retained lab runner/helpers/tests and lab index in the safe feature checkout, excluding all original dirty paths. DevOps STATUS-HANDOFF writes no source and consumes its own phase's fresh inventory. Developer SOURCE-INTEGRATE takes both indexes and completed-task paths after the two code handoffs. Planning JSON remains Scrum-owned; downstream owners report rather than rewrite assignments.",
     "permissionAuthority": "Necessary evidenced lab permission deltas for either supported path are already authorized. No assumed missing grant. Resolve actual caller, targets and effective explicit action; use reviewed deterministic lab plan/write/readback at existing-agent scope or documented smallest supported project scope. Do not grant broad convenience roles, duplicate grants, replace identities or reinterpret opaque call IDs.",
     "execution": "Local checked-in scripts with explicit roots and absolute validated Python only; no GitHub Actions. Import settings only through application scripts/Use-Settings.ps1 and existing native settings. Private evidence/packages/stages stay outside both repositories and any linked worktrees. No secret retrieval, new infrastructure, target/profile substitution, public ingress, provider submission or uncertain-effect replay.",
     "stops": "Missing/changed principal, namespace mismatch, receiver rejection, version drift or unknown effect stops the candidate without another send. Material contract/architecture/held-state changes use existing Architect-advised PO/Scrum needs-replan. Genuine authentication or provider-only information uses exact needs-input. Five consecutive rounds without reviewer-verified new progress stop blocked; productive rounds have no total cap.",
@@ -59,8 +69,8 @@
     {
       "id": "RP-S2-LAB-OWNERSHIP",
       "title": "Establish safe lab feature-branch writing ownership",
-      "kind": "devops",
-      "owner": "DevOps Engineer",
+      "kind": "developer",
+      "owner": "Developer",
       "targetSprint": "RP-S2",
       "dependsOn": [],
       "exclusiveResources": ["lab-git-integration"],
@@ -76,7 +86,7 @@
       ],
       "doneWhen": "A safely writable authorized lab feature checkout and canonical-root compatibility contract are verified and handed off; an execution denial remains an explicit unmet setup criterion, not a completed isolated checkout.",
       "exclusions": ["No shared checkout branch switch", "No code, private settings, permissions, infrastructure or cloud mutation", "No adoption/stash/discard of pre-existing dirty work"],
-      "handoff": "RP-S2-DECISION-RUNNER consumes only the verified safe checkout/root contract. Inventory remains independent and uses canonical retained read-only tooling. Existing Scrum reconciliation resolves a genuine setup failure without new product approval."
+      "handoff": "Pre-E2E Developer RP-S2-DECISION-RUNNER consumes only the verified safe checkout/root contract. Later DevOps inventory uses canonical retained read-only tooling and is not a prerequisite for coding. Existing Scrum reconciliation resolves a genuine setup failure without new product approval."
     },
     {
       "id": "RP-S2-ISOLATED-CLIENT",
@@ -105,8 +115,8 @@
     {
       "id": "RP-S2-DECISION-RUNNER",
       "title": "Implement retained finite identity-decision tooling",
-      "kind": "devops",
-      "owner": "DevOps Engineer",
+      "kind": "developer",
+      "owner": "Developer",
       "targetSprint": "RP-S2",
       "dependsOn": ["RP-S2-LAB-OWNERSHIP"],
       "exclusiveResources": ["lab-decision-tooling-source", "lab-public-index"],
@@ -124,7 +134,7 @@
       ],
       "doneWhen": "A reviewed executable retained local runner implements the accepted interface and passes offline ownership/failure/unknown/redaction/root and affected retained checks; coding does not send inference or select a live identity path.",
       "exclusions": ["No cloud calls, publication, grants or transport startup during this coding assignment", "No editing the eight dirty canonical lab paths", "No runtime application imports/changes or duplicate acceptance ledger", "No settings/profile/target substitution or safeguard bypass"],
-      "handoff": "RP-S2-SOURCE-INTEGRATE consumes reviewed lab commits/help/fixture contract and exact tooling root. RP-S2-INGRESS-TRIAL later executes the joined runner. Runtime coding and fresh inventory need not wait for runner implementation."
+      "handoff": "Pre-E2E Developer RP-S2-SOURCE-INTEGRATE consumes reviewed lab commits/help/fixture contract and exact tooling root. Later original DevOps RP-S2-INGRESS-TRIAL executes the joined runner. Runtime coding uses the accepted interface independently; fresh cloud inventory is deferred to DevOps, not a runner coding input."
     },
     {
       "id": "RP-S1-FRESH-INVENTORY",
@@ -147,13 +157,13 @@
       ],
       "doneWhen": "Original review receives fresh private exact inventory or a truthful actionable partial inventory with exact execution stop and missing observations; no inference/publication or live ingress success is claimed.",
       "exclusions": ["No source edits or branch switch", "No inference, packaging, publication, grants or compute stop/resume", "No secret retrieval, dirty-work adoption, infrastructure change or historical cleanup certification"],
-      "handoff": "RP-S1-STATUS-HANDOFF and RP-S2-INGRESS-TRIAL consume exact private locators or explicit prerequisite stop. Runner coding remains independent. Only the trial refreshes drift-sensitive baseline fields immediately before any send."
+      "handoff": "In the original post-E2E DevOps phase, RP-S1-STATUS-HANDOFF and RP-S2-INGRESS-TRIAL consume exact private locators or explicit prerequisite stop. Inventory/status can close RP-S1 without trial success. Neither blocks pre-E2E runner coding or source integration. Only the trial refreshes drift-sensitive baseline fields immediately before any send."
     },
     {
       "id": "RP-S1-STATUS-HANDOFF",
       "title": "Close the bounded RP-S1 decision-status handoff",
-      "kind": "developer",
-      "owner": "Developer",
+      "kind": "devops",
+      "owner": "DevOps Engineer",
       "targetSprint": "RP-S1",
       "dependsOn": ["RP-S1-FRESH-INVENTORY"],
       "exclusiveResources": [],
@@ -169,7 +179,7 @@
       ],
       "doneWhen": "A reviewed actionable A/B/unresolved handoff states exact observations, missing proof and assigned closing actions; precise unresolved findings complete this bounded task without claiming RP-S2 live success.",
       "exclusions": ["No source edits, repeated broad research or new approval stage", "No live calls, grants, deployment or acceptance waiver", "No redispatch of accepted UX/fixtures"],
-      "handoff": "Existing RP-S1 sprint review/retro receives the bounded evidence-ready outcome. RP-S2 retains implementation and live G1-G4 goals; RP-S3 retains continuity/recovery/isolation/closure. Actual source checks remain revision-bound."
+      "handoff": "From the original post-E2E DevOps loop, existing RP-S1 sprint review/retro receives the bounded evidence-ready outcome, including actionable partial inventory if blocked. It does not wait for RP-S2 trial success. RP-S2 retains live G1-G4 goals; RP-S3 retains continuity/recovery/isolation/closure. Actual source checks remain revision-bound."
     },
     {
       "id": "RP-S2-SOURCE-INTEGRATE",
@@ -222,11 +232,11 @@
     }
   ],
   "criticalPath": {
-    "initialFanOut": "LAB-OWNERSHIP (25 rough minutes), ISOLATED-CLIENT (130) and FRESH-INVENTORY (65) are dependency-ready together. Their source/Git/live resources do not overlap. No substitute agent is started by this plan.",
+    "initialFanOut": "Pre-E2E Developer LAB-OWNERSHIP (25 rough minutes) and ISOLATED-CLIENT (130) are dependency-ready and resource-disjoint. DECISION-RUNNER (130) starts after setup and can overlap remaining runtime coding. FRESH-INVENTORY is not an initial dispatched lane; all DevOps assignments wait for their original later loop. No substitute agent is started by this plan.",
     "coding": "LAB-OWNERSHIP -> DECISION-RUNNER (130) is approximately 155 minutes, concurrent with ISOLATED-CLIENT. Runner fixtures consume the accepted interface, not completed runtime. Actual implementation join occurs only at SOURCE-INTEGRATE (70): approximately 225 minutes.",
-    "currentSprint": "FRESH-INVENTORY -> STATUS-HANDOFF (25) is approximately 90 minutes and does not wait for runtime, runner, integration, publication or provider response. Existing checks/fixtures are retained with exact revision limitations.",
-    "trial": "max(SOURCE-INTEGRATE, FRESH-INVENTORY) -> INGRESS-TRIAL (125), approximately 350 minutes from fan-out. Only an evidenced permission delta adds a dependency. Setup/auth/provider stops and test failures are not estimated away; durations are not limits.",
-    "minimality": "Inventory does not block coding. Lab checkout safety blocks only lab writing. Source integration needs both actual implementations, not live inventory. Trial needs joined exact source and fresh inventory, not STATUS-HANDOFF. No global presentation/fixture foundation is recreated.",
+    "currentSprint": "Within the original post-E2E DevOps phase, FRESH-INVENTORY (65) -> STATUS-HANDOFF (25) is approximately 90 minutes. It has no task dependency on trial, successful deployment or provider response. The installed phase barrier is real: it is not a 90-minute wall-clock path from initial fan-out. Existing checks/fixtures retain exact revision limitations.",
+    "trial": "Implementation join takes approximately 225 minutes, then the original E2E phase (duration not estimated here), then deferred DevOps inventory (65) -> INGRESS-TRIAL (125). Approximately 415 task-minutes plus E2E/phase scheduling on the release critical path; status handoff can overlap trial after inventory because its resources are disjoint. Only demonstrated permission necessity adds work. Durations are rough, not limits; actual stops/failures remain stops.",
+    "minimality": "Inventory does not block coding, but is deferred by the original YAML phase order. Lab checkout safety blocks only lab writing. Source integration genuinely needs both reviewed implementations, not live inventory. Trial needs joined exact source and fresh inventory, not STATUS-HANDOFF. Status genuinely needs inventory and therefore shares its later DevOps phase. No global presentation/fixture foundation is recreated.",
     "laterRelease": "Finite selection -> independently verified initial G1-G4 -> follow-up -> once-only supported stop/resume. Separate-parent comparison needs initial completed bindings, not restart. Final closeout joins recovery/isolation, exact checks, scoped Git delivery and truthful evidence."
   },
   "acceptanceMapping": {
@@ -241,15 +251,15 @@
     "AC9": "Inventory/status/trial provide truthful private exact bindings, limitations and owned cleanup; final reproducible demo/report remains release closeout."
   },
   "AssignedWorkUIDeveloper": [],
-  "AssignedWorkDeveloper": ["RP-S2-ISOLATED-CLIENT", "RP-S1-STATUS-HANDOFF", "RP-S2-SOURCE-INTEGRATE"],
-  "AssignedWorkDevOpsEngineer": ["RP-S2-LAB-OWNERSHIP", "RP-S2-DECISION-RUNNER", "RP-S1-FRESH-INVENTORY", "RP-S2-INGRESS-TRIAL"],
+  "AssignedWorkDeveloper": ["RP-S2-LAB-OWNERSHIP", "RP-S2-ISOLATED-CLIENT", "RP-S2-DECISION-RUNNER", "RP-S2-SOURCE-INTEGRATE"],
+  "AssignedWorkDevOpsEngineer": ["RP-S1-FRESH-INVENTORY", "RP-S1-STATUS-HANDOFF", "RP-S2-INGRESS-TRIAL"],
   "AssignedWorkDesigner": [],
   "noNewPresentationAssignments": "No concrete UI/design gap is supplied. Preserve accepted UX/SprintDesign and integrated presentation; affected regressions stay with the runtime/integration owners, not duplicate UI work.",
   "verificationThisPlanningTurn": {
-    "source": "Fresh clean application HEAD 2b9cedffa5fc3a8229eb44188088dc223ce4b1e7 on the authorized branch; no unmerged application branches listed. This revision changes planning/index only.",
-    "lab": "Canonical HEAD bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703, unrelated dirty checkout unchanged. Authorized feature ref created there; linked-worktree creation execution-denied. No isolated checkout or lab code change is claimed.",
-    "checks": "Existing absolute validated Python from the canonical lab environment: Test-Demo.ps1 with explicit lab root passed dependency checking, 186 offline tests in 19.722 seconds and compilation. Test-Repository.ps1 passed current index, 73-public-file boundary, JSON, PowerShell, context and whitespace checks. Direct JSON assertions verified seven bounded fully assigned tasks, valid kinds/owners/estimates, existing acyclic dependencies, three resource-disjoint ready lanes, exact assignment coverage and independent current-sprint handoff. These are local planning/source checks, not final Linux/package/live evidence. No dependencies installed.",
+    "source": "Fresh clean application baseline eaa5c930225fe781d20031d58b90087076771481 on the authorized feature branch. This correction changes planning/index only; retained runtime/UX/architecture is not reopened.",
+    "lab": "Fresh canonical status still lists the same eight dirty/untracked paths. No lab writes, worktree setup, cloud observation or branch switch by this correction. Earlier feature-ref/setup evidence is retained context, not a newly verified writable checkout.",
+    "checks": "Installed read-only gh-dynamic-workflows/loop-workflow.mjs sprintTasks accepted all seven corrected tasks. Direct assertions passed exact role lists, bounded contracts/estimates, retained inventory/status and dual integration dependencies, two resource-disjoint eligible implementation lanes, empty observed dispatch and exact deferred DevOps IDs. A negative control restoring the old implementation-to-DevOps edge was rejected with the original error. Current Test-Demo.ps1 using the existing absolute canonical lab .venv/Scripts/python.exe and explicit lab root passed dependency checking, 186 offline tests in 23.380 seconds and compilation. Test-Repository.ps1 passed index, 73-public-file boundary, JSON, PowerShell, context and whitespace checks. Previous-round acyclicity alone was not phase compatibility. These local results are not dispatch, final package or live evidence. No dependencies installed.",
     "limitations": "No settings import, fresh cloud inventory, permission readback/write, inference, packaging, deployment, Linux-package validation, formal E2E, live recovery/isolation or push performed by this planning turn."
   },
-  "planningCompletion": "Assigned dispatch-ready output for the existing orchestrator, not implementation completion. Actual parallel dispatch and Product Owner/Architect/Critic votes are collected next by the original loop and are not fabricated here."
+  "planningCompletion": "Corrected assigned output returns to the existing orchestrator, not a substitute dispatcher. Observed dispatch is still empty; original Product Owner/Architect/Critic agreement remains uncollected for this correction. Do not equate validator success or ready lanes with observed parallel dispatch. Implementation, final package gates and live release acceptance remain downstream."
 }

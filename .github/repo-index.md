@@ -14,6 +14,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Blob/routing | `demo\artifact_store.py`, `demo\routing.py`, `config\routing-corpus.json`, `scripts\calibrate_routing.py` | Role-owned immutable outputs, fenced journal/manifest, typed calibrated Decision-1 and shared admission |
 | Foundry integration | `demo\foundry.py`, `agent_metadata.py`, `azure.yaml` | Trusted host/state/provider adapters; three MAF/Foundry remote-mode services deployed, not live-accepted |
 | Local client/transport | `demo\terminal.py`, `native_proxy.py`, `live_acceptance.py` | Private terminal with opt-in `--native --view human` stderr projection, unchanged stdout/parser, exact-origin proxy, bounded diagnostics, artifact-envelope audit and guarded compute stop/resume acceptance |
+| Cross-scenario evidence assertions | `live_acceptance.py:validate_scenario_evidence`, `tests\test_scenario_evidence.py`, `docs\design.md` | Offline private observation joins for actual parent/both-role bindings, cumulative effects and request counts, once-only confirmed stop/checkpoint retention and separate-parent isolation; no new CLI/public event fields, collector, ledger or live claim |
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
@@ -53,6 +54,12 @@ accounting/push, original E2E owns formal joined validation, and original DevOps
 owns all cloud effects and live gates. Recovery and isolation share serialized
 resources without an invented dependency; an agreed blocked report enables no
 missing prerequisite effects. No dispatch or live capability is inferred here.
+RP-S3 evidence-assertion freshness: inspected clean baseline
+`2ccef16d055295d036ed176b0b3ba428b8061041`; added
+`tests/test_scenario_evidence.py` and extended existing acceptance tooling with
+private-input deterministic comparisons documented in `docs/design.md`.
+Existing machine events, presentation, runtime and release ownership remain
+unchanged. No lab ownership probe, lab writing or cloud effect is involved.
 `config\routing-calibration.json` records the successful real routing-v3
 evaluation (eight ready and four missing-input cases correct, selected threshold
 0.5/margin 0) on the unchanged frozen corpus. All four real evaluation journals
@@ -397,6 +404,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `tests\test_identity_handoff.py`
 - `tests\test_isolated_client.py`
 - `tests\test_routing.py`
+- `tests\test_scenario_evidence.py`
 - `tests\test_specialist_continuity.py`
 - `tests\test_workflow.py`
 

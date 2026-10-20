@@ -17,7 +17,10 @@ from demo.terminal import chat, private_state_path, rest, session_lease, verify_
 from azure.identity.aio import AzureCliCredential
 
 from agent_metadata import agent_metadata
-from demo.artifacts import Artifact, ArtifactRef, Candidate as ArtifactCandidate, Decision, Review as ArtifactReview
+from demo.artifacts import (
+    Artifact, ArtifactRef, Candidate as ArtifactCandidate, Decision, Effect, Manifest,
+    Review as ArtifactReview,
+)
 from demo.workflow import PREPARATION_CHECKS
 
 
@@ -344,6 +347,280 @@ def validate_exercised_versions(parent_version, metadata, delegations, children)
             event.get("version") != expected for event in role_events
         ):
             raise RuntimeError("EXERCISED_SPECIALIST_PACKAGE_VERSION")
+
+
+def _require(condition, code):
+    if not condition:
+        raise RuntimeError(code)
+
+
+def _evidence_turn(snapshot):
+    """Validate private observations, not aliases or a caller's PASS flags."""
+    proof = snapshot["proof"]
+    parsed = events("\n".join(json.dumps(item) for item in [
+        *proof["delegations"], proof["result"],
+    ]))
+    result = parsed["result"]
+    _require(result.get("native_workflow") == "distributed-agents-v1", "EVIDENCE_NATIVE_REQUIRED")
+    artifacts = validate_artifact_evidence(result)
+    manifest = Manifest.model_validate(snapshot["manifest"])
+    scope = manifest.scope_binding
+    framework = proof["framework"]
+    parent = framework["state"]["foundry_hosted_agent_session_id"]
+    _require(
+        scope == artifacts["requirements"].scope_binding and scope.parent_session == parent
+        and bool(framework["session_id"]) and manifest.turn == result["turn"]
+        and manifest.status == "ACCEPTED_ADVISORY"
+        and manifest.coordinator_version == proof["version"]
+        and bool(manifest.active_response_id)
+        and (manifest.effect is None or manifest.effect.status == "accepted")
+        and set(manifest.children) == {"architect", "reviewer"},
+        "EVIDENCE_MANIFEST_BINDING",
+    )
+    validate_exercised_versions(
+        proof["version"], proof["metadata"], parsed["delegations"], proof["child_sessions"],
+    )
+    bindings = {}
+    for kind in ("requirements", "candidate", "review"):
+        _require(getattr(manifest, kind) == artifacts[kind].ref(), "EVIDENCE_CURRENT_ACCEPTANCE")
+    producer = artifacts["requirements"].producer
+    _require(producer.session_id == parent and producer.version == proof["version"],
+             "EVIDENCE_PARENT_PRODUCER")
+    for role, kind in (("architect", "candidate"), ("reviewer", "review")):
+        child = manifest.children[role]
+        identity = child.framework
+        producer = artifacts[kind].producer
+        _require(
+            child.bound and child.role == role and child.name == AGENTS[role]
+            and bool(identity["session_id"])
+            and identity["state"]["foundry_hosted_agent_session_id"] == child.hosted_id
+            and proof["child_sessions"][role]["agent_session_id"] == child.hosted_id
+            and producer.session_id == child.hosted_id and producer.version == child.version,
+            "EVIDENCE_CHILD_BINDING",
+        )
+        bindings[role] = (child.hosted_id, identity["session_id"], child.version)
+    _require(len({value[0] for value in bindings.values()}) == 2
+             and len({value[1] for value in bindings.values()}) == 2, "EVIDENCE_DISTINCT_CHILDREN")
+
+    # Immutable operation transition documents are cumulative within this parent.
+    # Separate request captures count actual boundary sends, not journal intentions.
+    operations = {}
+    for record in snapshot["operations"]:
+        _require(record["scope_binding"] == scope.model_dump(mode="json"), "EVIDENCE_OPERATION_SCOPE")
+        effect = Effect.model_validate(record["effect"])
+        transitions = operations.setdefault(effect.operation_id, {})
+        _require(effect.status not in transitions, "EVIDENCE_DUPLICATE_TRANSITION")
+        transitions[effect.status] = effect
+    _require(bool(operations), "EVIDENCE_OPERATIONS_REQUIRED")
+    calls, creates = {}, {}
+    for operation, transitions in operations.items():
+        accepted = transitions.get("accepted")
+        _require(accepted is not None and not ({"unknown", "failed"} & transitions.keys()),
+                 "EVIDENCE_UNRECONCILED_EFFECT")
+        _require("prepared" in transitions, "EVIDENCE_INTENT_REQUIRED")
+        for value in transitions.values():
+            _require(
+                (value.kind, value.role, value.input_refs) ==
+                (accepted.kind, accepted.role, accepted.input_refs),
+                "EVIDENCE_EFFECT_CHANGED",
+            )
+            _require(value.response_id in (None, accepted.response_id), "EVIDENCE_RESPONSE_CHANGED")
+        if accepted.kind in ("create", "call"):
+            _require("dispatched" in transitions, "EVIDENCE_DISPATCH_REQUIRED")
+            _require(accepted.role in bindings, "EVIDENCE_EFFECT_ROLE")
+        if accepted.kind == "create":
+            creates[operation] = accepted
+        elif accepted.kind == "call":
+            _require(bool(accepted.response_id) and accepted.output_ref in manifest.accepted
+                     and accepted.input_refs, "EVIDENCE_CALL_ACCEPTANCE")
+            accepted.output_ref.assert_scope(scope)
+            for ref in accepted.input_refs:
+                ref.assert_scope(scope)
+                _require(ref in manifest.accepted
+                         and ref.requirements_revision == accepted.output_ref.requirements_revision,
+                         "EVIDENCE_CALL_PREREQUISITES")
+            _require(accepted.output_ref.artifact_type == {
+                "architect": "candidate", "reviewer": "review",
+            }[accepted.role], "EVIDENCE_CALL_ROLE")
+            calls[operation] = accepted
+    for field, expected in (("creations", creates), ("sends", calls)):
+        observed = snapshot[field]
+        _require(isinstance(observed, list) and all(isinstance(item, str) for item in observed)
+                 and len(observed) == len(set(observed)) and set(observed) == set(expected),
+                 "EVIDENCE_REQUEST_ACCOUNTING")
+    _require(len(creates) == 2 and {item.role for item in creates.values()} == set(bindings),
+             "EVIDENCE_EXACTLY_TWO_CREATIONS")
+    _require(len({item.response_id for item in calls.values()}) == len(calls),
+             "EVIDENCE_FRESH_RESPONSES")
+    current = {
+        operation: effect for operation, effect in calls.items()
+        if effect.output_ref.requirements_revision == manifest.turn
+    }
+    _require(len(current) == len(parsed["delegations"]), "EVIDENCE_INVOCATION_COUNT")
+    _require(len({json.dumps(event["artifact_ref"], sort_keys=True)
+                  for event in parsed["delegations"]}) == len(current),
+             "EVIDENCE_DUPLICATE_DELEGATION")
+    for effect in current.values():
+        _require(effect.input_refs[0] == manifest.requirements, "EVIDENCE_CALL_PREREQUISITES")
+    for event in parsed["delegations"]:
+        ref = ArtifactRef.model_validate(event["artifact_ref"])
+        matches = [effect for effect in current.values() if effect.output_ref == ref]
+        _require(len(matches) == 1, "EVIDENCE_DELEGATION_OPERATION")
+        effect = matches[0]
+        child = manifest.children[effect.role]
+        _require(
+            event["role"] == effect.role and event["hosted_session"] == alias(child.hosted_id)
+            and event["framework_session"] == alias(child.framework["session_id"])
+            and event["version"] == child.version and event["response"] == alias(effect.response_id),
+            "EVIDENCE_DELEGATION_BINDING",
+        )
+    for role, kind in (("architect", "candidate"), ("reviewer", "review")):
+        producer = artifacts[kind].producer
+        _require(any(effect.role == role and effect.output_ref == artifacts[kind].ref()
+                     and effect.response_id == producer.response_id for effect in current.values()),
+                 "EVIDENCE_OUTPUT_RESPONSE")
+    return manifest, artifacts, bindings, operations, current
+
+
+def _evidence_continuation(before, after):
+    old = _evidence_turn(before)
+    new = _evidence_turn(after)
+    prior, current = old[0], new[0]
+    _require(
+        prior.scope_binding == current.scope_binding and old[2] == new[2]
+        and before["proof"]["framework"]["session_id"] == after["proof"]["framework"]["session_id"]
+        and prior.coordinator_version == current.coordinator_version
+        and prior.active_response_id != current.active_response_id
+        and current.turn == prior.turn + 1 and current.generation > prior.generation,
+        "EVIDENCE_CONTINUITY",
+    )
+    for operation, transitions in old[3].items():
+        _require(operation in new[3] and transitions == new[3][operation], "EVIDENCE_JOURNAL_CHANGED")
+    _require(set(before["creations"]) == set(after["creations"]), "EVIDENCE_EXTRA_CREATION")
+    _require(
+        set(after["sends"]) - set(before["sends"]) == set(new[4])
+        and len(after["sends"]) == len(before["sends"]) + len(new[4]),
+        "EVIDENCE_DUPLICATE_OR_MISSING_SEND",
+    )
+    previous_chunks = old[1]["requirements"].content.chunks
+    chunks = new[1]["requirements"].content.chunks
+    _require(chunks[:len(previous_chunks)] == previous_chunks and len(chunks) > len(previous_chunks),
+             "EVIDENCE_UPDATED_REQUIREMENTS")
+    _require(
+        prior.candidate != current.candidate and prior.review != current.review
+        and all(ref.requirements_revision == current.turn for ref in (
+            current.requirements, current.candidate, current.review,
+        )),
+        "EVIDENCE_STALE_APPROVAL",
+    )
+    return old, new
+
+
+def validate_scenario_evidence(*, initial, followup, restart, isolated, stopped_session):
+    """Offline assertions over existing private scenario/manifest/journal captures.
+
+    See docs/design.md for the input contract and executable local invocation.
+    No network, new output fields, persistent comparison ledger or retry occurs.
+    Success validates supplied observations; it does not authenticate their source.
+    """
+    try:
+        _require(
+            [item["proof"]["scenario"] for item in (initial, followup, restart, isolated)]
+            == ["initial", "followup", "restart", "isolated"], "EVIDENCE_SCENARIOS",
+        )
+        first, second = _evidence_continuation(initial, followup)
+        _, resumed = _evidence_continuation(followup, restart)
+        separate = _evidence_turn(isolated)
+        _require(len({item[0].active_response_id for item in (first, second, resumed)}) == 3,
+                 "EVIDENCE_PARENT_RESPONSE_REUSE")
+        _require(first[0].turn == separate[0].turn == 1, "EVIDENCE_INITIAL_TURN")
+        chunks = second[1]["requirements"].content.chunks
+        _require(SCENARIOS["initial"] in chunks and SCENARIOS["followup"] in chunks,
+                 "EVIDENCE_SYNTHETIC_REQUIREMENTS")
+        _require(SCENARIOS["restart"] in resumed[1]["requirements"].content.chunks,
+                 "EVIDENCE_RESTART_REQUIREMENTS")
+
+        stop = restart["proof"]["hosting_restart"]
+        parent = second[0].scope_binding.parent_session
+        _require(
+            stop["schema_version"] == 1 and stop["phase"] == "stop_confirmed"
+            and stop["parent"] == parent and stop["version"] == second[0].coordinator_version
+            and stop["stop_http_status"] == 204
+            and stopped_session["agent_session_id"] == parent
+            and stopped_session["version_indicator"]["agent_version"] == stop["version"]
+            and stopped_session["status"] == "idle"
+            and type(stop["stopped_at"]) in (int, float) and math.isfinite(stop["stopped_at"])
+            and stop["stopped_at"] > 0 and stopped_session["stopped_at"] == stop["stopped_at"]
+            and (stop["previous_stopped_at"] is None or (
+                type(stop["previous_stopped_at"]) in (int, float)
+                and math.isfinite(stop["previous_stopped_at"])
+                and stop["stopped_at"] > stop["previous_stopped_at"]
+            )), "EVIDENCE_CONFIRMED_STOP",
+        )
+        # Each entry is one actual stop POST observed at the boundary. A recovered
+        # stop_pending journal is not itself evidence of another POST.
+        _require(restart["stops"] == [parent], "EVIDENCE_ONCE_ONLY_STOP")
+        before_checkpoints, after_checkpoints = {}, {}
+        for snapshot, target in ((followup, before_checkpoints), (restart, after_checkpoints)):
+            capture = snapshot["checkpoints"]
+            _require(capture["scope_binding"] == second[0].scope_binding.model_dump(mode="json"),
+                     "EVIDENCE_CHECKPOINT_SCOPE")
+            for checkpoint in capture["records"]:
+                key = checkpoint["checkpoint_id"]
+                _require(
+                    isinstance(key, str) and bool(key) and key not in target
+                    and checkpoint["workflow_name"] == "distributed-agents-v1"
+                    and bool(checkpoint["graph_signature_hash"])
+                    and type(checkpoint["iteration_count"]) is int
+                    and checkpoint["iteration_count"] >= 0
+                    and isinstance(checkpoint["state"], dict),
+                    "EVIDENCE_CHECKPOINT",
+                )
+                target[key] = checkpoint
+        _require(
+            bool(before_checkpoints) and len(after_checkpoints) > len(before_checkpoints)
+            and all(after_checkpoints.get(key) == value for key, value in before_checkpoints.items())
+            and len({item["graph_signature_hash"] for item in after_checkpoints.values()}) == 1,
+            "EVIDENCE_CHECKPOINT_RECONCILIATION",
+        )
+        original_scope, isolated_scope = first[0].scope_binding, separate[0].scope_binding
+        _require(
+            (original_scope.project, original_scope.tenant, original_scope.principal) ==
+            (isolated_scope.project, isolated_scope.tenant, isolated_scope.principal)
+            and original_scope.parent_session != isolated_scope.parent_session
+            and initial["proof"]["framework"]["session_id"] != isolated["proof"]["framework"]["session_id"]
+            and original_scope.prefix != isolated_scope.prefix
+            and not ({value[0] for value in first[2].values()} & {value[0] for value in separate[2].values()})
+            and not ({value[1] for value in first[2].values()} & {value[1] for value in separate[2].values()}),
+            "EVIDENCE_PARENT_ISOLATION",
+        )
+        _require(separate[1]["requirements"].content.chunks == [SCENARIOS["isolated"]],
+                 "EVIDENCE_ISOLATED_REQUIREMENTS")
+        _require(
+            not (set(restart["sends"]) & set(isolated["sends"]))
+            and not (set(restart["creations"]) & set(isolated["creations"]))
+            and not ({value["accepted"].response_id for value in resumed[3].values()
+                      if value["accepted"].kind == "call"} &
+                     {value["accepted"].response_id for value in separate[3].values()
+                      if value["accepted"].kind == "call"}),
+            "EVIDENCE_ISOLATED_EFFECTS",
+        )
+        # Check all supplied isolated artifacts, not just model prose in the final
+        # candidate. The isolated brief itself contains a negative Harbor reference.
+        for kind in ("candidate", "review"):
+            content = json.dumps(separate[1][kind].content.model_dump(mode="json")).casefold()
+            _require("harbor" not in content and "asynchronous queue" not in content,
+                     "EVIDENCE_CONTENT_LEAK")
+        for item in (followup, restart, isolated):
+            _require(item["proof"]["metadata"] == initial["proof"]["metadata"],
+                     "EVIDENCE_RELEASE_DRIFT")
+    except RuntimeError as exc:
+        if re.fullmatch(r"EVIDENCE_[A-Z_]+", str(exc)):
+            raise
+        raise RuntimeError("EVIDENCE_TURN_REJECTED") from None
+    except (KeyError, TypeError, ValueError, AttributeError, IndexError):
+        # Do not echo private inputs or Pydantic validation details to terminals.
+        raise RuntimeError("EVIDENCE_MISSING_OR_INVALID") from None
 
 
 async def observe_pending_child(project, response):

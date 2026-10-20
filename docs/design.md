@@ -109,6 +109,82 @@ Blob Contributor policy. See [recovery gates](identity-recovery-plan.md) for
 the historical live blocker and [the terminal example](../README.md#two-turn-terminal-demonstration)
 for baseline syntax, not a live-success transcript.
 
+### Offline cross-scenario evidence assertions
+
+`live_acceptance.validate_scenario_evidence()` joins existing per-scenario
+acceptance proofs with private source observations. It performs no collection,
+network call, inference, stop or retry. Existing `live_acceptance.py` arguments,
+stdout events/parser and opt-in human presentation are unchanged. This callable
+is an assertion entry point for retained local execution, not another persistent
+comparison ledger or a new release gate.
+
+Run from the application root with the existing absolute validated Python.
+`$EvidenceInput` is an absolute private JSON path outside both repositories,
+assembled by the execution owner from actual observations:
+
+```powershell
+& $Python -c 'import json,sys; from demo.terminal import private_state_path; from live_acceptance import validate_scenario_evidence; validate_scenario_evidence(**json.loads(private_state_path(sys.argv[1]).read_text(encoding="utf-8"))); print("Supplied scenario observations passed offline assertions.")' $EvidenceInput
+```
+
+Input keyword keys are `initial`, `followup`, `restart`, `isolated` and
+`stopped_session`. Each scenario snapshot contains:
+
+- `proof`: the existing full JSON proof emitted by `live_acceptance.run()`,
+  including actual parent framework state, version, child-session metadata,
+  delegations and result/artifact envelopes. Aliases alone are insufficient.
+- `manifest`: the corresponding completed parent-scoped `Manifest` document,
+  including both children's actual hosted/framework identities, pinned versions,
+  current accepted references and parent response ID.
+- `operations`: the complete cumulative immutable documents from that parent's
+  existing `operations/<operation>/<transition>.json` namespace, each retaining
+  its original `scope_binding` and `effect`. Include all transitions, not only
+  accepted records; missing intent/dispatch, unresolved effects and changed old
+  transitions fail closed.
+- `creations` and `sends`: cumulative lists of operation IDs, **one entry per
+  actually observed specialist create/request send**, from independent boundary
+  captures, not lists deduplicated or reconstructed from journal intentions.
+  Known-response GETs are not sends. Duplicate entries, missing operations,
+  additional creations and response reuse fail. Collection completeness and
+  source attribution remain execution-owner obligations.
+- For `followup` and `restart`, `checkpoints`: a private capture association with
+  `scope_binding` and `records` containing serialized MAF checkpoint documents
+  from that parent's existing checkpoint store. Preserve all document fields
+  (SDK message enums serialized to their values). The collector must bind the
+  association to the actual scoped store; the SDK graph state alone contains
+  no parent identity. Assertions require same scope, retained unchanged prior
+  checkpoints, new checkpoints and unchanged graph signature after continuation.
+- For `restart`, `stops`: one parent ID per actually observed stop POST. Supply
+  the existing confirmed durable marker as `proof.hosting_restart`, not an
+  invented success flag. `stopped_session` is the actual GET observation of the
+  same pinned parent in idle state with matching newly advanced `stopped_at`.
+
+Successful assertions mean the supplied observations are internally consistent:
+stable actual parent/both-child identities and versions, new responses on each
+turn, exactly two child creations, both-role invocation/effect/output joins,
+current hashed requirements/artifacts and invalidated stale approval; confirmed
+once-only supported stop plus retained checkpoints/effects without duplicate
+sends; and separate-parent child/artifact scope with synthetic requirement
+exclusion. The helper checks the fixed Harbor/Cedar synthetic scenarios, not
+arbitrary customer transcripts. It rejects Harbor/queue leakage in isolated
+candidate/review content (the isolated input deliberately mentions Harbor only
+to exclude it). This is application-enforced isolation, not malicious-host or
+storage-RBAC isolation.
+
+No self-authenticating provenance or live capability follows from caller-supplied
+JSON. DevOps must supply complete, source-bound private observations; original
+E2E validates the joined implementation and the existing release gates still
+apply. Missing captures are an unmet evidence condition, not authority to
+recreate parents, repeat stops or resend unknown effects. Diagnostics from the
+new helper are fixed codes without private values.
+
+`tests/test_scenario_evidence.py` executes the real offline graph with controlled
+remote/storage/router boundaries and real MAF checkpoints. Its initial fixture
+forces four architect/reviewer revision calls. Positive JSON round-trip and
+negative binding, version, missing-input, stale/current-output, queue-omission,
+extra-create, duplicate-send/response, held-effect, stop/checkpoint, scope,
+content-leak and release-drift controls are synthetic only. They do not perform
+hosted compute stop/resume or replace live G1–G8 evidence.
+
 ## Following a request through the source
 
 For Foundry hosting, `demo\host.py` hands request parsing and graph construction

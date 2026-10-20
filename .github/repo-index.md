@@ -149,11 +149,16 @@ boundary changed. Scrum Master retains task decomposition/Git reconciliation;
 DevOps retains publication/live acceptance. Sprint acceptance is planned, not
 executed or waived by a bounded research exit.
 
-Sprint-design freshness: based on release-plan commit `a2d0f9a` and accepted
-architecture/UX above, with the same 17 pre-existing dirty paths preserved.
-Added `docs\customer-prototype-sprint-design.md` for RP-S1 flows and screens;
-no runtime/CLI/schema change. Human view remains a proposed implementation,
-and Designer handoff is distinct from downstream source/live acceptance.
+Current SprintDesignLoop freshness: inspected clean release-plan baseline
+`b0d73b07247bbadbbab9afa9a1bb85b8fa32d480`, accepted architecture `2a736d9`
+and UX `3ee9798`. Reconciled `docs\customer-prototype-sprint-design.md` with
+integrated `--native --view human`: one finalization-evaluated stderr summary,
+ordered calls and final current content, not invented intermediate findings.
+Retain integrated fixtures/README without redispatch. A/B/unresolved identity
+selection adds no selector, permission wizard or release-success badge.
+No paths added/deleted, runtime/CLI/schema/ownership boundary changes.
+Prior-loop completion dispositions remain confined to their originating work;
+SprintDesign review and downstream live/package gates remain separate.
 
 Sprint-architecture freshness: based on accepted SprintDesign `4c8511d` and
 the accepted release architecture/plan, preserving the same 17 dirty paths.

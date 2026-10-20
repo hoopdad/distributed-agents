@@ -2,35 +2,47 @@
 
 ## Assignment and accepted inputs
 
-Sprint **RP-S1: Evidence-ready source and understandable continuity** makes
-offline proof and customer clarity implementable while supported-remedy
-assessment proceeds independently. This is the Sprint Design Loop's
+Sprint **RP-S1** retains evidence-ready source and customer clarity while
+establishing the supported identity-selection handoff. This is the Sprint
+Design Loop's
 `SprintDesign` deliverable: terminal user flows, screen layouts and fixture
-handoffs, not an implementation, SprintPlan or live acceptance report.
+handoffs, not a new implementation, SprintPlan or live acceptance report.
 
 Accepted inputs, unchanged by this design:
 
-- [Architecture](customer-prototype-architecture.md), commit `1f690f5011bef61494b8181fd14e779fa55d858e`.
-- [User experience](customer-prototype-ux.md), commit `0f2a2b22a23fdb614e666274eec29c612da0a92f`.
-- [Release plan](customer-prototype-release-plan.md), commit `a2d0f9a06bfa9fd6df7fd932c94491eccb87035d`.
+- [Architecture](customer-prototype-architecture.md), commit `2a736d94cb99c01aca0c516aeaf920e61ddb8fbd`.
+- [User experience](customer-prototype-ux.md), commit `3ee9798afa4a419be87bcb68fdfc3540875d171a`.
+- [Release plan](customer-prototype-release-plan.md), commit `b0d73b07247bbadbbab9afa9a1bb85b8fa32d480`.
 
-No open blocked-backlog list, assigned task IDs, prior dispositions or reconciled
-feedback were supplied. The known identity blocker remains in
+Inspected clean feature-branch baseline `b0d73b07247bbadbbab9afa9a1bb85b8fa32d480`.
+Related implementation is already integrated in `24b883f`; terminal view
+`56b762e`, workflow fixtures `6614440` and specialist fixtures `c454e50` are
+retained work, not new progress or tasks to redispatch. The invocation supplies
+no new assignments or separate open blocked-backlog list. The known identity
+blocker remains in
 [the recovery plan](identity-recovery-plan.md); it does not block this bounded
-offline design. Do not invent a new remedy, reopen the accepted UX, or treat
-missing task assignments as a request for user approval. Scrum Master supplies
-task decomposition and Git reconciliation next.
+design reconciliation. Neither authorized identity path is live-selected.
+Scrum Master reconciles concrete delta assignments and Git ownership; missing
+assignments are not a request for user approval.
+
+Apply these prior dispositions only within their originating deliverables:
+`["yaml-loops-v1:ArchitectureLoop","architecture-loop-status-reconciliation"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-loop-status-reconciliation"]` and
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-loop-status-reconciliation"]`.
+Keep those handoffs accepted. They neither supply SprintDesign reviewer votes
+nor waive live/package acceptance. No SprintDesign correction feedback was
+supplied this turn.
 
 ## Sprint slice and navigation
 
 | RP-S1 slice | Concrete design decision | Downstream boundary |
 |---|---|---|
-| README clarity | Opening sequence below; detailed chronology remains in the existing recovery document | Developer integrates related dirty README work deliberately |
-| Terminal presentation | Proposed `--view human`, stderr only; render completed records, not arbitrary stream chunks | Developer preserves existing default stdout and CLI compatibility |
+| README clarity | Retain integrated opening sequence below; chronology remains in recovery document | Update measured live status only from new evidence |
+| Terminal presentation | Implemented `--native --view human`, stderr only after finalization evaluation | Retain default stdout, schemas and acceptance parser |
 | Two-turn proof | Initial and follow-up storyboards separate observations from exact comparisons | Developer supplies binding/response assertions; DevOps later supplies live proof |
-| Controlled revision | Show all four causal calls in order, not a deduplicated two-role list | Developer drives the real workflow with controlled offline adapters |
+| Controlled revision | Retain all four ordered calls; current final design/review shown separately | Preserve workflow assertions and renderer capture fixtures |
 | Specialist history | Explicitly separate model-history proof from hosted response aliases | Developer tests both real specialist history stages and recovery |
-| Supported-remedy assessment | Hold and exact missing observation are visible; no automatic repair/retry affordance | Original research/runtime owner records a supported correction or negative finding |
+| Identity selection | Selected-A / selected-B / unresolved stays in the bounded engineering handoff, not a terminal selector | Original owners record trusted-ingress evidence or actionable unresolved boundary |
 
 Source reading order for these screens:
 [terminal](../demo/terminal.py) -> `WorkflowRuntime.delegation_event()` and
@@ -79,9 +91,12 @@ Blob ownership limitations reachable next to that notice.
 
 Use the accepted UX's existing two-command demonstration shape with the same
 private session file; follow-up requires a completed, non-held initial turn.
-`--view human` is still **proposed, not implemented**; do not present it as
-runnable until the Developer adds it. Exact setup and guarded transport remain
-in existing documentation; no private lab literals or copied SSH commands here.
+`--native --view human` is implemented; use the README's two commands with the
+same private session file, mandatory verified SOCKS endpoint and existing pinned
+Python. Omit `--view human` for default output; without `--native` it is rejected.
+This is runnable syntax, not a successfully executed live demonstration.
+Exact setup and guarded transport remain in existing documentation; no private
+lab literals or copied SSH commands here.
 
 ## Screen B: turn summary and continuity observations
 
@@ -90,9 +105,12 @@ today's output, including the parent header; stdout is not pure JSONL.
 With it, stdout remains identical for identical inputs. Stderr gets human
 summaries only. Existing `--show-ids` stays out of shareable commands.
 
-Render a delegation row only after its complete JSON record parses; fragmented
-chunks are not events. Preserve chronological order and repeated calls.
-Commit the final summary after normal turn finalization; a pending effect,
+The implemented `HumanView.render()` projects the accumulated complete records
+once `finalize_workflow_turn()` evaluates finalization. It is not a per-call
+streaming progress view; raw machine output retains its existing streaming.
+Fragmented chunks are not human events. Preserve chronological order and
+repeated calls.
+Render accepted output only after normal turn finalization; a pending effect,
 schema failure or failed finalization overrides success-looking content.
 Do not display `ACCEPTED_ADVISORY` based on partial output.
 
@@ -101,22 +119,38 @@ are storyboard symbols; implementation uses existing safe aliases and actual
 configured versions, not these constants.
 
 ```text
-HOSTED COLLABORATION | OFFLINE FIXTURE
-Turn 1 | parent P1 | requirements r1
-  1 architect | hosted A1 | framework AF1 | version <observed> | response A-R1
-  2 reviewer  | hosted R1 | framework RF1 | version <observed> | response R-R1
+HOSTED COLLABORATION | observed records
+Parent hosted alias: P1
+Parent framework alias: PF1
+Turn 1 | requirements revision 1
+1. architect | candidate revision 1
+  stable hosted alias: A1
+  stable framework alias: AF1
+  pinned version: <observed numeric version>
+  advancing response alias: A-R1
+2. reviewer | candidate revision 1
+  stable hosted alias: R1
+  stable framework alias: RF1
+  pinned version: <observed numeric version>
+  advancing response alias: R-R1
 Child bindings: observed aliases; exact continuity UNVERIFIED
-New child creations: not observed
+New child creations / exact response inequality: not observed
 Design r1/c1
-  | <private-ingress design from current result>
+  <private-ingress design from current result>
 Review r1/c1: approved
-  | <current recommendation>
+  <current recommendation>
 Coordinator: ACCEPTED_ADVISORY | current result finalized
 Model-history / restart / isolation: not established by this display
 Release acceptance: separate private report; not certified here
 ```
 
-Follow-up uses the same layout headed `Turn 2 | requirements r2`. Show current
+All actual rendered lines use the `  | ` prefix, including labels; it is
+omitted in these wireframes for readability. Offline labeling describes the
+fixture/report context, not an automatic runtime mode detector. A label such
+as `stable hosted alias` names an identity category, not a comparison result.
+
+Follow-up uses the same layout headed `Turn 2 | requirements revision 2`.
+Show current
 queue design/review, not the cached first design or old approval. A new response
 alias is an observation, not by itself an exact-ID inequality check. Without
 exact comparisons, say `follow-up continuity UNVERIFIED` rather than `same child`.
@@ -124,9 +158,12 @@ In the private acceptance report, separately compare stable parent, both hosted
 and framework child IDs and pinned versions; compare advancing responses, not
 entire serialized framework dictionaries.
 
-When exact existing binding checks are available, the report may state
+When exact existing binding checks are available, the separate private report
+may state
 `bindings VERIFIED` and the instrumented creation count with its evidence scope.
-The current public delegation events alone do not supply that proof.
+The implemented human view remains unverified; public delegation events alone
+do not supply that proof. Do not add a verified badge, external read or new
+comparison ledger as an RP-S1 enhancement.
 No new external read, public raw identifiers, saved comparison ledger or
 provider call is required just to make the display more reassuring.
 
@@ -142,7 +179,8 @@ customer text is safe to share; the demonstration uses synthetic content only.
 
 ## Screen C: reject, revise, review again
 
-The controlled fixture must yield this causal trace, visibly labeled offline:
+The controlled workflow fixture retains this causal trace. This is an
+**offline causal storyboard**, not literal human stderr:
 
 ```text
 Turn 1 | OFFLINE FIXTURE | requirements r1
@@ -160,6 +198,12 @@ labels as in Screen B. Never carry c1 approval or findings forward as c2
 approval. Include useful current design/recommendation after the trace.
 Binding reuse, exactly two child creations, fresh responses and prerequisite
 revisions are fixture assertions, not claims earned by this wireframe.
+The implemented human projection lists all four calls and the final c2
+design/review; intermediate BLOCKED c1 findings are explained by the controlled
+workflow fixture, not fabricated from delegation records that lack them.
+Do not require a new public per-call findings schema or replay inference to
+reconstruct intermediate content. Retain final blocking/unresolved findings
+when actually present in the current result.
 
 ## Screen D: held, incomplete and recovered work
 
@@ -181,6 +225,25 @@ and must not double-count the prefix already displayed.
 Supported compute stop/resume stays in DevOps tooling, not a new UI command.
 RP-S1 designs the recovery message; it does not execute AC4/G6.
 
+## Identity-selection journey: same customer flow, separate engineering evidence
+
+No terminal identity dropdown, caller-ID input, permission wizard or retry
+button is added for A versus B. Both supported paths preserve Screens A-D and
+the trusted session invariant. Necessary narrowly scoped lab permissions are
+already authorized; no routine user approval prompt is designed.
+
+| Engineering outcome | Customer-facing consequence / original handoff |
+|---|---|
+| `unresolved` | Retain historical status and observed hold; record which A/B boundary remains untested, why, and the closing action privately. Continue remaining artifacts. Do not claim provider-only impossibility from older research. |
+| `selected-A` or `selected-B` from bounded scripted discrimination | Record trusted specialist application entry and actual principal-binding compatibility, not HTTP 200 or header presence alone. Selection is not release acceptance; README must not say customer-ready. |
+| Principal namespace mismatch or required contract/state migration | Preserve hold and old bindings. Scrum reconciliation with Architect-advised Product Owner handles internal replanning; do not ask for permissions already supplied or weaken equality checks. |
+| Published final common bundle and independently verified live gates | Original E2E/DevOps supply dated evidence before updating release status and demonstration proof. Planning does not publish or award cloud-pass. |
+
+Keep exact identities, scoped permission plans/readback and decision evidence
+private. Never turn opaque call IDs, model text or assignment JSON into
+delegated user identity. Preserve historical UNKNOWN publication, held parents,
+rollback bindings and cleanup uncertainty regardless of path choice.
+
 ## Fixture-to-design handoff and doneWhen
 
 The rows below are acceptance examples for existing downstream work, not new
@@ -189,14 +252,15 @@ assigned task IDs or an extra approval stage.
 | Example / check | Required observable assertion | Handoff |
 |---|---|---|
 | Initial and queue follow-up | Both roles on both turns; stable actual parent/hosted/framework/version bindings; two total child creations; new responses; updated requirements; stale approval invalidated | Existing workflow regression plus separate human stderr/stdout capture |
-| Controlled rejection | Four calls above, same two bindings, fresh responses, exact c2 review inputs; no stale approval | Real workflow fixture; compare event order with rendered trace |
+| Controlled rejection | Four calls above, same two bindings, fresh responses, exact c2 review inputs; no stale approval | Retained workflow fixture plus renderer's ordered calls/current final output; no invented intermediate findings |
 | Both specialist continuations | Restored history passed to each role's actual model stage, fresh-history negative controls, known-response recovery without resend | Specialist tests; display continues to say history not established by itself |
 | Evidence absent | Aliases may appear but exact continuity/count remains unverified/not observed | Human renderer tests; no invented evidence fields |
 | Fragmented and recovered records | No partial JSON interpreted as success; one final summary; known retrieval not a new invocation | Terminal stream/recovery fixtures |
 | Held or malformed result | No accepted banner; existing error/hold semantics and nonzero exits preserved | Existing finalization and failure tests plus presentation assertions |
 | Hostile/multiline content and narrow width | No active controls or unprefixed generated banners; findings retained and labels readable without color | Deterministic text fixtures, no model calls |
 | Default and opt-in output | Identical stdout bytes for identical records; existing acceptance parser still consumes both; human text only on stderr | Parser/terminal regression comparison |
-| README customer path | Goal/diagram/two-turn invariant/status before history, actual source links and runnable implemented syntax | Documentation review and local link checks |
+| README customer path | Goal/diagram/two-turn invariant/status before history, actual source links and runnable implemented syntax | Documentation review and local link checks; preserve integrated README |
+| Identity unresolved/selected | No selector or routine permission prompt; selection alone never becomes release PASS | Original scripted decision-test/private report and Scrum handoff, no renderer/schema change |
 
 Scrum Master retains concrete assignments, minimal dependencies, shared-resource
 serialization and explicit-path Git reconciliation. Independent terminal,
@@ -214,4 +278,27 @@ Designer doneWhen: RP-S1 flows/screens and bounded implementation examples are
 committed and available to the original Product Owner and Critic. Their
 agreement is collected by the existing Sprint Design Loop, not asserted here.
 No runtime files, accepted input documents, private state, lab tooling or
-pre-existing readability edits are changed by this handoff.
+pre-existing readability edits are changed by this handoff. New original Product
+Owner/Critic SprintDesign agreement is not supplied by earlier-loop approvals.
+
+## Verification of this sprint-design revision
+
+Using the existing absolute validated Python 3.12.10 executable, without
+dependency installation:
+
+- `Test-Demo.ps1 -Python <absolute-validated-python> -LabRepositoryRoot
+  <explicit-lab-root>` passed dependency checks, 177 offline tests in
+  23.401 seconds and compilation.
+- `scripts/Test-Repository.ps1 -Python <absolute-validated-python>` passed
+  index, focused public-boundary (70 public files), parser and whitespace gates.
+- All 10 local document links resolve; screen fences and A/B/unresolved
+  handoff labels checked. Inspected `HumanView.render()` and
+  `finalize_workflow_turn()` plus terminal capture fixtures against the layouts.
+
+These repeated checks validate retained source and this documentation; they
+are not newly implemented capability or live proof. No lab source, runtime,
+dependency or machine contract changed. No fresh cloud inventory, identity
+discrimination, permission change, live inference, deployment, stop/resume,
+Linux hosting-package validation or retained lab release-suite execution was
+performed. Final exact-source/package and live gates remain with their original
+owners; historical unknown effects and held parents remain untouched.

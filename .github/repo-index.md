@@ -138,6 +138,13 @@ release evidence. Use the October 19 invocation's authority within its exact
 scope; the older consumed exception cannot authorize unknown-effect replay.
 
 Current UX handoff freshness: inspected clean architecture baseline
+`0a244702c7ccf01f1916c4b3a2580346ffb02fea` for the October 20
+candidate-to-customer handoff. Retained integrated screens/fixtures; clarified
+offline/unresolved versus partial ingress, selected identity path and full
+customer release, plus fresh trial versus held historical conversation.
+No new command, public event, runtime boundary or added/deleted path.
+
+Previous UX handoff freshness: inspected clean architecture baseline
 `2a736d94cb99c01aca0c516aeaf920e61ddb8fbd`. Reconciled
 `docs\customer-prototype-ux.md` with the integrated human-view implementation
 and README (`56b762e`, `24b883f`), current derived requirements and authorized

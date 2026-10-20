@@ -35,6 +35,46 @@ DevOps live gates remain with their original owners. A call ID is never a
 delegated user identity. Continue the UX/artifact handoff while selection is
 unresolved; do not present either path as a working repair.
 
+### October 20 candidate-to-customer handoff
+
+Reconciled against accepted architecture commit
+`0a244702c7ccf01f1916c4b3a2580346ffb02fea`, with a clean application
+worktree on `feature/customer-hosted-session-prototype`. Apply prior reference
+`["yaml-loops-v1:ArchitectureLoop","architecture-loop-status-reconciliation"]`
+only to that architecture agreement. The integrated README, terminal screens
+and continuity fixtures remain retained work, not new implementation tasks.
+This clarification adds no CLI option, public event or evidence ledger.
+
+The architecture's specialist-only B client and finite decision runner are
+downstream implementation contracts, not currently runnable customer features.
+The existing [offline identity handoff](identity-candidate-handoff.md) has no
+live mode; its exit 2 / `unresolved` result must not be described as a failed
+customer conversation or a selected repair. Do not invent a live runner command
+in the README before the retained scripted entry point exists.
+
+Keep operational selection and customer release status distinct:
+
+| Operator evidence | Customer-facing interpretation / action |
+|---|---|
+| Offline candidate verified; selection `unresolved` | Local candidate checks only; live collaboration remains unverified. Preserve the historical status notice. |
+| Trusted architect entry only; reviewer unreached | Partial decision evidence, not three-role collaboration. State reviewer unreached; do not offer the two-turn demo as verified. |
+| `selected-A` or `selected-B` with both receiver checks | Identity-path decision only. E2E/DevOps must still establish the final common bundle and AC1-AC9/G1-G8 before a customer-ready claim. |
+| Missing/changed principal, version drift, unknown effect or held trial | Preserve the trial and exact-response evidence. No automatic path switch, retry, fresh-parent workaround or success banner. |
+
+These are handoff interpretations, not extra terminal banners or a replacement
+machine schema. Share only sanitized reached/unreached/result classifications;
+exact bindings, permission readback and evidence locators stay private.
+Existing human-view output continues to describe observed finalized records.
+
+A deliberately published candidate uses a **fresh synthetic trial parent**;
+it does not upgrade old pinned conversations. Never direct the customer to
+reuse a held historical session file against new versions, translate its
+principal, or attach its children to a new trial. This predeclared isolated
+trial is distinct from creating new parents after failure to evade a hold.
+After final release verification, the two customer turns use the same newly
+chosen private session file and the first turn must complete without a hold.
+Supported compute stop/resume stays in DevOps, not a terminal migration action.
+
 ## UX principles, tools and framework
 
 1. **Explain the invariant first.** One parent, one architect child and one
@@ -293,7 +333,21 @@ Verification checklist for implementation review:
 - AC9: handoff includes runnable actual syntax, setup, measured sanitized
   comparison, limitations and private exact release/rollback evidence.
 
-## Validation of this UX revision
+## Validation of the October 20 handoff
+
+Using the existing absolute Python 3.12.10 executable and explicit lab root,
+`Test-Demo.ps1` passed dependency checking, **186 offline tests in 20.490
+seconds**, and compilation. `scripts/Test-Repository.ps1` passed index,
+public-boundary (**73 public files**), JSON, PowerShell, context and whitespace
+checks. No dependencies were installed. Inspected the existing `HumanView`
+render/finalization path; no runtime, public event or lab source was changed.
+These checks do not establish selected identity, deployed versions or live
+continuity. Linux hosting-package and retained lab release suites were not run
+for this documentation-only change. Original Product Owner and Critic agreement
+on this handoff has not been supplied; the Designer considers it ready for
+their existing-loop review without redispatching accepted implementation.
+
+## Validation of the preceding UX revision
 
 Using the existing validated absolute Python 3.12.10 executable, without
 dependency installation:

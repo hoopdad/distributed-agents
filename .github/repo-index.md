@@ -21,7 +21,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current successful direct sibling Git inspection versus denied complete resolver reads, supplied writer/integration designations and unchanged originating ownership review; matched operational roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; current attributed successful sibling Git versus incomplete resolver proof, supplied designations versus original ownership acceptance, unchanged machine contract |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current recovery-entry RP-S3 review at `89dfd9f`: blocked demo, accepted executable/observation handoff and E2E FAIL versus attributed local-only DevOps observations; existing ownership-evidence access, independent trust, actual integration, G1-G4 and continuity/recovery/isolation/delivery closing actions; older overlays remain history |
-| Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
+| Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Current RP-S3 blocked closeout at `b809cb9`: per-criterion AC1-AC9/G1-G8 ledger, accepted source/audit/observation handoffs versus missing substantive ownership acceptance, independent trust and actual operational join; attributed 204-test Windows result, conditional demo, unknown final/rollback bindings and unverified final push |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S3 maps absent initial-parent handoff to blocked F/K, conditional H two-turn comparison, I once-only supported recovery, J independent isolation and K truthful delivery; retains accepted A-D/F-G/parser/privacy contracts, attributed RP-S2 exit-2 stop and original execution owners; older overlays remain history |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S3 consumes accepted RP-S2 architecture/retro and RP-S3 design; missing non-held initial parent blocks live continuation, actual both-role continuity, once-only supported recovery, independent isolation and truthful exact-release delivery; retains ownership/trust/integration and original E2E/DevOps gates without duplicate offline implementation; prior overlays retain history |
 | Historical RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Completed-workflow assignment/audit contract, not deployment acceptance; original ownership history remains unresolved, accepted source-check handoff consumed by current RP-S2 plan |
@@ -40,6 +40,13 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+ReleaseCloseout freshness: inspected clean authorized feature baseline
+`b809cb91a9f84114ea8edd5829ccc5759d98a1d8`; updated only existing release
+notes, README status and this navigation; no added/deleted paths. Verified
+retained source/audit/map/review ancestry and unchanged execution inputs from
+`b13670e`. Supplied private observations and historical test execution remain
+attributed, not independently refreshed. No operational reconciliation, push,
+deployment or customer-ready claim; all AC1-AC9/G1-G8 remain required.
 RP-S3 SprintRetro freshness: inspected clean authorized feature HEAD
 `0f2e6276bb53f84605d745db24cafd1991133d21`; updated only Architecture,
 UserExperience, ReleasePlan retrospective sections and this navigation, no

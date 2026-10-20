@@ -1,5 +1,32 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current RP-S1 recovery-entry boundary
+
+Consume the [current RP-S1 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-recovery-entry-architecture-october-20-2026)
+and accepted recovery-entry SprintDesign. Retain README's customer goal and
+implemented two-turn syntax, useful opt-in human stderr, safe aliases and
+unchanged stdout/delegation/result parser. No new flag, banner or evidence ledger.
+Retain implemented `validate_scenario_evidence()` assertions without duplicating
+them: supplied snapshots need complete execution-owner collection/provenance;
+offline assertion success cannot authenticate observations or claim live gates.
+
+Use the supplied recovery locator first for bounded read-only evidence lookup.
+Historical trust/closure and compatible roots are not current writer ownership,
+strict SSH trust or authenticated inventory. Developer/Scrum reconciles actual
+writing ownership before runner writes; transport owner/DevOps independently
+substantiates existing approved source/fingerprint and current trust before
+Metadata. No repeated request for already-authorized read-only inspection.
+
+Keep runner development and operational wrapper execution roots explicit and
+matched. Preserve `LAB_TOOL_OWNER_MISMATCH`; required wrapper revisions must be
+reviewed and present at their actual loaded root before effects. Sibling commits
+are not canonical installation. Integration owns source/hash joins, scoped Git
+delivery and durable task/branch accounting. Original E2E owns formal checks;
+original DevOps owns exact Linux/package/publication, finite decision and live
+acceptance through retained local scripts, not GitHub Actions.
+Unresolved identity selection permits remaining artifacts, not live PASS.
+Preserve historical UNKNOWNs, held parents, rollback and cleanup uncertainty.
+
 ## RP-S3 exact demonstration and truthful closure boundary
 
 Consume the [RP-S3 entry and delivery joins](../../customer-prototype-sprint-architecture.md#rp-s3-current-sprint-continuity-recovery-and-isolation-evidence-joins)

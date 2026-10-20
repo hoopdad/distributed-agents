@@ -1,5 +1,24 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current RP-S1 recovery-entry boundary
+
+Consume the [current RP-S1 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-recovery-entry-architecture-october-20-2026)
+without changing either role's five-stage flow or `specialist_history_v2`.
+Retain both roles' direct load/model/store, persisted-value, identical-brief
+fresh-history and exact-response zero-send recovery controls. Hosted/framework
+child identity, internal model history and advancing response continuation are
+separate observations; replayed requirements cannot establish memory.
+
+The historical missing trusted user is not a fresh candidate observation.
+Current transport trust, grant readback or local B tests do not establish entry
+for either specialist. The finite decision observes trusted ingress and actual
+receiver equality per reached role; reviewer requires exact accepted architect
+prerequisites. Preparation rejection leaves the receiver unreached/unknown.
+Namespace mismatch returns to existing Architect-advised PO/Scrum reconciliation,
+never assignment-as-authority, equality relaxation, rekeyed history or adoption
+of held children. No specialist rewrite or extra diagnostic endpoint is needed
+by this overlay; live history/private Blob provenance remains downstream.
+
 ## RP-S3 repeated calls and model-history boundary
 
 The [RP-S3 state comparisons](../../customer-prototype-sprint-architecture.md#stable-identity-advancing-work-and-independent-state)

@@ -23,7 +23,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current recovery-entry overlay and three retained sprint goals/acceptance contracts; historical receipts/resolver evidence versus writing/current trust, matched operational-wrapper integration, minimal original-owner dependencies and unchanged live final gates |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S1 recovery-entry journey and report-state mapping for historical evidence versus current ownership/trust and matched operational roots; retained screens/fixtures, RP-S3 continuity/recovery/isolation reports, unchanged machine contracts and original execution owners |
-| Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Retained fixtures/candidate and stopped prerequisite lanes; actual G1-G4 entry, both-turn binding/response/current-output joins, once-only supported recovery, separate-parent isolation and exact-source truthful delivery; unchanged runtime and public contracts |
+| Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S1 recovery-entry/tier overlay: historical evidence versus current writer/trust/inventory, matched operational wrapper/source joins and original-owner closing actions; retained fixtures/candidate, G1-G8 continuity/recovery/isolation and exact-source truthful delivery; unchanged runtime/public contracts |
 | RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Phase-compatible Developer checkout verification, installed-candidate review/checks, runner and integration; deferred DevOps inventory/status/trial; pre-parent scenario/source/package/version join and truthful preparation/receiver/unknown outcomes |
 | RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Stopped evidence-only ownership carryover and independent application integration preparation; runner/source join, later strict-trust inventory, exact publication/finite trial and explicit actual G1-G4 handoff; accepted candidate/UX and RP-S1 audit contract retained |
 | RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Evidence-only stopped carryover alongside independent missing scripted-comparison work; reviewed runner/source integration consumes accepted application preparation; original DevOps gates actual G1-G4, two-turn continuity, once-only supported recovery, independent isolation and truthful exact-source delivery |
@@ -38,6 +38,14 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Recovery-entry sprint-architecture freshness: inspected clean agreed-sprint-design
+baseline `160b38d202bd239ecd409b8f7de485b1d7f7e10e`; updated cumulative and
+three tier architecture slices plus this navigation, with no added/deleted
+paths. Consumes accepted release architecture, UX, planning and sprint screens
+without reopening them or repeating private receipt/resolver experiments.
+Historical evidence is not current ownership/trust, installed operational
+source, identity selection or live acceptance. No runtime, lab, assignment,
+public schema, release gate or execution-owner change is inferred.
 Recovery-entry RP-S1 design freshness: inspected clean agreed-release-plan
 baseline `68c5bd8d8b2835b0f329b4bac5821ddb78809b36`; updated only sprint
 design and this navigation, with no added/deleted paths. Retains accepted

@@ -1,5 +1,24 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current RP-S1 recovery-entry boundary
+
+Consume the [current RP-S1 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-recovery-entry-architecture-october-20-2026);
+older sprint slices below retain their technical contracts, not current status.
+Keep trusted parent/children lookup, restored framework sessions, pinned versions,
+advancing responses and stale-approval invalidation with exact immutable refs and
+ETag/fencing. Retain integrated two-turn/four-call and isolated-client regressions;
+no duplicate fixture implementation, runtime selector or new session abstraction.
+
+Historical resolver compatibility and receipts do not authorize a trial.
+Reviewed runner/application/required operational wrapper source must match its
+explicit roots, scenario, common package and actual role versions before any
+parent creation. Installed B is candidate-only; A requires its own supported
+correction. Preserve specialist-only client authority and trusted receiver
+principal equality. Preparation rejection is not a remote failure; architect
+success is not reviewer success. Unknown effects remain held, known-response
+recovery sends nothing, and old pinned/held parents are never adopted.
+Original E2E/DevOps own joined-source and live validation respectively.
+
 ## RP-S3 continuity and effect-reconciliation boundary
 
 Apply the [current RP-S3 joins](../../customer-prototype-sprint-architecture.md#rp-s3-current-sprint-continuity-recovery-and-isolation-evidence-joins)

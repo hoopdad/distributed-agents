@@ -1,5 +1,141 @@
 # Cumulative sprint architecture: RP-S1/RP-S2 preparation and RP-S3 delivery
 
+## Current RP-S1 recovery-entry architecture (October 20, 2026)
+
+This is the current **RP-S1 SprintArchitecture** overlay, based on clean
+application HEAD `160b38d202bd239ecd409b8f7de485b1d7f7e10e` on
+`feature/customer-hosted-session-prototype`. It consumes agreed
+[release architecture](customer-prototype-architecture.md) at `2f62e3c`,
+[UX](customer-prototype-ux.md) at `8d6d6e0`,
+[release plan](customer-prototype-release-plan.md) at `68c5bd8` and
+[sprint design](customer-prototype-sprint-design.md) at `160b38d`.
+No completed prior sprint or separate blocked-decision list was supplied for
+this invocation. Earlier RP-S1/RP-S2/RP-S3 slices below remain cumulative
+technical contracts and historical observations, not the current sprint,
+new assignments, pending original reviews or fresh live evidence.
+
+### Sprint decision and cross-tier invariants
+
+Retain the three-role end-to-end design: terminal -> hosted MAF coordinator ->
+remote architect -> remote reviewer -> fenced current-artifact acceptance.
+The same parent manifest reuses both children and their pinned versions on a
+revision or follow-up; `RemoteAgents.invoke()` restores their framework
+`AgentSession`, and each specialist independently restores model history.
+Fresh invocations advance response IDs and current outputs, not child identity.
+Conversations, checkpoints and immutable artifacts/effect journals remain
+distinct state planes. Keep the explicit lifecycle order, pinned dependencies,
+trusted principal equality, private managed-identity Blob path, Decision-1
+after deterministic gates, write-ahead effects and UNKNOWN holds.
+
+The architecture delta is **recovery-entry interpretation and matched
+operational source integration**, not a runtime rewrite or another identity
+mechanism. The installed specialist-only B client remains a candidate.
+A requires its own supported, evidenced authentication/configuration correction;
+a scenario label cannot switch the installed B source to A. Neither is selected
+live. No new service, history schema, public event, CLI flag, comparison ledger,
+SessionManager, infrastructure or permission change is introduced here.
+
+| Logical tier | Current RP-S1 boundary and retained handoff |
+|---|---|
+| [Coordinator](requirements/coordinator/architecture.md#current-rp-s1-recovery-entry-boundary) | Retain both-role two-turn/four-call fixtures, immutable snapshot comparisons, stale-approval invalidation and exact accepted refs. Candidate resource setup failure is preparation rejection, not a remote receiver observation. |
+| [Specialists](requirements/specialists/architecture.md#current-rp-s1-recovery-entry-boundary) | Retain both real load/model/store paths, identical-brief fresh-history controls and exact-response zero-send recovery. Neither historical trust nor candidate source proves either role's trusted ingress or restored history live. |
+| [Client/release](requirements/client-release/architecture.md#current-rp-s1-recovery-entry-boundary) | Retain accepted README/opt-in human stderr and unchanged machine parser. Join reviewed runner to matched operational wrappers/roots before execution; maintain separate current-trust/inventory and coding lanes. |
+
+### Recovery evidence, source roots and actual closing actions
+
+Consume the accepted release architecture's historical recovery-summary/receipt
+locators and executed canonical/sibling resolver matrix without rerunning those
+experiments. Those observations do not establish current writer exclusivity,
+SSH trust, authenticated inventory, installed wrapper revisions or ingress.
+The supplied recovery-exception locator is the first read-only evidence source
+when original owners need that evidence; bounded Git/sibling-resolver inspection
+is already authorized. Do not request new product permission for that inspection
+or silently restart the historically stopped ownership task.
+
+Preserve `LAB_TOOL_OWNER_MISMATCH`: load each retained wrapper with its own
+operational lab root. A runner in a separately verified writable checkout may
+invoke canonical wrappers explicitly in their canonical context. Reviewed
+sibling wrapper changes are not installed canonical changes. Before effects,
+integration must join runner, application and every required operational wrapper
+revision/hash to the actual loaded paths. A missing required operational delta
+is an integration failure, not permission to weaken the guard, copy credentials
+or substitute a profile. This is the accepted composition boundary, not a new
+third root abstraction.
+
+| Existing owner | Bounded closing condition / downstream handoff |
+|---|---|
+| Developer / Scrum | Reconcile point-in-time writer/path ownership with supplied branch/status/resolver evidence and originating review before runner writes. Registration alone is insufficient; no write probe or shared branch switch. |
+| Transport owner / DevOps | Substantiate the already approved module/source/fingerprint, verify current exact hashes and strict trust, then fresh sole-target authenticated inventory. Historical receipts are locators, not present trust or original-UNKNOWN cleanup. |
+| Developer / integration | Retain accepted application fixtures, candidate, presentation and `validate_scenario_evidence()` assertions without redispatch. Complete concrete runner deltas with root/source/scenario/version, partial-role, preparation/receiver, unknown-effect and zero-send negative controls; integrate reviewed operational source. |
+| Original E2E | Validate the exact joined implementation through local repository scripts. An agreed predeployment FAIL is not release readiness; architecture observations are not formal integration PASS. |
+| Original DevOps | Join fresh inventory to exact-source/Linux/amd64/hosting-Python/common-package gates, retained preview/publication and finite trusted-ingress trial. Architect receiver success precedes reviewer; each reached/unreached role is recorded. Selection alone does not pass G1-G4. |
+
+Writing ownership gates runner coding, not independent application checks.
+Current trust and verified context gate inventory, not coding. Reviewed source
+and fresh inventory join before release/trial. Only a demonstrated necessary
+permission delta adds exact-scope scripted plan/write/readback; the user's lab
+approval is retained, not speculative grant authority. Scrum owns task IDs,
+minimal dependencies, actual shared-resource serialization and Git reconciliation
+in existing planning/execution stages. Keep publication/profile/transport/mount
+mutation serialized; scheduler resource names alone give no cross-run isolation.
+No assignments or additional approval stage are created by this document.
+
+### Sprint exit, later live gates and disposition boundaries
+
+RP-S1 hands off retained source/fixtures/presentation, applicable current checks
+and a supported identity baseline **or actionable unresolved finding**. Preserve
+the historical `NATIVE_HOST_PRINCIPAL` result as history, not a fresh diagnosis.
+The unresolved decision closes with the exact reached boundary, missing
+observation/supported remedy, existing closing owner and next action. A material
+principal-namespace or held-state finding goes to existing Architect-advised
+PO/Scrum reconciliation, not equality relaxation or invented human approval.
+Only genuinely unavailable human/provider information merits needs-input.
+Continue the remaining artifacts while selection is unresolved.
+
+RP-S2 still requires actual final common-bundle G1-G4 and a completed non-held
+initial parent. RP-S3 still requires both-role two-turn exact continuity,
+once-only confirmed supported stop/resume without duplicate effects, independent
+separate-parent isolation and truthful exact-source delivery. Retained
+`live_acceptance.validate_scenario_evidence()` asserts supplied observations;
+it neither collects/authenticates them nor proves live acceptance by itself.
+No alias, brief replay, HTTP 200, model memory text or agreed blocked assessment
+substitutes for these gates. Account-wide Blob Contributor gives application-
+enforced ownership/isolation, not storage-RBAC or malicious-host isolation.
+Preserve historical UNKNOWN effects, held parents, rollback assets, unrelated
+work and historical cleanup uncertainty.
+
+Apply exactly
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-agreed-deliverable"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-close-agreed-deliverable"]`,
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-close-agreed-deliverable"]` and
+`["yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop","sprint-design-close-agreed-deliverable"]`
+only within their originating acceptance. They preserve accepted handoffs,
+not this loop's reviewer votes or release success. The stopped historical
+ownership reference remains
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`;
+new locatable evidence does not retrospectively accept it or reset its stop.
+Architect accepts this bounded design; current Product Owner, Critic and
+Red Team agreement remains required for this SprintArchitectureLoop.
+
+### Checks for this recovery-entry overlay
+
+Using the existing absolute canonical-lab Python 3.12.10 executable and
+explicit lab root, `Test-Demo.ps1` passed dependency checking, **204 offline
+tests in 46.940 seconds**, and compilation. No dependencies were installed.
+After index refresh, `scripts/Test-Repository.ps1` passed index,
+**78-public-file** boundary, JSON/PowerShell/context and whitespace checks.
+Structural checks passed **55 relative links/anchors**, balanced fences in
+all four architecture files and current RP-S1 source/root/exit/review boundaries.
+These repeated checks validate source/document compatibility, not new runtime
+capability or reviewer-verified experimental progress.
+
+Only cumulative architecture, three tier files and navigation changed.
+No lab source, runtime, dependency, assignment or machine contract changed;
+retained lab release and Linux hosting-package suites were not run.
+No private receipt inspection, resolver experiment, authenticated inventory,
+cloud operation, identity trial, deployment, stop/resume or push occurred.
+Historical measurements below remain historical.
+
 ## RP-S3 current sprint: continuity, recovery and isolation evidence joins
 
 This slice retains the accepted RP-S2 architecture at

@@ -1,5 +1,18 @@
 # Repository index
 
+Scoped helper-mount architecture freshness: based on application `13e3b4b1`
+and inspected lab feature `1eec6d47` (including helper commit `55a60e69`).
+`docs/customer-prototype-sprint-architecture.md` and affected
+`docs/requirements/client-release/architecture.md` apply originating required
+`linux-engine-exact-mount-contract` only within RP-S2-LINUX-ENGINE-READINESS.
+Existing Scrum's separate one-assignment amendment adds only the retained
+`test_release_native_settings.py` expected-mount correction to Developer
+ownership; all assertions, original checks/reviews and downstream handoffs stay.
+Outer plan and canonical model unchanged; no added/deleted paths or runtime
+changes. Other tiers remain unchanged. Source mismatch independently inspected;
+retained PASS and actual engine/package/live readiness remain unverified.
+Independent rollback/effect inventory continues; no new approval stage.
+
 RP-S1 engine-recovery planning freshness: based on clean feature `ed986858`
 and registered lab feature `42a70533`; all five current originating input
 audits opened with substantive bounded agreement. New

@@ -1,5 +1,28 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Scoped helper mount regression ownership amendment
+
+Consume the [scoped cumulative disposition](../../customer-prototype-sprint-architecture.md#scoped-amendment-exact-read-only-helper-mount-regression-october-20-2026)
+for exact originating reference
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LINUX-ENGINE-READINESS/AssignedWorkDeveloperLoop","linux-engine-exact-mount-contract"]`.
+Within **Guarded lab release toolchain** / **Exact-source guarded release**,
+`release-package`, existing Scrum adds only lab
+`foundry-tf/multi-agent/tests/test_release_native_settings.py` to the existing
+Developer assignment. Add `Ensure-LinuxEngine.ps1` to the exact expected
+read-only mount set; preserve equality, duplicate, file-presence, read-only,
+network, runtime-closure and compilation assertions. Build-Demo stays offline;
+the helper is a test input, not an added hosted-runtime dependency.
+
+The implemented mount and omitted expected-set member are independently
+inspected source evidence, not passing retained validation. Developer must
+commit the scoped correction and return affected regression/applicable retained
+results and exact source evidence through original Architect/Critic review.
+Keep doneWhen/exclusions/handoff and the outer plan unchanged; no new approval,
+dependency or real engine execution is required for source-task completion.
+Reviewed-source integration/changed-join E2E still precede original DevOps
+recovery and Linux checks. Independent rollback/effect inventory is unaffected.
+No live gates, UNKNOWNs, held parents or stop accounting are waived.
+
 ## Current RP-S1 continuation: existing-engine readiness interface
 
 Consume the [current cumulative sprint contract](../../customer-prototype-sprint-architecture.md#current-rp-s1-continuation-retained-session-contracts-and-engine-readiness-join-october-20-2026),

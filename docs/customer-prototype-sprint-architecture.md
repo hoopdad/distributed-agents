@@ -1,5 +1,62 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Scoped amendment: exact read-only helper mount regression (October 20, 2026)
+
+This amendment applies only to `RP-S2-LINUX-ENGINE-READINESS`, under originating
+reference `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LINUX-ENGINE-READINESS/AssignedWorkDeveloperLoop","linux-engine-exact-mount-contract"]`.
+It implements the required reconciled disposition, not a new product decision
+or approval stage. Opened scoped-replanning audit `3750c8de…` in current run
+`0159ec9f-a89c-47f9-986f-80d9dfe6740a/context`, including original
+Architect/Critic agreement with needs-replan and taskComplete false.
+The accepted cumulative model and all earlier handoffs remain intact.
+
+Read-only inspection of lab feature commits
+`55a60e69df0e053be1b92da3b20d7875245e92e9` and
+`1eec6d4750c4fff95bb08a047554e03e81c767f5` confirms that
+`Build-Demo.ps1` mounts `Ensure-LinuxEngine.ps1` read-only, while
+`NativeSettingsTests.test_exact_readonly_linux_mount_and_compile_closure_contains_new_helper`
+in `foundry-tf/multi-agent/tests/test_release_native_settings.py` omits it from
+the exact expected set. This is a confirmed caller/regression contract mismatch,
+not a demonstrated permission or user-only blocker. Owner-reported targeted
+13-pass and application 204-pass results do not waive the reported retained
+gate: 203 passed, one failed, three inherited Linux-only skips. Those executions
+were not independently rerun for this architecture amendment.
+
+**Affected architecture disposition:** within **Guarded lab release toolchain**
+(`release-toolchain`), **Exact-source guarded release** (`guarded-release`),
+`release-package`, add only
+`foundry-tf/multi-agent/tests/test_release_native_settings.py` to the existing
+Developer's four-path ownership. The permitted edit is adding
+`Ensure-LinuxEngine.ps1` to that regression's expected public read-only mount
+set. Preserve exact equality, duplicate and file-presence checks, read-only and
+network assertions, runtime-closure exclusions and compilation assertions.
+Do not remove the necessary mount, skip the regression or weaken its contract.
+The correction does not add the helper to the hosted runtime/package closure.
+No coordinator/specialist tier, canonical component/flow/step ID, interface,
+user requirement or execution authority changes.
+
+Existing Scrum Master records this single-path ownership addition in a separate
+one-assignment amendment; preserve the outer seven-task plan on disk and its
+unrelated tasks. Keep the same task, Developer, doneWhen, exclusions, original
+Architect/Critic reviews, exclusive resources and integration handoff. No new
+dependency or Product Owner decision is required. Existing Developer commits
+the exact correction, runs the affected regression and applicable retained
+validation using explicit roots and pinned absolute Python, and returns exact
+commit/hash/check evidence through original review. The passing retained gate
+remains required; actual engine startup and Linux readiness are not prerequisites
+for this bounded source assignment.
+
+`release-join` still receives reviewed helper/test/build-input commits and hashes,
+followed by original changed-join E2E before original DevOps executes recovery
+and actual Linux/package gates. Both existing lab commits remain on the named
+feature branch; no implementation is abandoned or redispatched here.
+Independent selected-WSL rollback/effect inventory continues without this
+correction. Preserve UNKNOWN effects, held parents, rollback assets, unrelated
+work and five-consecutive-no-new-progress accounting. No real recovery,
+Linux build, authentication, cloud, publication or live acceptance is asserted.
+Only this cumulative document and the affected client-release tier contract
+change; coordinator and specialist tier contracts remain applicable unchanged.
+
 ## Current RP-S1 continuation: retained session contracts and engine-readiness join (October 20, 2026)
 
 This packet selects **RP-S1**, not a restart of its accepted implementation.

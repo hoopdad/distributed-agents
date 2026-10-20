@@ -22,10 +22,12 @@ A separate parent gets its own child bindings and artifact scope.
 
 **Release status — blocked, not customer-ready (October 20, 2026):**
 accepted offline assertions are not a live demonstration. Reviewed joined
-runner integration and established transport-trust evidence remain missing;
+runner integration and the current containment-source/resource handoff remain missing;
 substantive originating ownership acceptance is still unavailable, so runner
 writes remain blocked. Existing writer/integration designations suffice; this
-is not a request for renewed authority. No successful live identity-path
+is not a request for renewed authority. Accepted host trust is supplied; it
+does not establish current transport execution or operational source ownership.
+No successful live identity-path
 selection is established. The historical
 remote failure was `NATIVE_HOST_PRINCIPAL`, before the architect application
 executed; this is not a fresh observation of the current candidate. Follow-up,

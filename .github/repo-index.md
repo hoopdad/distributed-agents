@@ -22,7 +22,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, supplied ownership designations versus original acceptance/current verification, matched-root/trust interpretations and unchanged machine contract |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current RP-S1 blocked sprint review and trust/ownership carryover; bounded report completion versus DevOps cloud-pass, exact existing-owner closing actions, retained designation overlay and three sprint contracts, matched operational-source integration and unchanged live final gates |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
-| Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S1 supplied-designation journey/report mapping versus original ownership acceptance, current trust and matched operational roots; retained screens/fixtures, RP-S3 continuity/recovery/isolation reports, unchanged machine contracts and original execution owners |
+| Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S2 preparation/report versus execution mapping: independent ownership/trust lanes, accepted bounded reports versus unmet cloud-pass, retained Screens F/G and customer screens/fixtures; matched operational roots, unchanged machine contracts and original execution owners |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S1 supplied-designation/tier overlay: explicit writer/integration coordination versus original ownership acceptance and current verification; exact sibling path boundary, matched operational source, independent trust/inventory, retained fixtures/candidate and unchanged live gates |
 | Current RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Supplied Developer writer/integration designation and acknowledgements carried through original ownership acceptance in parallel with independent current-source checks; retained eight-path sibling runner and matched-source integration; original DevOps trust/inventory/status/trial. Accepted source and presentation are consumed, not redispatched |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
@@ -39,6 +39,13 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Current RP-S2 SprintDesign freshness: inspected clean retrospective baseline
+`a98410f479104a549fe6933df6eea3d4c6e6d132`; updated only sprint design
+and this navigation, with no added/deleted paths. Consumes supplied RP-S1
+outcomes and retrospective guidance in retained Screens F/G, without reopening
+accepted RP-S1 screens, reports or upstream handoffs. Preserves independent
+ownership/trust lanes, original reviewers and execution owners. No new UI,
+public contract, private evidence authentication or live capability is inferred.
 Current RP-S1 retrospective freshness: inspected clean SprintReview baseline
 `1ceeb96671c446a9c0770bdbd0141f08c7ae9b77`; updated only Architecture,
 UserExperience, ReleasePlan and this navigation, with no added/deleted paths.

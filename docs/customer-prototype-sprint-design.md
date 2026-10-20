@@ -1,5 +1,110 @@
 # Sprint design: understandable, evidence-ready continuity
 
+## Current RP-S2: preparation reports versus hosted collaboration (October 20, 2026)
+
+This current **RP-S2 SprintDesign** consumes the Architecture, UserExperience
+and ReleasePlan retrospective updates at inspected clean application HEAD
+`a98410f479104a549fe6933df6eea3d4c6e6d132` on
+`feature/customer-hosted-session-prototype`, the supplied RP-S2 sprint criteria
+and RP-S1 outcomes. Retain the [RP-S2 flow and Screens F/G](#rp-s2-gated-identity-trial-and-truthful-collaboration-handoff)
+and accepted Screens A-D below. No Designer implementation assignments or new
+blocked-backlog list were supplied. This overlay applies the current reporting
+decisions to those layouts; it does not redesign the customer terminal.
+
+The RP-S1 SprintDesign remains accepted under
+`["yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop","sprint-design-close-agreed-deliverable"]`.
+Do not reopen it or borrow its Product Owner/Critic votes for RP-S2. Accepted
+Architecture, UX and ReleasePlan handoffs likewise remain closed within their
+originating boundaries. The current retrospective supplies report guidance,
+not live observations, new runtime fields or permission for runner writes.
+
+### Current journey: two independent preparation lanes, one release handoff
+
+```text
+Retain README goal/diagram, safe plain-text screens and offline fixtures
+  +-> supplied writer/integration designations + bounded ownership evidence
+  |     -> original ownership acceptance -> reviewed runner/source integration
+  +-> previously accepted fingerprint + acceptance reference
+        -> retained strict-trust checks -> authenticated private inventory
+Joined reviewed execution inputs -> original formal E2E
+  -> original DevOps exact-source/Linux/package/version/publication gates
+  -> architect trusted ingress -> reviewer trusted ingress
+  -> verify final common-bundle G1-G4, not merely identity selection
+  -> hand actual compatible release to RP-S3 demonstration/continuity gates
+```
+
+These are existing journey/dependency boundaries, not dispatch or permission to
+run later workflow phases early. Ownership and trust recovery stay independent;
+neither a completed report nor another role's successful file read passes the
+originating ownership review. Supplied designations are already available:
+do not ask the customer to repeat them. The existing ownership stop remains
+under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+
+### Screen F: apply current outcomes without manufacturing a demonstration
+
+Use the existing separate operator report, not customer turn rows. Each report
+states deliverable status, execution outcome, evidence attribution, unreached
+boundary and existing closing owner/action. The following are interpretations
+of supplied outcomes, not newly executed observations or required public fields.
+
+| Supplied outcome | Report content and next action |
+|---|---|
+| RP-S1 partial-inventory, unresolved-baseline and ingress prerequisite-stop reports accepted within their bounded assignments | Reporting deliverables complete; DevOps cloud-pass remains unmet. Do not redispatch those reports merely because deployment has not passed. |
+| DevOps prerequisite exit 1 at `HOST_TRUST_EVIDENCE_REQUIRED` | ARM/context/model checks are owner-reported; authenticated SSH, private target inventory and current final/rollback bindings are not established. DevOps recovers the previously accepted ED25519 fingerprint and acceptance reference, then resumes retained strict-trust/read-only inventory. The current known-host entry is not independent acceptance. |
+| Ownership exact-file and direct sibling inspection denied in originating reviews | Ownership incomplete; runner writes blocked. Developer resumes the already-authorized bounded reads in a permission-capable session and presents current branch/base/status, eight-path preservation and resolver/root proof to original reviewers. DevOps receipt reads do not substitute for this evidence or acceptance. |
+| Accepted offline application source; runner and operational join outstanding | Preserve accepted source/presentation; Developer completes reviewed runner and matched loaded-source integration with durable Git accounting and scoped push. Current-source checks and historical test counts are not exact final-package evidence. |
+| Accepted E2E predeployment FAIL | Failure-report deliverable complete, joined-input/live readiness unestablished. Original E2E validates the future exact joined handoff; do not reopen the accepted failure report under `["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-close-agreed-failure-report"]`. |
+
+Screen G retains reached-role-only finite-trial interpretation. A preparation
+stop creates no architect/reviewer success rows; historical
+`NATIVE_HOST_PRINCIPAL` is not a fresh receiver failure. Selected-A/selected-B
+requires actual trusted ingress evidence and still does not pass common-bundle
+G1-G4. Never infer zero sends from missing evidence. Unknown/held effects retain
+Screen D precedence: preserve state, no blind resend or substitute parent.
+
+### RP-S2 design exit and execution handoff
+
+Screens F/G cover this sprint's ownership, source-join, inventory/package and
+G1-G4 reporting slices. Screens A-D retain the README-first customer goal,
+useful current design/review, chronological repeated calls, safe aliases and
+completed/non-held prerequisite for a same-session queue follow-up. Exact
+hosted/framework bindings and pinned versions require private comparisons;
+advancing response IDs, alias equality and replayed requirements are not proof.
+Keep conversations, checkpoints and artifacts/effects distinct. RP-S3 retains
+actual two-turn continuity, supported recovery, isolation and final closure.
+
+No renderer, flag, root/identity picker, browser UI, new framework, public
+schema or acceptance stage is requested. Retain opt-in human stderr, unchanged
+machine stdout/delegation/result parsing, accessible no-color status words,
+terminal light/dark defaults and control-character neutralization. Private
+locators, trust material, full bindings and transcripts remain outside customer
+Git/output. Account-wide Blob access still means application-enforced isolation.
+
+Scrum retains assignments, resource serialization and Git reconciliation;
+Developer retains original ownership review, runner/source integration and
+scoped push. Original E2E and DevOps retain formal joined validation and guarded
+local-script release/live testing respectively. All AC1-AC9/G1-G8, historical
+UNKNOWNs, held parents, rollback assets and cleanup limitations remain unchanged.
+Designer accepts this current RP-S2 flow/screen handoff for its original
+Product Owner and Critic review. Their current RP-S2 agreement is not inferred
+from RP-S1 or upstream votes. No private evidence authentication, identity
+selection, cloud operation or successful customer demonstration is claimed.
+
+### Current RP-S2 local verification
+
+With the existing absolute validated Python 3.12.10 executable and explicit
+lab root, `Test-Demo.ps1` exited 0: dependency checking passed, **204 offline
+tests in 48.123 seconds** passed, and the runner completed compilation.
+The passing suite emitted an unclosed Proactor transport `ResourceWarning`;
+no failing test was observed. `scripts/Test-Repository.ps1` exited 0, checking
+the current index, **79 public files**, JSON/PowerShell/context and whitespace.
+Local file-link targets and balanced code fences passed structural checks.
+No dependencies were installed. Only this document and navigation changed.
+No full retained lab suite, Linux/amd64/hosting-Python package check, private
+evidence inspection, cloud test, deployment or push was performed. These
+repeated checks verify retained offline source, not substantive runtime progress.
+
 ## Current RP-S1 ownership-designation design (October 20, 2026)
 
 This **RP-S1 SprintDesign** consumes agreed Architecture

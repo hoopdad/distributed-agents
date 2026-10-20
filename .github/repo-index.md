@@ -19,7 +19,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current recovery-entry evidence and executed canonical/sibling resolver matrix, matched operational-wrapper boundary; installed B candidate versus live selection, source/package join, original-owner handoffs and AC1-AC9 evidence map |
-| Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
+| Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, current recovery-entry matched-root/trust interpretations, unchanged machine contract and bounded implementation checks |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three sprint goals/acceptance contracts; installed B candidate review, safe lab checkout and pre-E2E Developer runner/integration; later DevOps inventory/trial, scenario/source/package join, truthful preparation/receiver outcomes and unchanged final gates |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Retained RP-S1/RP-S2 screens; RP-S3 two-turn evidence companion, once-only supported recovery, separate-parent isolation and truthful delivery/blocked reporting; private evidence, unchanged machine contracts and original execution owners |
@@ -38,6 +38,12 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Recovery-entry UX freshness: inspected clean agreed-architecture baseline
+`2f62e3ca5353fdbc3433e1f49fdf9133f95dacbc`; updated only UX handoff and
+this navigation, with no added/deleted paths. Retains existing screens, tools,
+machine/parser contracts and original owners; historical receipt availability
+and local root compatibility are not current trust, writer ownership or live
+acceptance. No private evidence was inspected by this UX revision.
 Recovery-entry architecture freshness: inspected clean application baseline
 `3d731c00e8373774bf8254a8f060eac621d0e928`; updated only release architecture
 and this navigation, with no added/deleted paths. Bounded approved inspection

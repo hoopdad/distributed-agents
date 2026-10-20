@@ -1,5 +1,95 @@
 # Customer hosted-session prototype: user experience
 
+## Current recovery-entry UX handoff (October 20, 2026)
+
+This Designer revision consumes agreed architecture commit
+`2f62e3ca5353fdbc3433e1f49fdf9133f95dacbc`, also the inspected clean
+application baseline on `feature/customer-hosted-session-prototype`.
+Apply prior reference
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-agreed-deliverable"]`
+to its originating architecture acceptance only: do not reopen it, repeat its
+experiments or treat its reviewer votes as UX approval. Earlier UX/sprint
+sections below retain their original boundaries and historical observations.
+This section is the current recovery-entry overlay, not a new implementation
+assignment or another release gate.
+
+### Retained customer journey and layout
+
+Keep the full journey below: README goal/three-role diagram/two turns/source
+path -> validated setup -> synthetic initial turn -> non-held follow-up using
+the same private session file -> separately evidenced recovery and isolation.
+Retain the plain-text role blocks, useful current design/review content,
+chronological repeated calls, light/dark terminal defaults, control-character
+neutralization and no-color status labels. Use the existing Python/argparse,
+PowerShell and Markdown tools, not a browser UI or a new presentation framework.
+The human stderr projection remains opt-in; default stdout, delegation/result
+records and acceptance parsing remain unchanged.
+
+The core screen distinction remains **stable parent and both child hosted/
+framework bindings and pinned versions, advancing invocation responses and
+current artifacts**. Aliases identify observed records, not verified equality.
+The private exact-binding comparisons establish continuity independently.
+Conversations preserve model history, checkpoints preserve workflow position,
+and artifacts/effect journals preserve accepted work and uncertain operations;
+none can substitute for another. No new identity control, source-root picker,
+retry button or public evidence field is needed.
+
+### Recovery-entry operator flow, not additional customer screens
+
+The architecture now supplies a historical recovery-receipt locator and an
+observed matched-wrapper/root constraint. Attribute those findings to the
+architecture; this Designer revision does not independently authenticate the
+private receipts or rerun its resolver matrix. A located historical trust
+receipt is not current host trust. A registered clean sibling is not exclusive
+writing ownership, and a local resolver pass is not an installed release fix.
+
+| Reached boundary | Truthful handoff / next action through existing owners |
+|---|---|
+| Read-only recovery evidence available | Developer/Scrum reconciles point-in-time writing ownership; transport owner/DevOps establishes current exact source and strict trust. Do not describe bounded inspection as awaiting new user permission. |
+| Runner/wrapper roots mismatch or required operational wrapper revision absent | Preparation/integration incomplete; no inference or publication. Developer/integration supplies reviewed compatible source, preserving the owner guard rather than offering a customer root override. |
+| Compatible local source and historical receipt only | Local preparation evidence, not authenticated inventory or successful remote ingress. DevOps performs fresh sole-target checks through retained scripts. |
+| Finite trial reaches one specialist only | Report the reached role and reviewer unreached; no three-role, continuity or customer-ready claim. Preserve the existing local/receiver/unknown classifications below. |
+| Both trusted receiver checks succeed | Identity decision evidence only; original E2E and DevOps still own exact integrated checks, final common bundle and live AC1-AC9/G1-G8. |
+| Uncertain publication, stop or invocation | Preserve state/held parent and report unknown; do not send again, replace its session file or certify historical cleanup from new cleanup. |
+
+These are report interpretations using existing reports, not mandatory new
+terminal banners, runner options or a second ledger. Keep private roots,
+receipt locators, trust material and full bindings outside customer output.
+The first-screen README must retain blocked/unverified release status until
+fresh actual evidence changes it; its historical ingress failure is not the
+diagnosis of a new preparation failure. The existing two-turn command remains
+implemented syntax, not a demonstrated repair. No candidate trial migrates an
+old pinned/held conversation.
+
+### Bounded completion and downstream handoff
+
+Designer owns this UX specification/navigation reconciliation only.
+Retain the existing screen wireframes, setup/demo syntax and implementation
+checks below without redispatching accepted presentation or continuity work.
+Scrum assigns current ownership, minimal dependencies and Git integration;
+Developer implements the retained deterministic runner after writing ownership;
+transport/DevOps verifies current trust and inventory; E2E validates joined
+source; DevOps alone performs guarded deployment and live demonstration.
+Their completion must supply actual evidence before any release-status upgrade.
+Account-wide Blob access remains application-enforced role/parent isolation,
+not storage-RBAC or malicious-host isolation.
+
+Original Product Owner and Critic agreement on this committed UX handoff is
+still required by this loop. No live usability result, identity selection,
+deployed/rollback inventory or release acceptance is asserted here.
+
+### Checks executed for this revision
+
+Using the existing absolute canonical-lab Python 3.12.10 executable and explicit
+lab root, `Test-Demo.ps1` passed dependency checking, **204 offline tests in
+43.947 seconds**, and compilation. `scripts/Test-Repository.ps1` passed the
+index, **78-public-file** boundary, JSON/PowerShell/context and whitespace
+checks. No dependencies were installed. Source inspection confirmed the
+existing `HumanView` and finalization direction; no terminal or machine
+contract changed. These are local checks, not new live capability or evidence
+of private receipt authenticity. No lab source changed; retained release and
+Linux hosting-package suites were not run for this documentation-only change.
+
 ## RP-S3 retrospective: separate assertion results from live demonstration
 
 The [RP-S3 retrospective](customer-prototype-release-plan.md#rp-s3-retrospective--offline-proof-and-unreached-live-outcomes)

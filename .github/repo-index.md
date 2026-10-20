@@ -22,7 +22,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; accepted trust input versus current strict transport, attributed sibling Git versus incomplete resolver proof, designations versus ownership acceptance; unchanged machine contract |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current ReleasePlan recovery handoff consumes accepted architecture `25d1822` and UX `c5e7189`: supplied accepted trust/reference and coordination versus outstanding originating ownership acceptance, strict transport, reviewed loaded-source integration and live gates; retains unique RP-S1/RP-S2/RP-S3 goals/acceptance, original owners and minimal edges; older overlays remain history |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Current RP-S3 blocked closeout at `b809cb9`: per-criterion AC1-AC9/G1-G8 ledger, accepted source/audit/observation handoffs versus missing substantive ownership acceptance, independent trust and actual operational join; attributed 204-test Windows result, conditional demo, unknown final/rollback bindings and unverified final push |
-| Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S3 maps absent initial-parent handoff to blocked F/K, conditional H two-turn comparison, I once-only supported recovery, J independent isolation and K truthful delivery; retains accepted A-D/F-G/parser/privacy contracts, attributed RP-S2 exit-2 stop and original execution owners; older overlays remain history |
+| Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S1 consumes accepted architecture/UX/release-plan inputs at `0d0f17b`; retains A-D two-turn/revision/history and parser/privacy contracts, F/G operator boundaries; supplied accepted trust and designations are not current strict transport or ownership acceptance; older sprint overlays remain history |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S3 consumes accepted RP-S2 architecture/retro and RP-S3 design; missing non-held initial parent blocks live continuation, actual both-role continuity, once-only supported recovery, independent isolation and truthful exact-release delivery; retains ownership/trust/integration and original E2E/DevOps gates without duplicate offline implementation; prior overlays retain history |
 | Historical RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Completed-workflow assignment/audit contract, not deployment acceptance; original ownership history remains unresolved, accepted source-check handoff consumed by current RP-S2 plan |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
@@ -40,6 +40,13 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+SprintDesignLoop RP-S1 accepted-input freshness: inspected clean feature
+baseline `0d0f17b928ba99517551ba20a0c0201801148d9d`; updated only existing
+sprint design/navigation, no added/deleted paths. Retains existing screens
+and fixtures without duplicate implementation or transferred upstream votes.
+Accepted trust input and coordination are distinguished from current transport,
+originating ownership acceptance and loaded-root integration. No private/lab
+source inspection, cloud operation or live progress is claimed.
 ReleasePlanLoop recovery-handoff freshness: inspected clean feature baseline
 `c5e7189252886a653daa42cbf9021f0cf59691b2`; updated only the existing
 release plan and this navigation, no added/deleted paths. Consumes accepted

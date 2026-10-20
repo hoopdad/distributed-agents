@@ -1,6 +1,89 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Current RP-S3: evidence-qualified demonstration and delivery (October 20, 2026)
+## Current RP-S1: accepted-input continuity handoff (October 20, 2026)
+
+This invocation selects **RP-S1: evidence-ready source and understandable
+continuity**, not the historical RP-S3 selection below. Inspected clean
+`feature/customer-hosted-session-prototype` baseline
+`0d0f17b928ba99517551ba20a0c0201801148d9d`. Inputs are accepted Architecture
+`25d182245a1bb40b842f5787196bd8f8244c4a7d`, UserExperience
+`c5e7189252886a653daa42cbf9021f0cf59691b2`, ReleasePlan at that baseline and
+the supplied RP-S1 criteria. No assignments or separate blocked-item list
+were supplied. Retain the implemented README/terminal and existing wireframes;
+this handoff assigns no duplicate renderer or fixture work.
+
+### Sprint journey and screen contract
+
+```text
+A: goal -> three remote roles -> two-turn invariant -> qualified status/source map
+   -> existing validated setup and compatible deployment (execution owners)
+B: initial private-ingress design/review -> completed, non-held result
+   -> same private session file -> queue follow-up/current design and review
+C: offline architect -> blocked reviewer -> same architect -> same reviewer
+D: held/invalid/incomplete result overrides success; preserve, do not resend
+F/G: separate operator report of reached boundary and supported/unresolved remedy
+```
+
+| RP-S1 acceptance slice | Retained screen and check handoff |
+|---|---|
+| Two-turn continuity | [Screen B](#screen-b-turn-summary-and-continuity-observations): privately compare stable actual parent and both roles' hosted/framework identities and pins; require both roles on both turns, exactly two child creations, fresh responses, current requirements and invalidated stale approval. Never freeze the whole evolving serialized session. |
+| Repeated calls and model continuation | [Screen C](#screen-c-reject-revise-review-again): preserve four chronological calls and useful final output; the controlled fixture proves reuse, not aliases. Existing both-role model-stage/history tests retain fresh-history controls and exact-response recovery without resend. Label them offline. |
+| Customer clarity and parser preservation | [Screen A](#screen-a-readme-opening-and-demonstration-entry) leads with the goal/diagram/invariant/source path. B/C show current design/review on opt-in `--native --view human` stderr after finalization; identical input must preserve default stdout, delegation/result records and acceptance parsing. |
+| Checks and supported-remedy handoff | Existing source checks remain distinct from Linux/package and live evidence. [Screen D](#screen-d-held-incomplete-and-recovered-work) and [F/G](#rp-s2-gated-identity-trial-and-truthful-collaboration-handoff) report only observed outcomes, attribution and existing closing action. An actionable unresolved finding is not live repair or release PASS. |
+
+Keep the retained plain-text layouts, wrapping, explicit status labels,
+terminal-default light/dark appearance and control-character neutralization.
+Human aliases do not verify bindings, creation counts or model history.
+Do not invent intermediate findings absent from delegation records. No browser
+UI, new flag, dependency, public field, comparison ledger or root/identity
+selector is requested. Full bindings, private transcripts, trust material and
+evidence locators remain outside customer output/Git.
+
+### Known blocked items: use supplied inputs, preserve execution boundaries
+
+The accepted architecture reports successful direct sibling Git inspection,
+incomplete resolver verification after denied reads, and matching supplied
+accepted-trust references. These are attributed inputs, not fresh Designer
+observations. Say **accepted trust input supplied; current strict transport
+validation unverified**, not "fingerprint needed" or "SSH verified."
+Supplied writer/integration designations resolve missing coordination input,
+not originating ownership acceptance. Existing Developer completes bounded
+owned-path/resolver proof and original review before runner writes, then
+reviewed runner/actual loaded-root integration; canonical dirty work stays
+protected. Independent strict-trust inventory remains with original DevOps.
+Neither path is live-selected; preparation rejection is not specialist ingress
+failure. Keep historical UNKNOWNs, held parents and rollback assets.
+
+Apply exact prior references
+`["yaml-loops-v1:ArchitectureLoop","architecture-completion-status"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-completion-status"]` and
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-completion-status"]`
+only to their closed originating deliverables. Their votes do not transfer to
+SprintDesign. Older overlays and measured checks below remain history.
+
+Designer agrees with this RP-S1 flow/screen mapping for original Product Owner
+and Critic review; current SprintDesign votes are not supplied. Scrum retains
+contract-first assignments, minimal dependencies, resource serialization and
+Git reconciliation assignment. Developer retains implementation/integration;
+original E2E retains joined-source validation and original DevOps retains
+local-script exact-source/Linux/package/publication/live gates. Continuity,
+checkpoints and artifacts/effects remain distinct. All AC1-AC9/G1-G8 remain
+mandatory downstream; account-wide Blob isolation is application-enforced,
+not storage-RBAC or malicious-host isolation. Design review does not require
+those live gates to pass and cannot certify them.
+
+### Verification of this handoff
+
+Using the existing absolute Python 3.12.10 executable, `Test-Demo.ps1` with
+explicit lab root exited 0: dependency checks, **204 offline tests in 33.870
+seconds** and compilation passed. `scripts/Test-Repository.ps1` passed index,
+79-public-file boundary, syntax/context and whitespace checks. No dependencies
+were installed. Only sprint design/navigation changed; no retained lab source
+changed. No full lab suite, Linux package gate, formal E2E, cloud operation,
+deployment or push was performed. Repeated checks and this retained-design
+mapping are not new runtime progress or live acceptance.
+
+## Historical RP-S3: evidence-qualified demonstration and delivery (October 20, 2026)
 
 Current sprint: **RP-S3, live continuity, recovery, isolation and truthful
 customer delivery**. Inspected clean application baseline

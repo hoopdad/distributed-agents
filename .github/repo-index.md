@@ -22,7 +22,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three sprint goals/acceptance contracts; installed B candidate review, safe lab checkout and pre-E2E Developer runner/integration; later DevOps inventory/trial, scenario/source/package join, truthful preparation/receiver outcomes and unchanged final gates |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Retained README/terminal screens and ordered revision/recovery trace; installed B versus live selection, pre-dispatch preparation versus observed receiver/unknown outcomes, fixture-to-display handoff |
 | RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative fixtures/presentation; installed B versus live selection, pre-parent scenario/source/package/version join, preparation/receiver/unknown distinction, Developer runner and DevOps trial |
-| RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Phase-compatible pre-E2E Developer checkout/client/runner/integration lanes; deferred original DevOps inventory/status and guarded trial; retained real dependencies and observed-versus-eligible dispatch distinction |
+| RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Phase-compatible Developer checkout verification, installed-candidate review/checks, runner and integration; deferred DevOps inventory/status/trial; pre-parent scenario/source/package/version join and truthful preparation/receiver/unknown outcomes |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
@@ -129,19 +129,19 @@ authority unchanged. The older offline handoff remains non-installed diagnostic
 logic, not a selector. No deployment, inference, permission or lab source change.
 Existing README/terminal/continuity implementations are preserved.
 
-Prior SprintPlanLoop revision freshness: inspected clean application base
-`eaa5c930225fe781d20031d58b90087076771481`; canonical lab still has its eight
-dirty/untracked paths. No paths added/deleted. Applied reconciled SprintPlan
-phase correction: offline checkout setup and runner coding are Developer work
-alongside the isolated client; integration retains both reviewed dependencies.
-Fresh cloud inventory and its dependent RP-S1 status assessment are deferred
-to the original post-E2E DevOps phase, as is guarded publication/trial.
-Installed `sprintTasks` rejects implementation dependencies on DevOps; generic
-DAG validity alone was insufficient. RP-S1 status needs no successful trial,
-but the real YAML phase barrier remains. Safe lab checkout remains an assigned
-prerequisite; no branch switch, lab write or substitute dispatcher here.
-Actual dispatch/votes remain distinct from plan readiness and local validation.
-No runtime/dependency/architecture change, cloud observation or live acceptance.
+SprintPlanLoop freshness: inspected clean application base
+`4b3d0a4ecfda090f4721008de7c301e3fdf34cbc`; no paths added/deleted.
+Retain installed `3aca5dc` for original review/check handoff, not duplicate coding.
+The lab registers a sibling feature checkout at `bdd6b2a`, but its direct
+inspection was execution-permission denied; checkout safety and canonical-root
+compatibility remain assigned, not assumed. Preserve all eight canonical dirty/
+untracked paths. Runner coding and integration do not wait for cloud inventory.
+Assign pre-parent scenario/source/package/actual-version mismatch fixtures and
+preparation/receiver/unknown classifications to runner, integration and trial.
+Keep original E2E and later DevOps gates, minimal joins and exclusive resources.
+Existing orchestrator dispatches ready original work loops before planning
+review; eligibility is not observed dispatch or reviewer agreement.
+No runtime, lab, cloud or workflow-runtime mutation by this planning turn.
 
 Historical ReleasePlanLoop revision freshness: inspected clean application base
 `3ee9798afa4a419be87bcb68fdfc3540875d171a`. No added/deleted paths,

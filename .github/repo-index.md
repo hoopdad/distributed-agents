@@ -38,6 +38,24 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Isolated runtime candidate | `demo\foundry.py:specialist_identity_headers`, `demo\workflow.py:WorkflowRuntime.resources`, `tests\test_isolated_client.py`, `docs\design.md` | B specialist-only project/header/cache; original resource tuple and opaque-only non-specialist authority retained; actual resource lifecycle/cleanup regressions, no live selection |
 | Copilot context | `.github\copilot-instructions.md`, agents and skills | Bounded implementation/review and deployment gates |
 
+Developer current-source freshness (RP-S1): inspected feature baseline
+`a30291e65213340cd2e05ff4a06492bc211d678c`. Retained continuity fixtures
+(`6614440`), specialist-history controls (`c454e50`), human presentation
+(`56b762e`) and reviewed integration (`24b883f`) remain in its ancestry.
+The root-anchored `/gh-dynamic-workflows/` ignore rule excludes unowned local
+workflow control/audit context from public enumeration without changing its
+contents, the inventory generator or public-boundary checks. No runtime,
+dependency, parser or source-ownership contract changed. Inventory regenerated
+with the unchanged script; its public path list is unchanged from the baseline.
+Current Windows checks: `Test-Demo.ps1` with the existing absolute Python
+3.12.10 and explicit canonical lab root passed dependency checks, 204 offline
+tests (56.377 seconds) and compilation. Unchanged `Test-Repository.ps1` passed
+index, public-boundary (79 files), JSON, PowerShell, context and whitespace
+checks. Eight original local audit files retained their SHA256 values.
+These are local checks, not actual loaded-source integration, final Linux
+hosting-package certification or live acceptance; those remain their original
+owners' obligations.
+
 SprintPlanLoop canonical RP-S1 freshness: inspected authorized feature baseline
 `988893c382d734d5d29b4bdcfee2a1cfaf2e92a5`; updated only the existing recovery
 planning JSON and this navigation, with no added/deleted public paths. Five

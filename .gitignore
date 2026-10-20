@@ -220,6 +220,8 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Private deployment context, migration snapshots and conversation evidence
+# Root-local workflow control plane and audit context are not customer source.
+/gh-dynamic-workflows/
 .azure/
 .azure-cli/
 .local/

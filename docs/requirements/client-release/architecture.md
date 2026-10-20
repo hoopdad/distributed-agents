@@ -1,6 +1,26 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
-## Current RP-S1 clarity, trust input and operational join boundary
+## Current RP-S2 ownership, loaded-source and live-proof boundary
+
+Consume the [current RP-S2 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s2-ownership-evidence-exact-execution-join-and-initial-collaboration-october-20-2026)
+and current SprintDesign Screens A-D/F-G. Preserve customer-first README,
+safe aliases, opt-in human stderr and unchanged machine stdout/parser.
+Actual ownership/root evidence remains with the existing Developer under the
+originating evidence-access disposition; supplied designations are coordination,
+not substantive acceptance. No denied inspection is repeated or evidence
+reconstructed by this architecture handoff. After original acceptance, runner
+writes remain eight-path sibling-only, never canonical dirty writes.
+Designated integration reconciles reviewed commits with actual loaded roots,
+bytes/hashes and matched/crossed-root controls, preserving root guards and
+durable task/branch/commit accounting. Original E2E validates that exact join.
+DevOps independently uses supplied accepted trust through strict tooling,
+verifies current inventory/rollback, and joins exact-source/tooling/Linux/
+hosting-package gates before serialized guarded publication/live G1-G4.
+Accepted blocked reports do not establish execution readiness or cloud PASS.
+Retain UNKNOWNs, held parents, rollback, unrelated work and private evidence
+boundaries; only actual completed non-held initial-parent proof passes to RP-S3.
+
+## Historical RP-S1 clarity, trust input and operational join boundary
 
 Consume the [current RP-S1 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s1-accepted-recovery-inputs-and-continuity-handoff-october-20-2026)
 and accepted SprintDesign Screens A-D. Keep the customer-first README,

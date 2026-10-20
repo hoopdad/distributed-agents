@@ -1,5 +1,27 @@
 # Customer hosted-session prototype: user experience
 
+## RP-S1 retrospective blocked-handoff language
+
+The [RP-S1 retrospective](customer-prototype-release-plan.md#rp-s1-retrospective--evidence-handoffs-and-truthful-closure)
+retains the accepted customer journey and existing machine contract. Operational
+reports should identify the last observed boundary, unreached work, whether
+evidence is owner-reported or independently verified, and the existing owner/
+closing action. For this sprint: demonstration blocked; authenticated SSH
+metadata and specialist inference unreached in the supplied DevOps report;
+existing accepted private trust receipt locator needed by DevOps. The stopped
+ownership/root evidence handoff separately blocks Developer runner writing.
+These are distinct stops, not a new diagnosis of `NATIVE_HOST_PRINCIPAL`.
+
+This is operator handoff guidance, not a new banner/schema/CLI requirement.
+Do not fabricate role rows on pre-dispatch failure, disclose private locators
+in customer output, add identity controls, or advertise a live runner command
+before its reviewed entry point exists. Supplied review agreement can close
+a bounded blocked assessment, but never turn it into a successful demonstration.
+Accepted UX remains closed under
+`["yaml-loops-v1:UserExperienceLoop","ux-close-agreed-deliverable"]`;
+existing presentation fixtures remain retained and measured live usability
+remains downstream. No new customer implementation is assigned here.
+
 ## Boundary and design basis
 
 Designer handoff for the October 19, 2026 User Experience Loop. The customer

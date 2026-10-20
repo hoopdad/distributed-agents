@@ -1,5 +1,26 @@
 # Customer hosted-session prototype: release architecture
 
+## RP-S1 retrospective evidence boundary
+
+The [RP-S1 retrospective](customer-prototype-release-plan.md#rp-s1-retrospective--evidence-handoffs-and-truthful-closure)
+improves operational handoffs without reopening the accepted architecture.
+Source-contract approval, safely owned tooling checkout, authenticated transport
+and live ingress are distinct facts. A reported checkout or inspected resolver
+source is not proof of sibling execution or point-in-time writing ownership.
+Retain the stopped ownership assignment until its original reviewers can inspect
+the bounded evidence specified in
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+Do not repeat denied probes, recreate the worktree or unblock runner writing
+through an architecture approval. Existing Developer/Scrum coordination owns
+that handoff; existing DevOps separately obtains established private transport
+trust and fresh inventory. Neither blocks independent application source review.
+
+The scenario/source/package/actual-version join remains required before trial
+creation. No identity namespace, receiver equality, resource lifecycle, dependency
+edge or release gate changes here. Architecture agreement under
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-agreed-deliverable"]`
+remains closed within its original boundary; it supplies no new live evidence.
+
 ## Scope and authority
 
 This is the Architecture Loop handoff for the October 19, 2026 customer prototype.

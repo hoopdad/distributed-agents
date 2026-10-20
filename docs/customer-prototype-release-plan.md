@@ -1,5 +1,102 @@
 # Customer hosted-session prototype: release plan
 
+## Current RP-S2 sprint review — operational join absent, live goal unmet (October 20, 2026)
+
+**Demonstration: BLOCKED. RP-S2 live goal: NOT MET. Customer-ready: no.**
+This Product Owner review consumes the current SprintPlan at
+`0e9add565d22b2cb617485e257875e72984907af` and the supplied RP-S2 originating
+outcomes. Fresh read-only application inspection found that exact HEAD on
+`feature/customer-hosted-session-prototype` with a clean index and worktree.
+Earlier reviews and retrospective overlays below remain history. Their votes
+do not transfer to this RP-S2 SprintReviewLoop.
+
+No workstation-to-cloud demonstration was run. Substantive ownership/root
+acceptance remains unavailable, runner writing remains blocked, and no reviewed
+runner/actual loaded-source integration handoff exists. The current original
+E2E reviewers accept an actionable **FAIL**, not operational readiness:
+`joinedOperationalImplementationVerified=false`. Bypassing these prerequisites
+would not validate the requested customer outcome. This is a predeployment
+stop, not a freshly observed runtime defect or receiver rejection.
+
+### RP-S2 acceptance findings and evidence attribution
+
+| Sprint criterion | Finding |
+|---|---|
+| Originating ownership acceptance before sibling runner writes | UNMET. Current ownership Developer and Architect/Critic reports retain incomplete substantive acceptance. Supplied writer/integration designations resolve coordination, not missing actual resolver/Git/path/hash/root-matrix evidence. No denied inspection was repeated by this review. |
+| Reviewed runner, application reconciliation and actual loaded operational roots | UNMET. No reviewed runner or integration outcome was supplied. The independent RP-S2-APP-SOURCE-HANDOFF is accepted at `0e9add5`: its originating reviewers verified 19 documentation/planning commits after the retained `61a99cb` audit, unchanged execution trees and local tracking counts of 84 ahead/zero behind. This is an application handoff, not installation or permission to push every outgoing commit; remote knowledge remains stale. |
+| Exact-join E2E and original DevOps release checks | UNMET at execution level. Current RP-S2 E2E reporting is accepted with FAIL. DevOps supplied actionable partial preparation, ingress prerequisite-stop and blocked G1-G4 reports; its three current reviewers agree with the qualified findings but explicitly withhold enclosing-loop completion. |
+| Exactly three healthy roles on one final common bundle with rollback assets | NOT ESTABLISHED. No new package/publication or current deployed/rollback binding proof was supplied. Historical mixed metadata is not a final release. |
+| Actual architect/reviewer ingress, accepted immutable artifacts, private managed-identity Blob provenance and genuine Decision-1 | NOT ESTABLISHED. No ingress trial, selected identity path, verified G1-G4 result or completed non-held initial parent is available. RP-S3 continuation is not enabled. |
+
+The accepted application handoff reuses the prior Developer's 204-test Windows
+offline result (47.262 seconds); E2E separately attributes its prior 204-test
+run (40.207 seconds). Prior repository checks covered 79 public files. None
+was rerun here, and neither replaces final joined-source, retained-tooling,
+Linux/amd64/hosting-Python or exact-package checks. Preserve the disclosed
+unclosed Proactor transport ResourceWarning; no warning-free claim is made.
+
+DevOps reports a fresh retained prerequisite PASS using the supplied accepted
+trust reference and approved settings loader. Its original reviewers inspected
+the script's limited context/admission/provisioning/host-entry checks, but could
+not inspect the execution capture. That PASS remains owner-attributed, with no
+independently verified progress credit. Do not rerun it merely to obtain review
+credit. It proves neither current connectivity nor deployed identities, rollback
+availability, effective permissions, effect reconciliation or private Blob
+operations. This review performed no private evidence inspection, settings
+import, transport startup, cloud query, inference, publication or stop/resume.
+
+### Prioritized findings on existing ReleasePlan assignments
+
+These carry-forward findings refine the existing backlog, not new task IDs,
+new approval stages or waived acceptance. Scrum Master retains decomposition,
+exclusive resources, scheduling and assignment of Git reconciliation.
+
+| Priority / assignment / existing owner | Concrete closing action and boundary |
+|---|---|
+| P0 / RP-S2-LAB-OWNERSHIP / ownership Developer; originating Architect and Critic | Recover actual nonsecret Python/PowerShell resolver contents, attributable sibling branch/HEAD/base, eight-path statuses, owner-specific hashes with line-ending explanation and source-bound matched/crossed-root results into the approved external handoff, or restore already-authorized bounded read access. Return actual evidence for substantive originating acceptance before runner writes. No repeated denied probe, renewed designation or write probe. |
+| P1 / RP-S2-DECISION-RUNNER / Developer | After substantive ownership acceptance, implement and obtain original review of the retained eight-path runner and offline ownership/root/mismatch/unknown/redaction/no-resend controls. Inventory is not a coding dependency. No cloud effects or automatic path switch. |
+| P1 / RP-S2-SOURCE-INTEGRATE / designated integration Developer; original E2E | Consume the accepted application revision/drift handoff, recheck later drift, join reviewed runner/wrapper commits and actual loaded roots/bytes/hashes, run joined scripted checks and return the exact join to original E2E. Reconcile remote state and reviewed scoped push; account every task commit by feature ancestry or retained named branch with task/commits/abandonment reason in feature history. Never adopt canonical dirty paths or switch shared branches. |
+| P1 / RP-S2-FRESH-INVENTORY / DevOps Engineer | Independently complete current deployed/package/identity, rollback, caller/effective-action and unresolved-effect preparation through retained scripts when their existing containment/source/resource guards are satisfied. Missing runner coding does not create an inventory dependency. Preserve the actionable partial report; do not substitute old receipts or repeat checks merely for credit. |
+| P1 / RP-S2-INGRESS-TRIAL and RP-S2-G1-G4 / DevOps Engineer | After actual integration/E2E readiness and current preparation, pass exact-source, retained-suite, Linux/amd64/hosting-Python and immutable-package gates; use one guarded publisher and reconcile outcomes before further effects. Prove architect ingress before reviewer, then same-parent artifact acceptance, private Blob provenance and genuine Decision-1 on the final common bundle with exact rollback assets. Ingress selection alone is insufficient. |
+| P2 / retained RP-S3 owners | Only after verified G1-G4 and a completed non-held initial parent, perform queue follow-up, once-only confirmed supported compute stop/resume, separate-parent isolation and exact delivery/push/owned-cleanup accounting. No continuation into missing or held state, hard-crash claim or uncertain resend. |
+
+### Dispositions, Git accounting and review handoff
+
+Preserve the originating actual-evidence/access closing action under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+Keep accepted source checks closed under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S1-CURRENT-SOURCE-CHECKS/AssignedWorkDeveloperLoop","current-source-checks-completion-status"]`.
+Keep the accepted RP-S1 FAIL reporting closed under
+`["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-report-completion-status"]`;
+the independent current RP-S2 reporting acceptance also does not pass the join.
+Keep RP-S1 bounded reports closed under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-bounded-assessment-completion-status"]`
+and actual cloud-pass obligations intact under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-exact-release-cloud-pass"]`.
+The accepted RP-S1 review under
+`["yaml-loops-v1:sprint/1/RP-S1/SprintReviewLoop","sprint-review-completion-status"]`
+remains closed; it does not supply current review votes. Retain all three sprint
+contracts and the structured handoff corrected under
+`["yaml-loops-v1:sprint/1/RP-S1/SprintRetroLoop","retro-release-plan-sprints-handoff"]`.
+Other accepted design/planning boundaries stay closed. No disposition is
+superseded, material scope change proposed or renewed authority requested.
+
+This turn owns only this review documentation and its index navigation; it
+creates or abandons no task code. Operational integration, retained-code branch
+accounting and final push remain explicitly unverified with the designated
+integration owner, not silently certified by this review. Preserve historical
+UNKNOWNs, held parents, canonical dirty/staged work, retained branches, rollback
+assets, historical cleanup uncertainty and originating no-progress history.
+Blob role/parent isolation remains application-enforced under account-wide
+permissions, not storage-RBAC or malicious-host isolation. No private locators,
+full bindings or trust material enter the customer repository.
+
+Product Owner considers this review/backlog deliverable complete for original
+Scrum Master, Critic, Architect and Red Team assessment. Their current votes
+are not yet observed; the existing orchestrator owns agreement-based closure.
+No new runtime progress, successful demonstration, final/rollback bindings,
+DevOps completion or AC1-AC9/G1-G8 release acceptance is asserted.
+
 ## RP-S1 retrospective — workflow quality and blocked outcomes (October 20, 2026)
 
 **Product Owner decision:** retain accepted RP-S1 source/clarity and bounded

@@ -20,7 +20,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; accepted trust input matches both supplied private references, distinct from current strict-trust execution; fresh clean sibling Git versus denied resolver reads, supplied designations and original ownership review; matched operational roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; accepted trust input versus current strict transport, attributed sibling Git versus incomplete resolver proof, designations versus ownership acceptance; unchanged machine contract |
-| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current RP-S1 SprintReview at `b74b84e`: accepted source/clarity and bounded identity reports versus blocked workstation-to-cloud demo, actual ownership evidence/access closing action and retained original-owner RP-S2/RP-S3 backlog; E2E FAIL and DevOps incomplete remain. Recovery plan retains unique sprint goals, minimal edges and live gates; older overlays remain history |
+| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current RP-S2 SprintReview at `0e9add5`: accepted incremental application handoff versus absent operational join and unmet live goal; current DevOps prerequisite PASS remains owner-attributed, independent inventory remains open, ownership/access closing action and original-owner runner/integration/G1-G4/RP-S3 backlog retained; E2E FAIL and DevOps incomplete. Unique sprint contracts and older overlays preserved |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Current RP-S3 blocked closeout at `b809cb9`: per-criterion AC1-AC9/G1-G8 ledger, accepted source/audit/observation handoffs versus missing substantive ownership acceptance, independent trust and actual operational join; attributed 204-test Windows result, conditional demo, unknown final/rollback bindings and unverified final push |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S2 at `30c4a53` maps ownership/access recovery, reviewed runner/loaded-root integration, original E2E and serialized DevOps to retained A-D/F-G screens; accepted trust/designations differ from substantive ownership and current execution proof; G1-G4/non-held initial parent gates RP-S3 continuation; older overlays remain history |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S2 at `76c797b` joins originating ownership evidence, eight-path sibling runner, actual loaded-root/Git integration, original E2E and independent DevOps preparation; identity selection differs from live common-bundle G1-G4 and non-held initial-parent handoff; accepted RP-S1 continuity/history/parser controls and earlier overlays remain retained |
@@ -40,6 +40,13 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+SprintReviewLoop current RP-S2 freshness: clean authorized feature baseline
+`0e9add565d22b2cb617485e257875e72984907af`; updated only existing ReleasePlan
+review and index navigation, no added/deleted paths. Consumes current original
+application/E2E/DevOps reviews without transferring RP-S1 votes, rerunning
+unchanged checks or retrying denied ownership inspection. Records live goal
+unmet and existing-owner closing actions; no operational integration, final
+push, cloud PASS or runtime-progress certification.
 SprintPlanLoop current RP-S2 freshness: inspected clean authorized feature
 baseline `1bce6e1c4fe9e8deb8382fa02c44392bc2d25aea`; updated only the existing
 RP-S2 assignment plan and navigation, no added/deleted paths. Seven retained

@@ -1,5 +1,35 @@
 # Identity propagation recovery: design and execution plan
 
+## RP-S2 reviewed execution-source handoff (October 20, 2026)
+
+The [current source/ref handoff](design.md#rp-s2-current-reviewed-source-and-ref-handoff)
+supersedes only the older integration's pending-review/push status below.
+Original integration, E2E, review, retrospective and RP-S2 planning agreements
+were inspected. Reviewed application input
+`03a8c284bdbee2e8a81cbbf13a154d088c7ba436` was pushed and remotely read back;
+reviewed lab input `42a70533c567a8aed29f0ca076c0b5d58381fc77` was already
+published and read back unchanged. Task accounting remains on the authorized
+feature branch; there was no abandoned task code or checkout mutation.
+
+Fresh checked-in no-effect Python/PowerShell source/root checks bind the same
+actual loaded tool owners and unchanged source closure
+`8974f4cdae0850f8528d1261e6d9617e756e157316449385875d55e05f29b6f3`.
+Only documentation/index paths differ from accepted E2E input `576b613`.
+No unchanged application/retained suites were rerun for progress credit.
+Repository checks apply to this task's documentation; the new documentation
+commit is not part of the reviewed-input push and awaits original review.
+
+Original E2E verifies the selected join before original DevOps execution.
+Linux-engine/container checks and selected-route/fresh inventory readiness
+remain independent preparations for one serialized publisher. Windows helper
+acceptance is required only if selecting that route; WSL has its own retained
+readiness gates. The current task started no engine, imported no settings,
+queried no cloud, and performed no transport, packaging, publication or live
+test. Prior Docker/ARM/trust observations remain DevOps-attributed, not fresh
+here. Identity path selection and G1-G8/AC1-AC9 remain unestablished live.
+The later execution-documentation owner reconciles this reviewed handoff's ref;
+historical UNKNOWNs, held parents and rollback/cleanup limitations remain.
+
 ## Current changed-source integration handoff (October 20, 2026)
 
 The [reviewed source join](design.md#reviewed-source-join-and-operational-root-handoff)

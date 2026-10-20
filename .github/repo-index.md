@@ -1,5 +1,16 @@
 # Repository index
 
+RP-S2 release-source handoff freshness: selected reviewed application `03a8c284`
+and lab sibling `42a70533`, with original input/planning votes inspected.
+Both reviewed refs were pushed/read back exactly (lab already up to date).
+`docs/design.md` and `docs/identity-recovery-plan.md` record current source/ref
+accounting and original E2E/DevOps handoff. Checked-in no-effect root/source
+functions confirmed actual loaded Python/PowerShell owners and unchanged
+22/9-file closure `8974f4cd`; all ten paths since `576b613` are documentation.
+No added/deleted paths, runtime/interface changes, settings import or operational
+execution. This documentation awaits original review and later reconciliation;
+prior entries remain historical. No unchanged suites or live gates are credited.
+
 RP-S2 execution-plan freshness: based on clean feature `3d615f11` and registered
 lab feature sibling `42a70533`; six opened original architecture/design and
 E2E/DevOps/review/retro audits retain their bounded agreements. New

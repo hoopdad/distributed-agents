@@ -1,5 +1,51 @@
 # Distributed agents: MAF/Foundry workflow and shared artifacts
 
+## RP-S2 current reviewed source and ref handoff
+
+Task `RP-S2-RELEASE-SOURCE-HANDOFF` selects reviewed application feature input
+`03a8c284bdbee2e8a81cbbf13a154d088c7ba436` and reviewed lab feature
+`42a70533c567a8aed29f0ca076c0b5d58381fc77`. Both use
+`feature/customer-hosted-session-prototype`. The current input includes accepted
+integration `576b613`, sprint review `835713a`, retrospective `8e4019b`,
+RP-S2 design `4a1b1add`, architecture `3d615f11` and execution plan `03a8c28`.
+Original outcome audits `e0001d3b`, `f2f25e66`, `01e02e83`, `40236938`,
+`76141390` and `295a22cb` were opened, including their agreement,
+task-complete and empty unmet-criteria votes. These references belong to run
+`bf0d82d9-657b-4055-9f7c-6306ce08163d`; acceptance is bounded source/planning
+acceptance, not release acceptance.
+
+Both selected working trees were clean. Accepted application integration
+`1bd157d` and lab runner/foundation `1842984`/`d0073536` remain ancestors;
+no merge, branch switch, abandoned code or canonical dirty-file adoption was
+needed. The reviewed application input was pushed and independently read back
+as the exact full `03a8c284` commit above. The lab push was already up to date
+and remote readback equaled the exact full `42a70533` commit above.
+This task's new documentation commit requires original review before its push;
+the subsequent execution-documentation reconciliation owner handles that ref.
+
+Fresh no-effect checks used checked-in `ReleaseRoots.select`,
+`identity_decision.source_files` and PowerShell `Resolve-ReleaseRoots`.
+The actual imported `release_roots`, `identity_decision`, `bundle_package`
+and `wsl_release` modules and loaded PowerShell resolver all belonged to the
+selected reviewed tool root. Raw resolver hashes and the 22-application/
+nine-lab-file compact sorted-key JSON closure remain exactly the hashes in
+the source-join section below, including closure
+`8974f4cdae0850f8528d1261e6d9617e756e157316449385875d55e05f29b6f3`.
+Before/after source-check Git snapshots matched. All ten changed paths since
+accepted E2E input `576b613` were documentation/index paths; no runtime closure
+drift was found. These are fresh source/ref observations, not new continuity
+implementation or repeated-suite progress. No settings import, operational
+profile validation, authentication, package build or cloud call ran here.
+
+Original E2E receives the current exact join, including this documentation-only
+commit after review. It must not infer package/live success from unchanged
+runtime bytes or the prior Windows checks. Original-phase DevOps owns actual
+Linux/hosting-Python checks and selected-route/fresh inventory readiness; one
+publisher joins successful handoffs for guarded common-package release and
+G1-G4. Unused Windows-helper acceptance is not a WSL-route prerequisite.
+Preserve historical UNKNOWNs, held parents, rollback assets and cleanup
+uncertainty; RP-S3 retains live continuity, recovery, isolation and closeout.
+
 ## Reviewed source join and operational-root handoff
 
 The source join consumes, rather than reimplements, the accepted application

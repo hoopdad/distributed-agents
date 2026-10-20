@@ -1,0 +1,300 @@
+{
+  "sprintId": "RP-S1",
+  "goal": "Consume accepted hosted-session source and close the missing existing-engine recovery construction handoff while preserving partial RP-S2 execution and independent inventory.",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "baseline": {
+    "applicationCommit": "ed986858ee5009c465dd451c44b4c29162361c99",
+    "labCommit": "42a70533c567a8aed29f0ca076c0b5d58381fc77",
+    "observedStatus": "Application and registered lab feature sibling clean before planning; no branch switches or lab writes.",
+    "python": "Use the existing pinned absolute Python 3.12.10 identified in the task packet; never substitute an unvalidated interpreter."
+  },
+  "acceptedInputs": {
+    "Architecture": "cef352f4add49e893e3337184a741d8bd81436b1",
+    "UserExperience": "6b6975c0c00f5d44b4d50963403ac4fbd9ebe633",
+    "ReleasePlan": "48e3faf3e291942c3de6fb9324d5cd73de3759b8",
+    "SprintDesign": "5cc0f692c6823ea65f7a5f9692d2c7318ba07d8d",
+    "SprintArchitecture": "ed986858ee5009c465dd451c44b4c29162361c99",
+    "auditDirectory": "gh-dynamic-workflows/.delivery-runs/0159ec9f-a89c-47f9-986f-80d9dfe6740a/context",
+    "openedAudits": [
+      "398b66fab09f84e4f0abfe91e6db45146ff9f8db04be59dcc1b333b86b8aa696.json",
+      "bf7fed7080f4685eb0623bd517724c7307b779e2b604edd14c3e541e2ceae98f.json",
+      "5a82b2df3b985e1b5faa321a922f0eff878f21a0b5c68a3c30742f8a0f6b8445.json",
+      "d8ab0784cf2c675cc0fb292ea431c41cf85d39944db0b2ced2646ebff9a3f2b1.json",
+      "4f4f40a318441038eccdbb397cb9c6a67cd787b0f22082be38e350647e64fd09.json"
+    ],
+    "agreement": "All five opened outcomes are agreed with original reviewer agree/taskComplete true and no unmet criteria for their bounded documents, not executable recovery or live acceptance."
+  },
+  "amendment": {
+    "origin": "Predecessor result 71e45fd8-287f-40e8-89a9-d97021f8dee0, sprint/2/RP-S2/DevOpsWorkLoop, needs-replan; original Architect/Critic/Developer agree but taskComplete=false.",
+    "sourcePlan": "docs/customer-prototype-rp-s2-execution-sprint-plan.json at 03a8c284bdbee2e8a81cbbf13a154d088c7ba436",
+    "boundary": "Separate continuation amendment, not replacement of accepted siblings. RP-S1 selection does not reset completed predecessor RP-S1 or accept partial RP-S2. RP-S3 remains pending. Supersede only missing recovery source/integration and corresponding readiness edges.",
+    "consumed": "Accepted ownership, runner, operational-context lab 42a70533, integration 576b613 and source handoff 0b6d99a; retained fixtures, specialist history and terminal clarity are not redispatched.",
+    "linuxSplit": "The originating RP-S2-LINUX-ENGINE-READINESS DevOps task is split into the scoped Developer correction with that ID and RP-S2-LINUX-PACKAGE-VALIDATION, which retains its actual Linux doneWhen verbatim. Source completion cannot complete the original execution task.",
+    "statusSplit": "RP-S1-MEASURED-STATUS is only the existing closeout owner's current-status slice, not accepted RP-S1-README-STATUS implementation again. RP-S2-G1-G4 retains final measured execution wording and closeout.",
+    "preservedDevOps": "RP-S2-FRESH-INVENTORY, RP-S2-INGRESS-TRIAL and RP-S2-G1-G4 retain original doneWhen/exclusions/handoffs. Inventory consumes prior route success as partial evidence; rollback/effect work remains open.",
+    "dispositions": "No feedback or priorDispositions supplied this turn. No historical disposition is superseded. Preserve originating operational-context caller-completion, final-check and packaging-caller references in sourcePlan.dispositionHandling; never apply their decisions by short ID alone."
+  },
+  "contractsAvailableNow": [
+    "Architecture: smallest recovery operation and caller boundary; SprintArchitecture: recovery interface and precise construction boundary.",
+    "SprintDesign retained A-D screens and F/G readiness states: startup, readiness, package success and hosted G6 are different facts.",
+    "Canonical solutionModel stays unchanged: ten components, five flows, eighteen steps.",
+    "The existing selected-WSL ReadOnly receipt establishes prior authenticated metadata and its own cleanup, not rollback availability, effect closure, runtime health or continuity."
+  ],
+  "governance": {
+    "phase": "Installed original YAML orchestrator dispatches ready Developer work before planning reviews. Original E2E validates the changed exact join before source-dependent DevOps recovery/build/publication. Retained DevOps tasks execute only in their original DevOps stage, not planning or Developer work. Independent inventory has no helper/source-join dependency and may continue through the existing partial RP-S2 DevOps continuation.",
+    "ownership": "Scrum owns this amendment and application index this turn only. Existing Developer owns lab helper/tests/minimal Build-Demo test mounts/lab index in the registered feature sibling. Existing closeout Developer owns README measured status only. Existing integration Developer owns subsequent application join documentation/index and Git reconciliation. Canonical dirty lab checkout is never writable.",
+    "git": "RP-S2-ENGINE-SOURCE-JOIN reconciles all reviewed task and planning commits onto the authorized application/lab feature refs, pushes/readbacks reviewed refs, and records exact commits/hashes. RP-S2-G1-G4 retains later execution-documentation/ref closeout. Owners inspect status and commit --only explicit paths before original reviews with required Copilot trailer and observed metadata when available. No amend, force-push, branch switch under writers, lock removal or discarded work. Retain abandoned branches and record task/commits/reason in a feature-branch commit message.",
+    "resources": "Use matching exclusiveResources below; no runner-supplied OS or cross-run isolation is implied. Helper source and inventory do not share mutation resources. Build engine/stage resources are separate from context/transport/mount; one publisher holds both groups. Packages, stages and private evidence stay outside both repositories.",
+    "reviews": "Original Architect/Critic review source assignments; original E2E checks affected exact source; original DevOps reviewers and existing sprint review/retro/closeout remain unchanged. No new approval stage or human designation.",
+    "safety": "Explicit application/tool roots and actual loaded-source equality remain mandatory. Only scripts/Use-Settings.ps1 imports existing dedicated operational settings. No credentials read/copied/symlinked, duplicate/default/production profile, private-setting edits, canonical dirty adoption, infrastructure/permission change, context substitution, hidden specialist fallback or provider submission. Preserve all historical UNKNOWNs, held parents, rollback assets and historical cleanup uncertainty. Never replay uncertain external effects.",
+    "stops": "Preserve original five consecutive reviewer-verified no-new-progress accounting across predecessor evidence; no reset, new cap or busywork credit. No user-only blocker is established. Concrete source scope changes return through existing Scrum/Architect-advised Product Owner; real device authentication surfaces the actual URL/code. Waiting is incomplete."
+  },
+  "tasks": [
+    {
+      "id": "RP-S2-LINUX-ENGINE-READINESS",
+      "title": "Implement bounded existing Linux-engine recovery",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["lab-git-integration", "lab-public-index", "lab-linux-engine-source"],
+      "estimatedMinutes": {"implementation": 45, "review": 20, "integration": 10},
+      "sourceSprint": "RP-S2",
+      "sourceCriteria": ["AC7", "AC8", "AC9", "ReleasePlan current P0 existing-engine correction"],
+      "ownedPathsByRepository": {
+        "lab": [
+          "foundry-tf/multi-agent/Ensure-LinuxEngine.ps1",
+          "foundry-tf/multi-agent/tests/test_release_linux_engine.py",
+          "foundry-tf/multi-agent/Build-Demo.ps1",
+          ".github/repo-index.md"
+        ]
+      },
+      "inputs": ["Accepted Architecture/SprintArchitecture explicit recovery contract", "Existing Release-Roots.ps1 and retained build/test conventions"],
+      "produces": ["Committed deterministic helper and fake-command regressions", "Minimal read-only helper test-input mount when needed; attributable targeted and retained results"],
+      "acceptanceCriteria": [
+        "Implement explicit ApplicationRoot/LabRepositoryRoot validation through loaded Release-Roots.ps1. Diagnose only effective selected existing local Docker Desktop Linux context/endpoint and conflicting overrides; reject ambiguous, remote, unsupported, crossed or changed selection without credential/config dumps.",
+        "Already-ready Linux succeeds without startup. Otherwise invoke supported docker desktop start at most once only for the attributed existing Linux engine. Bound individual child commands and readiness polling, recheck the same selection, report attempted startup/readiness/elapsed waiting safely, and return nonzero for failed/hung commands or timeout. Exit-zero startup alone is not readiness.",
+        "No engine install/upgrade/reset, host/daemon reconfiguration, context/engine substitution, environment-selection mutation or restart of a ready engine. Terminate only attributable owned commands, never the engine or unrelated processes. Do not execute real recovery during Developer work.",
+        "Fake-command tests cover ready/no-start, recoverable, failed start, failed readiness, wrong/changing selection, invalid/crossed roots, missing/unsupported tooling and hung commands. Assert no build/publication on failure and no start on ready/unsupported paths. Execute Windows PowerShell cases with the pinned absolute Python; distinguish justified Linux exclusions from execution coverage.",
+        "Keep Build-Demo offline with all existing Linux/amd64/hosting-Python, dependency/source/image and separate retained-suite guards. Change only necessary public read-only test-input mounts for the helper, not automatic startup. Run targeted/root/build regressions, applicable retained suite and application/repository checks against explicit roots. Commit scoped source before original Architect/Critic review."
+      ],
+      "doneWhen": "The reviewed-root recovery helper, required fake-command regressions and only necessary build-test input mounts are committed with passing affected targeted and retained checks, and exact source/check evidence is returned for original review and integration without claiming real engine or Linux readiness.",
+      "exclusions": ["No actual engine startup, build, authentication, cloud or release operation", "No application runtime, Release-Roots.ps1, settings or unowned source edits", "No installation, host reconfiguration, context substitution or gate bypass"],
+      "handoff": "Existing integration Developer consumes original-reviewed helper/build-test commits and hashes; original changed-join E2E precedes DevOps execution. Concrete out-of-scope defects return to existing Scrum reconciliation.",
+      "workCard": {
+        "role": "Developer", "action": "Implement bounded existing Linux-engine recovery",
+        "goal": "Close the missing deterministic local build prerequisite without changing selected engine, explicit roots or retained release gates.",
+        "components": ["Guarded lab release toolchain"], "flows": ["Exact-source guarded release"], "flowSteps": ["release-package"],
+        "doneWhen": "The reviewed-root recovery helper, required fake-command regressions and only necessary build-test input mounts are committed with passing affected targeted and retained checks, and exact source/check evidence is returned for original review and integration without claiming real engine or Linux readiness.",
+        "failureCategories": [], "mustAct": "Developer",
+        "locations": ["foundry-tf/multi-agent/Ensure-LinuxEngine.ps1", "foundry-tf/multi-agent/tests/test_release_linux_engine.py", "foundry-tf/multi-agent/Build-Demo.ps1", ".github/repo-index.md"],
+        "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "RP-S1-MEASURED-STATUS",
+      "title": "Refresh measured hosted-session release status",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-git-integration", "application-readme"],
+      "estimatedMinutes": {"implementation": 10, "review": 10, "integration": 5},
+      "sourceSprint": "RP-S1",
+      "sourceCriteria": ["AC6 truthful status", "AC9", "Current continuation gitHandoff and existing closeout ownership"],
+      "ownedPathsByRepository": {"application": ["README.md"]},
+      "inputs": ["Accepted current ReleasePlan and SprintDesign F/G", "Predecessor exact DevOps report and original bounded source acceptances"],
+      "produces": ["Current generic evidence-qualified README measured-status notice only"],
+      "acceptanceCriteria": [
+        "Update only stale measured release status from accepted source and inspected actual unmet operational/live gates: context/source handoff accepted; Linux/package unverified; selected WSL prior read-only success is not final runtime health; rollback/effect inventory incomplete; no final common-bundle collaboration or continuity acceptance.",
+        "Retain goal, call diagram, conditional two-turn command, source reading path and privacy-safe wording. Distinguish specified helper from implemented/reviewed/executed recovery. No private identifiers/evidence or new chronology. Run scoped documentation/repository checks and commit README only for original review.",
+        "This is the current-status portion of existing closeout, not repetition of accepted clarity implementation. Final execution-based refresh remains RP-S2-G1-G4."
+      ],
+      "doneWhen": "README measured status accurately reflects accepted source and remaining package, inventory and live gates, with only the owned status slice committed and relevant documentation checks passing.",
+      "exclusions": ["No renderer, fixtures, command/schema or accepted clarity redesign", "No operational checks, live claims or private evidence in Git"],
+      "handoff": "Existing integration Developer reconciles the reviewed README commit; existing RP-S2-G1-G4 closeout refreshes it again only when actual execution changes the facts.",
+      "workCard": {
+        "role": "Developer", "action": "Refresh measured hosted-session release status",
+        "goal": "Make current release limitations understandable without reopening accepted customer clarity implementation.",
+        "components": ["Terminal client", "Guarded lab release toolchain"], "flows": ["Exact-source guarded release"], "flowSteps": ["release-close"],
+        "doneWhen": "README measured status accurately reflects accepted source and remaining package, inventory and live gates, with only the owned status slice committed and relevant documentation checks passing.",
+        "failureCategories": [], "mustAct": "Developer", "locations": ["README.md"],
+        "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "RP-S2-ENGINE-SOURCE-JOIN",
+      "title": "Integrate reviewed recovery source and exact release join",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": ["RP-S2-LINUX-ENGINE-READINESS"],
+      "exclusiveResources": ["application-git-integration", "lab-git-integration", "application-public-index"],
+      "estimatedMinutes": {"implementation": 20, "review": 15, "integration": 5},
+      "sourceSprint": "RP-S2",
+      "sourceCriteria": ["AC7 changed join", "AC8 scoped Git delivery", "AC9 attributable handoff"],
+      "ownedPathsByRepository": {"application": ["docs/design.md", "docs/identity-recovery-plan.md", ".github/repo-index.md"]},
+      "inputs": ["Original-reviewed helper/test/build-input commits", "Reviewed current planning refs and available status-slice commit", "Existing no-effect root/source mechanisms"],
+      "produces": ["Reviewed feature-ref push/readback and durable task reconciliation", "Exact changed helper/build-test hashes plus loaded-source equality for original E2E"],
+      "acceptanceCriteria": [
+        "Consume accepted 42a70533/576b613/0b6d99a and original reviews; do not rerun unchanged source handoff for progress. Inspect status and reconcile new reviewed helper and planning commits on authorized feature refs. Account for all intended task commits, including available reviewed README status. No branch switch, canonical dirty adoption or abandoned branch deletion.",
+        "Prove actual loaded Python/PowerShell tool ownership and matched-source equality using existing no-effect mechanisms. Record new helper/test/Build-Demo hashes separately from unchanged runtime/package closure; old nine-lab-file seal is not new-helper proof. Run affected application, repository and retained checks for the exact changed join, not repeated unchanged suites for credit.",
+        "Commit only owned generic join documentation before original review, push/read back already reviewed application/lab refs, and identify the new documentation commit awaiting original review/later existing closeout push. No credential inspection, settings mutation, engine or cloud execution."
+      ],
+      "doneWhen": "The reviewed recovery changes are reconciled on authorized feature refs with exact reviewed-ref push/readback, attributable changed-source hashes and loaded-source equality, affected checks and committed generic join documentation for original E2E.",
+      "exclusions": ["No accepted context/runner/ownership implementation redispatch", "No helper source edits outside its existing owner", "No real engine startup, Linux build, authentication, transport, publication or live acceptance"],
+      "handoff": "Original E2E validates the changed exact join before source-dependent DevOps. Existing review/closeout pushes this new documentation after acceptance and accounts for later reviewed status/ref commits. Independent rollback/effect inventory needs neither this join nor helper readiness.",
+      "workCard": {
+        "role": "Developer", "action": "Integrate reviewed recovery source and exact release join",
+        "goal": "Bind new recovery and build-test inputs to reviewed feature refs and original exact-source verification without reopening accepted implementation.",
+        "components": ["Guarded lab release toolchain"], "flows": ["Exact-source guarded release"], "flowSteps": ["release-join"],
+        "doneWhen": "The reviewed recovery changes are reconciled on authorized feature refs with exact reviewed-ref push/readback, attributable changed-source hashes and loaded-source equality, affected checks and committed generic join documentation for original E2E.",
+        "failureCategories": [], "mustAct": "Developer", "locations": ["docs/design.md", "docs/identity-recovery-plan.md", ".github/repo-index.md"],
+        "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "RP-S2-LINUX-PACKAGE-VALIDATION",
+      "title": "Recover the selected Linux engine and verify hosting checks",
+      "kind": "devops",
+      "owner": "DevOps Engineer",
+      "dependsOn": ["RP-S2-ENGINE-SOURCE-JOIN"],
+      "exclusiveResources": ["lab-linux-engine", "lab-linux-stage"],
+      "estimatedMinutes": {"implementation": 25, "review": 15, "integration": 5},
+      "sourceSprint": "RP-S2",
+      "inputs": ["Original changed-join E2E", "Reviewed deterministic helper", "Retained Build-Demo.ps1 and existing installation"],
+      "produces": ["Actual Linux/amd64 hosting-Python image and application/separate retained container results"],
+      "acceptanceCriteria": [
+        "Only after original review/integration/changed-join E2E, explicitly run reviewed Ensure-LinuxEngine.ps1 with exact roots and its finite budget. Distinguish already-ready, startup-attempted, confirmed-ready and attributable failure. Do not retry unchanged failed/uncertain startup or substitute context.",
+        "On confirmed same-selected-engine readiness only, execute retained Build-Demo.ps1 on that exact join. Record image ID/source digest, Linux/amd64/hosting-Python, dependency and application/separate retained suite results including required Linux-only cases. Preserve all original required checks; helper mocks/readiness alone are not package PASS.",
+        "Keep stages outside repositories and local engine/stage mutation independent of operational context/transport. A concrete source defect returns to existing Developer reconciliation and exact-join E2E; unsupported recovery reports the precise unmet gate."
+      ],
+      "doneWhen": "The existing Linux engine supports passing retained exact-source Linux/amd64/hosting-Python build and application/retained container checks with attributable image/source bindings and no unresolved required skips.",
+      "exclusions": ["No new engine installation or host/infrastructure reconfiguration", "No CLI authentication, transport, mount, registry upload, package publication or inference", "No historical-image substitution, source edits or inferred Linux PASS"],
+      "handoff": "Give RP-S2-INGRESS-TRIAL the successful exact-source Linux image/test bindings. A source defect goes to existing Developer reconciliation and changed-join E2E; a genuine external stop prevents package/publication.",
+      "workCard": {
+        "role": "DevOps Engineer", "action": "Recover the selected Linux engine and verify hosting checks",
+        "goal": "Prove actual retained Linux/package prerequisites after reviewed recovery, not merely successful startup.",
+        "components": ["Guarded lab release toolchain"], "flows": ["Exact-source guarded release"], "flowSteps": ["release-package"],
+        "doneWhen": "The existing Linux engine supports passing retained exact-source Linux/amd64/hosting-Python build and application/retained container checks with attributable image/source bindings and no unresolved required skips.",
+        "failureCategories": [], "mustAct": "DevOps Engineer", "locations": ["foundry-tf/multi-agent/Ensure-LinuxEngine.ps1", "foundry-tf/multi-agent/Build-Demo.ps1"],
+        "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "RP-S2-FRESH-INVENTORY",
+      "title": "Complete private-route rollback and unresolved-effect inventory",
+      "kind": "devops",
+      "owner": "DevOps Engineer",
+      "dependsOn": [],
+      "exclusiveResources": ["lab-hosted-release", "lab-private-transport", "lab-cli-context", "lab-ssh-mount"],
+      "estimatedMinutes": {"implementation": 20, "review": 15, "integration": 5},
+      "sourceSprint": "RP-S2",
+      "inputs": ["Existing accepted exact-source join", "Prior inspected selected-WSL ReadOnly receipt", "Existing dedicated context and accepted host trust"],
+      "produces": ["Actual rollback-package/version availability and complete effect inventory", "Fresh safe-operation preconditions and positively owned cleanup"],
+      "acceptanceCriteria": [
+        "Continue the existing incomplete DevOps task without waiting for helper construction. Consume prior selected-WSL authenticated metadata/owned closure as bounded evidence, not runtime health or fresh rollback/effect facts. Do not repeat accepted containment-source research.",
+        "Use retained local prerequisite/ReadOnly inventory tooling with explicit roots and unchanged scripts/Use-Settings.ps1 import; verify dedicated context/scope and exact existing three roles. No profile contents/credentials or default/production context. Unused Windows helper acceptance does not gate selected WSL.",
+        "Complete rollback-version/package availability and unresolved-effect inventory, retaining every historical UNKNOWN, held parent and rollback asset. Prior observed architect17/reviewer15/coordinator23 mixed content is historical, not final common-bundle proof. Refresh operational facts before later effects.",
+        "Record safe next-operation preconditions and clean positively identified newly owned transport/mount/listeners only. Existing command VM start only if needed through approved mechanism; no stop/reconfiguration. No inference/publication or clearing/replay of uncertain operations."
+      ],
+      "doneWhen": "The selected retained private route passes its actual guards and fresh exact three-role, rollback and unresolved-effect inventory establishes safe next-operation preconditions with owned-resource cleanup recorded.",
+      "exclusions": ["No publication, inference, hosted stop/resume or uncertain-effect replay", "No new infrastructure/permission/private-settings changes, credential copy or alternative profile", "No repeated accepted containment-source audit or live ingress claim"],
+      "handoff": "Give RP-S2-INGRESS-TRIAL fresh private inventory, exact trust/route/source bindings and effect holds. Clean preparation resources; the publisher reacquires and revalidates shared operational resources. Real device authentication surfaces its actual URL/code; unsupported internal contracts return to Scrum.",
+      "workCard": {
+        "role": "DevOps Engineer", "action": "Complete private-route rollback and unresolved-effect inventory",
+        "goal": "Close the independent unfinished rollback/effect readiness branch while preserving prior route evidence and every historical hold.",
+        "components": ["Guarded lab release toolchain", "Trusted identity and private transport"], "flows": ["Exact-source guarded release"], "flowSteps": ["release-package"],
+        "doneWhen": "The selected retained private route passes its actual guards and fresh exact three-role, rollback and unresolved-effect inventory establishes safe next-operation preconditions with owned-resource cleanup recorded.",
+        "failureCategories": [], "mustAct": "DevOps Engineer", "locations": ["scripts/Use-Settings.ps1", "foundry-tf/multi-agent/Test-LabPrerequisites.ps1", "foundry-tf/multi-agent/Invoke-WslCodeRelease.ps1"],
+        "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "RP-S2-INGRESS-TRIAL",
+      "title": "Publish the guarded exact bundle and prove specialist ingress",
+      "kind": "devops",
+      "owner": "DevOps Engineer",
+      "dependsOn": ["RP-S2-LINUX-PACKAGE-VALIDATION", "RP-S2-FRESH-INVENTORY"],
+      "exclusiveResources": ["lab-hosted-release", "lab-private-transport", "lab-cli-context", "lab-ssh-mount", "lab-linux-engine", "lab-linux-stage"],
+      "estimatedMinutes": {"implementation": 30, "review": 20, "integration": 5},
+      "sourceSprint": "RP-S2",
+      "inputs": ["BOTH actual readiness exits", "Original changed-join E2E and reviewed source/package gates", "Accepted finite identity runner"],
+      "produces": ["Exact final common bundle, reconciled guarded publication and trusted architect-before-reviewer ingress"],
+      "acceptanceCriteria": [
+        "One original serialized publisher reacquires and revalidates route/context/freshness/effect preconditions after BOTH real readiness exits. Build/preview/bind/publish exact common bundle through retained local wrappers with source/settings/ZIP/version bindings, Linux/dependency/allowlist guards and preserved rollback. No stale stage mutation or uncertain resend.",
+        "Reconcile every known outcome before another operation. Prove architect application trusted ingress and user equality before reviewer, then independent reviewer ingress with retained finite runner. Only an evidenced supported identity path; no opaque call-ID delegation, hidden fallback, speculative grants or automatic A/B replay.",
+        "Return exact reached roles/versions/package/effect state. Concrete correction returns through existing Developer ownership/original reviews/changed-join E2E and fresh package. Actual unsupported provider/human remedy is a precise stop, not inferred ingress."
+      ],
+      "doneWhen": "The exact guarded package is published with preserved rollback and reconciled effects, and both specialists independently pass trusted remote ingress under an evidenced supported identity path.",
+      "exclusions": ["No G1-G4 completion inferred from upload, HTTP 200, metadata or path selection", "No historical UNKNOWN replay, parent substitution, provider submission or unapproved mutation", "No unowned runtime/release source edits"],
+      "handoff": "Give RP-S2-G1-G4 exact current package/version/identity/ingress bindings and effect status. Only successful both-role ingress proceeds; otherwise retain exact holds and route a concrete repair or genuine external stop through original owners.",
+      "workCard": {
+        "role": "DevOps Engineer", "action": "Publish the guarded exact bundle and prove specialist ingress",
+        "goal": "Join both real readiness branches into one guarded exact release and evidenced trusted entry for both specialists.",
+        "components": ["Guarded lab release toolchain", "Trusted identity and private transport", "Hosted architect", "Hosted reviewer"],
+        "flows": ["Exact-source guarded release", "Remote design and review"], "flowSteps": ["release-package", "release-discriminate", "collaboration-route"],
+        "doneWhen": "The exact guarded package is published with preserved rollback and reconciled effects, and both specialists independently pass trusted remote ingress under an evidenced supported identity path.",
+        "failureCategories": [], "mustAct": "DevOps Engineer", "locations": ["foundry-tf/multi-agent"],
+        "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "RP-S2-G1-G4",
+      "title": "Verify initial hosted collaboration and reconcile release evidence",
+      "kind": "devops",
+      "owner": "DevOps Engineer",
+      "dependsOn": ["RP-S2-INGRESS-TRIAL"],
+      "exclusiveResources": ["lab-hosted-release", "lab-private-transport", "lab-cli-context", "lab-ssh-mount", "application-git-integration", "lab-git-integration", "application-readme", "application-public-index"],
+      "estimatedMinutes": {"implementation": 30, "review": 20, "integration": 10},
+      "sourceSprint": "RP-S2",
+      "ownedPathsByRepository": {"application": ["README.md", "docs/identity-recovery-plan.md", ".github/repo-index.md"]},
+      "inputs": ["Successful exact publication and both-role ingress", "Retained synthetic live acceptance and unchanged parser", "Actual final source/identity/artifact/effect bindings"],
+      "produces": ["Actual G1-G4 and completed non-held initial parent or truthful unmet gates", "Measured closeout and reviewed scoped Git reconciliation"],
+      "acceptanceCriteria": [
+        "Verify three healthy exact versions share the verified final common bundle with rollback (G1), actual remote exact-artifact collaboration/acceptance (G2), actual private managed-identity Blob provenance (G3), genuine Decision-1 and deterministic final gates (G4). No metadata, aliases or fixtures substitute.",
+        "Return completed non-held initial parent with actual parent/both-child hosted/framework bindings/pins, current artifacts, checkpoints and reconciled effects to RP-S3. No follow-up into a held parent. Exactly three hosted roles and no hidden local fallback.",
+        "Clean positively identified newly owned resources only; preserve historical UNKNOWNs/held parents/cleanup uncertainty. Record final/rollback bindings and remaining unmet criteria privately; maintain accurate account-wide Blob policy/application-enforced isolation limitation.",
+        "Update only generic measured README/recovery status from actual outcomes; preserve accepted goal, diagram, human command and stdout/parser. Account for every intended task/planning commit and retained branch. Commit --only owned paths before original review; push/read back reviewed refs through existing review/retro/closeout, including integration documentation deferred until its acceptance."
+      ],
+      "doneWhen": "Actual final common-bundle G1-G4 and a completed non-held initial parent are proven, with precise RP-S3 bindings, owned cleanup, truthful measured status and durable scoped Git reconciliation.",
+      "exclusions": ["No claim that G5-G8, full AC1-AC9 or final customer demonstration are complete", "No repeated accepted README/renderer implementation, new UI/schema or private evidence in Git", "No supported compute stop/resume, follow-up or isolation tests moved out of RP-S3"],
+      "handoff": "Existing sprint review/retro accepts measured RP-S2 results, not release success by report agreement. RP-S3 receives only actually established initial-parent/final-release prerequisites; isolation retains its own prerequisites independent of recovery. Failure names the unmet gate and closing owner without fabricated bindings.",
+      "workCard": {
+        "role": "DevOps Engineer", "action": "Verify initial hosted collaboration and reconcile release evidence",
+        "goal": "Establish real initial collaboration and attributable closeout before handing measured bindings to continuity and recovery testing.",
+        "components": ["Hosted coordinator", "Hosted architect", "Hosted reviewer", "Private Blob artifacts and effect journal", "Decision-1 routing and admission", "Parent and specialist conversation state", "Guarded lab release toolchain"],
+        "flows": ["Remote design and review", "Exact-source guarded release"], "flowSteps": ["collaboration-bind", "collaboration-route", "collaboration-design", "collaboration-review", "collaboration-return", "release-close"],
+        "doneWhen": "Actual final common-bundle G1-G4 and a completed non-held initial parent are proven, with precise RP-S3 bindings, owned cleanup, truthful measured status and durable scoped Git reconciliation.",
+        "failureCategories": [], "mustAct": "DevOps Engineer", "locations": ["live_acceptance.py", "README.md", "docs/identity-recovery-plan.md", ".github/repo-index.md", "foundry-tf/multi-agent"],
+        "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+      }
+    }
+  ],
+  "criticalPath": {
+    "construction": ["RP-S2-LINUX-ENGINE-READINESS", "RP-S2-ENGINE-SOURCE-JOIN", "Original changed-join EndToEndTestLoop"],
+    "execution": ["RP-S2-LINUX-PACKAGE-VALIDATION", "BOTH Linux/package and RP-S2-FRESH-INVENTORY exits", "RP-S2-INGRESS-TRIAL", "RP-S2-G1-G4"],
+    "parallel": "Helper and measured-status slice are independent ready Developer assignments with disjoint files/resources. Existing partial-RP-S2 inventory has no recovery construction dependency. Linux and inventory share no mutation resources; one publisher joins them.",
+    "minimalEdges": "Integration needs reviewed helper/build inputs, not whole-sprint acceptance or README completion. README shares only application Git mutation with integration; matching resources coordinate it. Reviewed late status documentation is accounted for by existing closeout. Inventory consumes accepted prior source, never an unresolved new helper.",
+    "estimates": "Rough task minutes are planning estimates, not execution budgets/caps. Shared resources/reviews influence actual critical path; no total sprint/productive-round cap is introduced."
+  },
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDeveloper": ["RP-S2-LINUX-ENGINE-READINESS", "RP-S1-MEASURED-STATUS", "RP-S2-ENGINE-SOURCE-JOIN"],
+  "AssignedWorkDevOpsEngineer": ["RP-S2-LINUX-PACKAGE-VALIDATION", "RP-S2-FRESH-INVENTORY", "RP-S2-INGRESS-TRIAL", "RP-S2-G1-G4"],
+  "AssignedWorkDesigner": [],
+  "dispatch": {
+    "owner": "Installed original YAML orchestrator",
+    "observed": false,
+    "readyDeveloperTasks": ["RP-S2-LINUX-ENGINE-READINESS", "RP-S1-MEASURED-STATUS"],
+    "independentExistingDevOpsContinuation": ["RP-S2-FRESH-INVENTORY"],
+    "instruction": "Dispatch ready Developer tasks in parallel before original planning reviews. Preserve original phases and partial-sprint continuation; do not start substitute agents or move cloud effects into planning. Actual dispatch and collective agreement are not claimed by this saved plan."
+  },
+  "planningVerification": {
+    "scope": "Plan JSON/card/edge/resource/ownership and repository checks only; no unchanged application/retained suites for progress credit.",
+    "results": [
+      "Seven complete task cards match title/owner/doneWhen; all unperformed evidence and human-action fields are empty.",
+      "Canonical component/flow names and stable step IDs match the parsed unchanged Architecture solutionModel.",
+      "Dependency graph is acyclic; two ready Developer assignments have disjoint resources; inventory has no helper dependency; publisher requires both real readiness exits.",
+      "All four originating DevOps doneWhen, exclusions and handoff values match the accepted source plan verbatim after the explicit Linux source/execution split.",
+      "scripts/Test-Repository.ps1 passed with the existing absolute Python: current refreshed index, 83 public files, public/private boundary, JSON, PowerShell, frontmatter and whitespace."
+    ],
+    "limitations": "Source not implemented here. No engine, authentication, cloud query, transport, Linux build, publication, inference or live acceptance."
+  }
+}

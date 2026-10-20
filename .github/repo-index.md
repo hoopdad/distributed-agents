@@ -1,5 +1,21 @@
 # Repository index
 
+RP-S1 engine-recovery planning freshness: based on clean feature `ed986858`
+and registered lab feature `42a70533`; all five current originating input
+audits opened with substantive bounded agreement. New
+`docs/customer-prototype-engine-recovery-sprint-plan.json` is a continuation
+amendment, preserving accepted plan files and incomplete RP-S2 execution.
+Ready Developer helper/tests/minimal Build-Demo mounts and existing closeout's
+measured-status slice are independent; exact-source integration consumes only
+reviewed helper inputs. Original changed-join E2E precedes DevOps recovery/
+Linux gates. Independent selected-WSL rollback/effect inventory has no helper
+dependency; BOTH actual exits still gate one publisher and G1-G4/non-held parent.
+Named resources, scoped feature reconciliation and original five-round stops
+remain binding. No accepted runtime/fixture/clarity redispatch or canonical
+lab writes. One public plan added; no runtime or operational contract change.
+Actual dispatch/original planning votes follow the owner response; no package
+or live acceptance is established. Older plan entries retain their history.
+
 RP-S1 continuation-architecture freshness: based on clean feature `5cc0f692`,
 accepted Architecture `cef352f4`, UX `6b6975c0`, ReleasePlan `48e3faf3` and
 SprintDesign `5cc0f692`, with all four original outcome audits opened.
@@ -1215,6 +1231,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
 - `docs\customer-prototype-current-sprint-plan.json`
+- `docs\customer-prototype-engine-recovery-sprint-plan.json`
 - `docs\customer-prototype-operational-context-amendment.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`

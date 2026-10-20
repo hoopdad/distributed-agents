@@ -26,6 +26,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
+| Identity candidate handoff | `scripts\identity_handoff.py`, `tests\test_identity_handoff.py`, `docs\identity-candidate-handoff.md` | Offline-only A/B candidate, lifecycle header plumbing and receiver namespace negative controls; no installed runtime change or live selection |
 | Copilot context | `.github\copilot-instructions.md`, agents and skills | Bounded implementation/review and deployment gates |
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
@@ -206,6 +207,13 @@ Offline integrated-source validation does not establish live acceptance or a
 final Linux hosting package. Exact baseline/task path accounting is retained
 in the S1-INTEGRATE commit message.
 
+RP-S1-ID-HANDOFF freshness: based on clean `0c43d599760b5213a5b5bd82cfd4e40aede895fa`.
+Added offline-only `scripts\identity_handoff.py`, its test module and
+`docs\identity-candidate-handoff.md`. No runtime/dependency/lab changes.
+Candidate B is not installed; both paths remain live-unresolved. Tests observe
+raw SDK operation arguments and mocked Responses HTTP, not platform ingress.
+Original reviewers and downstream runtime/lab integration retain their roles.
+
 <!-- inventory:start -->
 
 ## Public file inventory
@@ -253,6 +261,7 @@ in the S1-INTEGRATE commit message.
 - `docs\customer-prototype-sprint-plan.json`
 - `docs\customer-prototype-ux.md`
 - `docs\design.md`
+- `docs\identity-candidate-handoff.md`
 - `docs\identity-recovery-plan.md`
 - `docs\implementation-workflow.md`
 - `docs\migration-map.json`
@@ -271,12 +280,14 @@ in the S1-INTEGRATE commit message.
 - `scripts\Use-Settings.ps1`
 - `scripts\calibrate_routing.py`
 - `scripts\diagnose_identity.py`
+- `scripts\identity_handoff.py`
 - `scripts\migration.py`
 - `scripts\repo_index.py`
 - `tests\test_artifacts.py`
 - `tests\test_config.py`
 - `tests\test_demo.py`
 - `tests\test_diagnose_identity.py`
+- `tests\test_identity_handoff.py`
 - `tests\test_routing.py`
 - `tests\test_specialist_continuity.py`
 - `tests\test_workflow.py`

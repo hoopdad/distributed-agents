@@ -1,5 +1,26 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current RP-S1 ownership-designation boundary
+
+Consume the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-ownership-designation-architecture-october-20-2026)
+and accepted ownership-designation SprintDesign. Retain README/terminal screens,
+safe aliases, useful opt-in stderr and unchanged stdout/parser; no new ledger,
+flag, banner or implementation dispatch. Report supplied coordination separately
+from original ownership acceptance, current path verification, matched loaded
+source, current strict trust/inventory and actual live proof.
+
+Developer runner writing remains restricted to the accepted eight-path sibling
+boundary after original ownership acceptance; canonical dirty/staged work is
+preserved, never written. Designated Developer integration reconciles reviewed
+application/runner/required operational wrappers, actual roots/hashes and durable
+feature-branch task/commit accounting/push. Sibling wrapper commits are not
+canonical installation. Keep root guards; a necessary new writable location or
+guard change goes through existing Architect-advised PO/Scrum reconciliation.
+Transport owner/DevOps independently verifies current trust and sole-target
+inventory. Original E2E owns formal integration and original DevOps owns exact
+Linux/package/publication, finite decision and live gates through local scripts.
+Retain historical UNKNOWNs, held parents, rollback and cleanup uncertainty.
+
 ## Current RP-S1 recovery-entry boundary
 
 Consume the [current RP-S1 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-recovery-entry-architecture-october-20-2026)

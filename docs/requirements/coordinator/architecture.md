@@ -1,5 +1,19 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current RP-S1 ownership-designation boundary
+
+Consume the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-ownership-designation-architecture-october-20-2026)
+and retained technical contracts below. Supplied Developer designations close
+the missing coordination input only; original ownership acceptance and current
+checkout/path verification still precede runner writes. No new coordinator
+implementation is requested. Designated integration joins reviewed application,
+runner and actual operational-wrapper bytes/roots before original E2E/DevOps
+execution; canonical dirty work remains unwritable. Source/root preparation
+rejection is not receiver failure. Retain both-role continuity/revision fixtures,
+specialist-only candidate authority, immutable refs/fencing, receiver equality
+and unknown-effect holds. Neither coordination nor historical evidence selects
+A/B, proves either specialist's ingress or passes live acceptance.
+
 ## Current RP-S1 recovery-entry boundary
 
 Consume the [current RP-S1 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-recovery-entry-architecture-october-20-2026);

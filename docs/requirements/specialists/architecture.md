@@ -1,5 +1,18 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current RP-S1 ownership-designation boundary
+
+Consume the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-ownership-designation-architecture-october-20-2026).
+Supplied writer/integration coordination is evidence for original ownership
+review, not observed entry into either specialist. Retain both five-stage
+flows, `specialist_history_v2`, direct persisted-value/fresh-history controls
+and exact-response zero-send recovery; no specialist rewrite or duplicate
+fixture task. Joined reviewed source and current trust remain separate from
+trusted ingress/receiver equality, model continuation and private Blob provenance.
+Record architect and reviewer independently; unreached remains unknown. No
+history rekey, held-child adoption, assignment-as-authority or equality relaxation.
+The retained later continuity/recovery/isolation contracts remain required live.
+
 ## Current RP-S1 recovery-entry boundary
 
 Consume the [current RP-S1 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s1-recovery-entry-architecture-october-20-2026)

@@ -1,5 +1,16 @@
 # Repository index
 
+Scoped packaging-caller sprint-plan amendment: based on accepted architecture
+`4f179c51` and retained partial lab commit `d0073536`. The separate
+`docs/customer-prototype-operational-context-amendment.json` replaces only the
+existing operational-context assignment, adding `bundle_package.py` to its
+owned paths. Original owner, reviews, acceptance, resources and integration
+handoff remain unchanged; the outer four-task plan is preserved byte-for-byte.
+One ready node, no new dependency or duplicate accepted README assignment.
+Same Developer completes callers and exact-source checks before original
+review/integration/E2E/serialized DevOps; partial helpers are not execution-ready.
+This added public plan path is included in the refreshed inventory below.
+
 Scoped packaging-caller amendment freshness: based on application feature
 `f4ec1496` and read-only committed lab sibling `d0073536`. Opened original
 SprintArchitecture agreement and scoped-replan/reconciled-feedback audits.
@@ -1053,6 +1064,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
 - `docs\customer-prototype-current-sprint-plan.json`
+- `docs\customer-prototype-operational-context-amendment.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

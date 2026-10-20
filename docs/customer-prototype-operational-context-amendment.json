@@ -1,0 +1,127 @@
+{
+  "sprintId": "RP-S1",
+  "goal": "Resume the existing operational-context Developer assignment with the necessary packaging caller explicitly owned.",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "baseline": "4f179c51b3ada28485cea9ad1d99da2e716210c2",
+  "scope": "Self-contained replacement graph for RP-S2-OPERATIONAL-CONTEXT only. The accepted outer four-task plan remains unchanged.",
+  "acceptedInputs": {
+    "SprintArchitecture": "4f179c51b3ada28485cea9ad1d99da2e716210c2",
+    "architectureAudit": "gh-dynamic-workflows/.delivery-runs/bf0d82d9-657b-4055-9f7c-6306ce08163d/context/e4962cb0b71a5e07e1d16b49d0243249de577358184d5f329a89a60b473c9856.json",
+    "retainedPartialLabCommit": "d0073536c2969e885bdcc767ddccbebd7deda7d5",
+    "partialCommitExecutionReady": false
+  },
+  "appliedPriorReferences": [
+    "[\"yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-OPERATIONAL-CONTEXT/plan-round/2/AssignedWorkDeveloperLoop\",\"operational-context-package-caller-ownership\"]",
+    "[\"yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-OPERATIONAL-CONTEXT/plan-round/2/AssignedWorkDeveloperLoop\",\"operational-context-caller-completion\"]",
+    "[\"yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-OPERATIONAL-CONTEXT/plan-round/2/AssignedWorkDeveloperLoop\",\"operational-context-final-checks-handoff\"]",
+    "[\"yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop\",\"sprint-plan-output-shape\"]",
+    "[\"yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop\",\"sprint-plan-original-dispatch\"]"
+  ],
+  "reconciliation": {
+    "additionalOwnedPath": "foundry-tf/multi-agent/bundle_package.py",
+    "purpose": "Operational-context propagation and validation only; no packaging rewrite or guard removal.",
+    "preserved": "Existing Developer, original Architect/Critic review, all acceptance criteria, doneWhen, exclusions and integration handoff. Already-owned test paths supply regressions. Accepted ownership, runner and README work are not redispatched.",
+    "closingWork": "Finish five entry points and affected callers including bundle_package.py, calibration, operational private-path exclusions, WSL profile/azd selection and success/failure environment restoration. Preserve account/project/target checks, loaded-source equality, source/package binding and unknown-effect guards.",
+    "finalChecks": "Run required positive/negative caller, targeted, retained and application/repository checks against final committed caller-integrated source. Use supported native fixture binding to resolve the reported import collision. Retain originating justification for exclusions; skips are not completed Linux/native coverage.",
+    "outerPlan": "docs/customer-prototype-current-sprint-plan.json",
+    "outerPlanSha256": "fc12bee780dd9439772852ee1f0ed8a400ef73c39f8127dab12455c04a09dfaf",
+    "outerPlanChanged": false
+  },
+  "governance": {
+    "dispatch": "Installed YAML orchestrator resumes this single ready original Developer assignment after this response. No substitute agent, README redispatch or new approval stage.",
+    "branchOwnership": "Only the registered lab feature sibling is writable for the enumerated lab paths. Recheck status and explicit ownership before writes; preserve canonical dirty/staged work. No branch switching or credential/settings inspection.",
+    "sharedFiles": "Scrum owns this amendment and application index for this turn. The same Developer owns the enumerated lab paths and lab index under the original exclusive resources.",
+    "gitReconciliation": "The outer plan's designated Developer integration owner receives original-review-approved commits, including retained d0073536, on authorized feature refs. Integrate every task commit or retain its named branch and record task/commits/abandonment reason in a feature-branch commit message. Commit explicit owned paths with git commit --only and required Copilot trailer before review; push only reviewed scoped refs with readback. Never sweep staged work, amend history, force-push, delete branches or remove locks.",
+    "safety": "No private settings/profile/credential changes or copying, default/production profiles, crossed loaded roots, canonical dirty edits, infrastructure/permission changes, authentication, cloud query, transport, mount, publication or live execution. Preserve UNKNOWN effects, held parents, rollback assets and historical cleanup uncertainty.",
+    "downstream": "Original Architect/Critic review and outer integration receive completed exact-source handoff. Original changed-join E2E then original serialized DevOps Linux/package/publication/live gates remain required; later DevOps is not a prerequisite to this implementation.",
+    "stops": "Preserve originating stops and five consecutive rounds without reviewer-verified new progress; no reset or productive-round cap."
+  },
+  "tasks": [
+    {
+      "id": "RP-S2-OPERATIONAL-CONTEXT",
+      "title": "Developer: Separate guarded release tools from the dedicated lab context",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["lab-operational-context-source", "lab-public-index"],
+      "estimatedMinutes": {"implementation": 100, "review": 30, "integration": 10},
+      "ownedPathsByRepository": {
+        "lab": [
+          "foundry-tf/multi-agent/Test-LabPrerequisites.ps1",
+          "foundry-tf/multi-agent/Test-PrivateConnectivity.ps1",
+          "foundry-tf/multi-agent/Build-CodePackage.ps1",
+          "foundry-tf/multi-agent/Build-BundledCodePackage.ps1",
+          "foundry-tf/multi-agent/Invoke-WslCodeRelease.ps1",
+          "foundry-tf/multi-agent/Release-Roots.ps1",
+          "foundry-tf/multi-agent/release_roots.py",
+          "foundry-tf/multi-agent/Build-Demo.ps1",
+          "foundry-tf/multi-agent/Get-DeploymentPreview.ps1",
+          "foundry-tf/multi-agent/Invoke-IdentityDecision.ps1",
+          "foundry-tf/multi-agent/identity_decision.py",
+          "foundry-tf/multi-agent/diagnose_release.py",
+          "foundry-tf/multi-agent/wsl_release.py",
+          "foundry-tf/multi-agent/tests/test_demo.py",
+          "foundry-tf/multi-agent/tests/test_release.py",
+          "foundry-tf/multi-agent/tests/test_release_diagnostic.py",
+          "foundry-tf/multi-agent/tests/test_release_exact_metadata.py",
+          "foundry-tf/multi-agent/tests/test_release_identity_decision.py",
+          "foundry-tf/multi-agent/tests/test_release_native_settings.py",
+          "foundry-tf/multi-agent/tests/test_release_roots.py",
+          ".github/repo-index.md",
+          "foundry-tf/multi-agent/bundle_package.py"
+        ]
+      },
+      "inputs": [
+        "Accepted three-root contract and original runner corrections",
+        "Existing validated settings-import contract; no private-state inspection",
+        "Five affected entry points and public-source caller inventory"
+      ],
+      "produces": [
+        "Smallest coherent explicit operational-context propagation correction",
+        "Synthetic positive/negative caller regressions and exact source/check handoff"
+      ],
+      "acceptanceCriteria": [
+        "Change only necessary enumerated feature-sibling paths. Preserve accepted ownership and runner semantics; add explicit OperationalLabRoot propagation through five entry points and affected callers without changing loaded tool ownership or runtime bundle contents.",
+        "Reuse unchanged settings import and existing dedicated context. Enforce canonical directories, imported dedicated profile equality, operational/tool registry scope equality and existing project/target/account checks before effects; retain fail-closed legacy behavior.",
+        "Cover matched and distinct roots, missing/relative/reparse/escape roots, default/mismatched profile and tenant/subscription rejection, calibration, every affected caller, WSL profile/azd selection, success/failure environment restoration, crossed-tool rejection and loaded-source equality.",
+        "Run affected targeted and retained lab checks plus required application Test-Demo with absolute validated Python and explicit tool root, and repository checks. Retained exclusions require originating justification; do not silently waive failures. Commit scoped changes for original Architect/Critic review; no operational execution in this assignment."
+      ],
+      "doneWhen": "The explicit operational-context correction and all affected caller/negative regressions pass relevant retained/application checks on committed feature-sibling source, preserving loaded-tool equality and existing safeguards, ready for original Architect/Critic review.",
+      "exclusions": [
+        "No accepted runner rewrite or reopened ownership",
+        "No private settings/profile/credential changes, canonical dirty edits or new infrastructure/permissions",
+        "No authentication, cloud query, transport, mount, package publication or live claim; synthetic local tests only"
+      ],
+      "handoff": "Give RP-S2-CONTEXT-INTEGRATE exact commits, changed callers, supported invocation contract, test results/exclusions and root/source hashes; original reviewers inspect actual commits. New necessary paths outside this list require Scrum reconciliation before writing.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Developer: Separate guarded release tools from the dedicated lab context",
+        "goal": "Correct operational-context propagation without crossing reviewed tool roots or copying credentials.",
+        "components": ["Guarded lab release toolchain", "Trusted identity and private transport"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-join", "release-package"],
+        "doneWhen": "The explicit operational-context correction and all affected caller/negative regressions pass relevant retained/application checks on committed feature-sibling source, preserving loaded-tool equality and existing safeguards, ready for original Architect/Critic review.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["foundry-tf/multi-agent", ".github/repo-index.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    }
+  ],
+  "criticalPath": {
+    "readyTasks": ["RP-S2-OPERATIONAL-CONTEXT"],
+    "path": ["RP-S2-OPERATIONAL-CONTEXT"],
+    "estimatedTaskMinutes": 140,
+    "calculation": "Retained rough estimate: 100 implementation + 30 review + 10 integration = 140 task-minutes; not a limit or measured remaining duration.",
+    "minimalEdges": "Single replacement node has no dependencies. Accepted contract and partial source are inputs, not new work. No unrelated outer task or later DevOps dependency is introduced.",
+    "parallelism": "No independent pair exists inside this one-assignment amendment. Preserve accepted outer-plan fan-out; do not redispatch accepted README or change unrelated running work."
+  },
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDeveloper": ["RP-S2-OPERATIONAL-CONTEXT"],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": []
+}

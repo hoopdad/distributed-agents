@@ -1,5 +1,79 @@
 # Customer hosted-session prototype: release plan
 
+## Current RP-S3 retrospective — accepted observation handoff without live entry (October 20, 2026)
+
+### Inputs and measurement limits
+
+Consume accepted SprintReview `be996f84694f9c94f163448f8afcc3ddce095223`,
+the supplied current originating Developer/E2E/DevOps outcomes and original
+reviewer findings. Fresh application inspection began on that clean authorized
+feature HEAD. Older overlays remain attributable history, not current execution.
+
+Six current accepted boundaries (design, architecture, planning, observation
+handoff, E2E reporting and sprint review) each used one supplied round.
+Ownership and enclosing DevOps each have one current reported round and remain
+incomplete. The accepted revision-bound observation map is consumed once; it is
+not renewed credit for retained fixtures or live capability. These counts
+establish neither latency improvements nor an authoritative consecutive
+no-progress count. Aggregate error rates, communication latency, elapsed work
+time and customer usability timing are unavailable; do not invent them.
+
+Current DevOps reached local retained-contract and named historical-evidence
+inspection only. No settings import, transport, cloud query, publication,
+inference or compute stop occurred in that report. The earlier prerequisite
+PASS remains owner-attributed; script inspection does not independently refresh
+its execution. Retained 204-test Windows runs and the Proactor ResourceWarning
+remain historical and separately attributed, not final Linux/package/live proof.
+
+### Decisions and follow-through under existing owners
+
+| Improvement / existing owner | Closing action and boundary |
+|---|---|
+| Preserve accepted interfaces / integration Developer, original E2E and DevOps | Consume RP-S3-EVIDENCE-CHECKS at `673d1e9` without duplicate fixtures or unchanged test runs. Supplied JSON consistency is not provenance. Associate actual requests, immutable artifacts, manifests, journals and checkpoints; never reconstruct observed sends from intentions. |
+| Unblock independent preparation / existing transport owner, Scrum and DevOps | Locate the existing accepted containment-source handoff; verify current module path, both hashes and serialized resource availability, then run retained Metadata tooling with supplied host trust, approved settings loader and explicit roots. Complete current deployment, identity, rollback, effective-action and effect observations independently of coding. No new receipt format, approval stage or trust choice. |
+| Preserve substantive ownership / existing ownership Developer and originating Architect/Critic | Supply actual nonsecret resolver/Git/path/hash/root-matrix evidence through the approved external handoff, or restore already-authorized bounded access. Obtain substantive originating acceptance before runner writes. Do not repeat denied probes or substitute coordination for evidence. |
+| Reconcile executable delivery / runner and designated integration Developers | After ownership acceptance, review the retained eight-path runner; join reviewed commits with actual loaded roots/bytes/hashes, joined checks and durable task/branch/commit accounting. Verify remote freshness and reviewed scoped push; return the exact join to original E2E. |
+| Preserve real release gates / original DevOps | Join actual E2E readiness and current preparation with exact-source, retained-suite, Linux/amd64/hosting-Python and immutable-package gates; perform serialized guarded publication and finite ingress, reconcile effects and verify common-bundle G1-G4 and a completed non-held initial parent. |
+| Retain scenario independence / original DevOps | Only after actual entry proof run same-parent follow-up, then once-only confirmed supported recovery. Isolation uses its own release prerequisites, not recovery success. Missing comparisons remain UNREACHED, not PASS. |
+| Provide conditional instructions / original DevOps delivery owner | Retain [README setup](../README.md#setup-and-offline-checks) and [two-turn commands](../README.md#two-turn-terminal-demonstration), labeled conditional and not live-verified. The accepted review/backlog reference does not close the separate originating delivery assignment. Record exact bindings when known, push outcomes and newly owned cleanup separately from historical uncertainty. |
+
+The [Architecture](customer-prototype-architecture.md) improvement separates
+observation provenance from executable installation and independent preparation.
+The [UserExperience](customer-prototype-ux.md) improvement distinguishes
+conditional instructions from an executed demonstration while retaining accepted
+screens, privacy and parser contracts. These are existing-owner process changes,
+not new runtime scope, evidence collectors, schemas or approval stages.
+
+### Preserved dispositions and handoff
+
+Apply exact originating references
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`,
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S1-CURRENT-SOURCE-CHECKS/AssignedWorkDeveloperLoop","current-source-checks-completion-status"]`,
+`["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-report-completion-status"]`,
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-bounded-assessment-completion-status"]`
+and
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-exact-release-cloud-pass"]`
+only within their originating boundaries. Accepted source and reporting remain
+closed; ownership remains incomplete and enclosing DevOps requires actual cloud
+PASS. No disposition is superseded.
+
+Retain the three unique sprint contracts and their goals, criteria and handoffs
+in the structured result, as required by
+`["yaml-loops-v1:sprint/1/RP-S1/SprintRetroLoop","retro-release-plan-sprints-handoff"]`.
+The current RP-S3 review uses its own supplied original agreements; no prior
+review votes transfer to this retrospective. The existing orchestrator collects
+the six original retrospective votes; pending votes alone require no artificial
+owner edits.
+
+Demonstration remains BLOCKED, E2E FAIL, operational join unverified and DevOps
+incomplete. Final/rollback bindings, final scoped push and AC1-AC9/G1-G8 acceptance
+remain unestablished. Preserve canonical dirty/staged work, retained branches,
+rollback assets, historical UNKNOWNs, held parents, cleanup uncertainty and
+originating no-progress history. Documentation churn is not substantive progress.
+All changes in this retrospective are documentation on the authorized feature
+branch; no task code is created or abandoned. Operational reconciliation and
+final push remain integration-owned and are not certified here.
+
 ## Current RP-S3 sprint review — continuity unreached, delivery blocked (October 20, 2026)
 
 **Demonstration BLOCKED; RP-S3 live goal unmet; E2E FAIL; DevOps incomplete;

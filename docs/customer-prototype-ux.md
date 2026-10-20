@@ -1,5 +1,28 @@
 # Customer hosted-session prototype: user experience
 
+## Current RP-S3 retrospective — conditional instructions are not an executed demonstration (October 20, 2026)
+
+Consume accepted SprintReview `be996f84694f9c94f163448f8afcc3ddce095223`
+and the [retrospective decisions](customer-prototype-release-plan.md#current-rp-s3-retrospective--accepted-observation-handoff-without-live-entry-october-20-2026).
+Retain Screens H-K, plain-text accessibility, safe aliases, opt-in human stderr
+and unchanged machine stdout/parsing; no UI implementation is added.
+
+Existing operator wording should say: "Observation handoff accepted; operational
+join unverified; live continuity, recovery and isolation unreached; demonstration
+BLOCKED." Attribute current DevOps to local contract/historical-evidence
+inspection only, not settings loading, transport or cloud execution. Name the
+independent inventory handoff and the ownership-evidence closing action
+separately. Missing observations are not measured zero effects or failed live
+specialist execution.
+
+Keep the existing README setup and two-turn instructions available, explicitly
+conditional and unexecuted here. Their inclusion resolves the review/backlog
+documentation omission, not originating DevOps delivery acceptance. Never show
+successful continuity rows or send a follow-up without a completed non-held
+initial parent. Preserve private bindings, capture locations and transcripts
+outside customer output. No usability timing or successful demonstration is
+inferred from clearer reporting.
+
 ## Current RP-S2 retrospective — label attribution and the next executable boundary (October 20, 2026)
 
 Consume accepted SprintReview `1e5eb2adc7714875e07ed69ffd2e2db0ab8c7877`

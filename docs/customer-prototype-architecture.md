@@ -1,5 +1,29 @@
 # Customer hosted-session prototype: release architecture
 
+## Current RP-S3 retrospective — preserve observation provenance and independent preparation (October 20, 2026)
+
+Consume accepted SprintReview `be996f84694f9c94f163448f8afcc3ddce095223`
+and its [retrospective decisions](customer-prototype-release-plan.md#current-rp-s3-retrospective--accepted-observation-handoff-without-live-entry-october-20-2026).
+The accepted executable/observation map binds retained assertions to application
+revision `673d1e9`; it neither installs external tooling nor authenticates
+supplied observations. Raw terminal output, enriched cross-scenario inputs and
+independently observed live provenance remain distinct. Never derive actual
+create/send captures from journal intentions or reconstruct missing evidence.
+
+Keep independent preparation executable: the existing transport owner with
+Scrum coordination locates the accepted containment-source handoff; DevOps
+verifies current module path, both source hashes and serialized resources before
+retained Metadata execution. Historical hashes alone do not establish that
+binding, nor prove the handoff absent everywhere. This is an existing safeguard,
+not a new receipt format or approval stage, and not a runner-coding dependency.
+
+Separately retain originating substantive ownership acceptance before sibling
+writes, reviewed actual loaded-root integration and original exact-join E2E.
+Continuation still requires verified common-bundle G1-G4 and a completed
+non-held initial parent. Isolation keeps its own release prerequisites, not a
+recovery dependency. No runtime contract, trusted receiver equality, root guard,
+UNKNOWN hold or application-enforced Blob-isolation limit changes here.
+
 ## Current RP-S2 retrospective — evidence availability is distinct from check scope (October 20, 2026)
 
 Consume accepted SprintReview `1e5eb2adc7714875e07ed69ffd2e2db0ab8c7877`

@@ -1,5 +1,138 @@
 # Customer hosted-session prototype: release plan
 
+## Current release continuation: existing-engine recovery and independent inventory (October 20, 2026)
+
+This is the current Product Owner release-planning direction. Consume accepted
+Architecture `cef352f4add49e893e3337184a741d8bd81436b1` and UserExperience
+`6b6975c0c00f5d44b4d50963403ac4fbd9ebe633`. Opened their original current-run
+audits `398b66fab09f84e4f0abfe91e6db45146ff9f8db04be59dcc1b333b86b8aa696.json`
+and `bf7fed7080f4685eb0623bd517724c7307b779e2b604edd14c3e541e2ceae98f.json`:
+Architecture's Product Owner/Red Team/Critic and UX's Product Owner/Critic
+all agree, taskComplete true, no unmet criteria for those bounded documents.
+Those votes do not transfer to this plan or establish executable recovery.
+This packet has no reconciled feedback or priorDispositions; the exact
+historical decisions in the accepted RP-S2 plan remain bounded provenance,
+not new requirements or waivers.
+
+Independently matched predecessor `71e45fd8-287f-40e8-89a9-d97021f8dee0`
+`result.json` SHA256
+`aeb5f59d0b591a3f71dbb9a74669965c53993446ba2312793ae1d51c4e1482ec`.
+It records completed RP-S1 and stops at
+`sprint/2/RP-S2/DevOpsWorkLoop` with needs-replan. Original Architect, Critic
+and Developer agree with that actionable report but each marks taskComplete
+false. Latest original RP-S2 E2E reviewers accept local integration PASS /
+release acceptance FAIL. Keep RP-S2 incomplete and RP-S3 live work pending;
+do not erase partial work or relabel these agreements as cloud-pass.
+
+Accepted lab `42a70533`, integration `576b613`, plan `03a8c284` and source
+handoff `0b6d99a` are consumed, not redispatched. The former operational-context
+replan is closed. Earlier pending ownership, runner, caller/profile correction
+and route-unobserved wording below is historical. This entry supersedes only
+that obsolete pending-work direction and the missing recovery-operation scope;
+all original customer criteria and accepted source remain intact. The single
+structured sprint contract below is updated in place, not a second dispatcher.
+
+### Priority, source trace and smallest joins
+
+The goal remains one **Hosted coordinator** repeatedly invoking **Hosted
+architect** and **Hosted reviewer** while retaining each child's real session
+within the same parent. Preserve the ten-component/five-flow/eighteen-step
+model, original three sprint IDs, full AC1-AC9/G1-G8 and original reviewers.
+Sprint order is not an implicit dependency; no full-sprint dependsOn is added.
+
+| Priority / bounded work | Canonical scope, source and accountable original owner | Required exit and receiving handoff |
+|---|---|---|
+| P0 / RP-S2-LINUX-ENGINE-READINESS source correction | **Guarded lab release toolchain**, **Exact-source guarded release**, `release-package`. Scrum scopes the existing Developer in the authorized lab feature sibling: `foundry-tf/multi-agent/Ensure-LinuxEngine.ps1`, `tests/test_release_linux_engine.py`, only necessary `Build-Demo.ps1` public test mounts and lab `.github/repo-index.md`. | Implement Architecture's explicit-root, same-selected-existing-engine, once-only supported startup, bounded command/readiness and fail-closed contract. Cover ready, recoverable, failed start/readiness, ambiguous/wrong/drifting selection, missing/unsupported tooling, crossed/invalid roots and hung commands. Original Architect/Critic review committed targeted/retained check evidence; no engine or build success follows from mocks. |
+| P0 / changed-source integration and original E2E | Same component/flow, `release-join`. Existing integration Developer owns precise reviewed feature reconciliation, scoped push/readback and actual loaded-tool root/byte equality. | Record exact commits and changed helper/build-test input hashes separately from unchanged runtime/package closure. Original E2E checks the changed exact join and affected application/repository/retained checks before DevOps execution. Do not replay the already accepted source-handoff assignment or claim an unchanged nine-file seal covers a new helper. |
+| P0 / actual Linux/package readiness | Same component/flow, `release-package`. Original DevOps executes the reviewed helper, then retained `Build-Demo.ps1` with explicit roots and existing absolute validated Python where applicable. | Responsive Linux engine plus actual Linux/amd64/hosting-Python image, source/image bindings and passing application/separate retained container checks, including required Linux-only cases. Startup exit zero is not readiness; readiness is not package PASS. Keep startup outside Build-Demo. Failure blocks package/publication, not inventory. |
+| P0 / independent RP-S2-FRESH-INVENTORY | **Guarded lab release toolchain** and **Trusted identity and private transport**, `release-package`. Original DevOps uses retained selected-WSL ReadOnly tooling and existing settings import. | Complete rollback-version/package availability and unresolved-effect inventory with current three-role/identity bindings, attributable route readiness and newly owned cleanup. Reuse inspected prior ReadOnly receipt only as bounded evidence; refresh operational facts before effects. This branch does not depend on the engine helper, identity-trial success or unused Windows-helper acceptance. |
+| P0 / single guarded publisher, ingress and G1-G4 | **Exact-source guarded release**, `release-package` / `release-discriminate`, then all **Remote design and review** steps. Existing serialized DevOps consumes BOTH actual readiness exits and original exact-join E2E. | Verify/build/preview/bind the exact final common bundle, reconcile each guarded publication outcome, prove trusted architect entry before reviewer, and obtain actual G1-G4 plus a completed non-held initial parent. No metadata/receipt/mock substitution. |
+| P1 / retained RP-S3 live proof and P2 / measured closeout | **Same-parent specialist continuation**, **Supported compute stop and resume**, **Separate-parent isolation** and `release-close`; retained application modules and `live_acceptance.py`. Existing DevOps and integration/closeout owners retain their assignments. | Use actual final bindings for two turns, confirmed once-only supported stop/resume without duplicates and independently scoped isolation. Update README measured status, AC ledger, exact final/rollback bindings and reviewed feature readback through existing closeout. Do not reopen accepted clarity/fixtures or invent new preparation work. |
+
+The predecessor's selected Docker Linux endpoint was unavailable; its root
+cause remains unknown. A supported `docker desktop start` command was found,
+but no checked-in recovery operation existed and no start was attempted.
+The new contract closes that construction gap, not a proven permission gap.
+No user-only action is established. Do not install/upgrade/reset/reconfigure
+Docker/WSL, switch contexts/engines, choose a remote daemon, alter environment
+selection, inspect credentials or start a build automatically on readiness
+failure. Bound individual child commands as well as polling; terminate only
+an attributable owned command when needed, never the existing engine.
+
+The opened predecessor records successful WSL private ReadOnly access to
+architect17/reviewer15/coordinator23, mixed coordinator content, zero inference,
+no attempted release and that operation's proven new-resource closure.
+Accepted Architecture independently inspected mirrored receipt
+`multi-agent-zip-f10b54918593481296391a9367f40719.json`. Product Owner consumes
+that attributed receipt finding, not fresh route execution. It does not prove
+rollback-package availability, historical cleanup, runtime health, ingress,
+continuity or final release. Keep historical UNKNOWNs, held parents, rollback
+assets and every uncertain external effect untouched.
+
+### Execution ownership, continuation and customer acceptance
+
+Scrum owns contract-first decomposition, exact path ownership, minimal edges,
+critical-path scheduling and named Git reconciliation. The existing
+`docs/customer-prototype-rp-s2-execution-sprint-plan.json` is accepted history:
+amend only its affected recovery/integration handoffs through existing sprint
+planning, preserving accepted siblings and remaining DevOps doneWhen criteria.
+This release plan does not dispatch tasks or authorize unowned lab writes.
+Keep original Architect/Critic implementation review, original E2E and original
+DevOps placement; these are existing gates, not additional approvals.
+
+Preserve separate `lab-linux-engine` / `lab-linux-stage` resources for actual
+local engine/stage mutation and `lab-hosted-release`, `lab-private-transport`,
+`lab-cli-context`, `lab-ssh-mount` for shared execution. One original DevOps
+publisher only; resource names are not OS/cross-run locks. Explicit source,
+reviewed tooling and imported operational roots remain distinct. Import only
+through unchanged `scripts/Use-Settings.ps1`; no private settings, infrastructure
+or permission changes, production/default profile, credential copying/symlinks,
+crossed roots, dirty canonical adoption, workflow/runtime/input edits or hidden
+fallback are included.
+
+RP-S3 approved independent source/evidence preparation may continue on accepted
+contracts while actual release execution is blocked. Accepted fixtures,
+specialist history and presentation already exist: do not redispatch them.
+Scrum audits any concrete remaining source gap for a feasible bounded split;
+absence of final live bindings blocks only dependent live operations. Follow-up
+needs a completed non-held initial parent. Isolation needs its own final-release
+and comparison bindings, not successful recovery. Waiting is incomplete and is
+appropriate only after feasible splits, independent backlog and bounded
+unlocking investigation are exhausted. They are not exhausted here.
+
+Customer release remains BLOCKED. Source acceptance/offline AC3 controls do not
+satisfy live AC1/AC2/AC4/AC5, the real AC6 demonstration, final AC7 package,
+AC8 delivered-ref closure or AC9 measured handoff. Account-wide Blob Contributor
+still provides application-enforced isolation, not malicious-host/storage-RBAC
+isolation. Preserve the original five-consecutive-no-new-progress accounting
+across runs; no new cap/reset or live-progress credit from this planning edit.
+Only a genuine supported authentication challenge warrants a real device
+URL/code; no ordinary internal scope decision is referred to the user.
+
+This turn owns only this ReleasePlan and repository navigation; no task code
+is integrated or abandoned. Existing integration/closeout must push/read back
+reviewed `0b6d99a` and subsequent intended refs and refresh stale README measured
+status without reopening accepted clarity. Commit explicit owned paths before
+review with the required co-author trailer; retain any abandoned task branches
+with durable feature-commit task/commit/reason accounting. No branch switching,
+amendment, broad staging, lock removal or force-push.
+
+Validation for this amendment is scoped to plan-contract/history preservation,
+canonical model references and public repository checks. Executed with the
+existing absolute validated Python 3.12.10: three unique complete sprint
+contracts, all five canonical flows/eighteen steps, no whole-sprint dependencies,
+unchanged RP-S3 and original doneWhen/exclusions/handoffs, preserved historical
+prose and exact two-path edit scope all passed. `scripts/Test-Repository.ps1`
+passed current index, 82 public files, public/private boundary, JSON, PowerShell,
+frontmatter and whitespace checks. Git's CRLF-to-LF notice is not a changed
+historical-content finding; preservation used explicit UTF-8/LF text comparison.
+No unchanged runtime
+suite, settings import, engine startup, authentication, cloud call, packaging,
+publication, inference or hosted stop/resume is claimed. Product Owner accepts
+the bounded plan for original Stakeholder/Architect/Designer/Critic review;
+their votes follow this response. Collective plan or release acceptance is
+not claimed.
+
 ## RP-S1 retrospective: inputs, measures and decisions (October 20, 2026)
 
 Product Owner retrospective deliverable, based on clean feature HEAD
@@ -262,6 +395,24 @@ requires its appropriate checks and repair.
 
 ```json
 {
+  "currentContinuation": {
+    "architecture": "cef352f4add49e893e3337184a741d8bd81436b1",
+    "userExperience": "6b6975c0c00f5d44b4d50963403ac4fbd9ebe633",
+    "acceptedApplicationSourceHandoff": "0b6d99a43146475974e28fabe41b8e80be815e17",
+    "acceptedLabSource": "42a70533c567a8aed29f0ca076c0b5d58381fc77",
+    "predecessorStoppedKey": "sprint/2/RP-S2/DevOpsWorkLoop",
+    "priority": "Existing Developer implements the bounded selected-engine recovery helper/tests and necessary retained build test mounts; original review, scoped integration and changed-join E2E precede original DevOps recovery/build.",
+    "independentWork": "Original DevOps completes selected-WSL rollback-package and unresolved-effect inventory now; unused Windows-helper acceptance and engine-helper construction are not its prerequisites.",
+    "publicationJoin": "Both actual Linux/package readiness and fresh selected-route/rollback/effect readiness must pass before the one original guarded publisher; actual G1-G4 and a completed non-held initial parent supply RP-S3 live work.",
+    "ownership": "Scrum assigns exact feature-sibling paths, minimal task dependencies, exclusive mutation resources and Git reconciliation through existing planning. No accepted implementation is redispatched.",
+    "preservation": "No new infrastructure/permission/private-settings or workflow/input changes; preserve historical UNKNOWNs, held parents, rollback assets, unrelated dirty work and original five-consecutive-no-progress accounting."
+  },
+  "deliveryState": {
+    "completedSprints": ["RP-S1"],
+    "partialSprints": ["RP-S2"],
+    "pendingLiveSprints": ["RP-S3"],
+    "basis": "Opened predecessor result 71e45fd8: original local E2E accepted PASS/release FAIL; stopped RP-S2 DevOps reviewers agree with the finding but taskComplete=false. No new sprint or customer-release acceptance."
+  },
   "sprints": [
     {
       "id": "RP-S1",
@@ -271,7 +422,7 @@ requires its appropriate checks and repair.
       "acceptanceCriteria": [
         "Retained two-turn fixtures assert stable actual parent and both hosted/framework child bindings and pins, exactly two child creations, both roles on both turns, fresh invocation responses, updated requirements and invalidated stale approval.",
         "Controlled offline architect/reviewer rejection/revision/review proves repeated same-specialist bindings; both specialists load persisted model history, with fresh-history and exact-known-response zero-send controls.",
-        "README and opt-in human stderr explain the invariant, useful current outputs and truthful status without changing stdout, machine contracts or acceptance parsing; existing clarity/closeout ownership replaces the stale ownership/write-block notice with the actual configuration and unmet-live status; privacy and control-character safeguards remain.",
+        "README and opt-in human stderr explain the invariant, useful current outputs and truthful status without changing stdout, machine contracts or acceptance parsing; existing clarity/closeout ownership refreshes stale measured status from accepted source and actual unmet operational/live gates without reopening clarity implementation; privacy and control-character safeguards remain.",
         "Applicable source checks pass for integrated changes. Preserve reviewed source and give an attributable supported identity assessment, fresh-inventory status and finite decision contract; unresolved selection is explicit, not a live PASS."
       ],
       "doneWhen": "The retained offline and clarity criteria are verified for relevant changed source and the bounded identity assessment has a concrete selected or unresolved handoff; no live acceptance is inferred.",
@@ -284,10 +435,10 @@ requires its appropriate checks and repair.
       "flows": ["guarded-release", "remote-collaboration"],
       "flowSteps": ["release-join", "release-package", "release-discriminate", "collaboration-bind", "collaboration-route", "collaboration-design", "collaboration-review", "collaboration-return"],
       "acceptanceCriteria": [
-        "Consume substantive originating ownership, runner and source-integration acceptance without redispatch. Existing Developer corrects explicit OperationalLabRoot propagation in the five affected retained entry points and callers, solely in newly assigned feature-sibling paths, preserving ApplicationRoot source and LabRepositoryRoot loaded-tool equality.",
-        "Correction coverage verifies legacy matched roots and distinct reviewed-tool/existing-context roots; rejects missing, relative, reparse, default or mismatched profiles and tenant/subscription divergence before effects; covers calibration, every affected caller, WSL mapping/azd selection, environment restoration, crossed-tool rejection and actual loaded-source equality.",
-        "Original Architect/Critic review the scoped correction and affected retained/application checks; designated integration joins reviewed exact roots/bytes/hashes, pushes scoped reviewed feature refs including accepted 1bd157d if absent remotely, and records readback before original local-script E2E revalidates the changed exact join.",
-        "Independent trusted inventory binds actual target, current/rollback versions, packages, identities, effective actions and unresolved effects. Any demonstrated necessary permission delta is scoped, documented and read back.",
+        "Consume accepted ownership, runner, operational-context callers, source integration and local E2E without redispatch. Existing Developer implements lab Ensure-LinuxEngine.ps1, tests/test_release_linux_engine.py and only necessary Build-Demo.ps1 public test mounts in precisely assigned feature-sibling paths; preserve explicit ApplicationRoot, reviewed LabRepositoryRoot loaded-source equality and existing operational-context separation.",
+        "Recovery validates the effective selected existing local Linux-engine endpoint without changing context/environment; returns ready without startup or invokes supported Docker Desktop startup once and bounds each command and same-endpoint readiness polling. Ambiguity, unsupported/missing tooling, selection drift, failed start/readiness and invalid roots fail closed without build/publication. Ready, recoverable, failure and hung-command regressions pass; startup exit zero is not readiness. No installation, host reconfiguration, engine/context substitution or automatic Build-Demo startup.",
+        "Original Architect/Critic review scoped correction commits and affected targeted/retained/application checks. Designated integration records changed helper/build-test hashes separately from unchanged runtime/package closure, verifies actual loaded roots/bytes, reconciles and pushes/readbacks reviewed feature refs including accepted 0b6d99a, then original local-script E2E validates the changed exact join before DevOps executes recovery and the retained Linux build.",
+        "Independent selected-WSL readiness and trusted inventory bind actual target, current/rollback versions, available rollback packages, identities, effective actions and unresolved effects with owned cleanup. Prior successful private ReadOnly access is bounded route evidence, not runtime health or complete inventory. Revalidate freshness before effects; inventory does not depend on engine correction, identity trials or unused Windows-helper acceptance. No new permission change is included.",
         "Final intended source passes required application/repository and affected retained checks plus actual Linux/amd64/hosting-Python package gates; validated existing Windows/WSL context, containment-source/resource readiness, immutable source/settings/ZIP closure and fresh preview bind guarded publication.",
         "A finite source-bound architect-before-reviewer trial selects a supported path only on actual trusted receiver evidence; preparation rejection, missing observation or architect-only entry is not both-role success.",
         "Exactly three healthy versions use one verified common bundle with rollback retained; a completed non-held initial parent proves actual remote accepted artifacts, private managed-identity Blob provenance and genuine Decision-1/final gates (AC1 and G1-G4)."

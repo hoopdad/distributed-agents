@@ -1,5 +1,19 @@
 # Repository index
 
+Existing-engine recovery release-plan freshness: based on accepted Architecture
+`cef352f4` and UX `6b6975c0`, with both original outcome audits opened.
+`docs/customer-prototype-release-plan.md` consumes completed RP-S1, preserves
+partial RP-S2 and pending RP-S3 live acceptance from inspected predecessor
+`71e45fd8/result.json`, and updates the single structured sprint contract.
+The current critical path is scoped Developer helper/tests/minimal build-test
+mounts -> original review/integration/changed-join E2E -> DevOps recovery and
+actual Linux/container gates. Independent WSL rollback/effect inventory
+continues now; both real readiness exits gate one publisher and actual G1-G4.
+Accepted context/runner/source/clarity work is not redispatched. Existing
+closeout owns reviewed-ref push/readback and measured README status. Canonical
+model, original live gates and stop accounting are unchanged; no added/deleted
+paths, runtime changes or execution claims. Older overlays retain history.
+
 Existing-engine recovery UX freshness: based on accepted Architecture
 `cef352f4` and its opened original Product Owner/Red Team/Critic audit.
 `docs/customer-prototype-ux.md` maps the recovery contract to retained Screen F:

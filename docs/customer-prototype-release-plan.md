@@ -1,5 +1,134 @@
 # Customer hosted-session prototype: release plan
 
+## Release Plan Loop recovery handoff — supplied trust and coordination (October 20, 2026)
+
+This Product Owner release plan consumes accepted Architecture
+`25d182245a1bb40b842f5787196bd8f8244c4a7d` and UserExperience
+`c5e7189252886a653daa42cbf9021f0cf59691b2`, the customer specification
+and the coordinator, specialist and client-release contracts in
+`docs/requirements`. Fresh application Git inspection found clean HEAD at
+the UX commit on `feature/customer-hosted-session-prototype`. This section
+is the current planning entry; older dated overlays retain audit history,
+not current missing-input assertions. Detailed RP-S1/RP-S2/RP-S3 contracts,
+doneWhen, exclusions and handoffs below remain in force.
+
+The outcome is still exactly three hosted roles: coordinator repeatedly calls
+the remote architect and reviewer, retaining each specialist's actual session
+within that parent. A final release needs all AC1-AC9/G1-G8. No plan, accepted
+failure report, healthy metadata, fixture result or package upload substitutes
+for that outcome.
+
+### Input dispositions and current evidence boundary
+
+Apply `["yaml-loops-v1:ArchitectureLoop","architecture-completion-status"]`
+only to the accepted architecture handoff and
+`["yaml-loops-v1:UserExperienceLoop","ux-completion-status"]` only to the
+accepted UX handoff. Both loops are agreed and stay closed. Their votes do not
+transfer to this ReleasePlan or accept downstream ownership, integration or
+release gates. No scope decision supersedes either disposition.
+
+The accepted architecture reports matching both supplied historical fingerprint
+fields to the user-accepted comparison input, plus local settings linkage.
+**The accepted trust input and evidence reference are available; do not request
+them again.** This is attributed input verification, not a fresh strict SSH
+result, authenticated cloud inventory or receipt authentication. DevOps uses
+the supplied value/reference with the retained strict wrapper and records
+the actual reached condition. A current comparison failure is not a missing
+user trust decision and never authorizes replacement trust.
+
+The supplied writer acknowledgement and integration-owner designation are
+explicit in-run coordination evidence for RP-S2-LAB-OWNERSHIP only. Developer
+uses them with the mirrored nonsecret recovery evidence in the originating
+review. They do not accept ownership or authorize runner writes by themselves.
+Architecture reports successful sibling Git inspection but incomplete denied
+resolver reads; clean registration is not exclusive ownership or loaded-source
+proof. This planning turn does not repeat private/sibling inspection or claim
+those gaps closed.
+
+### Prioritized closing work through existing owners
+
+| Priority / retained assignment | Concrete doneWhen and handoff | Exclusions |
+|---|---|---|
+| P0: RP-S2-LAB-OWNERSHIP / Developer; Scrum coordinates | Present bounded current branch/base/owned-path preservation and resolver/matched-root evidence, supplied designations and mirrored recovery comparisons to the original ownership reviewers; obtain substantive acceptance before runner writes. | No renewed designation request, canonical dirty-checkout writes, write probes, branch switching under writers or acceptance inferred from status alone. |
+| Independent P0: RP-S2-FRESH-INVENTORY / DevOps | Consume the supplied accepted fingerprint/reference, run retained strict prerequisites in verified dedicated sole-target context, and privately record exact current/rollback packages, versions, identities and held effects or a precise prerequisite stop. | No dependency on offline runner coding, new trust choice, public ingress, inference to invent inventory or historical UNKNOWN replay. |
+| P1: RP-S2-DECISION-RUNNER / Developer | After ownership acceptance, complete/review the retained eight-path sibling runner and offline fixtures against the accepted identity-selection contract; hand off actual commits and checks. | No cloud-inventory prerequisite for coding, second ledger, automatic path switch, receiver relaxation or expanded writable paths. |
+| P1: RP-S2-SOURCE-INTEGRATE / designated Developer | Reconcile reviewed application/lab task commits and actual loaded operational wrappers with matched explicit roots/bytes/hashes, joined checks and durable Git accounting; hand the exact join to original formal E2E. | A sibling commit is not operational installation. Preserve root guards and canonical dirt; if no safe reviewed join is possible, report the exact internal reconciliation action rather than bypassing it. |
+| P1: original E2E, then RP-S2-INGRESS-TRIAL and RP-S2-G1-G4 / DevOps | E2E validates the joined source through local scripts. DevOps joins trusted inventory, source/retained/Linux/package checks and fresh preview before guarded reconciled publication, bounded architect-before-reviewer ingress selection and actual G1-G4. | Predeployment FAIL can complete the E2E report, not cloud-pass. B is candidate source, not a live-selected path; A requires an observed supported correction. |
+| P2: existing RP-S3 work / DevOps, designated integrator and PO closeout | Consume a completed non-held common-bundle initial parent; prove follow-up, supported recovery and independent isolation, then exact delivery/push/accounting and truthful final reporting. | No continuation into absent/held initial state, hard-kill claim, fabricated observation, uncertainty-clearing retry or customer-ready label while criteria remain unmet. |
+
+Scrum Master retains task decomposition and assignment, file ownership,
+minimal actual dependency edges and Git reconciliation. This is a release
+contract, not a replacement SprintPlan or dispatch. Use only the invocation's
+eight-path tooling ownership after originating acceptance. Necessary supported
+permission remediation for the selected path is already approved when evidenced
+and documented with exact scope/rationale; no general infrastructure or identity
+replacement authority is added.
+
+### Sprints, acceptance and release handoff
+
+These unique IDs retain the existing increments, not a reset of accepted work
+or a cap on productive sprints:
+
+| Sprint ID | Goal | Acceptance / doneWhen | Handoff |
+|---|---|---|---|
+| RP-S1 | Evidence-ready source and understandable continuity | Preserve accepted two-turn both-role binding/pin, two-child creation, fresh-response/current-requirement/stale-approval assertions; controlled four-call revision and real specialist-history/fresh-history/no-resend controls; README/opt-in terminal contract and applicable source checks. Identity assessment may remain actionable unresolved, explicitly not live acceptance. | Reviewed source/fixture/UX commits and bounded supported identity assessment. Consume accepted work, repair only concrete gaps; no duplicate clarity or research implementation. |
+| RP-S2 | Supported repair and exact three-role remote collaboration | Original ownership acceptance precedes runner writes; reviewed actual loaded-root integration precedes formal E2E and dependent effects. Trusted inventory, final-source/retained/Linux-amd64-hosting-Python/package gates, exact previews and reconciled guarded publication establish one final common bundle, retained rollback and actual AC1/G1-G4: both remote roles, immutable accepted refs, private MI Blob provenance and genuine Decision-1/deterministic gates. | Exact reviewed source/package/version/identity/rollback bindings, supported selected path and a completed non-held initial parent. Ingress selection or an agreed unresolved report alone cannot meet this sprint's live goal. |
+| RP-S3 | Live continuity, recovery, isolation and customer delivery | Actual same-parent/both-role hosted/framework bindings and pins remain across queue follow-up; both roles run, responses/current outputs advance and no extra children appear. Once-only confirmed supported stop/resume preserves bindings/checkpoints/effects without duplicate sends. Separate parent has distinct children/artifact scope and excludes prior requirements. Real readable terminal demo, final exact checks, reviewed scoped feature push/accounting, bindings/limitations/owned cleanup and all AC1-AC9/G1-G8 pass. | Customer-ready handoff only on actual acceptance; otherwise exact unmet criteria, evidence scope and next supported action. Preserve historical unknowns, held parents, rollback and unrelated dirt. |
+
+Minimal critical edges remain ownership -> runner -> reviewed loaded-source
+integration -> formal E2E handoff and DevOps exact-package/publication gates.
+Trusted inventory is independent until the live decision joins it with the
+reviewed candidate/package. Only demonstrated necessary permission remediation
+adds its dependent edge. Final unchanged common-bundle G1-G4 supplies the initial
+parent -> follow-up -> once-only supported recovery. Separate-parent isolation
+needs final-release/initial-parent comparison evidence, not recovery success.
+The unchanged candidate bundle may be final if every gate passes; do not force
+an unnecessary second publication. Changed runtime/package inputs require fresh
+affected gates and evidence, never a silent sealed-stage edit.
+
+Only original DevOps deploys and owns cloud-pass; original E2E retains formal
+integration validation. Execute through retained local scripts, not GitHub
+Actions. Scrum assigns actual `lab-hosted-release`, `lab-private-transport`,
+`lab-cli-context`, `application-git-integration` and `lab-git-integration`
+exclusiveResources where those mutations are shared. Check actual owners;
+scheduler names alone provide no OS/cross-run isolation.
+
+Every task's reviewed code must reach authorized feature history or remain on
+a named branch with task/commit/abandonment reason recorded in a feature-branch
+commit message. Keep abandoned branches. Commit explicit owned paths only,
+preserve unrelated staged/dirty work and do not switch shared branches.
+Reconcile through existing sprint review/retro and release closeout, not a new
+approval stage.
+
+Continue all remaining artifacts if A/B selection is unresolved. Use existing
+Scrum reconciliation and Architect-advised PO decisions for material contract/
+architecture changes, not invented human needs-input. Genuine missing provider
+information or authentication requires the exact external action. Five
+consecutive rounds without reviewer-verified new progress stop blocked;
+productive rounds/sprints have no total cap. Repeated checks and prose are not
+new runtime progress.
+
+The Product Owner agrees with this bounded plan; original Stakeholder,
+Architect, Designer and Critic review remains required for this revision.
+Planning does not claim deployment or customer readiness. No cloud, transport,
+permission, inference, publication, push or stop/resume was performed here.
+Account-wide Blob Contributor remains application-enforced role/parent
+isolation, not storage-RBAC or malicious-host isolation. Private evidence and
+full identifiers remain outside customer Git/output; historical UNKNOWNs,
+held parents, rollback assets and historical cleanup uncertainty remain intact.
+
+### Verification of this planning revision
+
+The existing absolute canonical-lab Python 3.12.10 executable ran
+`Test-Demo.ps1 -Python <absolute-python> -LabRepositoryRoot <explicit-lab-root>`:
+dependency checking, **204 offline tests in 53.028 seconds**, and compilation
+passed (exit 0). `scripts/Test-Repository.ps1` passed the index, public boundary
+across **79 files**, JSON, PowerShell, context/frontmatter and whitespace checks.
+No dependencies were installed. Only the release plan and index changed.
+No retained full lab suite, Linux hosting-package gate, formal E2E or live test
+was run; none is certified by these Windows offline checks. These repeated
+checks and the planning delta are not new substantive runtime progress.
+
 ## Current RP-S3 retrospective — inspectable evidence and continuation entry (October 20, 2026)
 
 ### Inputs and measurement limits

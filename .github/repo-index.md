@@ -28,7 +28,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
 | Retained RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Accepted `74130a8` architecture/`cf017c9` design and `b13670e` source-check handoff; originating ownership, eight-path sibling runner and matched-root/Git integration remain unresolved; accepted outgoing application audit is consumed by RP-S3, not redispatched |
 | Current RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Accepted `cb85ce0` architecture/`1f24c9a` design and `dd7728c` retrospective; bounded originating ownership verification parallel with read-only retained validator/fixture-to-observation handoff, no duplicate accepted assertions; exact eight-path runner then actual loaded-root/Git integration; original DevOps strict trust, G1-G4, continuity, supported recovery, independent isolation and truthful delivery |
-| RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Recovery-entry review `ca4345d`: eight two-round accepted boundaries versus single-round planning, current exit-2 trust stop versus historical metrics, session-specific evidence access and bounded completion versus execution; existing-owner actions, no ownership reset or live waiver |
+| RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Current recovery-entry review `3503522`: eight two-round accepted boundaries versus single-round planning; qualified report agreement versus substantive ownership and actual loaded-source proof, attributed offline checks and mixed metadata versus live gates; existing-owner decisions and measurement limits, no ownership reset or live waiver; older overlays retain history |
 | Retained RP-S2 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Recovery-entry review `16a57b6`: consume accepted revision-bound outgoing audit once; distinguish substantive ownership/root proof, actual loaded integration and independent strict trust; qualified report/execution outcomes, original-owner closing actions and measurement limits, no new contract or live waiver |
 | Current RP-S3 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted review `0f2e627`: reuse executable/observation map; enriched proof versus raw capture and independent provenance; absent initial-parent gate, precise local-only DevOps attribution, originating evidence access and existing-owner actions; no duplicate implementation, metric invention or live waiver |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
@@ -40,6 +40,13 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+SprintRetroLoop current RP-S1 freshness: inspected clean authorized feature
+baseline `350352282f6defafc777dff5c6748d7fb2da3b59`; updated only existing
+Architecture, UserExperience, ReleasePlan retrospective sections and this
+navigation, no paths added/deleted. Supplied round counts, offline checks and
+DevOps metadata remain attributed; no private/sibling/cloud inspection or
+runtime repair. Records existing-owner process improvements without reopening
+accepted work, supplying ownership acceptance or waiving integration/live gates.
 SprintReviewLoop current RP-S1 freshness: inspected clean authorized feature
 baseline `b74b84edb6c05fb4dc7f58ba7f88925e2402ddc9`; added the current
 review/backlog section to the existing ReleasePlan and refreshed this navigation,

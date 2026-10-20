@@ -1,5 +1,82 @@
 # Customer hosted-session prototype: release plan
 
+## RP-S1 retrospective — workflow quality and blocked outcomes (October 20, 2026)
+
+**Product Owner decision:** retain accepted RP-S1 source/clarity and bounded
+identity-assessment handoffs; improve status communication and evidence handoff
+through existing owners, without changing architecture, acceptance or authority.
+This section consumes accepted SprintReview
+`350352282f6defafc777dff5c6748d7fb2da3b59` and the supplied originating
+outcomes. It supersedes no prior disposition. Earlier retrospective overlays
+are dated history, not fresh evidence for this recovery-entry sprint.
+
+### Inputs and measurement limits
+
+| Input / observable measure | Finding and limit |
+|---|---|
+| Supplied current loop round counts | Architecture, UX, ReleasePlan, SprintDesign, SprintArchitecture, current-source checks, E2E and SprintReview each took two rounds: eight accepted boundaries with a status-only completion correction. SprintPlan took one round. This is observed communication churn, not eight new implementation advances or measured runtime defects. |
+| Unresolved work | Ownership has four reported rounds and remains substantively incomplete; DevOps has three and remains incomplete at cloud-pass level. These counts are not durations, failure rates or the consecutive no-progress counter. Do not sum them to reset or advance another originating stop. |
+| Source checks | Developer reports 204 Windows offline tests in 47.262 seconds; E2E reports a separate 204-test run in 40.207 seconds. Both report repository checks over 79 public files. Results are attributed prior executions, not rerun here or final joined-source/Linux/package proof. The Proactor transport ResourceWarning remains disclosed, not repaired or counted as a demonstrated runtime defect. |
+| Error / release outcome | Accepted E2E reporting retains FAIL and `joinedOperationalImplementationVerified=false`. The three bounded DevOps reports are complete, while ingress and identity selection remain unexecuted/unselected. Mixed deployed metadata and zero inference do not prove remote collaboration or a final common bundle. |
+| Missing metrics | No reliable aggregate tool-error denominator, communication latency, reviewer effort, deployment success rate or customer usability timing was supplied. Do not invent percentages, elapsed totals, warning-free execution or cloud observations. |
+
+What worked: resource-disjoint source checks continued despite the ownership
+stop; existing continuity/history/revision fixtures were reused rather than
+duplicated; reviewers accepted accurate negative reports without waiving cloud
+tests. What did not work: already-satisfied deliverables repeatedly waited on
+stale owner status, and ownership summaries/coordination were not substitutes
+for reviewer-readable actual evidence. Qualified report agreement must never be
+mistaken for substantive task acceptance.
+
+### Decisions and observable follow-through
+
+| Improvement / artifact | Existing owner and closing action | Observable result in the existing loop |
+|---|---|---|
+| Acceptance versus execution / Architecture | Architect retains distinct designation, substantive ownership acceptance and actual loaded-source proof; existing ownership Developer supplies the actual external capture or restores already-authorized read access. | Originating Architect/Critic can assess resolver contents plus attributable branch/HEAD/base, eight-path status, owner-specific hashes/line-ending explanation and matched/crossed-root results. Until accepted, task remains incomplete and runner blocked. No new approval stage or write probe. |
+| Precise blocked language / UserExperience | Designer/Developer consume the retained screens and operator wording separating accepted deliverable, execution outcome and existing closing owner/action. | Existing handoff says demonstration BLOCKED, E2E FAIL and operational join unverified; no invented successful call rows, private identifiers, parser changes or renewed authority request. No new renderer or duplicate fixtures. |
+| Close satisfied boundaries once / ReleasePlan | Product Owner and Scrum Master consume original reviewer votes and reconciled dispositions in the existing loop; correct owner status once the actual originating condition is met. | Do not redispatch accepted reports, rerun unchanged checks or create artificial commits merely to acknowledge supplied agreement. Qualified ownership/DevOps votes retain their explicit incomplete status. |
+| Evidence-bound integration / ReleasePlan | Designated Developer reconciles reviewed task commits and actually loaded roots/bytes/hashes, preserving unrelated work and retained branches. | Original E2E receives the subsequent exact join and durable task/branch/commit accounting, not an application-only pass or a sibling commit treated as installed tooling. |
+| Preserve real release gates / ReleasePlan | Original DevOps verifies current trust/inventory and rollback assets, exact-source/retained/Linux-amd64/hosting-Python/package gates, then serialized guarded publication/live tests when the join is ready. | Actual source/package/version and cloud outcomes are recorded for exactly three roles. RP-S3 continuity/recovery begins only from completed non-held initial state; separate-parent isolation retains its own evidence. No blind replay or common-bundle inference from metadata. |
+
+These are refinements to existing handoffs, not new task IDs, scheduling
+authority, execution prerequisites or reopened implementation assignments.
+Scrum Master retains decomposition, minimal dependency edges, exclusive release
+resources and assignment of Git reconciliation. No material scope/contract
+change requires internal replanning; no new human permission is requested.
+The existing evidence-access stop remains an actionable external condition.
+
+### Exact dispositions and preservation
+
+Keep accepted source checks closed under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S1-CURRENT-SOURCE-CHECKS/AssignedWorkDeveloperLoop","current-source-checks-completion-status"]`.
+Keep ownership incomplete and runner blocked under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`;
+supplied designations are not substantive acceptance. Preserve E2E reporting
+completion **with FAIL** under
+`["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-report-completion-status"]`.
+Keep bounded reports complete under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-bounded-assessment-completion-status"]`
+and enclosing DevOps incomplete under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-exact-release-cloud-pass"]`.
+Keep accepted SprintReview closed under
+`["yaml-loops-v1:sprint/1/RP-S1/SprintReviewLoop","sprint-review-completion-status"]`.
+Architecture, UX, ReleasePlan, SprintDesign and SprintArchitecture completion
+dispositions remain confined to their exact originating accepted deliverables;
+none transfers votes to this retrospective or passes execution gates.
+
+Preserve historical UNKNOWNs, held parents, rollback assets, unrelated dirty/
+staged work, retained branches, cleanup uncertainty and originating no-progress
+history. AC1-AC9/G1-G8, final/rollback bindings and customer readiness remain
+unestablished. This retrospective performs no private/sibling evidence recovery,
+cloud operation, runtime repair, push or comprehensive task-code reconciliation.
+Its application entry baseline was clean authorized feature HEAD `3503522`.
+Documentation checks are recorded in the owner report, separately from supplied
+historical tests. No runtime progress is claimed for these process decisions.
+
+Product Owner agrees with this retrospective deliverable. Scrum Master, Critic,
+Architect, Red Team, Designer and Developer assess it in the original
+SprintRetroLoop; their votes are not inferred from earlier loops.
+
 ## Current RP-S1 sprint review — bounded handoffs and blocked demonstration (October 20, 2026)
 
 **Workstation-to-cloud demonstration: BLOCKED; customer-ready: no.**

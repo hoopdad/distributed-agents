@@ -1,5 +1,30 @@
 # Customer hosted-session prototype: release architecture
 
+## RP-S1 retrospective — acceptance is not execution (October 20, 2026)
+
+The current [retrospective decisions](customer-prototype-release-plan.md#rp-s1-retrospective--workflow-quality-and-blocked-outcomes-october-20-2026)
+consume accepted SprintReview `350352282f6defafc777dff5c6748d7fb2da3b59`.
+This is a process clarification, not a reopened architecture acceptance or
+changed runtime contract. Earlier dated overlays retain their original scope.
+
+Carry three distinct facts in the existing ownership/integration handoff:
+supplied writer designation, originating substantive ownership/root acceptance,
+and actual loaded operational source. A clean sibling or matching historical
+trust field cannot supply the latter two. Existing Developer supplies actual
+resolver contents, attributable Git/path/hash observations and source-bound
+matched/crossed-root results outside customer Git; originating Architect/Critic
+assess them before runner writes. Do not repeat denied inspections or replace
+the capture with another summary. Preserve `LAB_TOOL_OWNER_MISMATCH`.
+
+Designated integration Developer then joins reviewed commits with actual loaded
+roots/bytes/hashes and durable task/branch/commit accounting. Original E2E checks
+that subsequent exact join; original DevOps retains exact-package and cloud-pass
+gates. These are existing dependencies, not an added approval stage. Independent
+accepted source checks and bounded reports stay closed. No identity path is
+selected, no equality guard relaxed, and no historical UNKNOWN or held parent
+is cleared by retrospective agreement. Account-wide Blob access remains
+application-enforced isolation, not malicious-host or storage-RBAC isolation.
+
 ## Architecture Loop recovery handoff — accepted trust input (October 20, 2026)
 
 This invocation began on clean application `a1bca5d` on

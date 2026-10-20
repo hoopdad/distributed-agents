@@ -1,5 +1,31 @@
 # Customer hosted-session prototype: user experience
 
+## RP-S1 retrospective — communicate two separate outcomes (October 20, 2026)
+
+The current [retrospective](customer-prototype-release-plan.md#rp-s1-retrospective--workflow-quality-and-blocked-outcomes-october-20-2026)
+consumes accepted SprintReview `350352282f6defafc777dff5c6748d7fb2da3b59`.
+Retain accepted README, Screens A-D and opt-in human stderr with unchanged
+stdout/parser behavior. This clarification adds no terminal feature or evidence
+schema and does not reopen UX acceptance.
+
+In existing operator handoffs, state bounded deliverable acceptance separately
+from execution outcome and its closing action. For this sprint: "Source checks
+and failure reporting accepted; demonstration BLOCKED, E2E FAIL, operational
+join unverified. Existing ownership Developer supplies actual nonsecret capture
+or restores already-authorized read access for originating assessment; runner
+and integration follow substantive acceptance." Do not describe the condition
+as missing writer designation, a new trust choice or a newly observed receiver
+failure. Supplied trust/reference availability is not current SSH success.
+
+Do not turn the metadata-only mixed deployment into successful specialist call
+rows, alias-based continuity proof or a customer-ready demonstration. Preserve
+useful current design/review output when actually available, while held/invalid
+outcomes override success-looking content. Follow-up requires a completed,
+non-held initial parent; uncertainty is not an invitation to resend. Keep full
+bindings, private roots, transcripts and trust evidence out of customer output.
+The existing Designer/Developer handoff applies this wording; no duplicate UI,
+fixture implementation or usability-success measurement is requested.
+
 ## Current RP-S3 retrospective — show the reached boundary, not implied readiness
 
 Accepted SprintReview `0f2e6276bb53f84605d745db24cafd1991133d21`

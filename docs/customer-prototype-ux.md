@@ -35,36 +35,57 @@ DevOps live gates remain with their original owners. A call ID is never a
 delegated user identity. Continue the UX/artifact handoff while selection is
 unresolved; do not present either path as a working repair.
 
-### October 20 candidate-to-customer handoff
+### October 20 candidate-to-customer handoff: current source reconciliation
 
 Reconciled against accepted architecture commit
-`0a244702c7ccf01f1916c4b3a2580346ffb02fea`, with a clean application
+`cde76380c9c41201f19aedf4b290958c95472689`, with a clean application
 worktree on `feature/customer-hosted-session-prototype`. Apply prior reference
-`["yaml-loops-v1:ArchitectureLoop","architecture-loop-status-reconciliation"]`
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-agreed-deliverable"]`
 only to that architecture agreement. The integrated README, terminal screens
 and continuity fixtures remain retained work, not new implementation tasks.
 This clarification adds no CLI option, public event or evidence ledger.
 
-The architecture's specialist-only B client and finite decision runner are
-downstream implementation contracts, not currently runnable customer features.
+The specialist-only B client is implemented in `3aca5dc`, not live-selected.
+Current source constructs B unconditionally; there is no runtime A/B selector.
+The finite decision runner remains a downstream Developer implementation
+handoff, with original DevOps owning publication and trial execution.
 The existing [offline identity handoff](identity-candidate-handoff.md) has no
 live mode; its exit 2 / `unresolved` result must not be described as a failed
 customer conversation or a selected repair. Do not invent a live runner command
 in the README before the retained scripted entry point exists.
 
+Before a trial, require the architecture's reviewed scenario/source/package/
+actual-version join. A `B-candidate` label needs the implemented B source and
+its exact package; `A-correction` needs its own evidenced corrected source.
+Relabeling unconditional B as A is not a supported customer choice. A join
+rejection happens before trial-parent creation and must not be described as
+an attempted remote call. These operator classifications do not add terminal
+controls or replace the existing machine delegation/result contract.
+
 Keep operational selection and customer release status distinct:
 
 | Operator evidence | Customer-facing interpretation / action |
 |---|---|
+| Scenario/source/package/version mismatch before dispatch | Trial preparation rejected; no trial parent or remote attempt. Correct the joined inputs through existing owners, not a terminal path switch. |
+| Local resource setup rejects captured identity/scope/header input | Local preparation rejected before specialist dispatch. Do not claim absent receiver identity, denied permission or a remote failure. |
 | Offline candidate verified; selection `unresolved` | Local candidate checks only; live collaboration remains unverified. Preserve the historical status notice. |
 | Trusted architect entry only; reviewer unreached | Partial decision evidence, not three-role collaboration. State reviewer unreached; do not offer the two-turn demo as verified. |
 | `selected-A` or `selected-B` with both receiver checks | Identity-path decision only. E2E/DevOps must still establish the final common bundle and AC1-AC9/G1-G8 before a customer-ready claim. |
-| Missing/changed principal, version drift, unknown effect or held trial | Preserve the trial and exact-response evidence. No automatic path switch, retry, fresh-parent workaround or success banner. |
+| Observed remote receiver rejects principal/binding | Report only the reached role and observed gate; preserve private exact-response evidence and hold. No automatic path switch, retry or success banner. |
+| Missing receiver observation, version drift, unknown effect or held trial | Outcome remains unknown/unverified, not an observed receiver failure. Preserve any created trial and effect state; no retry or fresh-parent workaround. |
 
 These are handoff interpretations, not extra terminal banners or a replacement
 machine schema. Share only sanitized reached/unreached/result classifications;
 exact bindings, permission readback and evidence locators stay private.
 Existing human-view output continues to describe observed finalized records.
+
+The current human view has no preparation-phase records to project. On a
+pre-dispatch failure, retain its existing allowlisted diagnostic/nonzero exit
+and do not fabricate role rows or a successful summary. The retained runner's
+sanitized report supplies the finer local-versus-observed classification.
+Historical README `NATIVE_HOST_PRINCIPAL` remains labeled historical until
+fresh measured release evidence changes it; it is not the diagnosis of every
+new local rejection or missing result.
 
 A deliberately published candidate uses a **fresh synthetic trial parent**;
 it does not upgrade old pinned conversations. Never direct the customer to
@@ -334,6 +355,28 @@ Verification checklist for implementation review:
   comparison, limitations and private exact release/rollback evidence.
 
 ## Validation of the October 20 handoff
+
+The current source reconciliation above was checked against architecture
+`cde7638`, the derived client/release contract and the existing terminal
+render/finalization path. It changes only this UX document: implemented B
+source is distinguished from live selection, and pre-dispatch rejection is
+distinguished from observed receiver failure or an unknown outcome. Retain the
+existing screens, tools, accessibility direction and implementation handoffs.
+Original Product Owner and Critic agreement on this reconciliation remains
+to be collected by this User Experience Loop; architecture agreement does not
+supply those votes. No live operation or runtime change is claimed.
+
+Using the existing absolute validated Python 3.12.10 executable with explicit
+lab root, `Test-Demo.ps1` passed dependency checking, **192 offline tests in
+25.478 seconds**, and compilation. `scripts/Test-Repository.ps1` passed index,
+public-boundary (**74 public files**), JSON, PowerShell, context and whitespace
+checks. No dependencies were installed. No lab source changed; its retained
+full suite and Linux hosting-package gates were not run. No settings import,
+cloud inventory, permission change, publication, inference or stop/resume
+was performed. These local checks do not establish live identity selection
+or AC1-AC9/G1-G8 release acceptance.
+
+### Previous handoff checks (not rerun evidence)
 
 Using the existing absolute Python 3.12.10 executable and explicit lab root,
 `Test-Demo.ps1` passed dependency checking, **186 offline tests in 20.490

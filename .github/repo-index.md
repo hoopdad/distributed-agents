@@ -1,5 +1,16 @@
 # Repository index
 
+Scoped packaging-caller amendment freshness: based on application feature
+`f4ec1496` and read-only committed lab sibling `d0073536`. Opened original
+SprintArchitecture agreement and scoped-replan/reconciled-feedback audits.
+The current sprint architecture and client/release tier now explicitly include
+`foundry-tf/multi-agent/bundle_package.py` in the existing operational-context
+assignment's necessary caller boundary, for Scrum's one-path ownership update.
+Preserves canonical model, coordinator/specialist contracts and the outer plan;
+no added/deleted paths or lab writes. Partial validation helpers are not wired
+or execution-ready. Same Developer completes callers/checks before original
+review, integration, changed-join E2E and serialized DevOps/live gates.
+
 Read this index before searching. Refresh the inventory with
 `scripts\repo_index.py`; `--check` fails on drift. Only public Git-visible files
 are indexed; ignored state, dependencies and external lab files are excluded.

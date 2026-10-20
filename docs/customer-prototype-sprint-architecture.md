@@ -1,5 +1,110 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Scoped amendment: operational-context packaging caller (October 20, 2026)
+
+This amendment changes only the affected release-tier ownership handoff for
+`RP-S2-OPERATIONAL-CONTEXT`; the cumulative RP-S1/RP-S2/RP-S3 design below
+remains in force. Inspected clean application feature HEAD
+`f4ec1496c6f59cb08142c3b875deefdf695de30c` and registered lab feature-sibling
+HEAD `d0073536c2969e885bdcc767ddccbebd7deda7d5`. Opened the original
+SprintArchitecture outcome `b785b84135b5bd353d7281c42469fa022bc3b02511ddacb7296463f1a311f66f.json`
+and scoped-replan / reconciled-feedback audits
+`da4ef440c2bfcab7052365c64dcd6bdf5cc3b8ec3b11326d98e7cd277dc91885.json` /
+`ed4b8353a33c62428743c9ca036041095b8925471555ea749ab898abce2ec0cb.json`
+in this run's existing workflow context. Original Product Owner/Critic/Red Team
+accepted architecture `5906ee3`; original Architect/Critic agree with the
+Developer's subsequent **needs-replan**, explicitly not task completion.
+This amendment does not claim their votes for the new architecture disposition.
+
+### Decision and exact acceptance boundary
+
+Apply these originating references as one bounded set; none is superseded:
+
+- `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-OPERATIONAL-CONTEXT/plan-round/2/AssignedWorkDeveloperLoop","operational-context-package-caller-ownership"]`
+- `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-OPERATIONAL-CONTEXT/plan-round/2/AssignedWorkDeveloperLoop","operational-context-caller-completion"]`
+- `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-OPERATIONAL-CONTEXT/plan-round/2/AssignedWorkDeveloperLoop","operational-context-final-checks-handoff"]`
+
+**Architect disposition:** include
+`foundry-tf/multi-agent/bundle_package.py` in this same Developer assignment's
+explicit writable paths, solely to propagate and validate the existing
+operational-context contract. Existing Scrum Master records that one-path
+ownership addition in the scoped replacement assignment; do not change the
+outer plan or introduce a packaging rewrite, new task owner or approval stage.
+Use the already-owned test paths for required regressions. Retain the original
+doneWhen, exclusions, original Architect/Critic review and
+`RP-S2-CONTEXT-INTEGRATE` handoff. The same Developer continues from the retained
+partial commit; no accepted work is redispatched.
+
+The two originating SprintPlan dispositions
+`["yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop","sprint-plan-output-shape"]` and
+`["yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop","sprint-plan-original-dispatch"]`
+remain satisfied within their planning output/dispatch boundary. They are not
+new architecture criteria, waivers or reasons to reopen the accepted plan.
+
+### Technical basis and unchanged cross-tier contract
+
+Read-only inspection of committed `bundle_package.py:package()` confirms it
+sets `repo = roots.lab` and rejects `AZURE_CONFIG_DIR` unless it equals
+`repo/.azure-cli/wsl`, before account readback and azd prerequisite checks.
+Changing the five PowerShell entry points alone therefore cannot support
+distinct tool and operational roots. This is an omitted necessary caller,
+not a credential, permission, authentication or provider diagnosis.
+
+Partial commit `d0073536` adds
+`Resolve-ReleaseOperationalContext -Roots <resolved-tool-roots> -OperationalLabRoot <existing-context-root> [-RequireWsl]`
+and `ReleaseRoots.operational_context(value=None, wsl=False)`, with synthetic
+root validation tests. These are foundations, not wired release interfaces.
+No proposed operational flag is a demonstrated customer command.
+
+For `bundle_package.py` as for every affected caller, validate/select the
+existing dedicated operational context under the three-root contract below;
+do not derive the WSL profile from tool-source ownership. Preserve selected
+`LabRepositoryRoot` / `roots.lab` for reviewed source loading, resolver/module
+ownership, package-source binding and loaded-source equality. Operational
+registry/imported scope equality, dedicated profile validation, actual account
+readback, project/region/model/target checks and azd selection remain required
+before effects. Do not merely remove the profile check or reassign the tool
+root to the operational root. Operational private paths stay outside source,
+stages, bundles and public evidence; preserve all uncertain-attempt/replay holds.
+
+The same Developer must finish the five entry points and affected callers,
+including this packaging caller, calibration, operational private-path
+exclusions, WSL profile/azd propagation and success/failure environment
+restoration. Required caller tests must exercise matched/distinct contexts and
+reject invalid roots/profiles/scope before effects, while retaining crossed-tool
+rejection and actual loaded-source equality. Run targeted, retained and required
+application/repository checks on final committed caller-integrated source.
+Resolve the reported native/retained fixture import collision with supported
+fixture binding; keep originating justification for exclusions and never count
+skips as completed Linux/native coverage. Earlier owner-reported passing tests
+do not establish caller completion and are not rerun here for progress credit.
+
+### Model, tiers and receiving owners
+
+The authoritative `solutionModel` remains the referenced
+[Architecture model](customer-prototype-architecture.md#solutionmodel):
+ten components, five flows, eighteen steps, unchanged IDs and support links.
+Only **Guarded lab release toolchain** (`release-toolchain`) and its shared
+**Trusted identity and private transport** (`identity-boundary`) boundary are
+refined, in **Exact-source guarded release** (`guarded-release`) steps
+`release-join` / `release-package`. The
+[client/release tier amendment](requirements/client-release/architecture.md#scoped-operational-context-packaging-caller-amendment)
+records the implementation boundary. Coordinator and specialist contracts
+below are unchanged; there is no hosted runtime, session or identity-path change.
+
+Scrum returns a self-contained scoped replacement graph for this assignment;
+it does not require later DevOps work before implementation. After the same
+Developer's final scoped commits and original reviews, designated integration
+receives exact commits, caller inventory, supported invocation contract,
+root/source hashes, checks and limitations. Partial `d0073536` alone is
+**not execution-ready**. Original changed-join E2E then serialized DevOps
+Linux/common-package/publication/live gates remain unchanged; independent
+preparation remains independent. README correction `f4ec1496` is already an
+accepted handoff, not new clarity work. Preserve accepted ownership/runner/
+integration, historical UNKNOWNs, held parents, rollback assets, unrelated
+work and original five-consecutive-no-progress semantics. No human-only action
+or operational readiness is established by this architecture amendment.
+
 ## Sprint architecture entry: RP-S1 canonical continuity contracts (October 20, 2026)
 
 The current packet selects **RP-S1**, not the older RP-S3 overlay below.
@@ -13,9 +118,11 @@ supplied outcome JSON files under the application's workflow context:
 their original reviewers record `agree=true`, `taskComplete=true` and no
 unmet criteria for those bounded artifacts. Those votes
 do not transfer to this SprintArchitecture or establish live execution.
-The packet supplies no completed sprints, assignments, separate blocked-decision
-list, reconciled feedback or prior dispositions. Historical overlays retain
-their originating boundaries; they are not newly imposed acceptance demands.
+That entry's original packet supplied no completed sprints, assignments, separate
+blocked-decision list, reconciled feedback or prior dispositions; the scoped
+amendment above now consumes the subsequent bounded dispositions. Historical
+overlays retain their originating boundaries; they are not newly imposed
+acceptance demands.
 
 ### solutionModel and cumulative scope
 

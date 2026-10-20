@@ -1,5 +1,40 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Scoped operational-context packaging caller amendment
+
+Consume the [scoped sprint amendment](../../customer-prototype-sprint-architecture.md#scoped-amendment-operational-context-packaging-caller-october-20-2026)
+and its three exact originating operational-context disposition references.
+Within **Guarded lab release toolchain** (`release-toolchain`) and shared
+**Trusted identity and private transport** (`identity-boundary`), only
+**Exact-source guarded release** steps `release-join` / `release-package`
+are affected. Canonical component/flow IDs, terminal, coordinator and
+specialist/session contracts are unchanged.
+
+Architect includes `foundry-tf/multi-agent/bundle_package.py` as the one necessary
+ownership addition to the same `RP-S2-OPERATIONAL-CONTEXT` Developer assignment;
+Scrum records the scoped replacement without modifying the outer plan.
+Committed `package()` still independently requires
+`AZURE_CONFIG_DIR == roots.lab/.azure-cli/wsl` before account/azd checks.
+The existing three-root contract must reach this caller as well as the five
+entry points below. Validate the operational root/profile and imported/registry
+scope, retain account/target/azd checks, and keep `roots.lab` bound to reviewed
+tool source. Never solve the mismatch by deleting a guard, loading operational
+source, copying credentials or changing private settings. Keep operational
+private paths out of packages and retain uncertain-effect/no-replay controls.
+
+Partial lab commit `d0073536c2969e885bdcc767ddccbebd7deda7d5` contains validation
+helpers/tests only; caller integration is unfinished and not execution-ready.
+The same Developer completes propagation, calibration, private-path exclusions,
+WSL selection/restoration and final positive/negative caller regressions in
+already-owned tests. Required targeted/retained/application/repository checks
+cover final committed source, with fixture binding and justified exclusions,
+not skipped-coverage or Linux/live claims. Original Architect/Critic then review;
+integration receives exact commits/callers/interface/root-source hashes/check
+limitations before original changed-join E2E and serialized DevOps gates.
+No new approval stage or later-DevOps dependency precedes implementation.
+Consume accepted README status commit `f4ec1496` without redispatch; preserve
+all accepted source handoffs, UNKNOWNs, stops and downstream AC1-AC9/G1-G8.
+
 ## RP-S1 canonical client-release contract
 
 Consume the [current sprint architecture](../../customer-prototype-sprint-architecture.md#sprint-architecture-entry-rp-s1-canonical-continuity-contracts-october-20-2026)

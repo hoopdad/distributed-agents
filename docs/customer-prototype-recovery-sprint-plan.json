@@ -1,78 +1,54 @@
 {
   "sprintId": "RP-S1",
-  "goal": "Evidence-ready source and understandable continuity, with an actionable supported identity baseline or unresolved finding.",
+  "goal": "Preserve evidence-ready source and understandable, directly testable specialist continuity.",
   "featureBranch": "feature/customer-hosted-session-prototype",
-  "baseline": "302d8866d3c4f4c4d61b7c63c7f4d24196da664d",
+  "baseline": "988893c382d734d5d29b4bdcfee2a1cfaf2e92a5",
   "acceptedInputs": {
-    "Architecture": "25d182245a1bb40b842f5787196bd8f8244c4a7d",
-    "UserExperience": "c5e7189252886a653daa42cbf9021f0cf59691b2",
-    "ReleasePlan": "0d0f17b928ba99517551ba20a0c0201801148d9d",
-    "SprintDesign": "a1e85442a90a2333bedd6e4beed1d8d849a68ad9",
-    "SprintArchitecture": "302d8866d3c4f4c4d61b7c63c7f4d24196da664d"
+    "Architecture": "35d526ae3a9e722ebe633ba60e2ca572182a5d1e",
+    "UserExperience": "c70571186564cf293a63b00f08511a560b7deb11",
+    "ReleasePlan": "8343d48b310e4d79b7d1de7b133f483475c054f7",
+    "SprintDesign": "59a6a63c523ea3a42e89e04d751c5c063af72987",
+    "SprintArchitecture": "988893c382d734d5d29b4bdcfee2a1cfaf2e92a5"
   },
+  "priorDispositions": [],
+  "feedback": null,
   "scope": {
-    "current": "Retain accepted continuity, revision, history, candidate, presentation and scenario assertions. Check the current source and provide fresh inventory plus a supported baseline or actionable unresolved finding.",
-    "earlyStart": "Existing release architecture permits useful runner and reviewed integration preparation for RP-S2. These tasks do not make successful ingress or final deployment RP-S1 exit requirements.",
-    "history": "This current recovery-entry assignment supersedes dispatch lists in older sprint-plan files, which remain audit history. No historical stop, held effect or accepted implementation is reset. No completedSprints were supplied.",
-    "future": "RP-S2 still owns actual common-bundle remote collaboration and G1-G4. RP-S3 owns live continuity, supported once-only stop/resume, independent isolation and complete AC1-AC9/G1-G8 closure. Selection alone passes none of those compound gates."
+    "current": "RP-S1 retains the implemented continuity, revision, direct-history and presentation fixtures. Assign current-source validation and preservation/exclusion of unowned workflow context, plus an attributable supported identity assessment. No duplicate renderer, specialist client or fixture implementation.",
+    "earlyStart": "Carry the existing originating ownership recovery, finite runner and explicit source integration assignments forward as RP-S2 preparation. Successful runner implementation or live ingress is not a new RP-S1 exit criterion.",
+    "future": "Formal joined-source validation remains in EndToEndTestLoop. DevOps Work Loop retains deployment and cloud-pass. RP-S2 retains exact common-bundle G1-G4; RP-S3 retains live continuity, supported recovery, independent isolation and final AC1-AC9/G1-G8 closure.",
+    "history": "This dispatch list supersedes the preceding version of this file, retained in Git history, and older sprint dispatch files only for this invocation. It does not supersede originating acceptance, stopped ownership history, unknown effects or accepted implementation."
   },
-  "dispositionsApplied": [
-    {
-      "reference": "[\"yaml-loops-v1:ArchitectureLoop\",\"architecture-completion-status\"]",
-      "application": "Retain accepted architecture and matched operational-wrapper boundary; no renewed architecture experiment or borrowed SprintPlan vote."
-    },
-    {
-      "reference": "[\"yaml-loops-v1:UserExperienceLoop\",\"ux-completion-status\"]",
-      "application": "Retain accepted README and opt-in human stderr; no duplicate presentation assignment or machine-contract change."
-    },
-    {
-      "reference": "[\"yaml-loops-v1:ReleasePlanLoop\",\"release-plan-completion-status\"]",
-      "application": "Retain three sprint contracts, original execution owners and live acceptance; planning is not implementation."
-    },
-    {
-      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop\",\"sprint-design-completion-status\"]",
-      "application": "Consume accepted screens and recovery-state distinctions without reopening design or redispatching fixtures."
-    },
-    {
-      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/SprintArchitectureLoop\",\"sprint-architecture-completion-status\"]",
-      "application": "Assign original-owner closing actions, independent checks and inventory, matched source integration and later release joins; do not reopen architecture."
-    }
-  ],
+  "contractsAvailableNow": {
+    "model": "docs/customer-prototype-architecture.md#solutionmodel: ten canonical components, five flows, eighteen steps; current RP-S1 covers Remote design and review and Same-parent specialist continuation.",
+    "application": "docs/customer-prototype-sprint-architecture.md and three docs/requirements tier architecture files; demo/workflow.py -> demo/foundry.py -> both specialist model-history paths. Existing tests cover actual binding fields/pins, two child creations, advancing responses, stale approval, four-call revision and direct history/fresh-history controls. Inspect and retain them, not recreate accepted work.",
+    "presentation": "docs/customer-prototype-sprint-design.md Screens A-D; README and --native --view human finalized stderr with unchanged stdout/parser. Aliases are not binding proof.",
+    "runner": "Existing architecture finite-runner contract and client-release tier: explicit application, operational lab and writable tooling roots; absolute validated Python; scenario, reviewed source, common bundle, actual exact versions and private inventory/evidence. Offline fixtures do not require live inventory or completed runtime changes.",
+    "roots": "Operational wrappers must load with their own actual lab root; preserve LAB_TOOL_OWNER_MISMATCH. A sibling commit does not install changed canonical wrappers. Integration must demonstrate the actual operational choice and loaded bytes before execution.",
+    "identity": "Installed specialist-only B remains a candidate. A needs an evidenced supported correction. Neither is selected without trusted receiver evidence for architect and reviewer. Opaque call IDs cannot become delegated user identity."
+  },
   "historicalBoundaries": [
     {
-      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop\",\"lab-ownership-review-evidence-access\"]",
-      "application": "Accepted release/sprint architecture preserves the originating stopped ownership assignment. Carry evidence to its original owners/reviewers; do not reset its five-round stop or infer taskComplete from registration, historical results or a new task label."
+      "reference": "yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop",
+      "application": "Continue only the original evidence-recovery assignment with its original Architect/Critic acceptance. Read its originating audit before claiming closure. Existing taskComplete=false and stopped history are not reset by this dispatch. Supplied ownershipRecoveryDefaults provide current writer acknowledgement/integration designation, not substantive root/ownership acceptance."
     },
     {
-      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-ISOLATED-CLIENT/AssignedWorkDeveloperLoop\",\"isolated-client-close-agreed-handoff\"]",
-      "application": "Retained RP-S3 plan records closed candidate review and accepted application preparation. Consume them; current-source checks are drift validation, not another candidate acceptance task."
+      "reference": "yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-ISOLATED-CLIENT/AssignedWorkDeveloperLoop",
+      "application": "The retained architecture identifies an accepted candidate handoff, not live selection. Do not redispatch candidate acceptance or infer current installation; current-source validation only checks drift and retained coverage."
     }
   ],
-  "contractsAvailableNow": {
-    "application": "Existing hosted/framework child identity, pinned-version, new-response, stale-approval, four-call revision and direct model-history fixtures; installed B candidate 3aca5dc; accepted application preparation 990467a; validate_scenario_evidence assertions. Preserve rather than rebuild.",
-    "runner": "Use docs/customer-prototype-architecture.md deterministic runner and docs/requirements/client-release/architecture.md. Explicit application, operational lab and writable tooling roots; absolute validated Python; explicit scenario, reviewed source, common bundle, exact versions, fresh private inventory and private evidence destination. No live inventory is needed to develop offline adapters.",
-    "roots": "Load each operational wrapper with its own actual lab root; preserve LAB_TOOL_OWNER_MISMATCH. A verified sibling runner may invoke canonical wrappers with explicit canonical context. Sibling wrapper commits are not installed canonical changes.",
-    "selection": "Installed unconditional B is only B-candidate. A requires its own evidenced supported correction and regression. Before trial-parent creation join scenario/source/package/actual versions. Distinguish preparation rejection, observed receiver rejection and unknown outcome. Architect trusted ingress precedes reviewer; both roles must pass before both-role selection.",
-    "effects": "Use retained write-ahead intent, actual cross-run publisher/CLI/transport/mount ownership, bounded calls, exact-response zero-send observation and UNKNOWN holds. No second acceptance ledger, automatic fallback or uncertain-effect replay.",
-    "inventory": "Current sole-target/context/deployed/rollback/package/protocol/principal/caller/effective-action and held-owner observations with provenance, reached/unreached boundaries and exact stops. Metadata or historical receipt availability is not trusted specialist ingress."
-  },
   "governance": {
-    "ownershipRecovery": "The user's October 20 ownershipRecoveryDefaults are explicit in-run coordination evidence for the original RP-S2-LAB-OWNERSHIP assignment: Developer is the eight-path runner writer in the registered feature sibling only and Developer is the application/lab integration owner. Supplied acknowledgements preserve the dirty canonical checkout, require explicit path ownership and commit --only, and prohibit branch switching, force-push, destructive cleanup or ownership inferred from registration. Missing writer acknowledgement/designation is no longer a human-input blocker. Carry this evidence with recoveryExceptionV1 through original reviewer acceptance and current path verification; it does not itself accept ownership or permit premature runner writes.",
-    "dispatch": "Return assigned tasks to the existing YAML orchestrator; it dispatches ready original loops before Product Owner, Architect and Critic inspect plan and actual dispatch. Scrum launches no substitute agents. Current reviewer votes and actual dispatch are not yet observed.",
-    "phase": "Installed sprintTasks forbids implementation dependencies on DevOps, which runs after original E2E. Ready Developer ownership-evidence and current-source checks run in parallel. Runner follows only substantiated ownership, not inventory. All cloud inventory/trial/publication remains in original DevOps.",
-    "semanticGates": "An agreed unresolved report allows reporting, not missing prerequisite effects. Runner independently requires accepted safe-writing proof; integration requires actual reviewed commits and matched loaded roots. Trial requires exact-source/E2E/package and current trust/inventory gates, even when scheduler dependencies report agreed.",
-    "fileOwnership": "Scrum owns this JSON and application index. Current-source checks own focused application repairs only for concrete failures. Runner owns only scoped retained tooling/tests/index in the substantiated sibling checkout. Integration owns handed-off paths and both indexes after task reviews. DevOps writes private evidence, never unreviewed source or sealed stages.",
-    "git": "Owners inspect fresh status and commit explicit owned paths with git commit --only before review; required Copilot trailer and observed usage metadata only. No shared branch switch, stash/reset, amend, force-push, foreign lock removal or deletion. Integration reconciles every task commit to feature/customer-hosted-session-prototype in affected repos, or records retained branch/task/commits/abandonment reason in a feature-branch commit message. Preserve abandoned branches. Scoped reviewed push belongs to integration; existing sprint review/retro and closeout reconcile accounting.",
-    "canonicalLab": "Fresh read-only status shows six modified and two untracked canonical paths on feature/swc-think-fast-aca-dns. Preserve its index, network design, README, SSH launcher, registry, Bastion test and untracked quickstart/scratch script; do not adopt them. Registration lists the authorized feature sibling at bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703. Canonical HEAD is now b7a47edf6172b1dd5dc4b0dc5a3db555fe762b2f, not the older bb6f64f baseline. Registration is navigation, not OS isolation or proof of exclusivity; the original ownership owner verifies direct current sibling status and resolver evidence before writing.",
-    "resources": "Matching resource names cover assignment plus reviews only. Actual cross-run locks/ownership are retained-tool responsibilities. One DevOps publication owner; serialize publication, CLI, transport, mount and private package stage. Do not hold live resources during offline runner development.",
-    "authority": "Use only local in-repo deterministic scripts, explicit roots, existing absolute pinned Python and sole validated lab settings imported through Use-Settings.ps1. No GitHub Actions, credential retrieval, profile/target substitution, replacement trust, new infrastructure, provider submission or opaque call-ID delegation. Necessary evidenced chosen-path permission changes are already authorized but require exact scope/rationale and deterministic plan/write/readback.",
-    "stops": "Preserve historical UNKNOWNs, held parents, rollback and cleanup uncertainty. Missing supported remedy can yield bounded actionable unresolved findings; genuine external human/provider input is explicit needs-input, material internal contract change is needs-replan. Preserve originating stops; five consecutive rounds without reviewer-verified new progress stop blocked, not a total productive-round cap.",
-    "privacy": "Exact private paths, receipts, identifiers, fingerprints, settings, packages, transcripts and evidence remain outside Git and customer output. Blob account-wide Contributor means application-enforced role/parent isolation, not storage-RBAC or malicious-host isolation."
+    "dispatch": "The installed YAML orchestrator dispatches dependency-ready original work loops after this owner response, then collects Product Owner, Architect and Critic planning reviews. Scrum does not launch substitute agents. Initial Developer tasks are independent and ready for parallel dispatch. DevOps preparation has no coding dependency and runs in the original DevOps phase, not a new stage.",
+    "branchOwnership": "Application feature branch was observed active before planning. Canonical lab checkout is dirty on another branch and is never writable here. Git worktree registration identifies a feature sibling; direct sibling status/root inspection remains unverified after a denied mixed command. Before runner writing, ownership must verify that existing sibling and originating reviewers must accept it. Never switch the canonical or a shared active checkout.",
+    "sharedFiles": "Current-source Developer owns application .gitignore and application index during its assignment. Runner Developer exclusively owns the eight specified sibling paths and sibling index. Integration subsequently owns reviewed joins and both affected indexes. No concurrent shared-index editing; resources are held through review. Scrum owns this planning JSON and its planning index update before dispatch.",
+    "gitReconciliation": "RP-S2-SOURCE-INTEGRATE is the designated Developer integration owner for both repositories and all intended task commits, including this planning handoff and useful partial work. Use explicit owned paths and commit --only before review. Reconcile onto the authorized feature branches; preserve staged/dirty work. Any nonintegrated code remains on its named branch, with task, commit IDs and abandonment reason recorded in a feature-branch commit message. No branch deletion, amendments, force push or lock removal.",
+    "evidence": "Use request.evidenceLocators.recoveryExceptionV1 and the supplied required files first; use request.input.acceptedHostFingerprint and its cited evidence before asking for host trust. Originating reviewers may inspect mirrored nonsecret evidence. Public Git contains only sanitized references/results, never private evidence, absolute private roots or settings.",
+    "execution": "No cloud effects are assigned to ownership, source checks, runner or integration. DevOps preparation uses existing deterministic local scripts, strict accepted trust and sole-target context. No GitHub Actions, new infrastructure, speculative grants, alternate target, receiver relaxation or uncertain-effect replay.",
+    "stops": "An agreed blocked report does not unblock writing, integration, packaging or live gates. Preserve held parents, UNKNOWN publications, rollback assets and historical cleanup uncertainty. Use original five-consecutive-no-progress rule without resetting originating stops; productive rounds remain uncapped. No new time, cost, sprint or concurrency limit."
   },
   "tasks": [
     {
       "id": "RP-S2-LAB-OWNERSHIP",
-      "title": "Reconcile originating stopped ownership evidence",
+      "title": "Developer: Substantiate guarded release source ownership",
       "kind": "developer",
       "owner": "Developer",
       "dependsOn": [],
@@ -80,175 +56,229 @@
       "estimatedMinutes": {"implementation": 15, "review": 10, "integration": 0},
       "priorOrigin": "yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop",
       "ownedPaths": [],
-      "inputs": ["Supplied recoveryExceptionV1 locator and accepted architecture Git/resolver handoff", "Original stopped ownership disposition and current point-in-time writer coordination", "User-supplied ownershipRecoveryDefaults: Developer runner writer, Developer integration owner and all three current-writer acknowledgements"],
-      "produces": ["Substantiated original safe-writing/root handoff or precise unresolved ownership/access finding"],
+      "inputs": ["Originating ownership audit and original acceptance gates", "Supplied recovery evidence and ownershipRecoveryDefaults", "Existing feature sibling registration; current direct status/root proof still required"],
+      "produces": ["Original accepted safe-writing/root handoff, or an explicit unmet setup criterion and concrete closing action"],
       "acceptanceCriteria": [
-        "Use supplied recovery evidence first. Carry existing branch/HEAD/status and matched/mismatched resolver evidence to original Architect/Critic review; bounded read-only Git/sibling inspection is authorized, not a reason to request expanded product permission.",
-        "Use the supplied writer/integration-owner designations and acknowledgements as explicit coordination evidence; do not request them again. Reconcile current path ownership and dirty/staged preservation, operational versus writable tooling roots, actual branch/base and the exact eight-path runner allowlist. Registration/clean status alone is not exclusive writing authority.",
-        "Carry the new coordination evidence through the originating Architect/Critic acceptance gates. Preserve originating taskComplete=false and stopped history until its concrete evidence condition is met; this is a bounded original-task recovery, not a fresh task label or reset of the no-progress counter. Do not restart uncertain effects, recreate setup or treat an agreed blocked assessment as setup completion."
+        "Inspect originating audit and supplied mirrored nonsecret evidence first. Use existing writer, integration-owner and acknowledgement designations; do not request them again.",
+        "Substantiate actual branch/HEAD/status, dirty/staged preservation, explicit eight-path ownership and operational versus writable tooling roots. Registration or clean status alone is not ownership. Preserve positive matched-root and negative crossed-root resolver evidence.",
+        "Carry the evidence through the original Architect/Critic reviews. Do not reset the originating stop, infer acceptance from a planning vote, recreate setup or use write probes. Unavailable evidence leaves setup unmet and dependent writes blocked."
       ],
       "doneWhen": "Original safe-writing/root evidence is substantiated and accepted by its originating reviewers; unavailable evidence remains an explicit unmet setup criterion with its exact closing action.",
-      "exclusions": ["No write probe or runner writing", "No branch switch, checkout recreation, settings/profile change, lab edit or cloud operation", "No reset of the originating stop or closure-only commit"],
-      "handoff": "Only accepted actual ownership/root proof enables RP-S2-DECISION-RUNNER. If unavailable, retain the runner block and continue independent source checks and DevOps reporting."
+      "exclusions": ["No runner writes, lab edits, write probe or cloud operation", "No branch switch, checkout recreation, settings/profile change or reset of originating stopped history"],
+      "handoff": "Only substantive originating acceptance enables RP-S2-DECISION-RUNNER. Preserve the block otherwise; independent application checks and DevOps preparation continue.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Developer: Substantiate guarded release source ownership",
+        "goal": "Recover the original safe-writing and root evidence using supplied coordination authority without touching the dirty canonical lab.",
+        "components": ["Guarded lab release toolchain", "Trusted identity and private transport"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-join"],
+        "doneWhen": "Original safe-writing/root evidence is substantiated and accepted by its originating reviewers; unavailable evidence remains an explicit unmet setup criterion with its exact closing action.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["docs/customer-prototype-architecture.md", "docs/requirements/client-release/architecture.md", "foundry-tf/multi-agent/release_roots.py", "foundry-tf/multi-agent/Release-Roots.ps1"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
     },
     {
       "id": "RP-S1-CURRENT-SOURCE-CHECKS",
-      "title": "Validate current source drift and prepare exact integration handoff",
+      "title": "Developer: Validate retained specialist continuity and public source",
       "kind": "developer",
       "owner": "Developer",
       "dependsOn": [],
       "exclusiveResources": ["application-runtime-source", "application-public-index"],
-      "estimatedMinutes": {"implementation": 25, "review": 15, "integration": 5},
-      "ownedPaths": ["demo/*.py", "live_acceptance.py", "tests/*.py", "README.md", "docs/design.md", ".github/repo-index.md"],
-      "inputs": ["Current application feature HEAD", "Accepted candidate/application preparation, continuity/history/presentation and scenario assertions"],
-      "produces": ["Exact current-source check results and accepted-commit ancestry/drift handoff", "Only necessary focused repair commits, if a concrete current failure is observed"],
+      "estimatedMinutes": {"implementation": 25, "review": 10, "integration": 5},
+      "ownedPaths": [".gitignore", ".github/repo-index.md", "README.md", "demo/*.py", "tests/*.py", "live_acceptance.py", "docs/design.md"],
+      "inputs": ["Current accepted architecture and design commits", "Retained continuity/history/revision/presentation tests", "Unowned untracked workflow context and reported repository-index drift"],
+      "produces": ["Exact application source/coverage and ancestry handoff", "Preserved workflow context excluded from public Git and passing unchanged repository check, or a precise unrepaired criterion"],
       "acceptanceCriteria": [
-        "Consume accepted source and application-preparation handoffs without repeating their acceptance or reimplementing fixtures/UI. Compare current ancestry and changed inputs; preserve accepted two-turn, repeated-role, model-history, parser, recovery and isolation coverage.",
-        "Map retained tests explicitly to stable parent and both roles' hosted/framework identity fields and pinned versions, exactly two child creations, fresh responses, updated requirements and stale-approval invalidation. Retain the four-call reject/revise/review sequence, both specialists' actual history load/model/store assertions, identical-brief fresh-history controls and exact-response recovery without resend. Check README and opt-in human stderr against accepted Screens A-D, including held/invalid precedence and unchanged stdout/parser. Only an actually missing or failing criterion warrants repair.",
-        "Run Test-Demo.ps1 with existing validated absolute Python and explicit operational LabRepositoryRoot, plus scripts/Test-Repository.ps1. Report actual pass/fail and source identity, not historical counts. Install dependencies only after manifest change or missing-tool failure.",
-        "Fix only concrete current regression failures within owned application paths and rerun affected checks; otherwise deliver a no-change handoff without artificial commit. Any material runtime/contract change goes through existing Architect-advised PO/Scrum reconciliation."
+        "Inspect current source/commits against accepted handoffs. Verify both-role hosted/framework identity fields and pins, stable parent, exactly two child creations, fresh responses, updated requirements/stale-approval invalidation, four-call revision order, and direct history/fresh-history controls for both specialists. Do not substitute alias equality or full-brief replay.",
+        "Retain README and opt-in finalized human stderr with useful output, privacy/control neutralization and identical machine stdout/parser. Repair only a concrete observed regression; no duplicate accepted feature assignment.",
+        "Preserve all unowned workflow context byte-for-byte. Add an explicit narrowly anchored workflow-control exclusion in application .gitignore, without staging its contents or editing the runtime/input/audits. Refresh public inventory using the unchanged generator only after exclusion; never index private audit files or weaken public checks.",
+        "Use the existing verified absolute Python, run Test-Demo.ps1 with explicit lab root and scripts/Test-Repository.ps1, plus affected checks. Record exact source and loaded wrapper root; no dependency install absent manifest change/missing tool. A remaining failure is not AC7 PASS and needs a concrete closing action."
       ],
-      "doneWhen": "Current exact-source checks, ancestry/drift and preserved accepted-work evidence are reviewed and handed to integration, with any concrete local regression repaired or precisely identified.",
-      "exclusions": ["No renewed candidate/UX/fixture implementation assignment", "No lab edits, cloud operations, deployment, live selection or final-package claim", "No planning JSON, private evidence or unrelated dirty work changes"],
-      "handoff": "RP-S2-SOURCE-INTEGRATE consumes exact application commits/checks and accepted prior preparation. Original E2E still validates the subsequently joined implementation."
+      "doneWhen": "Retained continuity/presentation coverage and current source drift are reviewed, unowned workflow context is preserved and excluded, and exact-source application/repository checks pass or identify a concrete unclosed criterion for integration.",
+      "exclusions": ["No duplicate renderer, isolated client or fixture implementation", "No lab source writes, cloud effects, identity selection or final Linux/package certification", "No edits to workflow runtime, input, audit contents or requirements; no weakening of checks"],
+      "handoff": "Give RP-S2-SOURCE-INTEGRATE exact application commits, actual check results and any unmet criterion. A failed audit may complete reporting but cannot complete a failed sprint/release acceptance criterion. Original E2E rechecks the subsequently integrated source.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Developer: Validate retained specialist continuity and public source",
+        "goal": "Check existing continuity and terminal contracts while closing public-index drift without adopting unowned workflow files.",
+        "components": ["Hosted coordinator", "Hosted architect", "Hosted reviewer", "Parent and specialist conversation state", "Terminal client", "Guarded lab release toolchain"],
+        "flows": ["Remote design and review", "Same-parent specialist continuation", "Exact-source guarded release"],
+        "flowSteps": ["collaboration-design", "collaboration-review", "collaboration-return", "continuity-revise", "continuity-invoke", "continuity-verify", "release-join"],
+        "doneWhen": "Retained continuity/presentation coverage and current source drift are reviewed, unowned workflow context is preserved and excluded, and exact-source application/repository checks pass or identify a concrete unclosed criterion for integration.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": [".gitignore", ".github/repo-index.md", "README.md", "demo", "tests", "live_acceptance.py", "docs/design.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
     },
     {
       "id": "RP-S2-DECISION-RUNNER",
-      "title": "Implement retained finite identity-decision runner",
+      "title": "Developer: Implement finite trusted specialist ingress runner",
       "kind": "developer",
       "owner": "Developer",
       "dependsOn": ["RP-S2-LAB-OWNERSHIP"],
       "exclusiveResources": ["lab-decision-tooling-source", "lab-public-index"],
       "estimatedMinutes": {"implementation": 100, "review": 25, "integration": 5},
       "ownedPaths": ["foundry-tf/multi-agent/identity_decision.py", "foundry-tf/multi-agent/Invoke-IdentityDecision.ps1", "foundry-tf/multi-agent/tests/test_release_identity_decision.py", "foundry-tf/multi-agent/Test-PrivateConnectivity.ps1", "foundry-tf/multi-agent/observe_agent.py", "foundry-tf/multi-agent/release_roots.py", "foundry-tf/multi-agent/Release-Roots.ps1", ".github/repo-index.md"],
-      "inputs": ["Substantiated original ownership/root handoff", "Accepted runner interface and retained operational wrappers"],
-      "produces": ["Reviewed executable local runner/help and offline fixtures", "Exact required operational-wrapper deltas and loaded-root/hash integration handoff"],
+      "inputs": ["Substantively accepted originating ownership/root evidence", "Agreed runner and root interfaces in architecture and client-release tier"],
+      "produces": ["Reviewed executable local finite runner and offline regressions", "Required operational-wrapper deltas with exact source/root/hash installation handoff"],
       "acceptanceCriteria": [
-        "Implement the accepted executable finite runner, not mocked live success or a plan-printing stub. Work only in the verified feature tooling checkout; invoke operational wrappers in their matched actual root. Never weaken LAB_TOOL_OWNER_MISMATCH or imply sibling patches installed canonical safeguards.",
-        "Before parent creation reject scenario/reviewed-source/common-package/actual-version mismatch with zero create/send. Installed B cannot be labeled A. Journal intent and enforce retained cross-run ownership, one fresh synthetic scope and architect-before-reviewer.",
-        "Use exact-response zero-send recovery; stop on unknown create/send/publication, held effects, missing/changed principal, receiver rejection or drift. Return reached/unreached roles, preparation/observed-receiver/unknown classifications and actionable selected-A/selected-B/unresolved findings without automatic fallback.",
-        "Exercise positive/negative original/split operational roots, scenario/source mismatch, stale versions/package, competing owners, before/after dispatch failure, partial roles, redaction and no-resend controls. Offline fixtures need agreed contracts, not completed application changes or live inventory.",
-        "Run affected fixtures and retained Test-Demo.ps1 with explicit application/lab roots and absolute validated Python. Refresh only the owned tooling index, commit scoped paths before review and identify required canonical wrapper integration separately."
+        "Write only the eight allowed paths in the accepted registered feature sibling. Invoke operational wrappers under their actual matched root, preserve LAB_TOOL_OWNER_MISMATCH and distinguish sibling development from operational installation.",
+        "Implement an executable retained runner, not a plan-only stub. Before parent creation, reject scenario, reviewed source, common bundle or actual version mismatches with zero create/send. Unconditional installed B cannot be labeled A.",
+        "Journal intent, retain cross-run publisher/CLI/transport/mount ownership contracts and finite calls, and require trusted architect ingress before reviewer. Report preparation rejection, observed receiver rejection and unknown outcomes distinctly; identify reached/unreached roles. Select A/B only on both-role trusted evidence; no automatic fallback.",
+        "Preserve exact-response zero-send recovery and UNKNOWN holds. Offline regressions cover positive/negative original/split roots, crossed roots, source/package/version drift, competing owners, pre/post-dispatch failure, partial roles, redaction and no-resend behavior.",
+        "Run affected fixtures and retained lab suite through local scripts with explicit application/lab roots and absolute validated Python. Commit only owned paths before original review. No live inventory prerequisite is imposed on offline development."
       ],
       "doneWhen": "Executable retained runner and offline rejection/ownership/unknown/root regressions pass original review with exact source and operational-installation requirements; no live identity selection is claimed.",
-      "exclusions": ["No cloud call, transport startup, permission write or publication", "No canonical dirty-path edits or credential/settings copy", "No receiver equality weakening, second acceptance ledger, new runtime framework or automatic path switch"],
-      "handoff": "RP-S2-SOURCE-INTEGRATE joins reviewed runner/application/required operational wrapper commits and actual loaded paths. Original DevOps executes only after the full execution join."
+      "exclusions": ["No cloud call, transport startup, permission write or publication", "No canonical dirty-path edits, private settings/credential copy or receiver relaxation", "No second acceptance ledger, orchestration rewrite, automatic path switch or uncertain-effect replay"],
+      "handoff": "RP-S2-SOURCE-INTEGRATE consumes reviewed runner and required wrapper commits. Actual execution remains with original DevOps after joined-source E2E, current inventory and exact package gates.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Developer: Implement finite trusted specialist ingress runner",
+        "goal": "Implement the agreed deterministic identity-discrimination tooling offline in the accepted lab feature sibling.",
+        "components": ["Guarded lab release toolchain", "Trusted identity and private transport", "Hosted architect", "Hosted reviewer"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-join", "release-discriminate"],
+        "doneWhen": "Executable retained runner and offline rejection/ownership/unknown/root regressions pass original review with exact source and operational-installation requirements; no live identity selection is claimed.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["foundry-tf/multi-agent", ".github/repo-index.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
     },
     {
       "id": "RP-S2-SOURCE-INTEGRATE",
-      "title": "Integrate reviewed source and matched operational tooling",
+      "title": "Developer: Reconcile reviewed application and operational release roots",
       "kind": "developer",
       "owner": "Developer",
       "dependsOn": ["RP-S1-CURRENT-SOURCE-CHECKS", "RP-S2-DECISION-RUNNER"],
       "exclusiveResources": ["application-git-integration", "lab-git-integration", "application-runtime-source", "lab-decision-tooling-source", "application-public-index", "lab-public-index"],
-      "estimatedMinutes": {"implementation": 35, "review": 25, "integration": 10},
-      "ownedPaths": ["Reviewed task-owned application and retained tooling paths", ".github/repo-index.md in each affected repository"],
-      "inputs": ["Reviewed application drift/check handoff", "Reviewed runner commits, root contract and required operational-wrapper deltas", "User-supplied Developer integration-owner designation for application and lab"],
-      "produces": ["Exact joined source/tooling hashes and actual loaded-root map", "Reviewed scoped push outcomes and durable task-branch accounting"],
+      "estimatedMinutes": {"implementation": 40, "review": 20, "integration": 10},
+      "ownedPaths": ["Reviewed task-owned application paths", "Reviewed eight-path sibling tooling allowlist", ".github/repo-index.md in each affected feature checkout"],
+      "inputs": ["Reviewed application current-source handoff", "Reviewed runner and required operational-wrapper commits", "Explicit Developer integration-owner designation"],
+      "produces": ["Exact joined source and actual loaded-root/hash evidence for formal E2E", "Durable all-task branch/commit/integration/push or retained-abandonment accounting"],
       "acceptanceCriteria": [
-        "Join every intended task commit on authorized feature branches or durably record task/branch/commits/abandonment reason in a feature-branch commit message; retain abandoned branches and preserve unrelated staged/dirty files.",
-        "Reconcile required wrapper changes with the actual operational loaded root without switching the dirty shared checkout or overwriting its work. If safe operational installation is unavailable, report the exact missing reviewed revision/root and block effects rather than bypassing guards.",
-        "Rerun affected joined-source, application Test-Demo.ps1, Test-Repository.ps1 and retained lab checks. Verify source drift, scoped feature-branch commits and push outcomes without claiming publication. Commit explicit owned paths before review."
+        "Inventory all intended task commits including useful partial work and this planning handoff. Integrate reviewed task paths on the authorized feature branches without switching shared checkouts or adopting unrelated staged/dirty work.",
+        "Substantiate actual wrapper/root/bytes/hashes used by the executable path. Resolve required operational-wrapper deltas only within accepted path authority; dirty canonical edits are never a permitted installation shortcut. Preserve matched/crossed-root checks and make any unresolved installation explicitly non-execution-ready.",
+        "Re-run current joined-source application/repository checks with absolute validated Python and explicit actual lab root, plus affected retained regressions. Account for source drift since prior checks. Formal EndToEndTestLoop and Linux/exact-package/cloud gates are not replaced by this integration.",
+        "Record task, named branch, actual commits, integration status and push result. Every task's code is integrated or retained on a named branch; any abandonment reason and commit IDs are recorded in a feature-branch commit message. Keep branches and unknown historical effects. Push only reviewed scoped commits under existing authority."
       ],
       "doneWhen": "Reviewed task commits and required operational-wrapper revisions are reconciled with exact loaded roots, current joined checks and durable Git/push accounting; unresolved installation is explicitly not execution-ready.",
-      "exclusions": ["No shared branch switching, broad staging, history rewriting or abandoned-branch deletion", "No cloud effects, final Linux/package certification or source-guard bypass", "No adoption of dirty canonical README/SSH/index changes"],
-      "handoff": "Original E2E validates the exact integrated implementation through local scripts. DevOps receives the exact joined-source/operational readiness result, not an implied release approval."
+      "exclusions": ["No canonical dirty-file adoption, shared branch switch, broad staging, history rewrite, lock removal or branch deletion", "No cloud effects, final Linux/package certification or source-guard bypass", "No reopening accepted fixtures or introducing a new approval stage"],
+      "handoff": "Original EndToEndTestLoop validates this exact integrated implementation via local scripts. Original DevOps receives actual readiness and missing gates, not a release approval. Independent baseline preparation does not depend on this task.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Developer: Reconcile reviewed application and operational release roots",
+        "goal": "Join reviewed commits and actual operational tooling while preserving unrelated work and durable Git ownership accounting.",
+        "components": ["Guarded lab release toolchain"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-join", "release-package"],
+        "doneWhen": "Reviewed task commits and required operational-wrapper revisions are reconciled with exact loaded roots, current joined checks and durable Git/push accounting; unresolved installation is explicitly not execution-ready.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["docs/customer-prototype-recovery-sprint-plan.json", ".github/repo-index.md", "foundry-tf/multi-agent"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
     },
     {
-      "id": "RP-S1-FRESH-INVENTORY",
-      "title": "Establish current transport trust and sole-target inventory",
+      "id": "RP-S1-BASELINE-ASSESSMENT",
+      "title": "DevOps Engineer: Establish current private ingress readiness and supported next action",
       "kind": "devops",
       "owner": "DevOps Engineer",
       "dependsOn": [],
       "exclusiveResources": ["lab-hosted-release", "lab-private-transport", "lab-cli-context", "lab-ssh-mount"],
-      "estimatedMinutes": {"implementation": 45, "review": 15, "integration": 5},
+      "estimatedMinutes": {"implementation": 50, "review": 15, "integration": 5},
       "ownedPaths": [],
-      "inputs": ["Supplied recovery receipt locators via private workflow context", "Canonical retained transport sources and input.acceptedHostFingerprint with acceptedHostFingerprintEvidence/fingerprintReferenceCandidates"],
-      "produces": ["Fresh authenticated private inventory or exact actionable reached/missing-observation report"],
+      "inputs": ["Supplied mirrored recovery evidence and accepted host fingerprint references", "Existing strict local connectivity/inventory scripts and validated private settings linkage", "Architecture A/B selection contract and historical ingress failure"],
+      "produces": ["Attributable current context/trust/containment/inventory observations or precise missing observations", "Bounded supported identity assessment with selected-candidate versus unresolved status, concrete next action and receiving owner"],
       "acceptanceCriteria": [
-        "Use the supplied recovery locator first. Consume the supplied independently accepted host fingerprint and both reference candidates before requesting human input; do not substitute a newly observed key. Substantiate approved transport module/source, compare actual hashes and verify current strict trust before authenticated Metadata. Historical receipt closure does not prove current trust or original UNKNOWN cleanup.",
-        "Load only existing native settings through application Use-Settings.ps1, validate sole project/tenant/subscription/lab linkage without printing values and use the dedicated lab profile. Perform retained scripted inventory with explicit roots; authenticate by device code only if required.",
-        "Record exact deployed/rollback versions/packages, role identities, protocol, actual caller/effective action and held/publisher ownership observations privately. Distinguish reached, missing and provider-only facts. No inference/publication or assumed missing grant.",
-        "Serialize actual CLI/transport/mount ownership, preserve held parents and old effects and close only positively identified newly owned resources. An actionable partial inventory with exact supported next action can complete this bounded task."
+        "Prepare independently of runner coding and source integration. Inspect supplied nonsecret recovery files and accepted trust first. Use only Use-Settings.ps1 with existing allowlisted settings and dedicated lab context; validate linkage without outputting values.",
+        "Through existing local scripts collect current sole-target versions, package/protocol/principal/rollback bindings, effective actions and pending/unknown effects where reachable. Distinguish script inspection, attributed historical capture and current execution. No missing observation establishes zero effects.",
+        "Identify actual containment-source/resource and ownership prerequisites. Existing approved VM startup/owned private transport is permitted only through established verified mechanisms and strict accepted trust, with positively identified owned cleanup. Do not retrieve keys, change trust or introduce public ingress.",
+        "Give a supported A/B next action grounded in exact observed or missing conditions. Actionable unresolved/unsupported findings can complete this bounded assessment; they do not select a live path, unblock missing ownership/integration, or satisfy AC1-AC5. Do not duplicate accepted generic research or require runner implementation to prepare inventory."
       ],
-      "doneWhen": "Original DevOps review receives fresh exact private inventory or a truthful actionable partial inventory with precise trust/auth/access stop and missing observations.",
-      "exclusions": ["No inference, package/publication, grants, trust replacement or provider submission", "No credential/private-key retrieval or target/profile substitution", "No runner-writing prerequisite or historical cleanup certification"],
-      "handoff": "RP-S1-STATUS-HANDOFF consumes observations independently of runner success. RP-S2-INGRESS-TRIAL requires actual current trust/inventory, not merely agreement with a blocked report."
-    },
-    {
-      "id": "RP-S1-STATUS-HANDOFF",
-      "title": "Close bounded RP-S1 supported-baseline assessment",
-      "kind": "devops",
-      "owner": "DevOps Engineer",
-      "dependsOn": ["RP-S1-FRESH-INVENTORY"],
-      "exclusiveResources": [],
-      "estimatedMinutes": {"implementation": 15, "review": 10, "integration": 0},
-      "ownedPaths": [],
-      "inputs": ["Fresh or explicitly partial inventory", "Accepted supported A/B contracts and historical negative findings"],
-      "produces": ["Supported identity-decision baseline or actionable unresolved RP-S1 handoff"],
-      "acceptanceCriteria": [
-        "Separate historical NATIVE_HOST_PRINCIPAL, installed B candidate, current observations and untested alternatives. Never label source, metadata or preparation rejection as actual trusted ingress.",
-        "State exact reached boundary, missing supported fact/implementation, both alternatives' tested/untested disposition, held effects and original closing owner/action. Necessary scoped permission approval is already supplied; do not invent a human approval blocker.",
-        "Actionable unresolved evidence completes this bounded assessment, not RP-S2 deployment or any live acceptance criterion. Do not wait for successful ingress, provider response or full implementation to finish this report."
-      ],
-      "doneWhen": "A reviewed supported-baseline or actionable unresolved handoff identifies exact observations, missing proof and closing owner/action without asserting live success.",
-      "exclusions": ["No source edits, cloud operations, duplicate research or another approval stage", "No release PASS, waiver or closure of historical UNKNOWNs"],
-      "handoff": "RP-S1 review/retro consumes current source checks plus this bounded assessment. RP-S2 carries actual remaining repair, integration and G1-G4 work; RP-S3 retains live continuity/recovery/isolation."
-    },
-    {
-      "id": "RP-S2-INGRESS-TRIAL",
-      "title": "Gate exact package and execute bounded trusted-ingress decision",
-      "kind": "devops",
-      "owner": "DevOps Engineer",
-      "dependsOn": ["RP-S2-SOURCE-INTEGRATE", "RP-S1-FRESH-INVENTORY"],
-      "exclusiveResources": ["lab-hosted-release", "lab-private-transport", "lab-cli-context", "lab-ssh-mount", "lab-package-stage", "application-runtime-source", "lab-decision-tooling-source"],
-      "estimatedMinutes": {"implementation": 90, "review": 25, "integration": 10},
-      "ownedPaths": [],
-      "inputs": ["Reviewed operational/source join and original E2E result", "Actual fresh trust/target/identity/held-effect inventory", "Retained Linux/package/preview/publication tooling and executable runner"],
-      "produces": ["Exact package/publication and finite ingress evidence if prerequisites pass", "Otherwise precise preparation/unresolved finding and closing action"],
-      "acceptanceCriteria": [
-        "Revalidate drift-sensitive observations and require actual operational installation, exact-source checks and original E2E readiness. Run actual Linux/amd64/hosting-Python and retained checks, dependency provenance, allowlists, immutable private settings/source/package hashes and fresh version preview before guarded publication.",
-        "Use one retained publisher for exactly three existing roles. Verify terminal publication, actual common-bundle/version/identity bindings and newly owned cleanup, preserving rollback assets and historical UNKNOWNs. Never resend uncertain effects.",
-        "Before trial-parent creation rejoin scenario/reviewed source/published package/actual versions. B is not A. Run finite pre-journaled scripts, actual architect trusted receiver success before reviewer and both-role evidence before claiming selection/collaboration.",
-        "Necessary evidenced permission deltas use exact scope/rationale and reviewed deterministic plan/write/readback. If a missing coding delta is required, stop before mutation for existing Scrum/Architect-advised PO reconciliation, not renewed permission approval.",
-        "Report actual reached/unreached roles, preparation versus observed-receiver failure versus unknown, exact private deployment/rollback/effect references and closing action. A measured supported correction or compatible B ingress can select a path; actionable unresolved/prerequisite-stop can complete this bounded trial only."
-      ],
-      "doneWhen": "Original DevOps review receives actual gated finite selected-A/selected-B evidence or an actionable unresolved/prerequisite-stop report with exact missing facts, holds and closing actions; no compound release PASS is inferred.",
-      "exclusions": ["No final G1-G8/customer-ready claim from ingress alone", "No stop/resume, held-parent migration, automatic fallback, speculative grant or receiver-equality weakening", "No source/sealed-stage edit or bypass of final checks"],
-      "handoff": "Original DevOps/RP-S2 validates actual remote artifact acceptance, private managed-identity provenance and genuine Decision-1 for G1-G4. Only a completed non-held initial parent enables later RP-S3 continuity, recovery and isolation."
+      "doneWhen": "Original DevOps review receives an attributable supported baseline or actionable unresolved assessment with exact missing observations, preserved holds and a concrete downstream owner/action; no live release success is claimed.",
+      "exclusions": ["No source edits, package/publication, inference, stop/resume, permission change or provider submission", "No alternate target/profile, credential/key retrieval, trust replacement or uncertain-effect replay", "No final G1-G8 PASS, historical cleanup certification or additional approval stage"],
+      "handoff": "RP-S1 review/retro consumes this assessment and current-source checks. RP-S2 DevOps must later join actual accepted integration, formal E2E, fresh inventory, retained/Linux exact-package gates and serialized guarded publication before finite architect-then-reviewer execution. RP-S3 live obligations remain unchanged.",
+      "workCard": {
+        "role": "DevOps Engineer",
+        "action": "DevOps Engineer: Establish current private ingress readiness and supported next action",
+        "goal": "Independently prepare trustworthy inventory and an actionable identity assessment without waiting for runner coding or asserting deployment success.",
+        "components": ["Guarded lab release toolchain", "Trusted identity and private transport", "Hosted coordinator", "Hosted architect", "Hosted reviewer"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-package", "release-discriminate"],
+        "doneWhen": "Original DevOps review receives an attributable supported baseline or actionable unresolved assessment with exact missing observations, preserved holds and a concrete downstream owner/action; no live release success is claimed.",
+        "failureCategories": [],
+        "mustAct": "DevOps Engineer",
+        "locations": ["docs/identity-recovery-plan.md", "docs/customer-prototype-architecture.md", "scripts/Use-Settings.ps1", "foundry-tf/multi-agent"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
     }
   ],
   "criticalPath": {
-    "initialFanOut": ["RP-S2-LAB-OWNERSHIP", "RP-S1-CURRENT-SOURCE-CHECKS"],
-    "roughMinutes": "Ownership evidence 25 -> runner 130 -> integration 70 = 225 task-minutes; current-source checks 45 overlap ownership/runner. This path is conditional on genuine ownership closure, not an estimate-based reset of its stop.",
-    "deferredDevOps": "Original E2E separates implementation from DevOps. Inventory 65 -> status 25 = 90 DevOps task-minutes for RP-S1 reporting. Inventory 65 -> trial 125 = 190; trial joins integrated source/E2E and inventory, not the status report. Status and trial have disjoint resources after inventory.",
-    "minimalEdges": "Ownership gates only runner writing. Agreed interfaces/fixtures permit runner work without full runtime implementation or live inventory. Integration joins current application evidence and reviewed runner. Inventory has no coding dependency but follows installed YAML phase order. Recovery/isolation remain future independent checks sharing serialized live resources, not dependent on each other's success.",
-    "limits": "Rough implementation/review/integration minutes are planning estimates, not timeouts, caps or promised durations. No new concurrency, sprint, spend or attempt limit is introduced."
+    "initialDeveloperFanOut": ["RP-S2-LAB-OWNERSHIP", "RP-S1-CURRENT-SOURCE-CHECKS"],
+    "independentOriginalDevOpsPhase": ["RP-S1-BASELINE-ASSESSMENT"],
+    "earlyRP-S2Path": ["RP-S2-LAB-OWNERSHIP", "RP-S2-DECISION-RUNNER", "RP-S2-SOURCE-INTEGRATE"],
+    "roughMinutes": "Ownership 25 + runner 130 + integration 70 = 225 task-minutes conditional on real ownership acceptance. Current-source checks 40 overlap ownership/runner. Baseline assessment 70 has no coding dependency but respects original YAML DevOps phase order. Estimates include implementation/review/integration, not elapsed promises.",
+    "minimalEdges": "Ownership gates runner writing, not source checks or inventory. Agreed runner/root interfaces permit offline implementation without full application work or current cloud inventory. Integration joins reviewed application and runner commits only. Formal E2E and DevOps package/live prerequisites are existing phase handoffs, not invented task IDs.",
+    "releaseResources": "All later publication, CLI, private transport and SSH mount users must use these same lab-hosted-release/lab-private-transport/lab-cli-context/lab-ssh-mount resource names. No second publisher. Scheduler resources do not provide OS or cross-run isolation; retained guards still apply.",
+    "laterIsolation": "Separate-parent isolation requires final release prerequisites and an initial-parent comparison, not successful follow-up or supported recovery."
   },
   "acceptanceBoundaries": {
-    "RP-S1": "Current-source coverage/clarity checks and supported identity baseline reporting satisfy this sprint only when reviewed against its five criteria. Do not make early-start RP-S2 successful deployment an RP-S1 criterion.",
-    "earlyStartRP-S2": ["RP-S2-LAB-OWNERSHIP", "RP-S2-DECISION-RUNNER", "RP-S2-SOURCE-INTEGRATE", "RP-S2-INGRESS-TRIAL"],
-    "unresolved": "A precise unresolved research/inventory/trial report can finish only its stated bounded assessment. Unmet ownership still blocks writing; unmet integration/E2E/trust/package gates still block external execution. Remaining independent artifacts continue. Reconcile stops through existing sprint review/retro and release closeout.",
-    "live": "Actual common-bundle release, both-role ingress, private artifact provenance and Decision-1 remain RP-S2 obligations. Live two-turn continuity, supported recovery, independent isolation and final AC1-AC9/G1-G8 closure remain RP-S3 obligations.",
-    "gitReconciliation": "RP-S2-SOURCE-INTEGRATE is the designated Developer integration assignment for every task's intended commits, including useful partial work; preserve retained branches and record any abandonment durably on the authorized feature branch."
+    "RP-S1": "Retained two-turn/revision/history/clarity coverage and passing applicable source checks plus an attributable supported identity assessment. Actual check failures remain unclosed sprint criteria; accepted negative research only completes its bounded assessment.",
+    "earlyRP-S2": ["RP-S2-LAB-OWNERSHIP", "RP-S2-DECISION-RUNNER", "RP-S2-SOURCE-INTEGRATE"],
+    "future": "No live trial is dispatched in this RP-S1 list. Actual ingress decision/publication, G1-G4 and initial non-held parent belong to subsequent RP-S2 DevOps. RP-S3 retains G5-G8 and full truthful delivery. Continue independent artifacts while identity is unresolved.",
+    "review": "Owner completion means this plan is ready to dispatch, not that tasks ran or Product Owner/Architect/Critic agreed. Original implementation reviewers inspect actual commits. Existing sprint review/retro and release closeout reconcile outcomes; no extra approval stage."
   },
   "AssignedWorkUIDeveloper": [],
   "AssignedWorkDeveloper": ["RP-S2-LAB-OWNERSHIP", "RP-S1-CURRENT-SOURCE-CHECKS", "RP-S2-DECISION-RUNNER", "RP-S2-SOURCE-INTEGRATE"],
-  "AssignedWorkDevOpsEngineer": ["RP-S1-FRESH-INVENTORY", "RP-S1-STATUS-HANDOFF", "RP-S2-INGRESS-TRIAL"],
+  "AssignedWorkDevOpsEngineer": ["RP-S1-BASELINE-ASSESSMENT"],
   "AssignedWorkDesigner": [],
-  "noNewPresentationAssignments": "Accepted terminal/README/UX work is retained; no browser UI or duplicate designer/UI tasks.",
+  "noNewPresentationAssignments": "Accepted UX and SprintDesign retain README/terminal and fixtures. Empty UI/Designer lists deliberately avoid duplicate accepted implementation.",
   "planningObservation": {
-    "dispatch": "awaiting-existing-orchestrator",
-    "observedDispatchedTaskIds": [],
-    "currentReviewerAgreement": {"Scrum Master": true, "Product Owner": null, "Architect": null, "Critic": null},
-    "meaning": "Dispatch-ready complete is returned under the supplied SprintPlan protocol. The orchestrator dispatches ready original loops before planning reviewers verify actual dispatch; no such observation or reviewer vote is fabricated here."
+    "application": "Observed authorized feature HEAD 988893c with only untracked gh-dynamic-workflows context before edits; no staged work. Five current supplied outcome audits were read and record agreement only for their own artifacts.",
+    "lab": "Read-only canonical status observed unrelated dirty/staged-preservation obligations on a different feature branch. Git worktree registration identifies the authorized feature sibling at bdd6b2a. Registration is not direct sibling status, ownership acceptance or installation proof.",
+    "denial": "A mixed command containing direct sibling Git/root reads and a lab Python probe was denied because interactive approval was unavailable. No portion is claimed executed. A separate application-local Git/read command succeeded. Required sibling evidence stays with originating ownership; no missing user-only authority or permission diagnosis is inferred."
   },
   "verificationThisPlanningTurn": {
-    "application": "Fresh clean feature/customer-hosted-session-prototype at 302d8866d3c4f4c4d61b7c63c7f4d24196da664d before planning edits. Uses the five supplied accepted input commits without reopening their agreement. Only this existing assignment JSON and navigation are Scrum-owned changes.",
-    "lab": "Read-only canonical status and worktree registration: canonical feature/swc-think-fast-aca-dns at b7a47edf6172b1dd5dc4b0dc5a3db555fe762b2f retains six modified/two untracked paths. Registered feature sibling lists feature/customer-hosted-session-prototype at bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703. No direct sibling status, resolver execution or writing exclusivity is inferred; original ownership task must verify current paths before runner writes.",
-    "recovery": "Consumed supplied coordination defaults and accepted architecture handoff. Private evidence was not independently reauthenticated this planning turn; original ownership task uses the supplied recoveryExceptionV1 locator first. No historical receipt is current trust or live acceptance.",
-    "checks": "Fresh installed sprintTasks validation accepted seven bounded tasks and complete role lists, required task boundaries, inputs/outputs and three duration fields. Two initial Developer tasks have disjoint resources; the runner retains exactly eight owned paths. Negative controls rejected a cycle and implementation dependency on DevOps. criticalPathPriorities reports 350 estimated task-minutes through ownership/runner/integration/trial, excluding formal E2E. Test-Repository.ps1 passed with the existing absolute lab Python: current index, 79 public files, JSON/PowerShell/context/whitespace checks. Git merge-base verified all five accepted input commits as HEAD ancestors. No dependencies were installed. These planning checks are not new runtime proof. Current-source Test-Demo remains assigned to RP-S1-CURRENT-SOURCE-CHECKS and joined checks to integration. No application, Linux/package or live result is claimed by planning.",
-    "inspectionLimit": "No cloud operation, private settings import, sibling write probe or operational-wrapper installation was performed. Existing registration is point-in-time navigation evidence only.",
-    "limits": "Planning changes only. No runner implementation, repeated resolver experiment, settings import, cloud operation, new task acceptance, push, package or live release observation is established here."
+    "passed": [
+      "Using existing absolute lab-root Python 3.12.10, in-memory validation checked five complete task cards, canonical component/flow/step references, matching task/card titles and doneWhen, blank unperformed evidence, acyclic dependencies, assignment projections, disjoint ready-task resources and existence of all five input commits.",
+      "Standalone scripts/migration.py public-check passed across 84 Git-visible files.",
+      "Owned Git whitespace check passed; exactly the planning JSON and navigation index changed."
+    ],
+    "failed": [
+      "scripts/Test-Repository.ps1 failed its initial REPOSITORY_INDEX_STALE gate; later gates did not execute.",
+      "An initial guessed nested lab virtualenv executable was absent. A bounded known-path check found the existing lab-root executable; subsequent checks used its verified Python 3.12.10. No dependencies were installed."
+    ],
+    "repositoryFailureEvidence": "Read-only generator comparison found five added inventory entries, all preserved untracked workflow-audit JSON, and zero removals. No public path was added by this plan. RP-S1-CURRENT-SOURCE-CHECKS explicitly owns preservation/exclusion and the unchanged gate rerun; this failure is not waived.",
+    "notExecuted": [
+      "Test-Demo.ps1 and full application suite: no application code changed; exact current-source execution is assigned, not claimed here.",
+      "Full retained lab suite, Linux hosting-package validation, settings import, cloud inventory, publication, inference and supported compute stop/resume.",
+      "Current direct sibling ownership/root validation, task dispatch, implementation acceptance and push."
+    ],
+    "dispatchStatus": "Ready for the installed orchestrator to dispatch after this owner response. No agents have been substituted or dispatch claimed."
   }
 }

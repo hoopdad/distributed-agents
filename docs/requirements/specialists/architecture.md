@@ -56,6 +56,10 @@ cases in [`tests/test_workflow.py`](../../../tests/test_workflow.py).
 
 The isolated candidate is coordinator-owned; it does not change either role's
 history-store construction, five-stage flow or `Assignment.validate_receiver()`.
+The installed `3aca5dc` B client is not successful live selection. Resource
+preparation rejection at the coordinator does not show that either receiver
+was reached. Record a receiver failure only from an observed child result;
+unreached roles and missing observations remain explicitly unverified/unknown.
 Retain both roles' existing continuation/fresh-history/no-resend fixtures when
 the candidate changes callers. The live discriminator must establish actual
 trusted ingress **and** successful receiver validation per reached role before

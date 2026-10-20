@@ -56,8 +56,8 @@ namespace is an Architect/PO contract decision, not permission to relax equality
 Opaque call IDs and assignment principal fields are never delegated identities.
 
 Cover prepare/create/read/check/invoke/exact-response recovery consistently.
-Separate specialist-only delegation from the shared `WorkflowRuntime.resources()`
-project/header client if necessary; routing, parent, model and checkpoint context
+Retain `3aca5dc`'s specialist-only delegation, separate from the original
+`WorkflowRuntime.resources()` project/header/cache; routing, parent, model and checkpoint context
 must not inherit a child delegation by accident. Do not forward container-only
 user headers or use the legacy two-header helper as an untested repair.
 Negative controls must reject absent/forged identities and cross-parent access.
@@ -73,7 +73,7 @@ to a new namespace by inference.
 The accepted [request-local client design](../../customer-prototype-architecture.md#request-local-client-ownership-and-unchanged-trust)
 replaces the earlier conditional isolation advice with a concrete B candidate
 contract. Keep the original resources tuple and opaque-only client authority.
-Create a separate specialist `ProjectClient`, copied header mapping and
+Retain the installed separate specialist `ProjectClient`, copied header mapping and
 OpenAI-client cache inside the same request-owned stack, supplying only
 `WorkflowRemoteAgents`. Validate the complete captured platform-derived
 `ScopeBinding` against runtime scope before building delegation. Pure runtime
@@ -91,7 +91,13 @@ resources as well as remote ones, not merely stub the resource factory:
 | Lifetime / negatives | Independent caches and cleanup on success, setup failure and cancellation; missing/forged/changed binding and cross-parent inputs fail closed |
 
 Bind the trial to source/package/versions, not a new selector or automatic A/B
-fallback. Use a fresh synthetic parent only. The runtime handoff ends at reviewed
+fallback. The installed source unconditionally constructs B: an `A-correction`
+trial needs its own supported corrected source and regression. The runner must
+reject scenario/source/package/actual-version mismatch before creating a parent.
+Missing/invalid captured user, scope mismatch or forbidden headers during
+resource construction are local preparation rejection, not observed child
+receiver failure. An unobserved child remains unknown.
+Use a fresh synthetic parent only. The runtime handoff ends at reviewed
 source/tests and passing local checks; DevOps joins it with retained tooling,
 inventory and package gates. Existing fixture doneWhen below remains accepted
 implementation history, not the new candidate's completion evidence.

@@ -21,7 +21,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three sprint goals/acceptance contracts; installed B candidate review, safe lab checkout and pre-E2E Developer runner/integration; later DevOps inventory/trial, scenario/source/package join, truthful preparation/receiver outcomes and unchanged final gates |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Retained README/terminal screens and ordered revision/recovery trace; installed B versus live selection, pre-dispatch preparation versus observed receiver/unknown outcomes, fixture-to-display handoff |
-| RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative retained fixtures/presentation; October 20 RP-S2 specialist-only client, receiver/history compatibility, finite lab decision runner and integration joins |
+| RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative fixtures/presentation; installed B versus live selection, pre-parent scenario/source/package/version join, preparation/receiver/unknown distinction, Developer runner and DevOps trial |
 | RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Phase-compatible pre-E2E Developer checkout/client/runner/integration lanes; deferred original DevOps inventory/status and guarded trial; retained real dependencies and observed-versus-eligible dispatch distinction |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
@@ -112,6 +112,14 @@ Contributor: ownership/publication gates remain application-enforced, not
 storage-enforced per-role isolation.
 Do not search ignored `.azure`, `.azure-cli`, `.local`, `.migration` or
 conversation/credential stores.
+
+SprintArchitecture reconciliation freshness: inspected clean base
+`6a24eaf3110bd964f992a87e01e6916f505e0dda`. Updated the cumulative sprint
+document and all three tier contracts; no additions/deletions. Retain installed
+`3aca5dc` for original review/integration, Developer runner ownership and
+pre-parent scenario/source/package/actual-version checks. Preparation rejection,
+observed receiver failure and unknown observation are separate outcomes;
+no live path selection or upstream handoff reopening is implied.
 
 RP-S2-ISOLATED-CLIENT freshness: inspected clean application base
 `4f2e02d9b08bc1c5258d6f799e9a9f0809705a81`. Added

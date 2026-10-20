@@ -110,6 +110,10 @@ retry, automatic path fallback or automatic new parent after failure is permitte
 
 Scrum assigns actual lab file/Git ownership before writing: the observed shared
 lab branch has unrelated dirty work and must not be switched under writers.
+The latest ownership join retains Developer's runner implementation after safe
+lab ownership, then reviewed application/lab source integration before formal
+E2E. Fresh DevOps inventory is independent of coding; it joins exact-source/
+Linux/package checks before publication/trial, not before Developer can start.
 Keep reviewed task commits or durably record task, retained branch, commits
 and abandonment reason on the feature branch. This implementation handoff
 does not move formal E2E validation or DevOps cloud-pass into architecture.

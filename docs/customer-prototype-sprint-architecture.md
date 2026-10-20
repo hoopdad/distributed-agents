@@ -10,12 +10,12 @@ Exactly three hosted deployments remain.
 
 Accepted inputs are retained, not reopened:
 
-- [Release architecture](customer-prototype-architecture.md), `0a244702c7ccf01f1916c4b3a2580346ffb02fea`.
-- [UX](customer-prototype-ux.md), `ef5c79d94114f156ab0d03497fafffd1e348aabf`.
-- [Release plan](customer-prototype-release-plan.md), `5449ff49af6a79dbc9fef75c1314d6689cdba6d3`.
-- [Sprint design](customer-prototype-sprint-design.md), `6d5df4256cf9239f491528226dd9502c1c185e37`.
+- [Release architecture](customer-prototype-architecture.md), `cde76380c9c41201f19aedf4b290958c95472689`.
+- [UX](customer-prototype-ux.md), `c17813567e7d3db09abe1d2403b948c98131c24f`.
+- [Release plan](customer-prototype-release-plan.md), `f20ac1ee1cdbc561198d51fba53f14c90348de8d`.
+- [Sprint design](customer-prototype-sprint-design.md), `6a24eaf3110bd964f992a87e01e6916f505e0dda`.
 
-This revision inspected clean application baseline `6d5df4256cf9239f491528226dd9502c1c185e37` on
+This revision inspected clean application baseline `6a24eaf3110bd964f992a87e01e6916f505e0dda` on
 `feature/customer-hosted-session-prototype`. No completed prior sprint was
 supplied. Retain the integrated RP-S1 work: coordinator fixtures `6614440`,
 direct model-continuation fixtures `c454e50`, human view `56b762e`, documentation
@@ -44,13 +44,13 @@ their baseline, not a prohibition on the tier-specific output required here.
 
 Apply these exact provenance-qualified references only to their original outputs:
 
-- `["yaml-loops-v1:ArchitectureLoop","architecture-loop-status-reconciliation"]`
+- `["yaml-loops-v1:ArchitectureLoop","architecture-close-agreed-deliverable"]`
   retains accepted full-release architecture and unresolved identity handoff.
-- `["yaml-loops-v1:UserExperienceLoop","ux-loop-status-reconciliation"]`
+- `["yaml-loops-v1:UserExperienceLoop","ux-close-agreed-deliverable"]`
   retains accepted UX; no redispatch of integrated presentation work.
-- `["yaml-loops-v1:ReleasePlanLoop","release-plan-loop-status-reconciliation"]`
+- `["yaml-loops-v1:ReleasePlanLoop","release-plan-close-agreed-deliverable"]`
   retains accepted release planning and original downstream owners.
-- `["yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop","sprint-design-loop-status-reconciliation"]`
+- `["yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop","sprint-design-close-agreed-deliverable"]`
   retains accepted RP-S1 screens and fixture-to-display handoff.
 
 None supplies SprintArchitecture reviewer votes, selects an identity path,
@@ -107,12 +107,26 @@ handoff; only a concrete uncovered defect justifies a new fixture task.
 The accepted release architecture now distinguishes the integrated offline
 identity handoff (`13203ac`, reconciled by `bb1743d`) from a hosted candidate.
 `scripts/identity_handoff.py` has no live mode; its unresolved exit is not a
-runtime fix. The missing specialist-only client and retained decision runner
-are RP-S2 implementation deltas, not unfinished RP-S1 continuity/UX work.
+runtime fix. The specialist-only client is implemented in
+`3aca5dc236695c5ec7eac98d0cd03bced40da7b8` and present on this branch.
+Retain it for its original review/integration, without declaring its task
+accepted here. The retained decision runner remains a Developer implementation
+handoff, not unfinished RP-S1 continuity/UX work.
 No completed prior sprint was supplied; this section carries the cumulative
 design forward without declaring RP-S1 or RP-S2 accepted.
 
 ### Runtime boundary carried into RP-S2
+
+The following client contract is now installed source, not live-selected B.
+`WorkflowRuntime.resources()` unconditionally constructs specialist-only B;
+it cannot select an A path from a scenario label. Preserve the accepted
+[source-to-trial contract](customer-prototype-architecture.md#source-identity-is-part-of-the-scenario-contract):
+before trial-parent creation, join the explicit scenario to reviewed source,
+the exact common package and actual deployed role versions. `B-candidate`
+requires the installed candidate or reviewed descendant; `A-correction`
+requires its own evidenced supported correction and regression. Relabeling
+B as A or retrying unchanged historical A fails preflight without dispatch.
+There is no new runtime selector, configuration knob or approval stage.
 
 Within the existing request-owned `WorkflowRuntime.resources()` stack, keep
 the original opaque-only project/header resources and yielded tuple semantics
@@ -148,19 +162,23 @@ owns decomposition, actual dependencies, exclusive resources and integration.
 |---|---|---|
 | RP-S1 retained source / Developer | Preserve integrated binding, revision, history and presentation fixtures; repair only affected concrete failures; hand off current checks | Do not redispatch accepted implementation or claim live proof |
 | RP-S1 fresh inventory / DevOps | Privately bind sole-target current/rollback versions, packages, protocol, identities, caller/effective action and unresolved owners/effects | Independent of candidate/runner coding; no assumed missing grant |
-| RP-S2 isolated runtime / Developer | Real resource-factory regressions prove specialist isolation, both-role lifecycle paths, trusted negatives, cleanup and exact-response zero-send recovery; application/repository gates pass | No deployment, namespace relaxation, schema/dependency/history migration or UX rewrite |
-| RP-S2 local decision tooling / DevOps | Retained runner satisfies the client-release tier contract with offline ownership, failure, redaction and unknown-effect regressions plus affected retained suite | Coding can overlap runtime/inventory; live execution cannot |
+| RP-S2 isolated runtime / Developer | Retain installed `3aca5dc` and its real resource-factory regressions for original review/integration; repair only concrete failures and check joined source | No duplicate implementation, deployment, namespace relaxation, schema/dependency/history migration or UX rewrite |
+| RP-S2 local decision tooling / Developer | After safe lab writing ownership, retained runner satisfies the client-release tier contract with offline ownership, failure, redaction and unknown-effect regressions plus affected retained suite | Coding does not wait for cloud inventory; original DevOps exclusively owns guarded publication and live execution |
 | Git/source integration / Scrum-assigned owner | Reviewed task commits joined on the authorized feature branch, exact joined source checked; named retained branches/task/commit/reason recorded for any abandoned code | Establish lab writing ownership safely; never switch its shared dirty checkout under writers |
 | Bounded decision / DevOps | Joined runtime/tooling, fresh inventory and exact-source/Linux/package gates precede retained publication and finite trusted-ingress trial | Conditional permission plan/write/readback joins only if a required delta is evidenced; no formal E2E/cloud-pass credit |
 
-The lab was observed on `feature/swc-think-fast-aca-dns` with eight dirty/
-untracked paths. None is adopted here. Scrum must assign safe lab feature-
+The prior lab observation was `feature/swc-think-fast-aca-dns` with eight dirty/
+untracked paths; this revision does not refresh that status. None is adopted here.
+Scrum must assign safe lab feature-
 branch/worktree reconciliation before any lab writing; no new human approval
 is required for that internal ownership action.
 
 The decision handoff names each reached/unreached role and returns `selected-A`,
 `selected-B` or actionable `unresolved`. Architect-only entry is not both-role
-selection or remote collaboration. Missing/changed principal, receiver rejection,
+selection or remote collaboration. A resource-construction guard failure is a
+local preparation rejection, not observed receiver failure or proof of missing
+permission. Classify receiver failure only from an observed child result;
+missing observation remains unknown. Missing/changed principal, receiver rejection,
 version drift or an unknown effect stops that candidate without another send.
 A namespace or held-state contract change returns to existing Architect-advised
 PO/Scrum reconciliation; an unavailable supported provider finding is an exact
@@ -259,9 +277,10 @@ Verify supported header coexistence rather than guessing.
 
 Cover `RemoteAgents.prepare`, `create`, `_check` / `recover_creation`, `invoke`
 and `recover`, including the distinct raw SDK and Responses header paths.
-`WorkflowRuntime.resources()` shares project/headers with routing; isolate
-specialist delegation where needed so parent/model/history/checkpoint authority
-cannot change accidentally. If trusted namespace compatibility requires a new
+`WorkflowRuntime.resources()` now isolates specialist delegation from the original
+project/header/cache used by routing and other non-specialist callers; retain
+that boundary so parent/model/history/checkpoint authority cannot change
+accidentally. If trusted namespace compatibility requires a new
 binding contract, bring the exact mismatch to this existing Architect/PO/Scrum
 process. Do not migrate held histories or remove receiver equality to select B.
 
@@ -355,6 +374,23 @@ The pre-existing unrelated lab worktree remains untouched. Final exact-source/
 common-bundle and AC1-AC9/G1-G8 live gates remain downstream obligations.
 
 ### Verification of the October 20 cross-sprint refinement
+
+The current source-to-trial reconciliation starts at `6a24eaf` and supersedes
+the earlier ownership/readiness description, not its retained test contracts.
+Using the existing absolute Python executable with explicit lab root,
+`Test-Demo.ps1` passed dependency checking, **192 offline tests in 25.671
+seconds**, and compilation. `scripts/Test-Repository.ps1` passed index,
+public-boundary (**74 public files**), JSON, PowerShell, context and whitespace
+checks. A read-only documentation check verified **36 relative links/anchors**
+and balanced fences across all four architecture documents. No dependencies
+were installed. These fresh offline results do not retroactively execute the
+denied checks recorded by SprintDesign or certify its earlier exact source.
+No settings import, cloud inventory, permission change, publication, inference,
+Linux-package check or formal acceptance was performed. Lab sources were not
+changed; its full retained suite was not rerun. Live path selection remains
+unresolved and historical unknowns/held parents remain preserved.
+
+The following results describe the preceding refinement, not this exact source:
 
 Using the existing absolute validated Python 3.12.10 executable with the
 explicit lab root, `Test-Demo.ps1` passed dependency checking, **186 offline

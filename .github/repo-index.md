@@ -17,7 +17,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
-| Customer prototype architecture | `docs\customer-prototype-architecture.md` | October 19 full-scope release design, authorized authentication/delegation alternatives, principal-namespace discriminator, least-privilege exception, continuation contracts and AC1-AC9 evidence map |
+| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; October 20 isolated specialist-client B candidate and deterministic decision-runner contracts; authorized A/B paths, principal discriminator, continuation and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three initial sprint goals/acceptance contracts, retained RP-S1 integration, authorized A/B identity discriminator/permission handoff, unresolved-path artifact continuation, exact release/live gates and original-owner closeout |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Sprint-specific README/terminal screens, ordered revision trace, incomplete/recovered-event behavior and fixture-to-display implementation handoff |
@@ -121,11 +121,13 @@ Formal E2E validation and DevOps publication/cloud-pass remain separate;
 unresolved selection does not block remaining artifacts or waive live gates.
 
 Current ArchitectureLoop revision freshness: inspected integrated base
-`24b883f910dedbc8dc524177f29f59e061be265e`, with a clean application worktree.
+`bb1743d85cb10e6520c92efaa42df0702178f57a`, with a clean application worktree.
 No paths added/deleted, runtime or dependency changes. The release architecture
-now covers the additional user-authorized A/B identity paths, scripted bounded
-decision-test contract, and unchanged formal E2E/DevOps gates. Existing RP-S1
-source/clarity integration is retained; neither path is claimed live-selected.
+now resolves the integrated offline handoff's missing runtime/runner design:
+request-local specialist-only B client, unchanged non-specialist authority,
+exact-source candidate activation and finite journaled decision execution.
+It provides bounded downstream ownership/dependencies without reopening RP-S1
+fixtures/UX. Neither path is live-selected; E2E/DevOps gates remain unchanged.
 
 Original architecture handoff freshness: inspected base commit
 `1dfb7fed6fdeb3cc506b5394927fdfcebe39a4bc` plus the pre-existing readability

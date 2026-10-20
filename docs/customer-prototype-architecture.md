@@ -32,7 +32,7 @@ merely to obtain a different caller.
 
 ## Current architecture decision and inspected baseline
 
-This revision starts from application commit
+The preceding architecture revision started from application commit
 `24b883f910dedbc8dc524177f29f59e061be265e` on
 `feature/customer-hosted-session-prototype`, with a clean application worktree.
 The previous RP-S1 source/clarity integration is retained, not reopened:
@@ -40,7 +40,7 @@ The previous RP-S1 source/clarity integration is retained, not reopened:
 continuation fixtures, `56b762e` added the opt-in terminal view, and `24b883f`
 integrated the reviewed source and runnable README. These are implementation
 history, not freshly verified live capability or new work credited to this loop.
-The lab remains on its existing unrelated feature branch with pre-existing
+The lab remained on its existing unrelated feature branch with pre-existing
 dirty work. This architecture turn makes no lab edits or branch changes.
 
 No prior dispositions or reconciled feedback were supplied for this invocation.
@@ -58,7 +58,7 @@ Formal E2E validation stays in the End-to-End Test Loop; deployment and
 cloud-pass stay in the DevOps Work Loop. Architecture/planning can run bounded
 decision tests, but cannot promote their results to those acceptance gates.
 
-### Verification of this architecture revision
+### Verification of the preceding architecture revision
 
 Using the existing validated absolute Python 3.12.10 executable, without
 installing dependencies:
@@ -75,6 +75,147 @@ No retained lab source changed, so its full release suite was not rerun.
 Linux hosting-package checks, live identity-path selection, deployed/rollback
 inventory and formal release acceptance were not executed. Original Product
 Owner, Red Team and Critic agreement is not asserted by this owner handoff.
+
+## October 20 architecture delta: executable candidate boundary
+
+This Architecture Loop inspected clean application HEAD
+`bb1743d85cb10e6520c92efaa42df0702178f57a` on
+`feature/customer-hosted-session-prototype`. The lab remains on
+`feature/swc-think-fast-aca-dns` with unrelated dirty work; this turn neither
+changes that branch nor edits lab files. The integrated
+[`identity-candidate-handoff.md`](identity-candidate-handoff.md) adds nine
+offline probes in `13203ac`, reconciled by `bb1743d`. Its current executable
+has **no live mode** and intentionally returns exit 2 with unresolved selection.
+Neither that command nor this architecture executes a hosted B candidate.
+
+The handoff identifies a concrete implementation gap: production
+`WorkflowRuntime.resources()` still supplies one `ProjectClient`/header set
+to both `WorkflowRemoteAgents` and non-specialist operations. Runtime candidate
+installation and a journaled live decision runner are absent. Resolve that
+internal design gap here rather than sending the same unresolved research
+back to Scrum without an implementation contract.
+
+**Architecture decision:** retain A as the existing opaque-call baseline.
+Prepare B as a reviewed, exact-source candidate with a separate specialist-only
+project/header client. This is permission to design/assign the candidate, not
+selection of B, a claim that parent-derived delegation preserves namespace, or
+authority to weaken the receiver. No new framework, schema, deployed role,
+user approval stage or infrastructure is introduced. The existing public
+delegation references and caveats below still apply.
+
+### Request-local client ownership and unchanged trust
+
+Within the existing `WorkflowRuntime.resources()` `AsyncExitStack`:
+
+1. Keep the original managed-identity credential, exact-origin/no-retry HTTP
+   transport and opaque-only project/header resources for routing, model,
+   parent/history/checkpoint and other non-specialist uses. Keep the yielded
+   resource tuple's meaning/order so callers need no orchestration rewrite.
+2. For the B candidate, construct a distinct `ProjectClient` with a **copied**
+   specialist header dictionary and a separate OpenAI-client cache. Sharing
+   the request-owned credential/HTTP transport is permitted; client lifecycle
+   tests must prove cleanup does not invalidate another client while in use.
+   Do not mutate `project.call_headers`, SDK ambient context or a shared dict.
+3. Derive B's user exclusively from captured authenticated hosting context.
+   Revalidate the full `ScopeBinding.from_platform(...)` against the runtime's
+   scope before constructing delegated headers. Apply the offline candidate's
+   syntax, missing-user, unexpected-header and call-ID-substitution guards.
+   Move only the needed pure logic into runtime-owned source; hosted code must
+   not import a script/test runner. Never forward `x-agent-user-id`.
+4. Give only `WorkflowRemoteAgents` the specialist project/header pair.
+   Preserve unchanged opaque-call forwarding alongside B's delegated header.
+   Cover metadata/prepare, create, check, ambiguous-create inspection, send
+   and exact-response retrieval. Raw Azure SDK explicit headers and Responses
+   default headers are separate paths and both require assertions.
+5. Do not change `Assignment.validate_receiver()` or specialist history/storage
+   construction. The actual child principal must still match the parent's
+   trusted principal and all existing scope/version/prerequisite checks.
+   Principal absence or namespace change fails the candidate, even if hosting
+   returns HTTP 200 or a response can be retrieved.
+
+No new runtime selector is required by this design. Bind an explicitly named
+B trial to its reviewed source commit/common package/three target versions in
+the private decision record; do not infer a path from errors or switch paths
+automatically. The existing bundle retains A until a candidate is deliberately
+published by DevOps. If downstream work instead needs a configuration selector,
+its source/settings/package closure is an explicit Architect/Scrum delta,
+not an undeclared environment variable outside retained settings validation.
+
+Old pinned sessions remain on their old bindings/versions. Do not adopt any
+existing held parent, translate its principal/history or attach old children
+to the candidate. The candidate starts a fresh synthetic parent. A failed
+trial is retained as failed/held evidence; rollback versions and immutable
+packages remain available. A later final release may use B only after trusted
+ingress selection and full release gates; no old-state migration is implied.
+
+### Deterministic decision runner contract
+
+The original DevOps owner supplies the missing local, lab-owned runner using
+the retained wrappers; this section is its required behavior, **not an existing
+command**. Formal E2E and deployment/cloud-pass ownership do not move.
+
+| Input / stage | Required behavior |
+|---|---|
+| Invocation | Explicit absolute application/lab roots, existing validated Python, scenario (`A-correction` or `B-candidate`), exact reviewed source/package/role-version bindings and private evidence destination outside both repositories |
+| Preflight | Load only `Use-Settings.ps1` with the existing native settings; verify sole-target linkage and dedicated authenticated tenant/subscription; join fresh inventory, actual caller/effective action and rollback records. Declared versions from the offline runner are not inventory. |
+| Mutation ownership | One owner for `lab-hosted-release` and `lab-private-transport`; journal exact intended effect/bindings before dispatch. Serialize actual publisher/CLI/mount use, including across workflow runs; scheduler labels alone provide no OS exclusion. |
+| Publication | If a new candidate bundle is needed, use reviewed source checks, actual Linux/amd64/hosting-Python gate, immutable stage, fresh preview and retained publisher. This is original DevOps work, not an architecture deployment shortcut. |
+| Finite trial | One fresh parent; attempt architect first, then reviewer only after trusted architect entry/receiver success. Record the finite intended role calls before starting. Routing/model calls retain existing admission/deadline budgets. A needs a measured supported correction; do not trial unchanged A again. |
+| Observation | Privately bind exact actual role/version/parent/child/framework/response and artifact scope; publicly expose presence/match/entry classifications only. Verify the receiver passed, not only nonempty ingress identity. Coexistence of opaque and delegated headers remains a measured question. |
+| Failure/recovery | Stop on missing/changed principal, version drift, receiver rejection, unknown create/send or held effect. Retrieve a known exact response only; never create/send again to obtain a missing receipt. Preserve absent evidence as unknown rather than negative proof. |
+| Result | `selected-A`, `selected-B` or `unresolved`; actual tests and evidence kind, principal compatibility for each reached role, private locators, permission delta/readback, holds, cleanup and next closing action. Report unreached reviewer explicitly. A successful architect discriminator alone is not three-role collaboration. |
+
+Reuse existing assignments and exact immutable prerequisites for the trial.
+Do not invent an unprotected diagnostic endpoint, ask the model to assert its
+identity, bypass Blob validation or add a second acceptance ledger. If retained
+App/Observe modes cannot express the finite decision sequence safely, extend
+them with targeted lab regressions rather than improvising external commands.
+Unknown effect records must be inspectable without dispatch. Missing permission
+is a conditional delta, not an assumed prerequisite: read back the existing
+explicit grant before planning any scoped write.
+
+### Minimal downstream delta and stop conditions
+
+Scrum Master owns actual task IDs, assignments and Git reconciliation. The
+following bounded contracts refine the existing release plan, not replace it:
+
+| Delta / original owner | Done when | Hard handoff / exclusions |
+|---|---|---|
+| Isolated B runtime / Developer | Exact-source candidate wires specialist-only clients; real resource-factory tests prove both-role lifecycle headers, unmodified non-specialist context, cleanup, trusted binding negatives and known-response zero-send recovery; complete application/repository checks pass | Uses integrated offline handoff; excludes deployment, namespace relaxation, dependency migration and duplicate continuity/UX implementation |
+| Fresh inventory / DevOps | Sole-target active/rollback package/version/identity/protocol, actual caller/effective explicit action and unresolved operation records are current and privately bound | Independent of runtime coding; no assumed missing grant or mutation from metadata alone |
+| Decision tooling / DevOps | Retained local runner implements the table above; offline failure/unknown/ownership/redaction fixtures and affected retained suite pass | Runner coding can parallel runtime coding against this contract; live execution waits for inventory plus reviewed candidate/source/Linux/package gates |
+| Bounded ingress decision / DevOps | Execute the finite trial under existing authority and record selected/unresolved with receiver evidence for each reached role | No formal acceptance credit; stop on held/unknown work. Unsupported namespace requires an explicit end-to-end authenticated design through Architect-advised PO/Scrum, never an equality bypass. |
+| Integration / Scrum-assigned owner | All reviewed task commits are on the authorized feature branch, or named retained branches/commit IDs/reasons are recorded in a feature-branch commit; exact integrated source rechecked | Do not switch a shared lab checkout underneath other work; establish its feature branch safely before writing, or use a separate branch/worktree with explicit integration ownership |
+
+Only an evidenced required permission delta introduces its corresponding
+scripted plan/write/readback dependency. A genuine unavailable platform remedy
+can stop execution with an actionable external finding; unresolved candidate
+research alone does not stop remaining artifacts. Continue ReleasePlan and
+SprintPlan outputs even while selection is unresolved. Original AC1-AC9 and
+G1-G8, including final common bundle, two-turn/revision/continuation evidence,
+private MI provenance, stop/resume, isolation, truthful terminal and closeout,
+remain unchanged. Do not redispatch the already integrated RP-S1 fixtures/UX.
+
+The owner considers this conditional end-to-end design ready for the original
+Product Owner, Red Team and Critic review. Their agreement and live feasibility
+are not claimed by a documentation change.
+
+### Verification of the October 20 delta
+
+Using the existing absolute validated Python executable and explicit lab root,
+`Test-Demo.ps1` passed dependency checking, **186 offline tests in 23.995
+seconds**, and compilation. `scripts/Test-Repository.ps1 -Python
+<absolute-validated-python>` passed index, public-boundary (**73 public files**),
+JSON, PowerShell, context and whitespace checks. A targeted local check passed
+the architecture contract fields and all three relative links/anchors.
+No dependencies were installed and no runtime source changed.
+
+These are local source/document checks, not newly credited continuity proof.
+No cloud inventory, settings import, permission readback/write, inference,
+publication, Linux hosting-package check or live acceptance was performed.
+No lab tool changed, so the retained full lab release suite was not rerun.
+The remaining executable candidate/runner and all live gates are explicitly
+downstream; historical unknowns and unrelated dirty work are untouched.
 
 ## Principles, framework and tools
 

@@ -1,5 +1,178 @@
 # Sprint design: understandable, evidence-ready continuity
 
+## RP-S3: continuity, supported recovery and truthful delivery
+
+This is the **RP-S3 SprintDesign** slice, based on inspected clean application
+HEAD `585601f4ad3e8d87c029a6fdca2d0326a403e142` on
+`feature/customer-hosted-session-prototype`. Inputs are the retained
+[architecture](customer-prototype-architecture.md),
+[UX](customer-prototype-ux.md), [release contracts and RP-S2 retrospective](customer-prototype-release-plan.md)
+and the cumulative RP-S1/RP-S2 screens below. Prior design acceptance remains
+closed; it does not supply RP-S3 reviewer agreement or live evidence.
+
+RP-S3 designs the demonstration and delivery-report journey, not another UI.
+Retain implemented README commands and Screens A-D, existing stdout and
+acceptance parsing, and opt-in human stderr presentation. The following
+layouts describe separate reports assembled from existing evidence, not new
+renderer features, CLI flags, public fields, comparison ledgers or required
+banners. Symbols are illustrative aliases, not real identifiers or observations.
+No live identity path, completed initial parent or G1-G4 handoff is established
+by the supplied RP-S2 outcomes. Continue design artifacts while execution is
+blocked; do not simulate a successful customer demonstration.
+
+### Entry flow and blocked-backlog routing
+
+```text
+Existing prerequisite evidence lanes (Screen F)
+    -> reviewed runner/source integration -> formal joined-source E2E
+    -> original DevOps: exact package/publication/finite trial -> actual G1-G4
+    -> completed, non-held initial parent with private exact bindings
+    -> queue follow-up: same parent and both specialist sessions/versions
+    -> once-only supported compute stop/confirmed stopped or idle/resume
+    -> continue original conversation; reconcile effects, no duplicate sends
+Separate synthetic parent -> distinct children/scope, no first-parent content
+    -> original owners join all required evidence -> AC1-AC9/G1-G8 report
+```
+
+The scheduler may choose the order of independent isolation and recovery checks;
+this journey adds no task dependency or authority. A held/unknown effect stops
+effects, not truthful reporting. Screens F/G remain the interpretation for
+unreached ingress; historical `NATIVE_HOST_PRINCIPAL` is not a fresh RP-S3
+receiver failure. Preserve the originating stop under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+Existing Developer/Scrum coordination must substantiate its bounded evidence
+for original-reviewer acceptance before runner writing; do not restart
+unattended probes or recreate setup. Separately, transport-owner/DevOps
+coordination supplies the existing private accepted-trust receipt locator and
+module/source hash bindings before strict-trust Metadata execution. Failed
+lookup does not prove evidence absence. No new approval stage or repeated
+identity research is designed.
+
+### Screen H: two-turn demonstration and evidence companion
+
+The customer sees the README goal/diagram, then useful current design/review
+output in the existing terminal view. Reuse the same private session file only
+after a completed, non-held first turn. Turn 1 designs private ingress; turn 2
+adds an asynchronous queue while preserving the earlier constraints. Keep all
+ordered calls, including revisions. The separate sanitized companion report
+uses the following hierarchy only when its private evidence supports each row:
+
+```text
+TWO-TURN COMPARISON | illustrative report, not a live transcript
+Evidence scope: <offline fixture / hosted observation; source of evidence>
+Turn 1: private ingress | <actual current result status>
+Turn 2: private ingress + queue | <actual current result status / unreached>
+Parent hosted/framework binding and pinned version: <verified / unverified>
+Architect hosted/framework binding and pinned version: <verified / unverified>
+Reviewer hosted/framework binding and pinned version: <verified / unverified>
+New child creations: <instrumented count / not observed>
+New invocation responses: <exact inequality verified / unverified>
+Current requirements/candidate/review: <matched refs and revisions / missing>
+Stale approval invalidated: <verified / unverified>
+Release status: <remaining unmet gates; not implied by accepted advisory>
+```
+
+Both specialists must actually run on both turns. Private comparisons must
+check actual parent and both child hosted/framework identities and pinned
+versions, exactly two child creations across the two turns, fresh response IDs
+per invocation and current immutable prerequisites/accepted refs. Compare
+identity fields, not entire serialized session objects whose continuation
+changes. Useful memory prose or aliases alone proves none of those checks.
+The implemented human view still labels exact continuity unverified; do not
+add a verified badge based on this report. Keep full bindings, hashes, evidence
+locators and transcripts private; a shareable summary gives sanitized
+comparison outcomes and attribution, not truncated real IDs.
+
+Retain Screen C's controlled reject/revise/review storyboard as **offline** AC3
+proof, independently of live AC1/AC2. Both-role restored model-history tests
+and fresh-history controls remain distinct from a repeated input brief.
+Do not claim live model continuation merely from the design text.
+
+### Screen I: supported recovery boundary
+
+| Existing evidence boundary | Separate report wording and safe transition |
+|---|---|
+| No completed non-held initial parent, missing durable marker or unresolved prior stop outcome | Recovery not executed/unverified; preserve state and obtain the existing closing evidence. No speculative stop or repeat to fill a row. |
+| Retained marker binds the authorized once-only stop and confirmed stopped/idle state | Supported compute stop observed; continuation still unverified. A client disconnect alone is not this observation. |
+| Compute resumed but continuation/result evidence missing | Resume observed; recovery acceptance pending. Inspect known responses when available; no blind resend or clearing holds. |
+| Same parent/children/versions, checkpoint/effect journal and no-duplicate assertions pass | Supported stop/resume continuity verified within this evidence scope; not hard-crash recovery or exactly-once platform effects. |
+| Unknown effect, binding drift or duplicated send detected | HELD/FAIL as actually observed; retain state and exact private evidence for original repair owners. Success-looking content cannot override the failure. |
+
+This is reporting guidance, not a stop button, recovery command or execution
+plan. Original DevOps uses retained local scripts, the existing durable marker
+and confirmed stop state; it does not repeat the stop because a report is
+incomplete. Known-response retrieval is not a new invocation. Preserve the
+distinction between conversations/history, MAF checkpoints and immutable
+artifacts/effect reconciliation described in [the state map](design.md#conversations-checkpoints-and-artifacts-are-different-state).
+
+### Screen J: separate-parent isolation
+
+Show two separately labeled synthetic conversations, never two turns mislabeled
+as independent parents. The second uses its own private session file and a
+different synthetic brief, excluding the first parent's private-ingress/queue
+requirements. The separate report states distinct parent and both child
+bindings, distinct artifact scopes, content-exclusion observations and
+cross-scope rejection regression results individually as verified or missing.
+Different filenames/aliases alone do not prove isolation. Do not display either
+parent's full identifiers, private paths or transcript in the shareable report.
+Account-wide Blob Contributor means role/parent isolation is enforced by the
+application, not storage-RBAC or malicious-host isolation.
+
+### Screen K: delivery or blocked handoff
+
+Lead with the actual outcome, then proof and next action; do not bury a failed
+gate beneath test totals. Use the existing report channel, not a new terminal
+exit/status contract:
+
+```text
+DELIVERY | <verified only if all required gates pass / BLOCKED>
+Customer goal: three hosted roles; same specialist sessions within one parent
+Observed: <dated scope and attribution; local/mocked versus live separated>
+Not reached / unmet: <specific AC/G gates and last evidenced boundary>
+Continuity / recovery / isolation: <each verified or unverified separately>
+Reproduce: <existing setup and actual reviewed demonstration command>
+Final / rollback bindings: <private exact inventory; sanitized public outcome>
+Owned cleanup: <positively identified new resources closed / gaps>
+Preserved unknowns and limitations: <historical holds/UNKNOWN/cleanup uncertainty>
+Next owner/action: <existing assignment and concrete closing evidence>
+```
+
+Only all required AC1-AC9/G1-G8 evidence permits a customer-ready conclusion.
+Common-bundle health, private managed-identity artifact provenance and genuine
+Decision-1 acceptance remain separate from continuity. Final exact-source,
+Linux/amd64/hosting-Python/package checks and reviewed scoped push are not
+implied by local tests or documentation agreement. Final/rollback exact
+bindings stay in the authorized private report; public source stays generic.
+Report cleanup only for positively identified newly owned processes/listeners/
+mounts; never certify historical cleanup from this run.
+
+For the currently supplied blocked state, report no live two-turn, recovery
+or isolation demonstration, no verified final bundle, and unresolved identity
+selection. Use existing Screen F's two prerequisite owners/actions, followed by
+runner integration, formal E2E and original DevOps release gates. An actionable
+blocked delivery report is truthful closure of an assessment, not product PASS.
+Keep the README historical notice until measured evidence supports updating it.
+
+### RP-S3 handoff and design review boundary
+
+- **Scrum Master:** decompose only concrete remaining work, retain minimal
+  dependencies, shared-mutation serialization and Git reconciliation; this
+  design creates no duplicate UI implementation assignment.
+- **Developer:** retain accepted presentation, continuity, revision and model
+  history fixtures. No runtime or public contract change is requested here.
+- **E2E/DevOps:** own formal validation, guarded local-script execution,
+  once-only supported recovery, isolation and exact release proof. Carry
+  actual evidence and unreached boundaries into Screens H-K without resends
+  solely to make the report look complete.
+- **Product Owner/Critic:** review this RP-S3 slice against its sprint flows
+  and screen guidance. RP-S2 design closure under
+  `["yaml-loops-v1:sprint/2/RP-S2/SprintDesignLoop","rp-s2-sprint-design-close-agreed-deliverable"]`
+  and UX closure under
+  `["yaml-loops-v1:UserExperienceLoop","ux-close-agreed-deliverable"]`
+  remain accepted within their boundaries; their votes are not RP-S3 votes.
+  Operational blockers remain real downstream criteria, not reasons to invent
+  new screens or waive failures.
+
 ## RP-S2: gated identity trial and truthful collaboration handoff
 
 This section is the **RP-S2 SprintDesign** slice. The RP-S1 screens and their

@@ -1,6 +1,41 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
-## Current RP-S3 exact-observation and delivery join
+## RP-S1 canonical client-release contract
+
+Consume the [current sprint architecture](../../customer-prototype-sprint-architecture.md#sprint-architecture-entry-rp-s1-canonical-continuity-contracts-october-20-2026)
+and accepted SprintDesign Screens A-D. **Terminal client** (`terminal-client`)
+and **Guarded lab release toolchain** (`release-toolchain`) reference the
+canonical shared identity/artifact structures, not new stores or services.
+For **Remote design and review** and **Same-parent specialist continuation**,
+keep customer-first README, useful current design/review, chronological calls
+and opt-in `--native --view human` finalized stderr. Default stdout, machine
+delegation/result contract and acceptance parser remain unchanged.
+
+`demo/terminal.py` and `HumanTerminalTests` in `tests/test_demo.py` are retained
+implementation, not a new renderer assignment. Safe aliases are observations,
+not exact binding proof. Actual private parent/both-child identities, pins,
+creation counts, responses and history checks remain separate. Keep synthetic
+inputs, control neutralization and private identifiers/evidence outside customer
+Git/output. Never send a follow-up into pending/held state or count a recovered
+response retrieval as a new invocation.
+
+**Exact-source guarded release** retains originating substantive ownership
+review before eight-path sibling writes, designated reviewed actual loaded-root
+integration before formal local-script E2E, and original serialized DevOps
+publication/live gates. Independent containment/trust/inventory preparation
+does not wait for runner coding. Supplied trust/designations are available
+inputs, not current transport, ownership acceptance or installed-source proof.
+Scrum/integration must preserve/exclude unowned workflow context then rerun the
+original repository check; no private inventory insertion or AC7 waiver.
+Exact retained-suite/Linux hosting-package/common-bundle checks and scoped
+reviewed push remain downstream. Report unresolved identity selection and all
+unmet live gates truthfully; preserve UNKNOWNs, held parents, rollback, unrelated
+work and historical cleanup uncertainty. No new flag, evidence schema,
+collector, approval stage or second publisher is introduced.
+
+<a id="current-rp-s3-exact-observation-and-delivery-join"></a>
+
+## Historical RP-S3 exact-observation and delivery join
 
 Consume the [current RP-S3 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s3-gated-continuation-recovery-isolation-and-delivery-october-20-2026)
 and accepted Screens H-K. Missing G1-G4/non-held initial-parent proof routes to

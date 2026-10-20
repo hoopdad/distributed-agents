@@ -1,6 +1,138 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
-## Current RP-S3: gated continuation, recovery, isolation and delivery (October 20, 2026)
+## Sprint architecture entry: RP-S1 canonical continuity contracts (October 20, 2026)
+
+The current packet selects **RP-S1**, not the older RP-S3 overlay below.
+Inspected application baseline `59a6a63c523ea3a42e89e04d751c5c063af72987`
+on `feature/customer-hosted-session-prototype`; only untracked workflow context
+was present. Consume Architecture `35d526ae3a9e722ebe633ba60e2ca572182a5d1e`,
+UX `c70571186564cf293a63b00f08511a560b7deb11`, ReleasePlan
+`8343d48b310e4d79b7d1de7b133f483475c054f7` and SprintDesign
+`59a6a63c523ea3a42e89e04d751c5c063af72987`. Their supplied outcome JSON files
+record original reviewer agreement for those bounded artifacts. Those votes
+do not transfer to this SprintArchitecture or establish live execution.
+The packet supplies no completed sprints, assignments, separate blocked-decision
+list, reconciled feedback or prior dispositions. Historical overlays retain
+their originating boundaries; they are not newly imposed acceptance demands.
+
+### solutionModel and cumulative scope
+
+The authoritative `solutionModel` is the existing
+[Architecture model](customer-prototype-architecture.md#solutionmodel):
+ten components, five triggered flows and eighteen uniquely identified steps.
+This sprint references that model rather than duplicating or renaming it.
+No components, services, public contracts, dependencies or model IDs change.
+
+| Tier | Canonical components and implementation boundary |
+|---|---|
+| [Coordinator](requirements/coordinator/architecture.md#rp-s1-canonical-coordinator-contract) | `coordinator` (**Hosted coordinator**), `decision-routing` (**Decision-1 routing and admission**) and `workflow-checkpoints` (**MAF workflow checkpoints**). Retain explicit begin/route/execute/publish in `demo/workflow.py`, checkpoint wiring in `demo/host.py`, routing after deterministic gates and fenced current-output acceptance. |
+| [Specialists](requirements/specialists/architecture.md#rp-s1-canonical-specialist-contract) | `architect` (**Hosted architect**), `reviewer` (**Hosted reviewer**) and shared `conversation-state` (**Parent and specialist conversation state**). Retain remote session restoration in `demo/foundry.py` and five-stage model-history paths in both role modules. |
+| [Client/release](requirements/client-release/architecture.md#rp-s1-canonical-client-release-contract) | `terminal-client` (**Terminal client**) and `release-toolchain` (**Guarded lab release toolchain**). Retain opt-in finalized human stderr, unchanged stdout/parser and external guarded tooling; source ownership is not operational installation. |
+| Shared support, defined once | `artifact-plane` (**Private Blob artifacts and effect journal**) supports all three hosted roles; `identity-boundary` (**Trusted identity and private transport**) supports the terminal, roles and artifact plane. Keep their canonical support links, trusted scope, exact immutable refs, private MI path, ETag/fencing and unknown-effect holds. Tier references do not create separate stores or identities. |
+
+| Canonical flow | Trigger, current refinement and cumulative boundary |
+|---|---|
+| `remote-collaboration` — **Remote design and review** | A fresh synthetic initial requirement triggers `collaboration-bind`, `collaboration-route`, `collaboration-design`, `collaboration-review`, `collaboration-return`. RP-S1 retains directly testable repeated-call contracts and Screens A-D. Actual trusted architect then reviewer ingress, common-bundle provenance and live coordinator acceptance remain RP-S2. |
+| `two-turn-continuity` — **Same-parent specialist continuation** | A queue follow-up to a completed non-held parent triggers `continuity-revise`, `continuity-invoke`, `continuity-verify`. RP-S1 fixes the offline comparison boundary below; actual same-parent live proof remains RP-S3 after RP-S2's initial-parent gate. |
+| `supported-recovery` — **Supported compute stop and resume** | One retained-script stop request triggers `recovery-stop`, `recovery-resume`, `recovery-verify`. Preserve durable once-only marker, independently confirmed stopped/idle state, original bindings, checkpoints and reconciled effects; no hard-crash or exactly-once claim. Execution remains RP-S3, not an RP-S1 exit condition. |
+| `parent-isolation` — **Separate-parent isolation** | A separate synthetic parent on a verified release triggers `isolation-bind`, `isolation-execute`, `isolation-verify`. Require distinct child/history/artifact scope and first-parent requirement exclusion. Its release prerequisites and initial-parent comparison do not depend on successful follow-up/recovery. |
+| `guarded-release` — **Exact-source guarded release** | Reviewed owned commits trigger `release-join`, `release-package`, `release-discriminate`, `release-close`. Retain actual loaded-root integration, formal local-script E2E, serialized original DevOps and all exact-source/package/live closure gates. Preparation/inventory is independent of runner coding; no second publisher. |
+
+### RP-S1 contract-first handoff
+
+The actual source chain is parent-scoped `manifest.children.get(role)` in
+`WorkflowRuntime.execute()` -> `RemoteAgents.invoke()` restoring
+`AgentSession.from_dict(child.framework)` at the pinned version -> each
+specialist's `load_or_create_llm_session()` loading `specialist_history_v2`
+-> model call -> validated immutable output and stored model continuation.
+The remote child framework session and specialist internal model history are
+different. Compare stable identity fields and pins, not whole serialized state:
+response IDs and continuation state must advance. Conversation history, MAF
+checkpoints, artifacts and write-ahead effects remain four distinct concerns.
+
+| RP-S1 criterion | Retained implementation/check interface and receiving owner |
+|---|---|
+| Two-turn continuity | `tests/test_workflow.py` binding assertions compare parent scope, both hosted/framework child identities and pins, exactly two child creations, both roles on both turns, fresh invocation responses, exact current prerequisite refs and stale-approval invalidation. Integration/E2E checks relevant joined source; alias equality and recalled requirements are insufficient. |
+| Controlled repeated calls | Retain `test_reject_revise_review_reuses_both_children_with_fresh_responses`: architect -> blocked reviewer -> same architect -> same reviewer, four new responses and accepted current revisions. This controlled graph uses synthetic boundaries, never live specialist evidence. |
+| Direct specialist history | Retain both roles' load/model/store and serialized-value assertions in `tests/test_specialist_continuity.py`, identical-brief fresh-history controls, exact-response zero-send recovery and held/mismatched-effect negatives. Replayed full briefs do not replace these controls. |
+| Clarity without parser drift | Consume accepted SprintDesign Screens A-D and `HumanView` / `finalize_workflow_turn` in `demo/terminal.py`; retain `HumanTerminalTests` in `tests/test_demo.py`. Useful current candidate/review and chronological calls appear in opt-in human stderr after finalization. Machine stdout/parser and privacy/control neutralization remain unchanged; the human view is observational, not a continuity verifier. |
+| Attributable checks and supported identity assessment | Original source-check/integration owners retain exact changed-source checks and the explicit repository-index closing action. Existing recovery assessment and finite A/B contract provide an actionable unresolved handoff. No new research, renderer or fixture assignment is justified merely by a blocked release. |
+
+### Prior blockers and downstream decisions
+
+Neither identity path is live-selected. The specialist-only B source candidate
+is not a measured A correction, automatic fallback or proven ingress remedy.
+Historical `NATIVE_HOST_PRINCIPAL` occurred before architect application
+execution; it does not prove the current candidate fails, a provider defect or
+a missing grant. Preparation rejection leaves receivers unreached. Original
+DevOps must discriminate with actual trusted receiver evidence, architect before
+reviewer, under the retained finite scripted contract. Necessary demonstrated
+chosen-path permissions are pre-approved with exact scope/rationale and
+readback; no speculative grant, opaque-call-ID user identity or receiver
+equality relaxation is authorized. A material namespace/contract change uses
+existing Scrum reconciliation and Architect-advised Product Owner decisions.
+
+For exact originating ownership reference
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`,
+consume supplied `ownershipRecoveryDefaults` as acknowledgement/designation,
+not substantive ownership acceptance. Existing Developer completes attributable
+owned-path/resolver/root evidence for original Architect/Critic review before
+eight-path sibling runner writes. This turn does not retry earlier denied
+inspection, certify current sibling state or reopen that task's acceptance.
+Use approved mirrored evidence and accepted fingerprint references first;
+no renewed user authority is missing for that bounded read-only work.
+
+Designated integration Developer then joins reviewed commits with actual
+loaded operational roots/bytes/hashes, preserves `LAB_TOOL_OWNER_MISMATCH`
+and records task/branch/commit accounting, including reasons for any retained
+abandoned code branches. A registered sibling or clean Git does not install
+the operational wrapper. Original E2E validates the exact join through local
+scripts. In parallel, existing transport/DevOps owners prepare current
+containment-source/resource, strict trust, inventory/rollback and unresolved
+effect evidence. Original DevOps alone serializes guarded publication and live
+G1-G8 after exact-source, retained-suite, Linux hosting-package and preview gates.
+Scrum owns minimal dependencies, path ownership, real shared exclusive resources
+and Git reconciliation; this architecture assigns no competing task graph.
+
+Preserved untracked workflow context currently causes repository-index drift.
+Scrum/integration coordinates its preservation and exclusion from customer Git
+then reruns the unchanged `scripts/Test-Repository.ps1`; do not index private
+workflow control-plane output, remove unowned files or waive AC7. This does
+not require changing the portable application or extending RP-S1 to all live
+criteria. All AC1-AC9/G1-G8 remain required for release. Preserve UNKNOWNs,
+held parents, rollback assets, unrelated work and historical cleanup uncertainty.
+Blob Contributor remains account-wide: isolation is application-enforced,
+not storage-RBAC or malicious-host isolation.
+
+### Validation of this sprint refinement
+
+An in-memory document check verified all ten canonical components, five flows,
+eighteen steps, three tier entries and seven resolving local/anchor links.
+The existing absolute validated Python 3.12.10 executable ran `Test-Demo.ps1`
+with an explicit canonical lab root: dependency checks, **204 offline tests
+in 53.413 seconds** and compilation passed (exit 0). No dependencies were
+installed. Standalone `scripts/migration.py public-check` passed across
+**83 Git-visible files**; owned Git whitespace checks passed.
+
+The unchanged `scripts/Test-Repository.ps1` failed its first gate with
+`REPOSITORY_INDEX_STALE` (exit 1); its later gates did not execute. Read-only
+comparison found four added untracked workflow-audit JSON inventory entries
+and zero removals, not added customer source. Those unowned files remain
+preserved/excluded from this commit and the public inventory. The closing
+action above remains required. No lab source changed; the full retained lab
+suite and actual Linux/amd64/hosting-Python package checks were not run.
+These local checks validate the documented source boundary, not live progress.
+
+Architect accepts this bounded current-sprint/cumulative/tier design for
+original Product Owner, Critic and Red Team review; their votes for this loop
+are not yet supplied.
+No settings import, fresh cloud inventory, permission mutation, publication,
+inference, stop/resume, operational integration, final push or live success is
+claimed. Documentation completion is not new runtime progress.
+
+<a id="current-rp-s3-gated-continuation-recovery-isolation-and-delivery-october-20-2026"></a>
+
+## Historical RP-S3: gated continuation, recovery, isolation and delivery (October 20, 2026)
 
 Current sprint is **RP-S3: live continuity, recovery, isolation and customer
 delivery**. Inspected clean authorized feature baseline

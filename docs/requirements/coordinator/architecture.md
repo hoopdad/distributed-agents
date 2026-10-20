@@ -1,6 +1,37 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
-## Current RP-S3 continuation and recovery join
+## RP-S1 canonical coordinator contract
+
+Consume the [current sprint architecture](../../customer-prototype-sprint-architecture.md#sprint-architecture-entry-rp-s1-canonical-continuity-contracts-october-20-2026)
+and its referenced canonical `solutionModel`. **Hosted coordinator**
+(`coordinator`), **Decision-1 routing and admission** (`decision-routing`) and
+**MAF workflow checkpoints** (`workflow-checkpoints`) retain their existing
+implementations and shared support links; this tier creates no duplicate
+conversation/artifact/identity structures.
+
+RP-S1 scopes **Remote design and review** (`collaboration-bind`,
+`collaboration-route`, `collaboration-design`, `collaboration-review`,
+`collaboration-return`) and **Same-parent specialist continuation**
+(`continuity-revise`, `continuity-invoke`, `continuity-verify`) to offline
+evidence-ready source and clarity, not live acceptance. Keep explicit
+begin/route/execute/publish, trusted parent scope and `children.get(role)`,
+remote `AgentSession` restoration and immutable version pins. The binding
+assertions and four-call reject/revise/review fixture in
+`tests/test_workflow.py` retain both-role identity, creation-count, response,
+current-prerequisite and stale-approval checks. Do not duplicate them.
+
+Conversations, checkpoints, immutable artifacts and fenced write-ahead effects
+remain distinct. Deterministic gates precede genuine Decision-1; producer,
+version, hash and revision checks precede acceptance. Unknown effects hold,
+known-response retrieval is not a send, and only a completed non-held initial
+parent permits follow-up. Actual live common-bundle G1-G4, continuation,
+once-only confirmed recovery and independent isolation remain downstream
+obligations; accepted offline fixtures do not satisfy them. Original ownership,
+loaded-source integration, E2E and serialized DevOps boundaries remain intact.
+
+<a id="current-rp-s3-continuation-and-recovery-join"></a>
+
+## Historical RP-S3 continuation and recovery join
 
 Consume the [current RP-S3 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s3-gated-continuation-recovery-isolation-and-delivery-october-20-2026).
 Keep explicit begin/route/execute/publish, trusted parent scope and manifest

@@ -1,6 +1,37 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
-## Current RP-S3 both-role continuation and isolation join
+## RP-S1 canonical specialist contract
+
+Consume the [current sprint architecture](../../customer-prototype-sprint-architecture.md#sprint-architecture-entry-rp-s1-canonical-continuity-contracts-october-20-2026)
+and canonical model. **Hosted architect** (`architect`), **Hosted reviewer**
+(`reviewer`) and **Parent and specialist conversation state**
+(`conversation-state`) keep their shared support links and existing five-stage
+implementations. **Remote design and review** and **Same-parent specialist
+continuation** use the same pinned children for `collaboration-design`,
+`collaboration-review` and `continuity-invoke`; no hidden local fallback,
+history rekey, fourth service or generic session abstraction is introduced.
+
+Each remote child's restored hosted/framework binding differs from its internal
+`specialist_history_v2` model session. Each role loads that session, supplies
+it to its model call and persists validated output/history. Retain both-role
+direct-path persisted-value and identical-brief fresh-history controls in
+`tests/test_specialist_continuity.py`, with exact known-response zero-send
+recovery and unknown/mismatched-effect holds. Replayed requirements and memory
+prose cannot prove continuation. Fresh invocation responses must advance while
+identity fields/pins remain stable; full serialized session equality is wrong.
+
+Neither A nor specialist-only B is live-selected. Trusted architect ingress
+must precede reviewer dispatch; reviewer independently proves entry and exact
+current immutable prerequisite/output provenance. Keep receiver equality,
+scope checks and conditional delegation unchanged. Preparation rejection is
+not ingress failure; offline history fixtures are not live evidence. Original
+integration/E2E/DevOps retain actual operational and cloud gates. Recovery and
+separate-parent isolation remain cumulative downstream contracts, with
+application-enforced rather than storage-RBAC isolation.
+
+<a id="current-rp-s3-both-role-continuation-and-isolation-join"></a>
+
+## Historical RP-S3 both-role continuation and isolation join
 
 Consume the [current RP-S3 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s3-gated-continuation-recovery-isolation-and-delivery-october-20-2026).
 Retain both five-stage flows and `specialist_history_v2`. Each child's remote

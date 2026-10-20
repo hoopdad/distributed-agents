@@ -1,5 +1,102 @@
 # Customer hosted-session prototype: release plan
 
+## RP-S1 sprint review — blocked workstation-to-cloud demonstration
+
+Sprint review input: the accepted SprintPlan at
+`2f6e6601231b5f80b33abed5ab7b3786804b52c8`, accepted candidate
+`3aca5dc236695c5ec7eac98d0cd03bced40da7b8`, agreed predeployment E2E
+FAIL assessment and supplied DevOps needs-input report. Application Git
+inspection for this review found that same HEAD, a clean worktree and the
+authorized `feature/customer-hosted-session-prototype` branch. The reports
+below are supplied execution/review evidence, not independently repeated
+cloud observations.
+
+**Demonstration outcome: blocked, not customer-ready.** No workstation-to-cloud
+two-turn demonstration, current-candidate specialist ingress or final common
+bundle was established. The installed B candidate is not a live-selected path;
+A has no evidenced corrected source. Neither a provider defect nor a missing
+permission has been demonstrated. Historical receiver failures are not fresh
+failures of this candidate.
+
+The E2E assessment is complete as an accurate predeployment FAIL under
+`["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-close-agreed-failure-assessment"]`.
+Its reported 192 offline tests and repository checks apply to the stated
+source, not a final Linux hosting package or live collaboration. The supplied
+DevOps report says settings/linkage and ARM prerequisite checks reached
+`HOST_TRUST_EVIDENCE_REQUIRED` (exit 2), before authenticated SSH metadata,
+publication or inference. Its reviewers inspected the script boundary but
+did not inspect an invocation receipt; fresh ARM execution therefore remains
+owner-reported, not independently verified.
+
+### Prioritized findings retained in the release backlog
+
+These are closing actions within existing assignments, not duplicate tasks,
+new acceptance stages or changed architecture. Scrum Master retains assignment,
+dependency/resource serialization and Git reconciliation ownership.
+
+| Priority / finding | Existing owner and task | Closing action and inspectable handoff |
+|---|---|---|
+| P0 — Stopped lab ownership/root handoff | Developer with Scrum Master coordination; `RP-S2-LAB-OWNERSHIP` | Deliver existing bounded registration, exact branch/HEAD/status, canonical dirty-work preservation, point-in-time writing ownership and positive/negative resolver evidence for permitted original Architect/Critic inspection; alternatively resume ordinary read-only verification when execution access is available. Preserve the five-round stop and keep runner writing blocked until substantiated and accepted. |
+| P0 — Missing established transport-trust handoff | DevOps Engineer; `RP-S1-FRESH-INVENTORY` | Obtain the exact existing private accepted-fingerprint/transport-owner receipt locator through existing coordination. Resume retained Metadata inventory under strict trust, recording a private execution-evidence locator, fresh current/rollback bindings, effective permissions and held effects. Do not retrieve keys, regenerate trust or infer independent trust from a newly observed key. |
+| P1 — Reviewed finite runner and joined source missing | Developer; `RP-S2-DECISION-RUNNER`, then `RP-S2-SOURCE-INTEGRATE` | After the ownership handoff, finish the existing runner, mismatch/zero-create-send, ownership, redaction and recovery fixtures; join reviewed application/lab commits, run joined checks and report scoped push outcomes. Do not make coding depend on cloud inventory or reimplement the accepted candidate. |
+| P1 — Package/publication/ingress prerequisites unmet | DevOps Engineer; `RP-S2-INGRESS-TRIAL` | After reviewed integration and fresh inventory, validate exact source and actual Linux/amd64/hosting-Python package, use the guarded publication chain and finite trial, and distinguish preparation rejection, observed receiver failure and unknown outcomes. Select neither A nor B without the required actual ingress proof. |
+| P2 — Customer demonstration and final acceptance not reached | Existing RP-S2/RP-S3 E2E and DevOps owners | Retain G1-G4 remote collaboration/provenance gates followed by two-turn continuity, once-only supported stop/resume, isolation, final exact release checks and truthful handoff. Do not run recovery against a held parent or substitute offline results for live proof. |
+
+The ownership action applies exact prior reference
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+That assignment remains owner-reported complete with review blocked,
+`taskComplete=false`; agree-with-report votes do not establish setup completion.
+No stopped denied probes, write probes, checkout recreation or settings changes
+are requested by this review. This is missing execution access/evidence, not a
+request for expanded product authority.
+
+The partial-inventory and unresolved-status reports are actionable bounded
+handoffs for `RP-S1-FRESH-INVENTORY` and `RP-S1-STATUS-HANDOFF`; they need not
+wait for eventual live success. They do not complete the encompassing DevOps
+cloud-pass condition. Neither role was reached by inference in the supplied
+DevOps turn. No private current/final/rollback binding locator was supplied to
+this review, so none is certified here.
+
+### Acceptance and scope disposition
+
+- AC1, AC2, AC4 and AC5 / G1-G8: live proof remains unmet or not reached.
+- AC3: retained controlled revision/continuation fixtures are offline evidence,
+  not a new live result or a request to duplicate accepted implementation.
+- AC6: accepted README/terminal work is retained; measured live presentation
+  remains unverified.
+- AC7: historical source checks do not satisfy the final exact Linux/package
+  gate; joined tooling checks remain outstanding.
+- AC8: local application branch/status was inspected; reviewed cross-repository
+  reconciliation and scoped push remain outstanding. Canonical lab dirty work
+  was not reinspected or adopted.
+- AC9: this is a blocked handoff, not final delivery. Current exact final/
+  rollback bindings, reproducible successful live demonstration and final
+  owned-cleanup evidence remain outstanding.
+
+The accepted architecture, UX, release plan, SprintDesign and SprintArchitecture
+closure dispositions remain confined to their original deliverables. Preserve
+the accepted candidate handoff under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-ISOLATED-CLIENT/AssignedWorkDeveloperLoop","isolated-client-close-agreed-handoff"]`.
+No criterion is waived, accepted handoff reopened or deferred enhancement
+promoted into a blocker. No material contract change is proposed.
+
+This review records the existing stops without restarting them. Preserve all
+UNKNOWN publications, held parents, rollback assets, unrelated work and
+historical cleanup uncertainty. No cloud operation, publication, inference,
+permission change, transport startup, compute stop/resume or cleanup is
+performed by this Product Owner review. Its documentation is not substantive
+new implementation/live progress. Scrum Master, Critic, Architect and Red Team
+agreement for this SprintReviewLoop has not yet been supplied; prior-loop votes
+do not close this loop or establish release acceptance.
+
+Local validation of this documentation delta used the existing absolute
+validated Python and explicit lab root: `Test-Demo.ps1` passed dependency
+checks, 192 offline tests in 18.753 seconds and compilation;
+`scripts/Test-Repository.ps1` passed index, 74-public-file boundary, parser and
+whitespace checks. No dependency installation or lab source change occurred.
+These repeated local checks do not constitute new substantive progress or
+final-package/live proof.
+
 ## Product outcome and planning authority
 
 Deliver a customer-shareable prototype in which a hosted coordinator repeatedly

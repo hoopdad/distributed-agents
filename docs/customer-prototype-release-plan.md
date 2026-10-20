@@ -1,10 +1,10 @@
 # Customer hosted-session prototype: release plan
 
-## Release planning entry: canonical sprint and execution handoff (October 20, 2026)
+## Release planning entry: operational-context correction and live delivery (October 20, 2026)
 
 This is the current Release Plan Loop entry. It consumes Architecture
-`5f9c38437102f67fd40a78d7debdaa099ba4ff44`, UserExperience
-`053070d38ea77920a4ddbf1eacf643e8152e8fae`, the customer specification and
+`f5fc1dec9b01e98745268e359808f3021a8906de`, UserExperience
+`063787500eb3404c1932ff921af5079a170d90ac`, the customer specification and
 the three tier contracts in `docs/requirements`. The supplied ArchitectureLoop
 audit records Product Owner, Red Team and Critic agreement; the supplied
 UserExperienceLoop audit records Product Owner and Critic agreement. Those
@@ -15,20 +15,38 @@ history; none is silently superseded, generalized or newly accepted here.
 
 Fresh application inspection found a clean authorized feature branch at the UX
 commit. Ignored workflow context remains preserved outside owned commits.
-The supplied outcome audits were read under the application's workflow context;
-their original reviewer agreement is distinct from the owner reports' earlier
-pending-vote wording. This plan does not claim those votes for its own review.
+The supplied ArchitectureLoop audit
+`44d8ba586176db02e3079782dd51160199f0dafb69e621b0bd4c38f12678257e.json`
+and UserExperienceLoop audit
+`f8e505196488d5b4e277a4b4f93d47f05de0f7c5f8e64e8f215152ca2dc19bf6.json`
+were read under the supplied current workflow context: both record `agreed`,
+all original votes true, `taskComplete=true` and no unmet criteria. Those
+votes do not transfer to this release plan or prove operational/live success.
 
-The current architecture inspected the newly accessible mirrored ownership/root
-capture: its complete-file hash matched; direct sibling branch/HEAD/status,
-actual resolver contents and four Python plus four PowerShell matched/crossed-root
-results were inspected. These are architecture-attributed captured observations,
-not executions or independent embedded-source hash recomputation by this planning
-turn. The earlier unavailable-evidence boundary is historical, not the current
-closing action. Cleanliness and recorded source equality are neither ownership
-acceptance nor proof of operational installation. Supplied accepted host trust
-and writer/integration designations are available inputs, not missing user
-decisions or fresh transport proof.
+The accepted architecture consumes predecessor
+`bb3af682-2d1c-41cf-97e7-312f624ea669/result.json` and its substantive original
+Architect/Critic acceptance of these exact originating boundaries:
+`sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop`,
+`sprint/1/RP-S1/task/RP-S2-DECISION-RUNNER/AssignedWorkDeveloperLoop`, and
+`sprint/1/RP-S1/task/RP-S2-SOURCE-INTEGRATE/AssignedWorkDeveloperLoop`.
+Their acceptance is consumed, not reopened. Lab runner correction `1842984`
+and application integration `1bd157d` remain accepted source handoffs. The
+predecessor original E2E agreement is on an actionable predeployment **FAIL**,
+not authentication, Linux/package or hosted success. Earlier pending-ownership
+and runner-write-block entries in this document and tier contracts are history
+within those exact accepted boundaries, not current prerequisites. Sprint
+architecture must align its affected client-release handoff with this amendment;
+coordinator/specialist runtime contracts remain unchanged.
+
+Architecture's inspected operational-profile evidence
+(`38ec94d9d218e25791b60a2ed0dac80877538b0dcb128e94452aac077571f8b2`)
+establishes a tooling-checkout versus existing dedicated-context mismatch:
+retained wrappers derive profiles from the feature sibling rather than the
+existing operational root. This planning turn attributes that inspection to
+Architecture; it neither reads credential contents nor reruns captured checks.
+This is a concrete configuration contract correction for the existing Developer,
+not an expired-credential diagnosis or a user-only blocker. Supplied host trust
+and designations remain usable; no renewal or ownership recapture is required.
 
 ### Product priority and bounded increments
 
@@ -57,7 +75,7 @@ requires its appropriate checks and repair.
       "acceptanceCriteria": [
         "Retained two-turn fixtures assert stable actual parent and both hosted/framework child bindings and pins, exactly two child creations, both roles on both turns, fresh invocation responses, updated requirements and invalidated stale approval.",
         "Controlled offline architect/reviewer rejection/revision/review proves repeated same-specialist bindings; both specialists load persisted model history, with fresh-history and exact-known-response zero-send controls.",
-        "README and opt-in human stderr explain the invariant, useful current outputs and truthful status without changing stdout, machine contracts or acceptance parsing; privacy and control-character safeguards remain.",
+        "README and opt-in human stderr explain the invariant, useful current outputs and truthful status without changing stdout, machine contracts or acceptance parsing; existing clarity/closeout ownership replaces the stale ownership/write-block notice with the actual configuration and unmet-live status; privacy and control-character safeguards remain.",
         "Applicable source checks pass for integrated changes. Preserve reviewed source and give an attributable supported identity assessment, fresh-inventory status and finite decision contract; unresolved selection is explicit, not a live PASS."
       ],
       "doneWhen": "The retained offline and clarity criteria are verified for relevant changed source and the bounded identity assessment has a concrete selected or unresolved handoff; no live acceptance is inferred.",
@@ -70,14 +88,16 @@ requires its appropriate checks and repair.
       "flows": ["guarded-release", "remote-collaboration"],
       "flowSteps": ["release-join", "release-package", "release-discriminate", "collaboration-bind", "collaboration-route", "collaboration-design", "collaboration-review", "collaboration-return"],
       "acceptanceCriteria": [
-        "Originating ownership acceptance precedes eight-path sibling runner writes; designated integration reconciles reviewed application/lab commits with actual loaded roots, bytes and hashes before formal local-script E2E.",
+        "Consume substantive originating ownership, runner and source-integration acceptance without redispatch. Existing Developer corrects explicit OperationalLabRoot propagation in the five affected retained entry points and callers, solely in newly assigned feature-sibling paths, preserving ApplicationRoot source and LabRepositoryRoot loaded-tool equality.",
+        "Correction coverage verifies legacy matched roots and distinct reviewed-tool/existing-context roots; rejects missing, relative, reparse, default or mismatched profiles and tenant/subscription divergence before effects; covers calibration, every affected caller, WSL mapping/azd selection, environment restoration, crossed-tool rejection and actual loaded-source equality.",
+        "Original Architect/Critic review the scoped correction and affected retained/application checks; designated integration joins reviewed exact roots/bytes/hashes, pushes scoped reviewed feature refs including accepted 1bd157d if absent remotely, and records readback before original local-script E2E revalidates the changed exact join.",
         "Independent trusted inventory binds actual target, current/rollback versions, packages, identities, effective actions and unresolved effects. Any demonstrated necessary permission delta is scoped, documented and read back.",
-        "Final intended source passes required application/repository and affected retained checks plus actual Linux/amd64/hosting-Python package gates; immutable source/settings/ZIP closure and fresh preview bind guarded publication.",
+        "Final intended source passes required application/repository and affected retained checks plus actual Linux/amd64/hosting-Python package gates; validated existing Windows/WSL context, containment-source/resource readiness, immutable source/settings/ZIP closure and fresh preview bind guarded publication.",
         "A finite source-bound architect-before-reviewer trial selects a supported path only on actual trusted receiver evidence; preparation rejection, missing observation or architect-only entry is not both-role success.",
         "Exactly three healthy versions use one verified common bundle with rollback retained; a completed non-held initial parent proves actual remote accepted artifacts, private managed-identity Blob provenance and genuine Decision-1/final gates (AC1 and G1-G4)."
       ],
       "doneWhen": "Actual integrated-source and final common-bundle G1-G4 evidence establishes the completed non-held initial parent; an agreed unresolved report alone leaves this live sprint goal unmet.",
-      "exclusions": ["No receiver relaxation, opaque-call-ID delegation, automatic identity fallback, held-state adoption or uncertain-effect replay.", "No new infrastructure, deployment bypass, second publisher or acceptance from metadata/HTTP 200/offline tests."],
+      "exclusions": ["No receiver relaxation, opaque-call-ID delegation, automatic identity fallback, held-state adoption or uncertain-effect replay.", "No credential copy/inspection/symlink, duplicate/default/production profile, private-settings edit, crossed-tool root or canonical dirty-source adoption.", "No new infrastructure or permission change under this bounded replan, deployment bypass, second publisher or acceptance from metadata/HTTP 200/offline tests."],
       "handoff": "Exact reviewed source/package/version/identity/rollback bindings, selected supported path, reconciled effects and the original completed non-held acceptance parent to RP-S3."
     },
     {
@@ -102,43 +122,74 @@ requires its appropriate checks and repair.
 
 ### Critical path and independent preparation
 
-Existing Developer/Scrum first return the now-accessible capture and
-`ownershipRecoveryDefaults` through **RP-S2-LAB-OWNERSHIP** at the exact
-originating reference
-`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
-Original Architect/Critic must substantively assess the original safe-writing
-and root criteria; prior agreement explicitly retained `taskComplete=false`.
-Preserve that task's originating five-round stop and dependent-write block.
-Do not replace the task, recreate setup, renew designations or repeat the
-capture merely to remove attribution. Accessible evidence is not acceptance.
-This bounded release-plan deliverable need not wait for that downstream vote.
+The immediate critical path is **operational-context correction**, not another
+ownership review or unchanged runner task. Scrum Master assigns the existing
+Developer the smallest bounded correction and establishes precise new path
+ownership before writes. The previous eight-path runner designation does not
+grant ownership of all affected wrappers. The minimum affected retained entry
+points under lab `foundry-tf/multi-agent` are `Test-LabPrerequisites.ps1`,
+`Test-PrivateConnectivity.ps1`, `Build-CodePackage.ps1`,
+`Build-BundledCodePackage.ps1` and `Invoke-WslCodeRelease.ps1`, plus their precise
+callers/tests and directly necessary shared helper/docs/index paths. Write only
+in the authorized registered feature sibling, never the dirty canonical checkout.
 
-After substantive originating acceptance, **RP-S2-DECISION-RUNNER** completes the retained
-eight-path tooling and offline controls. The designated
-**RP-S2-SOURCE-INTEGRATE** Developer joins reviewed commits with actual loaded
-operational source, preserves root guards and supplies exact joined checks to
-the original End-to-End Test Loop. No canonical dirty-checkout runner writes.
-The designated sibling-only paths remain `identity_decision.py`,
-`Invoke-IdentityDecision.ps1`, `tests/test_release_identity_decision.py`,
-`Test-PrivateConnectivity.ps1`, `observe_agent.py`, `release_roots.py` and
-`Release-Roots.ps1` under the lab's `foundry-tf/multi-agent`, plus its
-`.github/repo-index.md`. Ownership approval is not approval to weaken
-`LAB_TOOL_OWNER_MISMATCH` or run a crossed-root wrapper. Review must bind the
-actually loaded module/wrapper bytes, not only a task commit or equal recorded
-hashes of pre-runner resolvers.
+**Correction doneWhen:** explicit `OperationalLabRoot` propagates through all
+five entry points and callers to reuse only the existing dedicated operational
+context, with Architecture's validation and retained safeguards intact; the
+targeted and affected retained/application/repository checks pass for changed
+source and original Architect/Critic accept the scoped commit(s). Synthetic
+profiles/CLI boundaries must cover the negative and caller cases in RP-S2 above.
+Report skips/exclusions explicitly; Windows mocks cannot close Linux gates.
+**Exclusions:** no credential inspection/copy/symlink, duplicate profile,
+private-settings edit, production/default context, infrastructure/permission
+change, workflow/input edit, root-guard relaxation or accepted-runtime redispatch.
+**Handoff:** reviewed commits, precise caller/helper paths, actual check results
+and remaining operational prerequisites to the designated integration Developer.
+
+Keep `ApplicationRoot` for application source and `LabRepositoryRoot` for the
+reviewed loaded-tool owner. Obtain `OperationalLabRoot` from the existing
+checked-in settings import, not from edited settings or a credential search.
+Validate canonical absolute paths and reparse/escape rejection; Windows profile
+must match both the imported dedicated profile and operational `.azure-cli`.
+Compare registered tenant/subscription across selected tool and operational
+registries and imported expected scope before effects; preserve project, region,
+model and actual account readback gates. Legacy omission can default only to
+the selected lab's existing validated context, never silently search/fallback.
+WSL maps that same operational root's existing `.azure-cli/wsl`, preserving
+CLI/azd selection, path translation and environment restoration on both outcomes.
+Calibration compares against the validated operational profile. Neither
+`LAB_TOOLS` nor loaded wrapper/resolver ownership moves to the operational root.
+Keep `LAB_TOOL_OWNER_MISMATCH`, raw-byte seals and actual loaded-source equality.
+No private path/profile metadata enters customer output, Git or runtime bundles.
+
+The designated **RP-S2-SOURCE-INTEGRATE** Developer then reconciles the changed
+reviewed join, not the already accepted unchanged task: verify actually loaded
+wrapper/helper roots and bytes/hashes, matched/crossed-root controls and exact
+joined checks. Commit/push reviewed scoped feature refs, including accepted
+`1bd157d` if not already remote, and read them back. Record task/branch/commit
+accounting before handing the changed join to original E2E. A repeated
+execution-unready integration report is not the closing remedy.
 
 Independently, the existing transport owner with Scrum coordination provides
-current containment-module/source-hash and resource availability handoff;
-original DevOps executes retained strict prerequisites and
+current containment-module/source-hash and resource availability handoff.
+Read-only source/resource preparation is independent of correction coding;
+operational checks that consume the corrected wrappers depend on the reviewed
+join, not merely a source-preparation report. Original DevOps executes retained
+strict prerequisites, establishes actual Windows/WSL context readiness and
 **RP-S2-FRESH-INVENTORY** using supplied accepted host trust and the sole-target
-settings loader. Inventory does not wait for runner coding or trial success.
+settings loader. Inventory is independent of identity-trial success and starts
+as soon as its own validated context/transport prerequisites are satisfied.
+If retained authentication actually requires device code, surface the real
+URL/code privately for the existing dedicated context and await that action.
+Profile separation alone does not establish this user-only prerequisite.
 Use the supplied mirrored evidence and accepted fingerprint/reference first.
 Read-only ownership inspection has existing user approval; do not manufacture
 a new authority request or infer acceptance from that approval. Any genuinely
 missing observation remains assigned to its existing owner, not a new
 product requirement or a reason to redispatch accepted application work.
 
-The dependent execution join is reviewed loaded source + formal E2E handoff +
+The dependent execution join is reviewed corrected loaded source + original
+E2E revalidation of that exact join +
 current inventory + exact-source/retained/Linux/package/preview gates ->
 serialized guarded publication and finite identity discrimination -> actual
 common-bundle G1-G4/completed initial parent -> same-parent follow-up ->
@@ -159,16 +210,27 @@ branch, commits and abandonment reason in a feature-branch commit message.
 Keep retained branches. Final reviewed scoped push remains downstream work,
 not a planning push or a claim made here.
 
+In parallel with source correction, the existing clarity/closeout owner updates
+the README's stale ownership/write-block notice under the accepted UX direction.
+Done means the first screen states accepted source handoffs, the concrete
+configuration correction and unmet operational/live gates without inventing
+success, changing the renderer/parser or presenting the new operational flag
+as already executable. Hand the scoped reviewed change to integration and
+retain conditional demonstration commands. This documentation work does not
+block coding, grant execution readiness or require a new approval stage.
+
 ### Identity, evidence and stop boundaries
 
 The specialist-only B implementation is an unselected candidate. A requires
 a measured supported correction, not relabeling B or republishing unchanged
 opaque context. Use the retained [identity-selection contract](#identity-selection-contract-across-rp-s1-and-rp-s2):
 trusted receiver equality, finite calls, journal-before-send, exact known-response
-retrieval and explicit unknown holds. Necessary demonstrated permission changes
-are already authorized with exact scope/rationale; no broad grant or identity
-replacement follows. A material namespace/contract change goes to existing
-Scrum reconciliation and Architect-advised Product Owner scope decision.
+retrieval and explicit unknown holds. The originating identity-path permission
+approval remains historical authority, but the current operational-profile
+replan explicitly excludes infrastructure/permission changes; this correction
+does not exercise or expand that authority. A material namespace/contract change
+goes to existing Scrum reconciliation and Architect-advised Product Owner scope
+decision.
 
 Use local repository scripts for E2E and DevOps, never GitHub Actions. Required
 checks remain `Test-Demo.ps1 -Python <absolute-validated-python>
@@ -194,14 +256,15 @@ remains unverified; historical live blockers are not freshly diagnosed here.
 
 ### Validation and remaining check handoff
 
-The prior planning entry recorded a wrong-interpreter import failure followed
-by 204 passing offline tests, and a repository-index failure caused by unowned
-workflow context. Those are historical observations, not failures newly found
-here. The subsequent source-closure commit `08ac1e7` excludes and preserves that
-context; the accepted UX reports passing repository checks and 204 offline
-tests. Do not redispatch that closed source-exclusion work or waive future
-exact-source validation. Current checks for this revision are recorded below
-after execution; upstream checks are attributed rather than relabeled current.
+Earlier planning entries recorded offline test and source-closure checks;
+accepted integration `1bd157d` and lab runner `1842984` remain attributed
+predecessor results, not fresh checks of the future correction. The accepted
+Architecture/UX audits report repository and canonical-model checks only for
+their own documentation. Do not redispatch closed source-exclusion, fixture,
+history, renderer or runner work or rerun unchanged suites for progress credit.
+This turn validates the changed release contract and public repository boundary;
+the Developer must run the targeted/retained/application checks for the actual
+implementation and original E2E must revalidate the changed exact source join.
 
 No runtime, dependency, settings, lab source or package input changes are
 assigned by this edit. Final actual loaded-source, retained lab, Linux/package,
@@ -209,25 +272,28 @@ publication, inference and live gates remain their original owners' obligations.
 
 Current validation executed for this revision:
 
-- In-memory plan/model checks passed: three unique sprint IDs, populated goals,
-  acceptance, doneWhen, exclusions and handoffs; all five canonical flows and
-  eighteen steps resolve with complete coverage; both entry links resolve.
-  The retained AC1-AC9/G1-G8 coverage is present. Both supplied upstream outcome
-  audits record `agreed` and the expected original reviewers' substantive votes.
-- `Test-Demo.ps1` with the existing absolute validated Python 3.12.10 and explicit
-  canonical lab root passed dependency checks, **204 offline tests in 52.965
-  seconds**, and compilation (exit 0). No dependencies were installed.
-- `scripts/Test-Repository.ps1` passed index, 79-file public boundary, JSON,
-  PowerShell, context and whitespace checks (exit 0). Owned `git diff --check`
-  passed. No public path was added or deleted; no inventory adoption of ignored
-  workflow context was needed.
+- In-memory contract checks passed three unique sprint IDs and populated goals,
+  acceptance, doneWhen, exclusions and handoffs; complete canonical five-flow/
+  eighteen-step coverage; all five affected callers and operational safeguards;
+  both original upstream reviewer sets/acceptance; local entry links; and exact
+  two-path edit scope. Retained retrospective/history text is unchanged.
+- The initial history assertion failed because the temporary checker decoded
+  Git output with the Windows default instead of UTF-8. Explicit UTF-8 readback
+  confirmed equal retained text; the complete corrected contract check passed.
+  No product/history fix was needed or claimed.
+- `scripts/Test-Repository.ps1` passed using the existing absolute lab-root
+  Python interpreter: current index, 80 public files, public/private boundary,
+  JSON, PowerShell, context and whitespace checks. No paths were added/deleted.
+- No unchanged runtime suite is claimed as fresh implementation progress.
+  `Test-Demo.ps1`, retained regressions and Linux/package checks remain required
+  for the actual correction/final source under their existing owners.
 
-These are local planning/source checks, not independent recovery-capture
-execution, originating ownership acceptance, actual loaded-source integration,
-Linux hosting-package certification or live acceptance. No retained lab suite
-was run because lab source did not change. No cloud operation or push occurred.
-Original Stakeholder, Architect, Designer and Critic votes on this release plan
-remain pending; owner completion does not assert their agreement.
+These are local planning/source checks, not execution of the new operational
+contract, actual corrected loaded-source integration, Linux hosting-package
+certification or live acceptance. No settings import, credential inspection,
+lab mutation, cloud operation, push or dependency installation occurs here.
+Original Stakeholder, Architect, Designer and Critic votes on this release
+plan remain pending; owner completion does not assert their agreement.
 
 ## Current RP-S3 retrospective — accepted observation handoff without live entry (October 20, 2026)
 

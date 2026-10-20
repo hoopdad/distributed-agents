@@ -1,5 +1,25 @@
 # Customer hosted-session prototype: user experience
 
+## Current RP-S3 retrospective — show the reached boundary, not implied readiness
+
+Accepted SprintReview `0f2e6276bb53f84605d745db24cafd1991133d21`
+records a blocked demonstration. The
+[RP-S3 retrospective](customer-prototype-release-plan.md#current-rp-s3-retrospective--inspectable-evidence-and-continuation-entry-october-20-2026)
+retains Screens H-K and existing README/terminal presentation. An operator
+handoff should say: "Scenario observation map accepted; live continuation
+unreached because no completed non-held initial parent is established."
+State the existing closing owner/action separately from report agreement.
+
+Attribute RP-S3 settings linkage and recovery-record inspection to the supplied
+DevOps report (shellId 584): local validation only; the strict prerequisite
+wrapper was not executed in that round. Do not relabel the earlier ARM/trust
+stop as a fresh invocation. Raw terminal capture is not the enriched scenario
+proof, and aliases or matching prose are not actual binding checks.
+Do not display successful follow-up/recovery rows for absent observations or
+offer a retry to replace missing captures when effects are held or uncertain.
+No renderer, field, flag, dependency or duplicate UX implementation is requested.
+Private bindings, transcripts and trust evidence remain outside customer output.
+
 ## Current RP-S2 retrospective — qualified outcomes and next actions
 
 Accepted recovery-entry SprintReview

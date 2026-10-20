@@ -1,5 +1,26 @@
 # Customer hosted-session prototype: release architecture
 
+## Current RP-S3 retrospective — assertions are not observation provenance
+
+Accepted SprintReview `0f2e6276bb53f84605d745db24cafd1991133d21`
+and the revision-bound RP-S3 executable/observation handoff distinguish a
+validator's consistency checks from independent evidence of actual execution.
+The [RP-S3 retrospective](customer-prototype-release-plan.md#current-rp-s3-retrospective--inspectable-evidence-and-continuation-entry-october-20-2026)
+retains this distinction without adding a collector, ledger or contract.
+The enriched scenario proof, raw terminal capture, cumulative effect transitions,
+independent request-boundary counts and scoped checkpoint records are different
+inputs; matching JSON cannot authenticate private Blob operations, genuine
+Decision-1 execution or deployed common-bundle identity.
+
+Integration consumes the accepted invocation/observation map once, joins actual
+loaded operational roots and reviewed bytes, and supplies joined checks to formal
+E2E. DevOps supplies independent private observations under the existing gates.
+An accepted blocked report cannot supply the completed non-held initial parent
+needed for continuation. Isolation still depends on G1-G4, not recovery success.
+Substantive originating ownership acceptance remains required before runner
+writes; independent established host trust is not an offline coding dependency.
+No accepted architecture, session/state, identity or acceptance contract changes.
+
 ## Current RP-S2 retrospective — separate evidence joins
 
 Recovery-entry input is accepted SprintReview

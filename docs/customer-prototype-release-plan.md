@@ -1,5 +1,82 @@
 # Customer hosted-session prototype: release plan
 
+## Current RP-S3 retrospective — inspectable evidence and continuation entry (October 20, 2026)
+
+### Inputs and measurement limits
+
+This Product Owner retrospective consumes accepted RP-S3 SprintReview
+`0f2e6276bb53f84605d745db24cafd1991133d21`, accepted prior retrospective
+`dd7728cb80b503883d96d3317a3dd5dee28f1c6e`, the original reviews of
+RP-S3-EVIDENCE-CHECKS at `89dfd9f`, and supplied ownership/E2E/DevOps outcomes.
+Demo remains **BLOCKED**, E2E **FAIL**, substantive ownership acceptance
+unavailable and DevOps cloud-pass unmet. No completed non-held initial parent,
+live-selected identity path or freshly observed final/rollback bindings exists
+in those handoffs. This retrospective does not refresh private execution facts.
+
+The executable/observation map is an accepted bounded advance, not new runtime
+implementation or authenticated live evidence. Reported 204-test Windows
+offline results remain attributed prior checks, not final joined-source/package
+validation. DevOps shellId 584 reports local settings linkage and seven-record
+inspection only; no fresh ARM invocation or private transport was performed.
+Original ownership reviewers could not inspect the substantive captured evidence;
+successful command exit status alone did not close their acceptance criterion.
+
+Complete communication denominators, error rates, end-to-end elapsed timings,
+token/cost totals and customer usability measurements are unavailable. Do not
+infer savings, causal delays or quantitative improvement from repeated rounds,
+test durations or document completion. This documentation work is not runtime
+progress and does not increment a claimed live acceptance result.
+
+### Decisions and artifact improvements
+
+1. Reuse the accepted revision-bound invocation/observation map without new
+   implementation or unchanged-input test reruns. Architecture now explicitly
+   distinguishes consistent supplied observations from independently established
+   provenance, including enriched proof versus raw terminal capture.
+2. Preserve the missing initial-parent entry gate. UX now attributes the reached
+   RP-S3 boundary precisely and prevents absent continuation observations from
+   becoming successful display rows. Existing Screens H-K, safe aliases and
+   unchanged stdout/parser contracts remain; no new field, collector or UI.
+3. Reuse existing captured ownership evidence through a permission-capable
+   originating review; do not recreate setup, repeat unattended denied probes,
+   request renewed designation or infer ownership acceptance from report votes.
+4. Keep independent ownership and strict-trust lanes. Offline runner development
+   needs accepted ownership and fixtures, not live inventory. Actual joined
+   roots/bytes/hashes, formal E2E, exact hosting-package gates and live evidence
+   remain distinct required handoffs. Isolation has no recovery-success dependency.
+5. Close satisfied reports when their own original votes are collected, without
+   status-only commits. Earlier sprint approvals never transfer to this RP-S3
+   retrospective. All six original retrospective reviews remain to be collected.
+
+### Existing-owner actions and disposition boundaries
+
+| Existing assignment / owner | Closing action retained; no new task or approval stage |
+|---|---|
+| RP-S2-LAB-OWNERSHIP / Developer and originating Architect/Critic | Make captured inventory, resolver assertions and sanitized recovery comparisons inspectable, with bounded current applicability checks; obtain substantive acceptance before runner writes. |
+| RP-S2-DECISION-RUNNER / Developer | After ownership acceptance, complete/review the retained eight-path runner and offline fixtures, without a live-inventory dependency. |
+| RP-S2-SOURCE-INTEGRATE / designated Developer | Consume accepted source/map; reconcile actual loaded wrappers and reviewed commits, joined checks and scoped push outcomes. Submit the exact join to formal E2E. |
+| RP-S2-FRESH-INVENTORY / established transport owner or user, then DevOps | Privately supply the existing independently accepted fingerprint and acceptance reference or exact locator; compare through the retained strict wrapper before private inventory. Never self-confirm from known_hosts or replace trust. |
+| RP-S2-INGRESS-TRIAL and RP-S2-G1-G4 / DevOps | Retain formal E2E, trusted inventory, exact Linux/amd64/hosting-Python package checks, immutable joins and fresh previews before guarded publication; establish real collaboration/provenance/Decision-1 and a completed non-held initial parent. |
+| Existing RP-S3 continuation/recovery/isolation/delivery / DevOps | Collect actual binding comparisons, independent request counts, scoped checkpoints, once-only supported stop and independent isolation observations; report exact release/rollback/push and owned cleanup. Missing captures never authorize uncertain resends. |
+
+Apply exact prior references
+`["yaml-loops-v1:sprint/3/RP-S3/SprintReviewLoop","rp-s3-review-close-agreed-backlog-report"]`,
+`["yaml-loops-v1:sprint/3/RP-S3/EndToEndTestLoop","rp-s3-e2e-close-agreed-failure-report"]`,
+`["yaml-loops-v1:sprint/3/RP-S3/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","ownership-originating-evidence-review-access"]`
+and `["yaml-loops-v1:sprint/2/RP-S2/SprintRetroLoop","rp-s2-retro-close-agreed-deliverable"]`
+within their originating boundaries. Review/retro agreement supplies no ownership,
+integration or release acceptance. Accepted source checks, architecture and design
+stay closed; no requirement or downstream execution failure is waived.
+
+This documentation-only retrospective creates or abandons no task code. The
+designated integration owner retains durable accounting: reconcile task commits
+into authorized feature history or retain named branches and record task IDs,
+commit IDs and concrete abandonment reasons in a feature-branch commit message.
+Preserve unrelated dirty/staged work, historical UNKNOWN effects, held parents,
+rollback assets and historical cleanup uncertainty. All AC1-AC9/G1-G8 remain
+required; Blob Contributor isolation remains application-enforced, not
+storage-RBAC or malicious-host isolation. Customer readiness is not established.
+
 ## RP-S3 sprint review at recovery-entry baseline (October 20, 2026)
 
 **Demonstration: BLOCKED; customer-ready: no.** This Product Owner review

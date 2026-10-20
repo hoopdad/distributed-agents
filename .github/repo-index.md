@@ -19,7 +19,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; October 20 isolated specialist-client B candidate and deterministic decision-runner contracts; authorized A/B paths, principal discriminator, continuation and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
-| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three initial sprint goals/acceptance contracts, retained RP-S1 integration, authorized A/B identity discriminator/permission handoff, unresolved-path artifact continuation, exact release/live gates and original-owner closeout |
+| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three sprint goals/acceptance contracts; October 20 parallel isolated-candidate, inventory and lab-runner work packages; explicit Git/source integration, conditional permission edge, finite ingress decision and unchanged E2E/DevOps final gates |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Sprint-specific README/terminal screens, ordered revision trace, incomplete/recovered-event behavior and fixture-to-display implementation handoff |
 | RP-S1 sprint architecture | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Cumulative design and logical-tier contracts for exact binding fixtures, direct model continuation, unchanged terminal projection and independent supported-remedy assessment |
 | RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Dispatch-ready original-role tasks, minimal handoff dependencies, parallel file ownership, shared release resources and explicit Git/source integration |
@@ -152,7 +152,17 @@ identity-path handoff. No paths added/deleted, runtime, dependency or public
 event contract changed. Human-view syntax is implemented; exact continuity
 claims and live release acceptance still require separate private evidence.
 
-Release-plan freshness: based on accepted architecture `1f690f5` and UX
+Current release-plan freshness: inspected clean baseline
+`ef5c79d94114f156ab0d03497fafffd1e348aabf`, accepted architecture `0a24470`
+and UX `ef5c79d`, for the October 20 release delta. Retained RP-S1 source and
+offline identity handoff; planned parallel specialist-only runtime candidate,
+lab decision runner and fresh inventory with explicit Git/source integration
+and a conditional permission dependency. Scrum Master assigns actual tasks
+and lab reconciliation; original E2E/DevOps acceptance remains unchanged.
+No paths added/deleted or runtime/dependency contracts changed by this plan.
+Identity selection and live release remain unresolved.
+
+Original release-plan freshness: based on accepted architecture `1f690f5` and UX
 `0f2a2b2`, preserving the existing 17 dirty paths. Added
 `docs\customer-prototype-release-plan.md`; no runtime, dependency or ownership
 boundary changed. Scrum Master retains task decomposition/Git reconciliation;

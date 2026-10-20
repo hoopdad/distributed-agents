@@ -14,9 +14,9 @@ October 19, 2026 customer specification is the requirements source.
 contains derived RP-S1 tier contracts, not replacement requirements.
 Do not copy private delivery inputs into Git.
 The accepted [architecture](customer-prototype-architecture.md) at
-`2a736d94cb99c01aca0c516aeaf920e61ddb8fbd` and
+`0a244702c7ccf01f1916c4b3a2580346ffb02fea` and
 [UX contract](customer-prototype-ux.md) at
-`3ee9798afa4a419be87bcb68fdfc3540875d171a` are inputs, not work to reopen.
+`ef5c79d94114f156ab0d03497fafffd1e348aabf` are inputs, not work to reopen.
 Apply prior dispositions
 `["yaml-loops-v1:ArchitectureLoop","architecture-loop-status-reconciliation"]`
 and `["yaml-loops-v1:UserExperienceLoop","ux-loop-status-reconciliation"]`
@@ -60,7 +60,7 @@ inventoried downstream; historical architect17/reviewer15/coordinator23 are
 not current-release assertions.
 
 This revision freshly inspected clean application HEAD
-`3ee9798afa4a419be87bcb68fdfc3540875d171a` on
+`ef5c79d94114f156ab0d03497fafffd1e348aabf` on
 `feature/customer-hosted-session-prototype`. Related RP-S1 source and clarity
 work was already integrated by `24b883f910dedbc8dc524177f29f59e061be265e`;
 workflow fixtures `6614440`, specialist continuation fixtures `c454e50` and
@@ -69,16 +69,29 @@ or fresh live evidence. The original 17-path dirty baseline is historical,
 not the current application worktree. The lab still has unrelated dirty/
 untracked work; this loop changes neither lab source nor application runtime.
 Do not redispatch accepted work simply because a new planning loop begins.
-Scrum Master reconciles the existing RP-S1 SprintPlan's historical input hashes
-and narrowly scoped research exclusions against this new authority before
-assigning new delta work; do not rewrite its completed-task acceptance.
+The later identity handoff `13203ac`, reconciled by
+`bb1743d85cb10e6520c92efaa42df0702178f57a`, is also retained. Its
+`scripts/identity_handoff.py` is offline-only and returns exit 2 / `unresolved`;
+it neither installs the runtime candidate nor executes live selection.
+The accepted October 20 architecture now resolves that implementation gap
+with the bounded RP-S2 contracts below. Scrum Master reconciles the existing
+RP-S1 SprintPlan's historical input hashes and lab-write exclusions against
+these accepted contracts when assigning the delta; do not rewrite completed
+task acceptance or redispatch the offline handoff as a live runner.
+
+Fresh Git inspection found the application clean on the authorized branch.
+The lab remains on `feature/swc-think-fast-aca-dns`, with eight pre-existing
+dirty/untracked paths. This planning turn edits neither lab files nor branches.
+Cloud context, active/rollback bindings and permissions were not inventoried
+here; the independent DevOps inventory below remains required.
 
 Priority order:
 
 1. Preserve trusted parent/child identity, exact immutable prerequisites,
    versions, fenced/ETag acceptance, checkpoints and write-ahead effects.
-2. Complete useful offline continuity/continuation proof and customer clarity
-   while investigating the supported live remedy independently.
+2. Preserve accepted offline continuity/continuation proof and customer clarity;
+   implement the isolated candidate and decision tooling in independent lanes
+   alongside fresh inventory, without reopening accepted source work.
 3. Repair only evidenced runtime defects; validate and release the exact source
    through retained tools, then prove initial real collaboration.
 4. Prove two turns, supported recovery and isolation; deliver truthful evidence
@@ -115,9 +128,11 @@ action without waiting on provider resolution to finish local improvements.
 **Carry-forward:** preserve the integrated fixtures, README and opt-in view.
 Criteria 1-5 below remain their verification contract, not instructions to
 repeat accepted implementation. Rerun checks for changed source and close only
-concrete gaps. The new planning delta is criterion 6's identity-selection
-handoff and its local script/fixture contract. Unresolved selection must not
-block remaining release/sprint artifacts, fixtures or documentation.
+concrete gaps. The integrated offline identity handoff is retained; criterion
+6's fresh inventory and live discriminator remain outstanding downstream.
+RP-S2 now owns the missing runtime/runner implementation rather than another
+round of the completed bounded research assignment. Unresolved selection must
+not block remaining release/sprint artifacts, fixtures or documentation.
 
 **Bounded work and handoff**
 
@@ -125,11 +140,12 @@ block remaining release/sprint artifacts, fixtures or documentation.
   reconciliation, and establishes disjoint contracts/fixtures before writing.
   Review related readability changes, preserve originals and exclude unrelated
   work. Developer integrates only reviewed related source on the feature branch.
-- Developer strengthens the existing two-turn regression for both roles;
-  adds a controlled reject/revise/review fixture and direct specialist
-  model-history continuation checks using the real stage/session path.
-- Developer implements the accepted terminal/README design; Designer reviews
-  it against the existing UX contract, not a new web experience.
+- Developer preserves the integrated two-turn, controlled reject/revise/review
+  and direct specialist model-history fixtures; repairs only a concrete
+  regression exposed by changed source, not duplicate implementation.
+- Developer preserves the accepted terminal/README implementation; Designer
+  evaluates affected changes against the existing UX contract, not a new web
+  experience or redispatched clarity task.
 - DevOps freshly validates the sole-target linkage/context and exact deployed
   versions/packages/identities through retained tools. Architect/Developer
   assess current supported public contracts and concrete runtime defects.
@@ -216,6 +232,51 @@ opaque-context result alone.
 
 **Goal:** correct the evidenced runtime boundary within authority, produce one
 verified common bundle, and accept a real current architect/reviewer result.
+
+**October 20 implementation increment:** implement the accepted isolated B
+candidate and finite lab-owned decision runner, then measure trusted ingress.
+A remains a supported alternative only when a measured cause-specific
+authentication/configuration correction exists. Neither path is selected.
+This is concrete implementation, not another open-ended remedy investigation.
+Do not reopen the accepted architecture or UX handoffs.
+
+The following are bounded release work packages, not assigned SprintPlan tasks.
+Scrum Master supplies actual unique task IDs, `kind`, owner, `dependsOn`,
+exclusive resources, file ownership and Git reconciliation in the existing
+Sprint Planning Loop. In particular, the older SprintPlan's no-runtime/no-lab
+exclusions describe that completed assignment, not a ban on these new packages.
+
+| Work package / original owner | doneWhen and inspectable handoff | Exclusions |
+|---|---|---|
+| Isolated candidate / Developer | Within `WorkflowRuntime.resources()` retain the original opaque-only client for routing/model/parent/history/checkpoints; pass a distinct project/copied-header client and separate OpenAI cache only to `WorkflowRemoteAgents`. Revalidate captured authenticated context against the full runtime `ScopeBinding` before deriving B. Real resource-factory regressions cover both roles, raw SDK and Responses header paths for prepare/create/check/ambiguous-create inspection/send/exact-response retrieval, non-specialist context immutability, shared-resource lifecycle cleanup, forged/missing/changed identities, and known-response zero-send recovery. Application/repository checks pass; reviewed runtime/test commits hand off to integration. | No production import of the offline script, shared dict mutation, ambient-context mutation, container-user forwarding, opaque-call-ID delegation, dependency/schema/history migration, receiver relaxation, new selector or duplicate UX/continuity implementation. |
+| Fresh inventory / DevOps Engineer | Validate sole-target settings and authenticated dedicated context through retained tools; privately bind exact current/rollback versions, packages, identities, protocol, actual caller/effective explicit action and unresolved effect/owner records. Hand off reached/missing observations and private locators. Existing explicit grants are read back before proposing a delta. | Independent of candidate and runner coding; no assumed missing grant, inference, publication, adoption of dirty lab work or historical cleanup claim. |
+| Decision tooling / DevOps Engineer | Implement a retained local lab runner against the accepted architecture table: explicit absolute roots/Python/scenario/reviewed source/package/versions/private destination; joined inventory; finite pre-journaled architect-then-reviewer sequence; trusted receiver observations; exact known-response inspection without resend; held/unknown/version-drift stops; selected/unresolved result, unreached roles, permissions and owned cleanup. Offline redaction, failure, unknown-effect and competing-owner fixtures plus affected retained suite pass; reviewed tool commits hand off to integration. | No invented live command before implementation, second acceptance ledger, unprotected endpoint, automatic path switch, infinite probe, inference from mocks or bypass of retained publication/transport. Tool coding may overlap candidate coding. |
+| Git/source integration / Scrum-assigned owner | Reconcile reviewed application and affected lab task commits on `feature/customer-hosted-session-prototype`, or record task/named retained branch/commit IDs/abandonment reason in a feature-branch commit message. Recheck exact joined source and retained regressions. Give DevOps source/package-input closure and private inventory references. | No shared-checkout branch switch under writers, unrelated staged changes, lost originals, migration reseal or chat-only abandonment accounting. Scrum Master assigns the owner before lab writing. |
+| Bounded ingress decision / DevOps Engineer | After integrated review/source/Linux/package gates, inventory and any demonstrated necessary permission readback, use retained preview/publication and the finite runner on one fresh synthetic trial parent. Record `selected-A`, `selected-B` or actionable `unresolved`, actual child receiver/principal compatibility per reached role, exact private bindings, holds and cleanup. Architect-only entry explicitly leaves reviewer unreached. | Not formal E2E or cloud-pass; no held-parent adoption, namespace translation, repeat send for missing receipt, automatic new parent after failure, unchanged A retry or metadata/HTTP-200 success claim. |
+
+The runtime candidate has no new runtime path selector: the named B trial is
+bound privately to its reviewed source/common package/exact three versions.
+Preserve the yielded resource tuple semantics and existing receiver equality,
+immutable artifacts, bounded model routing, history and recovery behavior.
+Old pinned conversations/versions remain untouched. Move only required pure
+candidate logic into application-owned runtime source; keep operational
+journaling and deployment tooling lab-owned.
+
+Only a demonstrated necessary permission delta adds a work package/dependency:
+DevOps implements reviewed deterministic plan/write/readback for the verified
+caller/action/target and smallest supported scope, documenting exact scope and
+rationale privately. Prior approval covers that bounded change; no routine
+human approval stage is added. An uncertain write remains held and blocks
+dependent trial execution, not independent artifact work.
+
+The candidate and runner are not assumed feasible merely because their offline
+tests pass. If actual child principal is absent or changes namespace, stop
+without weakening `Assignment.validate_receiver()`, rekeying histories or
+adopting held state. Scrum reconciles the exact finding into an existing
+Architect-advised PO contract/scope decision (`needs-replan`). Genuine required
+provider information or authentication is reported as the exact external stop,
+not invented missing permission approval. Bounded actionable negative findings
+can finish a task while this sprint's live acceptance remains unmet.
 
 **Bounded work and handoff**
 
@@ -327,25 +388,42 @@ next supported action, never a customer-ready success label.
 
 ## Critical path, minimal edges and shared ownership
 
-Baseline/contract inventory enables three independent boundaries: offline
-fixtures, terminal/README implementation, and supported-remedy assessment/fresh
-release inventory. Terminal fixtures may use the existing event contract;
-they need not wait for identity repair. Final integration waits for each
-owned source change it includes, not unrelated research or unavailable provider
-responses. No new diagnostic task is mandatory when existing bound evidence
-already identifies the unsupported boundary.
+The accepted architecture/UX and integrated offline identity contract are
+available now. Three ready lanes are isolated runtime candidate coding, lab
+decision-runner coding, and fresh inventory. Do not add edges from inventory to
+coding or between the two coding lanes. Retained continuity/terminal source
+needs regression verification for changed source, not new implementation.
+Integration joins only included code/tool commits; it does not wait on cloud
+inventory or unrelated research. The finite live decision waits on both fresh
+inventory and exact integrated reviewed source/Linux/package gates. A measured
+permission delta adds only its actual dependent edge. Final formal validation
+and cloud-pass remain their original gates, even if the decision succeeds.
 
 The live critical chain is:
 
 ```text
-supported correction + integrated reviewed source
-  -> final source/Linux/package gates -> exact preview -> guarded publication
-  -> accepted initial parent -> same-parent follow-up -> supported stop/resume
-  -> evidence closeout
+runtime candidate + decision runner -> reviewed source/Git integration
+  -> exact source/Linux/package gates -> fresh preview -> guarded publication
+fresh inventory ------------------------------------------> finite ingress decision
+candidate publication ------------------------------------> finite ingress decision
+necessary permission delta/readback (only if proven) ------> finite ingress decision
+selected supported correction + final common-bundle/source closure
+  -> formal E2E validation and DevOps cloud-pass/accepted initial parent
+  -> same-parent follow-up -> supported stop/resume -> evidence closeout
 final publication -> separate-parent run
 initial-parent evidence + separate-parent evidence -> isolation comparison
 recovery + isolation comparison + source/Git reconciliation -> final closeout
 ```
+
+This is a logical edge map, not two deployers or a new approval sequence.
+Formal E2E may report predeployment FAIL; DevOps then performs guarded
+publication and cloud-pass. Selection alone supplies neither acceptance.
+A deliberately published candidate common bundle may become the final bundle
+only if unchanged exact source/package/settings/versions satisfy every final
+gate; do not demand an otherwise unnecessary second publication. If runtime
+or packaging inputs change after the trial, rebuild/review/publish and refresh
+affected live proof. Never use a failed/held trial parent as the acceptance
+parent; use the explicitly planned final acceptance scope, not a retry escape.
 
 Separate-parent comparison needs initial-parent evidence, not its follow-up or
 restart. Independent parents may logically overlap only if retained transport,
@@ -430,7 +508,7 @@ criterion as verified, failed, not reached or otherwise unverified with its
 actual evidence scope; an actionable research result completes only that bounded
 task. Release acceptance still requires AC1-AC9, not agreement on a failure report.
 
-## Verification of this release-plan revision
+## Historical verification of the preceding release-plan revision
 
 Documentation/index only; no runtime, dependency, deployment, permission or lab
 source changes. Using the existing pinned lab Python 3.12.10 environment by
@@ -456,3 +534,44 @@ discriminator, permission change, publication or live acceptance was performed.
 The Product Owner accepts this plan for original review; Stakeholder,
 Architect, Designer and Critic agreement on this commit remains to be recorded.
 Accepted upstream architecture/UX votes are not substituted for these votes.
+
+## Verification and review handoff: October 20 release delta
+
+Inspected baseline `ef5c79d94114f156ab0d03497fafffd1e348aabf` on
+`feature/customer-hosted-session-prototype`. Changes are limited to this
+release plan and the repository index. No runtime, dependency, SprintPlan,
+accepted architecture/UX or lab source was edited.
+
+Using the existing absolute lab Python 3.12.10 AMD64 executable, verified
+against installed MAF core 1.21.0, agentserver Core 2.2.0 and Responses 2.3.0:
+
+- `Test-Demo.ps1 -Python <absolute-validated-python> -LabRepositoryRoot
+  <explicit-lab-root>` passed dependency checking, **186 offline tests in
+  19.039 seconds**, and compilation. These include the retained Windows
+  connectivity-wrapper tests; they are not cloud observations.
+- Refreshed `scripts/repo_index.py`; no public paths were added/deleted.
+  `scripts/Test-Repository.ps1 -Python <absolute-validated-python>` passed
+  index, public-boundary (**73 public files**), JSON/PowerShell/context and
+  whitespace checks.
+- A local structural/link check passed three unique sprint IDs, each sprint's
+  goal/acceptance/exclusions/handoff, AC1-AC9/G1-G8 coverage, the five new
+  bounded work-package contracts and all five relative links/anchors.
+  Its first invocation used an over-specific literal `conditional` assertion
+  absent from the plan wording; correcting the check to the actual permission
+  delta contract passed. No acceptance criterion was removed or waived.
+
+No dependencies were installed. No settings import, cloud inventory,
+permission readback/write, inference, publication, Linux hosting-package gate,
+supported stop/resume, push or live acceptance was performed in this planning
+turn. No lab source changed, so the full retained lab suite was not rerun.
+Historical UNKNOWN/held work and all unrelated dirty lab paths are preserved.
+
+The Product Owner agrees with this release plan and hands its owned commit to
+the original Stakeholder, Architect, Designer and Critic in ReleasePlanLoop.
+Their release-plan votes are not yet available; upstream architecture/UX
+agreement cannot satisfy this loop's agreement condition. The next action is
+review of this committed plan, followed by reconciled correction only for a
+concrete unmet release-plan criterion. Subsequent Scrum task decomposition
+must use the ready parallel lanes and explicit integration contract above.
+Identity-path implementation/selection and all final live release gates remain
+downstream obligations, not claims made by this plan.

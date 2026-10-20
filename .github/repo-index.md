@@ -22,7 +22,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, supplied ownership designations versus original acceptance/current verification, matched-root/trust interpretations and unchanged machine contract |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current explicit writer/integration-designation overlay and three retained sprint goals/acceptance contracts; supplied acknowledgements versus original ownership acceptance, historical receipts versus current trust, matched operational-wrapper integration and unchanged live final gates |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
-| Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S1 recovery-entry journey and report-state mapping for historical evidence versus current ownership/trust and matched operational roots; retained screens/fixtures, RP-S3 continuity/recovery/isolation reports, unchanged machine contracts and original execution owners |
+| Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S1 supplied-designation journey/report mapping versus original ownership acceptance, current trust and matched operational roots; retained screens/fixtures, RP-S3 continuity/recovery/isolation reports, unchanged machine contracts and original execution owners |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S1 recovery-entry/tier overlay: historical evidence versus current writer/trust/inventory, matched operational wrapper/source joins and original-owner closing actions; retained fixtures/candidate, G1-G8 continuity/recovery/isolation and exact-source truthful delivery; unchanged runtime/public contracts |
 | Current RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Stopped original ownership evidence reconciliation in parallel with independent current-source drift/check handoff; retained runner and matched operational integration; deferred original DevOps trust/inventory/status/trial. Accepted candidate, application preparation, presentation and assertions are consumed, not redispatched |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
@@ -39,6 +39,14 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Ownership-designation SprintDesign freshness: inspected clean agreed-release-plan
+baseline `f9ccb6e85c80ce14f36e44cfb6e690fde0d81e80`; updated only sprint
+design and this navigation, with no added/deleted paths. Consumes supplied
+writer/integration designations and acknowledgements as original-review evidence,
+not accepted ownership or premature runner-write authority. Retains existing
+customer screens/fixtures, independent trust/inventory, matched operational roots
+and original E2E/DevOps gates. No new implementation assignment, private evidence
+authentication, lab/sibling mutation or live capability is inferred.
 Ownership-designation release-plan freshness: inspected clean agreed-UX
 baseline `87253d3f5003d1d6f34724401b33c3b5ced2e64a`; updated only the
 release plan and this navigation, with no added/deleted paths. Consumes current

@@ -1,6 +1,110 @@
 # Sprint design: understandable, evidence-ready continuity
 
+## Current RP-S1 ownership-designation design (October 20, 2026)
+
+This **RP-S1 SprintDesign** consumes agreed Architecture
+`f72b0f3c1206418f08fc62a149e80f7c12c55e81`, UserExperience
+`87253d3f5003d1d6f34724401b33c3b5ced2e64a` and ReleasePlan
+`f9ccb6e85c80ce14f36e44cfb6e690fde0d81e80`, the inspected clean application
+baseline on `feature/customer-hosted-session-prototype`. Retain Screens A-D
+and the existing RP-S1 two-turn/revision/history fixture handoffs below.
+Screens F/G and the recovery-entry table remain operator report designs, not
+new renderer features. No assignments or separate blocked-backlog list were
+supplied; this delta resolves the known coordination-reporting ambiguity only.
+
+Apply prior references
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-agreed-deliverable"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-close-agreed-deliverable"]` and
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-close-agreed-deliverable"]`
+only within their originating acceptance boundaries. Retain those accepted
+handoffs without repeating their investigations or borrowing their votes for
+this SprintDesign. Older missing-designation language below is historical;
+the current user's explicit designation resolves that input, not ownership
+acceptance, current trust or live readiness.
+
+### Current sprint journey and existing screen content
+
+```text
+Customer: Screen A goal/three-role diagram + truthful blocked notice
+  -> existing validated setup and compatible release (execution owners)
+  -> Screen B useful initial design/review
+  -> completed, non-held initial turn only: same-session queue follow-up
+  -> separate exact-binding report, not alias-based proof
+
+RP-S1 preparation, independent of the unreached live demonstration:
+  accepted README/terminal + two-turn/revision/history fixtures -> retain/check
+  supplied designations + recovery evidence -> original ownership review
+  current strict trust -> sole-target inventory (independent of runner coding)
+  reviewed runner + matched operational source -> original E2E/DevOps
+  -> supported decision baseline or actionable unresolved finding -> RP-S2
+```
+
+These are journey lanes, not new dependencies or task dispatch. Keep Screen C's
+four ordered offline calls and direct both-role history controls; neither is
+live proof. Stable parent/both-child hosted and framework bindings and pinned
+versions differ from advancing response IDs and current artifacts. Screen B
+remains an opt-in finalized stderr projection with exact continuity unverified;
+stdout, delegation/result contracts and the acceptance parser do not change.
+
+| Existing report boundary | Current content and closing action |
+|---|---|
+| Coordination supplied; original ownership acceptance not established | Report supplied Developer writer/integration designations and preservation acknowledgements as evidence. Scrum/Developer presents them with recovery evidence to original ownership reviewers; do not request the same customer designation again. |
+| Current sibling/path observation unavailable | Name the exact unverified observation and existing-owner inspection action. Architecture's tool-denied sibling observation is supplied evidence, not independently repeated here, safe-writing proof or missing user authority. |
+| Ownership accepted; runner/source preparation incomplete | Developer writes only the designated eight paths in the registered feature sibling, never the dirty canonical lab. Integration reconciles reviewed task commits and actual operational wrapper/source roots. No registration-as-exclusivity inference. |
+| Operational root or required wrapper source mismatch | Preparation failure before specialist dispatch. Preserve `LAB_TOOL_OWNER_MISMATCH`; no customer root picker/override or claim of receiver failure. |
+| Historical trust receipts available; current trust/inventory not established | Transport owner/DevOps verifies current approved source and strict trust, then inventories the sole target. Receipt presence is not current authentication, ingress or historical cleanup. |
+| Partial trusted ingress or supported identity decision | Report reached/unreached roles and exact evidence scope only. Selection is not final common-bundle G1-G4, two-turn continuity, recovery or isolation. |
+| Unknown/held effect | Screen D hold takes precedence over success-looking output: preserve state, no blind resend or substitute parent; supported known-response retrieval is not a new invocation. |
+
+Use the [accepted exact writer boundary and root contract](customer-prototype-architecture.md#current-ownership-designation-architecture-october-20-2026).
+The originating ownership reference remains
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`;
+this design neither supersedes it nor passes its original review.
+Supplied acknowledgements close only their missing-input issue. Any remaining
+concrete checkout/path verification failure stays with the original owners.
+No private evidence authentication or lab/sibling inspection is performed here.
+
+### Designer exit and downstream handoff
+
+Retain the RP-S1 acceptance mapping below: Screen B and existing both-role
+binding/version/creation/response/current-requirement/stale-approval checks;
+Screen C and direct specialist-history fixtures, explicitly offline; Screens
+A-D and useful current design/review with safe aliases and unchanged machine
+output; applicable source checks and a supported baseline or precise unresolved
+finding. No duplicate presentation or fixture implementation task is requested.
+Keep plain text, terminal light/dark defaults, explicit status words and control
+neutralization; no browser UI, banner, flag, identity selector or public ledger.
+Full identifiers, trust material, transcripts and private locators stay private.
+
+Scrum retains contract-first assignments, minimal dependencies, exclusive-resource
+coordination and Git reconciliation. Designated Developer owns reviewed scoped
+integration/accounting/push after original ownership acceptance. E2E retains
+formal integrated validation; DevOps retains exact-source Linux/package checks,
+guarded publication and live tests through retained local scripts. Any material
+root/guard change goes to existing Architect-advised PO/Scrum reconciliation.
+AC1-AC9/G1-G8, historical UNKNOWNs, held parents, rollback assets and cleanup
+uncertainty remain unchanged. Blob isolation is application-enforced under
+account-wide access, not malicious-host or storage-RBAC isolation.
+Designer agrees to this bounded sprint flow/screen handoff; this invocation
+does not supply current SprintDesign Product Owner/Critic agreement.
+
+### Local verification for the ownership-designation overlay
+
+Using the existing absolute lab Python 3.12.10 executable and explicit lab
+root, `Test-Demo.ps1` passed dependency checking, **204 offline tests in
+48.552 seconds**, and compilation. `scripts/Test-Repository.ps1` passed index,
+**79-public-file** boundary, syntax/context and whitespace checks. Structural
+checks passed 19 local links, balanced fences and current input/boundary
+references. No dependencies were installed. These checks validate retained
+source and this design document, not new runtime capability. No lab source
+changed; the full retained lab suite and Linux hosting-package checks were not
+run. No cloud call, identity trial, publication, live continuity/recovery/
+isolation test, private receipt authentication or push was performed.
+
 ## Current RP-S1 recovery-entry design (October 20, 2026)
+
+Historical recovery-entry overlay: retain dated observations; use the
+ownership-designation overlay above for current coordination/report wording.
 
 This is the current **RP-S1 SprintDesign** overlay. Inspected clean application
 baseline `68c5bd8d8b2835b0f329b4bac5821ddb78809b36` on

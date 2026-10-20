@@ -20,7 +20,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current successful direct sibling Git inspection versus denied complete resolver reads, supplied writer/integration designations and unchanged originating ownership review; matched operational roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; current attributed successful sibling Git versus incomplete resolver proof, supplied designations versus original ownership acceptance, unchanged machine contract |
-| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current ReleasePlan consumes accepted architecture/UX and attributed partial sibling Git evidence; independent ownership/resolver and trust/inventory closing lanes, original runner/integration/E2E/DevOps owners, three retained sprint contracts and unchanged live final gates |
+| Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Recovery-entry RP-S1 review at `b13670e`: blocked demo, accepted offline handoff versus reported exit-2 trust stop, existing ownership/trust/runner/integration closing lanes, three retained sprint contracts and unchanged live final gates; older overlays remain history |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S1 consumes accepted architecture/UX/release plan; maps Screens A-D and fixtures to current sprint criteria, attributes successful sibling Git versus incomplete resolver proof, retains separate operator Screens F/G and original execution owners; RP-S2/RP-S3 designs remain history |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S1 consumes accepted architecture/UX/release/design; maps both-role continuity, repeated calls/history, parser-safe clarity and supported/unresolved decision handoff; attributed partial sibling Git versus incomplete resolver proof, original ownership/integration/E2E/DevOps gates; later sprint overlays retained as history |
@@ -39,6 +39,13 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+RP-S1 SprintReview freshness: inspected clean recovery-entry HEAD
+`b13670e354102f922994ac1a1e82cf07243b2abe`; updated only release-plan review
+and navigation, no added/deleted paths. Supplied source/E2E report closures
+remain bounded; reported ARM/recovery observations are not independently
+verified, ownership remains unaccepted and DevOps cloud-pass is false.
+Retains existing tasks/owners and three sprint contracts; no runtime,
+private-evidence, deployment or substantive progress claim.
 Current RP-S1 SprintPlan freshness: inspected clean accepted SprintArchitecture
 baseline `c888336b1741dd5cbf77f0209749620949301adb`; refreshed only the existing
 recovery-entry assignment JSON and this navigation, with no added/deleted paths.

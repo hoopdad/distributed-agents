@@ -4,6 +4,7 @@ import hashlib
 import json
 import logging
 import os
+import re
 import uuid
 from contextlib import AsyncExitStack
 from typing import Any
@@ -40,6 +41,37 @@ def platform_identity_headers(context) -> dict[str, str]:
     if context.user_id:
         headers[TRUSTED_USER_ID_HEADER] = context.user_id
         headers[LEGACY_USER_ID_HEADER] = context.user_id
+    return headers
+
+
+def specialist_identity_headers(*, config, context, scope) -> dict[str, str]:
+    """B candidate: delegate only a revalidated authenticated parent's identity.
+
+    Caller supplies captured hosting context, never assignment/model input.
+    Child receiver equality remains mandatory; this does not select B live.
+    """
+    from .artifacts import ScopeBinding
+
+    if config.project_endpoint != PROJECT:
+        raise DemoError("CANDIDATE_PARENT_BINDING")
+    trusted = ScopeBinding.from_platform(
+        config, context, project=PROJECT, tenant=required("EXPECTED_AZURE_TENANT_ID"),
+    )
+    if trusted != scope:
+        raise DemoError("CANDIDATE_PARENT_BINDING")
+    headers = dict(context.platform_headers())
+    if (
+        set(headers) != {"x-agent-foundry-call-id"}
+        or headers["x-agent-foundry-call-id"] != context.call_id
+    ):
+        raise DemoError("CANDIDATE_PLATFORM_HEADERS")
+    if (
+        not isinstance(context.user_id, str)
+        or not re.fullmatch(r"[A-Za-z0-9._:@-]{1,256}", context.user_id)
+        or context.user_id == context.call_id
+    ):
+        raise DemoError("CANDIDATE_DELEGATED_IDENTITY")
+    headers[TRUSTED_USER_ID_HEADER] = context.user_id
     return headers
 
 

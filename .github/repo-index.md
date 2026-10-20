@@ -27,6 +27,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
 | Identity candidate handoff | `scripts\identity_handoff.py`, `tests\test_identity_handoff.py`, `docs\identity-candidate-handoff.md` | Offline-only A/B candidate, lifecycle header plumbing and receiver namespace negative controls; no installed runtime change or live selection |
+| Isolated runtime candidate | `demo\foundry.py:specialist_identity_headers`, `demo\workflow.py:WorkflowRuntime.resources`, `tests\test_isolated_client.py`, `docs\design.md` | B specialist-only project/header/cache; original resource tuple and opaque-only non-specialist authority retained; actual resource lifecycle/cleanup regressions, no live selection |
 | Copilot context | `.github\copilot-instructions.md`, agents and skills | Bounded implementation/review and deployment gates |
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
@@ -112,7 +113,15 @@ storage-enforced per-role isolation.
 Do not search ignored `.azure`, `.azure-cli`, `.local`, `.migration` or
 conversation/credential stores.
 
-Current SprintPlanLoop revision freshness: inspected clean application base
+RP-S2-ISOLATED-CLIENT freshness: inspected clean application base
+`4f2e02d9b08bc1c5258d6f799e9a9f0809705a81`. Added
+`tests/test_isolated_client.py`; no deletions. Runtime now constructs the
+accepted specialist-only B candidate, leaving original project/header/cache
+authority unchanged. The older offline handoff remains non-installed diagnostic
+logic, not a selector. No deployment, inference, permission or lab source change.
+Existing README/terminal/continuity implementations are preserved.
+
+Prior SprintPlanLoop revision freshness: inspected clean application base
 `eaa5c930225fe781d20031d58b90087076771481`; canonical lab still has its eight
 dirty/untracked paths. No paths added/deleted. Applied reconciled SprintPlan
 phase correction: offline checkout setup and runner coding are Developer work
@@ -343,6 +352,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `tests\test_demo.py`
 - `tests\test_diagnose_identity.py`
 - `tests\test_identity_handoff.py`
+- `tests\test_isolated_client.py`
 - `tests\test_routing.py`
 - `tests\test_specialist_continuity.py`
 - `tests\test_workflow.py`

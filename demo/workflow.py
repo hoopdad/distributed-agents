@@ -39,7 +39,7 @@ from .artifacts import (
 )
 from .config import required
 from .contracts import AGENTS, ORIGIN, PROJECT, Child, DemoError, alias
-from .foundry import ProjectClient, RemoteAgents, data_client
+from .foundry import ProjectClient, RemoteAgents, data_client, specialist_identity_headers
 from .reviewer_agent import ReviewerAgent
 from .routing import Choice, DecisionClient, gated_choice, load_calibration, reserve_decision, routing_state
 
@@ -526,13 +526,24 @@ class WorkflowRuntime:
             http = await stack.enter_async_context(data_client(
                 expected_call_id=self.context.call_id, response_id=self.response_id,
             ))
-            headers = self.context.platform_headers()
+            headers = dict(self.context.platform_headers())
             project = await stack.enter_async_context(ProjectClient(credential, http, headers))
+            # B candidate is confined to remote specialists. Routing/model/parent
+            # resources retain the original opaque-only headers and cache.
+            specialist_headers = specialist_identity_headers(
+                config=self.config, context=self.context, scope=self.scope,
+            )
+            specialist_project = await stack.enter_async_context(
+                ProjectClient(credential, http, specialist_headers)
+            )
             artifact_store = await stack.enter_async_context(
                 create_artifact_store(self.scope, self.role, credential)
             )
             await artifact_store.verify_private_path()
-            yield artifact_store, WorkflowRemoteAgents(project, headers), project, credential, http, headers
+            yield (
+                artifact_store, WorkflowRemoteAgents(specialist_project, specialist_headers),
+                project, credential, http, headers,
+            )
 
     def producer(self, *, response_id: str | None = None) -> Producer:
         return Producer(

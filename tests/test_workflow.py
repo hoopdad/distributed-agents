@@ -561,6 +561,9 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
             session_id=self.runtime.scope.parent_session, user_id=self.runtime.scope.principal,
             call_id="synthetic-opaque-call",
         )
+        self.runtime.config.is_hosted = True
+        self.runtime.config.session_id = self.runtime.scope.parent_session
+        self.runtime.config.project_endpoint = PROJECT
         seen = []
         def handle(request):
             seen.append({"headers": {
@@ -584,19 +587,28 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         session.state[FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY] = "a" * 32
         child = Child(role="architect", name=AGENTS["architect"], version="1",
                       hosted_id="a" * 32, framework=session.to_dict())
-        with patch("demo.workflow.ManagedIdentityCredential", return_value=credential), \
+        with patch.dict(os.environ, EXPECTED_AZURE_TENANT_ID=self.runtime.scope.tenant), \
+                patch("demo.workflow.ManagedIdentityCredential", return_value=credential), \
                 patch("demo.workflow.data_client", wraps=data_client) as data_factory, \
                 patch("demo.foundry.httpx2.AsyncHTTPTransport", return_value=httpx2.MockTransport(handle)), \
                 patch("demo.workflow.create_artifact_store", return_value=store), \
                 self.assertLogs("demo.foundry.outbound_context", level="INFO") as logs:
-            async with WorkflowRuntime.resources(self.runtime) as (_, remote, _, _, _, _):
+            async with WorkflowRuntime.resources(self.runtime) as (_, remote, project, _, _, headers):
+                # Original resources still never redelegate the platform user;
+                # only the B candidate's distinct specialist client does.
+                self.assertEqual(headers, {"x-agent-foundry-call-id": "synthetic-opaque-call"})
+                self.assertEqual(project.call_headers, headers)
+                self.assertIsNot(project, remote.project)
                 stream = remote._client(child).run("Synthetic probe.", session=session, stream=True)
                 with self.assertRaises(ChatClientException):
                     async with stream:
                         async for _ in stream:
                             pass
         self.assertEqual(seen, [{
-            "headers": {"x-agent-foundry-call-id": "synthetic-opaque-call"},
+            "headers": {
+                "x-agent-foundry-call-id": "synthetic-opaque-call",
+                "x-ms-user-identity": self.runtime.scope.principal,
+            },
             "method": "POST",
             "path": urlsplit(PROJECT).path + "/agents/" + AGENTS["architect"]
                     + "/endpoint/protocols/openai/responses",
@@ -609,7 +621,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(logs.output), 1)
         self.assertEqual(outbound_identity(logs.output[0], self.runtime.response_id), {
             "role": "architect", "has_call_id": True, "call_matches_context": True,
-            "has_delegated_user": False, "has_container_user": False,
+            "has_delegated_user": True, "has_container_user": False,
         })
         self.assertNotIn("synthetic-opaque-call", logs.output[0])
 

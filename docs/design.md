@@ -49,6 +49,50 @@ fresh-history controls for both specialists. Offline fixtures are not live
 proof. A separate parent must have separate children and artifact scope; a
 model-provided ID cannot establish trusted scope.
 
+### Isolated specialist client candidate (RP-S2-ISOLATED-CLIENT)
+
+The source candidate implements the
+[accepted B client contract](customer-prototype-architecture.md#request-local-client-ownership-and-unchanged-trust)
+in `WorkflowRuntime.resources()`. The original six-element tuple keeps its
+meaning: store, remote specialists, original project, credential, HTTP, original
+headers. Only the remote specialists receive a separate `ProjectClient`,
+header copy and OpenAI-client cache. Routing, parent and model callers retain
+opaque-only authority. Both project clients share the request-owned credential
+and exact-origin, zero-retry HTTP transport; the exit stack closes project
+pipelines before HTTP and credential.
+
+`demo/foundry.py:specialist_identity_headers()` re-derives the full scope from
+captured hosting context and the configured tenant/project, then compares it to
+the runtime scope. It rejects unexpected platform headers, invalid delegation
+syntax and call-ID-as-user substitution. The specialist copy carries the
+unchanged opaque call header plus `x-ms-user-identity`, never `x-agent-user-id`.
+It does not use the legacy `platform_identity_headers()` helper. Receiver
+principal equality, pinned versions, child/history lookup, effect journals and
+unknown-effect holds are unchanged.
+
+`tests/test_isolated_client.py` exercises the actual resource factory and
+SDK/Responses clients with controlled network/storage boundaries. Both roles
+cover prepare, create, check, ambiguous-create inspection, attempted send and
+exact-response recovery; restored hosted/framework/version bindings remain
+intact. Negative tests cover changed/forged scope, invalid identity, failed
+retrieval without send/create, and cleanup after success, setup failure,
+binding failure and cancellation. Closing the specialist project does not
+invalidate the original model client's shared HTTP transport. The existing
+wire-log test now verifies candidate-only delegation and unchanged original
+resources; diagnostic values remain redacted.
+
+Local verification: the existing validated Python 3.12.10 environment passed
+dependency checks, **192 offline tests in 23.865 seconds**, and compilation via
+`Test-Demo.ps1 -Python <absolute-python> -LabRepositoryRoot <explicit-lab-root>`.
+No dependencies were installed. These results do not prove principal namespace
+compatibility, permission effectiveness, live specialist entry or release
+acceptance. The candidate has no automatic path selector. Existing deployed
+versions remain unchanged until the original DevOps loop deliberately publishes
+the reviewed exact-source/common package. Source integration must join this
+commit with the independently implemented lab runner, then run final-source
+and Linux/package gates. Use only a fresh synthetic parent; never adopt held
+historical parents or replay uncertain effects.
+
 ### Conversations, checkpoints and artifacts are different state
 
 | Concern | Responsible source | Purpose |

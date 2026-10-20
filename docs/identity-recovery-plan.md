@@ -1,5 +1,35 @@
 # Identity propagation recovery: design and execution plan
 
+## Current changed-source integration handoff (October 20, 2026)
+
+The [reviewed source join](design.md#reviewed-source-join-and-operational-root-handoff)
+now consumes original Architect/Critic acceptance of lab operational-context
+correction `42a70533` (including foundation `d0073536`) and README correction
+`f4ec1496`. Application input `57585e0` also retains accepted integration
+`1bd157d` and current planning/amendment inputs. Both reviewed feature refs
+were pushed with exact remote readback; integration documentation awaits its
+own original review before push. No task code was abandoned or discarded.
+
+The former source-tool/profile coupling is corrected: explicit
+`OperationalLabRoot` binds the unchanged settings import's existing dedicated
+context, while `LabRepositoryRoot` continues to bind reviewed loaded tools.
+Joined no-effect caller/negative checks and actual loaded-byte inspection
+passed; see the design handoff for exact source closure and invocation.
+The retained run passed 194 tests with three inherited Linux-only exclusions;
+application checks passed 204 tests, dependency checks and compilation.
+These results are not authentication, actual Linux packaging or live evidence.
+No private settings, profiles, credentials or operational resources were read
+or changed by this integration.
+
+Original E2E must revalidate the changed join. Original serialized DevOps then
+combines independent readiness with actual Linux/hosting-package, common-bundle,
+guarded publication and G1-G8 live gates. The original identity failure is not
+repaired by context separation alone. Current deployed/rollback bindings,
+specialist ingress, hosted continuation and stop/resume remain unobserved here.
+Preserve UNKNOWN operations, held parents, rollback assets, historical cleanup
+uncertainty and the originating no-progress stop. No unchanged speculative
+publication or uncertain-effect replay is authorized.
+
 ## Current invocation authority overlay
 
 The additional October 19, 2026 user approval permits either supported

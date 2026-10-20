@@ -249,6 +249,36 @@
   "AssignedWorkDeveloper": ["RP-S2-OPERATIONAL-CONTEXT", "RP-S1-README-STATUS", "RP-S2-CONTEXT-INTEGRATE"],
   "AssignedWorkDevOpsEngineer": ["RP-S1-EXECUTION-PREPARATION"],
   "AssignedWorkDesigner": [],
+  "integrationHandoff": {
+    "task": "RP-S2-CONTEXT-INTEGRATE",
+    "applicationInputCommit": "57585e0f52a5c616af1e88bc8f06b2ef231dd800",
+    "labInputCommit": "42a70533c567a8aed29f0ca076c0b5d58381fc77",
+    "consumedAcceptedCommits": {
+      "priorApplicationIntegration": "1bd157d05116b076b0aa45b4fb6bfe531e5d28d0",
+      "readme": "f4ec1496c6f59cb08142c3b875deefdf695de30c",
+      "priorLabRunner": "18429840e86d92c26611bae3ffdc7095ca87592d",
+      "labContextFoundation": "d0073536c2969e885bdcc767ddccbebd7deda7d5",
+      "labContextCallers": "42a70533c567a8aed29f0ca076c0b5d58381fc77"
+    },
+    "acceptance": "Opened original operational-context and README outcome JSONs; both original Architect/Critic reviews agree, taskComplete true, no unmet criteria. Consumed scoped architecture and planning amendment; no ownership reopening or duplicate implementation.",
+    "sourceJoin": "All inputs already present on authorized feature branches; no cherry-pick, branch switching or abandoned task code. ApplicationRoot selects source, LabRepositoryRoot reviewed loaded tools, OperationalLabRoot existing imported dedicated context only.",
+    "checks": "Joined Windows application Test-Demo passed dependencies, 204 tests in 49.814 seconds and compilation with absolute validated Python and explicit feature sibling. Application-bound retained discovery passed 194 tests in 88.192 seconds, three inherited Linux-only skips; actual caller/context, loaded-byte and crossed-tool checks included. Repository documentation checks are recorded in the integration owner report.",
+    "sourceClosure": {
+      "producer": "identity_decision.source_files with selected application and lab roots",
+      "encoding": "UTF-8 compact sorted-key JSON",
+      "applicationFileCount": 22,
+      "labFileCount": 9,
+      "sha256": "8974f4cdae0850f8528d1261e6d9617e756e157316449385875d55e05f29b6f3"
+    },
+    "reviewedFeaturePushReadback": {
+      "branch": "feature/customer-hosted-session-prototype",
+      "application": "57585e0f52a5c616af1e88bc8f06b2ef231dd800",
+      "lab": "42a70533c567a8aed29f0ca076c0b5d58381fc77",
+      "integrationDocumentation": "Commit before original review; push only after that review. No claim of acceptance for this new documentation."
+    },
+    "nextOwner": "Original EndToEndTestLoop revalidates changed exact join; original serialized DevOps then combines independent readiness with actual Linux/package/publication/live gates.",
+    "limits": "No private context inspection, authentication, cloud query, Linux package, transport, mount, publication, inference or stop/resume. No live AC1-AC9/G1-G8 pass. Preserve UNKNOWNs, held parents, rollback assets and historical cleanup uncertainty. Original plan graph and planning-turn historical observations below are unchanged."
+  },
   "verificationThisPlanningTurn": {
     "planChecks": "Passed four complete matching task/workCard contracts, unique IDs, complete owner projections, acyclic minimal graph, disjoint ready-task resources, 205 estimated critical-path task-minutes and existence of all 21 explicitly owned correction paths.",
     "offlineChecks": "Test-Demo.ps1 passed with existing absolute validated Python 3.12.10 and explicit registered feature lab root: pip check, 204 tests in 46.990 seconds and compilation. No dependency installation. This is baseline verification, not new implementation or live progress.",

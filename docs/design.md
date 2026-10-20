@@ -4,20 +4,28 @@
 
 The source join consumes, rather than reimplements, the accepted application
 continuity, presentation, specialist-history and isolated-client work. The
-application feature baseline is `f43e58e253879a2b5ee1644df344a04b9f9a2f6a`.
-The corresponding lab feature includes runner implementation
-`58e2b32f6cdf3a0a506ed8e4c9f465ffdf94d00b` and reviewed correction
-`18429840e86d92c26611bae3ffdc7095ca87592d`. Both repositories already contain
-these commits on `feature/customer-hosted-session-prototype`; no cherry-pick,
-branch switch or canonical dirty-file adoption is needed.
+application input is `57585e0f52a5c616af1e88bc8f06b2ef231dd800`, including
+accepted integration `1bd157d05116b076b0aa45b4fb6bfe531e5d28d0` and README
+correction `f4ec1496c6f59cb08142c3b875deefdf695de30c`. The reviewed lab input is
+`42a70533c567a8aed29f0ca076c0b5d58381fc77`, including validation foundation
+`d0073536c2969e885bdcc767ddccbebd7deda7d5` and accepted runner correction
+`18429840e86d92c26611bae3ffdc7095ca87592d`. All are already ancestors on the
+authorized `feature/customer-hosted-session-prototype` refs. No cherry-pick,
+branch switch, abandoned task branch or canonical dirty-file adoption was
+needed. Both reviewed input refs were pushed and exact remote refs read back;
+the integration documentation itself awaits original review before its push.
 
 Originating Architect and Critic substantively accepted the ownership/root
 handoff and then the runner corrections. Their votes supersede the older
 incomplete ownership report only within that originating boundary; stopped
 history, unknown effects and downstream live gates remain intact.
 
-**Use the registered feature sibling as the selected lab/tooling root.**
-Invoke its absolute wrapper path and pass that same root explicitly:
+**Keep three root roles separate.** `ApplicationRoot` selects application
+source; `LabRepositoryRoot` selects the registered feature sibling's reviewed
+tools; `OperationalLabRoot` selects only the existing dedicated context imported
+by unchanged `scripts/Use-Settings.ps1`. Context never selects helper source.
+Use the existing absolute validated Python and explicit reviewed tool root for
+these no-effect checks:
 
 ```powershell
 $python = '<existing-validated-absolute-python>'
@@ -29,34 +37,66 @@ $lab = '<absolute-registered-feature-sibling-root>'
 & "$application\scripts\Test-Repository.ps1" -Python $python
 ```
 
-The executed split-root `Invoke-IdentityDecision.ps1 -Operation Check`
-regression loads its colocated PowerShell resolver and Python runner, uses the
-actual committed application and lab roots, and checks current raw-byte source
-bindings. Its ZIP and exact-version strings are synthetic offline inputs, not
-a Linux hosting package or deployed inventory. Loaded Python module paths and
-PowerShell function source paths were also inspected directly. Both languages
-still reject crossed lab/tool roots with `LAB_TOOL_OWNER_MISMATCH`.
-Raw hashes must be regenerated from the selected files; normalized equivalence
-with historical CRLF files does not authorize reusing historical byte seals.
-Private paths, source-binding maps and registry observations stay in the
-operator handoff, not the customer repository.
+The implemented operational contract for the five guarded entry points is:
 
-**Source loading is verified offline; operational execution is not ready.**
-The retained `Test-LabPrerequisites.ps1` selects `.azure-cli` beneath its own
-resolved lab root. The existing settings loader points to the original
-dedicated profile; the feature sibling has no such profile directory. The
-registered tenant/subscription scope compares equal, but that does not supply
-authentication, current inventory or permission proof. Do not copy credentials,
-substitute profiles, cross the root guard or write the protected canonical
-checkout to hide this mismatch.
+```text
+-ApplicationRoot <application-source>
+-LabRepositoryRoot <reviewed-tool-checkout>
+-OperationalLabRoot <existing-imported-operational-root>
+```
 
-Original E2E receives this exact source join. Original DevOps must resolve the
-safe operational profile/root arrangement through existing Scrum coordination,
-join the accepted containment-source report with current helper/resource/trust
-evidence, and run Linux/common-package and serialized live gates. If a source
-change is necessary, Scrum assigns its precise ownership before implementation;
-this handoff neither changes the root contract nor authorizes a new profile.
-Historical UNKNOWN operations and held parents remain untouched.
+This applies to `Test-LabPrerequisites.ps1`, `Test-PrivateConnectivity.ps1`,
+`Build-CodePackage.ps1`, `Build-BundledCodePackage.ps1` and
+`Invoke-WslCodeRelease.ps1`. `Get-DeploymentPreview.ps1` and
+`Invoke-IdentityDecision.ps1` propagate the same context; Python
+`bundle_package.py` and `wsl_release.py` accept `--operational-lab-root`.
+Calibration retains tool ownership while validating the operational profile.
+`Build-Demo.ps1`, historical diagnostic/InspectOwner and legacy Decision Check
+without explicit context remain offline source paths, not context selectors.
+
+After the unchanged settings import, the operational root must match imported
+`LAB_REPOSITORY_ROOT`; Windows `AZURE_CONFIG_DIR` must equal that root's existing
+`.azure-cli`. WSL maps that same root's existing `.azure-cli/wsl` and retains
+az/azd selection and environment restoration. Canonical existing directories,
+tool/operational registry scope equality with imported tenant/subscription,
+actual account/project/target checks and private-output exclusions remain
+required. Omitted context permits only the tools' existing validated context:
+no discovery, credential copy, duplicate/default profile or root-guard bypass.
+
+**The source-contract mismatch is corrected and exercised offline, not
+operationally certified.** Joined Windows checks passed 204 application tests
+(49.814 seconds), dependency checks and compilation; retained discovery passed
+194 tests (88.192 seconds), with three originating Linux-only exclusions.
+Retained discovery explicitly bound application `demo` and `live_acceptance`
+before importing the retained tests, avoiding the historical fixture collision.
+`tests/test_release_roots.py:OperationalContextTests` exercises distinct/matched
+roots, caller propagation, rejected roots/profiles/scope, calibration, WSL
+mapping, restoration, loaded-source bytes and crossed-owner rejection.
+The committed split-root Decision Check regression uses synthetic ZIP/version
+inputs, not a hosting package or deployed inventory.
+
+Direct module inspection also confirmed the selected sibling supplies
+`release_roots.py`, `identity_decision.py`, `bundle_package.py` and
+`wsl_release.py`; PowerShell's loaded resolver path and bytes equal that same
+tool root. The checked-in `identity_decision.source_files` closure contains
+22 application and nine lab files; SHA256 of its compact sorted-key JSON is
+`8974f4cdae0850f8528d1261e6d9617e756e157316449385875d55e05f29b6f3`.
+Raw resolver SHA256 values are
+`312c926b91a416c957efe66c387428dec179988f32164b6706892e0d5bb09fd1`
+(Python) and
+`8438d8bdbc04f94bd1b8380601fe8423a66b3045ddd561ec46bc69eb9e987e27`
+(PowerShell). Regenerate raw seals for the exact source before execution;
+normalized historical equality is not a replacement. Private absolute paths
+and per-file binding maps stay outside the customer repository.
+
+Original E2E receives this changed exact source join, then original serialized
+DevOps joins containment/resource/trust readiness and executes actual
+Linux/common-package, guarded publication and live gates. This integration
+does not inspect profiles, authenticate, query cloud inventory, use transport
+or certify actual operational readiness. Preserve historical UNKNOWNs, held
+parents, rollback assets and historical cleanup uncertainty. New internal
+contract failures return to existing Scrum reconciliation, not invented
+human-only authentication requirements.
 
 ## How the same specialist session is reused
 

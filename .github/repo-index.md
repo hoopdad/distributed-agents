@@ -1,5 +1,19 @@
 # Repository index
 
+Changed-source integration freshness: application input `57585e0` and reviewed
+lab feature input `42a70533` (foundation `d0073536`, accepted runner `1842984`).
+Consumed original Architect/Critic agreement for context callers and README
+`f4ec1496`; no ownership reopening, added/deleted paths or runtime changes.
+`docs/design.md` now records the implemented three-root contract, actual
+loaded-module/resolver bytes, source-closure digest and joined no-effect checks.
+`docs/identity-recovery-plan.md` and the current plan's `integrationHandoff`
+route that changed join to original E2E, then serialized DevOps/package/live.
+Both reviewed input feature refs were pushed/read back, including prior
+application integration `1bd157d`; this documentation awaits original review
+before its own push. The old tool/profile mismatch is no longer the source
+remedy, but actual context readiness and G1-G8 remain unverified. Historical
+entries below retain their originating scope and are not current live claims.
+
 Scoped packaging-caller sprint-plan amendment: based on accepted architecture
 `4f179c51` and retained partial lab commit `d0073536`. The separate
 `docs/customer-prototype-operational-context-amendment.json` replaces only the

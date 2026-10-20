@@ -1,6 +1,103 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Current RP-S2: repair, observation and initial-parent handoff (October 20, 2026)
+## Current RP-S3: gated continuity, recovery, isolation and delivery (October 20, 2026)
+
+This invocation selects **RP-S3** from the supplied ReleasePlan. Inspected clean
+application feature baseline `afe6d4dba937102e12821d770c1f7da4788f1c2c`.
+Consume the accepted RP-S2 design, architecture, review and retrospective;
+do not reopen their handoffs or transfer their reviewer votes to this loop.
+No Designer implementation assignment is supplied. Reuse the
+[Screens H-K layouts](#rp-s3-continuity-supported-recovery-and-truthful-delivery),
+README entry and implemented opt-in terminal presentation. This current overlay
+qualifies older dated observations; it changes no runtime or evidence contract.
+
+### Current user flow and screen routing
+
+```text
+A: customer goal -> three remote roles -> stable-session invariant -> source path
+F/K: G1-G4 common bundle + completed non-held initial parent established?
+     no: BLOCKED; show reached boundary, missing proof and existing closing action
+     yes: H initial private-ingress design/review -> same-file queue follow-up
+          -> compare actual parent and both specialist bindings/pins/responses
+          I once-only confirmed supported stop/resume -> original conversation
+          J independent synthetic parent -> distinct children/scope/content
+          K exact-release checks + all-criteria delivery and owned cleanup
+```
+
+The supplied RP-S2 outcomes establish neither entry prerequisite. Screens H/I
+therefore describe gated future execution, not observed success. J is a separate
+parent, not a third turn; Scrum may schedule isolation when its own prerequisites
+pass without adding an artificial dependency on recovery. Continue truthful
+artifacts while authentication and execution remain unresolved.
+
+| RP-S3 acceptance / retained screen | Required evidence-to-display mapping |
+|---|---|
+| Queue follow-up / H | Use the same private session file only after initial completion without a hold. Both specialists execute on both turns; actual parent and both roles' hosted/framework identity fields and pinned versions remain stable, exactly two child creations are observed, and invocation response IDs advance. Show useful current design/review, queue plus earlier requirements, exact accepted prerequisites/revisions and stale-approval invalidation. Aliases, matching prose and repeated briefs do not prove continuation. |
+| Supported recovery / I | Separate stop requested, confirmed stopped/idle, resumed and accepted continuation. Bind the existing durable once-only marker; compare original parent/children/pins, checkpoints and effect journal with no duplicate sends. Missing confirmation stays unverified; inspect known responses without resend. No hard-crash or exactly-once claim. |
+| Separate-parent isolation / J | Use a distinct synthetic brief and private session file. Report distinct parent/both-child bindings and artifact scope, exclusion of the first parent's requirements and cross-scope rejection results separately. A filename or alias is not isolation evidence; account-wide Blob permissions provide application-enforced, not malicious-host or storage-RBAC isolation. |
+| Readable demonstration / A/B/C/H | Retain chronological architect/reviewer calls and useful current output. Controlled reject/revise/review and direct model-history/fresh-history controls remain explicitly offline; do not relabel them live. Safe comparison outcomes belong in a separate sanitized companion, not new public fields or verified terminal badges. |
+| Exact release and source / K | Attribute exact-source application, retained-tooling, Linux/amd64/hosting-Python and final common-package checks separately. Record reviewed scoped feature push and durable integrated/retained-branch accounting; accepted Windows checks or documentation alone do not establish these. |
+| Delivery / K | Lead with BLOCKED unless all AC1-AC9/G1-G8 pass. Give reproducible existing setup/command, actual final/rollback bindings in the authorized private handoff, sanitized outcomes, remaining limitations and positively identified newly owned cleanup. Preserve historical UNKNOWNs, held parents, rollback assets and historical cleanup uncertainty. |
+
+### Present the current block without inventing a new control
+
+Illustrative operator report, not a live transcript or renderer change:
+
+```text
+RP-S3 | BLOCKED | no verified common-bundle G1-G4 or completed initial parent
+Application handoff: accepted; operational join: unverified; E2E outcome: FAIL
+Prerequisite PASS: owner-attributed; execution capture unavailable to reviewers
+Follow-up / supported recovery / isolation: not established
+Next: existing ownership Developer supplies actual capture or restored read access
+      for substantive originating review; runner/integration/exact-join E2E follow
+Independent: DevOps completes current inventory/rollback/effect preparation
+Customer-ready: no
+```
+
+The latest supplied prerequisite execution is shellId 323, reported PASS, not
+the historical host-trust failure cited in older overlays. Reviewers inspected
+script scope, not that execution capture; neither establishes current ingress.
+The supplied accepted fingerprint and writer/integration designations are
+available inputs, not missing authority or substantive ownership acceptance.
+Do not rerun unchanged checks merely for review credit, repeat denied probes,
+or turn absent observations into measured zero creates/sends.
+
+Retain `--native --view human` on stderr, default stdout and acceptance parsing,
+plain-text labels/wrapping, terminal-default light/dark appearance and control
+neutralization. Held, invalid or incomplete outcomes override success-looking
+content. Use synthetic content and safe aliases; keep full identifiers,
+transcripts, private roots, trust material and capture locators out of customer
+output/Git. No browser UI, new flag, dependency, schema or duplicate renderer.
+
+### Bounded disposition and owner handoff
+
+Preserve exact prior references
+`["yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop","sprint-design-completion-status"]`,
+`["yaml-loops-v1:ArchitectureLoop","architecture-completion-status"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-completion-status"]` and
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-completion-status"]`
+within their originating accepted deliverables. Current RP-S2 agreements are
+consumed through their own supplied outcomes, not substituted for RP-S3 votes.
+Under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`,
+ownership remains incomplete and runner writes blocked until actual nonsecret
+resolver/Git/path/hash/root-matrix evidence receives substantive originating
+Architect/Critic acceptance. Existing Developer supplies that capture or restores
+already-authorized read access; this design does not undertake that assignment.
+Under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-exact-release-cloud-pass"]`,
+actual joined-source, rollback, package, publication and cloud-pass gates remain
+required. Accepted source checks and FAIL/bounded reports stay closed.
+
+Designer considers this RP-S3 flow/screen mapping complete for original Product
+Owner/Critic assessment, not live execution complete. Scrum retains decomposition,
+minimal dependencies, resource serialization and Git reconciliation assignment.
+Designated Developer retains actual loaded-root integration and durable Git
+accounting; original E2E validates the exact join. Original DevOps retains
+independent preparation and serialized scripted release/live checks. No current
+RP-S3 reviewer unanimity, operational readiness or release acceptance is asserted.
+
+## Historical RP-S2: repair, observation and initial-parent handoff (October 20, 2026)
 
 This invocation selects **RP-S2: supported repair and exact three-role remote
 collaboration**. Inspected clean application feature-branch baseline

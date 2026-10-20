@@ -23,6 +23,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Sprint design (RP-S1/RP-S2) | `docs\customer-prototype-sprint-design.md` | Retained RP-S1 README/terminal screens; RP-S2 blocked-backlog lanes, operator boundary report and finite-trial outcome flow; installed B versus live selection, private evidence and unchanged machine contracts |
 | Cumulative sprint architecture (RP-S1/RP-S2) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Retained fixtures/candidate; stopped ownership/root versus independent strict-trust inventory lanes, joined source/E2E/exact-package/finite-trial boundaries, unchanged G1-G4 and RP-S3 obligations |
 | RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Phase-compatible Developer checkout verification, installed-candidate review/checks, runner and integration; deferred DevOps inventory/status/trial; pre-parent scenario/source/package/version join and truthful preparation/receiver/unknown outcomes |
+| RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Stopped evidence-only ownership carryover and independent application integration preparation; runner/source join, later strict-trust inventory, exact publication/finite trial and explicit actual G1-G4 handoff; accepted candidate/UX and RP-S1 audit contract retained |
 | RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Supplied review/process observations, metric limits, bounded evidence-handoff improvements and existing-owner actions; no reset of stopped ownership or live acceptance waiver |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
@@ -130,7 +131,17 @@ authority unchanged. The older offline handoff remains non-installed diagnostic
 logic, not a selector. No deployment, inference, permission or lab source change.
 Existing README/terminal/continuity implementations are preserved.
 
-SprintPlanLoop freshness: inspected clean application base
+RP-S2 SprintPlanLoop freshness: inspected clean application base
+`8fc296f65589af88706396ecf50e27b0f75deaef`. Added only
+`docs/customer-prototype-rp-s2-sprint-plan.json`; retained the RP-S1 plan unchanged.
+Evidence-delivery-only carryover preserves the ownership task's five-round stop
+and runner-writing block. Application integration preparation is independent;
+the joined source task retains reconciliation, exact checks and reviewed scoped
+push. Original E2E/DevOps retain formal integration, strict-trust inventory,
+exact package/publication, finite ingress and actual G1-G4 acceptance. No fresh
+lab ownership/trust, dispatch or live outcome is inferred by planning.
+
+Historical RP-S1 SprintPlanLoop freshness: inspected clean application base
 `4b3d0a4ecfda090f4721008de7c301e3fdf34cbc`; no paths added/deleted.
 Retain installed `3aca5dc` for original review/check handoff, not duplicate coding.
 The lab registers a sibling feature checkout at `bdd6b2a`, but its direct
@@ -331,6 +342,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
 - `docs\customer-prototype-release-plan.md`
+- `docs\customer-prototype-rp-s2-sprint-plan.json`
 - `docs\customer-prototype-sprint-architecture.md`
 - `docs\customer-prototype-sprint-design.md`
 - `docs\customer-prototype-sprint-plan.json`

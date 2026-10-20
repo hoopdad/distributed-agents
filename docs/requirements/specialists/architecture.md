@@ -1,6 +1,23 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
-## Current RP-S1 accepted-input history boundary
+## Current RP-S2 independent receiver proof boundary
+
+Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-supported-repair-and-exact-remote-collaboration-october-20-2026).
+Retain both five-stage flows, `specialist_history_v2`, persisted-value and
+identical-brief fresh-history controls and exact-response zero-send recovery.
+Hosted/framework identity, model history and response continuation remain
+distinct; replayed requirements do not prove memory. Neither candidate headers,
+ARM inventory nor historical receipts prove either receiver's entry.
+Verify architect trusted ingress/equality before reviewer dispatch with exact
+prerequisites, then independently verify reviewer entry and immutable output
+provenance. Preparation rejection leaves the receiver unreached; unknown effects
+remain held. Preserve principal equality and specialist-only delegation; no
+history rekey, held-child adoption, new endpoint or schema. G1-G4 and later
+live continuation/recovery/isolation remain required beyond selected ingress.
+
+<a id="current-rp-s1-accepted-input-history-boundary"></a>
+
+## Historical RP-S1 accepted-input history boundary
 
 Consume the [current RP-S1 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s1-accepted-inputs-and-evidence-ready-continuity-october-20-2026).
 Retain both real five-stage role flows and `specialist_history_v2` load/model/

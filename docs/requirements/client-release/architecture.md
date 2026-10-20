@@ -1,6 +1,25 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
-## Current RP-S1 accepted-input presentation and release boundary
+## Current RP-S2 exact-source and truthful execution boundary
+
+Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-supported-repair-and-exact-remote-collaboration-october-20-2026)
+and accepted RP-S2 Screens F/G. Keep README/customer screens, safe aliases,
+opt-in human stderr and unchanged machine stdout/parser; no renderer or public
+field change. Attribute supplied exit-2 trust and historical evidence separately
+from current observations. Completed bounded reports do not pass DevOps cloud
+acceptance. Originating ownership/root review gates eight-path sibling writes;
+strict accepted host trust and current inventory remain an independent lane.
+Designated Developer joins reviewed actual loaded wrappers/application/runner,
+records exact commits/roots and scoped push/reconciliation outcomes; sibling
+commits do not install operational wrappers. Original E2E validates the join.
+Original DevOps retains deterministic local exact-source/tooling/Linux/package,
+preview/publication and actual G1-G4 gates with serialized shared mutation.
+Preserve UNKNOWNs, held parents, rollback, private evidence and unrelated work;
+RP-S3 retains live continuity/recovery/isolation and truthful customer delivery.
+
+<a id="current-rp-s1-accepted-input-presentation-and-release-boundary"></a>
+
+## Historical RP-S1 accepted-input presentation and release boundary
 
 Consume the [current RP-S1 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s1-accepted-inputs-and-evidence-ready-continuity-october-20-2026)
 and accepted SprintDesign Screens A-D. Retain README's customer goal, useful

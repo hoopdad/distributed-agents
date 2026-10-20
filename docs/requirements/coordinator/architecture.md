@@ -1,6 +1,22 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
-## Current RP-S1 accepted-input continuity boundary
+## Current RP-S2 collaboration acceptance boundary
+
+Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-supported-repair-and-exact-remote-collaboration-october-20-2026).
+Retain begin/route/execute/publish, parent-owned child lookup, restored remote
+sessions, pinned versions and existing both-role continuity/revision controls.
+No coordinator rewrite or duplicate implementation. Ownership/root acceptance
+precedes runner writes; reviewed actual loaded source precedes formal E2E and
+DevOps effects. Preparation rejection does not establish receiver failure.
+Neither A nor B is selected by local fixtures. Observe architect ingress before
+reviewer with exact immutable prerequisites; each needs independent evidence.
+Actual common-bundle G1-G4 includes fenced artifact acceptance, private MI Blob
+provenance and genuine Decision-1, not ingress alone. Keep unknown effects held.
+RP-S3 receives a completed non-held initial parent, not an agreed FAIL report.
+
+<a id="current-rp-s1-accepted-input-continuity-boundary"></a>
+
+## Historical RP-S1 accepted-input continuity boundary
 
 Consume the [current RP-S1 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s1-accepted-inputs-and-evidence-ready-continuity-october-20-2026).
 Retain explicit begin/route/execute/publish, parent-owned child lookup, restored

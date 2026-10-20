@@ -1,6 +1,103 @@
 # Cumulative sprint architecture: RP-S1/RP-S2 preparation and RP-S3 delivery
 
-## Current RP-S1: accepted inputs and evidence-ready continuity (October 20, 2026)
+## Current RP-S2: supported repair and exact remote collaboration (October 20, 2026)
+
+Current sprint is **RP-S2**; RP-S1 is supplied as completed workflow history,
+not a successful deployment. Inspected clean application HEAD
+`cf017c969720eda2dce6f2cec09f4fa142cbab2d` on
+`feature/customer-hosted-session-prototype`. Consume the accepted RP-S1
+cumulative/tier architecture at `c888336b1741dd5cbf77f0209749620949301adb`,
+retrospective at `006574e6d664ec21d38a86c8e1f1cf15e162f89e`, and RP-S2
+SprintDesign at inspected HEAD. Older overlays below retain technical/audit
+history; this section selects the current sprint without reopening those
+accepted handoffs or claiming fresh private observations.
+
+### Retained holistic design and current acceptance joins
+
+Exactly three hosted roles remain: terminal -> coordinator MAF
+begin/route/execute/publish -> remote architect and reviewer -> fenced
+acceptance. Parent-scoped manifest lookup, restored remote `AgentSession`,
+pinned role versions and both specialists' `specialist_history_v2` remain
+distinct continuation links. Conversations, checkpoints, immutable artifacts
+and write-ahead effects retain their separate responsibilities. Preserve
+both-role two-turn/four-call/history controls and parser-safe human stderr;
+no rewrite, additional service, schema, framework or duplicate implementation.
+
+| RP-S2 obligation | Closing owner and evidence boundary |
+|---|---|
+| Ownership and loaded roots | Existing Developer substantiates named recovery evidence, current eight-path sibling status and matched/mismatched resolver behavior; originating Architect/Critic acceptance precedes runner writes. Supplied writer/integration designations suffice for coordination, not acceptance. |
+| Reviewed finite runner | Existing Developer implements the retained interface and offline rejection/unknown/root controls after ownership acceptance. Offline coding consumes agreed fixtures, not live inventory. Preserve `LAB_TOOL_OWNER_MISMATCH`; a sibling commit is not operational installation. |
+| Operational/source join | Designated Developer integrates reviewed application, runner and required wrapper bytes at actual loaded roots, records exact commits/hashes/root mapping, reruns joined checks and records scoped push outcomes. Original formal E2E validates that join. |
+| Strict trust and current inventory | Original DevOps independently compares the existing accepted host fingerprint via retained tooling, validates sole-target context and observes current three-role versions/packages/identities, rollback and held effects. ARM readiness and another task's historical receipt inspection do not establish this gate. |
+| Exact release and actual G1-G4 | Original DevOps runs retained application/repository/tooling and Linux/amd64/hosting-Python checks for exact source/package, fresh previews and guarded publication. Actual common bundle, remote acceptance, private managed-identity provenance and genuine Decision-1 remain separate required proofs. |
+
+The supplied RP-S1 source-check and E2E reports attribute 204 offline passes
+to their executions; E2E remains **FAIL**. Supplied DevOps reporting attributes
+an exit-2 `HOST_TRUST_EVIDENCE_REQUIRED` stop after partial authenticated ARM
+inventory, without transport startup or current private deployment bindings.
+Its recovery-file inspection is historical evidence, not transferable ownership
+acceptance or a fresh observation here. The originating ownership report still
+requires permission-capable bounded sibling/resolver/evidence reads and its
+original review. Use the already-sufficient designations; do not request them
+again, reset stopped history or treat session-specific access as blanket denial.
+
+### Identity decision and effect boundary
+
+Neither A nor B is live-selected. A requires an evidenced supported
+authentication/configuration correction and matching reviewed source. Retained
+specialist-only B is candidate code, not proof of delegated ingress. The finite
+runner rejects source/root/scenario/package/actual-version mismatches before
+parent creation. Preparation rejection is not receiver failure and supplies no
+invented zero-send counts. Verify architect trusted ingress and receiver
+principal equality before reviewer dispatch; reviewer needs independent evidence.
+An unknown effect is held and observed, never automatically resent or retried
+under the other identity path. No call-ID-as-user substitution, receiver-equality
+relaxation, held-parent adoption or model-history rekey is allowed.
+
+Necessary chosen-path lab permissions remain pre-approved only at documented
+exact scope/rationale through retained scripts and readback; speculative grants
+are not a remedy. Identity selection alone cannot pass G1-G4. A bounded
+prerequisite-stop or actionable unresolved report may complete its reporting
+contract while DevOps cloud-pass and customer readiness remain unmet.
+
+### Handoff, cumulative obligations and disposition boundaries
+
+Scrum retains task decomposition, minimal dependencies, shared-resource
+serialization and Git-reconciliation assignment; no tasks are dispatched here.
+Developer integration must reconcile task commits to authorized feature
+branches or retain named branches with task/commit IDs and abandonment reason
+in a feature-branch commit message. Preserve unrelated dirty/staged canonical
+work; no branch switching, broad staging or root-guard bypass.
+Original E2E and DevOps execute deterministic local scripts, not GitHub Actions.
+Actual publication/profile/transport/mount/stage mutation remains serialized.
+
+RP-S3 consumes actual G1-G4 and a completed non-held initial parent for live
+two-turn continuity, once-only confirmed supported compute stop/resume with
+checkpoint/effect preservation, separate-parent isolation and truthful delivery.
+It does not consume an agreed failure report as a successful initial turn.
+Preserve every AC1-AC9/G1-G8, historical UNKNOWN, held parent, rollback asset
+and historical cleanup uncertainty. Account-wide Blob Contributor isolation
+remains application-enforced, not storage-RBAC or malicious-host isolation.
+
+The current RP-S2 sections in the linked
+[coordinator](requirements/coordinator/architecture.md),
+[specialists](requirements/specialists/architecture.md) and
+[client/release](requirements/client-release/architecture.md) carry this join.
+Apply exact prior references
+`["yaml-loops-v1:sprint/1/RP-S1/SprintArchitectureLoop","sprint-architecture-close-completed-deliverable"]`
+and
+`["yaml-loops-v1:sprint/2/RP-S2/SprintDesignLoop","rp-s2-design-close-completed-deliverable"]`
+only to their accepted RP-S1 architecture and RP-S2 design respectively.
+Upstream Architecture/UX/ReleasePlan, RP-S1 source/E2E/review/retro closure
+dispositions likewise remain bounded; no votes transfer to this architecture
+or originating ownership acceptance. Architect agrees with this committed
+design for original Product Owner/Critic/Red Team review; current votes and
+checks are reported separately. No private inspection, live identity decision,
+cloud operation, deployment or substantive runtime progress is claimed here.
+
+<a id="current-rp-s1-accepted-inputs-and-evidence-ready-continuity-october-20-2026"></a>
+
+## Historical RP-S1: accepted inputs and evidence-ready continuity (October 20, 2026)
 
 The supplied sprint is **RP-S1: evidence-ready source and understandable
 continuity**; no assignments, completed sprints or additional blocked-decision

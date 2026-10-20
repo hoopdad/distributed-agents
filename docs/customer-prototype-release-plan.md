@@ -1,5 +1,119 @@
 # Customer hosted-session prototype: release plan
 
+## Current RP-S3 sprint review — continuity unreached, delivery blocked (October 20, 2026)
+
+**Demonstration BLOCKED; RP-S3 live goal unmet; E2E FAIL; DevOps incomplete;
+customer-ready no.** This Product Owner review consumes SprintPlan
+`673d1e9e9913bd636c35c91aa9b013b05b355d69` and the supplied current originating
+outcomes. Fresh application inspection confirmed that exact authorized feature
+HEAD with a clean index/worktree. Older reviews and retrospective overlays
+remain history; their votes do not transfer to this review.
+
+No workstation-to-cloud demonstration was executed. The current original E2E
+report is accepted as an actionable predeployment FAIL, with
+`joinedOperationalImplementationVerified=false`, not a new cloud/runtime
+failure. Substantive ownership acceptance, reviewed runner implementation and
+actual loaded-root integration remain unavailable. No verified common-bundle
+G1-G4 or completed non-held initial parent enables continuation.
+
+### Sprint acceptance findings
+
+| RP-S3 criterion | Current finding and evidence boundary |
+|---|---|
+| Same-parent queue follow-up, both specialists' bindings/pins, fresh responses and no extra children | UNREACHED. No actual initial-parent handoff or live follow-up comparison exists. Accepted RP-S3-EVIDENCE-CHECKS maps retained executable/fixture inputs to required private observations at `673d1e9`; it is not live continuity proof. |
+| Once-only confirmed supported compute stop/resume without duplicate effects | UNREACHED. No compute stop/resume was performed. Durable marker, independently confirmed stopped/idle observation, checkpoint retention and complete effect/request comparisons remain required. No hard-crash or exactly-once claim. |
+| Separate-parent child/artifact isolation and content exclusion | UNREACHED. It retains its own G1-G4/execution prerequisites, not a dependency on recovery success. Account-wide Blob permissions mean application-enforced, not malicious-host/storage-RBAC isolation. |
+| Readable synthetic demonstration consistent with private machine evidence | NOT ESTABLISHED live. Existing opt-in human stderr and machine parsing are retained offline work. Safe aliases, plausible memory text and raw terminal capture are not actual binding/provenance proof. |
+| Final exact-source/package checks, scoped push and durable Git accounting | NOT ESTABLISHED. Final joined application/retained-suite/Linux hosting-package gates and final common bundle are missing. Final scoped push and operational reconciliation remain integration-owned and unverified. |
+| Complete delivery outcomes, setup/command, exact bindings, limitations and owned cleanup | BLOCKED. Final/rollback bindings remain unknown. Current DevOps started no resources and performed no cleanup; this does not certify historical cleanup. Existing conditional setup/demo instructions remain available below. |
+
+The accepted observation handoff distinguishes supplied JSON consistency from
+independently observed provenance. DevOps must associate actual request captures,
+manifests, immutable artifacts, cumulative journals and checkpoints; observed
+sends cannot be reconstructed from journal intentions. The combined validator
+needs all scenario inputs, but this creates no recovery dependency for scheduling
+isolation. No duplicate fixtures, collector, flag or evidence schema is requested.
+
+Current DevOps reached local retained-contract and named historical-evidence
+inspection only: no settings import, transport startup, cloud query, publication,
+inference or stop/resume. Its reviewers inspected wrapper requirements for the
+containment-module path and both source hashes before transport import, but did
+not establish a complete current operational binding/resource handoff. Historical
+hashes alone are insufficient; this does not prove the handoff absent everywhere.
+The earlier prerequisite PASS remains owner-attributed, not freshly verified.
+No unchanged rerun merely for review credit is requested.
+
+Retained Developer and E2E 204-test Windows runs remain separately attributed
+(47.262 and 40.207 seconds respectively), with the unclosed Proactor transport
+ResourceWarning disclosed. They are not new tests, warning-free results, final
+operational-join checks, Linux/package validation or live acceptance.
+
+### Prioritized carry-forward on existing assignments
+
+Scrum retains decomposition, resource serialization and Git reconciliation
+assignment. These findings refine existing work; they add no approval stage.
+
+| Priority / assignment / existing owner | Concrete closing action |
+|---|---|
+| P0 / RP-S2-LAB-OWNERSHIP / ownership Developer; originating Architect/Critic | Supply actual nonsecret Python/PowerShell resolver contents, attributable sibling branch/HEAD/base, eight-path statuses, owner-specific hashes with line-ending explanation and source-bound matched/crossed-root results through the approved external handoff, or restore already-authorized bounded read access. Obtain substantive originating acceptance before runner writes; no denied-probe retry or renewed designation. |
+| P1 / RP-S2-FRESH-INVENTORY / DevOps; existing transport owner with Scrum coordination | Locate the existing accepted operational containment-source handoff, verify module path/current bytes and both source hashes plus serialized resource availability, then use retained Metadata tooling with supplied host trust, approved settings loader and explicit roots. Complete current versions/packages/identities, rollback, effective actions and unresolved effects. Inventory remains independent of runner coding; no new receipt format, trust regeneration or renewed authority. |
+| P1 / RP-S2-DECISION-RUNNER / Developer | After substantive ownership acceptance, complete original review of the retained eight-path runner and offline controls. Preserve trusted receiver equality, zero-send mismatch checks, finite calls and unknown-effect holds. |
+| P1 / RP-S2-SOURCE-INTEGRATE / designated integration Developer; original E2E | Consume accepted application and RP-S3 observation handoffs; assess later drift, join reviewed runner/wrapper commits with actual loaded roots/bytes/hashes and run joined checks. Return the exact join to original E2E. Reconcile remote freshness, reviewed scoped push and task/branch/commit accounting without adopting unrelated dirty work. |
+| P1 / RP-S2-INGRESS-TRIAL and RP-S2-G1-G4 / DevOps | Join actual integration/E2E readiness with current preparation and exact-source/retained/Linux/amd64/hosting-Python/package gates. Use one guarded publisher; reconcile outcomes before further effects. Verify three-role final common bundle and rollback assets, actual remote acceptance, private managed-identity Blob provenance and genuine Decision-1 for the same completed non-held initial parent. |
+| P2 / RP-S3-TWO-TURN and RP-S3-SUPPORTED-RECOVERY / DevOps | After actual entry proof, continue that same parent with the queue requirement, verify both roles and effects, then perform once-only confirmed supported recovery. Never replace a held parent, remove stop markers or replay uncertain sends. |
+| P2 / RP-S3-ISOLATION / DevOps | After its own release/execution prerequisites pass, collect a separate synthetic parent's distinct bindings, artifact scope and content-exclusion observations. Do not add a recovery dependency. |
+| P2 / RP-S3-DELIVERY / DevOps | Include the existing conditional setup/demo reference, per-criterion outcomes, exact final/rollback bindings when known, push/accounting outcomes and positively identified newly owned cleanup. Do not withhold documented instructions merely because live success is absent, or label those instructions live-verified. |
+
+### Conditional reproducible demonstration and delivery boundary
+
+Use [README setup and offline checks](../README.md#setup-and-offline-checks)
+and [the existing two-turn command](../README.md#two-turn-terminal-demonstration).
+These are implemented, **conditional and not executed/live-verified by this
+review**. From the application root select the existing absolute validated
+Python, import only the allowlisted settings, authenticate the dedicated profile
+and use a verified owned SOCKS endpoint established by retained lab tooling.
+Only after actual release readiness, run the documented
+`-m demo.terminal --native --view human --socks $socks --session-file $session`
+initial private-ingress message and then its queue follow-up against that same
+private file, only if the first turn completed without pending/held effects.
+Preserve all existing files; this reference is not permission to send into a
+held or unknown conversation. Setup, exact full commands and synthetic messages
+are retained in README, not newly invented here.
+
+### Dispositions, accounting and original-review handoff
+
+Preserve
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`
+and its substantive runner-writing block. Keep accepted source checks closed
+under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S1-CURRENT-SOURCE-CHECKS/AssignedWorkDeveloperLoop","current-source-checks-completion-status"]`.
+The originating FAIL-report acceptance under
+`["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-report-completion-status"]`
+is not readiness for a subsequent join. Keep originating bounded reports closed
+under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-bounded-assessment-completion-status"]`,
+separate from unmet cloud-pass obligations under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-exact-release-cloud-pass"]`.
+The accepted RP-S1 review under
+`["yaml-loops-v1:sprint/1/RP-S1/SprintReviewLoop","sprint-review-completion-status"]`
+does not transfer votes here. Retain all three sprint contracts under
+`["yaml-loops-v1:sprint/1/RP-S1/SprintRetroLoop","retro-release-plan-sprints-handoff"]`.
+Accepted architecture/UX/planning and current observation handoffs remain closed.
+No prior disposition is superseded or actual release criterion waived.
+
+This review owns only ReleasePlan and index documentation; no task code was
+created or abandoned. Its documentation belongs on the authorized feature
+branch. Comprehensive task-code integration/retained-branch accounting and final
+scoped push remain unverified with the designated integration Developer.
+Preserve historical UNKNOWNs, held parents, canonical dirty/staged work,
+retained branches, rollback assets, cleanup uncertainty and originating stops.
+No no-progress counter is reset or inferred from reported loop counts.
+
+Product Owner considers this review/backlog deliverable complete for the
+original Scrum Master, Critic, Architect and Red Team to assess. Current review
+unanimity is not asserted. This is not customer delivery, cloud PASS or
+AC1-AC9/G1-G8 release acceptance; documentation churn is not substantive progress.
+
 ## Current RP-S2 retrospective — single-round handoffs without live progress (October 20, 2026)
 
 **Outcome: demonstration BLOCKED; RP-S2 live goal unmet; E2E FAIL;

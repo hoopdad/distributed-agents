@@ -170,12 +170,13 @@ DevOps retains publication/live acceptance. Sprint acceptance is planned, not
 executed or waived by a bounded research exit.
 
 Current SprintDesignLoop freshness: inspected clean release-plan baseline
-`b0d73b07247bbadbbab9afa9a1bb85b8fa32d480`, accepted architecture `2a736d9`
-and UX `3ee9798`. Reconciled `docs\customer-prototype-sprint-design.md` with
-integrated `--native --view human`: one finalization-evaluated stderr summary,
-ordered calls and final current content, not invented intermediate findings.
-Retain integrated fixtures/README without redispatch. A/B/unresolved identity
-selection adds no selector, permission wizard or release-success badge.
+`5449ff49af6a79dbc9fef75c1314d6689cdba6d3`, accepted architecture `0a24470`
+and UX `ef5c79d`. Reconciled `docs\customer-prototype-sprint-design.md` with
+the specialist-only candidate/finite-runner handoff: offline-only, fresh trial,
+architect-only entry, both-role selection and final release are distinct
+screen/report interpretations. Retain integrated `--native --view human`,
+fixtures and README without redispatch. No candidate migration screen, identity
+selector, permission wizard, new evidence ledger or release-success badge.
 No paths added/deleted, runtime/CLI/schema/ownership boundary changes.
 Prior-loop completion dispositions remain confined to their originating work;
 SprintDesign review and downstream live/package gates remain separate.

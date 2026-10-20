@@ -10,11 +10,12 @@ handoffs, not a new implementation, SprintPlan or live acceptance report.
 
 Accepted inputs, unchanged by this design:
 
-- [Architecture](customer-prototype-architecture.md), commit `2a736d94cb99c01aca0c516aeaf920e61ddb8fbd`.
-- [User experience](customer-prototype-ux.md), commit `3ee9798afa4a419be87bcb68fdfc3540875d171a`.
-- [Release plan](customer-prototype-release-plan.md), commit `b0d73b07247bbadbbab9afa9a1bb85b8fa32d480`.
+- [Architecture](customer-prototype-architecture.md), commit `0a244702c7ccf01f1916c4b3a2580346ffb02fea`.
+- [User experience](customer-prototype-ux.md), commit `ef5c79d94114f156ab0d03497fafffd1e348aabf`.
+- [Release plan](customer-prototype-release-plan.md), commit `5449ff49af6a79dbc9fef75c1314d6689cdba6d3`.
 
-Inspected clean feature-branch baseline `b0d73b07247bbadbbab9afa9a1bb85b8fa32d480`.
+Inspected clean feature-branch baseline `5449ff49af6a79dbc9fef75c1314d6689cdba6d3`
+for this October 20 reconciliation.
 Related implementation is already integrated in `24b883f`; terminal view
 `56b762e`, workflow fixtures `6614440` and specialist fixtures `c454e50` are
 retained work, not new progress or tasks to redispatch. The invocation supplies
@@ -244,6 +245,48 @@ private. Never turn opaque call IDs, model text or assignment JSON into
 delegated user identity. Preserve historical UNKNOWN publication, held parents,
 rollback bindings and cleanup uncertainty regardless of path choice.
 
+### October 20 sprint delta: decision evidence to customer screens
+
+The accepted architecture now defines a separate specialist-only B client and
+a finite, journaled local decision runner. These are RP-S2 implementation
+handoffs, not implemented terminal options. Retain the integrated RP-S1 screens
+and fixtures. The retained offline handoff (`13203ac`, integrated by `bb1743d`)
+returns exit 2 / `unresolved` and has no live mode; that is not an observed
+customer-conversation failure. Fresh inventory and executable candidate/runner
+work remain downstream. Do not repeat completed research to fill that gap.
+
+Use this ordered interpretation when reviewing affected documentation or the
+eventual private decision report. The labels are design examples, not new
+public event fields, runtime-generated banners or an additional evidence ledger.
+
+| Decision checkpoint | Safe summary / customer-screen consequence | Closing handoff |
+|---|---|---|
+| Offline candidate checks only | `OFFLINE ONLY; live selection unresolved`. Leave README historical status and Screens A-D unchanged. | Runtime and runner owners implement accepted contracts independently; inventory remains a separate lane. |
+| Candidate deliberately published; fresh trial declared | `CANDIDATE TRIAL; not release acceptance`. A predeclared fresh synthetic parent stays separate from old pinned/held conversations. | Original DevOps binds reviewed source, exact package/three versions and finite intended calls before dispatch. No invented runnable command before the script exists. |
+| Trusted architect receiver passes; reviewer not reached | `Architect receiver passed; reviewer unreached; selection unresolved`. Do not display three-role success or a verified two-turn example. | Record exact reached boundary privately. Reviewer runs only after architect trusted entry/receiver success; unknown/held effects stop the sequence. |
+| Both receiver checks pass and decision selects A or B | `Identity path selected; customer release unverified`. This does not change alias-based continuity to VERIFIED or change the README to customer-ready. | Formal E2E plus DevOps final-common-bundle/live gates remain required, including genuine current artifact acceptance. |
+| Principal missing/changed, version drift, held or unknown effect | Preserve actual failure/hold; no success, automatic path switch, retry or replacement-parent suggestion. | Inspect known exact responses without resend. Contract/namespace changes go through existing Scrum reconciliation and Architect-advised Product Owner, never receiver-equality relaxation. |
+| Final release gates independently verified | Update README status from dated evidence; retain historical limitations and provide the real two-turn command/proof. | Original DevOps/E2E supply final/rollback bindings and evidence; documentation review alone does not award release PASS. |
+
+There is no migration screen. A deliberately published candidate's fresh trial
+must not reuse a historical held session file, translate principals or adopt
+old children. Nor may a failed trial be replaced to evade its hold. Once a final
+release is verified, the customer's initial and queue follow-up turns use the
+same newly chosen private session file; follow-up still requires a completed,
+non-held initial turn. Recovery retrieval never counts as a new invocation.
+Show only sanitized classifications in a shareable summary; full principal,
+binding, permission readback and evidence locators stay private.
+
+**Affected-change review examples:** a new specialist client must not add a
+terminal identity selector or alter default stdout; an architect-only pass must
+not become three-role success; `selected-B` must not become continuity VERIFIED;
+an unresolved offline exit must not be relabeled live FAIL. These checks use
+the existing report and renderer fixtures, with no new provider read or
+inference for presentation. Developer owns any concrete implementation repair;
+Designer reviews affected screens against this contract. Scrum Master assigns
+actual task IDs, dependencies and Git integration; this document creates no
+competing SprintPlan or deployment owner.
+
 ## Fixture-to-design handoff and doneWhen
 
 The rows below are acceptance examples for existing downstream work, not new
@@ -281,7 +324,29 @@ No runtime files, accepted input documents, private state, lab tooling or
 pre-existing readability edits are changed by this handoff. New original Product
 Owner/Critic SprintDesign agreement is not supplied by earlier-loop approvals.
 
-## Verification of this sprint-design revision
+## Verification of the October 20 sprint delta
+
+Inspected clean application baseline `5449ff49af6a79dbc9fef75c1314d6689cdba6d3`
+on `feature/customer-hosted-session-prototype`; changed only this document and
+the index. All 10 relative document links resolve, screen fences balance and
+`git diff --check` passes. No runtime, dependency, CLI or evidence-schema
+changes were made.
+
+Attempts to run `Test-Demo.ps1` with explicit lab root and
+`scripts/Test-Repository.ps1`, using the previously recorded absolute
+Python 3.12-x64 executable, were denied by the execution tool because no
+interactive approval response was available. Neither command ran; current
+dependency, full offline-suite, generated-index and public-boundary success
+are not claimed. The historical results below do not cover this revision.
+Run these retained checks when tool execution is available; no dependency
+installation or broader Azure authority is requested.
+
+The Designer agrees with this bounded screen/handoff design. Original Product
+Owner and Critic agreement on this revision remains outstanding. No cloud
+inventory, permission operation, candidate trial, deployment, live acceptance,
+Linux package gate or push occurred; no lab source was changed.
+
+## Historical verification of the preceding sprint-design revision
 
 Using the existing absolute validated Python 3.12.10 executable, without
 dependency installation:

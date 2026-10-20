@@ -3,8 +3,8 @@
 ## Release planning entry: canonical sprint and execution handoff (October 20, 2026)
 
 This is the current Release Plan Loop entry. It consumes Architecture
-`35d526ae3a9e722ebe633ba60e2ca572182a5d1e`, UserExperience
-`c70571186564cf293a63b00f08511a560b7deb11`, the customer specification and
+`5f9c38437102f67fd40a78d7debdaa099ba4ff44`, UserExperience
+`053070d38ea77920a4ddbf1eacf643e8152e8fae`, the customer specification and
 the three tier contracts in `docs/requirements`. The supplied ArchitectureLoop
 audit records Product Owner, Red Team and Critic agreement; the supplied
 UserExperienceLoop audit records Product Owner and Critic agreement. Those
@@ -13,15 +13,22 @@ This packet has no reconciled feedback and its `priorDispositions` is empty.
 Older dated entries and provenance-qualified decisions remain attributable
 history; none is silently superseded, generalized or newly accepted here.
 
-Fresh application inspection found the authorized feature branch at the UX
-commit, with only untracked workflow context. Preserve that directory outside
-owned commits. This planning turn does not inspect sibling/private recovery
-evidence or refresh operational state. In particular, use the current
-Architecture entry's denied separate sibling Git/resolver inspection, not an
-older successful-inspection statement below. Registration is not ownership
-acceptance or actual loaded-source installation. Supplied accepted host trust
+Fresh application inspection found a clean authorized feature branch at the UX
+commit. Ignored workflow context remains preserved outside owned commits.
+The supplied outcome audits were read under the application's workflow context;
+their original reviewer agreement is distinct from the owner reports' earlier
+pending-vote wording. This plan does not claim those votes for its own review.
+
+The current architecture inspected the newly accessible mirrored ownership/root
+capture: its complete-file hash matched; direct sibling branch/HEAD/status,
+actual resolver contents and four Python plus four PowerShell matched/crossed-root
+results were inspected. These are architecture-attributed captured observations,
+not executions or independent embedded-source hash recomputation by this planning
+turn. The earlier unavailable-evidence boundary is historical, not the current
+closing action. Cleanliness and recorded source equality are neither ownership
+acceptance nor proof of operational installation. Supplied accepted host trust
 and writer/integration designations are available inputs, not missing user
-decisions, originating ownership acceptance or fresh transport proof.
+decisions or fresh transport proof.
 
 ### Product priority and bounded increments
 
@@ -95,22 +102,41 @@ requires its appropriate checks and repair.
 
 ### Critical path and independent preparation
 
-Existing Developer first completes **RP-S2-LAB-OWNERSHIP** with current
-attributable sibling/path/resolver and matched/crossed-root evidence plus the
-supplied coordination inputs; originating reviewers retain substantive
-acceptance before writes. Then **RP-S2-DECISION-RUNNER** completes the retained
+Existing Developer/Scrum first return the now-accessible capture and
+`ownershipRecoveryDefaults` through **RP-S2-LAB-OWNERSHIP** at the exact
+originating reference
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+Original Architect/Critic must substantively assess the original safe-writing
+and root criteria; prior agreement explicitly retained `taskComplete=false`.
+Preserve that task's originating five-round stop and dependent-write block.
+Do not replace the task, recreate setup, renew designations or repeat the
+capture merely to remove attribution. Accessible evidence is not acceptance.
+This bounded release-plan deliverable need not wait for that downstream vote.
+
+After substantive originating acceptance, **RP-S2-DECISION-RUNNER** completes the retained
 eight-path tooling and offline controls. The designated
 **RP-S2-SOURCE-INTEGRATE** Developer joins reviewed commits with actual loaded
 operational source, preserves root guards and supplies exact joined checks to
 the original End-to-End Test Loop. No canonical dirty-checkout runner writes.
+The designated sibling-only paths remain `identity_decision.py`,
+`Invoke-IdentityDecision.ps1`, `tests/test_release_identity_decision.py`,
+`Test-PrivateConnectivity.ps1`, `observe_agent.py`, `release_roots.py` and
+`Release-Roots.ps1` under the lab's `foundry-tf/multi-agent`, plus its
+`.github/repo-index.md`. Ownership approval is not approval to weaken
+`LAB_TOOL_OWNER_MISMATCH` or run a crossed-root wrapper. Review must bind the
+actually loaded module/wrapper bytes, not only a task commit or equal recorded
+hashes of pre-runner resolvers.
 
 Independently, the existing transport owner with Scrum coordination provides
 current containment-module/source-hash and resource availability handoff;
 original DevOps executes retained strict prerequisites and
 **RP-S2-FRESH-INVENTORY** using supplied accepted host trust and the sole-target
 settings loader. Inventory does not wait for runner coding or trial success.
-Read-only ownership evidence collection has existing user approval; do not
-manufacture a new authority request or infer acceptance from that approval.
+Use the supplied mirrored evidence and accepted fingerprint/reference first.
+Read-only ownership inspection has existing user approval; do not manufacture
+a new authority request or infer acceptance from that approval. Any genuinely
+missing observation remains assigned to its existing owner, not a new
+product requirement or a reason to redispatch accepted application work.
 
 The dependent execution join is reviewed loaded source + formal E2E handoff +
 current inventory + exact-source/retained/Linux/package/preview gates ->
@@ -168,38 +194,40 @@ remains unverified; historical live blockers are not freshly diagnosed here.
 
 ### Validation and remaining check handoff
 
-- In-memory document validation passed: three unique sprint IDs with goals,
-  acceptance, doneWhen, exclusions and handoffs; all five canonical flow IDs
-  and eighteen step IDs resolve against the accepted architecture. Entry links
-  resolve and the retained full AC1-AC9/G1-G8 coverage remains present.
-- The first suite attempt used the registered system Python 3.12.10, not the
-  validated lab environment. Its dependency check passed, but test discovery
-  ran 47 tests with nine import errors (missing `httpx2`, `SessionStore` and
-  the Foundry hosted-session key). This is an observed interpreter mismatch,
-  not evidence of a new runtime-source defect. No dependencies were installed.
-- After locating and checking the existing canonical lab environment (Python
-  3.12.10 AMD64, Foundry integration 1.14.0, required imports available),
-  `Test-Demo.ps1` with its absolute Python and explicit canonical lab root
-  passed dependency checks, **204 offline tests in 52.669 seconds**, and
-  compilation (exit 0). These are not Linux/package/live results.
-- `scripts/Test-Repository.ps1` did execute but **failed** its first index gate
-  with `REPOSITORY_INDEX_STALE`, including on the verified lab interpreter.
-  Read-only inventory comparison identified exactly the two pre-existing
-  untracked workflow audit JSON files, and no removed public paths. Do not
-  refresh the public inventory to adopt workflow control-plane artifacts.
-  The later gates in that script therefore did not execute. Separately,
-  `scripts/migration.py public-check` passed across 81 Git-visible files and
-  owned `git diff --check` passed; neither converts the whole script to PASS.
-- Scrum/integration coordinates preservation and exclusion of unowned workflow
-  context from customer Git before rerunning the original repository check.
-  This is a concrete local source-closure action, not missing human authority,
-  a runtime rewrite or an AC7 waiver. Final exact-source/package checks and
-  all live gates remain with their original owners. No full retained lab or
-  Linux hosting-package suite was run; lab source did not change.
+The prior planning entry recorded a wrong-interpreter import failure followed
+by 204 passing offline tests, and a repository-index failure caused by unowned
+workflow context. Those are historical observations, not failures newly found
+here. The subsequent source-closure commit `08ac1e7` excludes and preserves that
+context; the accepted UX reports passing repository checks and 204 offline
+tests. Do not redispatch that closed source-exclusion work or waive future
+exact-source validation. Current checks for this revision are recorded below
+after execution; upstream checks are attributed rather than relabeled current.
 
-Validation is partial at repository level. The bounded release-plan contract
-is ready for original review, while that actual check failure is handed off
-explicitly rather than hidden or repaired by moving another owner's files.
+No runtime, dependency, settings, lab source or package input changes are
+assigned by this edit. Final actual loaded-source, retained lab, Linux/package,
+publication, inference and live gates remain their original owners' obligations.
+
+Current validation executed for this revision:
+
+- In-memory plan/model checks passed: three unique sprint IDs, populated goals,
+  acceptance, doneWhen, exclusions and handoffs; all five canonical flows and
+  eighteen steps resolve with complete coverage; both entry links resolve.
+  The retained AC1-AC9/G1-G8 coverage is present. Both supplied upstream outcome
+  audits record `agreed` and the expected original reviewers' substantive votes.
+- `Test-Demo.ps1` with the existing absolute validated Python 3.12.10 and explicit
+  canonical lab root passed dependency checks, **204 offline tests in 52.965
+  seconds**, and compilation (exit 0). No dependencies were installed.
+- `scripts/Test-Repository.ps1` passed index, 79-file public boundary, JSON,
+  PowerShell, context and whitespace checks (exit 0). Owned `git diff --check`
+  passed. No public path was added or deleted; no inventory adoption of ignored
+  workflow context was needed.
+
+These are local planning/source checks, not independent recovery-capture
+execution, originating ownership acceptance, actual loaded-source integration,
+Linux hosting-package certification or live acceptance. No retained lab suite
+was run because lab source did not change. No cloud operation or push occurred.
+Original Stakeholder, Architect, Designer and Critic votes on this release plan
+remain pending; owner completion does not assert their agreement.
 
 ## Current RP-S3 retrospective — accepted observation handoff without live entry (October 20, 2026)
 

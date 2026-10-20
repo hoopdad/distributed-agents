@@ -20,11 +20,17 @@ session IDs, framework session IDs and pinned deployed versions. New
 invocations get new response IDs and produce current design/review artifacts.
 A separate parent gets its own child bindings and artifact scope.
 
-**Live status — historical, not freshly verified by this documentation:**
-remote collaboration remains blocked at `NATIVE_HOST_PRINCIPAL`, before the
-architect application executes. Follow-up, supported compute stop/resume and
-isolation remain unverified. The mixed diagnostic deployment is not a final
-common-bundle release. [Recovery evidence and gates](docs/identity-recovery-plan.md)
+**Release status — blocked, not customer-ready (October 20, 2026):**
+accepted offline assertions are not a live demonstration. Reviewed joined
+runner integration and established transport-trust evidence remain missing;
+no successful live identity-path selection is established. The historical
+remote failure was `NATIVE_HOST_PRINCIPAL`, before the architect application
+executed; this is not a fresh observation of the current candidate. Follow-up,
+supported compute stop/resume and isolation remain unverified. The mixed
+diagnostic deployment is not a final common-bundle release.
+[Release notes and requirement status](docs/customer-prototype-release-notes.md)
+separate delivered source from unmet live gates.
+[Recovery evidence and gates](docs/identity-recovery-plan.md)
 retain the publication **UNKNOWN**, held parents and unproven historical
 cleanup; none may be cleared or replayed to make a demo pass.
 

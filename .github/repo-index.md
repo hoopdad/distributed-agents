@@ -21,6 +21,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; installed `3aca5dc` B candidate versus live selection, scenario/source/package join and Developer-runner/DevOps-trial ownership; authorized A/B paths, principal discriminator, continuation and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three sprint goals/acceptance contracts; installed B candidate review, safe lab checkout and pre-E2E Developer runner/integration; later DevOps inventory/trial, scenario/source/package join, truthful preparation/receiver outcomes and unchanged final gates |
+| Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Retained RP-S1/RP-S2 screens; RP-S3 two-turn evidence companion, once-only supported recovery, separate-parent isolation and truthful delivery/blocked reporting; private evidence, unchanged machine contracts and original execution owners |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Retained fixtures/candidate and stopped prerequisite lanes; actual G1-G4 entry, both-turn binding/response/current-output joins, once-only supported recovery, separate-parent isolation and exact-source truthful delivery; unchanged runtime and public contracts |
 | RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Phase-compatible Developer checkout verification, installed-candidate review/checks, runner and integration; deferred DevOps inventory/status/trial; pre-parent scenario/source/package/version join and truthful preparation/receiver/unknown outcomes |
@@ -37,6 +38,11 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Release-closeout freshness: inspected clean baseline
+`44177bce27d5d4e0f76dcfb5993f9cf0ae51c3a7`; added only blocked release
+notes, updated README first-screen status and this index. No runtime, lab
+tooling, public event, architecture or sprint contract change; no fresh
+deployment, private receipt inspection, integration/push or live claim.
 RP-S3 retrospective freshness: inspected clean baseline
 `12e2a2a5b3c97268d3b9ba8c631ed483c35762df`; updated only the three
 retrospective document slices and navigation, with no added/deleted paths,
@@ -372,6 +378,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `demo\workflow.py`
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
+- `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-sprint-plan.json`

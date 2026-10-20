@@ -19,27 +19,60 @@ inputs, control neutralization and private identifiers/evidence outside customer
 Git/output. Never send a follow-up into pending/held state or count a recovered
 response retrieval as a new invocation.
 
-**Exact-source guarded release** retains originating substantive ownership
-review before eight-path sibling writes, designated reviewed actual loaded-root
-integration before formal local-script E2E, and original serialized DevOps
-publication/live gates. Independent containment/trust/inventory preparation
-does not wait for runner coding. Supplied trust/designations are available
-inputs, not current transport, ownership acceptance or installed-source proof.
-Architecture `5f9c384` inspected the accessible mirrored capture's direct sibling
-Git/status, resolver contents and eight captured root cases. Existing
-Developer/Scrum submit that attributed evidence and supplied designations to
-originating Architect/Critic at
-`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
-Preserve its five-round stop and dependent-write block until substantive
-acceptance; do not recreate setup, capture or designation requests. Clean
-status/source equality are not ownership or operational installation.
+**Exact-source guarded release** consumes Architecture `f5fc1de`, ReleasePlan
+`7a43d1f` and SprintDesign `4532255`. Their accepted predecessor
+`bb3af682-2d1c-41cf-97e7-312f624ea669/result.json` records substantive original
+Architect/Critic acceptance of the exact RP-S1-origin
+`RP-S2-LAB-OWNERSHIP`, `RP-S2-DECISION-RUNNER` and `RP-S2-SOURCE-INTEGRATE`
+AssignedWorkDeveloperLoop boundaries, fully qualified in current sprint
+architecture. Consume runner `1842984` and integration `1bd157d`; do not renew
+ownership, repeat capture or replay unchanged fixes. Older pending-ownership
+direction is historical only within those boundaries; original stop semantics,
+UNKNOWN operations and downstream live gates remain binding.
+
+The current predeployment **FAIL** is the tool-derived versus existing dedicated
+operational-profile mismatch, not authentication expiry or receiver rejection.
+The current sprint's
+[operational-context contract](../../customer-prototype-sprint-architecture.md#operational-context-contract-across-the-three-tiers)
+is the cross-tier interface: `ApplicationRoot` owns portable source;
+`LabRepositoryRoot` owns selected reviewed feature-sibling tools/resolvers;
+explicit `OperationalLabRoot` selects only the existing dedicated context via
+unchanged settings import. No tool source may load from the operational root.
+Preserve crossed-tool rejection, actual loaded-source/raw-hash equality,
+calibration profile equality and exact scope/target checks.
+
+Existing Developer corrects `Test-LabPrerequisites.ps1`,
+`Test-PrivateConnectivity.ps1`, `Build-CodePackage.ps1`,
+`Build-BundledCodePackage.ps1` and `Invoke-WslCodeRelease.ps1`, their callers
+and precise retained tests after Scrum assigns additional owned sibling paths.
+Require existing canonical absolute paths and dedicated Windows profile equality
+with import and operational `.azure-cli`; reject missing/relative/reparse/
+default/mismatched context and registry scope divergence before effects.
+WSL maps the same root's retained `.azure-cli/wsl` with CLI/azd selection and
+environment restoration, not copied or interchangeable Windows caches.
+No credentials are copied, inspected or symlinked; no duplicate profile,
+private-settings change, canonical dirty-source adoption or weakened root guard.
+Legacy omission may use only the selected lab root's validated dedicated context.
+
+Required synthetic regression coverage includes legacy/distinct-context roots,
+all rejection controls, calibration, all five callers, WSL mapping/azd selection,
+environment restoration and preserved tool-source guards. Original Architect/
+Critic review changed commits; designated integration joins/pushes/readbacks exact
+reviewed refs and changed loaded bytes before original local-script E2E.
+Independent containment-source/resource/trust/inventory preparation remains
+independent. DevOps alone serializes actual Linux/package, preview, guarded
+publication and live G1-G8; no execution-ready claim from this path contract.
+Only an actual retained authentication challenge warrants a real device URL/code
+handoff. Existing clarity owner removes stale README ownership/write-block text
+using SprintDesign A/F/G copy, preserves conditional commands and reports current
+configuration/unmet-live status. Do not advertise an unimplemented customer flag.
 The accepted current inputs consume the closed workflow-context exclusion;
 do not redispatch it. Preserve ignored context and rerun unchanged repository
 checks for current edits; no private inventory insertion or AC7 waiver.
 Exact retained-suite/Linux hosting-package/common-bundle checks and scoped
 reviewed push remain downstream. Report unresolved identity selection and all
 unmet live gates truthfully; preserve UNKNOWNs, held parents, rollback, unrelated
-work and historical cleanup uncertainty. No new flag, evidence schema,
+work and historical cleanup uncertainty. No new customer flag, evidence schema,
 collector, approval stage or second publisher is introduced.
 
 <a id="current-rp-s3-exact-observation-and-delivery-join"></a>

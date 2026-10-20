@@ -3,12 +3,12 @@
 ## Sprint architecture entry: RP-S1 canonical continuity contracts (October 20, 2026)
 
 The current packet selects **RP-S1**, not the older RP-S3 overlay below.
-Inspected clean application baseline `84d2ec352b6a31af2375d5e6e709c4e5cbf883e8`
+Inspected clean application baseline `4532255524c8082027c4f3fe8fb9cba9e9cb2614`
 on `feature/customer-hosted-session-prototype`. Consume Architecture
-`5f9c38437102f67fd40a78d7debdaa099ba4ff44`, UX
-`053070d38ea77920a4ddbf1eacf643e8152e8fae`, ReleasePlan
-`9aad84a66e5555d08e61822032951e90572cb3ad` and SprintDesign
-`84d2ec352b6a31af2375d5e6e709c4e5cbf883e8`. Independently opened all four
+`f5fc1dec9b01e98745268e359808f3021a8906de`, UX
+`063787500eb3404c1932ff921af5079a170d90ac`, ReleasePlan
+`7a43d1fcab694fd1e3ce3532a144b3e5bdb92739` and SprintDesign
+`4532255524c8082027c4f3fe8fb9cba9e9cb2614`. Independently opened all four
 supplied outcome JSON files under the application's workflow context:
 their original reviewers record `agree=true`, `taskComplete=true` and no
 unmet criteria for those bounded artifacts. Those votes
@@ -29,7 +29,7 @@ No components, services, public contracts, dependencies or model IDs change.
 |---|---|
 | [Coordinator](requirements/coordinator/architecture.md#rp-s1-canonical-coordinator-contract) | `coordinator` (**Hosted coordinator**), `decision-routing` (**Decision-1 routing and admission**) and `workflow-checkpoints` (**MAF workflow checkpoints**). Retain explicit begin/route/execute/publish in `demo/workflow.py`, checkpoint wiring in `demo/host.py`, routing after deterministic gates and fenced current-output acceptance. |
 | [Specialists](requirements/specialists/architecture.md#rp-s1-canonical-specialist-contract) | `architect` (**Hosted architect**), `reviewer` (**Hosted reviewer**) and shared `conversation-state` (**Parent and specialist conversation state**). Retain remote session restoration in `demo/foundry.py` and five-stage model-history paths in both role modules. |
-| [Client/release](requirements/client-release/architecture.md#rp-s1-canonical-client-release-contract) | `terminal-client` (**Terminal client**) and `release-toolchain` (**Guarded lab release toolchain**). Retain opt-in finalized human stderr, unchanged stdout/parser and external guarded tooling; source ownership is not operational installation. |
+| [Client/release](requirements/client-release/architecture.md#rp-s1-canonical-client-release-contract) | `terminal-client` (**Terminal client**) and `release-toolchain` (**Guarded lab release toolchain**). Retain opt-in finalized human stderr and unchanged stdout/parser. Separate reviewed tool source from existing dedicated operational context; correct stale README status through existing clarity ownership, not a new renderer. |
 | Shared support, defined once | `artifact-plane` (**Private Blob artifacts and effect journal**) supports all three hosted roles; `identity-boundary` (**Trusted identity and private transport**) supports the terminal, roles and artifact plane. Keep their canonical support links, trusted scope, exact immutable refs, private MI path, ETag/fencing and unknown-effect holds. Tier references do not create separate stores or identities. |
 
 | Canonical flow | Trigger, current refinement and cumulative boundary |
@@ -38,7 +38,7 @@ No components, services, public contracts, dependencies or model IDs change.
 | `two-turn-continuity` — **Same-parent specialist continuation** | A queue follow-up to a completed non-held parent triggers `continuity-revise`, `continuity-invoke`, `continuity-verify`. RP-S1 fixes the offline comparison boundary below; actual same-parent live proof remains RP-S3 after RP-S2's initial-parent gate. |
 | `supported-recovery` — **Supported compute stop and resume** | One retained-script stop request triggers `recovery-stop`, `recovery-resume`, `recovery-verify`. Preserve durable once-only marker, independently confirmed stopped/idle state, original bindings, checkpoints and reconciled effects; no hard-crash or exactly-once claim. Execution remains RP-S3, not an RP-S1 exit condition. |
 | `parent-isolation` — **Separate-parent isolation** | A separate synthetic parent on a verified release triggers `isolation-bind`, `isolation-execute`, `isolation-verify`. Require distinct child/history/artifact scope and first-parent requirement exclusion. Its release prerequisites and initial-parent comparison do not depend on successful follow-up/recovery. |
-| `guarded-release` — **Exact-source guarded release** | Reviewed owned commits trigger `release-join`, `release-package`, `release-discriminate`, `release-close`. Retain actual loaded-root integration, formal local-script E2E, serialized original DevOps and all exact-source/package/live closure gates. Preparation/inventory is independent of runner coding; no second publisher. |
+| `guarded-release` — **Exact-source guarded release** | Reviewed owned commits trigger `release-join`, `release-package`, `release-discriminate`, `release-close`. Consume accepted ownership/runner/integration; correct explicit operational-context propagation, rejoin changed source and revalidate through original local-script E2E before serialized DevOps exact-package/live gates. Containment/resource/trust/inventory preparation is independent of coding; no second publisher. |
 
 ### RP-S1 contract-first handoff
 
@@ -74,35 +74,105 @@ readback; no speculative grant, opaque-call-ID user identity or receiver
 equality relaxation is authorized. A material namespace/contract change uses
 existing Scrum reconciliation and Architect-advised Product Owner decisions.
 
-For exact originating ownership reference
-`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`,
-consume supplied `ownershipRecoveryDefaults` as acknowledgement/designation,
-not substantive ownership acceptance. Architecture `5f9c384` inspected the now
-accessible mirrored capture: complete-file hash comparison, direct sibling
-branch/HEAD/status, embedded resolver contents and four Python plus four
-PowerShell matched/crossed-root results. These remain attributed captured
-observations, not execution or independent hash recomputation by this sprint
-refinement. The earlier unavailable-evidence boundary is historical.
-Existing Developer/Scrum return that capture and supplied designations to the
-originating Architect/Critic against their original safe-writing/root criteria.
-Preserve the originating five-round stop and dependent-write block until
-substantive acceptance. Do not recreate setup, duplicate capture, reset the stop
-or request renewed designations. Clean captured status is not ownership and
-recorded source equality is not actual operational installation.
-Use approved mirrored evidence and accepted fingerprint references first;
-no renewed user authority is missing for that bounded read-only work.
+The accepted current Architecture/ReleasePlan consume predecessor
+`bb3af682-2d1c-41cf-97e7-312f624ea669/result.json` and substantive original
+Architect/Critic acceptance for the exact boundaries
+`sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop`,
+`sprint/1/RP-S1/task/RP-S2-DECISION-RUNNER/AssignedWorkDeveloperLoop` and
+`sprint/1/RP-S1/task/RP-S2-SOURCE-INTEGRATE/AssignedWorkDeveloperLoop`.
+Consume lab correction `18429840e86d92c26611bae3ffdc7095ca87592d` and application
+integration `1bd157d05116b076b0aa45b4fb6bfe531e5d28d0` without reopening them.
+This supersedes only pending acceptance/write-block direction within those
+originating boundaries, including the earlier ownership evidence-access
+reference in this document's historical entries. It does not reset their
+five-round stop, reconcile UNKNOWN effects or establish operational readiness.
+The predecessor original E2E agreement is an actionable predeployment **FAIL**.
+No ownership recapture, renewed designation or unchanged runner fix is assigned.
 
-Designated integration Developer then joins reviewed commits with actual
-loaded operational roots/bytes/hashes, preserves `LAB_TOOL_OWNER_MISMATCH`
-and records task/branch/commit accounting, including reasons for any retained
-abandoned code branches. A registered sibling or clean Git does not install
-the operational wrapper. Original E2E validates the exact join through local
-scripts. In parallel, existing transport/DevOps owners prepare current
-containment-source/resource, strict trust, inventory/rollback and unresolved
-effect evidence. Original DevOps alone serializes guarded publication and live
-G1-G8 after exact-source, retained-suite, Linux hosting-package and preview gates.
-Scrum owns minimal dependencies, path ownership, real shared exclusive resources
-and Git reconciliation; this architecture assigns no competing task graph.
+Architecture `f5fc1de` attributes the concrete failure to retained wrappers
+deriving a profile from the feature tooling sibling instead of the existing
+dedicated operational context. Its independently matched evidence hash is
+`38ec94d9d218e25791b60a2ed0dac80877538b0dcb128e94452aac077571f8b2`.
+This sprint consumes that source inspection; it does not rerun the capture or
+inspect credentials. Configuration failure before external operations is not
+an expired-credential diagnosis, ingress rejection or user-only blocker.
+
+### Operational-context contract across the three tiers
+
+Refine `release-join` and `release-package` in the existing
+**Guarded lab release toolchain**, not the hosted runtime or canonical model:
+
+| Input | Sole responsibility and fail-closed boundary |
+|---|---|
+| `ApplicationRoot` | Portable application source/package/test owner; never a profile selector. |
+| `LabRepositoryRoot` | Reviewed feature-sibling tool-source owner. Absolute wrapper, resolver, Python modules and helper sources must match this selected root; preserve `LAB_TOOL_OWNER_MISMATCH`, crossed-tool negatives and raw-byte source closure. |
+| `OperationalLabRoot` | Explicit existing dedicated operational context, propagated through affected callers. Select via unchanged `scripts/Use-Settings.ps1` import: imported `LAB_REPOSITORY_ROOT` supplies this argument and imported `AZURE_CONFIG_DIR` supplies its dedicated Windows profile. It never selects loaded tools or runtime bundle contents. |
+
+The five affected retained entry points are `Test-LabPrerequisites.ps1`,
+`Test-PrivateConnectivity.ps1`, `Build-CodePackage.ps1`,
+`Build-BundledCodePackage.ps1` and `Invoke-WslCodeRelease.ps1`. Existing Developer
+must correct their exact callers and necessary shared helper/tests as one bounded
+contract. Scrum establishes new precise feature-sibling path ownership first;
+the accepted eight-path runner designation does not own these additional files.
+No canonical dirty-checkout edits, root-guard relaxation or private-settings edit.
+
+Before effects, require canonical absolute existing directories, reject relative,
+missing, reparse/escape and arbitrary/default/production profile substitutions.
+Require the selected Windows profile to equal both imported dedicated
+`AZURE_CONFIG_DIR` and operational-root `.azure-cli`; compare operational and
+selected-tool registry tenant/subscription against imported expected scope
+without displaying values. Retain project/region/model/target checks and actual
+account readback. Registry scope equality does not approve dirty source adoption.
+If the new argument is omitted for a legacy caller, only the selected lab root's
+existing validated dedicated context may default; no search or silent fallback.
+
+Windows uses that existing profile. WSL explicitly maps the same operational
+root's retained `.azure-cli/wsl`, preserving path translation, Azure CLI/azd
+selection and environment restoration on success/failure. Windows token-cache
+readiness does not imply WSL readiness. Do not copy, inspect or symlink
+credentials, create duplicate profiles or change private settings. Calibration
+must compare its profile against the validated operational context, retaining
+scope/source/no-replay checks. Operational metadata remains private and outside
+source packages. `LAB_TOOLS` and resolver roots remain the selected tool source.
+
+### Original-owner closing actions and cumulative release handoff
+
+1. **Scrum/Developer:** scope the smallest five-entry-point/caller correction
+   in the authorized feature sibling. Required synthetic coverage: legacy
+   matched roots; distinct reviewed-tool/existing-context roots; missing,
+   relative, reparse, default/mismatched profile and tenant/subscription rejection
+   before effects; calibration; every affected caller; WSL mapping/azd selection;
+   environment restoration; unchanged crossed-tool and actual loaded-source
+   equality. Run targeted, affected retained and application/repository checks.
+   Original Architect/Critic review actual scoped commits. This task is an
+   RP-S2 release prerequisite, not an extra RP-S1 offline implementation demand.
+2. **Integration Developer:** rejoin changed reviewed wrapper/helper roots,
+   bytes/hashes and commits; push/read back scoped reviewed feature refs,
+   including accepted `1bd157d` if still absent remotely. Record task/branch/
+   commit accounting and any retained abandoned code branch/reason. Do not repeat
+   the unchanged execution-unready integration report as the remedy.
+3. **Original E2E then DevOps:** validate changed exact join through local
+   repository scripts. Independent containment-source/resource, supplied strict
+   trust, target/rollback inventory and unresolved-effect preparation can proceed
+   separately. DevOps alone serializes actual Linux/amd64/hosting-Python checks,
+   exact common-bundle preview/publication, architect-before-reviewer identity
+   discrimination and live G1-G8. Preserve original actual live AC1-AC9 gates.
+   If retained checks genuinely require authentication, surface the actual
+   device URL/code when emitted; profile separation alone does not require
+   human action. No infrastructure/permission mutation is part of this replan.
+4. **Existing clarity/closeout owner:** apply accepted SprintDesign A/F/G status
+   copy to remove stale README pending-ownership/write-block wording. State the
+   accepted source handoffs, actual configuration correction and unmet live
+   gates without advertising proposed `OperationalLabRoot` as a runnable customer
+   command. Preserve A-D, existing renderer, stdout/parser and privacy controls.
+
+Scrum owns minimal dependencies, actual shared exclusive resources and Git
+reconciliation; this architecture creates no competing task graph or review
+stage. RP-S1 retains the two-flow/eight-step offline contract above; RP-S2 still
+requires an actual common-bundle accepted non-held initial parent; RP-S3 still
+requires same-parent live continuation, once-only confirmed supported recovery,
+independent separate-parent isolation and truthful closure. No sprint's bounded
+document acceptance substitutes for those downstream outcomes.
 
 The current ReleasePlan/SprintDesign consume the closed workflow-context
 exclusion and successful unchanged repository checks. The older index-drift
@@ -117,33 +187,22 @@ not storage-RBAC or malicious-host isolation.
 
 ### Validation of this sprint refinement
 
-The in-memory model/document check passed ten canonical components, five flows,
-eighteen unique steps, four input commits, three tier contracts and four
-resolving local/anchor links, plus bounded ownership/source-exclusion routing.
-Its first attempt incorrectly matched a wrapped tier phrase literally;
-whitespace-normalized comparison passed without changing the contract.
-
-The first offline invocation selected a registered base Python 3.12.10 rather
-than the existing validated lab environment. Dependency consistency passed,
-but test discovery/execution reported **47 tests, nine import errors in
-4.501 seconds**: missing `httpx2` and unavailable framework exports. This
-establishes an interpreter/environment mismatch, not a source regression or
-permission failure. Nothing was installed or upgraded. Selecting the existing
-lab virtual environment's absolute Python 3.12.10 path and explicit lab root,
-`Test-Demo.ps1` passed dependency checks, **204 offline tests in 44.614 seconds**
-and compilation (exit 0). The unchanged `scripts/Test-Repository.ps1` passed
-index, 79-file public-boundary, JSON, PowerShell, context and whitespace checks.
-The index was refreshed with the retained generator; no public paths changed.
-
-Input audit inspection establishes only their original document acceptance,
-not this deliverable's votes, originating ownership acceptance or live readiness.
-No recovery capture was rerun and no new sibling state is certified here.
-The previous refinement's 204 offline tests (53.413 seconds), compilation and
-public check across 83 Git-visible files remain historical. Its then-current
-`REPOSITORY_INDEX_STALE` failure is superseded only for the source-exclusion
-closing action by the accepted current-input handoff, not waived for new edits.
-No lab source changed; retained lab and actual Linux hosting-package checks
-remain with the original execution owners.
+The direct in-memory check passed unchanged canonical ten-component/five-flow/
+eighteen-step model equality with HEAD, unique IDs and component references,
+all current tier links/anchors, four input commits and the five affected
+caller contracts. The retained inventory generator refreshed without public
+path changes. `scripts/Test-Repository.ps1` passed using the existing absolute
+lab virtual-environment Python 3.12.10: current index, 80-file public boundary,
+JSON, PowerShell, context frontmatter and whitespace checks. No dependencies
+were installed. Four supplied audit files were independently
+opened: all original input reviewers agree with `taskComplete=true` and no
+unmet criteria. These are bounded input votes, not votes for this deliverable
+or runtime proof. No lab source changes or credential/settings inspection are
+needed for this sprint refinement. Unchanged application suites are not rerun
+merely for progress credit; implementation's targeted/retained/application and
+Linux hosting-package gates remain required for the actual correction.
+The earlier refinement's 204 offline tests in 44.614 seconds and its
+interpreter-selection failure are historical, not fresh checks of this edit.
 
 Architect accepts this bounded current-sprint/cumulative/tier design for
 original Product Owner, Critic and Red Team review; their votes for this loop

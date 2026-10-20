@@ -11,10 +11,13 @@ continuation** use the same pinned children for `collaboration-design`,
 `collaboration-review` and `continuity-invoke`; no hidden local fallback,
 history rekey, fourth service or generic session abstraction is introduced.
 
-Current input is Architecture `5f9c384` and SprintDesign `84d2ec3`, joined by
-the current RP-S1 sprint entry. Its accessible ownership/root capture does not
-select A or B, prove live history loading or change either specialist's trust
-contract. Both-role history controls remain retained offline evidence.
+Current input is Architecture `f5fc1de` and SprintDesign `4532255`, joined by
+the current RP-S1 sprint entry. Accepted originating ownership, runner `1842984`
+and integration `1bd157d` are consumed, not reopened. The external release-tier
+`OperationalLabRoot` correction separates existing dedicated context from
+reviewed tools; it does not select A/B, prove ingress or history loading, change
+either specialist's trust contract or alter child/model-session scope.
+Both-role history controls remain retained offline evidence.
 
 Each remote child's restored hosted/framework binding differs from its internal
 `specialist_history_v2` model session. Each role loads that session, supplies

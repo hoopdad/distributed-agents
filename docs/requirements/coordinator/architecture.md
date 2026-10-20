@@ -9,10 +9,13 @@ and its referenced canonical `solutionModel`. **Hosted coordinator**
 implementations and shared support links; this tier creates no duplicate
 conversation/artifact/identity structures.
 
-Current input is Architecture `5f9c384` and SprintDesign `84d2ec3`, joined by
-the current RP-S1 sprint entry. Accessible root evidence is an attributed
-handoff for originating review, not permission to execute a runner or proof of
-trusted specialist entry. No coordinator contract or implementation changes.
+Current input is Architecture `f5fc1de` and SprintDesign `4532255`, joined by
+the current RP-S1 sprint entry. Consume accepted originating ownership,
+runner `1842984` and integration `1bd157d` without reopening them. The current
+configuration FAIL concerns dedicated operational context versus reviewed
+tool source, not trusted specialist entry. No coordinator contract or
+implementation changes. Explicit `OperationalLabRoot` propagation belongs to
+the external release tier, never hosted parent/session scope.
 
 RP-S1 scopes **Remote design and review** (`collaboration-bind`,
 `collaboration-route`, `collaboration-design`, `collaboration-review`,
@@ -31,8 +34,9 @@ version, hash and revision checks precede acceptance. Unknown effects hold,
 known-response retrieval is not a send, and only a completed non-held initial
 parent permits follow-up. Actual live common-bundle G1-G4, continuation,
 once-only confirmed recovery and independent isolation remain downstream
-obligations; accepted offline fixtures do not satisfy them. Original ownership,
-loaded-source integration, E2E and serialized DevOps boundaries remain intact.
+obligations; accepted offline fixtures do not satisfy them. Reviewed changed
+source integration, original E2E and serialized DevOps boundaries remain intact;
+accepted source handoffs do not establish operational readiness.
 
 <a id="current-rp-s3-continuation-and-recovery-join"></a>
 

@@ -24,7 +24,8 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Current blocked closeout at `23e7d48`: AC1-AC9/G1-G8 ledger; accepted application/observation/review/retro handoffs versus missing substantive ownership and actual operational join; supplied host trust distinct from containment-source/resource readiness; separately attributed Windows checks, conditional demo, unknown final/rollback bindings and unverified final push |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S1 entry consumes architecture `5f9c384`, UX `053070d` and release plan `9aad84a`; maps two canonical flows/eight steps to retained A-D screens. F/G distinguish accessible captured evidence, pending originating acceptance, conditional sibling work and actual operational/live proof. Keeps binding/history proof separate from alias-only human stderr and unchanged parser; consumes closed source-exclusion work without redispatch or duplicate implementation. Older RP-S2/RP-S3 layouts remain historical |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S1 entry consumes Architecture `5f9c384`, UX `053070d`, ReleasePlan `9aad84a` and SprintDesign `84d2ec3` without renaming ten components/five flows/eighteen steps. Accessible capture and existing designations return through original ownership reviewers with stop/write block intact; closed source-exclusion work is not redispatched. Two-flow/eight-step offline contracts join three tiers; actual loaded-source/E2E, independent preparation and serialized exact-package/live gates remain downstream |
-| Current RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Canonical five-input handoff at `988893c`: five bounded task cards, independent originating ownership/current-source checks and original-phase DevOps baseline assessment; preserved/excluded workflow context and unchanged repository-check rerun explicitly owned. Eight-path sibling runner and actual loaded-root/Git integration are early RP-S2, not RP-S1 live exit criteria; original E2E and serialized release remain downstream |
+| Current RP-S1 recovery-entry assignments | `docs\customer-prototype-current-sprint-plan.json` | Consumes five accepted inputs through `cc690b7` and closed source checks at `08ac1e7` without redispatch. Existing-owner accessible-evidence return and independent read-only containment-source preparation fan out; original-phase resource/trust/inventory assessment stays independent. Substantive original acceptance gates eight-path sibling runner, then actual loaded-source/Git integration. Preserves originating stop, original E2E and serialized DevOps; no live readiness claim |
+| Earlier RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Retained earlier five-task contract and audit navigation; superseded dispatch list only. Its originating ownership stop and accepted source-exclusion handoff remain binding within their original boundaries |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
 | Current RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Current `1bce6e1` architecture/`76c797b` design and accepted `b74b84e` source-check handoff; existing ownership evidence recovery and read-only outgoing-drift preparation run independently, then eight-path sibling runner and explicit loaded-root/Git integration; original E2E and serialized DevOps inventory/trial/G1-G4 retain actual live gates; accepted reports are not redispatched |
 | Current RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Current `c22d809` architecture/`23a4d9a` design and `afe6d4d` retrospective; originating ownership evidence recovery parallel with read-only validator/observation handoff; accepted `0e9add5` application audit consumed without redispatch; eight-path runner and explicit loaded-root/Git integration precede original E2E and serialized DevOps G1-G8. Supplied trust used first, attributed execution distinguished from inspected capture |
@@ -37,6 +38,20 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Identity candidate handoff | `scripts\identity_handoff.py`, `tests\test_identity_handoff.py`, `docs\identity-candidate-handoff.md` | Offline-only A/B candidate, lifecycle header plumbing and receiver namespace negative controls; no installed runtime change or live selection |
 | Isolated runtime candidate | `demo\foundry.py:specialist_identity_headers`, `demo\workflow.py:WorkflowRuntime.resources`, `tests\test_isolated_client.py`, `docs\design.md` | B specialist-only project/header/cache; original resource tuple and opaque-only non-specialist authority retained; actual resource lifecycle/cleanup regressions, no live selection |
 | Copilot context | `.github\copilot-instructions.md`, agents and skills | Bounded implementation/review and deployment gates |
+
+Sprint-plan accessible-evidence freshness: inspected clean feature baseline
+`cc690b7`; added the current dispatch plan and refreshed this navigation/inventory.
+Opened all five supplied input audits and originating ownership/source-check
+outcomes. Matched the supplied capture's complete-file SHA256, without rerunning
+captured executions or accepting ownership. Two independent original Developer
+assignments are ready for orchestrator fan-out; source checks, renderer, fixtures
+and observation mapping are consumed, not redispatched. Conditional sibling
+runner/integration and independent original-phase DevOps retain actual root,
+package and live gates. No lab, workflow runtime/input or private evidence
+changes; dispatch and planning reviewer votes remain pending.
+Plan/card/DAG/resource/estimate checks, 204 offline tests (57.694 seconds),
+compilation and unchanged repository checks across 80 public files passed.
+These validate the planning source, not operational integration or live gates.
 
 Sprint-architecture recovery-evidence freshness: inspected clean feature baseline
 `84d2ec3`; updated the existing cumulative entry and all three tier contracts,
@@ -949,6 +964,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `demo\workflow.py`
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
+- `docs\customer-prototype-current-sprint-plan.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

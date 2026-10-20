@@ -1,6 +1,114 @@
-# Cumulative sprint architecture: RP-S1/RP-S2 preparation and RP-S3 delivery
+# Cumulative sprint architecture: evidence-ready source through live delivery
 
-## Current RP-S3: live continuity, recovery, isolation and truthful delivery (October 20, 2026)
+## Current RP-S1: accepted recovery inputs and continuity handoff (October 20, 2026)
+
+This invocation selects **RP-S1: evidence-ready source and understandable
+continuity**. No assignments, completed sprints or separate blocked-decision
+list were supplied. Inspected clean feature-branch baseline
+`a1e85442a90a2333bedd6e4beed1d8d849a68ad9`. Consume accepted Architecture
+`25d182245a1bb40b842f5787196bd8f8244c4a7d`, UX
+`c5e7189252886a653daa42cbf9021f0cf59691b2`, ReleasePlan
+`0d0f17b928ba99517551ba20a0c0201801148d9d` and SprintDesign at that baseline.
+Earlier overlays below are retained history; their sprint selection, votes,
+execution counts and stops are not current observations.
+
+### Holistic design and current criterion joins
+
+Keep exactly three hosted roles, pinned MAF/Foundry and the existing explicit
+coordinator begin/route/execute/publish sequence. Parent-scoped manifest
+`children.get(role)` creates or reuses hosted/framework bindings and immutable
+version pins. `RemoteAgents.invoke()` restores the child's `AgentSession`;
+each specialist separately restores `specialist_history_v2` before its model
+call. Conversation/model history, workflow checkpoints, immutable artifacts
+and fenced write-ahead effects are distinct state responsibilities.
+
+| RP-S1 obligation | Retained contract and evidence handoff |
+|---|---|
+| Two user turns | Compare actual parent and both roles' hosted/framework identity fields and pinned versions, not entire evolving serialized sessions. Both roles execute on both turns; exactly two children are created across the pair. New invocations have fresh responses, queue follow-up preserves private ingress, and current revisions invalidate stale approval. |
+| Repeated orchestration | Preserve controlled architect -> blocked reviewer -> same architect revision -> same reviewer fixtures, both-role binding checks and fresh responses. Existing specialist load/model/store tests and identical-brief fresh-history controls prove continuation separately from replayed requirements. These remain offline controls. |
+| Customer clarity | Consume accepted SprintDesign Screens A-D, README goal/diagram/source path and useful `--native --view human` stderr. Default stdout, delegation/result records and acceptance parsing stay unchanged; safe aliases alone prove nothing about bindings. |
+| Exact-source checks and supported-remedy handoff | Existing Developer checks cover retained source/fixtures; original E2E owns formal joined-source validation. An actionable unresolved identity finding can satisfy bounded research, never live ingress or release acceptance. Report the reached boundary, missing evidence and existing closing action. |
+
+No rewrite, generic session manager, fourth service, framework/dependency,
+public schema, CLI flag or duplicate fixture/presentation implementation is
+needed. Preserve trusted receiver equality, exact immutable prerequisites,
+producer/version/revision/hash checks, coordinator ETag/fencing, calibrated
+Decision-1 after deterministic gates and explicit unknown-effect holds.
+
+### Blocker resolution boundaries and downstream closing actions
+
+Accepted Architecture reports matching supplied host-trust references and
+successful direct sibling Git inspection, but incomplete resolver inspection
+after denied reads. These are attributed inputs, not refreshed here.
+**Accepted trust input is supplied; current strict transport is unverified.**
+DevOps must use that accepted fingerprint and evidence reference through the
+retained strict wrapper, not request them again or replace them with a newly
+observed key. Supplied ownershipRecoveryDefaults resolve missing writer
+acknowledgement/integration designation only. Existing Developer completes
+point-in-time eight-path sibling ownership/resolver evidence and original
+ownership review before runner writes; never write the dirty canonical lab.
+
+The designated Developer joins reviewed application, runner and actually
+loaded operational wrapper bytes with matched roots, exact hashes and durable
+task/branch/commit accounting. Preserve `LAB_TOOL_OWNER_MISMATCH`: a clean
+sibling or committed runner is not operational installation. No guard bypass,
+shared branch switch, uncertain resend or adoption of held parents is allowed.
+Independent application checks and offline runner coding do not depend on live
+inventory; DevOps trust/context/inventory can proceed independently of coding.
+
+Neither A nor specialist-only B is live-selected. Evaluate the smallest
+supported candidate through the retained finite scripted decision contract.
+Reject source/root/scenario/package/version mismatches before creating a
+parent; preparation failure is not receiver failure. Prove architect ingress
+and trusted equality before reviewer dispatch, then prove reviewer ingress
+independently. Necessary chosen-path permissions are already authorized at
+documented exact scope/rationale through retained mechanisms/readback; no
+speculative grant, call-ID-as-user substitution or equality relaxation.
+Unresolved selection must not halt remaining artifacts.
+
+Scrum retains decomposition, minimal dependencies, exclusive-resource planning
+and integration assignment. Original E2E uses local repository scripts.
+Original DevOps serializes publication/transport/profile/mount/stage mutation
+and owns exact-source application/repository/retained-tooling and actual
+Linux/amd64/hosting-Python package gates, guarded publication and live acceptance.
+RP-S2 needs common-bundle G1-G4 and a completed non-held initial parent; only
+then does RP-S3 continue that parent's queue turn and once-only confirmed
+supported stop/resume. Separate-parent isolation needs the final release, not
+successful recovery first. Preserve AC1-AC9/G1-G8, rollback assets, historical
+UNKNOWNs, held parents and historical cleanup uncertainty. Account-wide Blob
+Contributor isolation is application-enforced, not storage-RBAC or malicious-host
+isolation. This design creates no new approval stage or release waiver.
+
+### Tier outputs and bounded agreement
+
+Current RP-S1 slices in [coordinator](requirements/coordinator/architecture.md),
+[specialists](requirements/specialists/architecture.md) and
+[client/release](requirements/client-release/architecture.md) implement this
+mapping. Apply only the supplied originating completion dispositions:
+`["yaml-loops-v1:ArchitectureLoop","architecture-completion-status"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-completion-status"]`,
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-completion-status"]` and
+`["yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop","sprint-design-completion-status"]`.
+Those accepted handoffs stay closed; their votes do not transfer to this
+SprintArchitecture Loop or originating ownership review.
+Architect agrees with this cumulative/tier design for original Product Owner,
+Critic and Red Team review. Current-loop reviewer agreement is not yet supplied.
+No fresh private evidence, sibling resolver, cloud, deployed binding, identity
+selection, push or release acceptance is claimed by this mapping.
+
+### Verification of this handoff
+
+Existing absolute lab Python 3.12.10 ran `Test-Demo.ps1` with explicit lab
+root: dependency checks, **204 offline tests in 45.916 seconds**, compilation
+and script exit 0. `scripts/Test-Repository.ps1` passed current index,
+79-public-file boundary, JSON/PowerShell/context and whitespace checks.
+No dependencies were installed. No runtime or retained lab source changed;
+full retained lab suite, Linux hosting-package checks, formal E2E and cloud
+operations were not run. These repeated local checks are not new live progress.
+
+<a id="current-rp-s3-live-continuity-recovery-isolation-and-truthful-delivery-october-20-2026"></a>
+
+## Historical RP-S3: live continuity, recovery, isolation and truthful delivery (October 20, 2026)
 
 Current sprint is **RP-S3**. Inspected clean application HEAD
 `1f24c9a07277d2f5b111f83b186db3ad6a5257aa` on

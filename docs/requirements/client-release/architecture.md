@@ -1,6 +1,24 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
-## Current RP-S3 exact-release and truthful delivery boundary
+## Current RP-S1 clarity, trust input and operational join boundary
+
+Consume the [current RP-S1 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s1-accepted-recovery-inputs-and-continuity-handoff-october-20-2026)
+and accepted SprintDesign Screens A-D. Keep the customer-first README,
+opt-in human stderr and unchanged machine stdout/parser; synthetic safe aliases
+do not replace actual private binding checks. Accepted fingerprint/reference
+and ownership designations are supplied inputs, not current strict SSH,
+originating ownership acceptance or installed wrappers. Existing Developer
+completes bounded sibling/resolver proof before eight-path runner writes;
+designated integration joins reviewed bytes at actual loaded roots, preserves
+root guards and records task/branch/commit accounting without canonical dirty
+writes. DevOps independently verifies strict trust/context/inventory, then
+exact-source/Linux/package and guarded publication/live gates through retained
+local scripts; original E2E owns formal joined-source validation. Serialize real
+shared mutation, not independent offline checks. Preserve UNKNOWNs, held parents,
+rollback, unrelated work and historical cleanup uncertainty. Report precise
+unmet gates and next actions; research or report agreement is not cloud-pass.
+
+## Historical RP-S3 exact-release and truthful delivery boundary
 
 Consume the [current RP-S3 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-continuity-recovery-isolation-and-truthful-delivery-october-20-2026)
 and accepted RP-S3 Screens H-K. Missing completed non-held initial-parent

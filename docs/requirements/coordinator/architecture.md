@@ -1,6 +1,22 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
-## Current RP-S3 continuity and recovery boundary
+## Current RP-S1 accepted-input continuity boundary
+
+Consume the [current RP-S1 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s1-accepted-recovery-inputs-and-continuity-handoff-october-20-2026).
+Retain begin/route/execute/publish, trusted parent scope and manifest
+`children.get(role)` create-or-reuse lookup. Restore each child's remote
+`AgentSession` and immutable version pin for repeated calls and later completed
+turns. Compare parent/both-child hosted/framework identity fields and pins,
+exactly two creations across initial/follow-up, fresh invocation responses and
+current prerequisites with stale-approval invalidation. Keep four-call revision
+fixtures offline; no duplicate implementation or public schema is requested.
+Preserve immutable producer/hash/revision checks, Decision-1 after deterministic
+gates, ETag/fencing, checkpoints and write-ahead effect holds. Only an actual
+completed non-held initial parent permits follow-up. Preparation rejection is
+not observed ingress; never resend unknown effects or adopt held bindings.
+Upstream completion votes do not establish current ownership or live acceptance.
+
+## Historical RP-S3 continuity and recovery boundary
 
 Consume the [current RP-S3 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-continuity-recovery-isolation-and-truthful-delivery-october-20-2026).
 Retain begin/route/execute/publish and parent-owned create-or-reuse lookup.

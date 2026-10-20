@@ -1,6 +1,23 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
-## Current RP-S3 continued specialist history boundary
+## Current RP-S1 continuation and independent ingress boundary
+
+Consume the [current RP-S1 mapping](../../customer-prototype-sprint-architecture.md#current-rp-s1-accepted-recovery-inputs-and-continuity-handoff-october-20-2026).
+Retain both five-stage role flows and `specialist_history_v2`: the remote
+child's framework session and specialist internal model history are distinct.
+Preserve both-role direct load/model/store, persisted-history snapshots,
+identical-brief fresh-history controls and exact-response retrieval without
+another model send. Replayed briefs and memory prose do not prove continuation.
+Two-turn and reject/revise/review controls require stable hosted/framework
+bindings and pins with fresh invocation responses and exact current immutable
+prerequisites. Neither identity path is live-selected; B remains specialist-only
+candidate delegation. Prove trusted architect ingress/equality before reviewer
+dispatch and independently prove reviewer ingress. No receiver-equality
+relaxation, call-ID-as-user substitution, hidden fallback, history rekey or
+automatic retry under the other path is allowed. Offline proof is not live
+ingress, and account-wide Blob isolation remains application-enforced.
+
+## Historical RP-S3 continued specialist history boundary
 
 Consume the [current RP-S3 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-continuity-recovery-isolation-and-truthful-delivery-october-20-2026).
 Retain both five-stage flows and `specialist_history_v2`; hosted/framework

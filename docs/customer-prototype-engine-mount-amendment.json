@@ -1,0 +1,142 @@
+{
+  "sprintId": "RP-S1",
+  "goal": "Close the existing recovery task's retained-test ownership gap without changing its acceptance or downstream execution boundary.",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "amendment": {
+    "type": "scoped-single-assignment-replacement",
+    "taskId": "RP-S2-LINUX-ENGINE-READINESS",
+    "outerPlan": "docs/customer-prototype-engine-recovery-sprint-plan.json",
+    "preserveOuterPlan": true,
+    "architectureCommit": "2f832f564c1b4e9443a2027e848e518eaeecf310",
+    "architectureAudit": "6024e98b8a5dbd7371824595c150fa7752bfc23145244b625ab1044f2fb6cbcb.json",
+    "originatingReplanAudit": "3750c8dea2751e5716e26fb27a42a6f038ce399bd4d6d6c5cfeccd58b1b6a367.json",
+    "priorReference": "[\"yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LINUX-ENGINE-READINESS/AssignedWorkDeveloperLoop\",\"linux-engine-exact-mount-contract\"]",
+    "additionalOwnedPath": "foundry-tf/multi-agent/tests/test_release_native_settings.py",
+    "permittedChange": "Add Ensure-LinuxEngine.ps1 to the identified regression's exact expected public read-only mount set. Preserve exact equality, duplicate, file-presence, read-only, network, runtime-closure and compilation assertions.",
+    "retainedSourceCommits": [
+      "55a60e69df0e053be1b92da3b20d7875245e92e9",
+      "1eec6d4750c4fff95bb08a047554e03e81c767f5"
+    ],
+    "implementationStatus": "Retained implementation exists; the required retained gate remains failed until the scoped correction is committed and checked. No actual engine/package readiness is established.",
+    "acceptedPrerequisites": "Original Product Owner, Critic and Red Team accepted the scoped architecture amendment in the referenced audit. No new architecture or Product Owner approval stage is required."
+  },
+  "governance": {
+    "planningReviewers": ["Product Owner", "Architect", "Critic"],
+    "implementationReviewers": ["Architect", "Critic"],
+    "writer": "Existing Developer in the registered lab feature sibling only; preserve the dirty canonical checkout.",
+    "integrationOwner": "Existing Developer under outer RP-S2-ENGINE-SOURCE-JOIN; reconcile reviewed commits and exact hashes onto authorized feature refs, push/read back reviewed refs, and account durably for every intended task commit.",
+    "integrationBoundary": "No new integration task or dependency is introduced into this one-task replacement. The unchanged outer integration, original changed-join E2E and subsequent original DevOps execution handoffs remain binding.",
+    "preserve": [
+      "Existing task ID, owner, doneWhen, exclusions, exclusive resources and handoff",
+      "Original helper/root/build guards and passing affected retained validation",
+      "No helper inclusion in hosted runtime/package closure",
+      "Historical UNKNOWN effects, held parents, rollback assets and unrelated work",
+      "Original five-consecutive-no-new-progress accounting; no reset or new cap"
+    ],
+    "independentWork": "Selected-WSL rollback/package/effect inventory continues under its existing DevOps assignment without waiting for this correction. Accepted README status at 13e3b4b177f7bde2da43b9db3d5dbd3a83d49f5e is not redispatched. Both actual readiness exits still gate the one original publisher."
+  },
+  "tasks": [
+    {
+      "id": "RP-S2-LINUX-ENGINE-READINESS",
+      "title": "Implement bounded existing Linux-engine recovery",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": [
+        "lab-git-integration",
+        "lab-public-index",
+        "lab-linux-engine-source"
+      ],
+      "estimatedMinutes": {
+        "implementation": 45,
+        "review": 20,
+        "integration": 10
+      },
+      "sourceSprint": "RP-S2",
+      "sourceCriteria": [
+        "AC7",
+        "AC8",
+        "AC9",
+        "ReleasePlan current P0 existing-engine correction"
+      ],
+      "ownedPathsByRepository": {
+        "lab": [
+          "foundry-tf/multi-agent/Ensure-LinuxEngine.ps1",
+          "foundry-tf/multi-agent/tests/test_release_linux_engine.py",
+          "foundry-tf/multi-agent/Build-Demo.ps1",
+          ".github/repo-index.md",
+          "foundry-tf/multi-agent/tests/test_release_native_settings.py"
+        ]
+      },
+      "inputs": [
+        "Accepted Architecture/SprintArchitecture explicit recovery contract",
+        "Existing Release-Roots.ps1 and retained build/test conventions",
+        "Accepted scoped architecture at 2f832f564c1b4e9443a2027e848e518eaeecf310 and originating linux-engine-exact-mount-contract disposition",
+        "Retained helper/build-input commits 55a60e69df0e053be1b92da3b20d7875245e92e9 and 1eec6d4750c4fff95bb08a047554e03e81c767f5; continue rather than reimplement"
+      ],
+      "produces": [
+        "Committed deterministic helper and fake-command regressions",
+        "Minimal read-only helper test-input mount when needed; attributable targeted and retained results",
+        "Scoped exact expected-mount correction and updated commit/hash/check evidence for original review"
+      ],
+      "acceptanceCriteria": [
+        "Implement explicit ApplicationRoot/LabRepositoryRoot validation through loaded Release-Roots.ps1. Diagnose only effective selected existing local Docker Desktop Linux context/endpoint and conflicting overrides; reject ambiguous, remote, unsupported, crossed or changed selection without credential/config dumps.",
+        "Already-ready Linux succeeds without startup. Otherwise invoke supported docker desktop start at most once only for the attributed existing Linux engine. Bound individual child commands and readiness polling, recheck the same selection, report attempted startup/readiness/elapsed waiting safely, and return nonzero for failed/hung commands or timeout. Exit-zero startup alone is not readiness.",
+        "No engine install/upgrade/reset, host/daemon reconfiguration, context/engine substitution, environment-selection mutation or restart of a ready engine. Terminate only attributable owned commands, never the engine or unrelated processes. Do not execute real recovery during Developer work.",
+        "Fake-command tests cover ready/no-start, recoverable, failed start, failed readiness, wrong/changing selection, invalid/crossed roots, missing/unsupported tooling and hung commands. Assert no build/publication on failure and no start on ready/unsupported paths. Execute Windows PowerShell cases with the pinned absolute Python; distinguish justified Linux exclusions from execution coverage.",
+        "Keep Build-Demo offline with all existing Linux/amd64/hosting-Python, dependency/source/image and separate retained-suite guards. Change only necessary public read-only test-input mounts for the helper, not automatic startup. Run targeted/root/build regressions, applicable retained suite and application/repository checks against explicit roots. Commit scoped source before original Architect/Critic review.",
+        "Within test_release_native_settings.py, add only Ensure-LinuxEngine.ps1 to NativeSettingsTests.test_exact_readonly_linux_mount_and_compile_closure_contains_new_helper's exact expected public read-only mount set. Preserve exact equality, duplicate, file-presence, read-only, network, runtime-closure and compilation assertions. Do not skip the failing test, remove the necessary mount or add the helper to the hosted runtime/package closure. Commit the correction with the required Copilot trailer, run the affected regression and applicable retained validation with explicit roots and the pinned absolute Python, and return updated commit/hash/check evidence through original Architect/Critic review. Actual engine startup and Linux readiness are not prerequisites for this source assignment."
+      ],
+      "doneWhen": "The reviewed-root recovery helper, required fake-command regressions and only necessary build-test input mounts are committed with passing affected targeted and retained checks, and exact source/check evidence is returned for original review and integration without claiming real engine or Linux readiness.",
+      "exclusions": [
+        "No actual engine startup, build, authentication, cloud or release operation",
+        "No application runtime, Release-Roots.ps1, settings or unowned source edits",
+        "No installation, host reconfiguration, context substitution or gate bypass"
+      ],
+      "handoff": "Existing integration Developer consumes original-reviewed helper/build-test commits and hashes; original changed-join E2E precedes DevOps execution. Concrete out-of-scope defects return to existing Scrum reconciliation.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Implement bounded existing Linux-engine recovery",
+        "goal": "Close the missing deterministic local build prerequisite without changing selected engine, explicit roots or retained release gates.",
+        "components": ["Guarded lab release toolchain"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-package"],
+        "doneWhen": "The reviewed-root recovery helper, required fake-command regressions and only necessary build-test input mounts are committed with passing affected targeted and retained checks, and exact source/check evidence is returned for original review and integration without claiming real engine or Linux readiness.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": [
+          "foundry-tf/multi-agent/Ensure-LinuxEngine.ps1",
+          "foundry-tf/multi-agent/tests/test_release_linux_engine.py",
+          "foundry-tf/multi-agent/Build-Demo.ps1",
+          ".github/repo-index.md",
+          "foundry-tf/multi-agent/tests/test_release_native_settings.py"
+        ],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    }
+  ],
+  "criticalPath": {
+    "remainingEstimateMinutes": {"implementation": 10, "review": 20, "integration": 10},
+    "sequence": [
+      "Existing Developer commits the exact expected-set correction and returns passing affected retained checks.",
+      "Original Architect/Critic review the completed source assignment.",
+      "Existing outer integration Developer reconciles reviewed refs and changed hashes; original E2E validates the changed join.",
+      "Original DevOps executes reviewed recovery and actual Linux/package gates; independent inventory remains separately required before one publisher."
+    ],
+    "estimateScope": "Rough remaining correction/review/integration effort only; excludes downstream execution and does not create a time or sprint cap."
+  },
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDeveloper": ["RP-S2-LINUX-ENGINE-READINESS"],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": [],
+  "dispatch": {
+    "ready": ["RP-S2-LINUX-ENGINE-READINESS"],
+    "owner": "Installed orchestrator dispatches the original Developer work loop before original planning review.",
+    "parallelism": "This replacement has one ready task, no new dependency edges and no substitute agents. Independent outer rollback/effect inventory continues under its existing assignment.",
+    "status": "dispatch-ready; actual dispatch and collective planning agreement are not asserted"
+  }
+}

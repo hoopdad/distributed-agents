@@ -1,5 +1,19 @@
 # Repository index
 
+Scoped helper-mount planning freshness: based on accepted architecture
+`2f832f56` and its opened original Product Owner/Critic/Red Team agreement.
+New `docs/customer-prototype-engine-mount-amendment.json` is a separate
+one-task replacement for RP-S2-LINUX-ENGINE-READINESS. It applies exact origin
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LINUX-ENGINE-READINESS/AssignedWorkDeveloperLoop","linux-engine-exact-mount-contract"]`:
+only the retained expected-mount test path is added to existing Developer
+ownership, with all original assertions, doneWhen, exclusions, resources,
+reviews and integration/E2E/DevOps handoffs preserved. The outer seven-task
+plan stays byte-identical. Existing helper commits are retained, not rebuilt;
+accepted README work is not redispatched. Independent inventory continues.
+One public planning file added; no runtime, root, settings or lab source edits.
+Actual dispatch/review follow the response; retained PASS and engine/package/
+live readiness remain unverified.
+
 Scoped helper-mount architecture freshness: based on application `13e3b4b1`
 and inspected lab feature `1eec6d47` (including helper commit `55a60e69`).
 `docs/customer-prototype-sprint-architecture.md` and affected
@@ -1244,6 +1258,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
 - `docs\customer-prototype-current-sprint-plan.json`
+- `docs\customer-prototype-engine-mount-amendment.json`
 - `docs\customer-prototype-engine-recovery-sprint-plan.json`
 - `docs\customer-prototype-operational-context-amendment.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`

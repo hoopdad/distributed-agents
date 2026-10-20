@@ -1,4 +1,31 @@
-# Coordinator tier: cumulative RP-S1/RP-S2 acceptance architecture
+# Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
+
+## RP-S3 continuity and effect-reconciliation boundary
+
+Apply the [current RP-S3 joins](../../customer-prototype-sprint-architecture.md#rp-s3-current-sprint-continuity-recovery-and-isolation-evidence-joins)
+without replacing the existing begin/route/execute/publish flow.
+Live continuation requires the completed non-held initial parent's actual
+G1-G4 handoff; the supplied blocked RP-S2 assessments do not provide it.
+The same terminal framework/hosted parent and pinned coordinator version own
+the queue follow-up and supported continuation.
+
+The parent manifest's role lookup reuses both child hosted/framework identities
+and pinned versions; only continuations/response IDs and current work advance.
+Compare immutable value snapshots before/after each call and both turns, two
+initial/follow-up child creations, both roles on both turns and fresh responses
+for actual new invocations. Follow-up invalidates stale candidate/review approval
+while preserving private ingress and adding the queue. Accepted output still
+requires exact refs, hashes, producer/version/revision and coordinator fencing.
+Retain existing offline two-turn and four-call fixtures; do not label them live.
+
+Supported stop/resume must join the existing once-only stop marker and confirmed
+idle/stopped state to same-parent/both-child continuation, checkpoints and effect
+journal assertions. A new response after resume alone proves no absence of
+duplicate sends. Known-response retrieval sends nothing; ETag conflicts,
+uncertain effects or binding drift never authorize another dispatch or parent.
+Separate-parent isolation checks actual distinct children/artifact scope and
+content exclusion, with retained cross-scope negatives. No identity, namespace,
+receiver, journal or public event contract changes are made by this slice.
 
 ## RP-S2 joined-source boundary
 

@@ -1,4 +1,38 @@
-# Client and release boundary: cumulative RP-S1/RP-S2 evidence architecture
+# Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
+
+## RP-S3 exact demonstration and truthful closure boundary
+
+Consume the [RP-S3 entry and delivery joins](../../customer-prototype-sprint-architecture.md#rp-s3-current-sprint-continuity-recovery-and-isolation-evidence-joins)
+and accepted Screens H-K without new flags, fields, renderer or comparison
+ledger. Retain README's implemented two-turn command and opt-in human stderr;
+stdout and acceptance parsing stay unchanged. Safe aliases and useful current
+design/review output are presentation, not exact continuity proof.
+
+Original DevOps consumes actual non-held G1-G4 initial bindings before follow-up,
+then joins per-scenario private acceptance evidence to both-turn/both-role
+binding, pinned-version, creation-count, fresh-response and current-output
+comparisons. `live_acceptance.py` alone does not perform the entire cross-scenario
+join. Existing Developer/integration and formal E2E owners close concrete missing
+scripted assertions without promising an unimplemented command or duplicate UI.
+
+Retain native `restart` and `stop_hosting_for_acceptance()`'s durable marker,
+parent/version checks, once-only stop and observed idle/new stopped timestamp.
+An uncertain stop is observed, never sent again; do not delete the marker.
+Same-conversation continuation plus checkpoint/effect and no-duplicate evidence
+is separately required. Isolation uses a separate synthetic parent and checks
+actual children/scope/content exclusion, not filenames. Neither check overrides
+holds or the stopped ownership and independent established-trust handoffs.
+
+Keep formal joined-source validation with E2E and exact Linux/package/release/
+live checks with DevOps using local repository scripts, explicit roots and
+serialized actual publisher/CLI/transport/mount ownership. Required checks bind
+the delivered source and common bundle; historical local results do not certify
+them. Integration owns reviewed scoped push and durable task/branch accounting.
+Final private reporting records actual final/rollback bindings and newly owned
+cleanup; sanitized customer reporting provides outcomes, generic setup/command,
+missing criteria and closing owner/action. Preserve historical UNKNOWNs, held
+parents and cleanup uncertainty. G5-G8 cannot pass from selection, aliases,
+process restart or agreed blocked assessments; all AC1-AC9 remain mandatory.
 
 ## RP-S2 separate evidence lanes and release join
 

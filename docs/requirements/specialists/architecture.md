@@ -1,4 +1,30 @@
-# Specialist tier: cumulative RP-S1/RP-S2 history and ingress architecture
+# Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
+
+## RP-S3 repeated calls and model-history boundary
+
+The [RP-S3 state comparisons](../../customer-prototype-sprint-architecture.md#stable-identity-advancing-work-and-independent-state)
+retain each real specialist's five-stage flow and `specialist_history_v2`.
+The remote child's hosted/framework binding and pinned version are distinct
+from its internal model session and advancing response continuation. Both roles
+must execute on initial and queue follow-up turns with their original bindings,
+new invocation responses and exact current immutable requirements/candidate
+refs; receiver principal equality remains mandatory at every call.
+
+Retain both-role actual load/model/store fixtures, persisted value snapshots,
+identical-brief fresh-history negative controls and exact-response zero-send
+recovery. Replayed requirements or persuasive memory prose cannot demonstrate
+restored model history. These fixtures establish the controlled offline
+boundary, not successful live ingress or model continuation.
+
+After supported coordinator compute stop/resume, reuse the original children
+and their compatible history; do not rekey, recreate or adopt held sessions.
+Reconcile known model responses without another model send and immutable output
+with pending history before claiming no duplicates. Missing observations or
+unknown effects remain held. A separate parent must have distinct child/history
+scope and no first-parent requirements in its accepted output. Application
+checks under account-wide Blob access are not malicious-host storage isolation.
+No new specialist service, history schema, grant, endpoint or identity repair
+is introduced; actual G1-G4 entry remains a separate prerequisite.
 
 ## RP-S2 observed ingress is a separate boundary
 

@@ -1,4 +1,142 @@
-# Cumulative sprint architecture: RP-S1 continuity and RP-S2 gated identity trial
+# Cumulative sprint architecture: RP-S1/RP-S2 preparation and RP-S3 delivery
+
+## RP-S3 current sprint: continuity, recovery and isolation evidence joins
+
+This slice retains the accepted RP-S2 architecture at
+`8fc296f65589af88706396ecf50e27b0f75deaef`, application preparation at
+`990467afd3e03efdf55aa236ee56ecc1bd04de66` and retrospective at
+`585601f4ad3e8d87c029a6fdca2d0326a403e142`. The inspected clean baseline is
+`7f7376b85e7b5f4e216dd382480cf6678d07eadf` on
+`feature/customer-hosted-session-prototype`, containing the accepted
+[RP-S3 screens H-K](customer-prototype-sprint-design.md#rp-s3-continuity-supported-recovery-and-truthful-delivery).
+RP-S1/RP-S2 process completion is not delivery of their unmet live gates.
+Earlier sections below are retained historical slices, not current pending
+reviews or claims that no prior sprint has completed.
+
+Exactly three hosted roles, explicit MAF execution order, existing dependency
+pins, trusted parent binding and specialist-only B client isolation remain.
+No session manager, history migration, fourth service, runtime selector, new
+public event/schema, CLI option or comparison ledger is introduced.
+The following joins refine existing AC1-AC9/G1-G8, not their requirements.
+
+### Entry handoff and blocked execution
+
+RP-S3 live continuation consumes an actual completed, non-held initial parent
+with G1-G4 evidence: final common bundle and exact three-role versions, remote
+accepted artifacts, private managed-identity Blob provenance and genuine
+Decision-1/deterministic acceptance. Neither identity selection nor an
+`ACCEPTED_ADVISORY` string alone establishes this handoff. Preserve its private
+source/package/version and parent/child bindings; the queue follow-up uses that
+same conversation, not another fresh parent manufactured for the report.
+
+The supplied RP-S2 outcomes do not establish this entry handoff or either
+successfully selected live identity path. Architecture can complete while those
+effects remain blocked. Keep independent ownership/root and established-trust
+lanes, reviewed runner/source integration, formal joined-source E2E and original
+DevOps exact-package/publication/finite-trial execution from the RP-S2 joins.
+Existing Developer/Scrum coordination delivers bounded existing setup evidence;
+existing transport-owner coordination delivers the private accepted fingerprint,
+approved module path and module/source SHA256 receipt locator. Failed evidence
+lookup is not evidence absence. Do not restart stopped probes, derive replacement
+trust, bypass blocked runner writing or repeat missing-trust checks as progress.
+
+### Stable identity, advancing work and independent state
+
+| Concern | Required comparison / owner boundary |
+|---|---|
+| Parent conversation | Actual hosted ID, framework identity and pinned coordinator version stay stable across initial, queue follow-up and supported continuation; retain the same private terminal session file |
+| Both specialist children | Compare each role's actual hosted ID, framework identity, pinned name/version and parent scope in independent before/after snapshots; two total child creations for the initial/follow-up pair |
+| New invocation | Both roles run on both user turns; each new call has a fresh response ID and current exact prerequisites; known-response retrieval is not another invocation |
+| Requirements and acceptance | Follow-up preserves private ingress and adds the queue; prior approval is invalidated before new work; exact current candidate/review hashes, producers, revisions and fenced acceptance match |
+| Specialist model history | Each real role restores its own model session/history; retained direct continuation and identical-brief fresh-history controls prove the offline boundary, not live capability from repeated brief text |
+| Graph and effects | MAF checkpoints retain executor position; immutable artifacts, manifest ETag/fencing and write-ahead journals reconcile effects independently of conversation/history |
+
+Do not compare complete serialized sessions as constant: framework service
+continuation advances. Keep the retained four-call reject/revise/review fixture
+as offline AC3 evidence; live two-turn AC1/AC2 remains separate. No fake/local
+specialist or alias/memory-text comparison can fill a missing live observation.
+
+### Supported recovery and separate-parent isolation
+
+[`live_acceptance.py`](../live_acceptance.py) retains the native `restart`
+scenario and `stop_hosting_for_acceptance()`: completed bound non-pending parent,
+exact parent/version readback, exclusive durable `.hosting-restart.json` intent,
+one supported stop request, then confirmed `idle` with a new finite positive
+`stopped_at`. Existing `stop_pending` is observed without resending; another
+phase rejects a repeated stop. HTTP 204, terminal restart or disconnect alone
+does not satisfy G6. Missing confirmation stays unresolved, not permission to
+delete the marker or issue another stop.
+
+Original DevOps continues the same parent after confirmation and compares both
+children, pinned versions, checkpoint/effect reconciliation and actual sends.
+Verify no duplicate effects from journal/response/artifact evidence; do not infer
+that from a resumed process or matching output text. Known responses are retrieved
+exactly without send. Uncertain creation/send, binding drift and held effects
+stop further effects; retain private evidence and the existing repair owner.
+This tests supported compute deprovision/rehydration, not hard-crash recovery or
+exactly-once platform/deployment effects.
+
+A separate synthetic parent uses a distinct private session file, distinct
+actual parent and both child bindings, separate artifact scope and an independent
+brief excluding the first conversation's requirements. Verify content exclusion
+and retained cross-scope rejection regressions as separate observations.
+Different filenames, aliases or version numbers alone prove no isolation.
+Account-wide Blob Contributor permits application-enforced role/parent checks,
+not storage-RBAC or malicious-host isolation. Isolation and recovery have no
+invented dependency on each other; Scrum assigns only their real shared resources.
+
+### Exact-source evidence and delivery handoff
+
+The retained acceptance utility emits per-scenario evidence and checks bindings,
+versions and artifact envelopes; that output is not by itself the complete
+cross-turn, creation-count, no-duplicate or separate-parent comparison.
+Existing Developer/integration work must join actual snapshots and assertions
+through deterministic local repository scripts and repair only concrete missing
+checks. Original E2E validates joined implementation; original DevOps runs
+hosting checks, release and live scenarios. No unimplemented comparison command
+is promised here and no GitHub Actions execution is substituted.
+
+| Gate / handoff | Closing evidence, without weakening preceding gates |
+|---|---|
+| G5 / AC2 | Initial and queue follow-up exact binding/creation/response/current-output comparisons for both roles, with stale approval invalidation |
+| G6 / AC4 | Once-only durable stop intent and confirmed stop state joined to same-conversation continuation and no-duplicate-effect assertions |
+| G7 / AC4 | Separate-parent bindings/scope, excluded first-parent content and passing cross-scope regressions |
+| AC6 | Existing README commands and useful opt-in human stderr output; unchanged stdout/parser; sanitized comparison outcomes supplied separately from private exact proof |
+| AC7-AC8 | Final exact-source application/repository and affected retained checks, actual Linux/amd64/hosting-Python package validation, reviewed feature-branch integration and scoped push outcomes |
+| G8 / AC9 | Dated per-criterion evidence attribution, actual final/rollback bindings privately, generic setup and reproducible implemented demonstration command, owned cleanup and explicit limitations |
+
+Keep Screens H-K illustrative reporting guidance. Existing aliases cannot
+become VERIFIED continuity badges or new machine fields. Exact private bindings,
+transcripts, hashes and evidence locators stay out of shareable source/output.
+Original DevOps records positively identified newly owned processes, listeners
+and mounts and their cleanup; new cleanup never certifies historical cleanup.
+Preserve all historical UNKNOWN publications, held parents, rollback assets and
+unrelated work. Report each AC/G gate verified, failed or unreached from actual
+evidence, distinguishing local/mocked, Linux/package and hosted observations.
+Customer-ready requires every mandatory gate; otherwise give the precise last
+boundary, missing criterion, existing owner and supported closing action.
+
+Applicable exact prior references remain bounded:
+
+- `["yaml-loops-v1:sprint/2/RP-S2/SprintArchitectureLoop","rp-s2-sprint-architecture-close-agreed-deliverable"]`:
+  retained RP-S2 architecture is closed, not current RP-S3 approval.
+- `["yaml-loops-v1:sprint/3/RP-S3/SprintDesignLoop","rp-s3-sprint-design-close-agreed-deliverable"]`:
+  accepted reporting screens remain closed without duplicate UI implementation.
+- `["yaml-loops-v1:sprint/2/RP-S2/SprintRetroLoop","rp-s2-sprint-retro-close-agreed-deliverable"]`:
+  retain independent evidence lanes and existing-owner closing actions.
+- `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`:
+  remains unresolved with taskComplete=false, originating five-round stop and
+  runner-writing block until substantiated and accepted by original reviewers.
+- `["yaml-loops-v1:sprint/2/RP-S2/EndToEndTestLoop","rp-s2-e2e-close-agreed-failure-assessment"]`:
+  closed prerequisite FAIL is neither joined-source PASS nor publication readiness.
+- `["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-ISOLATED-CLIENT/AssignedWorkDeveloperLoop","isolated-client-close-agreed-handoff"]`:
+  retain accepted candidate without renewed review or inferred live compatibility.
+
+Scrum Master retains contract-first decomposition, minimal dependencies, exclusive
+publication/transport/CLI ownership and Git reconciliation; architecture does not
+dispatch new competing assignments. Material identity namespace, held-state or
+source-contract changes return to existing Architect-advised Product Owner/Scrum
+reconciliation, never equality relaxation or a release waiver.
 
 ## RP-S2 current sprint: evidence joins without a runtime rewrite
 

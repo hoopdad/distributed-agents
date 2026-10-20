@@ -10,11 +10,11 @@ handoffs, not a new implementation, SprintPlan or live acceptance report.
 
 Accepted inputs, unchanged by this design:
 
-- [Architecture](customer-prototype-architecture.md), commit `0a244702c7ccf01f1916c4b3a2580346ffb02fea`.
-- [User experience](customer-prototype-ux.md), commit `ef5c79d94114f156ab0d03497fafffd1e348aabf`.
-- [Release plan](customer-prototype-release-plan.md), commit `5449ff49af6a79dbc9fef75c1314d6689cdba6d3`.
+- [Architecture](customer-prototype-architecture.md), commit `cde76380c9c41201f19aedf4b290958c95472689`.
+- [User experience](customer-prototype-ux.md), commit `c17813567e7d3db09abe1d2403b948c98131c24f`.
+- [Release plan](customer-prototype-release-plan.md), commit `f20ac1ee1cdbc561198d51fba53f14c90348de8d`.
 
-Inspected clean feature-branch baseline `5449ff49af6a79dbc9fef75c1314d6689cdba6d3`
+Inspected clean feature-branch baseline `f20ac1ee1cdbc561198d51fba53f14c90348de8d`
 for this October 20 reconciliation.
 Related implementation is already integrated in `24b883f`; terminal view
 `56b762e`, workflow fixtures `6614440` and specialist fixtures `c454e50` are
@@ -27,9 +27,9 @@ Scrum Master reconciles concrete delta assignments and Git ownership; missing
 assignments are not a request for user approval.
 
 Apply these prior dispositions only within their originating deliverables:
-`["yaml-loops-v1:ArchitectureLoop","architecture-loop-status-reconciliation"]`,
-`["yaml-loops-v1:UserExperienceLoop","ux-loop-status-reconciliation"]` and
-`["yaml-loops-v1:ReleasePlanLoop","release-plan-loop-status-reconciliation"]`.
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-agreed-deliverable"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-close-agreed-deliverable"]` and
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-close-agreed-deliverable"]`.
 Keep those handoffs accepted. They neither supply SprintDesign reviewer votes
 nor waive live/package acceptance. No SprintDesign correction feedback was
 supplied this turn.
@@ -247,13 +247,36 @@ rollback bindings and cleanup uncertainty regardless of path choice.
 
 ### October 20 sprint delta: decision evidence to customer screens
 
-The accepted architecture now defines a separate specialist-only B client and
-a finite, journaled local decision runner. These are RP-S2 implementation
-handoffs, not implemented terminal options. Retain the integrated RP-S1 screens
-and fixtures. The retained offline handoff (`13203ac`, integrated by `bb1743d`)
+The specialist-only B client is implemented in `3aca5dc`; it is not a
+live-selected repair. Current source constructs B unconditionally, with no
+runtime A/B selector. The finite, journaled local decision runner remains a
+Developer implementation handoff; original DevOps owns guarded publication
+and execution. These are RP-S2 source/integration handoffs, not terminal
+options or a reason to redispatch RP-S1 clarity work. Retain the integrated
+screens and fixtures. The retained offline handoff (`13203ac`, integrated by `bb1743d`)
 returns exit 2 / `unresolved` and has no live mode; that is not an observed
-customer-conversation failure. Fresh inventory and executable candidate/runner
-work remain downstream. Do not repeat completed research to fill that gap.
+customer-conversation failure. Fresh inventory, candidate review/integration
+and executable runner work remain downstream. Do not repeat completed research
+to fill that gap.
+
+#### Preparation versus observed execution: sprint review examples
+
+Apply the accepted UX interpretation to the existing screens and the eventual
+sanitized runner report. These examples add no public event fields, renderer
+features, identity controls or approval stage.
+
+| Input / reached boundary | Screen or report interpretation | Concrete downstream check |
+|---|---|---|
+| `B-candidate` label with pre-B source, or `A-correction` label with unconditional B source | Trial preparation rejected; no trial parent or remote attempt | Developer runner fixture rejects the scenario/source/package/actual-version mismatch before creation. A requires its own evidenced corrected source. |
+| Captured scope/user/header guard rejects resource construction | Local preparation rejected before specialist dispatch; no invented role rows or receiver diagnosis | Retain terminal allowlisted diagnostic/nonzero exit. Runner fixture records zero dispatch and distinguishes this from receiver failure. |
+| Actual child result rejects principal/binding | Observed receiver failure for the reached role only; preserve hold | Bind private exact-response evidence to that role; do not infer reviewer failure from architect failure. |
+| No receiver observation, unknown effect or version drift | Unknown/unverified; not proof that identity is absent or permission denied | Preserve any trial state and inspect only known responses without resend; no replacement-parent workaround. |
+
+The human view consumes finalized conversation records, not preparation-phase
+records. The required runner's sanitized report is the handoff for finer
+classification; do not manufacture a successful summary or a new terminal
+banner to represent a pre-dispatch rejection. Keep the README's historical
+notice until fresh measured evidence supports an update.
 
 Use this ordered interpretation when reviewing affected documentation or the
 eventual private decision report. The labels are design examples, not new
@@ -324,7 +347,31 @@ No runtime files, accepted input documents, private state, lab tooling or
 pre-existing readability edits are changed by this handoff. New original Product
 Owner/Critic SprintDesign agreement is not supplied by earlier-loop approvals.
 
-## Verification of the October 20 sprint delta
+## Verification of the current source-to-screen reconciliation
+
+Current source review inspected `HumanView.render()`,
+`finalize_workflow_turn()` and the retained human-view capture fixtures in
+`tests/test_demo.py`. Screens A-D remain unchanged: chronological repeated
+calls, current final output, unverified alias comparisons, hold precedence,
+no-resend recovery, wrapping/control neutralization and unchanged stdout.
+The added review examples bind preparation/receiver/unknown classifications
+to the accepted source-to-trial contract without inventing new customer UI.
+
+All 10 relative document links resolve, screen fences balance and
+`git diff --check` passes. Both required commands were attempted using the
+existing absolute Python 3.12-x64 path: `Test-Demo.ps1` with explicit lab root
+and `scripts/Test-Repository.ps1`. The execution tool denied both because no
+interactive approval response was available; neither ran. No current full
+suite, generated-index, public-boundary or dependency success is claimed.
+Historical passing checks below are not validation of this revision.
+No dependencies were installed or alternate execution route used.
+
+Designer agrees with this bounded deliverable; original Product Owner and
+Critic SprintDesign review is still required. Upstream agreements do not
+supply those votes. No runtime, lab source, dependency or public schema
+change, cloud operation or live acceptance is asserted by this reconciliation.
+
+## Historical verification of the earlier October 20 sprint delta
 
 Inspected clean application baseline `5449ff49af6a79dbc9fef75c1314d6689cdba6d3`
 on `feature/customer-hosted-session-prototype`; changed only this document and

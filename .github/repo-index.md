@@ -26,8 +26,8 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S3 consumes accepted RP-S2 architecture/retro and RP-S3 design; missing non-held initial parent blocks live continuation, actual both-role continuity, once-only supported recovery, independent isolation and truthful exact-release delivery; retains ownership/trust/integration and original E2E/DevOps gates without duplicate offline implementation; prior overlays retain history |
 | Historical RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Completed-workflow assignment/audit contract, not deployment acceptance; original ownership history remains unresolved, accepted source-check handoff consumed by current RP-S2 plan |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
-| Current RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Accepted `74130a8` architecture/`cf017c9` design and `b13670e` source-check handoff; originating ownership recovery parallel with read-only outgoing application audit, then eight-path sibling runner and explicit matched-root/Git integration; original DevOps strict-trust inventory, finite trial and actual G1-G4; no duplicate source/UX acceptance |
-| RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Evidence-only stopped carryover alongside independent missing scripted-comparison work; reviewed runner/source integration consumes accepted application preparation; original DevOps gates actual G1-G4, two-turn continuity, once-only supported recovery, independent isolation and truthful exact-source delivery |
+| Retained RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Accepted `74130a8` architecture/`cf017c9` design and `b13670e` source-check handoff; originating ownership, eight-path sibling runner and matched-root/Git integration remain unresolved; accepted outgoing application audit is consumed by RP-S3, not redispatched |
+| Current RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Accepted `cb85ce0` architecture/`1f24c9a` design and `dd7728c` retrospective; bounded originating ownership verification parallel with read-only retained validator/fixture-to-observation handoff, no duplicate accepted assertions; exact eight-path runner then actual loaded-root/Git integration; original DevOps strict trust, G1-G4, continuity, supported recovery, independent isolation and truthful delivery |
 | RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Recovery-entry review `ca4345d`: eight two-round accepted boundaries versus single-round planning, current exit-2 trust stop versus historical metrics, session-specific evidence access and bounded completion versus execution; existing-owner actions, no ownership reset or live waiver |
 | Current RP-S2 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Recovery-entry review `16a57b6`: consume accepted revision-bound outgoing audit once; distinguish substantive ownership/root proof, actual loaded integration and independent strict trust; qualified report/execution outcomes, original-owner closing actions and measurement limits, no new contract or live waiver |
 | RP-S3 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted offline assertion/repair lessons, meaningful negative controls and separate observation provenance; unreached live demonstration, current originating votes, preserved stopped lanes and existing integration/release ownership |
@@ -40,6 +40,18 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+RP-S3 SprintPlan freshness: inspected clean authorized feature HEAD
+`cb85ce076592454dfc5d2e3ac6b657a06b554cfa`; refreshed only the existing
+RP-S3 plan and this navigation; no added/deleted paths. Consumes accepted
+scenario assertions/prerequisite repair, source checks and outgoing audit
+without duplicate implementation. Two resource-disjoint initial Developer
+handoffs converge at reviewed runner/actual loaded-root integration. Exact
+eight-path writer and designated integration ownership remain bounded;
+canonical dirty work, historical UNKNOWNs and held parents are protected.
+Original formal E2E and serialized DevOps package/live gates remain unchanged.
+Planning does not substantiate sibling ownership, independent host trust,
+operational installation or a completed initial parent. Dispatch and original
+planning votes remain for the existing YAML orchestrator.
 RP-S3 SprintArchitecture freshness: inspected clean authorized feature HEAD
 `1f24c9a07277d2f5b111f83b186db3ad6a5257aa`; refreshed cumulative mapping
 and three tier slices plus this navigation, no paths added/deleted.

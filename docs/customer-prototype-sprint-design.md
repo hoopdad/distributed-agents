@@ -1,6 +1,124 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Current RP-S1: accepted inputs and evidence-qualified screens (October 20, 2026)
+## Current RP-S2: supported repair to evidence-backed collaboration (October 20, 2026)
+
+Current sprint: **RP-S2, supported repair and exact three-role remote
+collaboration**. Inspected clean application baseline
+`006574e6d664ec21d38a86c8e1f1cf15e162f89e` on
+`feature/customer-hosted-session-prototype`. Consume the accepted Architecture,
+UserExperience and ReleasePlan, including that baseline's RP-S1 retrospective.
+No Designer implementation assignments were supplied. Retain Screens A-D and
+the [operator Screens F/G](#rp-s2-gated-identity-trial-and-truthful-collaboration-handoff);
+this current mapping supersedes conflicting current-status wording in older
+overlays below, without changing their historical observations.
+
+Prior reference
+`["yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop","sprint-design-close-completed-deliverable"]`
+closes RP-S1 design only. It does not close this RP-S2 review. Likewise retain
+the originating agreements under
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-completed-deliverable"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-close-completed-deliverable"]` and
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-close-completed-deliverable"]`.
+No upstream votes are borrowed and no accepted presentation work is reopened.
+
+### Current flow: independent preparation, joined execution, separate customer view
+
+```text
+README goal / exactly three roles / stable sessions versus advancing responses
+  +-> Developer: supplied designations + current ownership/root evidence
+  |     -> originating ownership acceptance -> offline runner + reviewed join
+  +-> DevOps: existing accepted fingerprint and acceptance reference
+        -> strict-trust checks -> current sole-target private inventory
+Reviewed operational/source join -> original formal E2E
+Join actual inventory -> original DevOps exact-source/Linux/package/preview gates
+  -> guarded publication -> finite architect trusted ingress -> reviewer ingress
+  -> final common bundle + accepted remote artifacts + private MI + Decision-1
+  -> actual G1-G4 evidence -> RP-S3 continuity/recovery/isolation demonstration
+```
+
+These are reporting and execution boundaries, not task dispatch, new approval
+stages or permission to run later phases early. Live inventory is not a
+prerequisite for offline runner development. The supplied designations suffice
+for coordination; current owned-path/root proof and originating review still
+gate runner writes. Canonical dirty lab paths remain protected.
+
+### Screen F: current blocked-backlog and preparation reporting
+
+Use the existing operator report, separate from human customer turn rows:
+
+```text
+RP-S2 | preparation BLOCKED | report illustration, not runtime output
+Deliverable: <bounded report complete / incomplete, as actually reviewed>
+Execution: <last observed boundary; local / hosted; evidence owner>
+Not observed: <remaining private inventory, joined package or role execution>
+Identity path: unresolved unless both-role trusted ingress proves selection
+Next: <existing owner and exact closing action>
+Customer-ready: false
+```
+
+| Supplied current evidence | Screen interpretation and existing closing action |
+|---|---|
+| Ownership task/review lacked recovery-file and direct sibling/root access | Ownership remains unaccepted; runner writes blocked. Developer completes authorized bounded reads and matched/mismatched resolver verification for original Architect/Critic review. Earlier architecture-reported successful sibling Git reads remain separately attributed point-in-time evidence, not complete resolver proof. |
+| DevOps reports successful historical recovery-file reads and fresh ARM observations, then exit **2**, `HOST_TRUST_EVIDENCE_REQUIRED` (shellId 209) | Attribute these observations to DevOps, not Designer or fresh specialist execution. Recover the previously accepted fingerprint/acceptance reference privately, compare through the retained wrapper, then obtain current private project, three-role, rollback and held-effect inventory. Current host-entry content cannot independently establish trust. |
+| Accepted application checks, but no reviewed runner/operational-source join | Retain accepted source and UX. Developer completes the existing runner and integration tasks, with actual loaded roots, joined checks, scoped push and durable task/branch/commit accounting; sibling source alone is not operational installation. |
+| Agreed predeployment E2E FAIL and incomplete DevOps | Failure-report agreement is complete, not release PASS. Original E2E validates the subsequent reviewed join; DevOps retains exact-package and cloud-pass gates. Partial inventory/unresolved reports may satisfy their bounded reporting alternatives without passing the enclosing DevOps loop. |
+
+The latest supplied DevOps exit is 2; older exit-1 examples below are historical,
+not this invocation's observation. Successful evidence reads by one role do not
+establish another session's access or originating ownership acceptance. No
+private evidence, sibling resolver or cloud state was inspected by Designer.
+Do not request renewed writer designation, expanded authority or replacement
+trust; use the existing owners' exact missing-evidence actions.
+
+### Screen G: reached-role outcomes and G1-G4 handoff
+
+Retain the finite-outcome table below: pre-send setup/root rejection is not
+receiver failure; architect-only ingress is not reviewer ingress; exact receiver
+rejection names only the reached role; absent observations are unverified, not
+zero sends. Unknown effects and held parents override success-looking output:
+preserve and reconcile without automatic fallback, blind resend or substitute
+parent. Selected-A requires its own supported correction, not relabeled B
+source; selected-B remains unproven until trusted ingress/equality is observed.
+
+Both-role ingress selection is still not final release acceptance. The operator
+handoff must separately identify actual evidence for three healthy exact roles
+on one final common bundle with rollback retained (G1), coordinator acceptance
+of current immutable remote artifacts and exact prerequisites (G2), private
+managed-identity Blob provenance (G3), and genuine Decision-1 plus deterministic
+final gates (G4). Missing observations remain explicit. HTTP 200, an uploaded
+ZIP, offline results or a mixed diagnostic deployment cannot fill those rows.
+
+Screens A-D retain useful current design/review, ordered calls, safe aliases,
+plain-text wrapping, terminal-default light/dark appearance and neutralized
+control characters. Human output stays opt-in stderr; stdout, delegation/result
+contracts and acceptance parsing remain unchanged. No browser UI, renderer,
+flag, root/identity picker, dependency or public field is requested. Full private
+bindings, transcripts, fingerprints and evidence locators stay out of customer
+output and Git. Account-wide Blob access means application-enforced isolation,
+not storage-RBAC or malicious-host isolation.
+
+### Designer doneWhen and downstream handoff
+
+This RP-S2 deliverable is the current flow/screen mapping plus retained F/G
+layouts, committed for independent Product Owner and Critic review. Their RP-S2
+votes are not yet supplied. Design agreement does not require successful
+deployment and cannot substitute for it. Scrum retains decomposition,
+serialization and Git reconciliation; designated Developer retains ownership,
+runner and matched-root integration. Original E2E and DevOps retain formal
+joined-source validation and guarded local-script package/publication/live
+execution respectively. RP-S3 retains actual same-parent two-turn continuity,
+once-only supported compute recovery, isolation and final AC1-AC9/G1-G8 closure.
+
+For that later customer journey, only a completed, non-held initial turn permits
+the queue follow-up using the same private session file. Parent and both roles'
+actual hosted/framework bindings and pins require private comparisons, distinct
+from advancing response IDs or matching aliases. Conversation history,
+checkpoints, artifacts and effect journals retain their separate purposes.
+Preserve historical UNKNOWN effects, held parents, rollback assets, unrelated
+dirty/staged work and historical cleanup uncertainty. Neither identity path,
+current final/rollback bindings nor live customer readiness is established here.
+
+## Historical RP-S1: accepted inputs and evidence-qualified screens (October 20, 2026)
 
 This invocation's sprint is **RP-S1: evidence-ready source and understandable
 continuity**. Inspected clean application baseline

@@ -37,8 +37,15 @@ and must not be counted as a new specialist invocation.
 corrections and guarded repeated releases for the three existing roles.
 Historical single-attempt limitations below are not blanket prohibitions on
 that newly authorized work. They never allow replay of uncertain effects.
-DevOps retains deployment/live-test ownership; no infrastructure, new
-permissions, speculative identity workaround or provider submission is included.
+DevOps retains deployment/cloud-pass ownership and the E2E loop retains formal
+integration validation. The additional October 19 approval permits necessary
+scoped RBAC/permission changes for either supported authentication correction or
+`x-ms-user-identity` delegation, with bounded scripted decision tests during
+architecture/planning. Follow the current
+[identity selection contract](customer-prototype-architecture.md#supported-identity-alternatives-and-selection-contract).
+No new infrastructure, speculative identity workaround, call-ID-as-user
+substitution or provider submission is included. Execute E2E and DevOps through
+local repository scripts, never GitHub Actions.
 
 Each gate self-approves only when its objective evidence passes. Use explicit
 inputs and deterministic checked-in scripts for repeated validation, build,

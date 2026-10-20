@@ -17,7 +17,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
-| Customer prototype architecture | `docs\customer-prototype-architecture.md` | October 19 full-scope release design, parent/child/model continuation contracts, bounded downstream handoffs and AC1-AC9 evidence map |
+| Customer prototype architecture | `docs\customer-prototype-architecture.md` | October 19 full-scope release design, authorized authentication/delegation alternatives, principal-namespace discriminator, least-privilege exception, continuation contracts and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three initial sprint goals/acceptance contracts, independent offline work, supported-repair critical path, exact release/live gates and original-owner closeout |
 | RP-S1 sprint design | `docs\customer-prototype-sprint-design.md` | Sprint-specific README/terminal screens, ordered revision trace, incomplete/recovered-event behavior and fixture-to-display implementation handoff |
@@ -111,7 +111,14 @@ storage-enforced per-role isolation.
 Do not search ignored `.azure`, `.azure-cli`, `.local`, `.migration` or
 conversation/credential stores.
 
-Architecture handoff freshness: inspected base commit
+Current ArchitectureLoop revision freshness: inspected integrated base
+`24b883f910dedbc8dc524177f29f59e061be265e`, with a clean application worktree.
+No paths added/deleted, runtime or dependency changes. The release architecture
+now covers the additional user-authorized A/B identity paths, scripted bounded
+decision-test contract, and unchanged formal E2E/DevOps gates. Existing RP-S1
+source/clarity integration is retained; neither path is claimed live-selected.
+
+Original architecture handoff freshness: inspected base commit
 `1dfb7fed6fdeb3cc506b5394927fdfcebe39a4bc` plus the pre-existing readability
 worktree changes. Added `docs\customer-prototype-architecture.md`; no runtime,
 entry-point, dependency or ownership boundary changed by that document.

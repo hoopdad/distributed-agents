@@ -10,8 +10,10 @@ It complements [design.md](design.md) and the measured history in
 deployment, live acceptance, or reviewer agreement.
 
 The run's supplied customer specification is the release acceptance source.
-There is currently no `docs/requirements` directory. Do not invent requirements
-or copy private delivery control-plane inputs into this repository.
+`docs/requirements/{coordinator,specialists,client-release}/architecture.md`
+now contains derived logical-tier contracts, not replacement requirements.
+Do not invent requirements or copy private delivery control-plane inputs into
+this repository.
 The October 19 invocation authorizes scoped application/release-tool changes,
 reviewed feature-branch delivery, guarded publications to the existing three
 roles, synthetic tests, supported hosted compute stop/resume, the existing
@@ -19,8 +21,60 @@ read-only SSH mount, and starting the existing registered command VM if needed.
 Older documents' consumed single-diagnostic authorization describes history,
 not the entirety of this run's authority. Conversely, this run does not reconcile
 the old UNKNOWN publication, authorize a held-parent resend, or permit speculative
-identity changes. No infrastructure, permissions, quota, network, DNS, VPN,
-provider submission, new service, or alternate project is in scope.
+identity changes. The additional October 19 path-selection and permission
+approval permits either supported authentication-configuration correction or
+`x-ms-user-identity` delegation, including necessary scoped RBAC/permission
+changes in this lab. This narrow exception replaces this document's earlier
+blanket permission prohibition, not its identity checks or release gates.
+No new infrastructure, quota, network, DNS, VPN, provider submission, new
+service, or alternate project is in scope. Do not replace existing identities
+merely to obtain a different caller.
+
+## Current architecture decision and inspected baseline
+
+This revision starts from application commit
+`24b883f910dedbc8dc524177f29f59e061be265e` on
+`feature/customer-hosted-session-prototype`, with a clean application worktree.
+The previous RP-S1 source/clarity integration is retained, not reopened:
+`6614440` added workflow continuity fixtures, `c454e50` added direct specialist
+continuation fixtures, `56b762e` added the opt-in terminal view, and `24b883f`
+integrated the reviewed source and runnable README. These are implementation
+history, not freshly verified live capability or new work credited to this loop.
+The lab remains on its existing unrelated feature branch with pre-existing
+dirty work. This architecture turn makes no lab edits or branch changes.
+
+No prior dispositions or reconciled feedback were supplied for this invocation.
+The new user approval, rather than a newly inferred permission or an older
+research task's exclusions, governs identity-path evaluation below.
+
+**Decision:** retain the complete three-role architecture and its current
+contracts. Evaluate the smallest supported correction first; permit explicit
+delegation as a real alternative, not an already-proven repair. Neither path
+has demonstrated successful specialist ingress in this turn. Continue release
+and sprint artifact generation while selection is unresolved. Do not declare
+a provider-only stop solely because the previous opaque-context research was
+unresolved: the newly authorized delegation alternative must be assessed too.
+Formal E2E validation stays in the End-to-End Test Loop; deployment and
+cloud-pass stay in the DevOps Work Loop. Architecture/planning can run bounded
+decision tests, but cannot promote their results to those acceptance gates.
+
+### Verification of this architecture revision
+
+Using the existing validated absolute Python 3.12.10 executable, without
+installing dependencies:
+
+- `Test-Demo.ps1 -Python <absolute-validated-python> -LabRepositoryRoot
+  <explicit-lab-root>` passed dependency checking, **177 offline tests in
+  23.705 seconds**, and compilation.
+- `scripts/Test-Repository.ps1 -Python <absolute-validated-python>` passed
+  index, public-boundary (**70 public files**), parser and whitespace checks.
+- Local documentation checks verified 11 relative links/anchors and the
+  presence of AC1-AC9 and the identity-selection handoff fields.
+
+No retained lab source changed, so its full release suite was not rerun.
+Linux hosting-package checks, live identity-path selection, deployed/rollback
+inventory and formal release acceptance were not executed. Original Product
+Owner, Red Team and Critic agreement is not asserted by this owner handoff.
 
 ## Principles, framework and tools
 
@@ -142,6 +196,137 @@ It may implement a supported scoped correction with a failing-before regression.
 Do not republish the same speculative change or label identity repair verified
 without actual successful remote execution.
 
+### Supported identity alternatives and selection contract
+
+Public sources checked for this revision:
+
+| Source | Observed revision / applicable fact |
+|---|---|
+| [Hosted runtime contract](https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agent-contract#platform-request-headers-container-protocol-200) | Source `69a226754528e8d4d032ec652eba7d82e584f648`, updated September 28, 2026: container protocol 2.0.0 forwards the opaque call ID unchanged to other agents; the injected user header is container-only. |
+| [Per-user isolation and delegation](https://learn.microsoft.com/azure/foundry/agents/how-to/isolate-sessions-per-user#isolate-sessions-for-your-own-users) | Source `f5104405dfd0231d706f8198fb841f45826595b9`, updated October 13, 2026: `x-ms-user-identity` is a supported trusted-service contract; value is a stable authenticated end-user identifier, 1-256 permitted characters, not a call ID. Delegated-session access is not fenced between delegated users. |
+| [Hosted agent permissions](https://learn.microsoft.com/azure/foundry/agents/concepts/hosted-agent-permissions#delegate-the-end-user-identity) | Source `bd74da57b5293b70e0538b76b75d983ab2e67d80`, updated September 23, 2026: delegation requires the explicit `Microsoft.CognitiveServices/accounts/AIServices/agents/endpoints/UserIdentityImpersonation/action` data action, not a built-in role or wildcard assumption. |
+
+The installed Core 2.2.0 `platform_headers()` was inspected again: it emits
+only `x-agent-foundry-call-id`; it does not send a delegated or container user.
+The existing offline diagnostic returned `OFFLINE_VERIFIED_LIVE_UNRESOLVED`
+(intentional exit 2). Settings were loaded solely with `Use-Settings.ps1`;
+local schema and expected lab linkage passed without displaying values.
+These are local observations, not authenticated cloud-context validation.
+No cloud version/permission readback, inference, permission mutation or
+publication occurred in this architecture turn.
+
+| Path | Smallest admissible change | Selection evidence / rejection condition |
+|---|---|---|
+| A: agent-to-agent authentication/configuration correction | Preserve existing Responses transport and unchanged opaque-call forwarding. Correct only a measured endpoint, protocol, effective-caller permission or supported authentication configuration mismatch. Here agent-to-agent is the interaction, not a requirement to introduce a new A2A wire protocol. | Fresh exact bindings and relevant effective permissions establish the mismatch, then a bounded synthetic invocation reaches the specialist with trusted context and passes existing receiver checks. HTTP 200, health, permission presence or another identical opaque-header publication do not select A. |
+| B: explicit `x-ms-user-identity` delegation | Use the existing authenticated coordinator as the trusted middle tier for the two specialists. Derive the identifier exclusively from authenticated server-side user context; validate its permitted syntax and stability. Never derive it from `call_id`, model output, assignment JSON, a client-supplied identity or a default principal. | Exact SDK/HTTP checks show a consistent delegated namespace on session create/read, Responses send and known-response retrieve. A fresh synthetic parent reaches specialist application entry and passes principal/assignment validation. A changed/missing principal, namespace mismatch, 403 or held effect is a failed discriminator, not permission to relax checks. |
+
+Do not combine call-context forwarding and explicit delegation by guesswork.
+For B, establish from the supported contract and a bounded test whether both
+headers can coexist and which identity the platform actually resolves. Forward
+the opaque call ID unchanged wherever the platform contract requires it; never
+recast it as a delegated user or suppress it to escape a failure. Do not forward
+`x-agent-user-id` outbound. The legacy `platform_identity_headers()` currently
+adds both user headers and is **not** a drop-in B implementation.
+
+#### Binding compatibility is a required discriminator
+
+`Assignment.validate_receiver()` in `demo/artifacts.py` compares the child's
+platform-injected principal to the parent's `scope_binding.principal`.
+The delegation docs do not promise that delegating an already platform-derived
+user ID returns that same principal rather than a newly derived identity.
+Therefore a nonempty child user alone cannot select B. Privately compare the
+actual trusted identities, exposing only match/presence classifications publicly.
+
+A valid B design must use one stable, authenticated delegation scheme across
+the affected lifecycle. Verify all existing boundaries: `RemoteAgents.prepare`,
+`create`, `_check` / `recover_creation`, `invoke` and `recover`; raw Azure SDK
+session operations and OpenAI Responses clients use different header plumbing.
+`WorkflowRuntime.resources()` currently shares a project/header client with
+routing and other project operations. A repair must explicitly separate the
+specialist-only delegated headers if applying them globally would change model,
+checkpoint, history or parent authorization context. Preserve the explicit
+execution order; no generic session manager or second protocol is needed.
+
+If B changes the principal namespace, do not remove the equality assertion,
+trust the supplied assignment principal, migrate old histories or silently
+reinterpret saved bindings. Return the exact mismatch to this existing
+Architect/PO/Scrum process for an authenticated end-to-end namespace/binding
+design and focused negative tests. That is an internal bounded contract
+decision, not a request for new permission already granted by the user.
+An alternative that cannot preserve or securely establish the required binding
+is not selected merely because it makes the host gate nonempty.
+
+#### Permission exception: exact scope, not blanket mutation
+
+Before any write, freshly resolve the actual outbound authenticated coordinator
+principal, the two existing specialist resources and existing role definitions/
+assignments from the validated sole-target lab context. Historical evidence
+says an explicit impersonation grant already exists: verify its actual caller,
+data action and effective scope rather than create a duplicate or infer it is
+missing. Record private exact resource/principal/role IDs, before/after state,
+reason and operation outcome; public source contains only generic contracts.
+
+For B, if genuinely missing, grant only the impersonation data action to that
+verified coordinator identity, assigned at each existing specialist's supported
+agent scope. If that scope is unsupported, document the observed constraint
+and smallest supported project scope before mutation; never expand to a
+subscription/resource-group/account assignment for convenience. A custom role's
+assignable scope is not an instruction to assign it at that broader scope.
+For A, any additional interaction permission likewise needs a demonstrated
+missing data action at the exact target; no generic Owner/Contributor remedy.
+Specialists need no impersonation grant just to serve incoming calls.
+
+Perform necessary changes via deterministic, reviewed lab-owned scripts using
+the dedicated verified profile. They must compare installed state, plan the
+exact approved delta, record effect ownership before sending, avoid duplicate
+assignments, reconcile unknown outcomes and report readback separately from
+runtime success. This exception permits required permissions only; it does
+not authorize new infrastructure, identity replacement, credentials, model
+capacity, network/DNS changes or public ingress. No permission change is made
+by this document. Existing account-wide Blob policy is unchanged.
+
+#### Bounded decision procedure and downstream handoff
+
+Scrum Master decomposes these contracts into tasks, not another approval stage:
+
+1. **Read-only inventory and fixture contract:** resolve fresh role/version/
+   package/protocol/caller/grant bindings through retained tools; preserve
+   rollback and UNKNOWN records. Define a local scripted decision test with
+   explicit roots, path, exact versions and a new synthetic scope. Source and
+   tests must cover omitted/invalid user, forged assignment identity, two parent
+   scopes, both roles, all SDK header boundaries and exact-response no-resend.
+2. **Smallest discriminating correction:** A only if a concrete supported
+   mismatch is found; otherwise evaluate B against its documented delegation
+   contract and binding-compatibility checks. Developer owns application changes,
+   DevOps owns any required package/publication or lab permission execution.
+   Do not redeploy A unchanged as an experiment. Each candidate must have its
+   own hypothesis and failing-before/passing-after local regression.
+3. **Bounded ingress observation:** use an in-repo local script, synthetic data
+   and a fresh decision-test parent, journaled before sends. Capture exact role/
+   version/session/response, header-presence and principal-match flags,
+   application-entry/receiver-check outcome and cleanup. Try architect before
+   reviewer; stop the candidate on a held/unknown effect. Never resend to get a
+   missing receipt. Review existing exact responses instead. Any deployment
+   prerequisites still use the original DevOps source/Linux/package gates and
+   retained publisher, not an architecture-loop bypass.
+4. **Decision output:** `selected-A`, `selected-B`, or `unresolved`, with cause,
+   actual tests, binding-compatibility result, exact private evidence locators,
+   changed permission scope/rationale (if any), held effects and closing action.
+   A selected path needs successful trusted specialist ingress, not merely the
+   offline probes. Confirm both roles before claiming release collaboration.
+   The decision test is not AC1-AC5 or G1-G8 release acceptance.
+5. **Continue artifacts regardless:** unresolved selection does not block
+   remaining design, release planning, fixtures or documentation. A true
+   provider-only finding needs a specific unavailable supported remedy after
+   these alternatives are assessed; external contact/disclosure remains excluded.
+
+The script must require an explicit scenario and record its finite intended
+call sequence, not run uncontrolled inference or a benchmark. Diagnostic
+inference permission is not automatic authority to repeat an unknown effect.
+If the existing environment cannot exercise B without a new package, hand the
+minimal reviewed change to original DevOps; do not silently deploy during
+architecture to force path selection.
+
 If only provider-side caller resolution can supply the remedy, preserve exact
 private evidence and report the required human/provider action; provider contact
 or evidence transfer is not authorized. A bounded research task can close with
@@ -163,8 +348,9 @@ Never repeat an uncertain stop or clear its marker to retry.
 
 The lab's account-wide Blob Contributor policy means role/parent restrictions
 are application-enforced. They do not protect against a malicious hosted process
-using its identity outside these adapters. Do not request RBAC changes or claim
-storage-enforced tenant isolation to satisfy the prototype.
+using its identity outside these adapters. Do not claim storage-enforced tenant
+isolation to satisfy the prototype. The identity-remediation permission exception
+above does not require changing this Blob policy.
 
 ## Downstream implementation and fixture handoffs
 
@@ -177,7 +363,7 @@ additional approval stages or a replacement sprint plan.
 | Developer: continuity regression | Extend `test_followup_invalidates_old_approval_and_preserves_children` to record both roles' hosted/framework IDs, versions, response sequence, exactly two creations, both turn invocations, current requirements and stale approval invalidation | No live claim from fakes; do not compare entire changing framework dictionaries as immutable |
 | Developer: controlled revision fixture | Force architect -> blocked reviewer -> same architect -> same reviewer; record exact bindings, new response IDs, revised candidate and review refs and final approval | Do not replace the actual workflow with a toy loop or treat this as live AC3 proof |
 | Developer: model continuation | Exercise each real specialist stage with restored history and captured model-session/continuation arguments; prove the second model call uses prior stored history, plus fresh/absent history negative control and known-response no-resend recovery | Replaying a full brief or checking memory text alone is insufficient |
-| Developer: supported runtime correction | Evidence-backed failing-before regression and smallest supported fix; preserve identity, artifacts, routing and recovery contracts | No speculative headers/grants, history reset or fourth service |
+| Developer: supported runtime correction | Evidence-backed failing-before regression and smallest supported path A/B fix under the selection contract above; preserve identity, artifacts, routing and recovery contracts | No speculative headers/grants, history reset or fourth service; authorized necessary permissions are not categorically excluded |
 | Designer: customer clarity | First-screen README goal/diagram/two-turn invariant/source path/status, plus concise terminal continuity display derived from validated real events and useful design/review output | No UI/framework rewrite; diagnostic chronology belongs in the existing recovery document |
 | DevOps: exact release and live proof | Required source checks, actual Linux hosting-package gate, guarded exact-package preview/publication, final common bundle and synthetic G1-G8 evidence or precise external stop | No metadata-only PASS, mixed diagnostic final release or repeated unknown effect |
 
@@ -215,14 +401,19 @@ The critical live chain is supported identity remedy -> verified source/package
 stop/resume -> evidence closeout. Offline tests and clarity can proceed independently
 of remedy discovery. Separate-parent live execution needs the final release and
 initial-parent evidence for comparison, not the first parent's restart.
-Only the DevOps work loop publishes and executes live operations. Serialize the
+Only the DevOps work loop publishes and establishes cloud-pass. Bounded decision
+tests are allowed during design/planning as described above, not formal E2E
+acceptance; all tests use deterministic local repository scripts, never GitHub
+Actions. The E2E loop owns formal integration validation. Serialize the
 publisher and retained transport/mount/CLI resources; the scheduler is not an OS
 lock. Suggested `exclusiveResources` names for Scrum assignment are
 `lab-hosted-release`, `lab-private-transport` and `application-git-integration`;
 map them to actual shared resources rather than assuming cross-run enforcement.
 
-Architecture work excludes deployment, acceptance execution, support submission,
-runtime repair and unreviewed dirty-source integration. Those remain downstream.
+This architecture turn excludes deployment, formal acceptance execution, support
+submission, runtime repair and unreviewed dirty-source integration. Those remain
+downstream. Future bounded decision tests may be assigned within architecture/
+planning under the current user authority without moving release gates.
 Owners commit explicit owned paths before review; reviewed scoped work is pushed
 on `feature/customer-hosted-session-prototype`. Preserve unrelated staged/dirty
 work; integrate task commits there or durably record named retained branches,

@@ -1,5 +1,19 @@
 # Identity propagation recovery: design and execution plan
 
+## Current invocation authority overlay
+
+The additional October 19, 2026 user approval permits either supported
+authentication-configuration correction or `x-ms-user-identity` delegation,
+including RBAC/permission changes necessary for the chosen path in this lab.
+See the current [release architecture](customer-prototype-architecture.md#supported-identity-alternatives-and-selection-contract)
+for least-privilege scope, trusted principal/namespace checks, bounded scripted
+decision tests and unresolved-path handoff. Older research-task exclusions and
+consumed diagnostic limits below remain historical evidence, not a blanket
+prohibition on these newly approved alternatives. Neither path is live-proven
+by this overlay. Preserve the original UNKNOWN, held parents, historical cleanup
+uncertainty and all G1-G8 requirements; no opaque call ID may become a delegated
+user identity. Provider submission/private evidence transfer remain excluded.
+
 ## Application objective and definition of done
 
 Deliver one working application with exactly three production hosted roles:

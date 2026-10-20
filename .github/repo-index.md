@@ -22,7 +22,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; accepted trust input versus current strict transport, attributed sibling Git versus incomplete resolver proof, designations versus ownership acceptance; unchanged machine contract |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current RP-S1 SprintReview at `b74b84e`: accepted source/clarity and bounded identity reports versus blocked workstation-to-cloud demo, actual ownership evidence/access closing action and retained original-owner RP-S2/RP-S3 backlog; E2E FAIL and DevOps incomplete remain. Recovery plan retains unique sprint goals, minimal edges and live gates; older overlays remain history |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Current RP-S3 blocked closeout at `b809cb9`: per-criterion AC1-AC9/G1-G8 ledger, accepted source/audit/observation handoffs versus missing substantive ownership acceptance, independent trust and actual operational join; attributed 204-test Windows result, conditional demo, unknown final/rollback bindings and unverified final push |
-| Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S1 consumes accepted architecture/UX/release-plan inputs at `0d0f17b`; retains A-D two-turn/revision/history and parser/privacy contracts, F/G operator boundaries; supplied accepted trust and designations are not current strict transport or ownership acceptance; older sprint overlays remain history |
+| Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S2 at `30c4a53` maps ownership/access recovery, reviewed runner/loaded-root integration, original E2E and serialized DevOps to retained A-D/F-G screens; accepted trust/designations differ from substantive ownership and current execution proof; G1-G4/non-held initial parent gates RP-S3 continuation; older overlays remain history |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S1 consumes accepted recovery-input architecture/UX/release plan and sprint design at `a1e8544`; retains both-role two-turn/revision/history proof, parser-safe clarity and conditional identity selection; supplied trust/designations remain distinct from current transport, ownership and loaded-root integration; earlier sprint overlays retain history |
 | Current RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Dispatch-ready current five-input handoff at `302d886`: independent original ownership/source-check assignments, accepted fixture/clarity reuse, supplied trust/designations, gated runner and explicit loaded-root/Git integration; original E2E and serialized DevOps retained, early RP-S2 work is not an RP-S1 live exit criterion |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
@@ -40,6 +40,12 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+SprintDesignLoop current RP-S2 freshness: inspected clean authorized feature
+baseline `30c4a534bad1aa38b6b8f46a246c9b84262ecf18`; refreshed only existing
+sprint design and this navigation, no paths added/deleted. Consumes accepted
+RP-S1 handoffs without reopening them or transferring reviewer votes. Maps
+current blocked work and initial collaboration proof to retained screens;
+no UI implementation, private evidence inspection, runtime or live claim.
 SprintRetroLoop current RP-S1 freshness: inspected clean authorized feature
 baseline `350352282f6defafc777dff5c6748d7fb2da3b59`; updated only existing
 Architecture, UserExperience, ReleasePlan retrospective sections and this

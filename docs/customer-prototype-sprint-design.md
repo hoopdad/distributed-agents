@@ -1,6 +1,89 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Current RP-S1: accepted-input continuity handoff (October 20, 2026)
+## Current RP-S2: repair, observation and initial-parent handoff (October 20, 2026)
+
+This invocation selects **RP-S2: supported repair and exact three-role remote
+collaboration**. Inspected clean application feature-branch baseline
+`30c4a534bad1aa38b6b8f46a246c9b84262ecf18`. Consume the supplied current sprint,
+accepted Architecture and UserExperience with their RP-S1 retrospective
+additions, ReleasePlan and accepted RP-S1 SprintDesign. No Designer
+implementation assignment is supplied. Reuse Screens A-D and operator Screens
+F/G; no renderer, browser UI, flag, dependency or public event/schema change.
+This section is the current routing/status interpretation; older overlays
+retain historical observations, not current execution facts or additional gates.
+
+### Current journey and existing screens
+
+```text
+A: customer goal -> exactly three hosted roles -> stable-session invariant
+   -> qualified blocked notice and short source path
+F: supplied coordination/trust -> actual ownership/root evidence accepted?
+   no: runner blocked; existing ownership Developer supplies actual capture/access
+   yes: reviewed runner -> actual loaded-root integration -> original E2E
+   + independent original DevOps trust/inventory lane (within YAML phase order)
+G: joined readiness + rollback + exact-source/Linux/package gates
+   -> serialized guarded publication -> pre-parent source/package/version join
+   -> architect trusted ingress -> reviewer trusted ingress
+   -> supported identity selection (not compound release acceptance)
+B: actual current artifacts accepted + private Blob provenance + Decision-1
+   + verified final common bundle -> completed, non-held initial-parent handoff
+```
+
+| RP-S2 criterion / state | Retained presentation and closing owner/action |
+|---|---|
+| Ownership evidence unavailable | F says reporting accepted, ownership incomplete, runner blocked. Existing ownership Developer recovers actual nonsecret resolver contents, branch/HEAD/base, eight-path statuses, owner-specific hashes with line-ending explanation and source-bound matched/crossed-root results into the approved external handoff, or restores already-authorized read access. Originating Architect/Critic perform substantive review before runner writes. No denied probes, new designation request or write probe. |
+| Runner and operational integration incomplete | F distinguishes accepted application checks from missing runner review and actual loaded roots/bytes/hashes. Developer completes retained runner, then designated integration Developer reconciles reviewed commits and operational source with durable Git accounting; original E2E validates the subsequent exact join. |
+| Trust/inventory and package preparation | F says accepted trust input supplied; current strict transport and rollback readiness require actual DevOps verification. Supplied fingerprint/reference and writer designation are not absent inputs, nor execution proof. DevOps retains local-script exact-source, retained-suite, Linux/amd64/hosting-Python and package gates before guarded publication. |
+| Bounded ingress decision | G reports only observed role/gate outcomes. Architect must be reached before reviewer; both roles' trusted ingress is required for supported A/B selection. Preparation rejection is not receiver rejection; partial ingress, unknown effects and unobserved counts stay explicit. |
+| Initial collaboration / G1-G4 | B/G show useful current candidate/review only when available, with sanitized producer/revision context. A common final bundle, actual remote acceptance of matching immutable references, private managed-identity Blob provenance and genuine Decision-1 remain independent proof obligations. Neither HTTP 200 nor selected identity path is PASS. |
+| Transition to RP-S3 | Only a completed non-held initial parent on the verified common bundle enables same-file queue follow-up. Preserve actual parent/both-role hosted/framework bindings and pins, distinct advancing response IDs, checkpoints and effect state. Live follow-up, supported recovery and isolation remain RP-S3 work, not new RP-S2 UI. |
+
+Screen F's current illustrative operator copy is:
+
+```text
+RP-S2 | BLOCKED | reporting accepted; execution not established
+Ownership: incomplete; runner writes blocked
+Integration / identity selection / live collaboration: unverified
+Next: existing ownership Developer supplies actual capture or restored read access
+      for originating Architect/Critic acceptance; then runner/integration/E2E
+Customer-ready: no
+```
+
+This is reporting guidance, not new terminal output or independently refreshed
+evidence. Exact private locators, full identifiers, hashes and trust material
+stay in the private owner handoff. Zero creates/sends may be reported only
+when observed; absence of execution evidence is not a measured zero.
+
+### Presentation, dispositions and bounded handoff
+
+Retain opt-in `--native --view human` stderr, unchanged default stdout and
+delegation/result parsing, chronological calls, useful current design/review,
+explicit status labels, wrapping, terminal-default light/dark appearance and
+control-character neutralization. Safe aliases are not binding proof. Held,
+malformed or incomplete outcomes override success-looking content; recover
+known responses without resend and preserve unknown effects.
+
+Apply `["yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop","sprint-design-completion-status"]`
+only to the accepted RP-S1 design; its votes do not transfer here. Preserve
+`["yaml-loops-v1:ArchitectureLoop","architecture-completion-status"]`,
+`["yaml-loops-v1:UserExperienceLoop","ux-completion-status"]` and
+`["yaml-loops-v1:ReleasePlanLoop","release-plan-completion-status"]`
+within their originating closed deliverables. Preserve the exact originating
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`
+condition: task remains incomplete and runner blocked, despite qualified
+agreement with its report. No stop/no-progress history is reset.
+
+Designer considers this current flow/screen mapping complete for original
+Product Owner/Critic review; current RP-S2 votes are not supplied. Scrum owns
+contract-first decomposition, resource serialization and Git reconciliation
+assignment, not a new approval stage. Existing Developer, E2E and DevOps
+closing actions remain unchanged. No ownership evidence, deployment, selected
+identity path or G1-G4 success was verified by Designer. Preserve historical
+UNKNOWNs, held parents, unrelated work and rollback assets. Blob isolation
+remains application-enforced, not storage-RBAC or malicious-host isolation.
+Design acceptance does not establish AC1-AC9/G1-G8 release acceptance.
+
+## Historical RP-S1: accepted-input continuity handoff (October 20, 2026)
 
 This invocation selects **RP-S1: evidence-ready source and understandable
 continuity**, not the historical RP-S3 selection below. Inspected clean

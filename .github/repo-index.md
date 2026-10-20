@@ -172,12 +172,18 @@ No added/deleted paths, runtime, dependency or event schema changes; E2E and
 DevOps retain formal validation and publication/cloud-pass respectively.
 Neither identity path nor final package/live gates are proven by this revision.
 
-Sprint-plan freshness: based on accepted SprintArchitecture `202e381` and
-SprintDesign `4c8511d`, with the same 17 pre-existing dirty paths preserved.
-Added `docs\customer-prototype-sprint-plan.json`: eight bounded assignments,
-six initially ready non-overlapping lanes, explicit source/Git integration and
-separate original DevOps ownership. Dispatch and planning reviewer agreement
-remain the existing orchestrator's next actions; no implementation is claimed.
+Current SprintPlanLoop freshness: inspected clean application baseline
+`97d8610f2691c7440ba74b40933f500c0af46801` on the authorized feature branch.
+Replaced obsolete eight-task redispatch with five concrete delta assignments:
+newly authorized identity-path script/contract and fresh target inventory start
+in parallel, followed by explicit source reconciliation, bounded decision and
+independent exact-source delivery checks. Retain accepted fixture/README/terminal
+commits and all five provenance-qualified upstream completion dispositions.
+No added/deleted paths, runtime/dependency changes or lab edits. The unrelated
+dirty lab branch stays untouched; any required lab permission/tool writing
+needs internal ownership/branch replanning, not new permission approval.
+Actual parallel dispatch and original planning votes belong to the orchestrator;
+this plan neither asserts those events nor proves either identity path live.
 
 S1-MODEL freshness: based on assignment baseline `8759b7f` and the two
 pre-existing role-local `artifact_mode`/`SessionCandidate`/`SessionReview`

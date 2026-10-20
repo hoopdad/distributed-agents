@@ -1,5 +1,100 @@
 # Customer hosted-session prototype: release plan
 
+## RP-S1 retrospective: inputs, measures and decisions (October 20, 2026)
+
+Product Owner retrospective deliverable, based on clean feature HEAD
+`835713aa1e201f7d3f3f471ca453f1a773e26f27`. Opened the original sprint-review
+outcome and original E2E, DevOps, partial-correction, amended-plan,
+completed-correction and integration outcomes. The review's four original
+reviewers agree, taskComplete true, no unmet criteria. This is acceptance of
+the bounded review/backlog, not deployment or the customer outcome.
+This retrospective's six original reviewer votes are still pending.
+
+### Evidence and communication measures
+
+The following is a **seven-outcome sample**, not a full-run error/latency metric.
+Files are under the supplied run `bf0d82d9-657b-4055-9f7c-6306ce08163d/context`;
+prefixes uniquely identify the opened outcome JSONs.
+
+| Outcome / audit prefix | Recorded rounds and result | Retrospective interpretation |
+|---|---|---|
+| Partial context correction / `f0423c1c` | 1, needs-replan; both reviewers taskComplete false | Validation foundation was retained; missing caller propagation and packaging-path ownership prevented completion. |
+| Scoped plan amendment / `fa085b8b` | 1, agreed; all three votes taskComplete true | One-path ownership reconciliation preserved the original Developer, task and outer graph. |
+| Completed context correction / `21ce1b00` | 1, agreed; both votes taskComplete true | Caller propagation and integrated regressions accepted at `42a70533`; no operational execution implied. |
+| Source integration / `e0001d3b` | 1, agreed; both votes taskComplete true | Joined commits, loaded-source evidence and reviewed feature readback accepted at `576b613`. |
+| E2E / `abd55a79` | 1, agreed; all three votes taskComplete true | Local integration PASS / release acceptance FAIL; agreement does not invert the FAIL. |
+| DevOps preparation / `b53113c5` | 1, agreed; all three votes taskComplete true | Bounded actionable preparation, not cloud-pass; Docker Linux endpoint unavailable, live observations unreached. |
+| Sprint review / `f2f25e66` | 1, agreed; all four votes taskComplete true | Accepted prioritized backlog and truthful unmet-live status, not a successful demonstration. |
+
+Six sampled outcomes agreed and one required scoped replanning. Single-round
+records do not measure elapsed delivery time, messages, token cost, total
+retries or productive-round rate; those aggregates are not established here.
+No new count/reset of consecutive no-progress rounds is inferred.
+Review, DevOps and this retrospective's document activity are not new live
+progress. Existing implementation milestones are not reclaimed for credit.
+
+Observed error evidence is narrower than a system defect count:
+
+- Partial correction reported 11 retained-discovery errors from mixing lab
+  `live_acceptance` with application fixtures. Final accepted discovery bound
+  both application modules before retained imports: 194 tests, 191 passed,
+  three originating Linux-only skips. Keep that fixture handoff; do not count
+  the eleven import errors as eleven runtime defects or rerun unchanged tests.
+- Sprint review recorded one failed preservation assertion from implicit
+  subprocess decoding; explicit UTF-8 and LF normalization passed without
+  changing prior content. Use explicit decoding for document-preservation
+  checks; raw release-byte hashes remain raw, not normalized substitutes.
+- DevOps reported `docker info` exit 1 / missing selected Linux-engine endpoint.
+  Cause beyond that unavailable endpoint remains unknown. Metadata/account/
+  trust checks were owner-attributed; no fresh package, ingress or live proof
+  exists. This retrospective executes none of those operations.
+
+### Decisions and improvements applied
+
+| Decision / accountable existing owner | Applied artifact improvement and closing observation |
+|---|---|
+| Caller-complete decomposition / Architect and Scrum Master | Architecture now requires actual caller inventory before path ownership is finalized for the next necessary correction. Consume the completed packaging amendment once; final caller checks and exact-source handoff, not helper-only PASS, close implementation. |
+| Evidence-current presentation / Designer and clarity/closeout owner | UX now supplies configuration-complete/local-PASS/live-unverified copy. Refresh README and release ledger through existing measured closeout ownership, not a reopened README or terminal task. Preserve human stderr, machine stdout and safe-alias limitations. |
+| Reproducible validation / Developer | Preserve explicit application fixture binding and platform exclusions in future changed-source handoffs; use explicit UTF-8/LF only for text-preservation comparisons. Actual Linux skipped coverage remains original DevOps work. No new tooling or unchanged-suite rerun is requested. |
+| Execute the real critical path / original serialized DevOps, Scrum coordinates | Carry forward the review's Linux-engine readiness -> actual Linux/common-package gates, and selected-route readiness -> fresh inventory -> guarded publication/architect-before-reviewer trials -> live G1-G8. Independent readiness may prepare in parallel; shared release mutations remain serialized. |
+| Distinguish agreement from delivery / Product Owner | Keep local PASS, bounded preparation, release FAIL and unreached demo distinct in existing sprint/release closeout. AC1-AC9 are unchanged; source/context acceptance is neither runtime-identity repair nor customer-ready delivery. |
+
+The Architecture and UserExperience retrospective overlays are applied in this
+same scoped documentation change. Existing RP-S1/RP-S2/RP-S3 contracts, current
+SprintPlan graph and review backlog below are unchanged. There is no new task
+dispatcher, approval stage, enhancement gate or architecture rewrite.
+Windows helper pins are conditional on selecting Windows transport; guarded
+WSL readiness is its own route. Actual user/systemd/cgroup/profile/azd/mount,
+fresh deployed/rollback bindings and private provenance remain execution work.
+No user-only remedy is established by endpoint absence.
+
+### Dispositions, Git and handoff
+
+Read all five supplied priorDispositions, applying exact origin and boundary.
+The references
+`["yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop","sprint-plan-output-shape"]`
+and `["yaml-loops-v1:sprint/1/RP-S1/SprintPlanLoop","sprint-plan-original-dispatch"]`
+remain planning-only. Under
+`yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-OPERATIONAL-CONTEXT/plan-round/2/AssignedWorkDeveloperLoop`,
+`operational-context-caller-completion`, `operational-context-final-checks-handoff`
+and `operational-context-package-caller-ownership` are consumed by the accepted
+correction, integration and E2E, not reopened or superseded by this retro.
+No unrelated deferred scope becomes a blocker or a waiver.
+
+This turn owns only the Architecture, UX, ReleasePlan overlays and repository
+navigation; no task code is integrated or abandoned. Accepted code is already
+joined per the original integration/E2E handoffs. Prior accepted implementation
+is not redispatched. New documentation is committed before original review and
+remains unpushed pending that review; designated integration/closeout owns later
+reviewed feature push/readback. No branch switch, lab write, credential access,
+cloud call, package build, deployment, inference or stop/resume is performed.
+Preserve historical UNKNOWNs, held parents, rollback assets, unrelated dirty
+work, application-enforced Blob isolation limits and historical cleanup
+uncertainty. Original five-consecutive-no-progress semantics remain binding.
+Owner accepts this bounded retrospective for the original Scrum Master, Critic,
+Architect, Red Team, Designer and Developer reviews; collective agreement is
+not claimed. Subsequent work uses existing sprint/release stages and owners.
+
 ## RP-S1 sprint review: corrected source join, live demonstration unreached (October 20, 2026)
 
 This is the latest **Sprint Review Loop** entry, owned by the Product Owner.

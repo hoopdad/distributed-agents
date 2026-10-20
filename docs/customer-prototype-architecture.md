@@ -1,5 +1,38 @@
 # Customer hosted-session prototype: release architecture
 
+## RP-S1 retrospective: close caller ownership before implementation (October 20, 2026)
+
+Product Owner process improvement, consuming accepted sprint review `835713a`
+and the original audits listed in the
+[retrospective decisions](customer-prototype-release-plan.md#rp-s1-retrospective-inputs-measures-and-decisions-october-20-2026).
+This changes no canonical component, flow, runtime or three-root contract.
+Earlier future-tense correction instructions below are historical: lab
+`42a70533` and application integration `576b613` are accepted; original E2E
+accepted local integration PASS, not release PASS.
+
+For the next necessary correction, Architect and Scrum Master trace the named
+entry points through their actual dependent callers before finalizing exclusive
+path ownership. The observed omission was `bundle_package.py`, which still
+selected the tooling-root WSL profile after the initial validation helpers were
+committed. Foundation `d0073536` was useful partial work, not caller completion.
+The existing one-path ownership amendment resolved this without a rewrite,
+new stage or renewed ownership designation. Do not repeat that accepted work.
+
+Keep source ownership, imported operational context and execution readiness as
+separate claims. Exact loaded bytes and negative caller tests close the source
+join; actual selected-route checks, Linux package gates and receiver evidence
+close their own later boundaries. Windows-helper acceptance applies only when
+that route is selected; it is not a prerequisite for the independently guarded
+WSL route. This retains, rather than expands, accepted sprint-review direction.
+Developer's next changed-source handoff must identify fixture binding, required
+platform exclusions and the exact joined commits. A passing helper suite cannot
+stand in for affected callers, and Windows skips cannot close Linux coverage.
+
+Owner: existing Architect for contract impact, Scrum Master for bounded task/path
+reconciliation, Developer for changed-source checks, original serialized DevOps
+for execution. No new schema, framework, private-profile access, authority or
+identity remedy is introduced. Historical UNKNOWNs and held parents survive.
+
 ## Current architecture amendment: operational context is not tooling ownership
 
 This entry supersedes only the pending ownership/runner and operational-root

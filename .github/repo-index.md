@@ -1,5 +1,14 @@
 # Repository index
 
+RP-S1 retrospective freshness: based on clean feature review `835713a` and
+seven opened original outcome audits for run `bf0d82d9`. Architecture, UX and
+ReleasePlan now capture caller-complete ownership, current evidence-qualified
+status copy, fixture/decoding lessons and existing-owner execution handoffs.
+Six sampled agreements and one scoped replan are not full-run latency/error
+metrics or live progress. No runtime/contract, entry-point, inventory or path
+additions/deletions; older overlays remain history. Retrospective votes pending,
+no deployment/live acceptance or renewed ownership/implementation assignment.
+
 RP-S1 sprint-review freshness: based on clean application feature `576b613`
 and original E2E/DevOps outcome JSONs for run `bf0d82d9`. The newest entry in
 `docs/customer-prototype-release-plan.md` records accepted local source join
@@ -76,7 +85,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
 | Current RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Current `1bce6e1` architecture/`76c797b` design and accepted `b74b84e` source-check handoff; existing ownership evidence recovery and read-only outgoing-drift preparation run independently, then eight-path sibling runner and explicit loaded-root/Git integration; original E2E and serialized DevOps inventory/trial/G1-G4 retain actual live gates; accepted reports are not redispatched |
 | Current RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Current `c22d809` architecture/`23a4d9a` design and `afe6d4d` retrospective; originating ownership evidence recovery parallel with read-only validator/observation handoff; accepted `0e9add5` application audit consumed without redispatch; eight-path runner and explicit loaded-root/Git integration precede original E2E and serialized DevOps G1-G8. Supplied trust used first, attributed execution distinguished from inspected capture |
-| RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Current recovery-entry review `3503522`: eight two-round accepted boundaries versus single-round planning; qualified report agreement versus substantive ownership and actual loaded-source proof, attributed offline checks and mixed metadata versus live gates; existing-owner decisions and measurement limits, no ownership reset or live waiver; older overlays retain history |
+| RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Current review `835713a`: seven-outcome sample, scoped packaging-caller reconciliation, accepted source/local E2E versus unmet Linux/package/live; caller-complete decomposition, measured-status copy and fixture/UTF-8 lessons under existing owners. No reopened accepted handoff, extra stage, new live credit or waiver; prior retrospective overlays retain history |
 | Current RP-S2 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted review `1e5eb2a`: six single-round accepted boundaries versus unchanged live block; incremental application handoff consumed once, prerequisite execution owner-attributed versus inspected script scope, existing ownership/access and independent inventory closing actions; no new schema, duplicate implementation or live waiver; older overlays retained |
 | Current RP-S3 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted review `be996f8`: retained observation map versus actual provenance/installation; independent containment-source/resource preparation and originating ownership acceptance; conditional README instructions do not close DevOps delivery. Six supplied single-round accepted boundaries are not live progress or measured latency; existing-owner actions and three sprint contracts retained |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |

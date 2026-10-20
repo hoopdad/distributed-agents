@@ -1,5 +1,36 @@
 # Customer hosted-session prototype: user experience
 
+## RP-S1 retrospective: status must advance with evidence (October 20, 2026)
+
+Product Owner improvement consuming accepted sprint review `835713a`; see
+[inputs and decisions](customer-prototype-release-plan.md#rp-s1-retrospective-inputs-measures-and-decisions-october-20-2026).
+No terminal, screen, stdout/parser, alias or canonical journey changes.
+Earlier configuration-pending copy below is retained history, not current
+operator guidance: the context correction and changed-source E2E are accepted.
+The real two-turn customer demonstration remains unreached.
+
+Existing clarity/closeout ownership should refresh README and release status
+together at the next measured closeout, without reopening accepted README
+`f4ec1496` or redispatching renderer implementation. Use this evidence hierarchy:
+
+> Release BLOCKED, not customer-ready. The operational-context correction and
+> local integration checks are complete. Actual Linux hosting-package checks,
+> selected private-route readiness, final common-bundle publication and live
+> collaboration/continuity/recovery/isolation remain unverified.
+
+Attribute the missing Docker Linux-engine endpoint to the DevOps preparation
+observation, not to a newly diagnosed installation, authentication or provider
+failure. Management-plane metadata and supplied host trust do not establish
+specialist ingress. Historical `NATIVE_HOST_PRINCIPAL` remains historical.
+Keep conditional setup/demo instructions and useful design/review output;
+do not manufacture a demonstration transcript or stable-session proof from
+safe aliases. Follow-up requires a completed non-held initial turn.
+
+Designer preserves Screens A-D/F/G and the existing human-stderr projection;
+the existing closeout owner updates measured copy and original reviewers check
+its consistency with the release ledger. No new UI task or live waiver arises.
+Only an actual supported device-code request warrants a user action prompt.
+
 ## Current UX amendment: operational readiness without reopening accepted work
 
 This entry consumes accepted Architecture

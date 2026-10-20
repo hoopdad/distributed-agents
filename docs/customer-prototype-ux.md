@@ -1,6 +1,91 @@
 # Customer hosted-session prototype: user experience
 
+## Current ownership-designation UX handoff (October 20, 2026)
+
+This Designer revision consumes agreed architecture commit
+`f72b0f3c1206418f08fc62a149e80f7c12c55e81`, the inspected clean application
+baseline on `feature/customer-hosted-session-prototype`. Prior reference
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-agreed-deliverable"]`
+closes its originating Architecture Loop only. Do not reopen that acceptance
+or infer Product Owner/Critic agreement on this UX revision from those votes.
+The retained principles, toolsets, journeys, README/terminal wireframes,
+accessibility and evidence-to-display contract below remain the full UX
+direction. This overlay reconciles operator handoff language, not customer
+implementation, live capability or another approval stage.
+
+### Supplied designation is evidence, not a new customer action
+
+The user's coordination defaults now explicitly designate Developer as the
+runner writer for `RP-S2-DECISION-RUNNER` in the registered feature sibling
+and integration owner for `RP-S2-SOURCE-INTEGRATE` across both repositories.
+They also acknowledge preservation of canonical dirty/staged work, task-owned
+paths and path-scoped commits. Consume these with the supplied recovery
+evidence through the original ownership review. Do not ask the customer to
+repeat the writer acknowledgement or integration-owner designation.
+
+The originating ownership reference is
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+This UX artifact does not supersede that disposition or pass its acceptance.
+Architecture's [exact eight-path writer boundary and current-source limits](customer-prototype-architecture.md#current-ownership-designation-architecture-october-20-2026)
+remain authoritative. No runner writes follow merely from this document,
+sibling registration, clean status or historical receipt availability.
+
+| Operator boundary | Report direction / existing owner action |
+|---|---|
+| Supplied writer and integration designations | Coordination evidence supplied; Scrum/Developer carries it with recovery evidence into original ownership acceptance. Not missing human approval, accepted ownership or permission for premature writes. |
+| Current sibling/exclusive-path verification unavailable | State the precise unverified observation; Developer/Scrum closes it through the existing approved inspection mechanism. Architecture reports a tool-denied direct sibling inspection, not proof of safe writing or missing user authority. |
+| Ownership accepted, runner not yet reviewed/integrated | Preparation remains incomplete. Developer works only at the designated writable location and paths; integration reconciles reviewed commits and actual loaded operational sources. |
+| Matched roots or required wrapper source not established | Pre-dispatch preparation failure; do not report a specialist invocation or offer a customer root override. Preserve the existing owner guard and exact source join. |
+| Historical trust receipt present, current trust/inventory unverified | Transport owner/DevOps supplies current strict-trust and sole-target inventory evidence; receipt presence is not fresh authentication or hosted ingress. |
+| Identity trial or partial ingress observed | Report only reached roles and actual receiver results; selection is not final common-bundle release, two-turn continuity, recovery or isolation. |
+
+These interpretations use existing reports. They add no banner, field, CLI
+flag, retry control, evidence ledger, identity picker or root picker. Private
+roots, receipt locators, trust material and full bindings stay out of customer
+output. Retain plain-text role blocks, light/dark terminal defaults, no-color
+labels and control-character neutralization. The opt-in human stderr view
+keeps stdout/delegation/result/parser behavior unchanged.
+
+### Customer flow and original-owner completion boundary
+
+README goal/three-role diagram/two-turn example/source map -> validated setup
+-> fresh synthetic initial conversation -> completed, non-held follow-up with
+the same private session file. Show useful current design/review output and
+chronological repeated calls. Stable parent/both-child hosted and framework
+bindings and pinned versions differ from advancing response IDs and artifacts;
+aliases alone verify none of those equalities. Model history, workflow
+checkpoints and artifact/effect state remain distinct. An uncertain operation
+stays held; no new parent, resend or version migration evades it.
+
+Keep README's blocked/unverified release notice until actual release evidence
+changes it. A preparation stop is not a fresh `NATIVE_HOST_PRINCIPAL` failure.
+Accepted presentation/continuation/assertion work is retained, not redispatched.
+Designer doneWhen is this full-scope UX handoff plus original Product Owner
+and Critic agreement. Scrum owns assignments/Git reconciliation, Developer
+owns scoped runner/source integration after ownership acceptance, E2E owns
+formal integrated validation, and DevOps owns exact Linux/package checks,
+guarded publication and actual live demonstration through retained scripts.
+No new framework, browser UI, dependency, public contract or runtime change.
+AC1-AC9/G1-G8 remain unchanged; account-wide Blob permissions still provide
+application-enforced role/parent isolation, not malicious-host/storage-RBAC
+isolation. No private receipt authentication, cloud inventory, identity-path
+selection, measured live usability or deployment is performed by this UX turn.
+
+### Local verification for this overlay
+
+With the existing absolute lab Python 3.12.10 executable and explicit lab root,
+`Test-Demo.ps1` passed dependency checking, **204 offline tests in 49.630
+seconds**, and compilation. `scripts/Test-Repository.ps1` passed index,
+**79-public-file** boundary, syntax/context and whitespace checks. No
+dependencies were installed. No lab source changed; the retained full lab
+suite and Linux hosting-package checks were not run for this documentation-only
+revision. These local checks do not establish current ownership acceptance,
+trust, deployed/rollback bindings or live release readiness.
+
 ## Current recovery-entry UX handoff (October 20, 2026)
+
+Historical recovery-entry overlay: retain its dated observations; use the
+ownership-designation overlay above for current coordination/reporting.
 
 This Designer revision consumes agreed architecture commit
 `2f62e3ca5353fdbc3433e1f49fdf9133f95dacbc`, also the inspected clean

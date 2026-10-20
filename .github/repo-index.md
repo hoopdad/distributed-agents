@@ -19,7 +19,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current explicit writer/integration designation overlay, unchanged original ownership review and matched operational-wrapper boundary; historical resolver evidence versus current verification, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
-| Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, current recovery-entry matched-root/trust interpretations, unchanged machine contract and bounded implementation checks |
+| Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, supplied ownership designations versus original acceptance/current verification, matched-root/trust interpretations and unchanged machine contract |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current recovery-entry overlay and three retained sprint goals/acceptance contracts; historical receipts/resolver evidence versus writing/current trust, matched operational-wrapper integration, minimal original-owner dependencies and unchanged live final gates |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S1 recovery-entry journey and report-state mapping for historical evidence versus current ownership/trust and matched operational roots; retained screens/fixtures, RP-S3 continuity/recovery/isolation reports, unchanged machine contracts and original execution owners |
@@ -39,6 +39,14 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Ownership-designation UX freshness: inspected clean agreed-architecture
+baseline `f72b0f3c1206418f08fc62a149e80f7c12c55e81`; updated only UX
+handoff and this navigation, with no added/deleted paths. Supplied writer and
+integration-owner designations are coordination evidence for original ownership
+review, not new customer input or accepted writing authority. Retains full UX
+screens/tools, safe aliases, stdout/parser, matched-source joins and existing
+E2E/DevOps owners. No private receipt inspection, runtime/lab mutation, new
+implementation assignment or live capability is inferred.
 Ownership-designation architecture freshness: inspected clean application
 baseline `4212a7b59270a0fe791735385a4359a6ab30cb68`; updated only release
 architecture and this navigation, with no added/deleted paths. Consumes the

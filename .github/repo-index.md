@@ -18,7 +18,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
-| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; installed `3aca5dc` B candidate versus live selection, scenario/source/package join and Developer-runner/DevOps-trial ownership; authorized A/B paths, principal discriminator, continuation and AC1-AC9 evidence map |
+| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current recovery-entry evidence and executed canonical/sibling resolver matrix, matched operational-wrapper boundary; installed B candidate versus live selection, source/package join, original-owner handoffs and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, unchanged machine contract and bounded implementation checks |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Three sprint goals/acceptance contracts; installed B candidate review, safe lab checkout and pre-E2E Developer runner/integration; later DevOps inventory/trial, scenario/source/package join, truthful preparation/receiver outcomes and unchanged final gates |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
@@ -38,6 +38,13 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Recovery-entry architecture freshness: inspected clean application baseline
+`3d731c00e8373774bf8254a8f060eac621d0e928`; updated only release architecture
+and this navigation, with no added/deleted paths. Bounded approved inspection
+ran both actual canonical/sibling resolvers with matching/mismatching roots
+and checked local settings/registry/receipt linkage. Keep runtime, package,
+identity, prior accepted handoffs and original execution owners unchanged;
+local resolver success is not writing ownership, current trust or live selection.
 Release-closeout freshness: inspected clean baseline
 `44177bce27d5d4e0f76dcfb5993f9cf0ae51c3a7`; added only blocked release
 notes, updated README first-screen status and this index. No runtime, lab

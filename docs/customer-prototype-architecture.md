@@ -1,5 +1,188 @@
 # Customer hosted-session prototype: release architecture
 
+## Current recovery-entry architecture (October 20, 2026)
+
+This section is the current Architecture Loop handoff at inspected application
+HEAD `3d731c00e8373774bf8254a8f060eac621d0e928`, on
+`feature/customer-hosted-session-prototype`, initially clean. The older
+architecture, tier contracts, accepted source and blocked release notes remain
+history and retained contracts; they are not fresh execution evidence.
+The supplied `priorDispositions` and reconciled feedback are empty for this
+invocation. Historical originating references below identify their own bounded
+acceptance, not new votes or authority for this loop.
+
+### Decision and unchanged end-to-end design
+
+Retain Python and the pinned Microsoft Agent Framework/Foundry Responses
+implementation, Pydantic artifact contracts, Azure managed-identity private Blob
+access and the existing PowerShell/Python/WSL release chain. No dependency,
+framework, schema, hosting role or infrastructure change is required by this
+architecture delta. The installed specialist-only B client remains a candidate,
+not a live-selected repair. A remains available only as an evidenced supported
+authentication/configuration correction with its own reviewed source.
+
+The complete release remains:
+
+```text
+synthetic terminal -> same hosted coordinator parent
+  -> MAF begin / gated Decision-1 route / remote execute / fenced publish
+  -> same parent-owned architect child -> immutable current candidate
+  -> same parent-owned reviewer child  -> exact candidate review
+  -> deterministic current-reference acceptance, or revise and repeat
+follow-up -> same parent and both children; fresh responses/current outputs
+supported stop/resume -> same bindings, retained checkpoints/effects, no resend
+separate parent -> separate children, artifact scope and requirements
+```
+
+Preserve trusted principal equality, immutable exact prerequisites and outputs,
+ETag/fencing, request-local client authority, model-history continuation,
+bounded calls, checkpoints and write-ahead effects. Conversations, workflow
+position and artifact/effect state remain distinct. Never derive delegation
+from an opaque call ID, change receiver equality to make B work, adopt held
+parents or infer model memory from replayed requirements.
+
+### Newly inspected recovery evidence: what it establishes
+
+The supplied recovery-exception locator was used first for procedural recovery.
+Read-only inspection of the three named summaries and four named connectivity/
+metadata receipts establishes the following **historical** evidence:
+
+- `publication-summary.json` reports one successful coordinator 22 -> 23
+  diagnostic publication, unchanged identity and newly owned cleanup. It
+  explicitly preserves the original publication UNKNOWN.
+- `diagnostic-summary.json` binds matching outbound opaque context, absent
+  trusted architect user and `NATIVE_HOST_PRINCIPAL`, with the operation held.
+  Reviewer entry was not reached; the mixed diagnostic bundle is not final.
+- All four named receipts report independently accepted fingerprint matching
+  the existing entry and closure of their own jobs/listeners. This supplies an
+  inspectable historical trust/closure locator, not a new fingerprint, current
+  host verification, module-path attestation or original-publication cleanup.
+- Loading the existing native settings **only** through `Use-Settings.ps1`
+  passed local schema validation. Local comparisons passed lab-root/region/
+  registry tenant/subscription linkage, the attempt's project linkage and all
+  four receipts' tenant/subscription/origin linkage, without displaying values.
+  No authenticated Azure context, active versions or effective grant was read.
+
+Keep private paths, receipt contents, principals and full session identifiers
+outside this repository. The workflow handoff carries exact private locators.
+Receipt claims are not independently authenticated by these local comparisons.
+The historical `further_dispatch_or_inference_authorized=false` and consumed
+single-attempt authorization do not override the newer user-approved run;
+neither does the newer authority close historical unknown effects.
+
+### Observed root compatibility and implementation boundary
+
+Read-only Git inspection found:
+
+| Checkout | Observed branch / HEAD | Meaning |
+|---|---|---|
+| Canonical lab | `feature/swc-think-fast-aca-dns` / `63348876535de7c264dc1e9139bb6fd2684b0052` | Six modified and two untracked paths remain unrelated, unadopted and untouched |
+| Existing registered sibling | `feature/customer-hosted-session-prototype` / `bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703` | Clean at inspection; registration and branch name do not prove exclusive writing ownership or runner implementation |
+
+Both actual resolver implementations were read and exercised without mutation,
+authentication, package creation or network calls. Each loaded resolver was
+tested with the application and each lab root:
+
+| Resolver loaded from | Supplied lab root | PowerShell result | Python result |
+|---|---|---|---|
+| Canonical lab | Canonical lab | Pass | Pass |
+| Canonical lab | Sibling | `LAB_TOOL_OWNER_MISMATCH` | `LAB_TOOL_OWNER_MISMATCH` |
+| Sibling | Canonical lab | `LAB_TOOL_OWNER_MISMATCH` | `LAB_TOOL_OWNER_MISMATCH` |
+| Sibling | Sibling | Pass | Pass |
+
+All eight expected outcomes passed. Python ran with `-B`; no resolver global
+was patched and no settings or path guard was changed. This is actual local
+resolver execution, not just source inspection. It proves a source/root pairing
+constraint, **not** writer exclusivity, cloud-profile compatibility, full runner
+integration or permission to execute effects from the sibling.
+
+**Architecture decision:** do not pass the canonical operational lab root to a
+sibling-owned wrapper (or vice versa), and do not weaken `LAB_TOOL_OWNER_MISMATCH`.
+Keep the canonical operational context and any separately assigned writable
+tooling checkout explicit. A runner developed in the sibling can orchestrate
+canonical retained wrappers only as an explicit separate invocation rooted in
+their own canonical lab. The reviewed runner/tool revisions and source hashes
+must be joined before execution; sibling changes to wrappers are not installed
+canonical changes. If the required wrapper delta is absent at the operational
+root, integration is incomplete and effects must not start.
+
+Alternatively moving execution to the sibling would require proof that every
+retained profile, registry, settings, stage and source-owner guard remains
+compatible. This document does not choose that unproven move or authorize copying
+credentials/settings, changing CLI profiles or switching a shared branch.
+The smallest current path is explicit runner-to-existing-operational-wrapper
+composition, with existing guards intact, not a third root abstraction.
+
+The historical stopped task reference is
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+The current user's explicit read-only Git/sibling-resolver approval permits
+the observations above; it does not retrospectively mark that task complete,
+restart its writes, supply a missing original review or supersede an accepted
+handoff. Scrum reconciles this new evidence through the existing original
+owners/reviewers. Do not redispatch accepted candidate, continuity, UX or
+assertion work. No new user approval is needed for the already authorized
+bounded inspection, and no new approval stage is introduced.
+
+### Minimal closing work for original planning and execution owners
+
+These are concrete handoff contracts; ReleasePlan/Scrum owns task IDs,
+assignment, minimal edges and Git reconciliation.
+
+| Owner / boundary | Done when | Exclusions / handoff |
+|---|---|---|
+| Developer / Scrum: checkout ownership | Reconcile the observed sibling branch/HEAD/status and both resolver matrices with actual point-in-time writer ownership; original reviewers can inspect the bounded evidence | Registration alone is insufficient; no write probe, worktree recreation, branch switch or restart of the stopped task by inference |
+| Transport owner / DevOps: existing trust | Consume the named historical trust receipts; locate the already approved owner module/source and fingerprint through the existing bounded inspection mechanism, verify current exact hashes and strict trust before Metadata | Historical `host_trust` text is not a fingerprint/module path; do not generate replacement trust, scan credentials or treat new cleanup as historical closure |
+| Developer: retained runner | Implement/review deterministic local runner against the existing decision-runner contract, explicit matched wrapper roots and fail-closed source/scenario/package/version join; include root mismatch and unknown-effect negatives | Coding waits for writing ownership, not cloud inventory; no automatic fallback, public event/schema change, live claim or second evidence ledger |
+| Integration owner / Scrum | Join reviewed application/runner/wrapper revisions, account for drift, preserve unrelated work and record scoped task commits/retained branches on the feature branch | Do not assume sibling wrapper commits are installed at canonical root; no broad commit or shared-checkout branch switch |
+| Original E2E | Run formal checks on the exact joined implementation through local scripts, including retained assertion and root mismatch cases | Accurate predeployment FAIL is allowed; architecture probes are not formal E2E or release PASS |
+| Original DevOps | Fresh verified sole-target inventory/grant/rollback/unknown readback, exact-source/Linux/common-package gates, guarded publication and finite trusted ingress discriminator; then full live G1-G8 if selected | No unchanged-A experiment, held-parent resend, speculative grant or repeated uncertain stop/publication |
+
+Application preparation/assertion work can continue independently of lab
+ownership and transport. Trust plus verified context enables fresh read-only
+inventory independently of runner coding. Reviewed source integration and fresh
+inventory join before publication/trial; only a demonstrated necessary grant
+adds scripted exact-scope plan/write/readback. All actual cloud effects stay
+with DevOps. Formal integration stays with E2E. Scheduler resources
+`lab-hosted-release` and `lab-private-transport` serialize their corresponding
+publisher/profile/mount effects but do not create cross-run OS isolation.
+
+The finite trial must still observe architect trusted entry and receiver
+success before reviewer, preserving reached/unreached distinctions. B's
+principal namespace compatibility and effective permission remain unresolved.
+An observed mismatch returns to this Architect-advised PO/Scrum process; no
+namespace bypass is preapproved. Unresolved selection does not block remaining
+release/planning artifacts. Provider action is required only for a specific
+supported remedy that cannot be resolved within the authorized alternatives;
+case submission/private disclosure remain excluded.
+
+### Acceptance, evidence categories and owner completion
+
+The existing AC1-AC9 matrix below remains binding: real collaboration and
+two-turn continuity; controlled offline revision/history proof; once-only
+supported recovery and separate-parent isolation; full private MI/provenance/
+Decision-1 G1-G8 gates; truthful human terminal/README alongside unchanged
+machine evidence; final-source application/repository/retained/Linux checks;
+reviewed scoped feature-branch push; and exact final/rollback/cleanup handoff.
+Account-wide Blob Contributor still means application-enforced ownership and
+isolation, not malicious-host or storage-RBAC separation.
+
+This turn supplies local recovery-entry evidence and an executable-root
+boundary, not identity-path selection or customer-ready delivery. It makes no
+cloud mutation, deployment, inference, Linux-package or live acceptance claim.
+Exact current deployed/rollback versions remain unknown. The completeWhen for
+this Architecture Loop still requires original Product Owner, Red Team and
+Critic agreement on the committed architecture; none is fabricated by the owner.
+
+Local verification for this delta used the existing absolute validated Python
+3.12.10 executable and explicit canonical lab root: `Test-Demo.ps1` passed
+dependency checking, **204 offline tests in 47.776 seconds**, and compilation.
+`scripts/Test-Repository.ps1` passed index, **78 public files**, JSON/PowerShell/
+context and whitespace checks. The architecture's relative links/anchors and
+AC1-AC9/identity/root contract checks passed. No dependencies were installed.
+No lab source changed, so the full retained lab suite was not rerun; the eight
+resolver observations above are bounded read-only checks, not that suite or a
+Linux hosting-package gate.
+
 ## RP-S3 retrospective: assertion correctness is not observation provenance
 
 The [RP-S3 retrospective](customer-prototype-release-plan.md#rp-s3-retrospective--offline-proof-and-unreached-live-outcomes)

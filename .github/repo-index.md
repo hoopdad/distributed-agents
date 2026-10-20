@@ -1,5 +1,17 @@
 # Repository index
 
+RP-S2 execution-plan freshness: based on clean feature `3d615f11` and registered
+lab feature sibling `42a70533`; six opened original architecture/design and
+E2E/DevOps/review/retro audits retain their bounded agreements. New
+`docs/customer-prototype-rp-s2-execution-sprint-plan.json` supersedes only the
+old RP-S2 dispatch list. Current source/ref reconciliation consumes accepted
+implementation; original E2E precedes original-phase parallel Linux-engine/
+container checks and selected-route/fresh inventory. One publisher joins their
+successful handoffs, then verifies actual common-bundle G1-G4/non-held parent.
+Explicit resources and pre/post-execution Git owners preserve UNKNOWNs, original
+stops and downstream RP-S3. No runtime/interface change or lab write; prior plan
+files remain audit history. Actual dispatch and original reviews follow.
+
 RP-S2 sprint-architecture freshness: based on clean feature `4a1b1add` and
 opened original amendment, integration, E2E, DevOps, review, retrospective and
 RP-S2 design outcomes for run `bf0d82d9`. Current cumulative sprint architecture
@@ -105,7 +117,8 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Current RP-S1 operational-context assignments | `docs\customer-prototype-current-sprint-plan.json` | Consumes five accepted inputs through `5906ee3` and originating accepted ownership/runner/integration without redispatch. Existing Developer's explicitly owned five-entry-point/caller context correction and README status correction fan out; reviewed commits join through dedicated source/Git integration. Original-phase remaining containment/resource/trust/inventory preparation is independent. Changed-join original E2E precedes serialized DevOps package/live gates; preserves stops and UNKNOWNs, no live readiness claim |
 | Earlier RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Retained earlier five-task contract and audit navigation; superseded dispatch list only. Its originating ownership stop and accepted source-exclusion handoff remain binding within their original boundaries |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
-| Current RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Current `1bce6e1` architecture/`76c797b` design and accepted `b74b84e` source-check handoff; existing ownership evidence recovery and read-only outgoing-drift preparation run independently, then eight-path sibling runner and explicit loaded-root/Git integration; original E2E and serialized DevOps inventory/trial/G1-G4 retain actual live gates; accepted reports are not redispatched |
+| Current RP-S2 execution assignments | `docs\customer-prototype-rp-s2-execution-sprint-plan.json` | Accepted current architecture `3d615f11`/design `4a1b1add`: source/ref reconciliation, original E2E, independent original-phase Linux and selected-route/inventory readiness, one exact-package/ingress publisher, actual G1-G4 and measured status/Git reconciliation. Existing accepted callers, ownership, runner and README are consumed, not repeated; original stops and RP-S3 retained |
+| Historical RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Earlier graph retained as originating audit evidence; its dispatch list is superseded by the current execution plan, not its stop/UNKNOWN or actual live acceptance boundaries |
 | Current RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Current `c22d809` architecture/`23a4d9a` design and `afe6d4d` retrospective; originating ownership evidence recovery parallel with read-only validator/observation handoff; accepted `0e9add5` application audit consumed without redispatch; eight-path runner and explicit loaded-root/Git integration precede original E2E and serialized DevOps G1-G8. Supplied trust used first, attributed execution distinguished from inspected capture |
 | RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Current review `835713a`: seven-outcome sample, scoped packaging-caller reconciliation, accepted source/local E2E versus unmet Linux/package/live; caller-complete decomposition, measured-status copy and fixture/UTF-8 lessons under existing owners. No reopened accepted handoff, extra stage, new live credit or waiver; prior retrospective overlays retain history |
 | Current RP-S2 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted review `1e5eb2a`: six single-round accepted boundaries versus unchanged live block; incremental application handoff consumed once, prerequisite execution owner-attributed versus inspected script scope, existing ownership/access and independent inventory closing actions; no new schema, duplicate implementation or live waiver; older overlays retained |
@@ -1124,6 +1137,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`
+- `docs\customer-prototype-rp-s2-execution-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-sprint-plan.json`
 - `docs\customer-prototype-sprint-architecture.md`

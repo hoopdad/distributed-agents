@@ -1,6 +1,26 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
-## Current RP-S2 trusted ingress boundary
+## Current RP-S1 accepted-input history boundary
+
+Consume the [current RP-S1 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s1-accepted-inputs-and-evidence-ready-continuity-october-20-2026).
+Retain both real five-stage role flows and `specialist_history_v2` load/model/
+store. Child hosted/framework identity, internal model history and advancing
+response continuation are distinct. Both-role persisted-value snapshots,
+identical-brief fresh-history controls, repeated-call fixtures and exact-response
+zero-send recovery remain offline proof, not live memory or trusted ingress.
+No new specialist endpoint, history schema or duplicate implementation task.
+
+Supplied coordination and attributed partial sibling inspection cannot prove
+either receiver's entry. Observe architect trusted ingress/equality before
+reviewer dispatch with exact prerequisites; reviewer requires independent
+evidence and private immutable output provenance. Local preparation rejection
+leaves receivers unreached. Preserve principal equality, role ownership,
+unknown-effect holds and original later live continuation/recovery/isolation
+gates; never rekey history or adopt held children to make a trial pass.
+
+<a id="current-rp-s2-trusted-ingress-boundary"></a>
+
+## Historical RP-S2 trusted ingress boundary
 
 Consume the [current RP-S2 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s2-joined-execution-inputs-and-independent-trust-october-20-2026).
 Retain both five-stage flows, `specialist_history_v2`, persisted-value snapshots,

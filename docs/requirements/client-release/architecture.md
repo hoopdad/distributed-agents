@@ -1,6 +1,27 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
-## Current RP-S2 trust and release join
+## Current RP-S1 accepted-input presentation and release boundary
+
+Consume the [current RP-S1 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s1-accepted-inputs-and-evidence-ready-continuity-october-20-2026)
+and accepted SprintDesign Screens A-D. Retain README's customer goal, useful
+opt-in human stderr, safe aliases and unchanged stdout/parser. Separate
+operator decision/hold reporting from demonstration proof; no new renderer,
+flag, public fields or comparison ledger. A supported decision or actionable
+unresolved RP-S1 handoff does not pass live release gates.
+
+Existing Developer closes originating owned-path/resolver review before
+eight-path sibling runner writes and integrates reviewed source at actual
+loaded roots with durable task/branch/commit accounting. Keep canonical dirty
+work and root guards intact. DevOps independently establishes strict trust
+and current inventory. Original E2E validates joined inputs; original DevOps
+owns exact Linux/package/publication and live gates using local scripts.
+No upstream agreement substitutes for these observations or this loop's votes.
+Keep private evidence out of customer output/Git, preserve UNKNOWNs/held parents/
+rollback assets and disclose application-enforced account-wide Blob isolation.
+
+<a id="current-rp-s2-trust-and-release-join"></a>
+
+## Historical RP-S2 trust and release join
 
 Consume the [current RP-S2 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s2-joined-execution-inputs-and-independent-trust-october-20-2026)
 and accepted current SprintDesign. Retain README/customer screens, Screens F/G,

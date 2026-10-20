@@ -1,6 +1,27 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
-## Current RP-S2 joined execution boundary
+## Current RP-S1 accepted-input continuity boundary
+
+Consume the [current RP-S1 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s1-accepted-inputs-and-evidence-ready-continuity-october-20-2026).
+Retain explicit begin/route/execute/publish, parent-owned child lookup, restored
+remote `AgentSession` and pinned versions. Two turns and four-call revision
+fixtures compare actual parent/both-role hosted/framework identities, exactly
+two child creations, fresh responses, current prerequisites and invalidated
+stale approval. Serialized continuation fields may advance; replayed briefs
+do not prove model history. Keep immutable refs, trusted receiver equality,
+ETag/fencing, Decision-1 after deterministic gates and unknown-effect holds.
+No duplicate implementation or coordinator rewrite is requested.
+
+Consume successful upstream sibling Git evidence separately from incomplete
+resolver/loaded-root verification. Supplied designations do not accept ownership.
+Original ownership review precedes runner writes; designated integration joins
+reviewed actual operational bytes before original E2E/DevOps. Preparation
+rejection is not receiver failure; B remains candidate-only. Record both roles
+independently and preserve later live G1-G8, recovery and isolation obligations.
+
+<a id="current-rp-s2-joined-execution-boundary"></a>
+
+## Historical RP-S2 joined execution boundary
 
 Consume the [current RP-S2 overlay](../../customer-prototype-sprint-architecture.md#current-rp-s2-joined-execution-inputs-and-independent-trust-october-20-2026).
 Retain accepted parent/both-child hosted/framework bindings, pinned versions,

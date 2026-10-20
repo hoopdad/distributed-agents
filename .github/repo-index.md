@@ -28,7 +28,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
 | RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Stopped evidence-only ownership carryover and independent application integration preparation; runner/source join, later strict-trust inventory, exact publication/finite trial and explicit actual G1-G4 handoff; accepted candidate/UX and RP-S1 audit contract retained |
 | RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Evidence-only stopped carryover alongside independent missing scripted-comparison work; reviewed runner/source integration consumes accepted application preparation; original DevOps gates actual G1-G4, two-turn continuity, once-only supported recovery, independent isolation and truthful exact-source delivery |
-| RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Supplied review/process observations, metric limits, bounded evidence-handoff improvements and existing-owner actions; no reset of stopped ownership or live acceptance waiver |
+| RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Current closure/envelope and session-specific evidence-access lessons, attributed metric limits, bounded-report completion versus execution, existing-owner actions; historical retrospectives retained, no ownership reset or live acceptance waiver |
 | RP-S3 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted offline assertion/repair lessons, meaningful negative controls and separate observation provenance; unreached live demonstration, current originating votes, preserved stopped lanes and existing integration/release ownership |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
@@ -39,6 +39,15 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Current RP-S1 retrospective freshness: inspected clean SprintReview baseline
+`1ceeb96671c446a9c0770bdbd0141f08c7ae9b77`; updated only Architecture,
+UserExperience, ReleasePlan and this navigation, with no added/deleted paths.
+Consumes supplied current outcomes and exact prior dispositions without
+reopening accepted handoffs, repeating private probes or changing contracts.
+Preserves separate ownership/trust lanes and original integration/E2E/DevOps
+owners; documentation and repeated checks are not substantive runtime progress.
+No current retrospective reviewer agreement, live proof or Git integration of
+runner work is inferred.
 RP-S1 sprint-review freshness: inspected clean baseline
 `f037cd650a5869193f9bfb85453ae3b06aaabf83`; updated only the release
 plan and this navigation, with no added/deleted paths. Consumes retained

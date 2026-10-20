@@ -1,5 +1,32 @@
 # Customer hosted-session prototype: release architecture
 
+## Current RP-S1 retrospective — inspectable evidence is not transitive
+
+The [current retrospective](customer-prototype-release-plan.md#current-rp-s1-retrospective--closure-and-inspectable-handoffs-october-20-2026)
+refines evidence handoff practice, not the accepted architecture. Supplied writer
+and integration-owner designations resolve coordination input; they do not prove
+current sibling branch/base/status, owned-path preservation or loaded resolver
+behavior. Historical receipt linkage, point-in-time safe writing, strict host
+trust and successful specialist ingress remain separate facts.
+
+DevOps reports reading the named recovery files; the originating ownership
+assignment and reviewers report permission-denied reads and sibling inspection.
+Do not silently promote one role's observation to another role's accepted setup.
+Resume the already-authorized bounded evidence inspection in a permission-capable
+session and present substantiated proof through the existing Architect/Critic
+ownership review. Keep runner writes gated under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`;
+do not request supplied designations again, probe writes or recreate checkouts.
+
+Existing Developer integration then reconciles reviewed application, runner and
+required operational-wrapper revisions against actual loaded roots, preserves
+unrelated work and records durable task/branch/commit accounting and scoped push.
+Independent strict-trust inventory remains with DevOps. Original E2E validates
+exact joined inputs before DevOps exact-package/publication/live acceptance.
+No root guard, trusted receiver equality, session/history contract, dependency,
+identity remedy or AC1-AC9/G1-G8 criterion changes. Accepted architecture stays
+closed; this retrospective neither reapproves it nor proves live readiness.
+
 ## Current ownership-designation architecture (October 20, 2026)
 
 This Architecture Loop inspected initially clean application HEAD

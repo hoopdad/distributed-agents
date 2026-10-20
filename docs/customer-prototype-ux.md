@@ -1,5 +1,33 @@
 # Customer hosted-session prototype: user experience
 
+## Current RP-S1 retrospective — report completion without implying execution
+
+The [current retrospective](customer-prototype-release-plan.md#current-rp-s1-retrospective--closure-and-inspectable-handoffs-october-20-2026)
+retains existing screens and machine contracts. Operator handoffs should separate
+the bounded deliverable's status from the execution outcome and state evidence
+attribution, the unreached boundary and the existing owner/closing action.
+For example: "Partial-inventory report complete; authenticated private inventory
+blocked at HOST_TRUST_EVIDENCE_REQUIRED. DevOps needs the previously accepted
+fingerprint and acceptance reference, then retained strict-trust checks."
+This is report wording, not a new terminal field, schema or customer control.
+
+Similarly, supplied writer/integration designations are available coordination
+evidence, while current sibling/root acceptance remains unmet. Successful
+DevOps reads do not imply the originating reviewers could inspect the same
+evidence. Keep private locators, fingerprints and full bindings outside customer
+Git/output. Do not fabricate specialist rows, advertise an unreviewed runner
+command or label historical mixed-version metadata as the final demonstration.
+Alias equality and plausible memory text still do not prove continuity.
+
+When collected original votes close a bounded report, acknowledge that agreement
+in the existing response rather than repeating screenshots, tests or status-only
+commits. Keep a corrected ReleasePlan envelope alongside its unchanged sprint
+definitions; presentation clarity cannot repair an invalid machine handoff.
+The three-role/two-turn journey, useful design/review output and opt-in human
+stderr projection remain unchanged. Live presentation proof stays with the
+original execution owners. No new UX implementation or acceptance stage is
+assigned and no accepted upstream handoff is reopened.
+
 ## Current ownership-designation UX handoff (October 20, 2026)
 
 This Designer revision consumes agreed architecture commit

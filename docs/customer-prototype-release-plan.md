@@ -1,5 +1,87 @@
 # Customer hosted-session prototype: release plan
 
+## Current RP-S1 retrospective — closure and inspectable handoffs (October 20, 2026)
+
+Product Owner input baseline: accepted SprintReview commit
+`1ceeb96671c446a9c0770bdbd0141f08c7ae9b77`, its corrected structured
+ReleasePlan handoff, the supplied original reviews, current-source and E2E
+reports, and the DevOps prerequisite stop. Application Git inspection found
+that commit on `feature/customer-hosted-session-prototype` with a clean index
+and worktree. This retrospective does not repeat private evidence inspection,
+sibling/root probes or cloud operations. Older retrospectives below are dated
+observations, not current execution records or reasons to repeat stopped work.
+
+### Outcomes, communication observations and metric limits
+
+| Input / observed scope | Finding and decision |
+|---|---|
+| Supplied Architecture, UX, ReleasePlan, SprintDesign, SprintArchitecture and E2E outcomes each record two rounds, including agreement/status reconciliation | Consume collected originating votes once in the existing loop. Owner-ready, reviewer agreement and downstream execution acceptance are distinct. Do not rerun checks or create a status-only commit just to acknowledge already collected votes. These counts are not a measured error rate or elapsed delay. |
+| Supplied SprintReview records three rounds; its transport rejected the omitted `ReleasePlan.sprints`, subsequently restored with the existing RP-S1/RP-S2/RP-S3 definitions | Treat payload validity as part of the existing handoff, not a new approval stage. Before returning an updated ReleasePlan, check nonempty sprints and unique string IDs alongside retained goals/criteria. A report can be substantively accepted but undeliverable until its envelope is corrected. |
+| Current-source and E2E reports separately record 204 offline tests in 47.492 and 48.016 seconds; SprintReview records a further 204-test run in 54.968 seconds | Attribute each run to its source and purpose; do not sum durations into product latency, treat repeats as new progress, or substitute Windows/offline results for exact joined/Linux/package/live gates. |
+| Developer and originating reviewers were denied exact recovery reads/direct sibling inspection; DevOps reports successful parsing of the seven named files, while its reviewers disclose denied independent reads | Evidence availability is execution-session-specific. Pass exact inspectable evidence to the existing ownership review in a permission-capable session, without requesting supplied designations again. Another role's successful read is neither sibling safety nor originating acceptance. |
+| Current DevOps report: retained prerequisite script exited 1 at `HOST_TRUST_EVIDENCE_REQUIRED`; ARM/context checks reportedly passed | Keep the current exit/result distinct from older reports below. The supplied files reportedly contain no accepted fingerprint comparison value; this does not prove no such receipt exists elsewhere. Recover only the exact established value/reference or locator, then resume retained strict-trust inventory. |
+| Original reviews accept three bounded DevOps reporting alternatives, but DevOps cloud-pass remains false | Preserve completed partial-inventory/unresolved/prerequisite-stop deliverables while carrying their execution closing actions. Do not redispatch the same research solely because live acceptance remains unmet. |
+
+These observations use supplied reports, not newly authenticated private/cloud
+receipts. No complete communication-attempt denominator, error taxonomy,
+end-to-end elapsed time, token/cost total or measured customer usability result
+is available. Do not invent rates, savings or a provider diagnosis. The supplied
+current no-progress counter is zero, with no credited advances; historical
+stopped ownership history is separate and is not reset by this retrospective.
+Documentation decisions and repeated checks receive no substantive-progress
+credit.
+
+### Decisions and application to existing artifacts
+
+| Artifact / existing accountable role | Improvement carried forward | Closing evidence, within original boundary |
+|---|---|---|
+| [Architecture](customer-prototype-architecture.md#current-rp-s1-retrospective--inspectable-evidence-is-not-transitive), Architect; Developer/Scrum execute existing ownership/integration assignments | Distinguish supplied coordination, historical receipt linkage, current sibling safety, loaded operational roots and live ingress. Evidence inspection by one role does not transitively accept another role's setup. | Original Architect/Critic ownership review consumes current bounded branch/base/status/owned-path and resolver evidence before runner writes. Integration subsequently joins reviewed actual loaded roots and records task/branch/commit accounting and scoped push. |
+| [UserExperience](customer-prototype-ux.md#current-rp-s1-retrospective--report-completion-without-implying-execution), Designer; existing owners supply observations | Report bounded deliverable completion separately from its blocked execution outcome, attribution and next action. Preserve the customer-facing three-role journey and safe aliases; no new CLI/event fields. | Existing reviews verify truthful handoffs; existing presentation tests remain retained. Only actual later live bindings and artifacts can support a demonstration, not illustrative rows or report agreement. |
+| ReleasePlan, Product Owner; Scrum Master coordinates | Preserve two independent P0 lanes: ownership evidence before runner writing, and accepted host trust before authenticated inventory. Check the existing structured handoff before return; consume originating agreements without closure churn. | Existing task reviews close concrete gaps, then runner -> integration -> original joined-input E2E -> guarded DevOps package/live gates. No new task IDs, dependencies, approval stage, runner command or public evidence ledger. |
+
+Priority and owners remain those in the current sprint-review backlog below:
+DevOps/established transport owner recovers the accepted fingerprint/reference;
+Developer completes originating ownership substantiation before runner work;
+the designated Developer integrates reviewed source/operational roots and
+accounts durably for intended commits; E2E validates the exact joined inputs;
+DevOps executes final-package and live gates. Scrum retains contract-first
+decomposition, resource coordination and assignment of Git reconciliation.
+Do not duplicate accepted implementation, fixtures or presentation.
+
+Apply exact references
+`["yaml-loops-v1:sprint/1/RP-S1/SprintReviewLoop","sprint-review-restore-release-plan-sprints"]`
+and
+`["yaml-loops-v1:sprint/1/RP-S1/SprintReviewLoop","sprint-review-close-agreed-deliverable"]`
+to the accepted review/envelope only. Apply
+`["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-close-agreed-failure-report"]`
+to completed predeployment FAIL reporting, not future joined-input PASS.
+Preserve the unresolved ownership boundary under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+Architecture, UX, ReleasePlan, SprintDesign and SprintArchitecture closure
+dispositions remain confined to their originating accepted deliverables.
+No prior decision is superseded and no scope/contract change is proposed.
+
+The Product Owner accepts this retrospective deliverable for the original
+Scrum Master, Critic, Architect, Red Team, Designer and Developer review.
+Their current retrospective votes are not supplied; earlier-loop votes cannot
+be reused as this loop's agreement. Once those originating votes agree, close
+this retrospective without another status-only commit or investigation.
+Its closure does not accept the sprint or release: DevOps remains needs-input,
+customer readiness is false and complete AC1-AC9/G1-G8 satisfaction is not
+established. Current final/rollback bindings are not freshly observed.
+Historical UNKNOWNs, held parents, rollback assets, unrelated work and cleanup
+uncertainty remain preserved. No code is abandoned or merged by this
+documentation-only change; existing integration retains task-commit accounting.
+
+Local validation for this retrospective used the existing absolute validated
+Python with explicit lab root: `Test-Demo.ps1` exited 0 with 204 offline tests
+passing in 43.859 seconds and no broken requirements. `Test-Repository.ps1`
+passed index, 79-file public boundary, JSON, PowerShell, frontmatter and
+whitespace checks. Four current retrospective links/anchors and balanced fences
+in all three artifacts passed a local check. No dependencies were installed;
+no lab source, Linux/package, private-evidence or live operation was performed.
+These checks protect documentation/source, not new product progress.
+
 ## Current RP-S1 sprint review — trust and ownership stops (October 20, 2026)
 
 This review consumes the recovery SprintPlan at

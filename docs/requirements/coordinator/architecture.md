@@ -1,6 +1,25 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
-## Current RP-S2 collaboration acceptance boundary
+## Current RP-S3 continuity and recovery boundary
+
+Consume the [current RP-S3 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-continuity-recovery-isolation-and-truthful-delivery-october-20-2026).
+Retain begin/route/execute/publish and parent-owned create-or-reuse lookup.
+Only an actual completed non-held G1-G4 initial parent enables queue follow-up;
+the supplied missing handoff routes to BLOCKED, not another send. Compare actual
+parent/both-child hosted/framework identities and pins across turns, exactly
+two child creations for the initial/follow-up pair, fresh invocation responses,
+current immutable prerequisites and stale-approval invalidation. After the
+once-only confirmed supported stop, verify same bindings, checkpoints/effects
+and no duplicate sends; known-response recovery is not new invocation.
+Separately verify another parent's child/artifact scope and content exclusion.
+Keep trusted binding, ETag/fencing, Decision-1 after deterministic gates and
+unknown-effect holds. Existing offline comparison/revision fixtures are not live
+proof or duplicate implementation tasks. Original integration/E2E/DevOps gates
+remain; no coordinator rewrite, new schema or held-parent adoption.
+
+<a id="current-rp-s2-collaboration-acceptance-boundary"></a>
+
+## Historical RP-S2 collaboration acceptance boundary
 
 Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-supported-repair-and-exact-remote-collaboration-october-20-2026).
 Retain begin/route/execute/publish, parent-owned child lookup, restored remote

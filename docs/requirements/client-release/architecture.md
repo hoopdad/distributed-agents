@@ -1,6 +1,27 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
-## Current RP-S2 exact-source and truthful execution boundary
+## Current RP-S3 exact-release and truthful delivery boundary
+
+Consume the [current RP-S3 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-continuity-recovery-isolation-and-truthful-delivery-october-20-2026)
+and accepted RP-S3 Screens H-K. Missing completed non-held initial-parent
+evidence routes to blocked F/K reporting; never send follow-up into held state.
+Keep README, safe aliases, opt-in human stderr and unchanged stdout/parser.
+Private exact binding/pin/response/create/send comparisons back a separate
+sanitized evidence companion, not new public fields or a comparison ledger.
+Consume accepted offline assertions without duplicate implementation; original
+integration verifies actual loaded roots and joined checks, then formal E2E.
+Original DevOps retains independent strict trust/current inventory, exact Linux
+hosting-package gates, guarded publication and live continuity/recovery/isolation
+through local scripts with shared mutation serialized. Record actual
+final/rollback bindings privately, reproducible generic demo/setup, all AC/G
+results and newly owned cleanup separately from historical uncertainty.
+Reviewed scoped feature push and durable task/branch/commit reconciliation remain
+integration-owned. Preserve UNKNOWNs, held parents, rollback and unrelated work;
+report agreement or offline PASS cannot establish customer readiness.
+
+<a id="current-rp-s2-exact-source-and-truthful-execution-boundary"></a>
+
+## Historical RP-S2 exact-source and truthful execution boundary
 
 Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-supported-repair-and-exact-remote-collaboration-october-20-2026)
 and accepted RP-S2 Screens F/G. Keep README/customer screens, safe aliases,

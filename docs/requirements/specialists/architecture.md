@@ -1,6 +1,25 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
-## Current RP-S2 independent receiver proof boundary
+## Current RP-S3 continued specialist history boundary
+
+Consume the [current RP-S3 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-continuity-recovery-isolation-and-truthful-delivery-october-20-2026).
+Retain both five-stage flows and `specialist_history_v2`; hosted/framework
+identity, internal model history and advancing response continuation remain
+distinct. Both roles execute initial and queue follow-up turns on their original
+bindings/pins with fresh invocation responses and exact current immutable
+requirements/candidate refs. Retain direct load/model/store, persisted-value,
+identical-brief fresh-history and exact-response zero-send controls as offline
+proof, not plausible-memory or live-ingress certification. After supported
+recovery reuse original children/history and reconcile effects without duplicate
+sends; never rekey, recreate or adopt held children. A separate parent needs
+separate child/history/artifact scope and excludes the first parent's brief.
+Trusted receiver equality and specialist-only delegation remain unchanged.
+No endpoint, history schema, hidden fallback or duplicate fixture task is added.
+Missing initial-parent and live evidence remain unmet execution prerequisites.
+
+<a id="current-rp-s2-independent-receiver-proof-boundary"></a>
+
+## Historical RP-S2 independent receiver proof boundary
 
 Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-supported-repair-and-exact-remote-collaboration-october-20-2026).
 Retain both five-stage flows, `specialist_history_v2`, persisted-value and

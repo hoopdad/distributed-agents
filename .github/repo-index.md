@@ -23,7 +23,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current recovery-entry RP-S2 review at `61a99cb`: blocked demo, accepted outgoing application audit and E2E FAIL versus attributed exit-2 trust stop; existing ownership/trust/runner/integration/actual G1-G4 closing lanes and unavailable RP-S3 initial-parent handoff; older overlays remain history |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S3 maps absent initial-parent handoff to blocked F/K, conditional H two-turn comparison, I once-only supported recovery, J independent isolation and K truthful delivery; retains accepted A-D/F-G/parser/privacy contracts, attributed RP-S2 exit-2 stop and original execution owners; older overlays remain history |
-| Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S2 consumes accepted RP-S1 architecture/retro and RP-S2 design; independent ownership/trust lanes, reviewed actual loaded-source integration, finite both-role ingress versus actual common-bundle G1-G4, original E2E/DevOps and RP-S3 continuity/recovery/isolation gates; prior overlays retain history |
+| Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S3 consumes accepted RP-S2 architecture/retro and RP-S3 design; missing non-held initial parent blocks live continuation, actual both-role continuity, once-only supported recovery, independent isolation and truthful exact-release delivery; retains ownership/trust/integration and original E2E/DevOps gates without duplicate offline implementation; prior overlays retain history |
 | Historical RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Completed-workflow assignment/audit contract, not deployment acceptance; original ownership history remains unresolved, accepted source-check handoff consumed by current RP-S2 plan |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
 | Current RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Accepted `74130a8` architecture/`cf017c9` design and `b13670e` source-check handoff; originating ownership recovery parallel with read-only outgoing application audit, then eight-path sibling runner and explicit matched-root/Git integration; original DevOps strict-trust inventory, finite trial and actual G1-G4; no duplicate source/UX acceptance |
@@ -40,6 +40,15 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+RP-S3 SprintArchitecture freshness: inspected clean authorized feature HEAD
+`1f24c9a07277d2f5b111f83b186db3ad6a5257aa`; refreshed cumulative mapping
+and three tier slices plus this navigation, no paths added/deleted.
+Consumes accepted RP-S2 architecture/retro and RP-S3 design within their
+originating boundaries, without transferred votes. Retains accepted offline
+scenario assertions and current missing initial-parent/ownership/root/trust
+handoffs with attributed observations, original integration/E2E/DevOps and
+exact-source/package/live requirements. No private/lab/cloud inspection,
+task dispatch, runtime implementation or live progress is claimed.
 RP-S3 SprintDesign freshness: inspected clean authorized feature HEAD
 `dd7728cb80b503883d96d3317a3dd5dee28f1c6e`; refreshed only current sprint
 design mapping and this navigation, no paths added/deleted. Retains H-K layouts

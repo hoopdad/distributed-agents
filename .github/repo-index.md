@@ -18,7 +18,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline acceptance and preserved package controls |
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
-| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current explicit writer/integration designation overlay, unchanged original ownership review and matched operational-wrapper boundary; historical resolver evidence versus current verification, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
+| Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current successful direct sibling Git inspection versus denied complete resolver reads, supplied writer/integration designations and unchanged originating ownership review; matched operational roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
 | Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, supplied ownership designations versus original acceptance/current verification, matched-root/trust interpretations and unchanged machine contract |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current RP-S1 blocked sprint review and trust/ownership carryover; bounded report completion versus DevOps cloud-pass, exact existing-owner closing actions, retained designation overlay and three sprint contracts, matched operational-source integration and unchanged live final gates |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
@@ -39,6 +39,14 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Current Architecture Loop freshness: inspected clean application baseline
+`6e08b5470f7cd21ba46505e0c8628d8f1185bc34`; updated only release architecture
+and this navigation, with no added/deleted paths. Direct registered-sibling Git
+status/HEAD/branch inspection succeeded; subsequent complete resolver reads
+were tool-denied and no bypass or matrix execution followed. This narrows the
+originating evidence gap without accepting ownership, authorizing runner writes,
+changing contracts or claiming live progress. Retains original integration,
+E2E/DevOps gates, canonical dirty work and all historical holds.
 Current RP-S2 SprintPlan freshness: inspected clean architecture baseline
 `2fc6498ad2cd694fff76230d89731a0e2263373c`; updated only the existing RP-S2
 assignment JSON and this navigation, with no added/deleted paths. Retains seven

@@ -1,5 +1,92 @@
 # Customer hosted-session prototype: release architecture
 
+## Current Architecture Loop: partial direct inspection (October 20, 2026)
+
+Inspected application baseline `6e08b5470f7cd21ba46505e0c8628d8f1185bc34`
+on `feature/customer-hosted-session-prototype`, initially clean. This invocation
+supplies no prior dispositions or reconciled feedback. Retain the complete
+principles, toolsets, state/identity design, runner contract and AC1-AC9 matrix
+below; no framework, dependency, runtime, public contract or scope change is
+needed. Older dated observations are history, not current execution evidence.
+
+### New evidence closes part, not all, of the ownership inspection gap
+
+The supplied recovery locator was used first: the three required summaries and
+four named receipt candidates all exist and parse as JSON. Only file names and
+top-level key names were displayed, not their private values. This establishes
+availability in this session, not receipt authenticity, accepted fingerprint,
+effective permission, current deployment or cleanup. `Use-Settings.ps1` loaded
+the existing native settings, and a value-suppressed comparison confirmed the
+canonical lab-root link. No authenticated cloud readback was performed.
+
+Bounded direct Git inspection of the registered feature sibling **succeeded**:
+its branch is `feature/customer-hosted-session-prototype`, HEAD is
+`bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703`, and `status --short`
+returned no entries. Registration independently reports that same HEAD/branch.
+This is new direct point-in-time evidence, unlike registration alone or the
+earlier denied direct inspection. It is not exclusive ownership or permission
+to write. Canonical lab HEAD remains
+`63348876535de7c264dc1e9139bb6fd2684b0052` on the unrelated
+`feature/swc-think-fast-aca-dns` branch, now with eleven modified and two
+untracked paths. All thirteen remain untouched; canonical is not a runner or
+integration writing location.
+
+A combined read-only command also returned resolver source text, but its
+aggregate output was truncated. Subsequent direct `view` calls for the sibling's
+`release_roots.py` and `Release-Roots.ps1` were denied by the tool permission
+layer. No alternate read or execution was attempted after that denial. Thus
+this turn does **not** establish complete resolver inspection, a current
+root-matrix execution, loaded-source hashes or wrapper compatibility. Successful
+Git reads must not be generalized into those separate claims.
+
+For the exact originating reference
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`,
+carry this partial evidence and the supplied Developer writer/integration
+designations to the existing ownership review. Do not reopen accepted source
+handoffs, request those designations again, or infer reviewer acceptance.
+The concrete remaining action is complete permission-capable bounded resolver/
+loaded-root and owned-path verification by the existing Developer, then original
+Architect/Critic verification before runner writes. This is an existing task
+closing action, not a new stage or expanded user authority.
+
+### End-to-end handoff remains unchanged
+
+Exactly three hosted roles use pinned MAF/Foundry/Python, strict Pydantic
+contracts, private managed-identity Blob and retained PowerShell/Python/WSL
+tools. The parent manifest, restored remote framework sessions, each
+specialist's model history, graph checkpoints and fenced effect journal keep
+their separate responsibilities. Preserve trusted receiver equality, exact
+immutable prerequisites, role versions, new response IDs and unknown-effect
+holds. B remains candidate-only; A requires a demonstrated supported correction.
+
+Scrum retains minimal contract-first tasks and Git reconciliation. Accepted
+ownership enables the eight-path sibling runner task; designated Developer
+integration joins reviewed application, runner and actually loaded operational
+wrappers without canonical writes or root-guard bypass. DevOps independently
+owns established transport trust and fresh sole-target inventory. Original E2E
+validates joined source through local scripts; original DevOps owns final
+Linux/amd64/hosting-Python package gates, guarded publication, finite both-role
+ingress selection and live G1-G8. Actual release/transport resources must be
+serialized, not merely scheduler-labeled. No GitHub Actions or new infrastructure.
+
+No cloud, permission, publication, inference or supported-stop operation occurs
+in this architecture turn. Current final/rollback bindings remain unverified,
+historical UNKNOWNs/held parents remain preserved, and no release criterion
+passes from these observations. Account-wide Blob Contributor still provides
+application-enforced, not malicious-host/storage-RBAC, isolation. Original
+Product Owner, Red Team and Critic agreement is not supplied in this invocation;
+this owner handoff does not fabricate it.
+
+### Validation of this documentation revision
+
+The existing absolute Python 3.12.10 executable ran `Test-Demo.ps1` with the
+explicit canonical lab root: dependency checking, **204 offline tests in
+64.134 seconds**, and compilation passed (script exit 0). `Test-Repository.ps1`
+passed index, public-boundary (**79 public files**), JSON, PowerShell, context
+and whitespace checks. No dependencies were installed. No lab source changed,
+so its full retained suite was not rerun. These checks are not Linux hosting-
+package validation, formal E2E, fresh runtime progress or live release proof.
+
 ## Current RP-S1 retrospective — inspectable evidence is not transitive
 
 The [current retrospective](customer-prototype-release-plan.md#current-rp-s1-retrospective--closure-and-inspectable-handoffs-october-20-2026)

@@ -39,6 +39,18 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Isolated runtime candidate | `demo\foundry.py:specialist_identity_headers`, `demo\workflow.py:WorkflowRuntime.resources`, `tests\test_isolated_client.py`, `docs\design.md` | B specialist-only project/header/cache; original resource tuple and opaque-only non-specialist authority retained; actual resource lifecycle/cleanup regressions, no live selection |
 | Copilot context | `.github\copilot-instructions.md`, agents and skills | Bounded implementation/review and deployment gates |
 
+Reviewed-source integration freshness: consumed application baseline `f43e58e`
+and original-reviewed lab sibling commits `58e2b32` / `1842984`; no runtime,
+dependency, public-file inventory or architecture changes. The current plan's
+integration handoff and `docs/design.md#reviewed-source-join-and-operational-root-handoff`
+record substantive originating ownership/runner votes, explicit matched sibling
+invocation and actual offline loaded-source verification. Reviewed feature refs
+were pushed and read back in both repositories. The sibling's absent dedicated
+profile versus the prerequisites' root-derived profile remains an explicit
+operational mismatch for original DevOps/Scrum, not permission to copy credentials,
+cross roots or adopt canonical dirty files. Source checks are not Linux/package,
+current-resource or live release proof; older blocked entries remain history.
+
 Sprint-plan accessible-evidence freshness: inspected clean feature baseline
 `cc690b7`; added the current dispatch plan and refreshed this navigation/inventory.
 Opened all five supplied input audits and originating ownership/source-check

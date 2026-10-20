@@ -1,5 +1,63 @@
 # Distributed agents: MAF/Foundry workflow and shared artifacts
 
+## Reviewed source join and operational-root handoff
+
+The source join consumes, rather than reimplements, the accepted application
+continuity, presentation, specialist-history and isolated-client work. The
+application feature baseline is `f43e58e253879a2b5ee1644df344a04b9f9a2f6a`.
+The corresponding lab feature includes runner implementation
+`58e2b32f6cdf3a0a506ed8e4c9f465ffdf94d00b` and reviewed correction
+`18429840e86d92c26611bae3ffdc7095ca87592d`. Both repositories already contain
+these commits on `feature/customer-hosted-session-prototype`; no cherry-pick,
+branch switch or canonical dirty-file adoption is needed.
+
+Originating Architect and Critic substantively accepted the ownership/root
+handoff and then the runner corrections. Their votes supersede the older
+incomplete ownership report only within that originating boundary; stopped
+history, unknown effects and downstream live gates remain intact.
+
+**Use the registered feature sibling as the selected lab/tooling root.**
+Invoke its absolute wrapper path and pass that same root explicitly:
+
+```powershell
+$python = '<existing-validated-absolute-python>'
+$application = '<absolute-application-root>'
+$lab = '<absolute-registered-feature-sibling-root>'
+& "$application\Test-Demo.ps1" -Python $python -LabRepositoryRoot $lab
+& "$lab\foundry-tf\multi-agent\Test-Demo.ps1" -Python $python `
+    -ApplicationRoot $application -LabRepositoryRoot $lab
+& "$application\scripts\Test-Repository.ps1" -Python $python
+```
+
+The executed split-root `Invoke-IdentityDecision.ps1 -Operation Check`
+regression loads its colocated PowerShell resolver and Python runner, uses the
+actual committed application and lab roots, and checks current raw-byte source
+bindings. Its ZIP and exact-version strings are synthetic offline inputs, not
+a Linux hosting package or deployed inventory. Loaded Python module paths and
+PowerShell function source paths were also inspected directly. Both languages
+still reject crossed lab/tool roots with `LAB_TOOL_OWNER_MISMATCH`.
+Raw hashes must be regenerated from the selected files; normalized equivalence
+with historical CRLF files does not authorize reusing historical byte seals.
+Private paths, source-binding maps and registry observations stay in the
+operator handoff, not the customer repository.
+
+**Source loading is verified offline; operational execution is not ready.**
+The retained `Test-LabPrerequisites.ps1` selects `.azure-cli` beneath its own
+resolved lab root. The existing settings loader points to the original
+dedicated profile; the feature sibling has no such profile directory. The
+registered tenant/subscription scope compares equal, but that does not supply
+authentication, current inventory or permission proof. Do not copy credentials,
+substitute profiles, cross the root guard or write the protected canonical
+checkout to hide this mismatch.
+
+Original E2E receives this exact source join. Original DevOps must resolve the
+safe operational profile/root arrangement through existing Scrum coordination,
+join the accepted containment-source report with current helper/resource/trust
+evidence, and run Linux/common-package and serialized live gates. If a source
+change is necessary, Scrum assigns its precise ownership before implementation;
+this handoff neither changes the root contract nor authorizes a new profile.
+Historical UNKNOWN operations and held parents remain untouched.
+
 ## How the same specialist session is reused
 
 The customer invariant is one hosted coordinator conversation repeatedly

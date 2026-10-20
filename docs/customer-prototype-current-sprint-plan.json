@@ -12,6 +12,19 @@
   },
   "priorDispositions": [],
   "feedback": null,
+  "integrationHandoff": {
+    "assignment": "RP-S2-SOURCE-INTEGRATE",
+    "applicationBaseline": "f43e58e253879a2b5ee1644df344a04b9f9a2f6a",
+    "labFeatureCommits": [
+      "58e2b32f6cdf3a0a506ed8e4c9f465ffdf94d00b",
+      "18429840e86d92c26611bae3ffdc7095ca87592d"
+    ],
+    "acceptanceConsumed": "Original Architect and Critic substantively accepted the ownership/root handoff and both required runner corrections in the current originating outcome audits. Their explicit votes, not the older owner report's incomplete fields, establish admission.",
+    "sourceJoin": "Both repositories already contain reviewed work on feature/customer-hosted-session-prototype. Explicit sibling invocation, actual loaded Python/PowerShell resolver paths and the committed offline Check entrypoint establish matched source loading, not cloud installation.",
+    "operationalReadiness": "Unready: the prerequisite script derives its dedicated CLI profile beneath the selected sibling root, where the profile directory is absent; existing validated settings name the original dedicated profile. Preserve guards and credentials. Original DevOps and Scrum resolve the safe operational arrangement before any execution.",
+    "reviewedPush": "Remote feature refs were read back at application f43e58e253879a2b5ee1644df344a04b9f9a2f6a and lab 18429840e86d92c26611bae3ffdc7095ca87592d. New integration documentation awaits its original review before push.",
+    "handoff": "See docs/design.md#reviewed-source-join-and-operational-root-handoff. Original E2E validates the exact join; original DevOps retains containment/resource preparation, Linux/exact-package and serialized live gates. No historical UNKNOWN or held parent is cleared."
+  },
   "scope": {
     "current": "Consume accepted RP-S1 continuity, revision, direct-history, presentation and current-source handoffs without redispatch. Independent containment-source preparation and original-phase DevOps assessment address outstanding operator prerequisites.",
     "earlyStart": "Continue original ownership evidence routing, then conditional sibling runner and actual loaded-source integration as early RP-S2 work. These are not new RP-S1 offline exit criteria.",

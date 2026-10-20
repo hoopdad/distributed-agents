@@ -1,5 +1,63 @@
 # Customer hosted-session prototype: user experience
 
+## Current User Experience Loop: evidence-qualified handoff (October 20, 2026)
+
+This Designer handoff consumes accepted architecture commit
+`45318a50098c44843643ef1a7c5479edb4dfbd38`, also the inspected clean
+application baseline on `feature/customer-hosted-session-prototype`.
+Prior reference
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-completed-deliverable"]`
+closes its originating architecture acceptance only. Retain that agreement;
+it neither supplies Product Owner/Critic votes for this UX handoff nor passes
+ownership or release acceptance.
+
+The full UX principles, existing toolsets/frameworks, journeys, README and
+terminal wireframes, accessibility and evidence-to-display contract below
+remain the deliverable. Older dated overlays are historical observations,
+not the current inspection result. In particular, the accepted architecture
+now reports successful direct sibling Git inspection, followed by denied
+complete resolver reads. Use the following operator interpretation instead
+of the earlier blanket description of denied sibling inspection:
+
+| Available observation | Interpretation and existing closing action |
+|---|---|
+| Architecture reports current sibling branch/HEAD and clean status | Attributed point-in-time Git evidence, not exclusive path ownership, complete root verification or permission for runner writes. Designer has not repeated that inspection. |
+| Complete resolver reads were denied after partial output | Resolver/loaded-root proof remains incomplete; do not describe all Git inspection as denied or claim wrapper compatibility. Existing Developer completes bounded verification and presents it through original ownership review. |
+| Supplied writer/integration designations and recovery-file availability | Coordination and locator availability are supplied evidence, not receipt authentication, current strict trust, accepted ownership or missing user approval. |
+| Architecture owner and original reviewers agree | Architecture deliverable complete; current ownership, source integration and actual release gates remain separate, not reasons to reopen it. |
+
+These are interpretations of existing reports, not new terminal fields,
+banners, root controls or evidence storage. Private roots, full bindings,
+trust material and receipt locators stay outside customer output. Keep the
+originating ownership review and the existing integration, E2E and DevOps
+handoffs; no UX change authorizes a runner write or substitutes for their gates.
+
+Customer direction remains README goal/diagram/two-turn invariant/source map
+-> validated setup -> fresh synthetic initial conversation -> completed,
+non-held follow-up using the same private session file. Show useful current
+design/review content and ordered repeated calls through the implemented
+opt-in human stderr view; preserve stdout/delegation/result parsing. Stable
+parent/both-child hosted and framework identities and pinned versions must
+be checked privately, separately from advancing responses and artifacts.
+Aliases and plausible memory prose do not prove continuity.
+
+Retain plain-text wrapping, no-color labels, terminal-default light/dark
+appearance and control-character neutralization. Retain the existing blocked
+README notice: no identity path is live-selected, and no new deployment,
+continuity, stop/resume, isolation or final/rollback inventory is established
+by this documentation handoff. Preserve historical UNKNOWNs and held parents.
+No new UI, framework, dependency, CLI flag, schema or runtime work is assigned.
+The Designer agrees with this bounded deliverable; original Product Owner
+and Critic verification is requested against the committed UX handoff.
+
+Validation for this documentation-only handoff used the existing absolute
+lab Python executable and explicit lab root: `Test-Demo.ps1` passed dependency
+checking, **204 offline tests in 57.817 seconds**, and compilation (exit 0).
+`scripts/Test-Repository.ps1` passed index, **79-public-file** boundary,
+syntax/context and whitespace checks. No dependencies were installed or lab
+source changed. These local results are not new runtime progress, formal E2E,
+Linux hosting-package validation or live acceptance.
+
 ## Current RP-S1 retrospective — report completion without implying execution
 
 The [current retrospective](customer-prototype-release-plan.md#current-rp-s1-retrospective--closure-and-inspectable-handoffs-october-20-2026)

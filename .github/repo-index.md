@@ -19,7 +19,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Specialist continuation proof | `tests\test_specialist_continuity.py`, `demo\architect_agent.py`, `demo\reviewer_agent.py` | Both real role load/model/store paths and framework execution with controlled external boundaries; serialized-history value snapshots, identical-brief fresh-history controls, exact-response no-send recovery and held-effect regressions (offline only) |
 | Design/handoff | `docs\design.md`, `docs\NEXT-SESSION-PROMPT.md`, migration plan/map, workflow | Blob/MAF workflow design, exhaustive copy-first boundary |
 | Customer prototype architecture | `docs\customer-prototype-architecture.md` | Full-scope release design; current successful direct sibling Git inspection versus denied complete resolver reads, supplied writer/integration designations and unchanged originating ownership review; matched operational roots, B candidate versus live selection, source/package join and AC1-AC9 evidence map |
-| Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels, supplied ownership designations versus original acceptance/current verification, matched-root/trust interpretations and unchanged machine contract |
+| Customer prototype UX | `docs\customer-prototype-ux.md` | Terminal/README journeys and wireframes, safe continuity/evidence labels; current attributed successful sibling Git versus incomplete resolver proof, supplied designations versus original ownership acceptance, unchanged machine contract |
 | Customer prototype release plan | `docs\customer-prototype-release-plan.md` | Current RP-S1 blocked sprint review and trust/ownership carryover; bounded report completion versus DevOps cloud-pass, exact existing-owner closing actions, retained designation overlay and three sprint contracts, matched operational-source integration and unchanged live final gates |
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S2 preparation/report versus execution mapping: independent ownership/trust lanes, accepted bounded reports versus unmet cloud-pass, retained Screens F/G and customer screens/fixtures; matched operational roots, unchanged machine contracts and original execution owners |
@@ -47,6 +47,12 @@ were tool-denied and no bypass or matrix execution followed. This narrows the
 originating evidence gap without accepting ownership, authorizing runner writes,
 changing contracts or claiming live progress. Retains original integration,
 E2E/DevOps gates, canonical dirty work and all historical holds.
+Current UserExperience Loop freshness: inspected clean accepted architecture
+baseline `45318a50098c44843643ef1a7c5479edb4dfbd38`; updated only UX and
+this navigation, with no added/deleted paths. Retains existing customer screens,
+accessibility and parser contracts; distinguishes attributed direct sibling Git
+evidence from unresolved resolver verification. No repeated private inspection,
+new runtime progress, ownership acceptance or live capability is claimed.
 Current RP-S2 SprintPlan freshness: inspected clean architecture baseline
 `2fc6498ad2cd694fff76230d89731a0e2263373c`; updated only the existing RP-S2
 assignment JSON and this navigation, with no added/deleted paths. Retains seven

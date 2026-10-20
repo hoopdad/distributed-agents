@@ -1,5 +1,100 @@
 # Customer hosted-session prototype: release plan
 
+## Current Release Plan Loop: accepted inputs and remaining execution (October 20, 2026)
+
+This Product Owner handoff consumes accepted Architecture
+`45318a50098c44843643ef1a7c5479edb4dfbd38` and UserExperience
+`b7aa978584b144c1cb485bec5b54e9c8da989964`. Fresh application inspection
+found the latter at HEAD on `feature/customer-hosted-session-prototype`,
+with no staged or working changes before this delta. The supplied customer
+specification and the three tier contracts in `docs/requirements` remain the
+acceptance basis. Retain all detailed sprint contracts below; this overlay
+updates evidence attribution and priority, not runtime scope or acceptance.
+Older dated overlays are historical when their observations differ.
+
+Apply exact prior references
+`["yaml-loops-v1:ArchitectureLoop","architecture-close-completed-deliverable"]`
+and
+`["yaml-loops-v1:UserExperienceLoop","ux-close-completed-deliverable"]`
+only within their originating accepted handoffs. Both remain closed. Their
+collected votes do not supply ReleasePlan agreement, ownership acceptance or
+live readiness. No disposition is superseded and no accepted implementation,
+fixture, presentation or research handoff is redispatched.
+
+### Current evidence and prioritized existing closing work
+
+The accepted architecture reports successful direct registered-sibling Git
+inspection: branch/HEAD and clean status were observed, but complete resolver
+reads were subsequently denied. That is narrower than older descriptions
+of all sibling inspection being denied. It is attributed point-in-time
+evidence, not exclusive ownership, loaded-root compatibility or runner-write
+authority. This planning turn does not repeat sibling or private-receipt
+inspection. Supplied recovery-file availability and explicit Developer
+writer/integration designations remain coordination evidence; do not request
+those designations again or mistake them for originating reviewer acceptance.
+
+| Priority / retained work | Closing action and boundary |
+|---|---|
+| P0 / RP-S2-LAB-OWNERSHIP, Developer with Scrum coordination | Consume supplied designations and the architecture's partial direct evidence. Complete current owned-path/preservation and resolver/loaded-root verification, including matched/mismatched roots, through the existing originating Architect/Critic review before runner writes. Canonical dirty lab remains unwritable. Do not recreate a checkout or infer exclusivity from clean status. |
+| Independent P0 / RP-S1-FRESH-INVENTORY continuation, DevOps | Recover the exact previously accepted host fingerprint and acceptance reference from established private evidence/transport owner, then run retained strict-trust and authenticated sole-target inventory. Receipt availability, ARM readiness and current known_hosts content are not independent trust confirmation. No private-tree scan or new trust acceptance is implied. |
+| P1 / RP-S2-DECISION-RUNNER then RP-S2-SOURCE-INTEGRATE, designated Developer | After ownership acceptance, finish the exact eight-path sibling tooling contract, retained regressions and reviewed task commits. Join accepted application source, reviewed runner and required operational wrappers at the roots actually loaded; record task/branch/commit accounting and scoped push. Inventory is not a prerequisite for coding or integration. |
+| P1 / original E2E then DevOps execution | Validate exact joined source through local scripts. DevOps joins fresh inventory with exact Linux/amd64/hosting-Python/package/version gates and guarded publication before finite both-role ingress selection and actual G1-G4. Predeployment FAIL reporting or selected ingress alone is not cloud-pass. |
+| P2 / RP-S3 existing delivery work | Consume a completed non-held common-bundle initial parent for actual same-parent follow-up and once-only supported compute recovery. Separate-parent isolation needs initial-parent evidence, not recovery success. Close exact-source checks, reviewed Git delivery and truthful AC1-AC9/G1-G8 reporting in existing review/closeout. |
+
+Only the user's exact eight-path allowlist under the retained ownership
+contract permits runner work after acceptance; no canonical checkout mutation,
+root-guard bypass, implicit wrapper installation or branch switch is added.
+Scrum Master retains contract-first decomposition, actual assignments, minimal
+dependencies, Git reconciliation and exclusive-resource coordination. Original
+E2E owns formal integration; original DevOps owns publication and cloud-pass.
+Use deterministic local repository scripts, not GitHub Actions. Serialize actual
+shared release, transport, profile and Git mutation; scheduler labels alone
+do not isolate other runs.
+
+### Release increments retained for the structured handoff
+
+| Unique sprint ID | Goal | Acceptance and handoff |
+|---|---|---|
+| RP-S1 | Evidence-ready source and understandable continuity | Preserve reviewed two-turn/both-role binding and pin assertions, exactly two child creations, fresh responses/current requirements/stale-approval invalidation, controlled four-call revision and real model-history/fresh-history/no-resend offline controls; retain README/terminal parser contract and required source checks. Carry actionable unresolved identity/trust observations without claiming live AC1/AC2. Consume accepted work rather than rebuilding it. |
+| RP-S2 | Supported repair and exact three-role remote collaboration | Original ownership acceptance, reviewed matched-root runner/integration, current trust/inventory and supported A or B selection precede their dependent effects. Exact reviewed source/settings/stage/ZIP, required application/retained/Linux hosting checks and guarded reconciled publication establish three healthy roles on one common bundle with rollback retained. Actual accepted immutable remote outputs, private MI Blob provenance and Decision-1/final gates must satisfy AC1 and G1-G4 before handing the non-held initial parent and exact bindings to RP-S3. An unresolved trial can complete bounded reporting, not this live goal. |
+| RP-S3 | Live continuity, recovery, isolation and customer delivery | Same parent/both specialists' hosted/framework bindings and pins across queue follow-up, fresh responses/current outputs/no extra children; once-only confirmed supported stop/resume without duplicate effects; distinct separate-parent scope/content exclusion; real readable demo, exact final checks, reviewed scoped feature-branch push and durable task accounting, final/rollback bindings, owned cleanup and limitations. Release acceptance requires every AC1-AC9/G1-G8, not agreement on a blocked report. |
+
+Detailed doneWhen, exclusions, selection rules, evidence map and shared-resource
+contracts remain in the retained sprint sections below. There is no fixed
+productive sprint/round cap or invented time/cost/concurrency limit. Five
+consecutive rounds without reviewer-verified new progress stop blocked.
+Continue remaining artifacts if authentication selection stays unresolved.
+A material contract/architecture change returns through existing Scrum
+reconciliation and Architect-advised Product Owner decision; only genuinely
+unavailable human/provider input is needs-input. Necessary evidenced scoped
+permission remediation for either authorized path is already approved.
+
+Neither identity path is live-selected here. No publication, inference,
+permission change, transport, compute stop/resume or cloud readback occurred.
+Private settings were loaded only through `Use-Settings.ps1`; a suppressed
+comparison confirmed expected lab linkage. This is local configuration
+validation, not authenticated context or deployed-version proof.
+Preserve historical UNKNOWN effects, held parents, rollback assets, unrelated
+dirty/staged work and historical cleanup uncertainty. Account-wide Blob
+Contributor provides application-enforced isolation, not malicious-host or
+storage-RBAC isolation. Current final/rollback bindings remain unverified.
+
+The Product Owner agrees with this bounded ReleasePlan and requests original
+Stakeholder, Architect, Designer and Critic review of the committed delta and
+retained sprint contracts. Their current votes are not supplied. Once collected
+votes agree, close this planning loop without another status-only commit.
+Planning agreement does not establish sprint execution or customer readiness.
+
+Validation used the existing absolute Python 3.12.10 executable and explicit
+lab root: `Test-Demo.ps1` passed dependency checking, **204 offline tests in
+60.904 seconds**, and compilation (exit 0; full command wall time 72.666 seconds).
+`scripts/Test-Repository.ps1` passed index, **79-public-file** boundary, JSON,
+PowerShell, context/frontmatter and whitespace checks. No dependencies were
+installed. Only these two planning/navigation files changed; no retained lab
+source, Linux/package check, formal E2E or live operation was performed.
+Repeated offline checks and evidence-attribution prose are not new substantive
+runtime progress.
+
 ## Current RP-S1 retrospective — closure and inspectable handoffs (October 20, 2026)
 
 Product Owner input baseline: accepted SprintReview commit

@@ -1,5 +1,104 @@
 # Customer hosted-session prototype: release architecture
 
+## Architecture Loop recovery handoff — accepted trust input (October 20, 2026)
+
+This invocation began on clean application `a1bca5d` on
+`feature/customer-hosted-session-prototype`. No reconciled feedback or
+`priorDispositions` was supplied. Retain the full-release principles, framework,
+state design, identity alternatives, runner contract and AC1-AC9 matrix below.
+This handoff changes no runtime, dependency, acceptance contract or authority.
+Earlier "current" sections are dated observations, not fresh execution evidence.
+
+### Verified input versus remaining execution proof
+
+The eight specifically supplied recovery JSON files were read from the external
+nonsecret mirror first; each parsed successfully. A value-suppressed comparison
+now establishes that `accepted-host-trust-extract.json#accepted_host_fingerprint`
+and `multi-agent-zip-25508ac5e30744cbae8a6b5b7682b5f2.attempt.json#host_fingerprint`
+both exactly match this invocation's user-accepted fingerprint. The extract's
+acceptance reference and source locator are present. These are private input
+comparisons, not a new host-key observation or cryptographic authentication of
+historical receipts. Do not copy their values or the private mirror into Git.
+
+**Architecture disposition:** the independent accepted comparison value and its
+evidence locator are supplied; do not request them again or substitute a newly
+observed key. Original DevOps still verifies the actual current owner module/
+source against independent acceptance and runs the retained strict prerequisite
+wrapper using that accepted value. Accepted trust input is not current SSH
+success, authenticated inventory, publication authority for historical effects,
+or live specialist entry. Distinguish a missing input from a failed current
+validation when reporting the next result.
+
+`Use-Settings.ps1` loaded only the existing native settings. Suppressed-value
+comparisons passed for canonical lab linkage and the historical approved
+attempt's project and lab root. This verifies local linkage, not Azure login,
+effective RBAC, current tenant/subscription readback or current deployed versions.
+The approved historical attempt remains consumed; matching settings do not
+authorize its replay.
+
+Fresh direct Git inspection reports a clean registered feature sibling at
+`bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703`. Canonical lab registration now
+reports `b7a47edf6172b1dd5dc4b0dc5a3db555fe762b2f` on its unrelated branch;
+six modified and two untracked canonical paths were observed and left untouched.
+Direct sibling resolver reads were denied by the tool permission layer in this
+invocation. No alternate read or resolver execution was attempted after denial.
+Neither file sizes, registration nor clean Git status establishes inspected
+resolver contents, loaded hashes, exclusivity or substantive ownership acceptance.
+The historical root matrix below is not a freshly executed matrix.
+
+### Existing-owner closing actions, not another architecture or approval stage
+
+For the exact originating reference
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`,
+consume `ownershipRecoveryDefaults` as explicit writer acknowledgement and
+integration designation evidence. No new designation is required. Existing
+Developer completes point-in-time owned-path/resolver proof through the approved
+inspection mechanism and original Architect/Critic ownership review; denied
+inspection must remain disclosed, not silently promoted to acceptance.
+
+The smallest supported release path remains conditional B evaluation, unless a
+measured supported A correction is found. B is implemented candidate source,
+not live-selected. Preserve specialist-only client delegation, trusted receiver
+equality, immutable prerequisites, pinned parent/both-child sessions, model
+history, checkpoints and fenced write-ahead effects as distinct contracts.
+
+Scrum's existing planning stages retain these minimal lanes:
+
+1. Originating ownership verification enables only the eight-path sibling runner
+   assignment; offline coding does not wait for cloud inventory or SSH success.
+2. In parallel, DevOps consumes the supplied accepted trust input for current
+   strict-trust/context/inventory checks. Record precise failed prerequisites,
+   not a renewed request for the fingerprint or designations already supplied.
+3. Designated Developer integration joins reviewed application, runner and
+   actually loaded operational wrapper bytes with explicit matched roots and
+   durable task/branch/commit accounting. Keep `LAB_TOOL_OWNER_MISMATCH`;
+   sibling commits alone do not install canonical wrappers. No canonical dirty
+   checkout writes or shared branch switching are permitted.
+4. Original E2E validates joined source through local scripts. Original DevOps
+   serializes real publication/transport resources, performs exact-source Linux/
+   amd64/hosting-Python package gates and guarded common-bundle publication, then
+   the finite architect-before-reviewer identity decision and live G1-G4.
+5. Only a completed non-held initial parent enables same-parent queue follow-up
+   and once-only supported stop/resume. Independent-parent isolation needs the
+   final release and comparison evidence, not successful recovery first.
+   Preserve AC1-AC9/G1-G8, historical UNKNOWNs, held parents and rollback assets.
+
+Unresolved A/B selection does not stop remaining artifacts. Actual namespace
+mismatch returns through existing Architect-advised PO/Scrum reconciliation,
+never equality relaxation or a new user-approval demand. Account-wide Blob
+access still provides application-enforced, not malicious-host/RBAC isolation.
+No cloud, permission, inference, stop/resume, publication or push was performed
+by this architecture handoff. Owner-ready design is not Product Owner, Red Team
+or Critic agreement; the existing Architecture Loop reviewers decide acceptance.
+
+Validation used the existing absolute Python 3.12.10 executable:
+`Test-Demo.ps1` with explicit canonical lab root passed dependency checks,
+204 offline tests in 64.706 seconds and compilation (exit 0).
+`scripts/Test-Repository.ps1` passed index, public-boundary (79 files), JSON,
+PowerShell, context and whitespace checks. No dependencies were installed.
+No lab code changed; retained full lab and Linux hosting-package gates were not
+run. These local checks neither refresh the live blocker nor pass release gates.
+
 ## Current RP-S3 retrospective — assertions are not observation provenance
 
 Accepted SprintReview `0f2e6276bb53f84605d745db24cafd1991133d21`

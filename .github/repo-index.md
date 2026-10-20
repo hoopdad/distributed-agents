@@ -126,10 +126,13 @@ Historical deployment/test numbers above are context, not freshly validated
 release evidence. Use the October 19 invocation's authority within its exact
 scope; the older consumed exception cannot authorize unknown-effect replay.
 
-UX handoff freshness: based on architecture commit
-`1f690f5011bef61494b8181fd14e779fa55d858e` and the existing 17 dirty paths.
-Added `docs\customer-prototype-ux.md`; no runtime, dependency or public event
-contract changed. Human-view CLI syntax in that document is explicitly proposed.
+Current UX handoff freshness: inspected clean architecture baseline
+`2a736d94cb99c01aca0c516aeaf920e61ddb8fbd`. Reconciled
+`docs\customer-prototype-ux.md` with the integrated human-view implementation
+and README (`56b762e`, `24b883f`), current derived requirements and authorized
+identity-path handoff. No paths added/deleted, runtime, dependency or public
+event contract changed. Human-view syntax is implemented; exact continuity
+claims and live release acceptance still require separate private evidence.
 
 Release-plan freshness: based on accepted architecture `1f690f5` and UX
 `0f2a2b2`, preserving the existing 17 dirty paths. Added

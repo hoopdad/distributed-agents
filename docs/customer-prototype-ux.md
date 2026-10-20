@@ -6,15 +6,34 @@ Designer handoff for the October 19, 2026 User Experience Loop. The customer
 wants a hosted coordinator to call remote specialists repeatedly while keeping
 each specialist's session within the same parent conversation. This document
 defines the terminal and documentation experience, not a browser application.
-It implements the UX design deliverable; runtime presentation and live proof
-remain downstream work. Wireframes below are illustrative, not execution logs.
+It supplies the UX design deliverable and reconciles the integrated terminal
+and README presentation; live proof remains downstream work. Wireframes below
+are illustrative, not execution logs.
 
-The supplied customer specification is the requirements source; this repository
-has no `docs/requirements` directory. Follow the accepted
+The supplied customer specification is the requirements source;
+`docs/requirements/{coordinator,specialists,client-release}/architecture.md`
+contains derived logical-tier contracts, not replacement requirements. Follow
+the accepted
 [architecture](customer-prototype-architecture.md), especially its stable
 binding/advancing continuation distinction and downstream fixture boundaries.
-There are no prior dispositions or reconciled corrections supplied for this
-first UX round. Do not reopen the accepted architecture.
+This revision inspects clean application baseline
+`2a736d94cb99c01aca0c516aeaf920e61ddb8fbd` on
+`feature/customer-hosted-session-prototype`. Terminal implementation `56b762e`
+and README/source integration `24b883f` already exist; they are not new work
+credited to this UX revision. Prior disposition
+`["yaml-loops-v1:ArchitectureLoop","architecture-loop-status-reconciliation"]`
+closes the Architecture Loop only. Retain that accepted handoff without
+claiming its reviewer votes apply to this UX artifact.
+
+Neither authorized identity path is live-selected. The architecture's supported
+authentication/configuration correction and `x-ms-user-identity` delegation
+alternatives have the same customer journey: no identity selector, permission
+wizard or caller-ID input is added to the terminal. Required scoped lab
+permissions are already authorized; do not ask the customer to approve routine
+repair work again. Decision tests may discriminate paths, but formal E2E and
+DevOps live gates remain with their original owners. A call ID is never a
+delegated user identity. Continue the UX/artifact handoff while selection is
+unresolved; do not present either path as a working repair.
 
 ## UX principles, tools and framework
 
@@ -45,7 +64,7 @@ dashboard requiring a new state store or additional provider calls.
 
 | Journey | User action | Visible outcome and boundary |
 |---|---|---|
-| Understand | Open README | Goal, three-role diagram, two-turn invariant, historical live blocker, short source path |
+| Understand | Open README | Goal, three-role diagram, two-turn invariant, dated/historical live status, short source path |
 | Prepare | Load validated generic settings, authenticate dedicated profile and open retained private transport | Setup prerequisites, not proof of deployment or permission to replace trust |
 | Start | New private session file; submit synthetic private-ingress request | Parent identity aliases; architect then reviewer calls; accepted design only after final gates |
 | Continue | Reuse that exact file; add asynchronous queue | Same verified parent/children/framework identities and versions; new responses; revised design/review retaining private ingress |
@@ -97,42 +116,60 @@ unknown historical publication/cleanup remains unresolved, and account-wide
 Blob Contributor makes role/parent isolation application-enforced.
 Move lengthy existing diagnostic chronology to the existing recovery document,
 preserving distinct observations and history rather than deleting evidence.
-Review the pre-existing README readability edits before integrating them;
-this design does not claim ownership or acceptance of those dirty changes.
+README readability work was integrated in `24b883f`; preserve it. This revision
+does not re-credit those changes or turn their integration into live proof.
 
-### Terminal: proposed opt-in human view
+### Terminal: implemented opt-in human view
 
 Keep today's default machine-compatible output and existing CLI spellings.
-Add `--view human` as an optional presentation selector, with current behavior
-as the default when absent. This flag is **proposed, not implemented**.
-Human text goes to stderr, including streamed safe summaries; stdout retains
+`--native --view human` selects the implemented optional presentation in
+`demo/terminal.py` (`HumanView`, `finalize_workflow_turn`); absence preserves
+the default. `--view human` without `--native` is rejected by argparse.
+Human text goes to stderr after complete records and finalization are evaluated,
+not for arbitrary stream fragments; stdout retains
 the existing parent header and delegation/result JSON without schema changes.
 Do not describe the default stdout as pure JSONL: it already has a parent
 header. `live_acceptance.events()` selects JSON lines beginning with `{`.
 Never interleave prose inside a JSON record or alter the locator/result parser.
 Existing `--native`, `--recover-only` and diagnostic codes retain their spelling.
 
-Illustrative layout, contingent on validated evidence (not a current live run):
+Illustrative implemented layout using symbolic aliases (not a current live run
+or literal 12-character alias values). Every rendered line is prefixed `  | `;
+long labels and content wrap to terminal width:
 
 ```text
-HOSTED COLLABORATION | synthetic input | live observations
-Turn 2 | parent P1 | requirements r2
-                  Hosted  Framework  Version  Response  Comparison
-Coordinator       P1      PF1        pinned   P-R2      same parent; new response
-Architect         A1      AF1        pinned   A-R2      same child; new response
-Reviewer          R1      RF1        pinned   R-R2      same child; new response
-Bindings: verified against prior turn | new children this turn: 0 [verified]
+HOSTED COLLABORATION | observed records
+Parent hosted alias: P1
+Parent framework alias: PF1
+Turn 2 | requirements revision 2
+1. architect | candidate revision 2
+  stable hosted alias: A1
+  stable framework alias: AF1
+  pinned version: <observed numeric version>
+  advancing response alias: A-R2
+2. reviewer | candidate revision 2
+  stable hosted alias: R1
+  stable framework alias: RF1
+  pinned version: <observed numeric version>
+  advancing response alias: R-R2
+Child bindings: observed aliases; exact continuity UNVERIFIED
+New child creations / exact response inequality: not observed
 Design r2/c2
   <current design text, wrapped; private ingress and queue described>
 Review r2/c2: approved
   <current recommendation; blocking/unresolved findings if any>
-Coordinator: ACCEPTED_ADVISORY | current exact prerequisites accepted
-Model-history continuation: not established by this display
-Release acceptance: separate private acceptance report; not certified here
+Coordinator: ACCEPTED_ADVISORY | current result finalized
+Model-history / restart / isolation: not established by this display
+Release acceptance: separate private report; not certified here
 ```
 
-Use actual configured versions, not the word `pinned`, in implemented rows.
-Keep the role order fixed. On narrow terminals use one labeled role block per
+Show actual observed versions, not the placeholder above. A label such as
+`stable hosted alias` names the identity category, not a verified comparison.
+Preserve causal event order, including every repeated architect/reviewer call;
+never sort or deduplicate a revision trace into two rows. The controlled offline
+sequence is architect -> blocked reviewer -> same architect revision -> same
+reviewer, with four fresh response observations and the final current result.
+On narrow terminals use one labeled role block per
 line instead of clipping identities or requiring horizontal scrolling. Wrap
 design/recommendation text; show all blocking and unresolved findings. Long
 designs may have an explicitly labeled preview, but must provide a way to
@@ -179,13 +216,17 @@ Synthetic-only guidance is not a general-purpose content redaction guarantee.
 ### Failure and recovery layout
 
 ```text
-BLOCKED | SPECIALIST_INCOMPLETE | architect application not completed
-Continuity: architect/reviewer follow-up not verified
-Pending effect: HELD; preserved, not resent
-Known historical gate: NATIVE_HOST_PRINCIPAL [historical, unless observed now]
-Next: inspect exact known response using retained read-only observation.
-No automatic retry, identity bypass or clearing of the held parent.
+HELD / BLOCKED: SPECIALIST_INCOMPLETE; turn not finalized; output unaccepted.
+Preserve pending state; do not resend uncertain work.
 ```
+
+The implemented view renders observed calls before this hold notice, omits
+accepted design/review output, and preserves the failure/nonzero exit. Missing
+or malformed result records instead say
+`BLOCKED: result unavailable or invalid; no accepted summary.` A held result
+does not imply the historical identity failure. The README/recovery link
+provides the retained exact-response diagnosis path; it is not an automatic
+terminal retry affordance.
 
 Display only allowlisted observed diagnostic codes. Do not infer the historical
 identity failure for every timeout. For missing/malformed output say that exact
@@ -204,10 +245,10 @@ $python = '<absolute-path-to-existing-validated-python>'
 $state = '<absolute-private-directory-outside-both-repositories>\harbor.json'
 $socks = 'socks5h://127.0.0.1:<owned-port>'
 .\scripts\Use-Settings.ps1 -Path .\.local\lab-settings-native.json
-& $python -m demo.terminal --native --socks $socks --session-file $state `
+& $python -m demo.terminal --native --view human --socks $socks --session-file $state `
   --message 'Design and review a synthetic application with private ingress only.'
 # Only after a completed, non-held first turn, reuse the exact same $state:
-& $python -m demo.terminal --native --socks $socks --session-file $state `
+& $python -m demo.terminal --native --view human --socks $socks --session-file $state `
   --message 'Add an asynchronous queue; retain private ingress and earlier requirements.'
 ```
 
@@ -216,8 +257,8 @@ dedicated authenticated lab CLI profile, retained trusted private transport,
 and exact reviewed hosted release. Follow the linked lab's retained quickstart
 and guarded connectivity tooling; do not copy its private literals here.
 Do not reinstall dependencies merely to run this demonstration. No command
-above creates infrastructure or authorizes replay. After implementation, add
-`--view human` to the customer command; until then it is not runnable syntax.
+above creates infrastructure or authorizes replay. These commands use the
+implemented view, but were not executed against hosted agents in this UX turn.
 The full acceptance demonstration still uses `live_acceptance.py` through
 retained tooling and private evidence; these two commands do not replace G1-G8.
 
@@ -231,8 +272,8 @@ loop, not asserted by this document.
 
 | Owner / work | Done when / evidence | Exclusions |
 |---|---|---|
-| Developer: terminal presentation | Implement opt-in view above; retain default stream and parser; fixtures cover two turns, repeated reject/revise calls, advancing responses, partial/missing/malformed results, holds, recovery no-resend, absent evidence and terminal control sanitization | No claim from fake events is live; no new provider effect for rendering |
-| Developer: README clarity | First-screen hierarchy, actual short source links, setup/two-turn command and accurate status; preserve reviewed readability work and relocate chronology without evidence loss | No stale test counts/deployment metadata as current proof |
+| Developer: terminal presentation | Retain integrated opt-in view, default stream and parser; regression coverage for two turns, repeated reject/revise calls, advancing responses, partial/missing/malformed results, holds, recovery no-resend, absent evidence and terminal control sanitization | No claim from fake events is live; no new provider effect for rendering |
+| Developer: README clarity | Retain integrated first-screen hierarchy, short source links, setup/two-turn command and truthful status; update measured release notice only after fresh evidence | No stale test counts/deployment metadata as current proof |
 | Developer: continuity tests | Architecture's two-role binding/version/create-count/model-history fixtures establish what display may label verified; human text agrees with unchanged machine result | UX fixtures cannot replace AC2/AC3 model/session tests |
 | DevOps: customer demonstration | Exact final source/package gates, real synthetic two-turn view and private machine evidence match; status/versions updated only from fresh observations | No mocked acceptance, inferred recovery or mixed-bundle final release |
 
@@ -251,6 +292,27 @@ Verification checklist for implementation review:
   related dirty source deliberately on the authorized feature branch.
 - AC9: handoff includes runnable actual syntax, setup, measured sanitized
   comparison, limitations and private exact release/rollback evidence.
+
+## Validation of this UX revision
+
+Using the existing validated absolute Python 3.12.10 executable, without
+dependency installation:
+
+- `Test-Demo.ps1 -Python <absolute-validated-python> -LabRepositoryRoot
+  <explicit-lab-root>` passed dependency checking, 177 offline tests in
+  18.231 seconds, and compilation. These tests include the existing human-view
+  and unchanged-machine-stream regressions; rerunning them is not new runtime
+  capability.
+- `scripts/Test-Repository.ps1 -Python <absolute-validated-python>` passed
+  index, focused public-boundary (70 public files), parser and whitespace
+  checks.
+- Inspected `HumanView.render()`, `finalize_workflow_turn()` and argparse
+  wiring against the revised screen and command descriptions.
+
+No runtime or lab source changed. The retained lab release suite and Linux
+hosting-package checks were not run for this documentation-only handoff.
+Product Owner and Critic agreement on this revision must come from the existing
+loop's original reviews; architecture approvals do not supply UX approval.
 
 No deployment, live inference, stop/resume, fresh cloud inventory or identity
 remedy is established by this UX work. Full implementation and final AC1-AC9

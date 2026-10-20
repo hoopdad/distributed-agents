@@ -1,5 +1,27 @@
 # Customer hosted-session prototype: release architecture
 
+## Current RP-S2 retrospective — evidence availability is distinct from check scope (October 20, 2026)
+
+Consume accepted SprintReview `1e5eb2adc7714875e07ed69ffd2e2db0ab8c7877`
+and its [retrospective decisions](customer-prototype-release-plan.md#current-rp-s2-retrospective--single-round-handoffs-without-live-progress-october-20-2026).
+This adds no runtime contract and reopens no accepted architecture.
+Inspecting a prerequisite script establishes its scope, not execution of that
+script. A shell identifier alone is owner-attributed evidence when the original
+reviewers cannot inspect the capture. Preserve that distinction in the existing
+handoff; do not rerun a check merely to replace an unavailable capture.
+
+Keep three independent boundaries explicit: substantive ownership/root evidence
+before sibling writing; actual loaded-source integration before exact-join E2E;
+and current trust/inventory plus exact-package gates before guarded DevOps
+execution. Fresh host trust cannot discharge ownership, and accepted application
+tree identity cannot establish external wrapper installation. Inventory remains
+independent of runner coding under existing containment/resource guards.
+Existing owners recover available original captures outside customer Git,
+attribute missing observations, and retain the original closing actions.
+No new evidence schema, ledger, approval stage, identity selection or acceptance
+waiver is introduced. Trusted receiver equality, root guards, UNKNOWN holds and
+application-enforced rather than malicious-host Blob isolation remain unchanged.
+
 ## RP-S1 retrospective — acceptance is not execution (October 20, 2026)
 
 The current [retrospective decisions](customer-prototype-release-plan.md#rp-s1-retrospective--workflow-quality-and-blocked-outcomes-october-20-2026)

@@ -1,5 +1,24 @@
 # Customer hosted-session prototype: user experience
 
+## Current RP-S2 retrospective — label attribution and the next executable boundary (October 20, 2026)
+
+Consume accepted SprintReview `1e5eb2adc7714875e07ed69ffd2e2db0ab8c7877`
+and the [current retrospective](customer-prototype-release-plan.md#current-rp-s2-retrospective--single-round-handoffs-without-live-progress-october-20-2026).
+Retain accepted screens, plain-text accessibility, safe aliases and opt-in human
+stderr with unchanged machine stdout/parsing; no renderer or new UI is assigned.
+
+Existing operator reporting should distinguish: "Application handoff accepted;
+prerequisite PASS owner-attributed, execution capture unavailable to reviewers;
+operational join unverified; demonstration BLOCKED." Do not turn script-scope
+inspection into independently verified execution, a host-entry check into live
+specialist ingress, or missing observations into measured zero effects.
+Name the existing ownership Developer's actual-evidence/access closing action
+and the independent DevOps inventory action separately. No renewed designation
+or fingerprint choice is needed. Qualified report acceptance supplies no
+continuity rows or permission to continue a held/missing initial parent.
+Keep private full bindings, capture locations and transcripts outside customer
+output. This wording improvement claims no usability measurement or live proof.
+
 ## RP-S1 retrospective — communicate two separate outcomes (October 20, 2026)
 
 The current [retrospective](customer-prototype-release-plan.md#rp-s1-retrospective--workflow-quality-and-blocked-outcomes-october-20-2026)

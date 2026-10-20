@@ -1,5 +1,90 @@
 # Customer hosted-session prototype: release plan
 
+## Current RP-S2 retrospective — single-round handoffs without live progress (October 20, 2026)
+
+**Outcome: demonstration BLOCKED; RP-S2 live goal unmet; E2E FAIL;
+DevOps incomplete; customer-ready no.** This Product Owner retrospective
+consumes accepted SprintReview `1e5eb2adc7714875e07ed69ffd2e2db0ab8c7877`,
+current originating outcomes and the reconciled prior dispositions. Earlier
+retrospectives remain dated history. No accepted handoff is reopened and no
+prior disposition is superseded.
+
+### Inputs, error and communication observations
+
+| Supplied input | Observation and measurement limit |
+|---|---|
+| Current RP-S2 loop outcomes | Design, architecture, planning, application handoff, E2E reporting and sprint review are six agreed boundaries, each in one reported round. Ownership and DevOps each have one current reported round and remain substantively incomplete. Current affirmative votes belong only to those originating loops, not this retrospective. |
+| Prior RP-S1 retrospective | It recorded eight two-round accepted boundaries with status-only corrections. Current single-round acceptance avoids that reported pattern; counts alone do not prove reduced latency, causation or implementation productivity. No aggregate communication/error rate, elapsed work time or customer usability timing is available. |
+| Independently reviewed new evidence | Both original application reviewers verify the incremental post-61a99cb drift handoff at 0e9add5: documentation/planning-only changes and unchanged execution trees. Consume it once; it is not new runtime or operational-installation proof. |
+| DevOps preparation | The prerequisite PASS is owner-attributed. Reviewers inspected script scope, not its execution capture. No independently verified progress credit was given and no rerun merely for review is requested. Current deployment, rollback, permissions/effects and private Blob observations remain missing. |
+| E2E and runtime errors | The current accepted FAIL is a predeployment join failure, not a newly observed receiver/runtime defect. Separate retained 204-test Windows runs and the Proactor transport ResourceWarning remain attributed historical results; no fresh runtime error rate or warning-free result is established. |
+| Ownership and stop history | Actual resolver/Git/path/hash/root-matrix evidence remains unavailable to originating substantive review. Current and earlier round counts do not constitute the authoritative consecutive-no-progress counter and must not reset or synthetically advance it. |
+
+### Decisions and existing-owner follow-through
+
+1. **Preserve efficient accepted handoffs.** Existing orchestrator closes
+   satisfied originating boundaries using their actual owner/reviewer agreement.
+   Scrum retains reconciliation, decomposition and Git assignment. Do not
+   manufacture status-only rounds, duplicate the accepted application audit,
+   rerun unchanged tests or count new wording as substantive progress.
+2. **Separate check scope from inspectable execution.** Architecture and UX
+   now explicitly distinguish script inspection, owner-attributed execution and
+   independently inspected results. Existing owners make available original
+   nonsecret captures through the approved external handoff where available;
+   absent captures remain attributed, not reconstructed. This is existing
+   evidence handoff discipline, not a new schema, collector or release gate.
+3. **Keep the actual critical-path closing action.** Existing ownership
+   Developer supplies actual resolver contents and attributable branch/HEAD/base,
+   eight-path statuses, owner-specific hashes with line-ending explanation and
+   source-bound matched/crossed-root results, or restores already-authorized
+   read access. Originating Architect/Critic substantively assess them before
+   runner writes. Do not repeat denied probes or request renewed designations.
+4. **Keep independent work independent.** DevOps completes current
+   inventory/rollback/identity/effect preparation through retained scripts when
+   existing containment/source/resource guards hold. It is not a coding
+   dependency. Reviewed runner and actual loaded-root integration then return
+   to original exact-join E2E; DevOps joins readiness and current preparation
+   with exact-source/Linux/package gates and serialized guarded publication.
+5. **Preserve outcome-based release acceptance.** Only actual common-bundle
+   G1-G4 and a completed non-held initial parent enable RP-S3. No identity path,
+   final/rollback binding, live continuity, recovery, isolation, push or
+   customer readiness is established here. Preserve UNKNOWNs, held parents,
+   unrelated work, rollback assets, retained branches and cleanup uncertainty.
+
+These decisions refine the existing six RP-S2 backlog assignments in the
+accepted review below; they add no task, scope change, new approval stage or
+acceptance waiver. Architecture/UX improvements are process clarifications,
+not a redesign or duplicate implementation.
+
+### Exact disposition boundaries and handoff
+
+Retain
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`
+and its substantive acceptance block.
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S1-CURRENT-SOURCE-CHECKS/AssignedWorkDeveloperLoop","current-source-checks-completion-status"]`
+keeps accepted source checks closed;
+`["yaml-loops-v1:sprint/1/RP-S1/EndToEndTestLoop","e2e-report-completion-status"]`
+closes only its originating FAIL report, not a subsequent operational join.
+Keep
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-bounded-assessment-completion-status"]`
+separate from the unmet cloud-pass obligations under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-exact-release-cloud-pass"]`.
+The RP-S1 review and retrospective remain closed under
+`["yaml-loops-v1:sprint/1/RP-S1/SprintReviewLoop","sprint-review-completion-status"]`
+and
+`["yaml-loops-v1:sprint/1/RP-S1/SprintRetroLoop","retro-release-plan-sprints-handoff"]`.
+Preserve all three unique sprint contracts in the returned ReleasePlan; that
+prior serialization correction changes no sprint acceptance boundary.
+
+This turn owns only Architecture, UserExperience, ReleasePlan and index
+documentation on the authorized feature branch. It creates or abandons no
+task code; outstanding loaded-source reconciliation, retained-code accounting
+and reviewed scoped push remain with RP-S2-SOURCE-INTEGRATE, not certified
+by this retrospective. Product Owner considers this deliverable ready for the
+six original reviewers. No current retrospective reviewer unanimity is claimed.
+No private evidence recovery, settings import, runtime/retained/Linux/package
+test, cloud operation or repeated denied inspection was performed.
+
 ## Current RP-S2 sprint review — operational join absent, live goal unmet (October 20, 2026)
 
 **Demonstration: BLOCKED. RP-S2 live goal: NOT MET. Customer-ready: no.**

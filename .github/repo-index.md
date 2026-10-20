@@ -29,7 +29,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Current RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Current `1bce6e1` architecture/`76c797b` design and accepted `b74b84e` source-check handoff; existing ownership evidence recovery and read-only outgoing-drift preparation run independently, then eight-path sibling runner and explicit loaded-root/Git integration; original E2E and serialized DevOps inventory/trial/G1-G4 retain actual live gates; accepted reports are not redispatched |
 | Current RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Accepted `cb85ce0` architecture/`1f24c9a` design and `dd7728c` retrospective; bounded originating ownership verification parallel with read-only retained validator/fixture-to-observation handoff, no duplicate accepted assertions; exact eight-path runner then actual loaded-root/Git integration; original DevOps strict trust, G1-G4, continuity, supported recovery, independent isolation and truthful delivery |
 | RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Current recovery-entry review `3503522`: eight two-round accepted boundaries versus single-round planning; qualified report agreement versus substantive ownership and actual loaded-source proof, attributed offline checks and mixed metadata versus live gates; existing-owner decisions and measurement limits, no ownership reset or live waiver; older overlays retain history |
-| Retained RP-S2 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Recovery-entry review `16a57b6`: consume accepted revision-bound outgoing audit once; distinguish substantive ownership/root proof, actual loaded integration and independent strict trust; qualified report/execution outcomes, original-owner closing actions and measurement limits, no new contract or live waiver |
+| Current RP-S2 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted review `1e5eb2a`: six single-round accepted boundaries versus unchanged live block; incremental application handoff consumed once, prerequisite execution owner-attributed versus inspected script scope, existing ownership/access and independent inventory closing actions; no new schema, duplicate implementation or live waiver; older overlays retained |
 | Current RP-S3 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted review `0f2e627`: reuse executable/observation map; enriched proof versus raw capture and independent provenance; absent initial-parent gate, precise local-only DevOps attribution, originating evidence access and existing-owner actions; no duplicate implementation, metric invention or live waiver |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
@@ -40,6 +40,13 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+SprintRetroLoop current RP-S2 freshness: clean authorized feature baseline
+`1e5eb2adc7714875e07ed69ffd2e2db0ab8c7877`; updated only existing Architecture,
+UserExperience, ReleasePlan and this navigation, no added/deleted paths.
+Current originating outcomes/round counts and historical tests remain attributed.
+No private ownership evidence, lab source, cloud state or runtime refreshed.
+Retains three sprint contracts, originating stops and existing-owner execution
+actions without treating report acceptance or prose changes as runtime progress.
 SprintReviewLoop current RP-S2 freshness: clean authorized feature baseline
 `0e9add565d22b2cb617485e257875e72984907af`; updated only existing ReleasePlan
 review and index navigation, no added/deleted paths. Consumes current original

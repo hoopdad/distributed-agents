@@ -13,7 +13,7 @@ from unittest.mock import patch
 
 from agent_framework import InMemoryCheckpointStorage
 
-from live_acceptance import SCENARIOS, events, validate_scenario_evidence
+from live_acceptance import SCENARIOS, events, validate_artifact_evidence, validate_scenario_evidence
 from demo.artifacts import decode_document
 from test_workflow import (
     FakeRouter, MemoryBackend, RecordingRemote, TestRuntime, graph, make_store,
@@ -120,6 +120,47 @@ class ScenarioEvidenceTests(unittest.IsolatedAsyncioTestCase):
         self.validate()
         # File contract must round-trip JSON, not depend on live Python objects.
         self.validate(json.loads(json.dumps(self.data)))
+
+    def change_initial_final_call_prerequisites(self, data, role, input_refs):
+        kind = {"architect": "candidate", "reviewer": "review"}[role]
+        output_ref = data["initial"]["manifest"][kind]
+        operation = next(
+            item["effect"]["operation_id"] for item in data["initial"]["operations"]
+            if item["effect"]["status"] == "accepted" and item["effect"]["output_ref"] == output_ref
+        )
+        for scenario in ("initial", "followup", "restart"):
+            for item in data[scenario]["operations"]:
+                if item["effect"]["operation_id"] == operation:
+                    item["effect"]["input_refs"] = copy.deepcopy(input_refs)
+            # Keep the final envelopes, hashes and cumulative journal observations
+            # internally consistent: only the operation/artifact join contradicts.
+            self.assertEqual(data[scenario]["proof"]["result"], self.data[scenario]["proof"]["result"])
+            validate_artifact_evidence(data[scenario]["proof"]["result"])
+
+    async def test_final_reviewer_cannot_omit_candidate_in_consistent_journal(self):
+        data = copy.deepcopy(self.data)
+        self.change_initial_final_call_prerequisites(
+            data, "reviewer", [data["initial"]["manifest"]["requirements"]],
+        )
+        with self.assertRaisesRegex(RuntimeError, "^EVIDENCE_OUTPUT_PREREQUISITES$"):
+            self.validate(data)
+
+    async def test_final_reviewer_cannot_use_earlier_same_turn_candidate(self):
+        data = copy.deepcopy(self.data)
+        manifest = data["initial"]["manifest"]
+        earlier = next(
+            item["effect"]["output_ref"] for item in data["initial"]["operations"]
+            if item["effect"]["status"] == "accepted" and item["effect"]["kind"] == "call"
+            and item["effect"]["role"] == "architect"
+            and item["effect"]["output_ref"] != manifest["candidate"]
+        )
+        self.assertIn(earlier, manifest["accepted"])
+        self.assertEqual(earlier["requirements_revision"], manifest["turn"])
+        self.change_initial_final_call_prerequisites(
+            data, "reviewer", [manifest["requirements"], earlier],
+        )
+        with self.assertRaisesRegex(RuntimeError, "^EVIDENCE_OUTPUT_PREREQUISITES$"):
+            self.validate(data)
 
     async def test_documented_private_json_invocation_passes_and_fails_nonzero(self):
         command = (

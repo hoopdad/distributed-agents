@@ -475,10 +475,14 @@ def _evidence_turn(snapshot):
             "EVIDENCE_DELEGATION_BINDING",
         )
     for role, kind in (("architect", "candidate"), ("reviewer", "review")):
-        producer = artifacts[kind].producer
-        _require(any(effect.role == role and effect.output_ref == artifacts[kind].ref()
-                     and effect.response_id == producer.response_id for effect in current.values()),
-                 "EVIDENCE_OUTPUT_RESPONSE")
+        artifact = artifacts[kind]
+        matches = [
+            effect for effect in current.values()
+            if effect.role == role and effect.output_ref == artifact.ref()
+            and effect.response_id == artifact.producer.response_id
+        ]
+        _require(len(matches) == 1, "EVIDENCE_OUTPUT_RESPONSE")
+        _require(matches[0].input_refs == artifact.input_refs, "EVIDENCE_OUTPUT_PREREQUISITES")
     return manifest, artifacts, bindings, operations, current
 
 

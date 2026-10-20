@@ -1,4 +1,129 @@
-# RP-S1 sprint design: understandable, evidence-ready continuity
+# Sprint design: understandable, evidence-ready continuity
+
+## RP-S2: gated identity trial and truthful collaboration handoff
+
+This section is the **RP-S2 SprintDesign** slice. The RP-S1 screens and their
+accepted closure remain below, unchanged in scope. Inspected application
+baseline `b43f5569b97c37427cf7f1b47d103846dd350dca` on
+`feature/customer-hosted-session-prototype`, with a clean worktree before this
+documentation change. Inputs are the current
+[architecture](customer-prototype-architecture.md),
+[UX and retrospective handoff guidance](customer-prototype-ux.md),
+[release plan](customer-prototype-release-plan.md) and retained
+[assignment contracts](customer-prototype-sprint-plan.json).
+
+RP-S2 adds no customer control or new terminal implementation. Retain the
+README, opt-in stderr human view, default stdout and acceptance parser. The
+new design work is the operator's preparation-to-observation journey and the
+boundary between an identity decision and a customer demonstration. Layouts
+below are illustrative reporting guidance, not literal runtime output,
+required new banners, a new schema or an advertised executable runner command.
+
+### Entry and blocked-backlog flow
+
+```text
+Retain accepted B source and RP-S1 presentation
+    |
+    +-- Developer/Scrum: substantiate stopped checkout/root handoff
+    |      -> Developer: runner -> reviewed source integration -> formal E2E
+    |
+    +-- DevOps: obtain existing accepted private trust/owner receipt locator
+           -> strict-trust Metadata inventory in original DevOps phase
+    |
+    +-- Join reviewed source/tooling + fresh inventory
+           -> exact-source/Linux/package gates -> guarded publication
+           -> scenario/source/package/actual-version check before trial parent
+           -> architect trusted ingress -> reviewer trusted ingress
+           -> identity decision; remaining G1-G4 release proof still required
+```
+
+The two prerequisite lanes have different owners and closing evidence.
+Neither a readable blocked report nor an accepted source candidate resolves
+them. This diagram states dependencies, not permission to run DevOps early or
+restart stopped probes. No design decision requires another setup approval.
+
+| Entry state | Visible interpretation | Existing owner and closing action |
+|---|---|---|
+| Checkout/root evidence unsubstantiated | Runner writing blocked; historical branch/base is not fresh ownership proof | Developer/Scrum delivers bounded registration, branch/HEAD/status, canonical preservation, writing ownership and positive/negative resolver evidence for original-reviewer inspection |
+| Accepted private transport-trust receipt locator missing | Authenticated SSH/hosted Metadata unreached; ARM readiness is not SSH readiness | DevOps obtains the existing independently accepted fingerprint/owner receipt locator through existing coordination, then resumes strict-trust inventory |
+| Candidate approved offline; runner/source join absent | Installed B source retained, live selection unresolved | Developer completes retained runner and source integration; no duplicate candidate or UI task |
+| Final package or current deployed bindings absent | Trial not ready, not an observed receiver failure | DevOps completes exact-source/Linux/package, inventory and guarded release gates |
+
+The first row preserves the stopped assignment under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+Its five-round stop and runner-writing block remain intact. Do not recreate
+the checkout, repeat unattended denied probes or infer ownership from the
+workflow advancing to RP-S2. Private evidence locators belong in the private
+owner handoff, never in README or shareable terminal output.
+
+### Screen F: operator boundary report
+
+Use the existing report channel to answer four questions: what was observed,
+what was not reached, whose evidence supports the statement, and what the
+existing owner must do next. Keep this separate from customer turn summaries.
+
+```text
+RP-S2 | preparation stopped | illustrative handoff, not execution evidence
+Observed: <last evidenced preparation boundary>
+Evidence: <owner-reported / independently inspected; local / hosted>
+Not reached: <trial-parent creation / architect / reviewer, as applicable>
+Identity decision: unresolved
+Next owner/action: <existing assignment and its concrete closing evidence>
+Release status: not customer-ready
+```
+
+Only say "no trial parent created" when the runner's zero-create/send
+observation supports it. If execution evidence is absent, say "not observed";
+do not manufacture a zero count. A missing receipt is not proof of provider
+failure. Full bindings, hashes, permission readback and evidence locators stay
+in private reports; customer output uses sanitized classifications only.
+
+### Screen G: finite trial outcome and transition
+
+| Actual boundary/evidence | Report direction | Allowed next transition |
+|---|---|---|
+| Provenance mismatch rejected before parent creation | Preparation rejected; zero create/send only when evidenced | Correct joined inputs through original owners; no A/B terminal selector |
+| Local resource/identity setup rejection | Local preparation failed; receiver not observed | Focused supported repair and regression; do not diagnose remote denial |
+| Architect trusted ingress observed, reviewer unreached | Architect reached; reviewer unreached; both-role selection unproven | Original DevOps records partial outcome and concrete prerequisite/hold |
+| Exact receiver rejection observed | Name only the reached role and observed gate | Preserve exact private response evidence and hold; no automatic retry |
+| Missing observation, unknown effect or version drift | Unknown/unverified, not receiver failure or selection | Preserve trial/effect state; reconcile through original owners |
+| Both roles pass trusted ingress/equality checks | Selected-A or selected-B as actually evidenced; identity decision only | Verify final common bundle, remote accepted artifacts, private Blob provenance and genuine Decision-1 before G1-G4 success |
+
+An `A-correction` trial requires its own supported corrected source; installed
+unconditional B source cannot be relabeled A. Do not draw reviewer success
+after an architect failure, fabricate role rows from preparation errors, or
+equate HTTP 200 with accepted collaboration.
+
+After the release gates permit a customer demonstration, retain Screens A-E
+below and the existing README command shape. Use a fresh synthetic trial
+parent only as predeclared by the guarded plan, never to evade a failed or
+held parent. Existing pinned historical conversations are not migrated.
+A completed, non-held initial customer turn is prerequisite to the follow-up
+using the same private file. Stable hosted/framework bindings and pinned
+versions require private exact comparisons; aliases and advancing response
+IDs alone do not prove continuity. RP-S3 retains live two-turn, once-only
+supported recovery, isolation and final AC1-AC9/G1-G8 closure.
+
+### Review and implementation handoff
+
+- **Designer:** this RP-S2 slice supplies flow and screen direction; it does
+  not reopen accepted RP-S1 screens under
+  `["yaml-loops-v1:sprint/1/RP-S1/SprintDesignLoop","sprint-design-close-agreed-deliverable"]`
+  or accepted UX under
+  `["yaml-loops-v1:UserExperienceLoop","ux-close-agreed-deliverable"]`.
+  Prior votes are not RP-S2 reviewer votes.
+- **Scrum Master:** retain task decomposition, resource serialization and
+  Git reconciliation. No new Designer/UI implementation assignment is needed.
+- **Developer:** retain presentation and candidate work. Runner fixtures
+  supply provenance mismatch/zero-send, partial-role, unknown/held, ownership,
+  root and redaction observations; this design adds no public event fields.
+- **E2E/DevOps:** retain formal joined validation and original cloud-pass
+  ownership. Validate the final exact source/package, actual observations and
+  sanitized handoff. Earlier denied checks or later offline passes never
+  substitute for live proof.
+- **Product Owner/Critic:** review this RP-S2 section independently against
+  its sprint slice. Design agreement is not identity selection or release
+  acceptance; unresolved operational evidence does not require duplicate UI.
 
 ## Assignment and accepted inputs
 

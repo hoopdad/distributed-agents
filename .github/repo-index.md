@@ -24,7 +24,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Customer prototype release notes | `docs\customer-prototype-release-notes.md`, `README.md` | Blocked release decision, per-criterion AC1-AC9/G1-G8 ledger, accepted offline source versus unreached live proof, existing closing owners, setup/demo reference and unknown final/rollback bindings |
 | Sprint design (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-design.md` | Current RP-S1 supplied-designation journey/report mapping versus original ownership acceptance, current trust and matched operational roots; retained screens/fixtures, RP-S3 continuity/recovery/isolation reports, unchanged machine contracts and original execution owners |
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S1 supplied-designation/tier overlay: explicit writer/integration coordination versus original ownership acceptance and current verification; exact sibling path boundary, matched operational source, independent trust/inventory, retained fixtures/candidate and unchanged live gates |
-| Current RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Stopped original ownership evidence reconciliation in parallel with independent current-source drift/check handoff; retained runner and matched operational integration; deferred original DevOps trust/inventory/status/trial. Accepted candidate, application preparation, presentation and assertions are consumed, not redispatched |
+| Current RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Supplied Developer writer/integration designation and acknowledgements carried through original ownership acceptance in parallel with independent current-source checks; retained eight-path sibling runner and matched-source integration; original DevOps trust/inventory/status/trial. Accepted source and presentation are consumed, not redispatched |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
 | RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Stopped evidence-only ownership carryover and independent application integration preparation; runner/source join, later strict-trust inventory, exact publication/finite trial and explicit actual G1-G4 handoff; accepted candidate/UX and RP-S1 audit contract retained |
 | RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Evidence-only stopped carryover alongside independent missing scripted-comparison work; reviewed runner/source integration consumes accepted application preparation; original DevOps gates actual G1-G4, two-turn continuity, once-only supported recovery, independent isolation and truthful exact-source delivery |
@@ -39,6 +39,15 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Ownership-designation SprintPlan freshness: inspected clean application baseline
+`e4785bbe90fea4348b5645775d976897d969b023`; updated the existing recovery
+assignment JSON and this navigation only, with no added/deleted paths.
+Carries supplied Developer writer/integration designations and acknowledgements
+through original ownership acceptance, not premature runner-write authority.
+Retains two independent initial Developer lanes, matched operational roots,
+explicit Git reconciliation and phase-compatible original DevOps assignments.
+Actual dispatch and current reviewer votes remain with the orchestrator; no
+cloud, private-evidence authentication or live capability is asserted.
 Ownership-designation SprintArchitecture freshness: inspected clean agreed
 sprint-design baseline `3103c14781b4509b2bd73ff1ba763cece0f1adf0`; updated
 only cumulative architecture, three tier slices and this navigation, with no

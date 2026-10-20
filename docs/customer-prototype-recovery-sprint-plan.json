@@ -2,13 +2,13 @@
   "sprintId": "RP-S1",
   "goal": "Evidence-ready source and understandable continuity, with an actionable supported identity baseline or unresolved finding.",
   "featureBranch": "feature/customer-hosted-session-prototype",
-  "baseline": "095ced1cbb8258eaed6e1bf11beeb19a8b36f08d",
+  "baseline": "e4785bbe90fea4348b5645775d976897d969b023",
   "acceptedInputs": {
-    "Architecture": "2f62e3ca5353fdbc3433e1f49fdf9133f95dacbc",
-    "UserExperience": "8d6d6e05469e6a180db5cba0f77e07f7ff21a3af",
-    "ReleasePlan": "68c5bd8d8b2835b0f329b4bac5821ddb78809b36",
-    "SprintDesign": "160b38d202bd239ecd409b8f7de485b1d7f7e10e",
-    "SprintArchitecture": "095ced1cbb8258eaed6e1bf11beeb19a8b36f08d"
+    "Architecture": "f72b0f3c1206418f08fc62a149e80f7c12c55e81",
+    "UserExperience": "87253d3f5003d1d6f34724401b33c3b5ced2e64a",
+    "ReleasePlan": "f9ccb6e85c80ce14f36e44cfb6e690fde0d81e80",
+    "SprintDesign": "3103c14781b4509b2bd73ff1ba763cece0f1adf0",
+    "SprintArchitecture": "e4785bbe90fea4348b5645775d976897d969b023"
   },
   "scope": {
     "current": "Retain accepted continuity, revision, history, candidate, presentation and scenario assertions. Check the current source and provide fresh inventory plus a supported baseline or actionable unresolved finding.",
@@ -57,6 +57,7 @@
     "inventory": "Current sole-target/context/deployed/rollback/package/protocol/principal/caller/effective-action and held-owner observations with provenance, reached/unreached boundaries and exact stops. Metadata or historical receipt availability is not trusted specialist ingress."
   },
   "governance": {
+    "ownershipRecovery": "The user's October 20 ownershipRecoveryDefaults are explicit in-run coordination evidence for the original RP-S2-LAB-OWNERSHIP assignment: Developer is the eight-path runner writer in the registered feature sibling only and Developer is the application/lab integration owner. Supplied acknowledgements preserve the dirty canonical checkout, require explicit path ownership and commit --only, and prohibit branch switching, force-push, destructive cleanup or ownership inferred from registration. Missing writer acknowledgement/designation is no longer a human-input blocker. Carry this evidence with recoveryExceptionV1 through original reviewer acceptance and current path verification; it does not itself accept ownership or permit premature runner writes.",
     "dispatch": "Return assigned tasks to the existing YAML orchestrator; it dispatches ready original loops before Product Owner, Architect and Critic inspect plan and actual dispatch. Scrum launches no substitute agents. Current reviewer votes and actual dispatch are not yet observed.",
     "phase": "Installed sprintTasks forbids implementation dependencies on DevOps, which runs after original E2E. Ready Developer ownership-evidence and current-source checks run in parallel. Runner follows only substantiated ownership, not inventory. All cloud inventory/trial/publication remains in original DevOps.",
     "semanticGates": "An agreed unresolved report allows reporting, not missing prerequisite effects. Runner independently requires accepted safe-writing proof; integration requires actual reviewed commits and matched loaded roots. Trial requires exact-source/E2E/package and current trust/inventory gates, even when scheduler dependencies report agreed.",
@@ -79,12 +80,12 @@
       "estimatedMinutes": {"implementation": 15, "review": 10, "integration": 0},
       "priorOrigin": "yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop",
       "ownedPaths": [],
-      "inputs": ["Supplied recoveryExceptionV1 locator and accepted architecture Git/resolver handoff", "Original stopped ownership disposition and current point-in-time writer coordination"],
+      "inputs": ["Supplied recoveryExceptionV1 locator and accepted architecture Git/resolver handoff", "Original stopped ownership disposition and current point-in-time writer coordination", "User-supplied ownershipRecoveryDefaults: Developer runner writer, Developer integration owner and all three current-writer acknowledgements"],
       "produces": ["Substantiated original safe-writing/root handoff or precise unresolved ownership/access finding"],
       "acceptanceCriteria": [
         "Use supplied recovery evidence first. Carry existing branch/HEAD/status and matched/mismatched resolver evidence to original Architect/Critic review; bounded read-only Git/sibling inspection is authorized, not a reason to request expanded product permission.",
-        "Reconcile actual current writer/path ownership and dirty/staged preservation with Scrum and original owners. Record operational versus writable tooling roots, actual branch/base and exclusive owned paths. Registration/clean status alone is not exclusive writing authority.",
-        "Preserve originating taskComplete=false and five-round stop until its concrete evidence condition is met. Do not silently restart unattended probes, recreate setup or treat an agreed blocked assessment as setup completion."
+        "Use the supplied writer/integration-owner designations and acknowledgements as explicit coordination evidence; do not request them again. Reconcile current path ownership and dirty/staged preservation, operational versus writable tooling roots, actual branch/base and the exact eight-path runner allowlist. Registration/clean status alone is not exclusive writing authority.",
+        "Carry the new coordination evidence through the originating Architect/Critic acceptance gates. Preserve originating taskComplete=false and stopped history until its concrete evidence condition is met; this is a bounded original-task recovery, not a fresh task label or reset of the no-progress counter. Do not restart uncertain effects, recreate setup or treat an agreed blocked assessment as setup completion."
       ],
       "doneWhen": "Original safe-writing/root evidence is substantiated and accepted by its originating reviewers; unavailable evidence remains an explicit unmet setup criterion with its exact closing action.",
       "exclusions": ["No write probe or runner writing", "No branch switch, checkout recreation, settings/profile change, lab edit or cloud operation", "No reset of the originating stop or closure-only commit"],
@@ -141,7 +142,7 @@
       "exclusiveResources": ["application-git-integration", "lab-git-integration", "application-runtime-source", "lab-decision-tooling-source", "application-public-index", "lab-public-index"],
       "estimatedMinutes": {"implementation": 35, "review": 25, "integration": 10},
       "ownedPaths": ["Reviewed task-owned application and retained tooling paths", ".github/repo-index.md in each affected repository"],
-      "inputs": ["Reviewed application drift/check handoff", "Reviewed runner commits, root contract and required operational-wrapper deltas"],
+      "inputs": ["Reviewed application drift/check handoff", "Reviewed runner commits, root contract and required operational-wrapper deltas", "User-supplied Developer integration-owner designation for application and lab"],
       "produces": ["Exact joined source/tooling hashes and actual loaded-root map", "Reviewed scoped push outcomes and durable task-branch accounting"],
       "acceptanceCriteria": [
         "Join every intended task commit on authorized feature branches or durably record task/branch/commits/abandonment reason in a feature-branch commit message; retain abandoned branches and preserve unrelated staged/dirty files.",
@@ -235,11 +236,11 @@
     "meaning": "Dispatch-ready complete is returned under the supplied SprintPlan protocol. The orchestrator dispatches ready original loops before planning reviewers verify actual dispatch; no such observation or reviewer vote is fabricated here."
   },
   "verificationThisPlanningTurn": {
-    "application": "Fresh clean feature branch at baseline 095ced1cbb8258eaed6e1bf11beeb19a8b36f08d before planning edits.",
-    "lab": "Read-only canonical status and registered-worktree inventory: canonical HEAD 63348876535de7c264dc1e9139bb6fd2684b0052 retains six modified/two untracked paths on its unrelated branch; existing registered feature sibling HEAD bdd6b2a491ecbe0fc3b7570b86f297ac00bd2703 was clean. No writing exclusivity is inferred.",
-    "recovery": "Used supplied recoveryExceptionV1 locator first: three required summaries and four named receipt candidates exist and parse as JSON. Only presence/schema keys inspected this turn; no receipt authenticity/linkage/current trust or cloud result is independently certified.",
-    "checks": "Installed read-only sprintTasks accepted seven tasks. Direct assertions verified all bounded contracts/estimates, exact role lists, two resource-disjoint initial Developer lanes, source-integration joins, no duplicate isolated-client assignment and no claimed observed dispatch. Negative controls rejected a deferred-DevOps implementation dependency and a dependency cycle. Application Test-Demo.ps1 with existing absolute canonical lab Python 3.12.10 and explicit LabRepositoryRoot completed with exit 0, including dependency, offline unittest and compilation gates. Test-Repository.ps1 passed current index, 79-public-file boundary, JSON, PowerShell, frontmatter and whitespace checks. No dependencies were installed. These planning/local checks do not replace downstream exact joined-source, retained changed-tooling, Linux/package or live gates.",
-    "inspectionLimit": "A combined follow-up output-tail and cross-repository status command was execution-permission denied. A separate application-only status/diff/whitespace inspection succeeded. No additional private evidence or cross-repository final status verification is claimed from the denied command; the earlier successful read-only observations remain point-in-time observations.",
+    "application": "Fresh clean feature branch at baseline e4785bbe90fea4348b5645775d976897d969b023 before planning edits.",
+    "lab": "Read-only canonical status and worktree registration: canonical branch feature/swc-think-fast-aca-dns at abbreviated HEAD 6334887 retains six modified/two untracked paths. Registered feature sibling is listed at abbreviated HEAD bdd6b2a. No direct sibling status or writing exclusivity is inferred; original ownership task must verify current paths before runner writes.",
+    "recovery": "Consumed supplied coordination defaults and accepted architecture handoff. Private evidence was not independently reauthenticated this planning turn; original ownership task uses the supplied recoveryExceptionV1 locator first. No historical receipt is current trust or live acceptance.",
+    "checks": "Installed read-only sprintTasks accepted seven tasks. Assertions passed bounded contracts, complete role lists, estimates, exact eight-path runner scope, supplied-designation consumption and two resource-disjoint initial Developer lanes. Negative controls rejected a dependency cycle and implementation-on-deferred-DevOps dependency. Installed criticalPathPriorities reports 350 estimated minutes through ownership/runner/integration/trial, including the 125-minute trial and excluding the intervening formal E2E duration. Test-Repository.ps1 passed with the existing absolute lab Python 3.12.10: current index, 79 public files, JSON, PowerShell, context frontmatter and whitespace. No dependencies installed. Current-source Test-Demo remains assigned to RP-S1-CURRENT-SOURCE-CHECKS and joined checks to integration; no historical application, Linux/package or live test is newly claimed.",
+    "inspectionLimit": "No cloud operation, private settings import, sibling write probe or operational-wrapper installation was performed. Existing registration is point-in-time navigation evidence only.",
     "limits": "Planning changes only. No runner implementation, repeated resolver experiment, settings import, cloud operation, new task acceptance, push, package or live release observation is established here."
   }
 }

@@ -26,7 +26,7 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Cumulative sprint architecture (RP-S1/RP-S2/RP-S3) | `docs\customer-prototype-sprint-architecture.md`, `docs\requirements\coordinator\architecture.md`, `docs\requirements\specialists\architecture.md`, `docs\requirements\client-release\architecture.md` | Current RP-S2 cumulative/tier overlay: independent originating ownership and accepted-fingerprint lanes; exact loaded-source integration, formal joined E2E and common-bundle G1-G4 before RP-S3; retained source/history/presentation and unchanged live gates |
 | Current RP-S1 recovery-entry assignments | `docs\customer-prototype-recovery-sprint-plan.json` | Supplied Developer writer/integration designation and acknowledgements carried through original ownership acceptance in parallel with independent current-source checks; retained eight-path sibling runner and matched-source integration; original DevOps trust/inventory/status/trial. Accepted source and presentation are consumed, not redispatched |
 | Historical RP-S1 sprint assignments | `docs\customer-prototype-sprint-plan.json` | Retained prior phase-compatible dispatch contract and audit history; current recovery-entry plan supersedes its dispatch list without resetting originating stops |
-| RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Stopped evidence-only ownership carryover and independent application integration preparation; runner/source join, later strict-trust inventory, exact publication/finite trial and explicit actual G1-G4 handoff; accepted candidate/UX and RP-S1 audit contract retained |
+| RP-S2 sprint assignments | `docs\customer-prototype-rp-s2-sprint-plan.json` | Current supplied-designation ownership recovery and independent outgoing application audit consuming accepted source checks; exact eight-path sibling runner, matched loaded-root integration/Git reconciliation, later strict-trust inventory, finite trial and actual G1-G4; no duplicate accepted source/UX work |
 | RP-S3 sprint assignments | `docs\customer-prototype-rp-s3-sprint-plan.json` | Evidence-only stopped carryover alongside independent missing scripted-comparison work; reviewed runner/source integration consumes accepted application preparation; original DevOps gates actual G1-G4, two-turn continuity, once-only supported recovery, independent isolation and truthful exact-source delivery |
 | RP-S1 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Current closure/envelope and session-specific evidence-access lessons, attributed metric limits, bounded-report completion versus execution, existing-owner actions; historical retrospectives retained, no ownership reset or live acceptance waiver |
 | RP-S3 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted offline assertion/repair lessons, meaningful negative controls and separate observation provenance; unreached live demonstration, current originating votes, preserved stopped lanes and existing integration/release ownership |
@@ -39,6 +39,15 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 
 External lab tooling is mapped in `docs\migration-map.json`; resolve its root
 from private settings. There is no Terraform root or SSH launcher here.
+Current RP-S2 SprintPlan freshness: inspected clean architecture baseline
+`2fc6498ad2cd694fff76230d89731a0e2263373c`; updated only the existing RP-S2
+assignment JSON and this navigation, with no added/deleted paths. Retains seven
+existing assignments, supplied designations through originating ownership review,
+an independent outgoing-commit audit consuming accepted current-source checks,
+the exact eight-path runner allowlist and actual loaded-wrapper integration.
+Original E2E/DevOps phase boundaries, strict host trust, all live gates and
+historical holds remain unchanged. No substitute dispatcher, direct sibling
+proof, private evidence authentication, cloud operation or live claim.
 Current RP-S2 SprintArchitecture freshness: inspected clean SprintDesign baseline
 `d558a721747ddea92a445b8bc45c786ba5c84664`; updated only cumulative
 architecture, three tier slices and this navigation, with no added/deleted paths.

@@ -1,5 +1,42 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current RP-S1 continuation: existing-engine readiness interface
+
+Consume the [current cumulative sprint contract](../../customer-prototype-sprint-architecture.md#current-rp-s1-continuation-retained-session-contracts-and-engine-readiness-join-october-20-2026),
+accepted Architecture `cef352f4` and SprintDesign `5cc0f692` A-D/F/G.
+**Terminal client**, **Guarded lab release toolchain** and shared **Trusted
+identity and private transport** retain canonical names/IDs and machine output.
+Accepted RP-S1 source, context callers `42a70533` and integration/local E2E
+remain consumed, not assignments to repeat. Historical sections below do not
+reopen ownership, context correction or accepted renderer work.
+
+For `release-join`/`release-package`, existing Scrum assigns the Developer only
+lab `Ensure-LinuxEngine.ps1`, `tests/test_release_linux_engine.py`, necessary
+minimal `Build-Demo.ps1` public read-only test mounts and lab index. Preserve
+explicit application/reviewed-tool roots, loaded-source guards and separate
+existing operational context. Helper checks effective selected local Linux
+endpoint/overrides, returns already-ready without start, or invokes supported
+existing-engine startup once with bounded child commands/polling. Only actual
+same-endpoint Linux responsiveness passes. Unsupported/ambiguous/drifting
+selection, failed/hung start and timeout fail nonzero without build/publication.
+No installation, host reconfiguration, context substitution, credential access,
+private-setting change or automatic startup inside Build-Demo.
+
+Original review and changed-join E2E cover helper and changed build-test hashes,
+not just old runtime closure. Original DevOps then explicitly runs helper and
+retained Linux/amd64/hosting-Python application AND separate release container
+checks; fakes/skips/startup success do not satisfy AC7. Screen F distinguishes
+already-ready, start/pending, confirmed-ready and failure from actual package PASS.
+Local engine startup is unrelated to hosted G6 stop/resume.
+
+Independent selected-WSL rollback-package/effect inventory proceeds now.
+Prior route receipt proves only its own observed reads/owned cleanup; revalidate
+freshness before effects. Unused Windows-helper acceptance does not gate WSL.
+Both actual readiness exits gate one original publisher, exact common package
+and G1-G4/non-held parent; downstream G5-G8 remain unmet live. Existing closeout
+owns reviewed-ref push/readback and measured README status without reopening
+clarity. Preserve UNKNOWNs, held parents, rollback assets and stop accounting.
+
 ## Current RP-S2 selected-route and exact-package contract
 
 Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-validated-source-to-initial-hosted-collaboration-october-20-2026)

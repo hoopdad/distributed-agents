@@ -1,5 +1,131 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Current RP-S1 continuation: retained session contracts and engine-readiness join (October 20, 2026)
+
+This packet selects **RP-S1**, not a restart of its accepted implementation.
+Consume accepted Architecture `cef352f4`, UX `6b6975c0`, ReleasePlan `48e3faf3`
+and SprintDesign `5cc0f692`. Opened their original outcome audits
+`398b66fa…`, `bf7fed70…`, `5a82b2df…` and `d8ab0784…` under current run
+`0159ec9f-a89c-47f9-986f-80d9dfe6740a/context`: status agreed, all original
+reviewers agree/taskComplete true with no unmet criteria within each bounded
+document. These are input acceptances, not votes for this amendment.
+No feedback or priorDispositions are supplied in this invocation; no historical
+disposition is superseded. Earlier entries retain their originating boundaries.
+
+Preserve completed predecessor RP-S1, **partial RP-S2** and pending RP-S3 live
+work. The original stopped `sprint/2/RP-S2/DevOpsWorkLoop` in predecessor result
+`71e45fd8-287f-40e8-89a9-d97021f8dee0/result.json` reports needs-replan;
+Architect/Critic/Developer agree but each records taskComplete false. Its
+selected Docker Linux endpoint was absent and no startup was attempted.
+Retained WSL authenticated metadata reads succeeded, with mixed deployed
+content, not final-common-bundle health or collaboration. Rollback-package
+availability and complete unresolved-effect inventory remain open. No engine,
+authentication, cloud or transport operation was repeated in this turn.
+
+### Stable model, sprint criteria and actual source
+
+The authoritative [solutionModel](customer-prototype-architecture.md#solutionmodel)
+remains unchanged: ten components, five triggered flows, eighteen stable steps
+and shared support links. This cumulative artifact references that model rather
+than introducing a duplicate release component or renaming a customer flow.
+RP-S1 retains **Remote design and review** and **Same-parent specialist
+continuation**, all five `collaboration-*` and three `continuity-*` steps.
+The new readiness handoff refines **Exact-source guarded release**,
+`release-join` and `release-package`; it does not assert those steps now work.
+
+| Approved boundary | Components and source modules | State and smallest receiving handoff |
+|---|---|---|
+| RP-S1 two-turn/revision bindings | **Hosted coordinator**, **Parent and specialist conversation state**: `demo/workflow.py`, `demo/foundry.py`, `tests/test_workflow.py` | Accepted offline source: parent/both hosted-framework child identities and pins remain stable, exactly two child creations, fresh responses/current requirements and stale-approval invalidation. Consume tests, do not recreate them. |
+| RP-S1 actual model-history controls | **Hosted architect**, **Hosted reviewer**: `demo/specialist.py`, `demo/architect_agent.py`, `demo/reviewer_agent.py`, `tests/test_specialist_continuity.py` | Accepted offline reject/revise/review and persisted-history/fresh-history/known-response zero-send controls. Restored remote session is distinct from internal model history; neither fixture nor replayed brief proves live memory. |
+| RP-S1 customer explanation | **Terminal client**: `README.md`, `demo/terminal.py`, `tests/test_demo.py`; accepted SprintDesign A-D, operator F/G | Accepted clarity implementation, opt-in finalized human stderr, unchanged stdout/parser and safe display aliases. Existing closeout owns stale measured-status wording, not renewed renderer work. |
+| AC7 missing build prerequisite | **Guarded lab release toolchain**: proposed lab `foundry-tf/multi-agent/Ensure-LinuxEngine.ps1`, `tests/test_release_linux_engine.py`; retained `Release-Roots.ps1`, `Build-Demo.ps1` | Specified, not implemented/executed here. Scoped Developer source/tests -> original review -> integration/changed-join E2E -> original DevOps actual recovery and Linux checks. |
+| AC8/AC9 source/effect closure | **Guarded lab release toolchain**, **Trusted identity and private transport**: retained `Invoke-WslCodeRelease.ps1`, source-root guards and package/preview wrappers | Accepted context callers lab `42a70533`, source integration `576b613`, latest handoff `0b6d99a` are consumed. Existing DevOps continues independent selected-route rollback/effect inventory. Exact new helper/build-test hashes must supplement unchanged runtime closure. |
+
+Source acceptance and local integration PASS do not prove deployed operation.
+Identity assessment remains explicitly unresolved live; neither A nor B is
+selected by this local recovery contract. Preserve finite trusted architect
+ingress/equality before reviewer, independent reviewer entry and deterministic
+artifact gates before genuine Decision-1. No speculative identity bypass,
+permission/infrastructure mutation or hidden local fallback.
+
+### Recovery interface and precise construction boundary
+
+Apply the accepted full-release
+[existing-engine contract](customer-prototype-architecture.md#smallest-recovery-operation-and-caller-boundary)
+without widening it. Existing Scrum Master assigns the existing Developer
+`RP-S2-LINUX-ENGINE-READINESS` in the registered authorized lab feature sibling.
+Owned scope: new `Ensure-LinuxEngine.ps1`, new
+`tests/test_release_linux_engine.py`, only necessary read-only public test-input
+mounts in `Build-Demo.ps1`, and lab `.github/repo-index.md`.
+Application runtime, private settings, production/default profiles and canonical
+dirty lab paths are not writable parts of this correction.
+
+- Helper accepts explicit `ApplicationRoot` and `LabRepositoryRoot`, uses
+  loaded `Release-Roots.ps1` ownership validation and a finite validated budget.
+  It diagnoses only the effective selected existing local Docker Desktop Linux
+  context/endpoint and conflicting overrides; context/config credential dumps
+  are excluded. Ambiguous, remote, unsupported or changed selection fails closed.
+- Already-responsive Linux server succeeds without startup. Supported recovery
+  invokes `docker desktop start` at most once and observes the same selected
+  Linux server within bounded command execution and readiness polling.
+  Startup exit zero is not readiness. Report attempted startup, observed
+  readiness/failure and elapsed waiting without private identifiers.
+- Missing/unsupported tooling, failed/hung startup, selection drift and timeout
+  fail nonzero, with no build/publication continuation. Bound owned commands,
+  never kill unrelated processes or the existing engine. No installation,
+  host/daemon reconfiguration, engine/context substitution or restart of a
+  ready engine; no automatic authentication, grants or uncertain-effect replay.
+- Required fake-command regressions cover ready/no-start, recoverable,
+  failed-start, failed-readiness, wrong/changing selection, invalid/crossed
+  roots, missing/unsupported tooling and hung commands. Assert no build or
+  publication on failure. Windows executable coverage uses pinned absolute
+  Python; justified Linux exclusions are not execution coverage.
+
+Read-only inspection of lab `42a70533` confirms `Build-Demo.ps1` already gates
+Linux/amd64 image inspection, actual application tests and a separate retained
+release container suite. Its named public tool mounts omit the proposed helper.
+Add only the necessary read-only source-inspection test input; do not make
+Windows startup execute in the Linux container. Keep Build-Demo offline:
+DevOps explicitly runs the reviewed helper first, then retained build on success.
+Preserve dependency provenance, source/image bindings and every package guard.
+Local Docker startup is not hosted G6 supported compute stop/resume.
+
+### Minimal joins, independent work and cumulative live exit
+
+1. **Scrum Master** owns precise assignment, critical path and Git reconciliation.
+   No whole-RP-S2 acceptance dependency gates helper construction or independent
+   selected-WSL rollback/effect inventory. Coordinate existing engine/stage
+   exclusive resources separately from the one publisher's shared context,
+   transport and mount resources; scheduler labels do not provide OS isolation.
+2. **Developer/integration** returns scoped committed/reviewed helper, caller/test
+   inputs and attributable results. Reconcile/push/read back intended reviewed
+   feature refs, actual loaded-source equality and changed hashes through the
+   existing owner. Do not certify a new helper with the old nine-lab-file closure.
+   Original E2E checks the affected exact join before original DevOps execution.
+3. **DevOps** continues selected-WSL rollback-package/effect inventory now using
+   retained read-only tooling. The prior receipt is bounded route evidence,
+   not freshness before later effects, rollback closure, inference or permission
+   to clear historical UNKNOWNs. Unused Windows-helper acceptance cannot gate WSL.
+4. **One original serialized DevOps publisher** joins BOTH actual Linux/package
+   and private-route/rollback/effect readiness exits. Revalidate freshness, build/
+   preview/bind/publish the exact final common bundle, reconcile every outcome,
+   prove architect before reviewer and complete actual G1-G4 plus a non-held
+   initial parent. Helper mocks, startup success and metadata never replace this.
+5. **RP-S3** receives measured parent/both-child hosted-framework bindings/pins,
+   current artifacts, checkpoints and reconciled effects for two-turn continuity,
+   once-only confirmed supported recovery and separate-parent isolation.
+   Isolation need not wait for recovery success; accepted fixtures support
+   independent preparation, not invented missing construction or live proof.
+
+All three tier contracts below carry this handoff without runtime changes.
+Preserve historical UNKNOWNs, held parents, rollback assets, unrelated work and
+historical cleanup uncertainty. AC1-AC9/G1-G8 remain actual release criteria;
+account-wide Blob permissions imply application-enforced, not malicious-host,
+isolation. Original five-consecutive-no-new-progress accounting is unchanged.
+Feasible helper construction and independent inventory remain: work is not
+exhausted and no user-only action is established. This deliverable is an
+architecture contract, not engine, package, deployment or customer acceptance.
+
 ## Current RP-S2: validated source to initial hosted collaboration (October 20, 2026)
 
 This entry governs **RP-S2**; earlier entries preserve their originating

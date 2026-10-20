@@ -1,5 +1,31 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current RP-S1 continuation: unchanged hosted acceptance boundary
+
+Consume the [current cumulative sprint contract](../../customer-prototype-sprint-architecture.md#current-rp-s1-continuation-retained-session-contracts-and-engine-readiness-join-october-20-2026)
+and accepted Architecture `cef352f4` / SprintDesign `5cc0f692`.
+**Hosted coordinator**, **Decision-1 routing and admission**, **MAF workflow
+checkpoints** and shared conversation/artifact structures keep canonical IDs.
+`demo/workflow.py`, `demo/foundry.py` and retained `tests/test_workflow.py`
+already supply RP-S1 binding/revision fixtures; do not redispatch implementation.
+All `collaboration-*` and `continuity-*` contracts remain unchanged.
+
+The missing existing-Linux-engine helper is an external `release-package`
+construction gap, not a coordinator identity/session defect or a new user-only
+blocker. It cannot select A/B, grant identity, alter pinned sessions or bypass
+deterministic gates before genuine Decision-1. Original reviewed source join,
+changed-join E2E and two actual readiness exits still precede serialized DevOps
+publication and real current-artifact acceptance. Independent route/inventory
+work and accepted-source preparation need not wait for helper construction.
+
+Preserve explicit begin/route/execute/publish, exact producer/hash/version/
+prerequisite/revision checks, stale-approval invalidation, ETag/fencing and
+unknown-effect holds. G1-G4 plus an actually completed non-held initial parent
+provide RP-S3's measured bindings/checkpoints/effects; startup, metadata and
+mocked history do not. No send into held state, alternate parent to hide failure
+or hidden local specialist. Supported recovery and independent isolation retain
+their original prerequisites. No hosted source or public contract changes here.
+
 ## Current RP-S2 initial-parent and acceptance contract
 
 Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-validated-source-to-initial-hosted-collaboration-october-20-2026).

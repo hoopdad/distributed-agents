@@ -1,5 +1,33 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current RP-S1 continuation: retained specialist sessions and ingress gates
+
+Consume the [current cumulative sprint contract](../../customer-prototype-sprint-architecture.md#current-rp-s1-continuation-retained-session-contracts-and-engine-readiness-join-october-20-2026)
+and accepted Architecture `cef352f4` / SprintDesign `5cc0f692`.
+**Hosted architect**, **Hosted reviewer** and shared **Parent and specialist
+conversation state** retain canonical IDs/support links and existing five-stage
+implementations. `demo/specialist.py`, both role modules and
+`tests/test_specialist_continuity.py` retain accepted direct-history controls.
+Remote hosted/framework binding and version pins remain distinct from internal
+`specialist_history_v2`, current immutable artifacts and advancing responses.
+No new implementation or repeated fixture assignment is needed here.
+
+Existing-engine recovery belongs only to external `release-join`/
+`release-package`; neither a responsive Linux daemon nor a successful package
+proves `collaboration-design`/`collaboration-review`. Original DevOps still
+proves trusted architect entry/equality before reviewer dispatch and independent
+reviewer entry with exact requirements/candidate refs. Identity selection remains
+unresolved live, with no call-ID-as-user, speculative grant, A/B fallback or
+local specialist. ReadOnly metadata is not specialist execution or model memory.
+
+The two actual readiness exits and original changed-join validation remain
+necessary for the serialized final common-bundle G1-G4/non-held-parent handoff.
+Two-turn binding/history, supported recovery and separate-parent runs require
+their real later observations; independent isolation need not wait for recovery
+success. Preserve UNKNOWNs, held children and no duplicate sends/history rekey.
+Application-enforced Blob isolation is not malicious-host/RBAC isolation.
+No hosted source, trust contract or session-scope change is made here.
+
 ## Current RP-S2 independent trusted-ingress contract
 
 Consume the [current RP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-rp-s2-validated-source-to-initial-hosted-collaboration-october-20-2026).

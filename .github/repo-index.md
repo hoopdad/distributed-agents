@@ -1,5 +1,21 @@
 # Repository index
 
+RP-S1 continuation-architecture freshness: based on clean feature `5cc0f692`,
+accepted Architecture `cef352f4`, UX `6b6975c0`, ReleasePlan `48e3faf3` and
+SprintDesign `5cc0f692`, with all four original outcome audits opened.
+`docs/customer-prototype-sprint-architecture.md` and all three tier contracts
+map retained RP-S1 session/history/terminal source to the scoped existing-engine
+helper, regression and minimal build-test input handoff. Actual lab `42a70533`
+Build-Demo inspection confirms separate application/release Linux gates and
+the missing helper mount; no lab write/execution. Existing Scrum scopes source;
+original review/integration/changed-join E2E precede DevOps recovery/build.
+Independent WSL rollback/effect inventory continues; BOTH actual readiness exits
+gate one publisher and G1-G4/non-held parent. Canonical ten-component/five-flow/
+eighteen-step model, accepted source and original live/UNKNOWN/stop boundaries
+are unchanged. No added/deleted paths, public/runtime contract or execution
+changes. Existing closeout owns measured README/ref updates. Older entries retain
+their originating boundaries; document validation is not engine/package/live PASS.
+
 RP-S1 continuation-design freshness: based on accepted Architecture `cef352f4`,
 UX `6b6975c0` and ReleasePlan `48e3faf3`, with all three original outcome audits
 opened. `docs/customer-prototype-sprint-design.md` retains the two-flow/eight-step

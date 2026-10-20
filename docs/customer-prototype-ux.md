@@ -1,5 +1,107 @@
 # Customer hosted-session prototype: user experience
 
+## Current continuation: existing-engine readiness and truthful next actions (October 20, 2026)
+
+Consumes accepted Architecture
+`cef352f4add49e893e3337184a741d8bd81436b1`, specifically
+[deterministic existing-engine recovery](customer-prototype-architecture.md#current-continuation-deterministic-existing-engine-recovery-october-20-2026).
+Designer opened originating ArchitectureLoop audit
+`398b66fab09f84e4f0abfe91e6db45146ff9f8db04be59dcc1b333b86b8aa696.json`
+in current run `0159ec9f-a89c-47f9-986f-80d9dfe6740a/context`: Product Owner,
+Red Team and Critic each agreed and marked that bounded deliverable complete.
+Those votes accept its contract, not this UX or executable recovery.
+No prior dispositions or reconciled feedback are supplied for this turn.
+
+This entry governs current operator direction; older configuration-pending,
+ownership-pending and route-unobserved wording below is retained history.
+Consume accepted lab `42a70533`, integration `576b613`, source handoff
+`0b6d99a` and original local-E2E acceptance without reopening their tasks.
+The new helper is specified, not implemented or executed by Designer.
+
+### Retained full-scope design and affected journey
+
+Retain the six UX principles, existing Python/plain-text/PowerShell/Markdown
+toolset, terminal-default light/dark appearance, accessible wrapping and all
+five [canonical journeys](#canonical-journey-to-screen-map). The ten components
+and eighteen canonical steps are unchanged. No browser UI, new framework,
+renderer, session store, terminal flag or public evidence field is introduced.
+The README invariant, chronological repeated specialist calls, useful current
+design/review output, finalized opt-in human stderr and unchanged machine
+stdout/parser remain the customer experience. Stable aliases are not private
+hosted/framework binding, version, response-inequality or model-history proof.
+
+This amendment refines **Guarded lab release toolchain** within **Exact-source
+guarded release**, steps `release-join`, `release-package` and `release-close`.
+Use existing Screen F (operator boundary report); Screen G still reports only
+observed publication/role outcomes. A stays goal-first with dated blocked
+status; B/C remain conditional initial/follow-up output; D still gives held
+state precedence. Do not turn local engine recovery into a hosted-session
+restart control or claim it satisfies G6.
+
+### Screen F: recovery outcomes and safe operator actions
+
+Use the existing report channel, in reading order: boundary -> observation and
+attribution -> missing gate -> existing owner/action. The table is design
+direction for the reviewed helper/DevOps handoff, not literal new status codes,
+a new response schema, runnable commands or a transcript of this turn.
+
+| Observed boundary | Visible distinction | Existing next action |
+|---|---|---|
+| Helper source not yet available | Recovery contract accepted; executable recovery and actual Linux/package checks not established. Prior DevOps observed a missing selected Linux-engine endpoint; its cause is unknown. | Scrum scopes the existing Developer's helper/tests and necessary caller mounts; original reviews, integration and changed-join E2E precede execution. No invented user login/install request. |
+| Selected existing engine already responds as Linux | Linux server ready; startup not attempted. This is not image, hosting-Python or package PASS. | Original DevOps runs retained `Build-Demo.ps1` gates against that same selection. |
+| Supported startup attempted once; readiness pending | Local startup attempted; readiness not yet confirmed. Command and readiness waits are bounded; no success banner from startup exit zero. | Reviewed helper polls the same selected endpoint within its bound, checking selection drift. Do not suggest a second manual start in parallel. |
+| Responsive Linux server confirmed after startup | Engine readiness passed; elapsed waiting and attempted startup are reported without private endpoint/configuration details. Build/package remain unverified. | Original DevOps runs the unchanged retained Linux/amd64/hosting-Python and retained container checks. |
+| Ambiguous/unsupported selection, missing tooling, start failure, timeout or selection drift | Readiness failed with its actual attributable condition; build/publication not started by this operation. A prior receipt is not current engine readiness. | Return the concrete failure to existing Developer/Scrum for bounded correction or supported investigation. No context switch, engine installation/reset, credential inspection, hidden fallback or automatic retry. |
+| Linux/package readiness passes, inventory incomplete (or the reverse) | Separate readiness results; release still BLOCKED at the missing branch. | Continue the independent branch. Only both actual readiness exits permit the original single serialized publisher's next guarded operation. |
+
+Keep three private roots distinct: application source, reviewed loaded-tool
+owner and existing imported operational context. Do not expose their actual
+values, Docker endpoint dumps, profiles, receipts or full hosted identifiers
+in customer output/Git. Do not advertise `Ensure-LinuxEngine.ps1` as an
+available customer command before reviewed implementation. Keep engine startup
+outside `Build-Demo.ps1`; neither operation authenticates or publishes for the
+user. Only a real supported device-code request warrants its actual URL/code
+and user-action prompt.
+
+### Independent inventory, customer copy and original-owner handoff
+
+Architecture inspected the predecessor's WSL ReadOnly receipt
+`multi-agent-zip-f10b54918593481296391a9367f40719.json`: authenticated three-role
+reads, mixed coordinator content, no attempted release and operation-owned
+resource closure. Designer consumes that attributed finding, not a fresh
+transport check, inference, final deployment or continuity result. Existing
+DevOps continues selected-WSL rollback-package/effect inventory independently
+of helper construction. Unused Windows-helper acceptance is not a WSL gate.
+Revalidate operational freshness before later effects; preserve every
+historical UNKNOWN, held parent, rollback asset and cleanup uncertainty.
+
+At the next existing measured closeout, replace stale README
+configuration-pending copy without redispatching accepted clarity work.
+Suggested customer status direction, not observed live output:
+
+> Release BLOCKED, not customer-ready. The operational-context correction and
+> local source integration are accepted. Deterministic existing-Linux-engine
+> recovery is specified but not yet verified in execution. Actual Linux hosting
+> package checks and complete rollback/effect inventory remain outstanding.
+> Prior private readback did not establish final deployment or collaboration.
+> Live two-turn continuity, supported compute recovery and isolation remain
+> unverified.
+
+Closeout must update that wording as evidence changes, not freeze this
+snapshot. Source/mock checks never unlock customer follow-up: require a
+completed non-held initial parent and actual final bindings. Existing
+conditional demo commands remain unchanged. RP-S3 preparation may continue on
+accepted source; actual continuation/recovery/isolation requires its relevant
+live prerequisites. Isolation does not depend on recovery success.
+
+Scrum owns precise source assignment and Git reconciliation; existing Developer
+owns helper/tests; original E2E owns changed-join validation; original DevOps
+owns recovery/build, independent inventory, single publication and live gates.
+No additional approval stage or human-only blocker is established. Preserve
+the original five-consecutive-no-new-progress accounting. This Designer
+deliverable is the full-scope UX with the bounded Screen F recovery handoff,
+for original Product Owner/Critic review, not execution of AC1-AC9/G1-G8.
+
 ## RP-S1 retrospective: status must advance with evidence (October 20, 2026)
 
 Product Owner improvement consuming accepted sprint review `835713a`; see

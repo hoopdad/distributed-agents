@@ -1,5 +1,17 @@
 # Repository index
 
+Existing-engine recovery UX freshness: based on accepted Architecture
+`cef352f4` and its opened original Product Owner/Red Team/Critic audit.
+`docs/customer-prototype-ux.md` maps the recovery contract to retained Screen F:
+already-ready, once-started/pending, confirmed-ready and attributable failure
+remain separate from actual Linux/package PASS. Independent WSL rollback/effect
+inventory continues; both readiness exits gate one original publisher.
+Retains all customer journeys, layout/accessibility and stdout/parser contracts;
+no renderer, helper, settings, README or runtime changes. Existing closeout owns
+evidence-qualified README status, not renewed clarity implementation. No paths
+added/deleted; local document checks are not engine/package/live verification.
+Older entries retain historical boundaries, not current pending source tasks.
+
 Existing-engine recovery architecture freshness: based on clean application
 feature `0b6d99a` and inspected clean registered lab feature `42a70533`.
 Opened predecessor `71e45fd8/result.json`, original bounded architecture/E2E

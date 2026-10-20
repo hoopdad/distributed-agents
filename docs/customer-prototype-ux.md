@@ -1,5 +1,139 @@
 # Customer hosted-session prototype: user experience
 
+## UX entry: canonical journeys and presentation boundaries (October 20, 2026)
+
+This is the current User Experience Loop entry. It consumes accepted Architecture
+`35d526ae3a9e722ebe633ba60e2ca572182a5d1e` and its
+[canonical solution model](customer-prototype-architecture.md#solutionmodel).
+The originating ArchitectureLoop audit in the supplied workflow context records
+Product Owner, Red Team and Critic agreement on that architecture deliverable.
+Those votes do not accept this UX deliverable or prove executed flows.
+This packet supplies no prior dispositions or reconciled feedback. Retained
+dated entries below are historical handoffs, not current observations.
+
+Designer inspected application HEAD `35d526ae3a9e722ebe633ba60e2ca572182a5d1e`
+on `feature/customer-hosted-session-prototype`. Git status showed only the
+untracked workflow-context directory; it is not owned, indexed or committed by
+this work. The scope is the existing README/terminal experience, not a browser
+UI, runtime implementation, new evidence schema or identity selector.
+
+### Design system and reading order
+
+Retain the [six UX principles and existing tools](#ux-principles-tools-and-framework):
+invariant first, evidence before reassurance, useful design/review content,
+truthful failure, private by default and progressive disclosure. Python's
+existing argparse/plain-text renderer, PowerShell setup and Markdown/ASCII
+documentation are sufficient; retain MAF/Foundry and their pinned dependencies.
+No new visual framework, service, session database or model call is needed.
+
+The entry surfaces have this hierarchy:
+
+| Surface | Layout direction | Evidence boundary |
+|---|---|---|
+| README opening | Goal -> three-role diagram -> initial/follow-up example -> stable identities versus advancing responses -> concise blocked status -> short source path | Status is dated and links to release/recovery detail. Historical diagnostics must not displace the customer invariant. No exact line count or new viewport gate. |
+| Completed terminal turn | Parent identity labels -> chronological role-call blocks -> continuity limitations -> current design and review -> coordinator result -> separate release limitation | `--native --view human` is an opt-in stderr projection after finalization; default stdout and acceptance parsing are unchanged. |
+| Held/invalid terminal turn | Observed calls when parseable -> prominent HELD/BLOCKED -> preserve pending state/no resend | Do not show accepted output after unsuccessful finalization. Missing records are not zero calls or an observed receiver rejection. |
+| Operator handoff | Reached boundary -> observed/attributed evidence -> unmet gate -> existing closing owner/action | Private full bindings, trust material, receipts and source/package locators stay outside customer output and Git. |
+
+Reuse the [README wireframe](#readme-first-screen),
+[terminal wireframe](#terminal-implemented-opt-in-human-view) and
+[evidence-to-display contract](#evidence-to-display-contract) below. They are
+design direction, not live transcripts. Preserve wrapping and one labeled role
+block on narrow terminals; do not require horizontal scrolling or color.
+Use terminal-default light/dark appearance, ordinary text labels, no cursor
+animation and no semantic dependence on theme. Generated text stays prefixed
+and control-character neutralized, including apparent status banners.
+
+### Canonical journey-to-screen map
+
+Names and step IDs below are reused verbatim from Architecture; screen details
+are not additional solution components. The prototype evaluator consumes the
+README/terminal; the lab operator consumes the existing local-script handoff.
+
+| Canonical flow / trigger | Named components and visible direction | Canonical steps |
+|---|---|---|
+| **Remote design and review**: a fresh synthetic initial requirement | **Terminal client** submits to **Hosted coordinator**; **Hosted architect** designs and **Hosted reviewer** reviews exact prerequisites. Show ordered calls and useful current output, then acceptance only after coordinator finalization. **Decision-1 routing and admission**, **MAF workflow checkpoints**, **Trusted identity and private transport**, **Parent and specialist conversation state**, and **Private Blob artifacts and effect journal** support this journey without becoming customer controls. | `collaboration-bind`, `collaboration-route`, `collaboration-design`, `collaboration-review`, `collaboration-return` |
+| **Same-parent specialist continuation**: add a queue only after a completed non-held initial turn | Reuse the **Terminal client** private session file; **Hosted coordinator**, **Hosted architect** and **Hosted reviewer** retain parent/both-child identity and version bindings while responses, model histories and artifacts advance. Show revised useful output; aliases remain observations, not proof. **Guarded lab release toolchain** supplies independent private comparison evidence. | `continuity-revise`, `continuity-invoke`, `continuity-verify` |
+| **Supported compute stop and resume**: the retained local script requests one supported stop | **Guarded lab release toolchain** confirms the stop before **Hosted coordinator** resumes its existing conversations, **MAF workflow checkpoints**, and **Private Blob artifacts and effect journal**. Report known-response retrieval as no resend, not a new invocation; expose no new terminal stop/restart control. | `recovery-stop`, `recovery-resume`, `recovery-verify` |
+| **Separate-parent isolation**: an independently scoped synthetic parent starts after its release prerequisites | **Terminal client** uses a distinct private state file; **Hosted coordinator** creates distinct architect/reviewer bindings and artifact scope. Report isolation only after actual comparison through **Guarded lab release toolchain**. This is application-enforced isolation under account-wide Blob Contributor, not malicious-host/storage-RBAC isolation. Recovery success is not a prerequisite for this separate journey. | `isolation-bind`, `isolation-execute`, `isolation-verify` |
+| **Exact-source guarded release**: reviewed task commits are ready | **Guarded lab release toolchain** hands off integrated roots/source, package/version checks, finite identity discrimination and actual live results. Customer status remains blocked until the original acceptance gates pass; a selected identity path or healthy metadata alone does not unlock a verified demo. | `release-join`, `release-package`, `release-discriminate`, `release-close` |
+
+For a controlled within-turn rejection, retain all four calls in order:
+architect -> blocked reviewer -> same architect revision -> same reviewer.
+Never deduplicate them into two role rows. The eventual review must name the
+current candidate/revision, not an earlier approval. Label fixture evidence
+offline; real two-turn collaboration is independently required.
+
+### Interaction states and safe next actions
+
+These are design rules for existing output and owner handoffs, not new terminal
+states, parser fields, automatic operations or approval stages:
+
+1. **Prepared is not executed.** Validated settings/transport prerequisites
+   permit only their existing next guarded action. A source/root or trust stop
+   before dispatch is not a fresh specialist ingress failure. Show the actual
+   diagnostic or unavailable observation, not invented role rows.
+2. **Completed permits continuation, not a verification claim.** After a
+   finalized non-held initial turn, reuse the same file for the queue follow-up.
+   Compare actual hosted/framework identity fields and pinned versions privately;
+   do not compare whole serialized session objects because continuations advance.
+   Exactly two child creations and fresh invocation responses need independent
+   observations. The existing human view correctly leaves these unverified.
+3. **Held/unknown overrides success-looking prose.** Preserve the session and
+   operation record. Do not offer retry, delete state, switch identity paths,
+   substitute a new parent to evade a hold or repeat an uncertain stop. Exact
+   known-response retrieval is labeled recovery/no resend.
+4. **Accepted advisory is not accepted release.** Stable-looking aliases, recalled
+   requirements, HTTP 200, offline tests and report agreement cannot establish
+   specialist model-history continuation, private provenance, recovery or final
+   common-bundle deployment. AC1-AC9/G1-G8 remain with their original owners.
+
+### Current evidence and bounded completion
+
+The accepted architecture reports denied separate sibling Git/resolver
+inspection and available, value-suppressed comparisons of the supplied accepted
+trust references. These are attributed architecture results, not Designer
+inspection or fresh transport proof. Do not propagate older sibling-cleanliness
+claims as current. Supplied writer/integration designations are coordination
+evidence; originating ownership/root acceptance and actual loaded-source
+integration remain separate. Neither requires renewed user designation.
+
+Designer inspected the current `HumanView` / `finalize_workflow_turn` source and
+README command shape. No settings import, private recovery inspection, sibling
+inspection, cloud inventory, identity decision, publication, inference,
+stop/resume or usability timing is performed by this UX work. The historical
+`NATIVE_HOST_PRINCIPAL` failure is not a fresh diagnosis. The specialist-only
+B source remains an unselected candidate. Historical UNKNOWNs, held parents,
+rollback assets and cleanup uncertainty remain unchanged.
+
+The bounded deliverable is this current entry plus the retained principles,
+flows, wireframes, failure direction, accessibility, evidence-to-display rules
+and [owner handoffs](#downstream-acceptance-and-handoff). Developer retains
+existing presentation/parser behavior; Scrum owns decomposition and integration
+assignment; original E2E validates the actual source join; original DevOps owns
+serialized publication and the real two-turn/recovery/isolation demonstration.
+No duplicate renderer, new CLI field or redispatch of accepted implementation
+is assigned. Designer accepts this documentation deliverable for independent
+Product Owner/Critic review; their UX votes are still to be collected.
+
+### Validation of this canonical UX entry
+
+An in-memory document check using the existing absolute Python 3.12.10 AMD64
+executable passed: all ten canonical component names and five flow names are
+present, all eighteen canonical step references occur exactly once in the
+entry, six local links resolve, and presentation/reviewer boundaries are
+retained. `git diff --check` passed for the owned changes. Python version and
+the installed Agent Framework import were checked; no dependency was installed.
+
+Both requested suite invocations were denied because interactive tool approval
+was unavailable: `Test-Demo.ps1` with the absolute Python and explicit canonical
+lab root, and `scripts/Test-Repository.ps1` with that Python. Neither suite
+executed in this UX turn; historical architecture test results are not fresh
+UX validation. No alternate route was used to run them. This limits validation
+to document/source consistency, not application, repository-suite, Linux package
+or live flow certification. Original execution owners retain final exact-source
+checks; this bounded design handoff requests no new project authority.
+
 ## Current RP-S3 retrospective — conditional instructions are not an executed demonstration (October 20, 2026)
 
 Consume accepted SprintReview `be996f84694f9c94f163448f8afcc3ddce095223`
@@ -113,7 +247,7 @@ trust evidence outside customer output/Git. Safe aliases do not prove actual
 bindings or pinned-version continuity. No field, flag, UI, renderer or duplicate
 UX implementation is introduced; existing live demonstration obligations remain.
 
-## Current User Experience Loop: evidence-qualified handoff (October 20, 2026)
+## Earlier User Experience Loop: evidence-qualified handoff (October 20, 2026)
 
 This Designer handoff consumes accepted architecture commit
 `25d182245a1bb40b842f5787196bd8f8244c4a7d`, also the inspected clean

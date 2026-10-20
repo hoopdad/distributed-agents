@@ -1,5 +1,17 @@
 # Repository index
 
+RP-S1 continuation-design freshness: based on accepted Architecture `cef352f4`,
+UX `6b6975c0` and ReleasePlan `48e3faf3`, with all three original outcome audits
+opened. `docs/customer-prototype-sprint-design.md` retains the two-flow/eight-step
+A-D contract and specializes F/G for existing-engine readiness outcomes and
+independent selected-WSL inventory. Local engine startup is not hosted G6;
+both actual readiness exits still gate one publisher. Preserves completed
+RP-S1/partial RP-S2 history, accepted fixtures/renderer/source, machine output,
+privacy/accessibility and existing measured-status closeout ownership. No paths
+added/deleted, public/runtime contract or execution changes. Original design
+review follows; document checks are not engine/package/live verification.
+Older design entries retain historical task boundaries, not current blockers.
+
 Existing-engine recovery release-plan freshness: based on accepted Architecture
 `cef352f4` and UX `6b6975c0`, with both original outcome audits opened.
 `docs/customer-prototype-release-plan.md` consumes completed RP-S1, preserves

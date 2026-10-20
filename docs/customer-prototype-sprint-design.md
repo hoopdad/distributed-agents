@@ -1,6 +1,124 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Current RP-S2: validated source to guarded collaboration (October 20, 2026)
+## Current RP-S1: retained continuity screens and recovery-boundary handoff (October 20, 2026)
+
+This packet selects **RP-S1**. Consume accepted Architecture `cef352f4`,
+UserExperience `6b6975c0` and ReleasePlan `48e3faf3`; original outcome audits
+`398b66fa…`, `bf7fed70…` and `5a82b2df…` were opened under the application's
+`gh-dynamic-workflows/.delivery-runs/0159ec9f-a89c-47f9-986f-80d9dfe6740a/context`.
+Each records agreement, all original reviewer taskComplete votes true and
+no unmet criteria for its bounded document. Those votes do not accept this
+SprintDesign or establish operational success. No reconciled feedback or
+priorDispositions are supplied for this turn. Historical dispositions below
+remain confined to their exact originating tasks, not blanket requirements
+or waivers.
+
+The new design work is the sprint-level handoff from retained customer screens
+to the specified existing-engine recovery boundary. Consume accepted RP-S1
+fixtures, model-history and renderer behavior; do not assign them again.
+The latest release plan preserves completed RP-S1, partial RP-S2 and pending
+RP-S3 live acceptance. This invocation's RP-S1 label does not undo that
+history, reopen source acceptance or imply release completion. Earlier
+configuration-pending and route-unobserved copy below is historical.
+
+### Customer journey and eight-step screen contract
+
+```text
+A goal / three hosted roles / invariant / dated status / source path
+  -> B synthetic private-ingress initial turn
+     held, failed or incomplete: D factual boundary; preserve state
+     completed and non-held: same private session file -> B queue follow-up
+  -> separate acceptance evidence compares actual identities and artifacts
+C offline explanation: architect -> reviewer rejection -> same architect
+  revision -> same reviewer; not a live transcript
+F operator handoff: accepted source -> missing operational gate / owner
+  -> independent readiness branches -> G only for actually observed roles
+```
+
+| Canonical flow / steps | Components, screens and verification boundary |
+|---|---|
+| **Remote design and review** / `collaboration-bind`, `collaboration-route` | **Terminal client** submits synthetic requirements to **Hosted coordinator** through **Trusted identity and private transport**; **Private Blob artifacts and effect journal**, **Decision-1 routing and admission** and **MAF workflow checkpoints** enforce scope and routing. A explains entry; B contains finalized observations only, not fabricated routing progress. |
+| Same flow / `collaboration-design`, `collaboration-review` | Coordinator invokes **Hosted architect** and **Hosted reviewer**, using **Parent and specialist conversation state** and exact artifacts. B retains chronological repeated calls and current design/review. C labels the controlled four-call revision sequence offline; it does not invent intermediate content absent from public records. |
+| Same flow / `collaboration-return` | Fenced coordinator acceptance precedes useful current output in B. D's held, incomplete or invalid state overrides success-looking model prose. Accepted output is not customer-release acceptance. |
+| **Same-parent specialist continuation** / `continuity-revise`, `continuity-invoke` | The completed non-held initial parent permits the same-file queue follow-up through the three hosted roles. B distinguishes stable parent/child hosted and framework identities and pins from advancing response IDs; stale review approval cannot become current approval. |
+| Same flow / `continuity-verify` | **Guarded lab release toolchain** supports separate exact-binding evidence: stable parent and both hosted/framework children/pins, exactly two child creations, both roles on both turns, fresh responses, updated requirements and invalidated stale approval. B aliases remain observations, not proof. Model-history/fresh-history and exact-known-response zero-send controls remain separately attributed offline checks. |
+
+Retain [A's README opening](#screen-a-readme-opening-and-demonstration-entry),
+[B's completed-turn layout](#screen-b-turn-summary-and-continuity-observations),
+[C's revision storyboard](#screen-c-reject-revise-review-again) and
+[D's state precedence](#screen-d-held-incomplete-and-recovered-work).
+Use existing `--native --view human` commands with verified owned transport.
+The human projection remains finalized opt-in stderr; default stdout,
+including its parent header, delegation/result contract and acceptance parser
+are unchanged. Known-response retrieval is no resend, not a fresh invocation.
+No renderer, new flag, browser UI, model call or fixture rewrite is needed.
+
+### F/G handoff: distinguish local engine recovery from hosted continuity
+
+Specialize current UX Screen F in its existing operator report channel,
+separate from customer terminal events: boundary/status first, attributable
+observation second, missing gate third, existing owner/action last.
+This table is screen direction, not new public status codes or executed output.
+It supports **Exact-source guarded release**, `release-join`/`release-package`,
+without expanding RP-S1 into implementation or DevOps execution.
+
+| Evidence state | Display and next action |
+|---|---|
+| Recovery source only specified | Source handoffs accepted; release BLOCKED. Scrum assigns existing Developer's bounded `Ensure-LinuxEngine.ps1`, tests and necessary caller mounts in the feature lab sibling; original review/integration/changed-join E2E precede execution. Do not advertise the helper as an available customer command. |
+| Existing selected Linux server already ready | Engine READY; startup not attempted. Original DevOps runs retained Linux/amd64/hosting-Python and separate retained container gates; engine readiness is not package PASS. |
+| Supported start attempted once, readiness pending | Startup attempted; readiness NOT CONFIRMED. Show bounded waiting, not a success banner from exit zero; no second manual start or parallel retry. |
+| Same selected Linux server responds after start | Engine READY after startup, with attributable elapsed waiting. Build/package and hosted continuity remain unverified. Local Docker startup is not supported hosted compute stop/resume and never satisfies G6. |
+| Missing/unsupported tooling, ambiguous/wrong/drifting selection, failed or hung start/probe, timeout | Readiness FAIL with the actual condition; original Developer/Scrum receives the bounded correction/investigation. No context substitution, installation/reset, engine switch, credential inspection or invented user-only prerequisite. |
+| One readiness branch passes, the other is incomplete | Release BLOCKED at the missing branch. Continue independent selected-WSL rollback/package/effect inventory or engine/build work. Only both actual exits permit the original single serialized publisher. |
+
+Keep application source, reviewed loaded-tool owner and imported dedicated
+operational context distinct without exposing private paths/profiles/endpoints.
+Accepted lab `42a70533`, integration `576b613` and source handoff `0b6d99a`
+are consumed; ownership, runner and operational-context correction are not
+pending work. Architecture attributes prior private three-role ReadOnly success,
+mixed coordinator content and new operation-owned cleanup to the predecessor;
+that is not fresh transport, inference, rollback inventory or runtime proof.
+Unused Windows-helper acceptance is not a selected-WSL prerequisite.
+
+G still reports only actually reached roles. An architect-only result leaves
+reviewer unobserved; preparation rejection invents neither role outcomes nor
+zero-send counters. Preserve finite architect-before-reviewer trials and
+UNKNOWN/held boundaries without resend or hidden fallback. Supported identity
+selection is distinct from final common-bundle G1-G4 and a completed non-held
+initial parent. Only actual relevant live prerequisites unlock RP-S3 execution;
+independent approved preparation may continue, and isolation is not made
+dependent on recovery success.
+
+### Existing-owner closeout and bounded verification
+
+Existing clarity/closeout ownership refreshes stale measured README wording
+and release status together, without reopening accepted clarity implementation.
+Use the current UX's evidence-qualified blocked copy: operational-context and
+local integration accepted; deterministic existing-engine recovery specified,
+not execution-verified; actual Linux/package and complete rollback/effect
+inventory outstanding; final collaboration, continuity, supported hosted
+recovery and isolation unverified. Advance that copy when measurements change,
+not from agreed documents. Historical `NATIVE_HOST_PRINCIPAL` stays historical.
+
+Retain terminal-default light/dark appearance, explicit status words,
+narrow-width wrapping/stacked details, control neutralization and a data prefix
+on every generated line. Synthetic content and safe aliases only; omit
+`--show-ids`. Account-wide Blob Contributor means application-enforced
+role/parent isolation, not malicious-host storage isolation. Preserve all
+historical UNKNOWNs, held parents, rollback assets and cleanup uncertainty.
+No new human action is established; only an actual device-code request warrants
+its real URL/code privately. The original five-consecutive-no-new-progress rule
+and originating stops remain binding.
+
+Scrum receives this screen/flow contract for precise decomposition and Git
+reconciliation. Original E2E receives any relevant changed source join; original
+DevOps owns recovery/build, independent inventory, serialized publication and
+live gates. Product Owner/Critic review this bounded SprintDesign after the
+owner response. Document checks are not engine/package/live tests. No runtime,
+lab, README, settings, workflow installation/input or cloud change is made,
+and no unchanged runtime suites are rerun for progress credit.
+
+## Historical RP-S2: validated source to guarded collaboration (October 20, 2026)
 
 This invocation selects **RP-S2**. Application baseline is clean feature commit
 `8e4019bd45dfbfb0ed1063523685b779f445f95d`. Consume Architecture and

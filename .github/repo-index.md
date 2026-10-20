@@ -1,5 +1,16 @@
 # Repository index
 
+RP-S1 sprint-review freshness: based on clean application feature `576b613`
+and original E2E/DevOps outcome JSONs for run `bf0d82d9`. The newest entry in
+`docs/customer-prototype-release-plan.md` records accepted local source join
+versus unreached workstation-to-cloud demonstration, owner-attributed Docker
+Linux-engine endpoint failure and bounded preparation versus unmet cloud-pass.
+Adds Linux-engine readiness and refines existing inventory, ingress/G1-G4,
+RP-S3 live and measured-status closeout work under original owners. The WSL
+route does not require unused Windows-helper acceptance. No accepted source
+task is reopened; no architecture, entry point or public inventory changed.
+Review votes remain pending; no deployment/live acceptance is claimed.
+
 Changed-source integration freshness: application input `57585e0` and reviewed
 lab feature input `42a70533` (foundation `d0073536`, accepted runner `1842984`).
 Consumed original Architect/Critic agreement for context callers and README

@@ -1,5 +1,193 @@
 # Customer hosted-session prototype: release architecture
 
+## Current continuation: deterministic existing-engine recovery (October 20, 2026)
+
+This is the current release-readiness amendment. It supersedes only older
+pending operational-context/ownership instructions and the missing engine
+recovery contract, not the accepted implementation or original release gates.
+Application baseline is clean feature `0b6d99a43146475974e28fabe41b8e80be815e17`;
+the registered lab feature sibling is clean at
+`42a70533c567a8aed29f0ca076c0b5d58381fc77`. No lab source or operational
+settings changed here. The canonical solutionModel below remains unchanged:
+ten components, five flows, eighteen steps. This amendment belongs to
+**Guarded lab release toolchain** (`release-toolchain`) in **Exact-source
+guarded release** (`guarded-release`), principally `release-package`, with
+changed-source handoff at `release-join`.
+
+### Evidence and accepted boundaries
+
+Opened predecessor run `bf0d82d9-657b-4055-9f7c-6306ce08163d`, result directory
+`71e45fd8-287f-40e8-89a9-d97021f8dee0`, `result.json`. Its independently
+matched SHA256 is
+`aeb5f59d0b591a3f71dbb9a74669965c53993446ba2312793ae1d51c4e1482ec`.
+Original Architecture and RP-S2 SprintArchitecture reviewers accepted their
+bounded contracts; latest original RP-S2 E2E reviewers accepted local source
+integration PASS and release acceptance FAIL. At the exact originating key
+`sprint/2/RP-S2/DevOpsWorkLoop`, Architect, Critic and Developer agreed with
+the actionable report but each recorded `taskComplete=false`.
+
+Consume accepted operational-context lab `42a70533`, application integration
+`576b613`, RP-S2 architecture `3d615f11`, plan `03a8c284` and source handoff
+`0b6d99a`; do not redispatch ownership, runner, context callers, continuity
+fixtures, specialist history or terminal clarity. The historical profile
+replan is closed, not an alternative current repair.
+
+The stopped DevOps report records:
+
+- Retained `Build-Demo.ps1` failed before image creation/container tests.
+  Selected context was `desktop-linux`; its Linux-engine named pipe was
+  absent. `docker desktop status` identified `docker desktop start` as the
+  supported start operation. No startup was attempted; the cause of endpoint
+  absence remains unknown. A missing checked-in recovery operation, not a
+  proven permission or user-only decision, is the construction gap.
+- The retained WSL ReadOnly route passed against the existing prepared
+  dedicated context. Opened mirrored receipt
+  `multi-agent-zip-f10b54918593481296391a9367f40719.json`; its SHA256 matches
+  `a566cca1839edd42069051676999cd1357f20871e9345ff888f0a8d58fa94f08`.
+  It contains authenticated architect17/reviewer15/coordinator23 reads,
+  mixed coordinator content, no attempted releases, and proven closure of
+  that operation's owner cgroup, listeners and read-only mount namespace.
+  The predecessor reports zero inference. These are inspected prior
+  observations, not fresh cloud execution, runtime health or continuity.
+- Exact rollback-version/package availability and complete unresolved-effect
+  inventory remain unverified. New owned-resource closure does not close
+  historical UNKNOWN effects, held parents or historical cleanup uncertainty.
+
+No prior disposition is superseded. Preserve the exact operational-context
+caller-completion, final-checks and packaging-caller ownership references
+recorded in the accepted RP-S2 plan's `dispositionHandling`; they are consumed
+within their originating task boundaries, not renewed requirements.
+
+### Smallest recovery operation and caller boundary
+
+Scrum should assign the existing Developer a bounded source correction within
+`RP-S2-LINUX-ENGINE-READINESS`, only in the authorized lab feature sibling.
+Use a lab-owned `foundry-tf/multi-agent/Ensure-LinuxEngine.ps1` entry point,
+with explicit `ApplicationRoot` and `LabRepositoryRoot`, the existing loaded
+`Release-Roots.ps1` ownership checks, and a finite validated readiness budget.
+It is a local build prerequisite, not an operational-profile selector or a
+new cloud, identity, hosting, packaging or orchestration abstraction.
+
+Required behavior:
+
+1. Resolve and validate the explicit source roots before startup. Diagnose the
+   effective selected Docker context/endpoint, including conflicting
+   environment overrides, without reading credential stores or dumping raw
+   context/configuration. Preserve context and environment selection. Fail
+   closed on ambiguity, unsupported selection or an endpoint that cannot be
+   attributed to the already-installed local Docker Desktop Linux engine.
+   Never switch context, use a remote daemon or silently choose another host.
+2. If the selected Linux server is already ready, return success without a
+   start operation. Otherwise, when that existing local engine is the selected
+   supported target, invoke the supported `docker desktop start` operation
+   once, then poll the same endpoint within the finite budget. Recheck
+   selection so a changed context/endpoint cannot be reported as recovery.
+   Bound command execution as well as polling; a hung start/probe must not
+   turn finite readiness waiting into an unbounded child process.
+3. Report success only after an actual responsive Linux server is observed.
+   Startup exit zero alone is insufficient. Missing tooling, unsupported
+   host/start command, selection drift, startup failure or readiness timeout
+   produces a nonzero, attributable failure without continuing into build
+   or publication. Redact diagnostics and report whether startup was attempted,
+   the readiness outcome and elapsed waiting; never fabricate an image ID.
+4. Do not install/upgrade Docker or WSL, change daemon/host configuration,
+   switch Linux/Windows engines, reset/restart a running engine, alter contexts,
+   inspect/copy credentials, change private settings or grant permissions.
+   Terminate only an attributable owned command if needed for its bound;
+   never kill unrelated processes or the existing engine. A failed or
+   unsupported recovery returns its concrete finding, not an automatic retry
+   loop, alternate image or new human prerequisite.
+
+The receiving DevOps owner invokes this reviewed operation and then the
+unchanged retained build sequence, only on recovery success. Keep
+`Build-Demo.ps1` an explicit-root offline build/test gate: do not add automatic
+engine startup, authentication or cloud effects inside it. Its Linux/amd64
+image inspect, actual hosting-Python application tests, separate retained
+release container tests, source digest and image ID remain mandatory.
+The only anticipated Build-Demo change is the minimal read-only mount of the
+new public helper if retained source-inspection regressions need it; source
+inspection confirms its current mount allowlist does not include this helper.
+Fixtures must not assume that a Windows helper is executable in a Linux image.
+
+Scrum's precise source ownership should therefore cover the new helper,
+`foundry-tf/multi-agent/tests/test_release_linux_engine.py`, necessary minimal
+`Build-Demo.ps1` test-input mounting, and the lab `.github/repo-index.md`.
+Use existing test conventions and command fakes for already-ready,
+recoverable, failed-start and failed-readiness cases; also cover wrong or
+changing selection, invalid/crossed roots, missing/unsupported tooling and
+bounded hung commands. Assert that failures never start a build/publication,
+and that already-ready and unsupported targets never start an engine.
+Retain root-guard and build-gate regressions. Run executable PowerShell cases
+on Windows with the pinned absolute Python; report justified Linux platform
+exclusions without treating them as execution coverage. The actual Linux
+application/retained container cases still run through Build-Demo afterward.
+No application runtime source change is required by this contract.
+
+AC7 maps the new helper and retained `Build-Demo.ps1` to actual Linux/package
+readiness; mocked recovery tests prove only local control flow. AC8 maps their
+scoped review/commit/push and explicit loaded-source ownership to shareable
+source, not deployed capability. AC9 maps readiness diagnostics, exact image/
+source bindings and preserved effect inventory to truthful handoff. AC1-AC5
+still depend on real final hosted execution; AC6 retains its accepted terminal/
+README implementation and existing measured-status closeout. The source trace
+and complete release evidence matrix below remain the full-release contract.
+
+### Minimal joins and work-conserving execution
+
+The contract is sufficient for original ReleasePlan/Scrum decomposition now;
+no new approval stage or renewed user designation is needed. Developer commits
+owned source/tests/index before original Architect/Critic review. Existing
+integration ownership reconciles reviewed feature refs, pushes/readbacks and
+actual loaded-source equality; original E2E validates the changed exact join
+and affected checks before original DevOps executes recovery/build.
+Do not reuse the unchanged nine-lab-file closure as proof of a newly added
+helper: record the changed build-prerequisite/test inputs and their hashes,
+and distinguish them from unchanged application runtime/package inputs.
+
+Two readiness branches remain independent, not whole-sprint dependencies:
+
+| Branch and owner | Source/contract handoff | Actual exit and blast radius |
+|---|---|---|
+| Existing Developer, then original DevOps: Linux readiness | Reviewed helper/tests, minimal retained caller/test inputs, exact joined commits and targeted/retained check results | Real retained Linux/amd64/hosting-Python build and container checks with source/image bindings. Failure blocks package/publication, not independent private inventory or approved source preparation. |
+| Existing DevOps: selected WSL route and rollback/effect inventory | Existing `Invoke-WslCodeRelease.ps1` ReadOnly contract, accepted dedicated operational context and inspected receipt | Complete current three-role/identity/rollback-package/effect inventory and selected-route/owned-cleanup proof. Historical UNKNOWNs remain held. Does not depend on engine correction; unused Windows-helper acceptance is not a WSL gate. |
+
+Both actual exits are necessary before the one original serialized DevOps
+publisher builds/previews/binds/publishes the exact final common bundle.
+Revalidate operational freshness before external effects, reconcile each
+outcome, prove trusted architect ingress before reviewer, and measure actual
+G1-G4 plus a completed non-held initial parent. Keep existing exclusive
+engine/stage resources distinct from shared publisher/context/transport/mount
+resources; original Scrum assigns them, not a second deployer.
+
+RP-S3 remains approved continuation, not an implicit full-RP-S2 construction
+dependency: existing accepted source/fixtures may support independent
+demonstration/acceptance preparation while release execution is blocked.
+Do not recreate that accepted construction or invent missing implementation.
+Any concrete remaining source gap follows original scoped Scrum ownership.
+Actual two-turn, stop/resume and separate-parent runs require the final live
+bindings and relevant non-held parent; isolation need not wait for recovery
+success. No fixture, metadata read or source agreement closes AC1-AC9/G1-G8.
+Existing closeout ownership pushes reviewed `0b6d99a` and subsequent intended
+refs and updates README measured status; accepted clarity is not reopened.
+
+This continuation has feasible correction and independent inventory work;
+work is not exhausted and no user-only blocker is established. Preserve the
+original five-consecutive-no-new-progress accounting across runs. This
+architecture handoff is not engine recovery, a new no-progress allowance,
+deployment, live acceptance or permission to replay any uncertain effect.
+
+### Verification of this Architect amendment
+
+Using the existing absolute validated Python, refreshed the public index and
+passed `scripts/Test-Repository.ps1`: 82 public files checked, current inventory,
+public/private boundary, JSON, PowerShell, frontmatter and whitespace.
+A targeted assertion compared the parsed solutionModel with baseline HEAD:
+identical ten components/five flows/eighteen steps, unique IDs and valid
+references. It checked the bounded correction/handoff text and exactly two
+owned changed paths. These are documentation/model checks, not executable
+recovery, application-suite, Linux/package or live tests. No dependencies were
+installed, settings imported, engine started or external effects requested.
+
 ## RP-S1 retrospective: close caller ownership before implementation (October 20, 2026)
 
 Product Owner process improvement, consuming accepted sprint review `835713a`

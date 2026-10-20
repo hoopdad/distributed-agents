@@ -1,5 +1,22 @@
 # Repository index
 
+Existing-engine recovery architecture freshness: based on clean application
+feature `0b6d99a` and inspected clean registered lab feature `42a70533`.
+Opened predecessor `71e45fd8/result.json`, original bounded architecture/E2E
+votes and stopped RP-S2 DevOps report; independently matched result and mirrored
+ReadOnly-receipt hashes. `docs/customer-prototype-architecture.md` now defines
+the missing lab `Ensure-LinuxEngine.ps1` contract: explicit loaded-tool roots,
+same selected existing Linux engine, supported once-only start, bounded
+commands/readiness, fail-closed outcome and no installation/context substitution.
+Scrum assigns helper/tests and minimal Build-Demo public test mounts in the
+feature sibling; original review/integration/changed-join E2E precede DevOps.
+Independent selected-WSL rollback/effect inventory continues now. Both actual
+readiness exits gate the single publisher; unused Windows-helper acceptance
+does not gate WSL. Canonical ten-component/five-flow/eighteen-step model and
+application runtime are unchanged; no paths added/deleted in this amendment.
+Helper is specified, not implemented or executed. Prior entries are history,
+not current operational-context blockers or live acceptance.
+
 RP-S2 release-source handoff freshness: selected reviewed application `03a8c284`
 and lab sibling `42a70533`, with original input/planning votes inspected.
 Both reviewed refs were pushed/read back exactly (lab already up to date).

@@ -1,5 +1,25 @@
 # Customer hosted-session prototype: user experience
 
+## RP-S2 retrospective: report the boundary, not an implied retry
+
+The [RP-S2 retrospective](customer-prototype-release-plan.md#rp-s2-retrospective--stopped-prerequisites-and-evidence-delivery)
+refines operator handoffs without changing customer screens, stdout/parser,
+opt-in stderr presentation or public event fields. Report separately:
+accepted application preparation; unsubstantiated ownership/root evidence;
+unavailable established transport-trust receipt; unreached joined-source,
+package and hosted gates. Attribute supplied test results and source inspection
+accurately: neither is a current cloud execution receipt.
+
+Use the existing owner and concrete closing action from the sprint review.
+For example: "Metadata not executed; existing transport-owner/Scrum coordination
+must supply the established private receipt locator for DevOps inspection."
+Keep that locator private; do not insert fingerprints, private bindings or
+synthetic success rows into customer output. Empty history lookup means no
+matching record was recovered, not that the receipt does not exist. A closing
+action is not authorization to restart a stopped probe or send a held effect.
+The agreed prerequisite FAIL and accepted blocked review are complete bounded
+assessments, not a runnable live demonstration or measured usability result.
+
 ## RP-S1 retrospective blocked-handoff language
 
 The [RP-S1 retrospective](customer-prototype-release-plan.md#rp-s1-retrospective--evidence-handoffs-and-truthful-closure)

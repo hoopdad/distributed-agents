@@ -1,5 +1,81 @@
 # Customer hosted-session prototype: release plan
 
+## RP-S2 retrospective — stopped prerequisites and evidence delivery
+
+Product Owner retrospective, October 20, 2026. Inputs: SprintReview commit
+`34d545db8bb8f9e795f5da35e6207bf347060e7a` and its four supplied current
+original-reviewer agreements; accepted application preparation at `990467a`;
+the agreed RP-S2 prerequisite E2E FAIL; supplied RP-S2 ownership and DevOps
+needs-input reports and original reviews. Fresh application inspection found
+the review commit on the authorized feature branch with a clean worktree.
+No lab verification, stopped probe, private-state lookup or cloud execution was
+performed for this retrospective.
+
+**Outcome: blocked, not customer-ready.** Accepted source preparation and
+accurate failure handoffs are retained; no live identity selection, specialist
+ingress, common-bundle acceptance or completed initial parent is established.
+All three sprint goals, acceptance criteria and handoffs below remain unchanged.
+
+### Observations, metrics and decisions
+
+| Supplied observation | Process finding | Existing-owner improvement |
+|---|---|---|
+| Current SprintReview has four accepting original votes; RP-S2 E2E has three accepting votes for a prerequisite FAIL | Reconciled completion must follow the current originating votes, not a stale pending-vote snapshot or an earlier sprint's agreement | Existing owner/Scrum coordination consumes those agreements once. No closure-only commit, repeated test or extra approval stage is needed. These votes do not approve this RP-S2 retrospective. |
+| The evidence-only ownership carryover remains `taskComplete=false`, with no substantiating locator supplied | Redispatch and empty history searches did not close the originating setup criterion | Developer/Scrum delivers existing bounded registration, sibling branch/HEAD/status, canonical preservation, point-in-time writing ownership and positive/negative resolver evidence to original Architect/Critic reviewers. Preserve the five-round stop and runner-writing block; if evidence is unavailable, retain the access stop and originating permitted interactive path, not unattended probes. |
+| DevOps reports no current settings import, tests, cloud checks or transport startup; reviewers inspected trust guards | A missing established trust handoff is not a current remote receiver failure or provider diagnosis | Existing transport-owner/Scrum coordination supplies the private accepted-fingerprint/owner-module-path/module-and-source-SHA256 receipt locator, without keys or credentials. DevOps then resumes retained strict-trust Metadata with explicit roots and private invocation evidence. Do not regenerate trust. |
+| Independent application preparation is accepted at `990467a`; the reported outgoing audit uses local refs, with no upstream configured | Source review progressed independently, but does not establish server freshness or reviewed lab integration | Existing integration owner consumes this handoff after reviewed runner completion, checks later drift, verifies remote freshness/outgoing scope and performs the assigned reviewed scoped push. Inventory remains independent of coding. |
+| No accepted runner/source integration, exact Linux/package gates or G1-G4 evidence is supplied | Agreement on bounded stop assessments does not satisfy encompassing cloud-pass | Preserve original formal E2E and DevOps ownership. Join exact reviewed source, scenario, common package and actual three-role versions before trial-parent creation; do not create another parent or resend to fill reporting gaps. |
+
+These are supplied observations, not newly measured execution metrics. The
+originating ownership stop is five rounds; its RP-S2 evidence-only carryover
+does not reset that counter. The supplied RP-S2 review and E2E each show two
+rounds; counts alone are not error rates, elapsed delays or additional progress.
+No complete communication denominator, delivery latency, end-to-end timing,
+usage total or current cloud invocation receipts were supplied. Repeated
+offline checks, changed prose and this retrospective earn no substantive
+implementation/live progress credit.
+
+### Artifact improvements and exact disposition boundaries
+
+- [Architecture](customer-prototype-architecture.md#rp-s2-retrospective-evidence-joins-remain-independent):
+  distinguish accepted independent application preparation, ownership/root
+  evidence, established transport trust and the reviewed-source/release joins.
+  Keep existing identity, session, provenance and unknown-effect contracts.
+- [UserExperience](customer-prototype-ux.md#rp-s2-retrospective-report-the-boundary-not-an-implied-retry):
+  report observed/unreached boundaries, evidence attribution and existing
+  closing owner/action without implying an authorized retry, exposing private
+  locators or adding a public presentation requirement.
+- ReleasePlan: retain the prioritized existing-owner actions in the RP-S2
+  review above. Scrum Master retains dependencies, shared-resource
+  serialization and Git reconciliation; no duplicate task or gate is added.
+
+Apply exact reference
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`
+as unresolved within its setup boundary despite historical status labels.
+Preserve the closed prerequisite FAIL under
+`["yaml-loops-v1:sprint/2/RP-S2/EndToEndTestLoop","rp-s2-e2e-close-agreed-failure-assessment"]`
+and closed blocked backlog assessment under
+`["yaml-loops-v1:sprint/2/RP-S2/SprintReviewLoop","rp-s2-sprint-review-close-agreed-deliverable"]`.
+Accepted candidate, RP-S1 retrospective and upstream architecture/UX/planning
+closures remain confined to their originating deliverables; no inherited vote
+closes this RP-S2 retrospective. The repaired three-sprint payload required by
+`["yaml-loops-v1:sprint/1/RP-S1/SprintRetroLoop","sprint-retro-preserve-release-plan-payload"]`
+remains preserved, without reopening that accepted retrospective.
+
+No task code is abandoned here. Existing application source-accounting findings
+are supplied evidence; fresh lab integration or branch accounting is not
+claimed. Existing integration retains durable reconciliation and scoped-push
+responsibility. Preserve historical UNKNOWN publications, held parents, rollback
+assets, unrelated work and cleanup uncertainty. Account-wide Blob access means
+application-enforced role/parent isolation, not malicious-host storage isolation.
+AC1-AC9/G1-G8 remain binding; RP-S3 live continuity, supported recovery, isolation
+and final delivery still require their actual upstream initial-parent handoff.
+
+The Product Owner accepts this bounded retrospective for the original Scrum
+Master, Critic, Architect, Red Team, Designer and Developer reviews. Current
+RP-S2 retrospective votes are not yet supplied. No new scope authority,
+deployment, provider submission or stopped-operation resumption is requested.
+
 ## RP-S2 sprint review — prerequisites stopped, live gates unmet
 
 Product Owner review, October 20, 2026. Inputs: committed RP-S2 SprintPlan

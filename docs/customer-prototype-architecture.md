@@ -1,5 +1,25 @@
 # Customer hosted-session prototype: release architecture
 
+## RP-S2 retrospective: evidence joins remain independent
+
+The [RP-S2 retrospective](customer-prototype-release-plan.md#rp-s2-retrospective--stopped-prerequisites-and-evidence-delivery)
+retains accepted architecture, not a new identity or release contract. Application
+preparation at `990467a` is an accepted independent handoff; its local tracking-ref
+audit does not prove remote freshness or joined runner readiness. Integration
+must revalidate drift and join reviewed application/tooling revisions before
+formal E2E, followed by exact Linux/package gates in DevOps.
+
+Keep two explicit prerequisite lanes: Developer/Scrum supplies the stopped
+ownership/root evidence for original Architect/Critic inspection; existing
+transport-owner/Scrum coordination supplies established private trust evidence
+to DevOps. Neither approval of source nor agreement with a blocked assessment
+substitutes for either lane. Preserve the originating five-round stop and
+runner-writing block under
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop","lab-ownership-review-evidence-access"]`.
+No unattended verification restart, replacement trust or new approval stage is
+introduced. Scenario/source/package/actual-version consistency still precedes
+parent creation; trusted receiver equality and unknown-effect holds are unchanged.
+
 ## RP-S1 retrospective evidence boundary
 
 The [RP-S1 retrospective](customer-prototype-release-plan.md#rp-s1-retrospective--evidence-handoffs-and-truthful-closure)

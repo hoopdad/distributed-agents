@@ -1,6 +1,109 @@
 # Customer hosted-session prototype: user experience
 
-## UX entry: canonical journeys and presentation boundaries (October 20, 2026)
+## Current UX amendment: operational readiness without reopening accepted work
+
+This entry consumes accepted Architecture
+`f5fc1dec9b01e98745268e359808f3021a8906de`. Its originating ArchitectureLoop
+audit `44d8ba586176db02e3079782dd51160199f0dafb69e621b0bd4c38f12678257e.json`
+records Product Owner, Red Team and Critic agreement. Designer inspected that
+audit and the committed architecture, not the external profile or credentials.
+Application baseline was that commit on
+`feature/customer-hosted-session-prototype`, with clean initial status.
+This packet has no prior dispositions or reconciled feedback.
+
+This amendment supersedes only the earlier entry's pending ownership/runner
+wording and operational-readiness handoff. The accepted predecessor
+`bb3af682-2d1c-41cf-97e7-312f624ea669/result.json`, as consumed by Architecture,
+substantively accepted these exact originating task boundaries:
+`sprint/1/RP-S1/task/RP-S2-LAB-OWNERSHIP/AssignedWorkDeveloperLoop`,
+`sprint/1/RP-S1/task/RP-S2-DECISION-RUNNER/AssignedWorkDeveloperLoop`, and
+`sprint/1/RP-S1/task/RP-S2-SOURCE-INTEGRATE/AssignedWorkDeveloperLoop`.
+Do not reopen them, renew designations or redispatch the accepted runner,
+continuity, model-history or presentation implementation. Earlier pending-vote
+and write-block statements below are history within those boundaries, not
+current prerequisites. Acceptance of source work is still not live acceptance.
+
+### Retained full-scope experience
+
+Retain the six principles, tools/framework, canonical journey-to-screen map,
+README and terminal wireframes, accessibility, evidence-to-display contract,
+failure/recovery direction and conditional two-turn commands below. All ten
+canonical components, five flows and eighteen steps remain unchanged. The
+evaluator still starts with the customer invariant, sees useful current design
+and review output, and distinguishes stable parent/both-child hosted/framework
+identities and pinned versions from advancing response IDs. The controlled
+four-call revision sequence stays visible, not deduplicated.
+
+No browser UI, identity selector, new terminal control, public evidence field,
+session store, framework or model call is added. Retain plain-text wrapping,
+terminal-default light/dark appearance, no color-only semantics and safe aliases.
+Human mode remains opt-in finalized stderr; default stdout and the acceptance
+parser stay unchanged. Aliases are not exact binding/history proof.
+Held/unknown effects still override success-looking output; preserve state,
+never offer blind retry or follow-up without a completed non-held initial turn.
+
+### Operator flow: separate source ownership from operational context
+
+This direction refines **Exact-source guarded release**, primarily
+`release-join` and `release-package`, within **Guarded lab release toolchain**.
+It adds no canonical flow or screen. Use existing operator handoff text:
+
+| Reached boundary | Visible wording and next action |
+|---|---|
+| Accepted ownership, runner and source handoffs | Source handoffs accepted; release remains BLOCKED. Existing Scrum Master assigns the bounded operational-context correction, not another ownership review or unchanged runner task. |
+| Tooling/profile mismatch before dispatch | Predeployment configuration FAIL: reviewed tooling checkout and existing dedicated operational context are distinct. This is not a fresh specialist rejection or proof of expired credentials. Existing Developer corrects explicit context propagation in the authorized feature sibling. |
+| Corrected source reviewed and joined | Source correction accepted is not operational PASS. Designated integration Developer records exact loaded roots/hashes and scoped push/readback; original E2E revalidates the changed exact join. |
+| Operational prerequisites not yet established | Authentication, WSL context, containment/resource readiness and current inventory remain unverified. Existing serialized DevOps runs retained checks, actual Linux/package gates, guarded publication and live acceptance. |
+| Supported authentication actually requests user action | Surface the real device URL/code privately when produced for the existing dedicated context. Do not ask for hypothetical login or renewed authority merely because profile paths differ. |
+
+In the private operator setup, distinguish `ApplicationRoot` (application source),
+`LabRepositoryRoot` (reviewed loaded-tool owner), and `OperationalLabRoot`
+(existing dedicated context). The last is an accepted architecture contract
+awaiting implementation, not a currently runnable new flag in customer commands.
+Use only the unchanged checked-in settings importer and existing dedicated
+context; no copied/symlinked credentials, duplicate/default/production profiles,
+private-settings edits or relaxed root guards. Keep actual roots, profile
+metadata and scope identifiers out of customer output and Git. Windows/WSL
+readiness needs retained checks, not inferred cache interchangeability.
+
+### Existing clarity and execution handoff
+
+The existing README clarity/closeout owner must replace its observed stale
+ownership/write-block notice, retaining the goal-first hierarchy and conditional
+demonstration commands. Suggested status direction, not a live transcript:
+
+> Release BLOCKED: accepted source handoffs do not establish operational or
+> hosted success. A release-tooling configuration correction is required before
+> the changed source join and final package/live gates can be validated.
+> Two-turn continuity, supported recovery and isolation remain unverified.
+
+Keep the historical `NATIVE_HOST_PRINCIPAL` diagnosis explicitly historical;
+identity path A/B remains unselected by live receiver evidence. Do not invent
+successful role rows, final/rollback bindings, current transport success or
+cleanup. Historical UNKNOWN operations, held parents, rollback assets and the
+original five-consecutive-no-progress rule remain preserved.
+
+Scrum owns precise correction paths, decomposition and Git reconciliation.
+Original E2E owns changed-join validation; serialized DevOps owns package,
+publication and live G1-G8/AC1-AC9. Their required implementation and execution
+are downstream, not additional UX acceptance gates. Designer's bounded output
+is this amended full-scope UX direction and index, for original Product Owner/
+Critic review. No runtime, lab, settings, README or workflow files change here.
+Validation results for this amendment are reported separately from historical
+suite results below; unchanged runtime suites are not rerun for progress credit.
+
+Validation for this amendment: the existing absolute lab-root virtual-environment
+Python 3.12.10 ran `scripts/Test-Repository.ps1` successfully (80 public files;
+index, public/private boundary, JSON, PowerShell, context and whitespace checks).
+An in-memory UX check passed ten component names, five flow names, eighteen
+unique canonical step references, five existing local links, unchanged retained
+UX text and the explicit operational-context handoff; only the two owned paths
+changed. An initial interpreter existence check under the retained tool directory
+found no executable; the existing lab-root interpreter was then used, without
+installation. No application/runtime suite, Linux package, authentication,
+transport, deployment, inference or usability timing ran in this Designer turn.
+
+## Earlier UX entry: canonical journeys and presentation boundaries (October 20, 2026)
 
 This is the current User Experience Loop entry. It consumes accepted Architecture
 `5f9c38437102f67fd40a78d7debdaa099ba4ff44` and its

@@ -1,6 +1,131 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Current RP-S3: gated continuity, recovery, isolation and delivery (October 20, 2026)
+## Sprint design entry: RP-S1 canonical continuity screens (October 20, 2026)
+
+The current task selects **RP-S1**, not the older RP-S3 entry below. Consume
+Architecture `35d526ae3a9e722ebe633ba60e2ca572182a5d1e`, UserExperience
+`c70571186564cf293a63b00f08511a560b7deb11` and ReleasePlan
+`8343d48b310e4d79b7d1de7b133f483475c054f7`. Designer inspected that feature
+baseline and the supplied originating outcome JSON: Architecture, UX and
+ReleasePlan each record agreement in one round. Their votes do not accept
+this SprintDesign or establish live execution. This packet supplies no
+assignments, separate blocked-item list, reconciled feedback or prior
+dispositions. Retain historical entries as attributed context, not new task
+requirements, fresh observations or superseding scope decisions.
+
+This sprint-level design specializes the accepted UX to the two RP-S1
+canonical flows and eight steps. Reuse Screens A-D and the implemented
+`HumanView` / `finalize_workflow_turn` path; no duplicate renderer, fixtures,
+browser UI, public evidence field, dependency or new CLI flag is assigned.
+Design is complete when these flows, screen states, evidence limits and
+existing-owner handoffs are reviewable, not when the whole release passes.
+
+### RP-S1 flow and screen navigation
+
+```text
+A README: goal -> three hosted roles -> two-turn invariant -> status/source
+  -> existing setup and guarded transport prerequisites
+B initial synthetic private-ingress turn -> finalized and non-held?
+  no: D observed failure/hold -> preserve state; no uncertain resend
+  yes: same private session file -> queue follow-up -> current design/review
+C offline revision fixture: architect -> blocked reviewer
+  -> same architect revision -> same reviewer -> current final output
+F/G separate operator handoff: actual reached boundary -> evidence -> next owner
+```
+
+The prototype evaluator reads A/B; C explains controlled offline repetition,
+and the lab operator consumes D/F/G where applicable. The diagram describes
+the intended flow, not an executed demonstration or automatic retry action.
+
+| Canonical flow and steps | Existing components and sprint screen direction |
+|---|---|
+| **Remote design and review** — `collaboration-bind`, `collaboration-route` | **Terminal client** submits a fresh synthetic requirement to **Hosted coordinator** through **Trusted identity and private transport**. **Private Blob artifacts and effect journal**, **Decision-1 routing and admission**, and **MAF workflow checkpoints** support scope/readiness/routing. A gives the customer entry; B shows only completed records. No progress spinner or fabricated intermediate routing result. |
+| **Remote design and review** — `collaboration-design`, `collaboration-review` | **Hosted coordinator** invokes **Hosted architect**, then **Hosted reviewer**, using **Parent and specialist conversation state** and exact artifacts. B stacks chronological role/version/response labels; C retains all four calls when revision repeats roles. Intermediate rejection findings absent from public records stay fixture explanation, not invented rendered content. |
+| **Remote design and review** — `collaboration-return` | After fenced coordinator acceptance, B presents useful current candidate and review, then the actual coordinator result. D overrides success-looking prose on invalid, incomplete or held finalization. Accepted advisory output is not release acceptance. |
+| **Same-parent specialist continuation** — `continuity-revise`, `continuity-invoke` | Only a completed non-held initial turn permits the same-file queue follow-up through **Terminal client** and the three hosted roles. B repeats its layout for turn two, showing current queue-plus-private-ingress output, not cached approval. Stable identity categories are distinct from advancing response continuations. |
+| **Same-parent specialist continuation** — `continuity-verify` | **Guarded lab release toolchain** supports independent actual-binding comparison, not a new customer control. B remains alias-only/UNVERIFIED; the separate acceptance report compares parent/both-role hosted/framework identities, pins, exactly two creations, fresh responses, current artifacts and stale-approval invalidation. Direct model-history/fresh-history controls remain separately labeled offline. |
+
+### Screen details and sprint acceptance handoff
+
+Reuse the complete [A README layout](#screen-a-readme-opening-and-demonstration-entry),
+[B completed-turn layout](#screen-b-turn-summary-and-continuity-observations),
+[C revision storyboard](#screen-c-reject-revise-review-again) and
+[D failure/recovery table](#screen-d-held-incomplete-and-recovered-work).
+The README command remains `--native --view human` with an existing verified
+SOCKS endpoint and the same private session file. Human output is opt-in stderr
+after finalization; default stdout (including its existing parent header),
+delegation/result contract and acceptance parser remain unchanged.
+
+| RP-S1 acceptance slice | Design/check boundary and receiving owner |
+|---|---|
+| Two-turn identities, pins and revisions | B shows useful current output and observational aliases. Developer/integration retains the existing both-role binding/creation/response and invalidated-approval assertions; E2E checks relevant integrated source. No whole serialized-session equality or alias-based proof. |
+| Controlled repetition and real history loading | C preserves architect/reviewer/architect/reviewer order and final revised output. Retain existing both-specialist history tests, fresh-history controls and exact-known-response recovery without new sends. Fixture success is offline, never a live transcript. |
+| README/terminal clarity and unchanged parser | A leads with customer goal, diagram, two turns, invariant, dated status and source path. B includes design and recommendation, not just IDs. Retain capture tests for identical stdout, fragmented streams, finalization failures, recovered responses and control neutralization. No duplicate implementation. |
+| Checks and supported identity assessment | F/G distinguish attributed historical failure, source candidate, observed preparation/ingress, and selected or unresolved action. Source/repository checks remain required; Linux/package and live gates remain downstream. An actionable negative assessment may finish its bounded task, not the release. |
+
+Preserve terminal-default light/dark appearance, no color-only meaning,
+explicit status labels, narrow-width wrapping and stacked role details.
+Every generated line retains its data prefix after control-character
+neutralization. Use synthetic content and safe aliases; omit `--show-ids`.
+Full identifiers, private transcripts, settings, trust material and evidence
+locators stay outside customer output/Git. A known-response retrieval says
+no resend and is not counted as a new invocation; absent observations are
+not measured zero calls, creates or sends.
+
+### Blocked-item routing without expanding the design assignment
+
+Use the current Architecture entry's **denied separate sibling Git/resolver
+inspection**, not older successful-inspection or clean-sibling statements.
+Designer did not retry those probes. Supplied writer/integration designations
+and accepted host trust are available coordination/trust inputs, not new
+user-only questions, originating ownership acceptance or fresh SSH proof.
+The existing ownership Developer supplies attributable owned-path/resolver
+evidence for original review before runner writes; designated integration
+then establishes actual loaded roots/source and durable Git accounting.
+Independent containment-source/resource and trusted-inventory preparation
+remain with Scrum/transport/DevOps, not a runner-coding dependency.
+
+ReleasePlan's actual `REPOSITORY_INDEX_STALE` failure remains unwaived:
+Scrum/integration preserves and excludes unowned workflow context from customer
+Git, then reruns the original repository check. Do not adopt those private
+control-plane files into the public inventory or move another owner's files
+to make this design pass. Neither identity path is live-selected; preparation
+rejection is not specialist ingress failure. Historical UNKNOWNs, held parents,
+rollback assets and cleanup uncertainty remain preserved. Account-wide Blob
+Contributor permits application-enforced isolation only.
+
+Scrum consumes this bounded design during existing decomposition; Developer
+retains accepted presentation/fixture behavior without redispatch. Original
+E2E validates the actual joined implementation and original DevOps owns
+serialized guarded publication and live G1-G8. Follow-up/recovery requires
+its real completed non-held entry; independent isolation retains its own
+prerequisites, not a recovery dependency. No current Product Owner/Critic votes,
+live AC1-AC9 success, cloud diagnosis or deployment is claimed here.
+
+### Validation of this RP-S1 design entry
+
+An in-memory document check passed: all ten canonical component names, two
+flow names, eight unique step references, four local screen links and the
+evidence/reviewer boundaries resolve. Owned whitespace checks passed.
+Using the existing absolute canonical lab `.venv` Python 3.12.10 executable
+(reported ARM64), `Test-Demo.ps1` with explicit lab root passed dependency
+checks, **204 offline tests in 57.473 seconds** and compilation (exit 0).
+No dependencies were installed. This interpreter's reported architecture is
+not a Linux/amd64/hosting-Python package result.
+
+`scripts/Test-Repository.ps1` executed and failed its first gate with
+`REPOSITORY_INDEX_STALE`; later gates in that script did not run. Read-only
+comparison found three added untracked workflow-audit JSON inventory entries,
+zero removals, rather than the two reported at ReleasePlan time. They remain
+preserved and excluded from this commit/public inventory. Separately,
+`scripts/migration.py public-check` passed across 82 Git-visible files; it
+does not convert the original script failure to PASS. Scrum/integration
+retains the preservation/exclusion and original-check rerun closing action.
+No lab source changed; full retained lab, Linux/package and live checks were
+not run. Validation is partial at repository level, not a new design gap or
+an AC7 waiver. Original Product Owner/Critic review remains to be collected.
+
+## Historical RP-S3: gated continuity, recovery, isolation and delivery (October 20, 2026)
 
 This invocation selects **RP-S3** from the supplied ReleasePlan. Inspected clean
 application feature baseline `afe6d4dba937102e12821d770c1f7da4788f1c2c`.

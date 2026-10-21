@@ -1,5 +1,19 @@
 # Repository index
 
+Fresh original traversal architecture freshness: inspected application `6035a775`
+and selected feature lab `651a2290`, both clean; no paths added/deleted.
+Navigate `docs/customer-prototype-architecture.md#current-recovery-traversal-validate-the-accepted-corrected-join-first-october-21-2026`
+for the current ordering handoff, superseding only stale pending construction/
+continuation routing. Canonical solutionModel and source contracts are unchanged.
+Opened predecessor terminal outcome and original accepted fixture/integration
+audits `bb19091a` / `81d6d269`. Original ReleasePlan/Scrum must put original
+Developer E2E and Architect/Critic/Product Owner review FIRST, directly consuming
+accepted source without duplicate construction, before original DevOps. Historical
+plans/capped invocations remain intact; no continuation replay/runtime edits.
+Actual Linux/package and independent rollback-byte/effect exits still gate one
+publisher; independent reviewed Git delivery retains existing closeout ownership.
+No startup replay, formal integration execution or live success is claimed here.
+
 Execution-resume planning freshness: application `28636214` and selected feature
 lab `651a2290`; added only
 `docs/customer-prototype-rp-s3-execution-resume-sprint-plan.json`, no deletions.

@@ -1,0 +1,154 @@
+{
+  "SprintPlan": {
+    "sprintId": "REPAIRED-JOIN-REMAINING-EXECUTION",
+    "amendment": "continuation/1",
+    "featureBranch": "feature/customer-hosted-session-prototype",
+    "planningOwner": "Scrum Master",
+    "purpose": "Dispatch two approved existing-closeout slices without replacing the historical plan or reopening accepted original E2E reporting.",
+    "inputs": {
+      "applicationInspected": "340cf20876c6a6cbf73049177df5a619563ae7fa",
+      "architecture": "docs/customer-prototype-repaired-join-continuation-architecture.json",
+      "architectureAgreement": "gh-dynamic-workflows/.delivery-runs/490ad8fa-3d48-4905-a216-d2159f43d446/context/39eaab8e73749c201447dce662119eae3ed208ae70e6844014276c5b1e767439.json",
+      "releasePlan": "docs/customer-prototype-repaired-join-remaining-release-plan.json",
+      "sourceContract": "docs/design.md#reviewed-discovery-repair-source-join",
+      "originalE2E": "gh-dynamic-workflows/.delivery-runs/490ad8fa-3d48-4905-a216-d2159f43d446/context/bc39274e19fff206ead6593cac4f1a925733b4f26a82636577cc14495406bda5.json",
+      "originalDevOps": "gh-dynamic-workflows/.delivery-runs/490ad8fa-3d48-4905-a216-d2159f43d446/context/15229112c19f6d98ff6178ffc857174a49ce769a44343377564513393a57d8a7.json",
+      "acceptedIntegration": "8b50f343b649f75ec02b187f871bb0d77b9cee24",
+      "selectedLab": "885801565ae11878a7c4f33c29f6b45b0eb19af7",
+      "priorDispositions": []
+    },
+    "tasks": [
+      {
+        "id": "RJ-CURRENT-STATUS-CLOSEOUT",
+        "title": "Refresh measured customer prototype release status",
+        "kind": "developer",
+        "owner": "Developer",
+        "ownerBinding": "Existing integration/final-closeout Developer; no replacement implementation or release owner.",
+        "sourceSprintId": "REPAIRED-JOIN-REMAINING-EXECUTION",
+        "sourceCriterion": "Approved remaining sprint: README and terminal clarity remain accurate; final handoff records limitations. AC6/AC9 measured-status portion only.",
+        "dependsOn": [],
+        "exclusiveResources": ["application-git-integration"],
+        "estimatedMinutes": {"implementation": 25, "review": 15, "integration": 5},
+        "ownedPaths": ["README.md", "docs/customer-prototype-release-notes.md"],
+        "consumes": [
+          "Original E2E bc39274e and DevOps 15229112 reports and original reviewer records",
+          "Current repaired-source join, remaining release plan and accepted continuation architecture",
+          "Retained customer-first README, terminal design and existing reproducible demo commands"
+        ],
+        "produces": "A scoped factual customer-status correction committed on the authorized feature branch for original Architect/Critic review.",
+        "doneWhen": "Commit only README.md and docs/customer-prototype-release-notes.md corrections that distinguish actual original repaired-join offline results and agreed E2E FAIL from unmet repository approval, incomplete DevOps/common rollback and unverified live gates; supersede stale current assertions without erasing history, preserve concise goal-first navigation and demo commands, and report exact commit and limitations for original Architect/Critic review.",
+        "exclusions": [
+          "No runtime, terminal-renderer, test, script, settings, dependency or machine-contract changes; no duplicate accepted clarity construction.",
+          "No repository-suite retry, alternate-path bypass or constituent-check substitute.",
+          "No private evidence, private absolute locators, new live/package/final-binding claims, global-exhaustion claim or historical UNKNOWN closure.",
+          "No push of this correction before applicable original review, branch switching, amend, force-push, broad staging or adoption of unrelated work."
+        ],
+        "handoff": "Original Architect/Critic inspect the actual commit. Existing integration/final-closeout Developer retains its exact accepted ref for later reviewed delivery; the sibling delivery task is pinned to earlier b42ab2f8 and excludes this correction. Reconcile through existing sprint review/retro and release closeout; status changes do not unlock DevOps.",
+        "gitReconciliation": "Inspect status and commit explicit owned paths with git commit --only on the authorized feature branch; include required Copilot co-author, Copilot-Session and separate Delivery-Run trailers. Preserve unrelated dirty/staged work and all branches.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Refresh measured customer prototype release status",
+          "goal": "Replace stale customer status with attributed original repaired-join execution and truthful unmet gates, retaining accepted clarity.",
+          "components": ["Terminal client", "Guarded lab release toolchain"],
+          "flows": ["Exact-source guarded release"],
+          "flowSteps": ["release-close"],
+          "doneWhen": "Commit only README.md and docs/customer-prototype-release-notes.md corrections that distinguish actual original repaired-join offline results and agreed E2E FAIL from unmet repository approval, incomplete DevOps/common rollback and unverified live gates; supersede stale current assertions without erasing history, preserve concise goal-first navigation and demo commands, and report exact commit and limitations for original Architect/Critic review.",
+          "failureCategories": [],
+          "mustAct": "Developer",
+          "locations": ["README.md", "docs/customer-prototype-release-notes.md"],
+          "evidence": "",
+          "cause": "",
+          "verification": {"status": "not-yet-verified", "evidence": ""},
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      },
+      {
+        "id": "RJ-REVIEWED-DOC-DELIVERY",
+        "title": "Deliver exactly reviewed prototype documentation",
+        "kind": "developer",
+        "owner": "Developer",
+        "ownerBinding": "Existing integration/final-closeout Developer; original Architect/Critic review retained.",
+        "sourceSprintId": "REPAIRED-JOIN-REMAINING-EXECUTION",
+        "sourceCriterion": "Approved remaining sprint: intended reviewed generic source/documentation are committed, pushed and read back while unrelated work and historical assets remain preserved. AC8/AC9 exact Git-delivery portion only.",
+        "dependsOn": [],
+        "exclusiveResources": ["application-git-integration", "lab-git-integration"],
+        "estimatedMinutes": {"implementation": 20, "review": 15, "integration": 5},
+        "ownedPaths": [],
+        "consumes": [
+          "Applicable original review records for all intended outgoing ancestry through b42ab2f84e023f52c6c70e46c93d77b86949831d",
+          "Accepted delivery through application 8b50f343 and lab 88580156; do not repeat that completed slice",
+          "Current accepted continuation architecture explicitly pinning immediate delivery to b42ab2f8"
+        ],
+        "produces": "Actual exact non-force feature-ref delivery/readback evidence, or a precise non-destructive limitation; no artificial file change required.",
+        "doneWhen": "Verify current status, intended outgoing ancestry and applicable original review coverage; non-force push exactly application b42ab2f84e023f52c6c70e46c93d77b86949831d to the authorized feature ref and independently read it back, verify intended lab 885801565ae11878a7c4f33c29f6b45b0eb19af7 remotely without unnecessary repush, exclude newer amendment/status ancestry, and report actual results or an exact non-destructive review/divergence/access limitation for original Architect/Critic review.",
+        "exclusions": [
+          "No moving-HEAD push, newer amendment/status adoption, source editing, artificial metadata/evidence commit or duplicate accepted delivery through 8b50f343.",
+          "No repository suite or constituent substitutes, settings import, engine/cloud operations, publication, inference or hosted recovery.",
+          "No branch switch, merge, amend, force-push, broad staging, historical branch deletion, dirty canonical-lab mutation or overwrite of independent remote divergence.",
+          "Do not reaccess the denied external diagnostic proof by any route."
+        ],
+        "handoff": "Original Architect/Critic inspect actual exact-ref delivery evidence. Existing closeout ownership retains all newer reviewed documentation/status delivery. Scrum preserves partial sprint, required repository approval and independent original DevOps record-locator coordination; Git delivery does not authorize changed-tool execution.",
+        "gitReconciliation": "Deliver intended reviewed ancestry already on the authorized feature branch using an explicit pinned source ref, not HEAD. Reconcile existing commits only; no new commit is required without useful file changes. Stop rather than overwrite conflicting remote work.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Deliver exactly reviewed prototype documentation",
+          "goal": "Close the reviewed documentation delivery gap without pushing newer unreviewed ancestry or repeating accepted source integration.",
+          "components": ["Guarded lab release toolchain"],
+          "flows": ["Exact-source guarded release"],
+          "flowSteps": ["release-close"],
+          "doneWhen": "Verify current status, intended outgoing ancestry and applicable original review coverage; non-force push exactly application b42ab2f84e023f52c6c70e46c93d77b86949831d to the authorized feature ref and independently read it back, verify intended lab 885801565ae11878a7c4f33c29f6b45b0eb19af7 remotely without unnecessary repush, exclude newer amendment/status ancestry, and report actual results or an exact non-destructive review/divergence/access limitation for original Architect/Critic review.",
+          "failureCategories": [],
+          "mustAct": "Developer",
+          "locations": ["docs/customer-prototype-repaired-join-remaining-sprint-plan.json", "docs/customer-prototype-release-notes.md"],
+          "evidence": "",
+          "cause": "",
+          "verification": {"status": "not-yet-verified", "evidence": ""},
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      }
+    ],
+    "criticalPath": {
+      "ready": "Both tasks are dependency-ready with no behavioral edge between them. Queue both to original Developer work loops; shared application-git-integration serializes the conflicting checkout/Git mutation and reviews. No parallel unsafe Git writes and no substitute agents.",
+      "orderingHint": "Prefer pinned reviewed delivery first when both are ready; correctness does not depend on task order because its source ref is immutable and excludes new status/planning commits.",
+      "integration": "No new runtime construction or separate integration implementation is needed. Both assignments retain the existing integration/final-closeout owner and explicit reconciliation obligations; status commit awaits its original reviews and later delivery, independently of this pinned delivery task.",
+      "release": "Affirmative exact repository-check approval and passing required source checks still precede same-engine read-only revalidation and both complete actual Linux/hosting/package suites. Actual package readiness joins common rollback-byte/reconciled-effect readiness before one serialized guarded publisher and real live acceptance.",
+      "estimates": "Minutes are rough planning estimates, not execution, cost, productive-round or concurrency ceilings."
+    },
+    "fourCheckAudit": {
+      "readyOrExecuting": "No prior construction assignments or executing tasks are supplied. Original repaired-join E2E reporting is agreed; original DevOps is incomplete. Two approved closeout slices are ready.",
+      "feasibleSplit": "Measured status and already-reviewed exact-ref delivery do not require repository-suite approval, Linux success or DevOps PASS. Neither changes the denied operation or resumes unchanged DevOps.",
+      "independentApprovedBacklog": "The approved remaining sprint explicitly retains AC6/AC9 measured customer status and AC8 reviewed Git delivery. No additional pending sprint is supplied; historical partial sprints and accepted construction remain intact.",
+      "boundedInvestigation": "Existing original DevOps/Scrum coordination retains exact common-package provenance and unresolved-effect record locators. Its diagnostic-only record boundary is accepted; no new authoritative locator has been supplied. Do not duplicate the investigator, repeat mirror inventory, retry denied proof access or infer global absence/user-only locator responsibility.",
+      "conclusion": "Continue the two useful closeout tasks; neither exhaustion nor unchanged DevOps reassessment is justified."
+    },
+    "retainedBoundaries": {
+      "originalPlan": "docs/customer-prototype-repaired-join-remaining-sprint-plan.json remains unchanged.",
+      "repositoryCheck": "scripts/Test-Repository.ps1 remains unexecuted under the exact originating interactive denial. No affirmative approval is present; no retry, alternate-path bypass or constituent substitution.",
+      "independentRecordOwner": "Existing original DevOps Engineer coordinated by Scrum Master, under docs/customer-prototype-post-delivery-exhaustion-architecture.json#existingOwnerInvestigationHandoff. No new investigator or DevOps assignment.",
+      "noResume": "Status and Git closeout do not materially change the supplied DevOps blocker. No resumes are requested.",
+      "historicalAccounting": "Retain all original partial sprints, accepted handoffs, predecessor capped files/counters/outcomes, UNKNOWN publications, held parents, rollback assets and unproven historical cleanup.",
+      "limits": {"maxNoProgressRounds": 5},
+      "otherCaps": "None introduced.",
+      "progress": "Planning/dispatch readiness is not new execution progress. No prior milestone is reclaimed.",
+      "dispatch": "The orchestrator dispatches original dependency-ready work after this response and before planning review. Actual dispatch, task completion and current planning reviewer agreement are not claimed by this saved plan."
+    }
+  },
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Dispatch two independent existing-closeout assignments with shared Git-resource serialization. Preserve all denied-check and release gates; no unchanged original-stage resume.",
+    "evidence": [
+      "Accepted continuation architecture 340cf208 and agreement 39eaab8e identify measured status and pinned reviewed-document delivery as approved useful closeout, not new features.",
+      "Original E2E bc39274e actually ran repaired app b42ab2f8/lab88580156 and all original reviewers accepted bounded FAIL reporting; required repository validation remains unexecuted.",
+      "Original DevOps 15229112 and its reviewers retain incomplete deployment and a diagnostic-only provenance boundary, not common-byte/effect readiness.",
+      "Inspected README and release-notes openings still predate these actual original outcomes; accepted architecture records remote app8b50f343 behind reviewed documentation through b42ab2f8.",
+      "The approved remaining release plan explicitly retains measured customer status, exact reviewed Git delivery and independent existing-owner rollback/effect coordination."
+    ],
+    "resumes": []
+  },
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDeveloper": ["RJ-CURRENT-STATUS-CLOSEOUT", "RJ-REVIEWED-DOC-DELIVERY"],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": []
+}

@@ -1,5 +1,16 @@
 # Repository index
 
+Continuation-1 Scrum dispatch: inspected application `340cf208`; adds
+`docs/customer-prototype-repaired-join-continuation-1-sprint-plan.json`.
+This separate amendment assigns factual customer-status correction and reviewed
+Git delivery pinned to `b42ab2f8` to existing Developer closeout ownership.
+Both are dependency-ready, with shared `application-git-integration` serialization;
+neither depends on blocked DevOps or resumes it. New status/planning ancestry
+awaits its own reviewed delivery. Original E2E reporting is already agreed FAIL;
+repository approval, dependent package/live gates and independent original
+DevOps/Scrum record-locator coordination remain outstanding. Historical plans
+are unchanged. Planning is not new execution-progress credit.
+
 First remaining-execution continuation: inspected application `b42ab2f8`;
 adds only `docs/customer-prototype-repaired-join-continuation-architecture.json`.
 Navigate that separate amendment and sprint/client-release openings for actual
@@ -1725,6 +1736,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-remaining-execution-release-plan.json`
 - `docs\customer-prototype-remaining-execution-sprint-plan.json`
+- `docs\customer-prototype-repaired-join-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-repaired-join-continuation-architecture.json`
 - `docs\customer-prototype-repaired-join-remaining-release-plan.json`
 - `docs\customer-prototype-repaired-join-remaining-sprint-plan.json`

@@ -1,5 +1,16 @@
 # Repository index
 
+RE-EXEC-1 dispatch amendment freshness: based on application `b4250351`
+and selected feature lab `651a2290`; added
+`docs/customer-prototype-discovery-continuation-sprint-plan.json`, no deletions.
+Navigate that separate Scrum plan for two independent Developer assignments:
+retained discovery ownership repair and read-only repository-check condition
+investigation. Existing integration/final-closeout and DevOps inventory owners
+continue independently. Original changed-source E2E/reviews still precede
+dependent Linux/package execution; both readiness exits gate one publisher.
+Original plans and historical failures remain unchanged. No execution proof
+or new runtime/live acceptance is established by this planning amendment.
+
 RE-EXEC-1 discovery continuation freshness: based on application `66224a3d`
 and selected feature lab `651a2290`; added only
 `docs/customer-prototype-discovery-continuation-architecture.json`, no deletions.
@@ -1573,6 +1584,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-architecture.md`
 - `docs\customer-prototype-current-sprint-plan.json`
 - `docs\customer-prototype-discovery-continuation-architecture.json`
+- `docs\customer-prototype-discovery-continuation-sprint-plan.json`
 - `docs\customer-prototype-engine-mount-amendment.json`
 - `docs\customer-prototype-engine-recovery-sprint-plan.json`
 - `docs\customer-prototype-fixture-continuation-architecture.json`

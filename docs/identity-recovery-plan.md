@@ -1,5 +1,62 @@
 # Identity propagation recovery: design and execution plan
 
+## Terminal UX accounting receiving-owner reconciliation (October 21, 2026)
+
+The retained terminal outcome at
+`gh-dynamic-workflows/.delivery-runs/cb362442-d721-42c6-931b-dd7d490bcd28/outcome.json`
+records delivery run `12429312-cb2b-4dce-9da4-cacfb08206a3` as blocked at
+`UserExperienceLoop`: five consecutive no-progress rounds, CLI exit code 2,
+SDK completed. This is a terminated invocation, not a paused active workflow
+or release completion. Its sibling `result.json` retains the Designer report,
+original Product Owner/Critic reviews and Scrum Master reconciliation.
+All five retained disposition rounds require the same exact reference:
+`["yaml-loops-v1:UserExperienceLoop","UX-DELIVERY-RUN-ACCOUNTING"]`.
+Substantive UX remains accepted; the unmet criterion is durable Developer-owned
+accounting, not a UX construction defect or a new human approval requirement.
+
+Receiving the user's direct original-role handoff after termination, the
+existing integration/final-closeout Developer inspected clean
+`feature/customer-hosted-session-prototype` at
+`39b4bd91ad5c39221d4617f3e28bafb6c308e2e0`. That UX commit includes the
+Copilot co-author but no delivery-run association, and was still HEAD with no
+later reconciliation commit. This confirms the accounting gap; the reported
+agent-routing failures were not independently reproduced. This documentation
+update records the newly measured terminal deadlock and its receiving-owner
+handoff, without redispatching Designer investigation or changing accepted UX.
+
+The non-amending feature-branch commit carrying this recovery entry records
+the following **retrospective association** in its complete commit message:
+
+- `UX-Commit: 39b4bd91ad5c39221d4617f3e28bafb6c308e2e0`
+- `Delivery-Run: 12429312-cb2b-4dce-9da4-cacfb08206a3`
+- `Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>`
+- `Copilot-Session: ab987f7d-8dd2-4249-bc45-1c1a557b48f3`
+
+`Copilot-Session` identifies this receiving-owner session, not the dynamic
+workflow run. The original UX commit is not amended or reconstructed. The
+actual reconciliation commit reference must be returned for original Product
+Owner/Critic confirmation of the exact required disposition; their acceptance
+and bounded UX handoff completion are not asserted by this entry.
+
+Reviewed delivery of application
+`28636214a870a3a635222015fa67527ddba320fc`,
+`6035a77552490106a09c23da2f1c00896e780a61` and subsequent architecture/UX
+ancestry, together with this new accounting commit, remains pending with the
+existing final-closeout owner after original review. No push/readback is
+performed here. Accepted lab fixture `651a2290` and prior source handoffs stay
+preserved; this accounting slice neither repeats construction nor adds a stage.
+
+Original corrected-join E2E must still precede original DevOps, BOTH complete
+actual Linux suites and hosting/package gates. Independent common rollback
+ZIP-byte and unresolved-effect readiness remains required; BOTH actual exits
+still gate one serialized publisher and final common-bundle live checks.
+Continuity, supported compute stop/resume and separate-parent isolation remain
+unverified. Preserve the original test denial without alternate invocation,
+historical UNKNOWNs, held parents, rollback assets and cleanup uncertainty.
+No runtime/tool source, settings, permissions, engine, infrastructure, cloud,
+inference or publication operation is changed or executed by this reconciliation.
+No workflow restart, final overall closeout or customer success is claimed.
+
 ## Reviewed cold-import correction handoff (October 20, 2026)
 
 `RP-S3-FIXTURE-SOURCE-JOIN` consumes the original Architect/Critic agreement

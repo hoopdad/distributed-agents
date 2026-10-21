@@ -1,5 +1,76 @@
 # Distributed agents: MAF/Foundry workflow and shared artifacts
 
+## Reviewed Linux-engine recovery source join
+
+Task `RP-S2-ENGINE-SOURCE-JOIN` integrates reviewed application input
+`7f8805dbb796e1ccc4299006449e89f91390488d` with reviewed lab input
+`1dab1e012e510865eeec35fac69b1d43382c5595` on
+`feature/customer-hosted-session-prototype`. Both exact refs were pushed and
+independently read back from origin. Application ancestry retains previously
+reviewed integration `576b613`/`0b6d99a`, current architecture/UX/release/sprint
+planning `cef352f4`, `6b6975c0`, `48e3faf3`, `5cc0f692`, `ed986858`,
+`a6398f06`, accepted README status `13e3b4b1`, and scoped mount amendments
+`2f832f56`/`7f8805db`. Lab ancestry retains accepted context `42a70533`,
+helper implementation `55a60e69`, startup-budget correction `1eec6d47`
+and exact expected-mount correction `1dab1e01`. No merge, branch switch,
+canonical dirty adoption or abandoned task code was needed.
+
+Original Architect/Critic source acceptance was inspected in current run
+`0159ec9f-a89c-47f9-986f-80d9dfe6740a`, audits `c96ccaae` and `b7e2c819`;
+current planning and amendment audits also contain substantive agreement.
+Originating disposition
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LINUX-ENGINE-READINESS/AssignedWorkDeveloperLoop","linux-engine-exact-mount-contract"]`
+is closed within its source-task boundary, not reopened as an execution gate.
+This new integration documentation awaits its own original review and later
+existing closeout push; it is not included in the reviewed-input push above.
+
+Fresh no-effect `ReleaseRoots.select`, `identity_decision.source_files` and
+`Resolve-ReleaseRoots` checks confirmed actual loaded Python modules
+`release_roots`, `identity_decision`, `bundle_package`, `wsl_release` and the
+PowerShell resolver belong to the selected reviewed tooling checkout, with
+loaded/selected source equality. The compact sorted-key source closure remains
+`8974f4cdae0850f8528d1261e6d9617e756e157316449385875d55e05f29b6f3`
+(22 application and nine lab files). **That unchanged runtime/Decision seal
+does not bind the new recovery helper or build-test inputs.** Their separately
+verified SHA256 values, LF-normalized and matched to committed source, are:
+
+| Lab path under `foundry-tf/multi-agent/` | LF-normalized SHA256 |
+| --- | --- |
+| `Ensure-LinuxEngine.ps1` | `08b47f61b38f5855906c552753896ecb2e57d58222d2070b01c953b8bd573ac5` |
+| `tests/test_release_linux_engine.py` | `08c833156dd08e49dacce6ad40037bee1147f2606457de8769e2ee8ce9f9f3da` |
+| `Build-Demo.ps1` | `ef9a78e75edf875f83454a12239dbf18f8cad775c7b14b1a29285df4467edf82` |
+| `tests/test_release_native_settings.py` | `3642a111747ecd22669a11b96a5df537a6f98e815502728b03b6efebb1a0f622` |
+| `Release-Roots.ps1` (unchanged) | `8438d8bdbc04f94bd1b8380601fe8423a66b3045ddd561ec46bc69eb9e987e27` |
+
+The Windows helper and helper-test working copies use CRLF: their raw hashes
+are respectively `6f07700ad8c11990ed203969a004b7bd3530fb0bdccba0f9cf75ef1ea8cc2324`
+and `f70f04d40aed0057d8a0e4d90cd91d27e81575c0405198d3e3e37001e0d94c2e`;
+the other three raw hashes equal the table. Do not treat normalization as
+permission to reseal a package or historical receipt.
+
+Changed-join Windows validation passed 204 application tests (50.179 seconds),
+dependency and compilation checks, and complete retained `test_release*.py`
+discovery: 207 tests, 204 passed, zero failed, three inherited native-Linux
+credential-bridge/code-artifact exclusions (155.226 seconds). Retained discovery
+explicitly bound application `demo` and `live_acceptance` before loading lab
+tests; it includes all 13 synthetic-command/source helper cases and affected
+root/build/mount regressions. No real Docker command was used for recovery.
+The selected Git working trees were clean before and after source verification
+and tests; only this assignment's three documentation paths are then changed.
+
+Original E2E receives this changed exact join before original DevOps runs
+the reviewed helper and actual Linux/amd64/hosting-Python/package gates.
+`Build-Demo.ps1` remains offline; its helper mount is a public read-only
+test input, not automatic engine startup. Existing three-root/context guards,
+unchanged settings import, dependency/source/image checks and separate retained
+Linux suite stay mandatory. Independent selected-WSL rollback/effect inventory
+does not depend on the helper or this join. Both actual readiness exits still
+gate one serialized publisher and final G1-G4/non-held initial parent; RP-S3
+retains live continuity, supported stop/resume, isolation and truthful closeout.
+No settings import, authentication, engine startup, Linux build, cloud query,
+transport, publication or inference occurred here. Preserve historical UNKNOWNs,
+held parents, rollback assets and cleanup uncertainty.
+
 ## RP-S2 current reviewed source and ref handoff
 
 Task `RP-S2-RELEASE-SOURCE-HANDOFF` selects reviewed application feature input

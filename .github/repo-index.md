@@ -1,5 +1,23 @@
 # Repository index
 
+Recovery integration freshness: task `RP-S2-ENGINE-SOURCE-JOIN` joins reviewed
+application `7f8805db` and lab `1dab1e01`; exact feature refs were pushed/read back.
+All current planning/amendment, README `13e3b4b1` and helper
+`55a60e69`/`1eec6d47`/`1dab1e01` commits are retained in ancestry.
+`docs/design.md#reviewed-linux-engine-recovery-source-join` records actual loaded
+Python/PowerShell ownership/equality, unchanged runtime/Decision closure and
+separate helper/build-test SHA256s. `docs/identity-recovery-plan.md` routes the
+changed join to original E2E before original DevOps recovery/Linux execution.
+Changed-join application checks passed 204 tests; retained discovery passed
+204 of 207 with three inherited native-Linux exclusions, including all 13
+helper synthetic-command/source cases. No paths added/deleted, runtime/settings
+change, actual engine recovery, Linux build or live acceptance. This task's
+three documentation paths await original review/later closeout push.
+Independent WSL rollback/effect inventory continues; both actual readiness
+exits still gate one publisher. Historical UNKNOWNs/held parents remain.
+Older index entries retain history; their pending helper-source statements
+are superseded only within the accepted source and current integration scope.
+
 Scoped helper-mount planning freshness: based on accepted architecture
 `2f832f56` and its opened original Product Owner/Critic/Red Team agreement.
 New `docs/customer-prototype-engine-mount-amendment.json` is a separate

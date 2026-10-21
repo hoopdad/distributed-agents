@@ -1,5 +1,39 @@
 # Identity propagation recovery: design and execution plan
 
+## Reviewed engine-recovery integration handoff (October 20, 2026)
+
+The [current recovery source join](design.md#reviewed-linux-engine-recovery-source-join)
+binds reviewed application `7f8805dbb796e1ccc4299006449e89f91390488d` and
+lab `1dab1e012e510865eeec35fac69b1d43382c5595`. Both authorized feature refs
+were pushed and exactly read back, including retained integration `0b6d99a`,
+accepted README status `13e3b4b1`, current planning/amendments, and all three
+reviewed helper/correction commits. This task's new documentation awaits original
+review before later closeout push. No task code was abandoned or discarded.
+
+Original source reviews close the provenance-qualified
+`linux-engine-exact-mount-contract` disposition within its originating helper
+assignment. Actual loaded Python/PowerShell tools match the selected reviewed
+checkout; the unchanged 22-application/nine-lab-file runtime/Decision closure
+is recorded separately from the new helper, helper tests, Build-Demo and exact
+expected-mount hashes in the linked handoff. The old seal alone is not proof
+of recovery inputs. Explicit source roots remain distinct from the unchanged
+settings import's existing dedicated operational context.
+
+Changed-join offline validation passed 204 application tests and 207 retained
+tests (204 passed, zero failed, three native-Linux exclusions), including all
+13 helper synthetic-command/source cases and root/build/mount regressions.
+Dependency and application compilation checks passed. These are Windows checks,
+not actual engine readiness or Linux/hosting-package verification.
+
+Original changed-join E2E precedes original DevOps execution of the helper
+and retained Linux gates. Independent WSL rollback-package/effect inventory
+continues without waiting for helper readiness. Both actual exits precede the
+single guarded publisher and actual common-bundle G1-G4/non-held initial parent.
+No operational setting, credential, engine or cloud operation was used here.
+Identity selection and AC1-AC9 live completion remain unverified; historical
+UNKNOWNs, held parents, rollback assets and cleanup uncertainty remain preserved.
+Earlier entries below retain their historical evidence, not current push status.
+
 ## RP-S2 reviewed execution-source handoff (October 20, 2026)
 
 The [current source/ref handoff](design.md#rp-s2-current-reviewed-source-and-ref-handoff)

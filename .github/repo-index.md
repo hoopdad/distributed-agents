@@ -1,5 +1,21 @@
 # Repository index
 
+Continuation planning freshness: based on accepted architecture `45c74a3b`
+and selected feature lab `1526012`; added only
+`docs/customer-prototype-fixture-continuation-sprint-plan.json`, no deletions.
+That separate two-task amendment applies the exact RP-S3 DevOps
+`retained-live-preparation-fixture-initialization` disposition: existing
+Developer repairs only the retained rejection fixture and lab index, then
+joins reviewed source and measured docs with existing Git reconciliation.
+Opened original architecture agreement `fd5fb443`, blocked DevOps `0413fdfc`,
+agreed plan `3009f694` and E2E `2f339393`. Existing rollback-byte/effect
+inventory stays independent; no accepted construction is redispatched.
+Only the latest original RP-S3 DevOps frontier resumes after reviewed source,
+changed join and original E2E; BOTH actual readiness exits still gate one
+publisher and every later live criterion. Original plans, ReleasePlan,
+canonical model, partial sprints and five-round accounting remain unchanged.
+Original orchestrator dispatch/review follows the resolved plan response.
+
 Continuation architecture freshness: baseline application `7fef48b7` / feature
 lab `1526012`. Added only
 `docs/customer-prototype-fixture-continuation-architecture.json`; no deleted
@@ -1455,6 +1471,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-engine-mount-amendment.json`
 - `docs\customer-prototype-engine-recovery-sprint-plan.json`
 - `docs\customer-prototype-fixture-continuation-architecture.json`
+- `docs\customer-prototype-fixture-continuation-sprint-plan.json`
 - `docs\customer-prototype-linux-inventory-sprint-plan.json`
 - `docs\customer-prototype-operational-context-amendment.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`

@@ -1,0 +1,175 @@
+{
+  "sprintId": "RP-S1",
+  "kind": "SprintPlanContinuation",
+  "goal": "Unlock complete retained Linux validation with the demonstrated cold-import fixture correction while preserving independent rollback/effect work and every live gate.",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "baseline": {
+    "application": "45c74a3b09b1af18965b47f9ad2424bb01918b5d",
+    "lab": "152601209af4f0dcabe0acf0a7d7984fbf05c99d"
+  },
+  "acceptedInputs": {
+    "architecture": "docs/customer-prototype-fixture-continuation-architecture.json",
+    "architectureCommit": "45c74a3b09b1af18965b47f9ad2424bb01918b5d",
+    "architectureAudit": "gh-dynamic-workflows/.delivery-runs/0159ec9f-a89c-47f9-986f-80d9dfe6740a/context/fd5fb443c77826de1af97d6057f9d530eb49c681a6328c8a7e4d156b1c5863d9.json",
+    "architectureVotes": "Opened agreed audit; original Product Owner, Critic and Red Team each agree=true, taskComplete=true, no unmet criteria.",
+    "priorPlan": "docs/customer-prototype-rp-s3-retained-input-sprint-plan.json",
+    "priorPlanAgreement": "3009f694d5a79e5a4f79102abc7d7dac0ce4936e7cb1b242c55ae815bac08917.json",
+    "priorE2EAgreement": "2f3393934df1ad15f35fe628366626241ccac6a4c01a7a096f2d6802aea5e02a.json",
+    "latestDevOps": "gh-dynamic-workflows/.delivery-runs/0159ec9f-a89c-47f9-986f-80d9dfe6740a/context/0413fdfc88de5edf584174fb2eebb311c40d613b3c75cfc57e236d8d1e770cd3.json",
+    "requiredDisposition": "[\"yaml-loops-v1:sprint/3/RP-S3/DevOpsWorkLoop\",\"retained-live-preparation-fixture-initialization\"]",
+    "solutionModel": "docs/customer-prototype-architecture.md#solutionmodel"
+  },
+  "ownership": {
+    "planningPaths": ["docs/customer-prototype-fixture-continuation-sprint-plan.json", ".github/repo-index.md"],
+    "source": "Existing Developer writes only the two named lab paths in the registered feature sibling. Canonical dirty lab checkout is never writable. Both selected feature branches and clean statuses were inspected; registration/cleanliness alone do not grant ownership.",
+    "integrationOwner": "Existing Developer in RP-S3-FIXTURE-SOURCE-JOIN consumes original-reviewed correction and reconciles intended reviewed feature ancestry in both repositories. Existing final execution closeout retains later reviewed-document push/readback.",
+    "indexes": "Correction owns lab index; dependent join owns application index and measured docs. Preserve other writers and use matching existing Git/document resource names.",
+    "git": "Inspect working and staged status. Commit --only explicit owned paths before original review, with required Copilot trailer and observed metadata only. No branch switching, broad staging, stash/discard, amendments, force-push, lock removal or branch deletion.",
+    "accounting": "Every task commit must reach the authorized feature branch or remain on a named retained branch with task, commit IDs and abandonment reason recorded in a feature-branch commit message. No abandoned implementation was identified in this planning inspection.",
+    "push": "Push/read back reviewed ancestry only, including application 7fef48b7 and later reviewed planning/correction refs. Never push unreviewed concurrent ancestry. Newly created join docs await original review; existing final execution closeout owns subsequent push/readback."
+  },
+  "tasks": [
+    {
+      "id": "RP-S3-LIVE-PREPARATION-FIXTURE",
+      "title": "Make retained preparation rejection fixtures cold-import safe",
+      "kind": "developer",
+      "owner": "Developer",
+      "sourceSprintId": "RP-S2",
+      "sourceCriterion": "AC7; RP-S2-LINUX-PACKAGE-VALIDATION acceptance criterion 2 and doneWhen: both complete actual Linux suites and hosting/package gates for exact delivered inputs.",
+      "dependsOn": [],
+      "exclusiveResources": ["lab-linux-test-input-source", "lab-public-index"],
+      "estimatedMinutes": {"implementation": 35, "review": 15, "integration": 5},
+      "ownedPathsByRepository": {
+        "lab": ["foundry-tf/multi-agent/tests/test_release_identity_decision.py", ".github/repo-index.md"]
+      },
+      "consumes": "Accepted architecture 45c74a3b and exact originating retained-live-preparation-fixture-initialization disposition; accepted mounts/helpers/runtime remain unchanged.",
+      "produces": "Committed test-only initialization/restoration, fresh-process rejection regressions and attributable source/check evidence.",
+      "acceptanceCriteria": [
+        "Establish fixture-owned synthetic configuration before configuration-dependent imports; reliably restore environment on success and setup/error paths without importing private settings.",
+        "Fresh-process coverage removes ambient operational configuration and warmed application imports, executes all three LivePreparationTests, and proves their intended rejection guards rather than incidental ConfigurationError.",
+        "Preserve UNKNOWN no-inventory, exact identity/version drift rejection and no-parent-creation assertions and strict runtime validation. Do not replace assertions with skips.",
+        "Run focused cold-process and affected applicable retained checks using the pinned absolute Python and explicit application/lab roots; attribute platform exclusions and preserve required assertions.",
+        "Commit explicit owned paths in the authorized feature sibling with required Copilot trailer; return exact commits, test-only hashes, checks and limitations to original Architect/Critic."
+      ],
+      "doneWhen": "Committed fixture-owned initialization/restoration and cold-process regressions pass affected and applicable retained checks, with exact source/check evidence ready for original review and integration.",
+      "exclusions": [
+        "No actual Linux build, engine startup, settings import, authentication, private transport, cloud query, inference or publication",
+        "No runtime, Build-Demo, mount, helper, context, selector, application fixture, dependency manifest or package-allowlist changes",
+        "No canonical dirty checkout adoption, branch switching, unknown-effect replay or replacement of assertions with skips"
+      ],
+      "handoff": "Original Architect/Critic review, then RP-S3-FIXTURE-SOURCE-JOIN, original changed-join E2E and original DevOps both complete actual Linux suites. Source-task completion does not require deployment.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Make retained preparation rejection fixtures cold-import safe",
+        "goal": "Remove the demonstrated fixture initialization defect without weakening release rejection or runtime configuration.",
+        "components": ["Guarded lab release toolchain"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-package"],
+        "doneWhen": "Committed fixture-owned initialization/restoration and cold-process regressions pass affected and applicable retained checks, with exact source/check evidence ready for original review and integration.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["foundry-tf/multi-agent/tests/test_release_identity_decision.py", ".github/repo-index.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "RP-S3-FIXTURE-SOURCE-JOIN",
+      "title": "Join reviewed fixture correction and measured release handoff",
+      "kind": "developer",
+      "owner": "Developer",
+      "sourceSprintId": "RP-S3",
+      "sourceCriterion": "AC7 exact joined-source validation; AC8 reviewed scoped feature delivery; AC9 truthful measured delivery status and handoff.",
+      "dependsOn": ["RP-S3-LIVE-PREPARATION-FIXTURE"],
+      "exclusiveResources": ["application-git-integration", "lab-git-integration", "application-public-index", "application-recovery-docs", "application-readme"],
+      "estimatedMinutes": {"implementation": 25, "review": 15, "integration": 10},
+      "ownedPathsByRepository": {
+        "application": ["README.md", "docs/design.md", "docs/identity-recovery-plan.md", ".github/repo-index.md"]
+      },
+      "consumes": "Original-reviewed fixture commit and current accepted loaded-root/runtime closure; no full-sprint acceptance dependency.",
+      "produces": "Exact changed test-only join/provenance, applicable offline validation, durable feature-ref accounting and measured documentation for original review/E2E.",
+      "acceptanceCriteria": [
+        "Verify actual loaded Python/PowerShell owners and committed bytes in explicit selected roots. Record changed test-only hashes/input provenance separately from unchanged runtime/Decision closure.",
+        "Run applicable changed-join application, retained and repository checks with pinned absolute Python and explicit lab root; preserve exclusions and return exact evidence to original E2E.",
+        "Reconcile all intended reviewed task/planning ancestry including application 7fef48b7, push/read back reviewed feature refs, and account durably for any retained abandoned task branches without deleting them.",
+        "Refresh only stale measured README/recovery/design/index status supported by accessible evidence: latest actual application 206 tests with seven skips, retained 224 with three fixture errors, seven native observations; new offline PASS is not actual Linux/package PASS.",
+        "Preserve independently inspected image ID versus historical manifest/config labels and timed-out startup versus later same-selection readiness. Commit scoped docs before original review; existing final execution closeout delivers newly reviewed docs afterward."
+      ],
+      "doneWhen": "Reviewed fixture source is joined with attributable root/byte/hash/check evidence and intended reviewed feature delivery accounting, and scoped measured documentation is committed for original review/E2E.",
+      "exclusions": [
+        "No fixture/runtime/tool implementation edits or original plan/ReleasePlan changes",
+        "No operational/cloud effects, rollback-asset regeneration, historical reseal, UNKNOWN clearing or live success claims",
+        "No duplicate accepted clarity work or repeated unchanged test runs for progress credit"
+      ],
+      "handoff": "Original Architect/Critic review and original changed-join E2E precede latest original RP-S3 DevOps execution; existing final closeout delivers newly reviewed docs. Independent existing DevOps rollback/effect work does not wait on this task.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Join reviewed fixture correction and measured release handoff",
+        "goal": "Bind the new test-only correction to exact reviewed source and truthful execution handoffs without reopening accepted construction.",
+        "components": ["Guarded lab release toolchain", "Terminal client"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-join", "release-close"],
+        "doneWhen": "Reviewed fixture source is joined with attributable root/byte/hash/check evidence and intended reviewed feature delivery accounting, and scoped measured documentation is committed for original review/E2E.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["README.md", "docs/design.md", "docs/identity-recovery-plan.md", ".github/repo-index.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    }
+  ],
+  "criticalPath": {
+    "roughMinutesNotCaps": true,
+    "newSource": "Fixture correction 35 implementation + 15 review + 5 integration -> changed join 25 implementation + 15 review + 10 integration -> original E2E -> actual Linux/package readiness.",
+    "independent": "Existing RP-S2-FRESH-INVENTORY continues provenance-backed common rollback ZIP-byte locator/hash and unresolved-effect accounting without waiting for either new task. Metadata alone is insufficient; do not repeat unchanged reads.",
+    "release": "BOTH actual Linux/package readiness and complete rollback/effect readiness -> one original serialized publisher -> architect-before-reviewer ingress -> actual G1-G4/completed non-held initial parent.",
+    "laterFlows": "Existing continuity and recovery need completed initial parent; isolation needs final bindings, not recovery or whole-sprint acceptance. Shared primary-parent/transport mutation remains serialized by existing resources.",
+    "closeout": "Changed join can deliver already-reviewed refs independently of live completion. New docs require original review before existing final execution closeout push/readback. Final ledger requires actual criteria, not an accepted failure report."
+  },
+  "pullForwardAudit": {
+    "readyNewTasks": ["RP-S3-LIVE-PREPARATION-FIXTURE"],
+    "existingIndependentWork": "RP-S2-FRESH-INVENTORY remains an existing original DevOps assignment, not a duplicated new task. Inspect provenance-backed retained common ZIP locators and actual bytes and finish effect accounting within original authority.",
+    "acceptedNotRedispatched": "Ownership/root, runner/context, helper/mount/provenance/native-observation, selector, terminal/README clarity and repeated-call/history/recovery/isolation fixtures are accepted construction.",
+    "laterApprovedBacklog": "Read approved ReleasePlan and agreed RP-S3 plan 3009f694: no missing independent runtime/UI construction identified. Live follow-up/recovery require a completed non-held parent; isolation only final deployment bindings. These are real unmet service prerequisites, not global construction gates.",
+    "waitingAssessment": "Not exhausted: demonstrated test-only repair and changed-source integration are substantial unlocking work. No user-only blocker is established."
+  },
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Dispatch only the demonstrated retained cold-import fixture correction and its dependent exact-source join. Preserve existing independent rollback/effect inventory and all actual package/live prerequisites.",
+    "evidence": [
+      "Opened agreed architecture audit fd5fb443: original Product Owner, Critic and Red Team accepted 45c74a3b and its two-task source boundary with no unmet criteria.",
+      "Opened latest original DevOps audit 0413fdfc: 206 application tests with seven skips; retained 224 with three pre-assertion configuration errors, seven native observations passed; rollback bytes/effects incomplete, no publication.",
+      "Inspected lab 1526012 LivePreparationTests.check_rejection: demo.contracts import precedes synthetic configuration; accepted mount/helper/context/selector/runtime work need not change.",
+      "Opened agreed plan 3009f694 and E2E 2f339393 and approved ReleasePlan: independent existing inventory and later live tasks remain assigned; accepted source is not live capability."
+    ],
+    "resumes": [
+      {
+        "key": "sprint/3/RP-S3/DevOpsWorkLoop",
+        "after": ["RP-S3-LIVE-PREPARATION-FIXTURE", "RP-S3-FIXTURE-SOURCE-JOIN"],
+        "evidence": "Only original-reviewed fixture correction and changed exact join, followed by original E2E, materially change this latest retained-suite failure. Existing DevOps then reruns BOTH complete actual Linux suites without replaying startup. Complete independent rollback-byte/effect readiness still gates one publisher. Earlier partial DevOps keys are preserved, not replayed."
+      }
+    ]
+  },
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDeveloper": ["RP-S3-LIVE-PREPARATION-FIXTURE", "RP-S3-FIXTURE-SOURCE-JOIN"],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": [],
+  "dispatch": {
+    "owner": "Installed original YAML orchestrator dispatches dependency-ready original work loops before planning review, then joins them. No substitute agents launched by Scrum.",
+    "ready": ["RP-S3-LIVE-PREPARATION-FIXTURE"],
+    "parallelExistingBranch": "Independent existing RP-S2-FRESH-INVENTORY remains with original DevOps; no source dependency is added and no deployment is moved into Developer/planning.",
+    "actualDispatch": "Pending orchestrator consumption of this resolved plan; not claimed by planning owner."
+  },
+  "preservation": [
+    "Separate amendment; original saved plans, ReleasePlan and canonical solutionModel unchanged",
+    "Original roles/reviewers, three partial sprints, original five-consecutive-no-progress accounting and authority unchanged",
+    "All UNKNOWNs, held parents, rollback assets, historical cleanup uncertainty and unrelated changes preserved",
+    "No engine startup replay, new publisher, unsupported operation, user-only blocker or waived AC1-AC9/G1-G8"
+  ]
+}

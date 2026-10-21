@@ -1,6 +1,127 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Current RP-S2: failed package gate and independent exact inventory (October 20, 2026)
+## Current RP-S3: continuation screens with localized release prerequisites (October 20, 2026)
+
+This packet selects **RP-S3**. Inspected clean application baseline
+`98128bb8f79887fccf21462b82dedd332ded7976` on
+`feature/customer-hosted-session-prototype`. Consume accepted Architecture
+`cef352f4`, UX `6b6975c0`, and the existing canonical flow/screen contracts.
+Opened current-run audits `398b66fa` (Architecture), `bf7fed70` (UX),
+`c803c95d` (final source join) and `293c1688` (E2E): each records original
+reviewer agreement, taskComplete true and no unmet criteria for its bounded
+deliverable. Opened DevOps audit `7e74a2ea`: original Architect, Critic and
+Developer agree on needs-replan, each with taskComplete false and four unmet
+criteria. These are inspected audit findings, not Designer-run Linux/private
+operations. RP-S1 and RP-S2 remain partial at their original DevOps boundaries.
+Earlier dated overlays retain history, not current pending ownership work.
+
+### Customer journey and smallest execution handoffs
+
+Retain [H-K](#screen-h-two-turn-demonstration-and-evidence-companion), A-D and
+F/G; no duplicate renderer, browser UI, new CLI flag, public field or schema.
+The following refines report routing, not the implemented terminal:
+
+```text
+A goal + three-role diagram + invariant + dated BLOCKED notice
+F package branch: retained test-input repair -> original review/join/E2E
+  -> complete actual Linux application AND retained suites
+F inventory branch: exact private observations -> rollback ZIP-byte/effect ledger
+  -> complete independent rollback/effect readiness
+BOTH actual exits -> one original DevOps publisher -> G actual G1-G4
+H completed non-held initial parent -> same-file queue follow-up -> exact comparison
+I once-only durable stop + stopped/idle confirmation -> same-parent continuation
+J distinct synthetic parent -> distinct children/scope + content exclusion
+K per-criterion proof, final-source/package/Git closure, cleanup and limitations
+```
+
+H and I cannot consume a missing completed non-held initial parent. J needs
+actual final deployed bindings and its own safe execution preconditions, **not**
+recovery success or full RP-S2 sprint acceptance. Its fixture/design preparation
+can continue now. Existing accepted scenario assertions, specialist-history
+controls and human presentation need no redispatch. An uncertain effect holds
+affected operations; it does not block documentation, source repair or feasible
+independent rollback-byte accounting. Do not manufacture a new parent to evade
+a hold or rerun an unchanged denial.
+
+| Canonical flow / steps | Screen, components and evidence-to-display contract |
+|---|---|
+| **Same-parent specialist continuation** / `continuity-revise`, `continuity-invoke`, `continuity-verify` | H/B: **Terminal client**, **Hosted coordinator**, **Hosted architect**, **Hosted reviewer**, **Parent and specialist conversation state**, **Private Blob artifacts and effect journal**, **Trusted identity and private transport**, **Guarded lab release toolchain**. Keep useful current design/review and ordered calls. Compare actual parent and both roles' hosted/framework identities and pins; both roles run on both turns, exactly two children total, new responses per new invocation, queue plus earlier requirements, current prerequisites and invalidated stale approval. Aliases or remembered prose cannot fill missing observations. |
+| **Supported compute stop and resume** / `recovery-stop`, `recovery-resume`, `recovery-verify` | I/D: same hosted roles/state/artifacts plus **MAF workflow checkpoints**, trusted transport and toolchain. Separate durable stop intent, confirmed stopped/idle, resume and accepted continuation. Compare original bindings, checkpoint/effect reconciliation and no duplicate sends. Missing confirmation stays unresolved; known-response retrieval is not a new invocation. |
+| **Separate-parent isolation** / `isolation-bind`, `isolation-execute`, `isolation-verify` | J: terminal, coordinator, both specialists, conversation state, private artifacts, trusted transport and toolchain. Distinct synthetic brief/private file, actual parent/both-child identities and artifact scope; independently report content exclusion and cross-scope rejection. Different filenames alone prove nothing. |
+| **Exact-source guarded release** / `release-close` | F/K: toolchain, terminal and private artifacts. Join source/package/live evidence and scoped Git delivery; report each AC1-AC9/G1-G8 outcome separately. A comparison assertion PASS is not independent provenance or overall release PASS. |
+
+### F/K current boundary: advance observations without advancing acceptance
+
+Replace obsolete status direction in older overlays only at the next existing
+measured-status closeout. The latest opened DevOps audit establishes:
+
+| Attributed observation | Display and receiving owner |
+|---|---|
+| Same selected engine revalidated without startup replay; inspected Linux/amd64 image with hosting Python 3.13.15 | Distinguish current readiness/inspection from the historical startup timeout. The latest audit records an independently inspected image ID as well as exported manifest/config digests. Their equality where observed does not retroactively correct the predecessor's mislabeled image ID. Keep exact bindings private; do not carry forward “never inspected” as current fact. |
+| Application container discovery completed: 206 run, 199 passed, seven platform/optional skips | Application container gate passed for that tested join, not a final package PASS. Separate retained discovery: 184 run, 145 passed, 38 Windows-specific skips, one import error. Incomplete discovery is not complete retained coverage. |
+| Retained input omission blocks package readiness | Apply `["yaml-loops-v1:sprint/2/RP-S2/DevOpsWorkLoop","retained-linux-test-input-closure"]`: existing Architect/Scrum scopes Developer's minimal explicit read-only import/inspection inputs, including required workflow fixture, and affected provenance checks. Original reviews, joined-source E2E and complete DevOps Linux suites follow. No whole-checkout mount, runtime/package expansion or fixture-absence skip. |
+| Four exact private version observations matched retained package/identity expectations; accessible receipts and new-resource closure recorded | This advances exact metadata evidence, not specialist ingress, common-bundle health or complete rollback readiness. Independently finish verified common rollback ZIP bytes and unresolved-effect accounting. Do not redispatch accepted exact-inventory source work or wait on the package repair to account for available bytes. |
+| No publication or inference in that DevOps operation | G1-G4 and completed non-held initial parent remain unproven; H/I/J live evidence remains unreached. These operation-scoped zeroes cannot close historical UNKNOWNs. BOTH readiness exits still precede the single publisher. |
+
+Suggested **report copy**, not a transcript or new terminal status:
+
+> Release BLOCKED, not customer-ready. Reviewed source and local integration
+> are accepted. Actual Linux application checks passed for the tested join;
+> separate retained Linux discovery failed on a missing public test input.
+> Exact private version/package/identity reads passed, but complete rollback
+> bytes/effect readiness remains unproven. Final common-bundle collaboration
+> and a completed non-held initial parent are missing; two-turn continuity,
+> supported hosted recovery and separate-parent live isolation are not verified.
+
+### H-K presentation and original-owner handoff
+
+Use existing README setup and two-turn command shapes, not an invented recovery
+command. H's separate sanitized companion reports verified/unverified per binding,
+creation count, response inequality and current artifact comparison only from
+actual private evidence. The implemented `--native --view human` remains a
+finalized opt-in stderr projection; default stdout/parent header, chronological
+delegation/result records and acceptance parsing remain unchanged. The renderer
+does not gain a VERIFIED badge because a separate report exists.
+
+I keeps intent/confirmed-stop/resume/continuation visibly distinct. Preserve the
+existing durable marker; an uncertain stop is not permission for a second stop.
+Local Docker readiness is not hosted G6. J remains independently schedulable
+once its relevant live prerequisites pass. K leads with actual outcome and unmet
+criteria before totals, then existing setup/reproducible command, sanitized proof,
+private exact final/rollback bindings, reviewed refs and attributable new cleanup.
+Only all required criteria permit customer-ready status.
+
+Retain plain status words, terminal-default light/dark colors, narrow-width
+wrapping, control neutralization and generated-line data prefixes. Held/invalid/
+incomplete state overrides success-looking content. Use synthetic text and safe
+aliases; omit full identifiers, private paths/profiles, receipt contents and
+`--show-ids`. Account-wide Blob Contributor gives application-enforced isolation,
+not storage-RBAC/malicious-host isolation. No hard-crash or exactly-once claim.
+Preserve every historical UNKNOWN, held parent, rollback asset and historical
+cleanup uncertainty; this operation's cleanup cannot certify history.
+
+The earlier originating dispositions under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop", ...]`
+retain their exact task boundaries: `linux-application-test-closure` has new
+actual application-container evidence, `selected-wsl-exact-inventory` has new
+exact-read evidence but incomplete readiness, `release-binding-report-accuracy`
+now distinguishes the new inspection, and `guarded-execution-and-closeout`
+still requires both exits and deployed tests. The originating
+`linux-engine-exact-mount-contract` source acceptance stays closed; no helper,
+ownership, runner or context redesign is requested.
+
+Scrum/Architect own the bounded retained-input correction and minimal dependency
+graph. Existing Developer/integration owns reviewed source/Git reconciliation
+and measured README/recovery updates, including deferred reviewed
+`98128bb8` / `5da7a2ea` pushes/readbacks. Original E2E validates changed joins;
+original DevOps owns actual Linux, independent rollback/effects, one publisher
+and live scenarios. No extra approval stage or user-only action is established.
+Product Owner/Critic review this bounded RP-S3 design; no reviewer votes for it
+or live success are claimed. Designer changes only this design and its index;
+no unchanged runtime suites, settings import, engine/transport/cloud action,
+publication, inference or hosted stop/resume is part of this turn.
+
+## Historical RP-S2: failed package gate and independent exact inventory (October 20, 2026)
 
 This packet selects **RP-S2**; RP-S1 remains partial at its original DevOps
 boundary. Consume Architecture `cef352f4`, UX `6b6975c0`, cumulative sprint

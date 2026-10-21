@@ -1,5 +1,18 @@
 # Repository index
 
+RP-S3 current design freshness: baseline application `98128bb8`; no added/deleted
+paths. `docs/customer-prototype-sprint-design.md` current RP-S3 entry retains
+H-K/A-D/F-G and canonical continuation/recovery/isolation/release-close steps.
+Opened original Architecture/UX/join/E2E votes and stopped DevOps `7e74a2ea`;
+distinguishes actual application-container PASS from retained discovery failure,
+new inspected image binding from historical mislabel, and accessible exact
+private reads from missing rollback bytes/effect readiness. Existing Scrum scopes
+only retained input closure; independent accounting continues. Completed non-held
+initial parent gates H/I, final bindings gate J without recovery dependency.
+No duplicate UI/runtime/schema work; source reviews/E2E/actual gates and single
+publisher remain. Existing closeout owns measured README and reviewed-ref pushes.
+This design/index slice is not operational or customer-release acceptance.
+
 Final correction-join freshness: `RP-S2-CORRECTION-SOURCE-JOIN` consumes
 original-reviewed application `b906d5eb` / lab `f6e7d8b`, both now pushed/read
 back with all accepted correction/helper/planning ancestry including `0cac08c9`.

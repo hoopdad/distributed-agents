@@ -1,5 +1,16 @@
 # Repository index
 
+RE-EXEC-1 sprint planning freshness: based on accepted sprint architecture
+`c4b58286`, application baseline `7322ed7a` and selected lab `651a2290`.
+Added only `docs/customer-prototype-remaining-execution-sprint-plan.json`;
+no deletions. It resolves tasks and all four new assignment arrays to empty:
+original Developer EndToEndTestLoop is next, not an assigned-work substitute.
+Opened current original planning/design/UX and predecessor fixture/integration
+outcomes. Existing inventory and reviewed Git closeout retain independent
+ownership; BOTH actual readiness exits still gate one serialized publisher.
+Historical plans and capped invocations are unchanged. Actual dispatch belongs
+to the original orchestrator; this plan is not E2E, live or execution progress.
+
 RE-EXEC-1 sprint architecture freshness: based on reviewed remaining-execution
 plan `a9cecf10`, application baseline `7322ed7a` and selected lab `651a2290`.
 No paths added/deleted. Navigate
@@ -1558,6 +1569,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-remaining-execution-release-plan.json`
+- `docs\customer-prototype-remaining-execution-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-execution-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-execution-resume-sprint-plan.json`

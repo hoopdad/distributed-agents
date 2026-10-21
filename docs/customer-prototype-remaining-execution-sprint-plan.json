@@ -1,0 +1,160 @@
+{
+  "kind": "SprintPlan",
+  "sprintId": "RE-EXEC-1",
+  "goal": "Run original corrected-join E2E first, then guarded exact-package and real three-role continuity, recovery, isolation and reviewed delivery.",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "releasePlan": "docs/customer-prototype-remaining-execution-release-plan.json",
+  "architecture": "docs/customer-prototype-sprint-architecture.md#re-exec-1-accepted-corrected-join-original-integration-gate-first",
+  "design": "docs/customer-prototype-ux.md",
+  "tasks": [],
+  "taskCards": [],
+  "assignments": {
+    "AssignedWorkUIDeveloper": [],
+    "AssignedWorkDeveloper": [],
+    "AssignedWorkDevOpsEngineer": [],
+    "AssignedWorkDesigner": []
+  },
+  "assignmentDecision": "No new construction gap exists. Consume accepted source and fixture handoffs. Empty construction assignments intentionally hand directly to original Developer EndToEndTestLoop; neither E2E nor existing later execution/closeout ownership is represented by a substitute assigned-work task.",
+  "sourceAccounting": {
+    "applicationBaseline": "7322ed7a06954e8006843cb466ba76bc6bf16146",
+    "selectedFeatureLab": "651a22908984174d3947b9d04ed68f6cd13ea90c",
+    "acceptedIntegration": "28636214a870a3a635222015fa67527ddba320fc",
+    "observedApplicationHeadBeforePlanning": "c4b58286aa8a5d7578a2998148037197baa9a338",
+    "reviewedLaterDocumentation": [
+      "a9cecf1076c6861220b955a37ff668ae42f94d85",
+      "c4b58286aa8a5d7578a2998148037197baa9a338"
+    ],
+    "sourceContract": "docs/design.md#reviewed-cold-import-fixture-source-join",
+    "rule": "Account explicitly for documentation-only ancestry through this plan/index commit and subsequent intended reviewed documentation. Original E2E verifies actual loaded Python/PowerShell owners and committed inputs, separating runtime/helper seals from changed test-only bytes. Never substitute canonical dirty lab source, reseal historical migration hashes or silently certify unreviewed changes."
+  },
+  "consumedAudits": {
+    "currentRun": "563841c9-c44a-4a83-87e5-63600eaaea58",
+    "currentContext": "gh-dynamic-workflows/.delivery-runs/563841c9-c44a-4a83-87e5-63600eaaea58/context",
+    "releasePlan": "909cb570ac6b8659ddb0d5a7aabb782f5756ed9e6f65fd73ebbdcd9544bde3f0.json",
+    "sprintArchitecture": "37746811deab33b5ecd2bc118bfac01ca59aabc6719658d0426ce8efb662466a.json",
+    "sprintDesign": "05ea4d1441364ee9524c4c57c81442167bd5ec62a9a28de794e388d0bdf73fe6.json",
+    "userExperience": "883721e3d5bcd195b16647536c7f6861f9f8751124c2afad766a900a52700250.json",
+    "acceptedSourceContext": "gh-dynamic-workflows/.delivery-runs/0159ec9f-a89c-47f9-986f-80d9dfe6740a/context",
+    "fixture": "bb19091afaf6001ea3c62ce12cba189d66c3591e1765488f905a3e6e783794ee.json",
+    "integration": "81d6d26998e3e7b51f0755cb0bec5dbb9c2d449351f15539663e97503b46676b.json",
+    "observation": "Opened all six actual outcome files: agreed, every original reviewer taskComplete=true, no unmet bounded criteria. These accept source/design/planning, not corrected-join formal integration, actual Linux/package gates or live capability."
+  },
+  "originalStageHandoffs": [
+    {
+      "loopId": "EndToEndTestLoop",
+      "owner": "Developer",
+      "reviewers": ["Architect", "Critic", "Product Owner"],
+      "components": ["Guarded lab release toolchain"],
+      "flows": ["guarded-release"],
+      "flowSteps": ["release-join"],
+      "sources": ["Test-Demo.ps1", "scripts/Test-Repository.ps1", "docs/design.md"],
+      "requires": ["accepted-corrected-source-join"],
+      "produces": ["original-corrected-join-e2e-reviewed", "passing-required-source-checks"],
+      "doneWhen": "Original Developer reports actual exact-join integration evidence and accurate unmet criteria, independently reviewed by original Architect/Critic/Product Owner. Local passing checks and overall predeployment FAIL remain distinct; agreed accurate FAIL does not satisfy failed or missing prerequisites.",
+      "checks": [
+        "Validate actual loaded roots, committed application/lab inputs, unchanged runtime/helper seals, separately changed cold-import fixture bytes and documentation-only ancestry.",
+        "Use existing pinned absolute Python and deterministic local scripts: Test-Demo.ps1 -Python <absolute-python> -LabRepositoryRoot <selected-feature-lab>, scripts/Test-Repository.ps1 -Python <absolute-python>, and affected retained checks.",
+        "Preserve the exact prior denied check without unchanged retry or alternate-invocation bypass. Distinguish it from independently authorized checks; leave missing checks unmet. No dependency installation absent changed manifest or missing-tool failure."
+      ],
+      "exclusions": ["No assigned-work E2E substitute, duplicate accepted construction, engine startup, deployment, inference or acceptance waiver."],
+      "handoff": "Original reviews precede dependent changed-tool DevOps. Record actual fresh original E2E dispatch; if scheduling is internally unavailable, report the precise limitation rather than replaying continuation keys."
+    },
+    {
+      "loopId": "DevOpsWorkLoop",
+      "owner": "DevOps Engineer",
+      "reviewers": ["Architect", "Critic", "Developer"],
+      "components": ["Guarded lab release toolchain", "Trusted identity and private transport", "Hosted coordinator", "Hosted architect", "Hosted reviewer"],
+      "flows": ["guarded-release", "remote-collaboration", "two-turn-continuity", "supported-recovery", "parent-isolation"],
+      "placement": "Original later YAML stage only. These are receiving-owner handoffs, not new construction assignments.",
+      "readinessBranches": [
+        {
+          "id": "actual-linux-package",
+          "requires": ["original-corrected-join-e2e-reviewed", "passing-required-source-checks"],
+          "produces": ["actual-linux-package-ready"],
+          "action": "Revalidate the SAME selected Linux engine read-only without startup replay. Through retained Build-Demo tooling with explicit reviewed roots, run BOTH complete corrected actual Linux suites and hosting/package gates.",
+          "exit": "Application AND retained actual Linux/amd64/hosting-Python checks pass with required native cases and exact source, test inputs, image, dependency, immutable package and preview bindings.",
+          "exclusiveResources": ["lab-linux-engine", "lab-linux-stage"]
+        },
+        {
+          "id": "rollback-effects",
+          "requires": [],
+          "produces": ["rollback-effects-ready"],
+          "action": "Existing DevOps inventory ownership continues authorized nonsecret common rollback ZIP-byte/provenance and next-operation route/effect investigation independently of Linux success, within original YAML placement.",
+          "exit": "Actual common rollback ZIP bytes and exact bindings verified; next-operation freshness, route, identities, versions, attributable cleanup and effects ready while historical UNKNOWNs and held parents remain preserved. Metadata matches alone do not pass.",
+          "coordination": "Use shared transport/context/mount resources only when an operation actually needs them; do not hold the publisher resource for all read-only inventory."
+        }
+      ],
+      "publicationJoin": {
+        "requires": ["actual-linux-package-ready", "rollback-effects-ready", "original-corrected-join-e2e-reviewed", "passing-required-source-checks"],
+        "owner": "DevOps Engineer",
+        "action": "One serialized retained guarded publisher, exact approved fresh package/preview, existing three roles only. Trusted architect ingress precedes reviewer; finite supported identity discrimination does not authorize speculative bypass.",
+        "exclusiveResources": ["lab-hosted-release", "lab-private-transport", "lab-cli-context", "lab-ssh-mount"],
+        "produces": ["final-deployed-bindings"]
+      },
+      "liveDependencies": [
+        {"step": "initial-parent", "requires": ["final-deployed-bindings"], "exit": "Actual G1-G4: healthy final common bundle, remote acceptance, private MI provenance, genuine Decision-1 and completed non-held initial parent."},
+        {"step": "same-parent-followup", "requires": ["completed-non-held-initial-parent"], "exclusiveResources": ["lab-primary-parent"], "exit": "Actual same-parent/both-child hosted/framework pins, fresh responses and revised current artifacts pass."},
+        {"step": "supported-stop-resume", "requires": ["completed-non-held-initial-parent"], "exclusiveResources": ["lab-primary-parent"], "exit": "Once-only durable-marked supported stop confirmed stopped/idle, then original-session continuation without duplicate effects."},
+        {"step": "separate-parent-isolation", "requires": ["final-deployed-bindings"], "exclusiveResources": ["lab-isolated-parent"], "exit": "Actual distinct child/artifact scopes and requirement exclusion; pairwise comparison consumes both observed scopes. Recovery success is not a prerequisite."}
+      ],
+      "doneWhen": "Original deployment/cloud-pass evidence satisfies the applicable actual Linux/package, rollback/effect and live gates, or reports precise unmet criteria and safe next actions without claiming release success.",
+      "exclusions": ["No startup/restart replay, unknown resend, historical cleanup certification, hard-crash guarantee, fourth hosted service or local specialist fallback."],
+      "handoff": "Original sprint review/retro and release acceptance consume actual evidence, exact final/rollback/package bindings and owned cleanup; AC1-AC9/G1-G8 remain required."
+    }
+  ],
+  "existingGitReconciliation": {
+    "owner": "Existing integration/final-closeout Developer",
+    "components": ["Guarded lab release toolchain", "Terminal client"],
+    "flows": ["guarded-release"],
+    "flowSteps": ["release-close"],
+    "requires": ["original-acceptance-of-exact-intended-ancestry"],
+    "independentOf": ["actual-linux-package-ready", "live-success", "whole-sprint-acceptance"],
+    "ownedPaths": ["README.md", "docs/customer-prototype-release-notes.md", "docs/identity-recovery-plan.md", ".github/repo-index.md"],
+    "ownershipRule": "Retain existing scoped final-closeout ownership; coordinate shared README/recovery/index edits before writing, not by adding subsystem dependencies. New source repairs require their own explicit scoped ownership and original review.",
+    "action": "Inspect remote refs first; push/read back only intended reviewed feature ancestry including accepted integration, later documentation and this reviewed plan. Preserve lab651a2290 and unrelated dirty/staged/canonical-lab work. Do not publish concurrent unreviewed ancestry.",
+    "accounting": "Every task commit must be on the authorized feature branch or retained on its named branch with task, commit IDs and abandonment reason recorded in a feature-branch commit message. No new construction or abandoned task branch is introduced here.",
+    "exclusiveResources": ["application-git-integration", "lab-git-integration"],
+    "doneWhen": "Exact reviewed application/lab feature refs are pushed and independently read back, intended task ancestry accounted, public/private boundaries checked and limitations reported.",
+    "handoff": "Final closeout joins reviewed Git delivery with actual source/package/live observations; neither push nor truthful blocked reporting is customer acceptance."
+  },
+  "criticalPath": {
+    "sequence": "Accepted corrected join -> original E2E/reviews -> BOTH complete Linux suites and package readiness; join independent rollback/effect readiness -> serialized publisher -> actual G1-G4/completed initial parent -> follow-up and supported recovery. Isolation branches from final bindings; Git delivery is independent.",
+    "estimatedMinutes": {
+      "originalE2E": {"implementation": 30, "review": 15, "integration": 5},
+      "linuxPackage": {"implementation": 60, "review": 15, "integration": 10},
+      "rollbackEffects": {"implementation": 40, "review": 10, "integration": 5},
+      "guardedPublicationAndLiveScenarios": {"implementation": 75, "review": 20, "integration": 10},
+      "reviewedGitDeliveryAndClosure": {"implementation": 20, "review": 10, "integration": 10}
+    },
+    "estimateMeaning": "Rough planning estimates, not observed durations, deadlines, retry budgets, timeouts or execution caps. Readiness exits can remain unresolved.",
+    "parallelism": "No new construction tasks to fan out. Existing inventory and reviewed Git delivery retain independent handoffs; inside original DevOps, actual Linux/package and rollback/effect readiness are independent, joining only before publication. No whole-sprint dependency.",
+    "resourceMeaning": "Matching existing names serialize actual conflicts; scheduler resources are not OS or cross-run isolation. Never switch a shared branch, remove another process's lock, amend, force-push or sweep another writer's index."
+  },
+  "criteriaTrace": "Incorporate unchanged AC1-AC9, G1-G8 and five canonical flows/eighteen steps from the remaining-execution ReleasePlan and accepted SprintArchitecture. Actual source modules and smallest handoffs are mapped there and above; no acceptance is waived by empty task arrays.",
+  "dispositions": [
+    {
+      "reference": "[\"yaml-loops-v1:sprint/3/RP-S3/DevOpsWorkLoop\",\"retained-live-preparation-fixture-initialization\"]",
+      "handling": "Consume accepted fixture/integration only; original corrected-join E2E and actual Linux obligations remain outstanding."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:UserExperienceLoop\",\"UX-DELIVERY-RUN-ACCOUNTING\"]",
+      "handling": "Consume current original UX acceptance of 7322ed7a linking UX39b4bd91 to historical run12429312. No duplicate correction, amendment or replacement historical association."
+    }
+  ],
+  "preservation": {
+    "historicalPartialSprints": ["RP-S1", "RP-S2", "RP-S3"],
+    "historicalFiles": "Do not modify historical ReleasePlan, execution-resume/capped invocations or runtime/journal files. Verify protected hashes from the separate remaining-execution ReleasePlan.",
+    "guards": "No infrastructure/permission/private-settings change, secret access/copy, copied .azure inspection, canonical dirty adoption, production/default profile, startup replay or uncertain-effect replay. Settings only via scripts/Use-Settings.ps1. Preserve historical UNKNOWNs, held parents, rollback assets and cleanup uncertainty.",
+    "limitations": "Neither identity path is proven live. Blob Contributor remains account-wide: isolation is application-enforced, not storage-RBAC or malicious-host isolation.",
+    "maxNoProgressRounds": 5,
+    "additionalCeilings": "None. Preserve all predecessor capped accounting; planning edits and repeated inspection are not new execution progress.",
+    "workConservation": "Before waiting, audit feasible approved splits, independent later backlog and bounded unlocking investigation. No accepted construction gap exists now; new actual defects go through original scoped repair/reviews, never duplicate construction or missing-authority invention."
+  },
+  "dispatchHandoff": {
+    "owner": "Original orchestrator",
+    "next": "EndToEndTestLoop",
+    "status": "Ready for original-stage traversal; not yet dispatched by this planning turn.",
+    "instruction": "Resolve tasks=[] and all four empty assignment arrays, then enter original Developer EndToEndTestLoop with original Architect/Critic/Product Owner reviewers before original DevOpsWorkLoop. No substitute agents, task-based E2E, stage invalidation, SDK continuation replay or runtime modification. Record actual dispatch and subsequent original votes.",
+    "completionBoundary": "Scrum owner accepts this bounded plan for dispatch. Current SprintPlan reviewers have not yet voted; sprint/release remain incomplete. No formal E2E, repository suite, Linux/package/engine operation, settings import, cloud call, push, publication, inference or stop/resume was performed here."
+  }
+}

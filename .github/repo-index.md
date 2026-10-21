@@ -1,5 +1,14 @@
 # Repository index
 
+Repaired-join traversal applicability: based on application `d371de19` and
+selected feature lab `88580156`; no paths added/deleted. Navigate the opening
+of `docs/customer-prototype-architecture.md` for original changed-source E2E
+placement, the recovered interactive repository-check denial and independent
+original DevOps rollback/effect investigation. Accepted repair/integration/ref
+delivery and the canonical solutionModel stay intact. No denied check retry,
+constituent substitute, dependent Linux/publication bypass, duplicate task,
+runtime/journal edit or execution-progress credit is introduced.
+
 Post-review correction: based on `d964941d`; no paths added/deleted.
 The post-delivery assessment now withdraws unsupported exhaustion and records
 all four checks, the existing DevOps owner's unresolved rollback-byte/effect

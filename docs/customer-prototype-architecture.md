@@ -1,6 +1,102 @@
 # Customer hosted-session prototype: release architecture
 
+## Current repaired-join traversal: source acceptance is not execution acceptance (October 21, 2026)
+
+This applicability amendment consumes `request.input.repairedJoinRecovery20261021`.
+It supersedes the source selection and execution instructions in the earlier
+recovery entry below, not its architecture, canonical [solutionModel](#solutionmodel),
+original reviewers or AC1-AC9/G1-G8. No architecture rewrite or duplicate
+construction is needed. Prior invocation outcomes and capped plans stay intact.
+
+### Exact source and evidence boundary
+
+Read-only inspection found the application clean on
+`feature/customer-hosted-session-prototype` at
+`d371de19dee2cab46dca52388281c5e2a7f4b6dd`, and the selected feature lab clean at
+`885801565ae11878a7c4f33c29f6b45b0eb19af7`. Accepted application integration is
+`8b50f343b649f75ec02b187f871bb0d77b9cee24`. The subsequent application diff
+contains six documentation/index paths only; it is not new runtime construction.
+This amendment likewise changes only architecture/index documentation.
+
+Opened original source-repair audit `4334061a`, integration audit `cc7f2e82`,
+delivery audit `b8980bc5`, investigation audit `26415128`, original DevOps audit
+`4e6d08bb` and accepted routing-boundary audit `ecab56ed` from predecessor
+`563841c9-c44a-4a83-87e5-63600eaaea58`. The first three record substantive
+original Architect/Critic acceptance of their bounded tasks, not a live release.
+Repair-owned Windows results are attributed evidence: 206 application tests
+passed; 230 of 233 retained tests passed with three native-Linux exclusions.
+They are not original changed-source E2E. Accepted delivery independently read
+back application `8b50f343` and lab `88580156`; no push/readback is repeated here.
+Use [the reviewed discovery-repair join](design.md#reviewed-discovery-repair-source-join)
+for runtime, changed helper-input and separate fixture provenance.
+
+The supplied predecessor result's complete SHA256 independently matched
+`78b0764d7fd7ef17a1023e8f54ba50f67ebeba5ffddf0e75b7f66e47415a3bb1`.
+Its outcome is blocked/no-progress at SprintPlanLoop, five rounds, not delivery
+success. The accepted routing-boundary assessment withdraws exhaustion and
+retains independent investigation. Do not replay its unchanged continuation,
+accepted source repair, integration, delivery, UX accounting or negative research.
+No new priorDispositions or reconciled correction is supplied in this packet.
+
+### Original execution placement and localized dependencies
+
+ReleasePlan/Scrum must consume these accepted handoffs in a separate
+remaining-execution plan if an update is necessary, without overwriting
+historical plans. The FIRST remaining sprint has zero duplicate construction
+tasks. Its original Developer **EndToEndTestLoop**, reviewed by original
+Architect/Critic/Product Owner, validates current application `d371de19` plus
+lab `88580156` and accounts for this later documentation-only ancestry.
+Run permitted deterministic application/retained scripts with pinned absolute
+Python and explicit roots. No assigned-work E2E substitute, fabricated resume
+key, SDK resume, journal invalidation or installed-runtime edit is acceptable.
+Only actual stage execution establishes scheduling; this amendment does not.
+
+The exact originating repository-check rejection is now recovered: both
+`scripts/Test-Repository.ps1` requests received interactive tool-approval
+`denied`, because no user response was available. This is not a test failure
+or a proven Azure/file permission problem. No affirmative approval was received.
+Do NOT retry that script, use another execution path, or run its constituent
+checks as a substitute. Its required AC7 check remains unmet until the user
+approves the exact bounded interactive execution/tool prompt. Original E2E
+reports permitted results and that explicit unmet gate; its original reviewers
+may accept an accurate predeployment FAIL without accepting release readiness.
+Dependent Linux/package execution and publication remain blocked by the check.
+
+| Canonical scope / criteria | Retained state and smallest remaining handoff |
+| --- | --- |
+| Guarded lab release toolchain / `release-join`, `release-package` / AC7 | Discovery repair and exact integration accepted; original changed-source E2E still missing. Original Developer and its reviewers own actual integration reporting, not another implementation task. |
+| Guarded lab release toolchain; Trusted identity and private transport / `release-package` / G1, G8 | Existing original DevOps owner can independently investigate nonsecret common rollback ZIP-byte locators/provenance and next-operation effects in its original DevOpsWorkLoop, with NO Linux-success prerequisite. Follow the existingOwnerInvestigationHandoff in the post-delivery assessment; do not repeat mirror inventory or denied access, search excluded private state, infer global absence, or replay UNKNOWNs. Return actual bytes/effect findings or an exact observed boundary. |
+| Guarded lab release toolchain / `release-package`, `release-discriminate` / AC7, G1 | Only after original E2E/reviews and passing required source prerequisites: same-selected-engine read-only revalidation, BOTH complete corrected actual Linux suites and hosting/package checks. Never replay Ensure-LinuxEngine startup or restart Docker. BOTH package readiness and independent rollback/effect readiness gate ONE serialized guarded publisher. |
+| Hosted coordinator, Hosted architect, Hosted reviewer and shared state / collaboration, continuity, recovery, isolation / AC1-AC5 | Construction is retained, not live verified. Actual architect-before-reviewer ingress, final common bundle and G1-G4 must produce a completed NON-HELD initial parent before same-parent follow-up or once-only supported stop/resume. Separate-parent isolation needs final deployed bindings and comparison evidence, not successful recovery. |
+| Terminal client; Guarded lab release toolchain / `release-close` / AC6, AC8, AC9 | Accepted clarity/UX accounting and reviewed-ref delivery are retained. Existing integration/final-closeout Developer owns later reviewed documentation delivery; actual demonstration, exact final/rollback bindings and positively owned cleanup remain unmet. |
+
+These are minimal operation-level edges, not whole-sprint barriers. Independent
+DevOps rollback/effect work must not be withheld because dependent execution
+cannot pass. Retain existing Git, engine/stage, publisher/context/transport/mount
+and parent exclusive resources; no second publisher or investigator. If fresh
+original-stage routing fails, report that exact internal limitation, not
+exhaustion, another unchanged resume or an invented human permission request.
+
+Preserve trusted identity, parent-scoped pinned children, restored model history,
+immutable private Blob provenance, ETag/fencing, MAF checkpoints, write-ahead
+holds and Decision-1. Neither identity path is live-selected. Current stricter
+guards exclude infrastructure/permission changes, secrets/private-state reads,
+normal profiles, copied `.azure`, hidden local specialists and identity bypass;
+settings import remains ONLY `scripts/Use-Settings.ps1`. Application-enforced
+Blob isolation is not storage-RBAC or malicious-host isolation.
+
+This is architecture applicability, not new implementation/execution progress.
+No tests (including the denied repository suite or its substitutes), settings,
+engine/cloud operations, publication, inference, push or stop/resume ran here.
+The canonical ten components, five flows and eighteen steps remain unchanged;
+the source trace and release evidence matrix below remain binding. Original
+Product Owner/Red Team/Critic review this bounded handoff, not a release PASS.
+
 ## Current recovery traversal: validate the accepted corrected join first (October 21, 2026)
+
+**Historical cold-import join entry:** its source selection and execution
+instructions are superseded by the repaired-join applicability opening above.
+Its heading is retained for existing links; results remain attributed history.
 
 This is the applicable execution-order handoff for the fresh original YAML
 traversal. It changes no runtime architecture, source contract, scope, reviewer

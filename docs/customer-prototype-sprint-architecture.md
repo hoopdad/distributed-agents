@@ -1,5 +1,27 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## RE-EXEC-1 continuation: accepted join, newly eligible ref closeout
+
+The [exact-ref closeout amendment](customer-prototype-reviewed-ref-closeout-architecture.json)
+consumes original integration agreement `cc7f2e82` for application `8b50f343`
+and original parent-plan agreement `c0843a7e`. The repaired source join now
+exists and is accepted; the missing-join statement in the historical section
+below no longer describes current source. Do not repeat integration or repair.
+Fresh application remote readback remains `55cf0216`. Queue only the existing
+closeout Developer's now-review-eligible **ref-only** delivery of `8b50f343`,
+with lab `88580156` readback, excluding this amendment and moving HEAD.
+Actual delivery needs original review; no artificial ledger commit is required.
+
+This changes only **Guarded lab release toolchain** / `release-close` /
+AC8 and AC9 readiness. It does not resolve original changed-source E2E dispatch.
+The current continuation cannot express that stage: do not invent a resume
+key, repeat DevOps continuation or reopen accepted negative research. Scrum/
+orchestrator retains the precise internal limitation and originating-owner
+rejection-record recovery. Existing independent rollback/effect ownership,
+both readiness exits, all E2E/Linux/package/live criteria and historical
+uncertainty remain. The canonical model and runtime tiers are unchanged.
+This bounded planning work earns no new execution-progress credit.
+
 ## RE-EXEC-1 continuation: consume accepted repair, retain original-stage limits
 
 The [reviewed-join amendment](customer-prototype-reviewed-join-continuation-architecture.json)

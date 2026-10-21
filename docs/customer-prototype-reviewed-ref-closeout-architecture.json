@@ -1,0 +1,109 @@
+{
+  "kind": "SprintArchitectureContinuation",
+  "sprintId": "RE-EXEC-1",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "sourceSelection": {
+    "application": "8b50f343b649f75ec02b187f871bb0d77b9cee24",
+    "lab": "885801565ae11878a7c4f33c29f6b45b0eb19af7",
+    "applicationRemoteObserved": "55cf0216a869bf135432c3304f6dfd408b738520",
+    "sourceContract": "docs/design.md#reviewed-discovery-repair-source-join"
+  },
+  "solutionModel": {
+    "reference": "docs/customer-prototype-architecture.md#solutionmodel",
+    "unchanged": true,
+    "affectedComponents": ["release-toolchain"],
+    "affectedFlows": ["guarded-release"],
+    "affectedSteps": ["release-join", "release-close"]
+  },
+  "findings": [
+    {
+      "evidence": "Original integration audit cc7f2e827137a5760fe0aae31acf47a7d5e5083032ea10dd367dacfa2bfd81c5 records agreed status and Architect/Critic taskComplete=true with no unmet criteria for 8b50f343. Original planning audit c0843a7e363985ddea15a1a6b29ddcd42e25d0f3c85b6800a1dd9c20e81da6f1 records Product Owner/Architect/Critic acceptance of its parent plan acda9656.",
+      "conclusion": "The repaired source join is now accepted, not missing construction. Its previously excluded exact ancestry is newly eligible for existing closeout delivery. Do not repeat integration or change source hashes."
+    },
+    {
+      "evidence": "Read-only git ls-remote returned application feature ref 55cf0216a869bf135432c3304f6dfd408b738520. Local application HEAD is accepted 8b50f343, with parent acda9656760c7ba85c3d3797450bfea744693bd1. Both selected feature working trees are clean.",
+      "conclusion": "One concrete ref-only closeout slice remains ready independently of live success. Pin the push to 8b50f343, not moving HEAD or this new amendment. No artificial ledger commit is required."
+    },
+    {
+      "evidence": "Original resumed DevOps audit 4e6d08bb2f9036b5a59f12ff48d5d2db4644cf1222cf1c9e2d2ba90adcf90854 and original reviews identify retained agreed E2E against lab651a2290 and DevOps-only continuation dispatch. Accepted integration adds no changed-source E2E execution or scheduling capability.",
+      "conclusion": "The current continuation cannot express required original changed-source E2E. No DevOps resume is proposed. Return this internal limitation directly to Scrum/orchestrator; do not repeat dispatch research, edit runtime/journals or substitute assigned-work E2E."
+    },
+    {
+      "evidence": "Accepted negative investigation 264151289c8de325cdd2f7246c8056e4bf71d77f808efa696c779fbe37e58740 provides no originating rejection record or changed permitted condition. ReleasePlan has one remaining sprint with no missing approved construction; current delivery lists no pending sprint or unassigned construction.",
+      "conclusion": "Do not duplicate repair, denial research, terminal/runtime work or invent later backlog. Repository check remains unmet. Existing originating-owner record recovery and independent DevOps rollback/effect investigation retain their owners; no second investigator or publisher is appointed."
+    }
+  ],
+  "dispositionHandling": {
+    "origin": "yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop",
+    "RE-EXEC-1-DISCOVERY-OWNERSHIP": "Accepted repair and repaired integration remain closed; original changed-source E2E remains required.",
+    "RE-EXEC-1-REPOSITORY-CHECK": "Keep unexecuted; accepted negative investigation is not repeated or treated as a waiver or new human-permission requirement.",
+    "RE-EXEC-1-RELEASE-READINESS": "Retain independent rollback/effect ownership, original E2E before dependent DevOps, same-engine read-only revalidation without startup replay, both actual Linux suites/package gates, both readiness exits before one publisher and all live gates.",
+    "RE-EXEC-1-REVIEWED-GIT-DELIVERY": "Queue only the newly review-eligible exact ref closeout under the existing owner. This advances a bounded delivery slice, not final AC8 or release closure."
+  },
+  "SprintPlan": {
+    "tasks": [
+      {
+        "id": "RE-EXEC-1-ACCEPTED-REF-CLOSEOUT",
+        "title": "Deliver the newly reviewed repaired-join feature ref",
+        "kind": "developer",
+        "owner": "Developer",
+        "ownerBinding": "Existing integration/final-closeout Developer; not a replacement integration writer.",
+        "sourceSprintId": "RE-EXEC-1",
+        "sourceCriterion": "AC8 reviewed feature-branch push/readback and AC9 exact delivery accounting, independently authorized by original SprintPlan existingGitReconciliation.",
+        "dependsOn": [],
+        "exclusiveResources": ["application-git-integration", "lab-git-integration"],
+        "ownedPaths": [],
+        "consumes": [
+          "Original integration agreement cc7f2e827137a5760fe0aae31acf47a7d5e5083032ea10dd367dacfa2bfd81c5",
+          "Original parent-plan agreement c0843a7e363985ddea15a1a6b29ddcd42e25d0f3c85b6800a1dd9c20e81da6f1",
+          "Exact application 8b50f343b649f75ec02b187f871bb0d77b9cee24 and lab885801565ae11878a7c4f33c29f6b45b0eb19af7"
+        ],
+        "doneWhen": "The existing owner verifies applicable original reviews, safe intended ancestry and absence of conflicting Git mutation; explicitly non-force pushes application 8b50f343 to the authorized feature ref and independently reads it back, verifies the exact lab feature ref, then returns actual delivery results or a precise non-destructive delivery limitation to original Architect/Critic. No file change or artificial commit is required.",
+        "exclusions": [
+          "No duplicate source integration, repair, hash recomputation, suite execution, denial investigation or source/document editing.",
+          "Do not push moving HEAD, this amendment, subsequent unreviewed planning or unrelated ancestry; do not overwrite an independently advanced remote.",
+          "No branch switch, merge, amend, force-push, broad staging, secret/evidence commit, canonical dirty adoption or historical branch deletion.",
+          "No E2E substitute, runtime/journal change, DevOps resume, engine, settings, cloud, publication, inference or stop/resume operation."
+        ],
+        "handoff": "Original Architect/Critic inspect actual exact-ref delivery. Scrum preserves the unscheduled original changed-source E2E and repository-check limitations; original DevOps readiness and AC1-AC9 remain incomplete. If remote ancestry differs, stop with precise evidence rather than sweeping up unrelated work.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Deliver the newly reviewed repaired-join feature ref",
+          "goal": "Complete the newly review-eligible exact Git delivery slice without repeating accepted integration.",
+          "components": ["Guarded lab release toolchain"],
+          "flows": ["Exact-source guarded release"],
+          "flowSteps": ["release-close"],
+          "doneWhen": "Application 8b50f343 and lab88580156 have actual safe exact-ref delivery/readback results or a precise actionable delivery limitation, independently inspected by original Architect/Critic.",
+          "failureCategories": [],
+          "mustAct": "Developer",
+          "locations": ["docs/design.md", "docs/identity-recovery-plan.md"],
+          "evidence": "Original integration and parent-plan reviews are agreed; application remote remains at55cf0216 while accepted local source is8b50f343.",
+          "cause": "Earlier push deliberately excluded then-unreviewed integration/plan ancestry; those applicable original reviews now exist.",
+          "verification": {
+            "status": "not-yet-verified",
+            "evidence": "No new push occurred in this architecture turn."
+          },
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      }
+    ]
+  },
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "One newly review-eligible exact-ref delivery slice remains under existing closeout ownership. No original DevOps blocker has become executable.",
+    "evidence": [
+      "Original integration agreement cc7f2e82 closes construction but explicitly retains later reviewed delivery.",
+      "Original parent-plan agreement c0843a7e closes its applicable planning review.",
+      "Fresh application remote readback is55cf0216, below newly accepted8b50f343.",
+      "Required original changed-source E2E remains inexpressible by the current DevOps-only continuation; integration acceptance is not dispatch or execution evidence."
+    ],
+    "resumes": []
+  },
+  "verification": {
+    "performed": "Read-only original votes, exact commit/parent/message, source contracts, release backlog, tier applicability, selected Git status, canonical model and application remote inspection.",
+    "notPerformed": "No formal E2E, required repository suite, Linux/package operation, settings import, engine operation, cloud operation, push, publication, inference or hosted stop/resume.",
+    "progressQualification": "This amendment and repeated applicability checks earn no execution-progress credit."
+  },
+  "preservation": "Original ReleasePlan/SprintPlan, accepted source tasks, canonical model, coordinator/specialist contracts, all historical/capped invocations, UNKNOWN effects, held parents, rollback assets and cleanup uncertainty remain unchanged. No new scope, authority or acceptance waiver."
+}

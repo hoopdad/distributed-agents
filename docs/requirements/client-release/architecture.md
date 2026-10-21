@@ -1,5 +1,21 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## RE-EXEC-1 continuation: reviewed join is ready for exact-ref delivery
+
+Apply the [ref-only closeout amendment](../../customer-prototype-reviewed-ref-closeout-architecture.json).
+Original integration agreement `cc7f2e82` accepts `8b50f343` and original
+planning agreement `c0843a7e` accepts its parent. The repaired source join
+exists; earlier missing-join statements below are historical. Application
+remote remains `55cf0216`. Existing closeout ownership may deliver only that
+newly reviewed exact ancestry, independently of live success, without another
+source/document integration task. Exclude moving HEAD and unreviewed planning.
+
+Only **Guarded lab release toolchain** / `release-close` / AC8, AC9 gains
+a ready slice. Original changed-source E2E is still internally unscheduled;
+no DevOps resume is supplied. Repository-check denial, both readiness branches
+and actual cloud criteria remain unmet. Coordinator/specialist contracts,
+source/runtime seals, original owners and historical uncertainty are unchanged.
+
 ## RE-EXEC-1 continuation: accepted repair requires its exact integration join
 
 Apply the [reviewed-join amendment](../../customer-prototype-reviewed-join-continuation-architecture.json)

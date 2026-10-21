@@ -1,5 +1,18 @@
 # Repository index
 
+Reviewed-ref closeout freshness: based on application `8b50f343` and selected
+feature lab `88580156`; adds only
+`docs/customer-prototype-reviewed-ref-closeout-architecture.json`.
+Original integration `cc7f2e82` and parent-plan `c0843a7e` agreements now exist.
+Navigate that separate amendment and sprint/client-release openings for the
+existing closeout Developer's ref-only push/readback slice, pinned to accepted
+`8b50f343`, not moving HEAD or this new planning. Fresh app remote remains
+`55cf0216`. Do not repeat accepted integration, repair or negative research.
+Original changed-source E2E remains inexpressible by the current DevOps-only
+continuation; no resume is supplied. Independent rollback/effect ownership,
+all unmet source/package/live gates and historical uncertainty remain.
+No new construction or execution-progress credit is claimed.
+
 Repaired-source integration freshness: based on application `acda9656` and
 original-reviewed lab `88580156`; no paths added/deleted. Navigate
 `docs/design.md#reviewed-discovery-repair-source-join` and the October 21
@@ -1632,6 +1645,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-remaining-execution-sprint-plan.json`
 - `docs\customer-prototype-reviewed-join-continuation-architecture.json`
 - `docs\customer-prototype-reviewed-join-continuation-sprint-plan.json`
+- `docs\customer-prototype-reviewed-ref-closeout-architecture.json`
 - `docs\customer-prototype-rp-s2-execution-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-execution-resume-sprint-plan.json`

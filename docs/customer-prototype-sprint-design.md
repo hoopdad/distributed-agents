@@ -1,6 +1,116 @@
 # Sprint design: understandable, evidence-ready continuity
 
-## Current RP-S1: retained continuity screens and recovery-boundary handoff (October 20, 2026)
+## Current RP-S2: failed package gate and independent exact inventory (October 20, 2026)
+
+This packet selects **RP-S2**; RP-S1 remains partial at its original DevOps
+boundary. Consume Architecture `cef352f4`, UX `6b6975c0`, cumulative sprint
+architecture `2f832f56` and accepted source join application `0cac08c9` /
+lab `1dab1e01`. Designer opened original Architecture/UX audits
+`398b66fa...` / `bf7fed70...` and stopped DevOps audit `d29bb042...` in
+run `0159ec9f-a89c-47f9-986f-80d9dfe6740a/context`. Architecture/UX have
+their original bounded task-complete votes; DevOps has needs-replan with
+Architect/Critic/Developer taskComplete false. Its findings below are
+attributed execution evidence, not Designer-run tests or cloud acceptance.
+This entry governs current screen/status routing; earlier entries retain
+their historical observations, not current pending-source instructions.
+
+### Retained customer flow and current operator fork
+
+```text
+A goal / three hosted roles / invariant / dated BLOCKED status / source path
+F accepted exact join -> two independent construction/readiness branches:
+  package: public test-input + synthetic fixture correction -> original
+    review/integration/E2E -> same-selection check -> full Linux gates
+  inventory: selected-WSL exact-read correction -> original review/applicable
+    changed-join validation -> exact rollback/effect readiness
+  feasible retained package/effect accounting continues during either repair
+  BOTH actual readiness exits -> one original serialized publisher -> G
+G observed architect ingress -> observed reviewer ingress -> final common
+  bundle G1-G4 + completed non-held initial parent -> B useful initial output
+  otherwise D/F factual failure/hold and existing next owner; no blind replay
+B same private session file -> queue follow-up only after that initial exit;
+  RP-S3 verifies actual stable bindings, supported recovery and isolation
+```
+
+Retain [A-D](#screen-a-readme-opening-and-demonstration-entry), the
+[F operator layout](#screen-f-operator-boundary-report) and
+[G observed-role table](#screen-g-finite-trial-outcome-and-transition).
+No new screen, terminal flag, renderer, web UI or public evidence schema.
+F remains an operator report, not a fabricated terminal event stream.
+Default machine stdout, parent header, delegation/result parser and finalized
+opt-in human stderr are unchanged. Keep useful current design/review content,
+chronological repeated calls, safe aliases, data prefixes, control neutralization,
+narrow-width wrapping and terminal-default light/dark accessibility.
+
+| Canonical scope | Affected component and screen contract |
+|---|---|
+| **Exact-source guarded release**, `release-join` | **Guarded lab release toolchain**: F consumes accepted helper/root/mount work. New corrections need their own precise reviewed source join; the unchanged runtime seal alone does not cover changed test inputs. |
+| Same flow, `release-package` | Toolchain and **Trusted identity and private transport**: F shows separate package and rollback/effect branches. Failure in one does not stop independent authorized work in the other. Neither branch is accepted from a document or mock. |
+| Same flow, `release-discriminate` | G records only actually reached roles and trusted receiver outcomes. Both readiness exits precede the single publisher; preparation or metadata cannot invent specialist ingress. |
+| **Remote design and review**, `collaboration-bind`, `collaboration-route`, `collaboration-design`, `collaboration-review`, `collaboration-return` | **Terminal client**, **Hosted coordinator**, **Hosted architect**, **Hosted reviewer** and existing shared state/artifact/Decision/checkpoint components retain the accepted B/D contract. No initial parent or live output is invented while execution is blocked. |
+
+### Screen F: precise current observations and non-replay actions
+
+Read boundary/status, attributable observation, missing gate, then next owner.
+The following is design direction from the opened audit and required
+dispositions, not fresh execution output or new machine status values.
+
+| Observation | Display distinction and existing next action |
+|---|---|
+| Reviewed helper invocation timed out | Show `LINUX_ENGINE_COMMAND_TIMEOUT`, not recovery PASS. Later read-only observation found the same selected Linux engine ready without another startup. Keep these as two observations; no automatic/manual startup replay or inference that the timed-out command completed successfully. DevOps revalidates same-selection readiness before the later build. |
+| Linux/amd64 image built with hosting Python 3.13.15 | Image construction reached; package validation FAILED. Application container discovery ran 191 tests, 14 errors, seven skips; separate retained Linux suite was not reached. Never replace this with the earlier Windows PASS or an image-built success banner. |
+| Missing public test input and fixture-owned Decision configuration | Attribute two discovery errors to unavailable `scripts.identity_handoff` and twelve scenario errors to missing synthetic Decision settings. Existing Architect/Scrum scopes Developer correction to explicit read-only test inputs and fixture setup/restore, plus affected provenance/mount regressions. Do not alter runtime configuration validation or identity-handoff behavior, skip assertions or expose operational settings to tests. |
+| Image binding report | Label `b0c7ebf170ae375553947a339ad894a134f8ca794b0c34b66705f6a4cad9d8c6` as **exported manifest digest**, not image ID. Authoritative image ID remains unverified until retained inspection establishes it. No new source repair is required solely for this report correction. |
+| Selected-WSL private reads and new-resource closure reported | Attribute these to DevOps. Original reviewers could not inspect the fresh receipt in the approved mirror; do not display independently verified route/cleanup PASS. Complete exact rollback-version/package/identity and unresolved-effect inventory remains missing. Return accessible nonsecret evidence through the approved handoff, never by bypassing a denial or exposing private paths. |
+| Exact-version inventory interface missing on selected WSL route | Existing Architect/Scrum scopes a separate read-only Developer correction reusing retained transport and existing exact-version/package/identity validation. Do not choose an unused Windows route, create ad hoc transport or wait for the package correction to perform feasible retained package/effect accounting. |
+| Either corrected source accepted but actual gate not rerun | Show source accepted / execution outstanding, not readiness PASS. Original changed-join validation precedes execution of changed tooling. Only both actual successful exits permit publication and G1-G4 testing. |
+
+Apply the originating references, not their short IDs as global requirements:
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","linux-application-test-closure"]`,
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","selected-wsl-exact-inventory"]`,
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","release-binding-report-accuracy"]`
+and
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","guarded-execution-and-closeout"]`.
+The accepted
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LINUX-ENGINE-READINESS/AssignedWorkDeveloperLoop","linux-engine-exact-mount-contract"]`
+remains closed within its source-task boundary; these newly observed package
+and inventory defects do not reopen helper ownership or mandate redesign.
+
+### Measured customer copy and bounded handoff
+
+Existing measured-status closeout, not this Designer turn, updates stale
+README/recovery wording. Suggested status copy, explicitly not live output:
+
+> Release BLOCKED, not customer-ready. Reviewed source integration is accepted.
+> The recovery command timed out; a later read-only check observed the same
+> selected engine ready without another startup. A Linux hosting image built,
+> but application container tests failed; separate retained checks were not
+> reached. Exact rollback/effect inventory is incomplete. Final common-bundle
+> collaboration, two-turn continuity, supported hosted recovery and isolation
+> remain unverified.
+
+G still distinguishes path selection from actual G1-G4 and a completed
+non-held initial parent. D's held/invalid state overrides success-looking prose.
+No follow-up from a held parent, known-response resend, hidden fallback or
+replacement parent to evade a hold. Local Docker startup is not hosted G6.
+Keep private full identifiers, roots, profiles and receipt paths out of
+customer output/Git. Preserve historical UNKNOWNs, held parents, rollback
+assets and cleanup uncertainty; current owned closure cannot close history.
+Account-wide Blob Contributor still means application-enforced role/parent
+isolation, not malicious-host/storage-RBAC isolation.
+
+Scrum receives this design for the two independently implementable correction
+contracts; original Architect/Critic review source, original E2E validates
+changed joins, and original DevOps owns actual gates and one serialized
+publisher. Existing integration/closeout reconciles reviewed refs including
+`0cac08c9`, pushes/readbacks and advances measured status. No extra approval
+stage or user-only action is established. Preserve original five-round
+accounting and partial sprints; approved independent construction can continue.
+This bounded SprintDesign needs original Product Owner/Critic review, not a
+successful deployment to be reviewed. No runtime/README/lab/settings changes,
+engine startup, publication, inference or unchanged runtime-suite rerun here.
+
+## Historical RP-S1: retained continuity screens and recovery-boundary handoff (October 20, 2026)
 
 This packet selects **RP-S1**. Consume accepted Architecture `cef352f4`,
 UserExperience `6b6975c0` and ReleasePlan `48e3faf3`; original outcome audits

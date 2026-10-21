@@ -1,5 +1,19 @@
 # Repository index
 
+RP-S2 observed-failure design freshness: based on application `0cac08c9`,
+accepted Architecture/UX and opened original DevOps audit `d29bb042...`.
+`docs/customer-prototype-sprint-design.md` retains A-D/F/G and specializes F
+for startup timeout versus later same-selection readiness, Linux application
+test failure versus image construction, and incomplete selected-WSL exact
+inventory with inaccessible fresh receipt evidence. Reports exported manifest
+digest distinctly from unverified image ID. Two independent corrections pass
+through existing Architect/Scrum ownership, source review and changed-join
+validation; both actual readiness exits still gate one publisher/G1-G4.
+Accepted helper/mount/source work is not reopened. Existing closeout owns
+measured README/ref updates. No added/deleted paths, architecture/runtime/
+public-output contract change or operational execution. Earlier freshness
+entries retain their originating historical scope; design is not live PASS.
+
 Recovery integration freshness: task `RP-S2-ENGINE-SOURCE-JOIN` joins reviewed
 application `7f8805db` and lab `1dab1e01`; exact feature refs were pushed/read back.
 All current planning/amendment, README `13e3b4b1` and helper

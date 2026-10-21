@@ -1,5 +1,20 @@
 # Repository index
 
+RP-S2 Linux/inventory planning freshness: based on clean application
+`1e705fd3` and feature-lab `1dab1e01`, with current originating input,
+source/E2E and stopped DevOps audits opened. New
+`docs/customer-prototype-linux-inventory-sprint-plan.json` assigns disjoint
+Linux input/fixture and ReadOnly exact-WSL source corrections in parallel.
+Named existing Developer integration slices own shared indexes/docs and
+reviewed-feature reconciliation; inventory-only integration has no package
+dependency. Final integration binds both corrections for full retained Linux
+discovery. Independent original DevOps local rollback/effect preparation
+remains ready; BOTH actual readiness exits gate one publisher/G1-G4.
+Preserves accepted helper/mount closure, original E2E/DevOps placement, partial
+sprints, UNKNOWNs, held parents, rollback and original five-round accounting.
+One public plan added; no runtime/tool/settings or operational changes.
+Actual dispatch and original planning votes follow the resolved owner payload.
+
 RP-S2 correction-architecture freshness: based on application `b29d9a0b` and
 inspected feature lab `1dab1e01`, accepted exact join `0cac08c9`, and opened
 originating DevOps audit `d29bb042` with its reconciled dispositions.
@@ -1309,6 +1324,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-current-sprint-plan.json`
 - `docs\customer-prototype-engine-mount-amendment.json`
 - `docs\customer-prototype-engine-recovery-sprint-plan.json`
+- `docs\customer-prototype-linux-inventory-sprint-plan.json`
 - `docs\customer-prototype-operational-context-amendment.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`

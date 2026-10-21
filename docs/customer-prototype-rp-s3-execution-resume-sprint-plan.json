@@ -1,0 +1,132 @@
+{
+  "sprintId": "RP-S3",
+  "kind": "SprintPlanContinuation",
+  "goal": "Route accepted cold-import source and integration handoffs to original exact-join validation and execution without duplicating construction.",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "baseline": {
+    "applicationCommit": "28636214a870a3a635222015fa67527ddba320fc",
+    "labCommit": "651a22908984174d3947b9d04ed68f6cd13ea90c",
+    "status": "Both selected feature checkouts and indexes inspected clean. Only the registered feature lab sibling is selected; canonical dirty work is not adopted."
+  },
+  "acceptedInputs": {
+    "auditDirectory": "gh-dynamic-workflows/.delivery-runs/0159ec9f-a89c-47f9-986f-80d9dfe6740a/context",
+    "continuationArchitectureAudit": "9703c0d4ca930fbc51a9b948408d026b768d2ada13c05954ad62ebcec2e86311.json",
+    "fixtureAcceptanceAudit": "bb19091afaf6001ea3c62ce12cba189d66c3591e1765488f905a3e6e783794ee.json",
+    "integrationAcceptanceAudit": "81d6d26998e3e7b51f0755cb0bec5dbb9c2d449351f15539663e97503b46676b.json",
+    "blockedExecutionAudit": "0413fdfc88de5edf584174fb2eebb311c40d613b3c75cfc57e236d8d1e770cd3.json",
+    "votesInspected": "Continuation architecture: original Product Owner/Critic/Red Team agree and taskComplete true. Fixture and integration: original Architect/Critic agree and taskComplete true, no unmet bounded source criteria. Blocked execution: original Architect/Critic/Developer retain taskComplete false and four unmet execution/closure criteria.",
+    "sourceContract": "docs/design.md#reviewed-cold-import-fixture-source-join",
+    "canonicalModel": "docs/customer-prototype-architecture.md#solutionmodel"
+  },
+  "preservedOriginals": [
+    {
+      "path": "docs/customer-prototype-rp-s3-retained-input-sprint-plan.json",
+      "sha256": "409861e4ba712515cdd678b4857e9fb1fa54d34fea4a36f579188e9daeb07e65"
+    },
+    {
+      "path": "docs/customer-prototype-fixture-continuation-sprint-plan.json",
+      "sha256": "7cf5082bd59bd5ad7b75d8f7d2ce22cf84dec1b41439e545cc7f30a5ca46a026"
+    },
+    {
+      "path": "docs/customer-prototype-release-plan.md",
+      "sha256": "e87449a1058e554154026d7423df6a3a3dfac5d0f124657d91e5aa9e507e022f"
+    }
+  ],
+  "tasks": [],
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDeveloper": [],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": [],
+  "assignmentDecision": "No new assignment is needed. The two earlier amendment tasks have executed and passed original reviews. Existing scheduled execution and closeout retain their owners, work cards, doneWhen, exclusions, resources and handoffs. Empty new-task arrays do not remove those assignments or certify exhaustion.",
+  "readyWorkAudit": [
+    {
+      "scope": "Guarded lab release toolchain / Exact-source guarded release / release-join and release-package / AC7",
+      "finding": "Committed fixture 651a2290 establishes synthetic configuration before dependent imports, registers restoration before setup failure, preserves rejection assertions and adds fresh-process coverage. Accepted join 28636214 supplies exact source and separate test-only provenance. No fixture, mount, helper, context, selector or runtime construction is redispatched.",
+      "nextOwner": "Developer in original EndToEndTestLoop",
+      "nextAction": "Validate the changed application/lab join through original E2E before changed tooling executes. Include this amendment's documentation-only ancestry in final source accounting. Local integration may pass while predeployment release acceptance remains FAIL."
+    },
+    {
+      "scope": "Guarded lab release toolchain and Trusted identity and private transport / release-package / G1 and G8",
+      "finding": "Existing RP-S2-FRESH-INVENTORY remains independently useful: actual common rollback ZIP bytes and complete next-operation effect accounting are still missing. Four accepted exact metadata reads and nonmatching ZIPs are not byte readiness.",
+      "nextOwner": "DevOps Engineer in original DevOpsWorkLoop",
+      "nextAction": "Continue bounded authorized nonsecret package/provenance and effect inventory independently of exact-join validation and Linux gates. Refresh operational facts only when materially stale; preserve UNKNOWNs, held parents and rollback assets."
+    },
+    {
+      "scope": "Terminal client and Guarded lab release toolchain / release-close / AC8 and AC9",
+      "finding": "Reviewed application documentation 28636214 is now accepted and may be delivered under existing integration/final-closeout ownership without waiting for live acceptance.",
+      "nextOwner": "Existing integration/closeout Developer",
+      "nextAction": "Push/read back only intended reviewed feature refs; do not push concurrent unreviewed ancestry. This new planning documentation awaits its own original review and later reviewed push/readback. No measured-status rewrite is needed without new execution evidence."
+    },
+    {
+      "scope": "Remote design and review; Same-parent specialist continuation; Supported compute stop and resume; Separate-parent isolation",
+      "finding": "No additional independent approved source gap was established. Existing fixtures and clarity work remain accepted. Final deployed bindings unlock isolation; a completed non-held initial parent unlocks continuity and recovery. Isolation does not depend on recovery or full prior-sprint acceptance.",
+      "nextOwner": "DevOps Engineer in original DevOpsWorkLoop",
+      "nextAction": "Use existing scheduled live tasks only after their smallest actual deployment/parent handoffs. Do not infer bindings, model history, stopped state or isolation from fixtures or metadata."
+    }
+  ],
+  "criticalPath": {
+    "estimatedMinutes": {
+      "originalChangedJoinE2E": {"implementation": 15, "review": 15, "integration": 0},
+      "actualLinuxPackage": {"implementation": 25, "review": 15, "integration": 0},
+      "independentRollbackEffects": {"implementation": 25, "review": 15, "integration": 0},
+      "reviewedGitDelivery": {"implementation": 10, "review": 0, "integration": 5}
+    },
+    "estimatesAreNotCaps": true,
+    "sequence": "Accepted source join -> original changed-join E2E -> BOTH complete actual Linux suites and hosting/package gates. Independent rollback-byte/effect inventory proceeds in parallel where original stage placement permits. Only max(actual package readiness, actual rollback/effect readiness) unlocks the one publisher, trusted architect-before-reviewer ingress, final common bundle and actual G1-G4.",
+    "later": "Completed non-held initial parent -> same-parent queue follow-up and once-only supported recovery, serialized on primary-parent/transport resources. Final deployment -> independent isolation, with pairwise comparison consuming safe actual reference scopes. Reviewed Git delivery does not wait for live tests.",
+    "resources": "Retain existing lab-linux-engine/lab-linux-stage for actual build; lab-hosted-release/lab-private-transport/lab-cli-context/lab-ssh-mount for shared external mutation; lab-primary-parent and lab-isolated-parent for their sessions; application-git-integration/lab-git-integration and existing public-document resource names for source delivery. These are scheduler coordination, not OS or cross-run isolation."
+  },
+  "ownership": {
+    "planningPaths": ["docs/customer-prototype-rp-s3-execution-resume-sprint-plan.json", ".github/repo-index.md"],
+    "integrationOwner": "Existing Developer under accepted RP-S3-FIXTURE-SOURCE-JOIN and existing final execution closeout retains both-repository Git reconciliation, intended reviewed-ref delivery and durable task/branch/commit accounting.",
+    "git": "Commit only explicit owned paths on the authorized feature branch before original review, with required Copilot trailer and observed metadata only. Preserve unrelated staged/dirty work. No branch switch, stash/discard, amend, force-push, lock removal or branch deletion.",
+    "accounting": "All inspected accepted task commits are retained on the selected feature ancestry; no abandoned task code was identified. If any later code remains on a named task branch, retain that branch and record task/commit/reason in a feature-branch commit message.",
+    "laterPush": "Existing final execution closeout Developer delivers this amendment and index only after original planning acceptance, plus other intended newly reviewed documentation. Unreviewed concurrent ancestry defers that push, not independent no-effect validation."
+  },
+  "priorDispositionHandling": [
+    {
+      "reference": "[\"yaml-loops-v1:sprint/3/RP-S3/DevOpsWorkLoop\",\"retained-live-preparation-fixture-initialization\"]",
+      "handling": "Consume accepted fixture and integration audits; source correction is complete, actual Linux obligation is not. Resume only the latest exact execution frontier through original E2E and DevOps."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/continuation/1/SprintPlanLoop\",\"establish-original-orchestrator-dispatch\"]",
+      "handling": "Later original task and review audits establish execution of both fixture and integration assignments. Do not replay the capped planning invocation, reset its accounting, redispatch accepted tasks or retroactively claim its completion."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop\",\"guarded-execution-and-closeout\"]",
+      "handling": "Keep BOTH actual readiness exits before one publisher, original cloud-pass requirements, all reviewed-ref delivery obligations, partial sprints, historical UNKNOWNs, held parents, rollback assets and five-round accounting."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop\",\"release-binding-report-accuracy\"]",
+      "handling": "Keep image inspection distinct from exported manifest/config digests and historical startup timeout distinct from later readiness. No startup replay or helper-success inference."
+    }
+  ],
+  "dispatch": {
+    "owner": "Installed original YAML orchestrator",
+    "newDependencyReadyTasks": [],
+    "instruction": "Consume the exact continuation resume below; no substitute agents or new approval stages. Original changed-join E2E precedes changed-tool execution. Preserve independent existing inventory and reviewed Git delivery.",
+    "actualDispatch": "Not claimed by planning owner. No new-task fan-out is needed because the source assignments are already accepted. Original reassessment dispatch and current planning votes are recorded by the orchestrator after this response."
+  },
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Accepted fixture and source integration materially change the latest retained-suite blocker. Continue original exact-join E2E and RP-S3 DevOps while independent rollback/effect accounting and reviewed Git delivery proceed; no new construction task is justified.",
+    "evidence": [
+      "Opened bb19091afaf6001ea3c62ce12cba189d66c3591e1765488f905a3e6e783794ee.json: original Architect/Critic accept committed lab fixture 651a22908984174d3947b9d04ed68f6cd13ea90c.",
+      "Opened 81d6d26998e3e7b51f0755cb0bec5dbb9c2d449351f15539663e97503b46676b.json: original Architect/Critic accept application integration 28636214a870a3a635222015fa67527ddba320fc with explicit original changed-join E2E handoff.",
+      "Opened agreed 9703c0d4ca930fbc51a9b948408d026b768d2ada13c05954ad62ebcec2e86311.json: original Product Owner/Critic/Red Team approve continuation without duplicate construction or architecture change.",
+      "Opened 0413fdfc88de5edf584174fb2eebb311c40d613b3c75cfc57e236d8d1e770cd3.json: original execution remains incomplete for actual Linux/package, rollback/effect readiness, deployed tests and final closure."
+    ],
+    "resumes": [
+      {
+        "key": "sprint/3/RP-S3/DevOpsWorkLoop",
+        "after": [],
+        "evidence": "New authoritative original fixture/integration acceptance bb19091a and 81d6d269, advised by agreed architecture continuation 9703c0d4, establish application 28636214 joined to lab 651a2290. No new amendment task is required. Original changed-join E2E must validate the join before changed tooling executes; then original DevOps reassesses both complete actual Linux suites without replaying engine startup. Independent rollback-byte/effect readiness remains mandatory. This is reassessment only, not automatic acceptance, authorization to replay uncertain effects or reopening of the capped RP-S1 planning invocation."
+      }
+    ]
+  },
+  "limitations": [
+    "No runtime suite rerun, settings import, credential inspection, authentication, engine operation, Linux build, private transport, cloud query, publication, inference or hosted stop/resume in this planning turn.",
+    "Previous application/retained test totals belong to their originating evidence; neither offline source acceptance nor this plan proves package or live AC1-AC9/G1-G8 completion.",
+    "All three sprints remain partial. Actual Linux/package and rollback/effect readiness are unestablished. No user-only blocker has been established."
+  ]
+}

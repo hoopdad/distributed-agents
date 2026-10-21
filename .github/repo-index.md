@@ -1,5 +1,19 @@
 # Repository index
 
+Execution-resume planning freshness: application `28636214` and selected feature
+lab `651a2290`; added only
+`docs/customer-prototype-rp-s3-execution-resume-sprint-plan.json`, no deletions.
+Opened original accepted fixture `bb19091a`, integration `81d6d269`, continuation
+architecture `9703c0d4` and blocked execution `0413fdfc`. No new source task:
+the earlier fixture/join assignments are complete and must not be redispatched.
+The separate amendment routes only latest RP-S3 DevOps reassessment through
+original changed-join E2E; independent rollback-byte/effect inventory and reviewed
+Git delivery retain existing owners. Original plans/ReleasePlan remain unchanged.
+BOTH actual readiness exits still gate one publisher and all later live criteria.
+The capped RP-S1 planning invocation and uncertain startup/effects are not replayed.
+Current planning votes/actual reassessment dispatch follow the resolved response;
+existing final closeout owns this amendment's later reviewed push/readback.
+
 Cold-import source-join freshness: reviewed application `b18cf3ec` and feature
 lab `651a2290`; no added/deleted paths. Opened original fixture agreement
 `bb19091a`, architecture `fd5fb443`, planning `dea825a5`, closeout `820ff4c8`
@@ -1497,6 +1511,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-rp-s2-execution-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
+- `docs\customer-prototype-rp-s3-execution-resume-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-retained-input-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-sprint-plan.json`
 - `docs\customer-prototype-sprint-architecture.md`

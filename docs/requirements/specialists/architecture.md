@@ -1,5 +1,30 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## RE-EXEC-1: accepted specialist history, unverified hosted ingress
+
+Follow the [current sprint contract](../../customer-prototype-sprint-architecture.md#re-exec-1-accepted-corrected-join-original-integration-gate-first).
+No specialist construction is newly assigned. Keep canonical Hosted architect,
+Hosted reviewer and shared conversation-state/artifact/identity components.
+`demo/architect_agent.py`, `demo/reviewer_agent.py`, `demo/specialist.py`,
+`demo/foundry.py` and `demo/artifact_store.py` retain restored remote sessions,
+model history, pinned versions, immutable current inputs/outputs and parent
+scope. Accepted fixture correction is not a new runtime identity diagnosis.
+
+Original Developer corrected-join E2E and its original reviews precede
+changed-tool DevOps; BOTH actual readiness exits precede one publisher.
+`collaboration-design/review` / AC1, AC5 still require real trusted architect
+ingress before reviewer, exact artifacts and final common-bundle G1-G4.
+No identity path is established live; there is no local fallback or new service.
+
+For `continuity-invoke/verify` / AC2, AC3, actual same-parent calls must preserve
+both hosted/framework child bindings and pins while new response continuations
+and current artifacts advance. Repeated-call/history fixtures remain offline
+evidence. Supported recovery requires the completed non-held initial parent;
+separate-parent isolation requires final deployed bindings and actual comparison
+scope, not recovery success. Account-wide Blob Contributor provides
+application-enforced, not storage-RBAC or malicious-host isolation. Preserve
+held children, rollback assets and UNKNOWN effects without retry.
+
 ## Continuation: retained preparation failures do not diagnose specialist runtime
 
 Consume the [cold-import continuation](../../customer-prototype-sprint-architecture.md#work-conserving-continuation-cold-import-fixture-boundary).

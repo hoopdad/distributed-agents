@@ -1,5 +1,16 @@
 # Repository index
 
+RE-EXEC-1 sprint architecture freshness: based on reviewed remaining-execution
+plan `a9cecf10`, application baseline `7322ed7a` and selected lab `651a2290`.
+No paths added/deleted. Navigate
+`docs/customer-prototype-sprint-architecture.md#re-exec-1-accepted-corrected-join-original-integration-gate-first`
+and the three `docs/requirements/*/architecture.md` openings for current tier
+applicability. Canonical solutionModel is unchanged; older pending-construction
+and continuation routing is historical. Zero new construction; original E2E
+and reviews first, then original DevOps with BOTH readiness exits before one
+publisher. Independent rollback/effect work and reviewed Git delivery retain
+existing owners. This documentation alignment is not execution progress.
+
 Remaining-execution release planning freshness: based on application `7322ed7a`
 and selected feature lab `651a2290`; added only
 `docs/customer-prototype-remaining-execution-release-plan.json`, no deletions.

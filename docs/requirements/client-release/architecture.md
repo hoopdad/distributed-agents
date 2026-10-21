@@ -1,5 +1,31 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## RE-EXEC-1: original corrected-join E2E before guarded execution
+
+The [current sprint contract](../../customer-prototype-sprint-architecture.md#re-exec-1-accepted-corrected-join-original-integration-gate-first)
+is authoritative for execution order; dated pending fixture assignments below
+are historical, not work to repeat. Consume accepted application `7322ed7a`,
+selected lab `651a2290` and documentation-only ancestry through `a9cecf10`
+plus this refinement. Preserve the canonical solutionModel and all existing
+source/package/public-private boundaries. No new construction is assigned.
+
+For **Guarded lab release toolchain** / `release-join`, `release-package` /
+AC7, original Developer E2E checks actual loaded owners/committed inputs using
+`Test-Demo.ps1`, `scripts/Test-Repository.ps1` and affected retained scripts with
+explicit roots/pinned absolute Python. Original Architect/Critic/Product Owner
+review precedes changed-tool DevOps; preserve the prior exact test denial,
+without unchanged retry or alternate bypass. Missing required checks cannot pass.
+
+Original DevOps then revalidates the SAME selected engine read-only, without
+startup replay, and runs BOTH corrected complete actual Linux suites and
+hosting/package gates. Independent existing rollback-byte/effect investigation
+continues; BOTH actual readiness exits precede one serialized guarded publisher.
+Retain exact mounts, provenance, private transport and owned cleanup safeguards.
+**Terminal client** / `release-close` / AC6, AC8, AC9 keeps accepted README,
+human stderr and machine stdout/parser. Existing integration/final-closeout
+Developer owns independent reviewed push/readback, and later actual final/live
+handoff; this refinement establishes neither runtime readiness nor live success.
+
 ## Continuation: fixture-only repair and independent rollback readiness
 
 The [cold-import continuation](../../customer-prototype-sprint-architecture.md#work-conserving-continuation-cold-import-fixture-boundary)

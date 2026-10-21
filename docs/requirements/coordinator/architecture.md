@@ -1,5 +1,31 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## RE-EXEC-1: consume coordinator construction, retain actual live joins
+
+Follow the [current sprint contract](../../customer-prototype-sprint-architecture.md#re-exec-1-accepted-corrected-join-original-integration-gate-first).
+No coordinator construction is missing or newly assigned by this refinement.
+The canonical Hosted coordinator, Decision-1 routing and admission, conversation
+state, checkpoints and artifact components/support links remain unchanged.
+`demo/workflow.py`, `demo/foundry.py`, `demo/contracts.py`, `demo/artifacts.py`,
+`demo/routing.py` and `live_acceptance.py` retain trusted scope, exact current
+prerequisites, immutable outputs, ETag/fencing, bounded choices and UNKNOWN holds.
+
+Original corrected-join Developer E2E and original reviews precede changed-tool
+DevOps; BOTH actual Linux/package and independent rollback/effect exits still
+gate one publisher. Actual `collaboration-bind` through `collaboration-return`
+/ AC1, AC5 require trusted architect-before-reviewer ingress, final common
+bundle, genuine Decision-1/private provenance and completed non-held G1-G4
+parent. Accepted offline fixtures and accurate predeployment FAIL are not that
+handoff, and neither identity path is selected live.
+
+That parent unlocks `continuity-revise/invoke/verify` / AC2 and
+`recovery-stop/resume/verify` / AC4: retain both pinned hosted/framework children,
+advancing responses/model histories, stale-approval invalidation, checkpoints
+and reconciled no-duplicate effects. Supported stop is once-only with durable
+intent and stopped/idle confirmation. `isolation-bind/execute/verify` needs
+final bindings, not successful recovery. No runtime/configuration/identity
+relaxation, engine startup replay or uncertain resend is authorized.
+
 ## Continuation: no coordinator change for retained fixture initialization
 
 Consume the [cold-import continuation](../../customer-prototype-sprint-architecture.md#work-conserving-continuation-cold-import-fixture-boundary).

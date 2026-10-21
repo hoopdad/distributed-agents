@@ -1,5 +1,68 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## RE-EXEC-1: accepted corrected join, original integration gate first
+
+This sprint consumes the accepted [holistic recovery architecture](customer-prototype-architecture.md#current-recovery-traversal-validate-the-accepted-corrected-join-first-october-21-2026),
+[remaining-execution ReleasePlan](customer-prototype-remaining-execution-release-plan.json)
+and [SprintDesign](customer-prototype-ux.md#current-recovery-traversal-source-acceptance-is-not-execution-october-21-2026).
+Their current original outcome audits `7d8e8f2a`, `909cb570` and `05ea4d14`
+under delivery run `563841c9-c44a-4a83-87e5-63600eaaea58` were opened:
+all original reviewers recorded agreement, task complete and no unmet bounded
+criteria. Those votes accept their documents, not execution or live capability.
+
+Selected application baseline is `7322ed7a06954e8006843cb466ba76bc6bf16146`,
+selected feature lab is `651a22908984174d3947b9d04ed68f6cd13ea90c`, and accepted
+integration is `28636214a870a3a635222015fa67527ddba320fc`.
+Observed application HEAD before this documentation change is
+`a9cecf1076c6861220b955a37ff668ae42f94d85` on
+`feature/customer-hosted-session-prototype`, clean. Its subsequent integration
+ancestry changes documentation/index only. Include this sprint/tier refinement
+in exact-source and later reviewed delivery accounting; do not silently replace
+the selected lab with canonical dirty source.
+
+The canonical [solutionModel](customer-prototype-architecture.md#solutionmodel)
+is incorporated unchanged: ten components, five flows, eighteen steps and shared
+support links. The three [tier contracts](requirements/client-release/architecture.md)
+retain their implementation boundaries. This opening supersedes only stale
+pending-construction and continuation-resume routing in dated sections below.
+No accepted source task, settled review/retro or historical capped invocation
+is restarted. There are **zero new construction assignments**.
+
+| Canonical scope / criteria | Actual source and consumed handoff | Missing evidence and smallest original-owner exit |
+| --- | --- | --- |
+| Guarded lab release toolchain / `release-join`, `release-package` / AC7 | `Test-Demo.ps1`, `scripts/Test-Repository.ps1`, [reviewed fixture join](design.md#reviewed-cold-import-fixture-source-join); lab `Build-Demo.ps1`, `tests/test_release_identity_decision.py` | Original Developer **EndToEndTestLoop** validates actual loaded roots, committed inputs and exact corrected join with pinned absolute Python/local scripts. Original Architect/Critic/Product Owner reviews precede changed-tool DevOps. Preserve the prior exact test denial; missing required checks remain unmet, with no unchanged retry or bypass. |
+| Toolchain and Trusted identity and private transport / `release-package` / AC7, G1, G8 | Accepted mounts/helper/selectors and separate cold-import test provenance; retained release/connectivity tooling | Original DevOps revalidates the SAME selected engine read-only, then BOTH complete corrected actual Linux suites and hosting/package gates. Independently, existing inventory ownership investigates actual common rollback ZIP bytes and next-operation effects. BOTH readiness exits precede one serialized publisher; metadata alone is insufficient. |
+| Hosted coordinator, Hosted architect, Hosted reviewer; conversation state, checkpoints, artifacts and Decision-1 / collaboration / AC1, AC5 | `demo/workflow.py`, `demo/foundry.py`, `demo/specialist.py`, `demo/contracts.py`, `demo/artifacts.py`, `demo/routing.py`, `live_acceptance.py`; accepted runtime/fixtures | Original DevOps proves trusted architect ingress before reviewer, final common bundle and actual G1-G4 with a completed non-held initial parent. Neither identity-remediation path is established live. |
+| Same hosted roles and shared state; Terminal client / continuity, recovery, isolation / AC2-AC6 | `demo/terminal.py`, `demo/architect_agent.py`, `demo/reviewer_agent.py`, `demo/artifact_store.py`, the modules above and accepted UX | That completed parent unlocks queue follow-up and once-only supported stop/resume. Final deployed bindings unlock separate-parent isolation independently of recovery success. Compare actual bindings/pins, new responses, histories, exact artifacts and effects; aliases or recalled text are not proof. |
+| Terminal client and toolchain / `release-close` / AC6, AC8, AC9 | `README.md`, `docs/customer-prototype-ux.md`, `docs/identity-recovery-plan.md`; existing integration/final-closeout ownership | Reviewed Git delivery can proceed independently of live success, without concurrent unreviewed ancestry. Final sanitized demo, exact final/rollback bindings, per-criterion ledger and attributable owned cleanup still require real evidence. |
+
+Scrum Master's bounded SprintPlan therefore has empty new task/assignment
+arrays and hands directly to the original E2E stage, not an assigned-work E2E
+substitute. Formal E2E may accurately report predeployment FAIL; that is not
+passing missing source prerequisites or release acceptance. Original DevOps
+remains the later deployment/cloud-pass stage. Keep minimal dependencies and
+existing exclusive resources for engine/stage, publisher/context/transport/mount,
+primary-parent mutations and Git reconciliation; no full-sprint dependency is
+introduced and scheduler names provide no cross-run isolation.
+
+Opened original fixture/integration source audits `bb19091a` and `81d6d269`
+from predecessor run `0159ec9f-a89c-47f9-986f-80d9dfe6740a`.
+Apply exact reference
+`["yaml-loops-v1:sprint/3/RP-S3/DevOpsWorkLoop","retained-live-preparation-fixture-initialization"]`
+only to its accepted source boundary, retaining missing actual execution.
+Current original UX audit `883721e3` accepts the reconciliation for
+`["yaml-loops-v1:UserExperienceLoop","UX-DELIVERY-RUN-ACCOUNTING"]`;
+do not reopen that bounded handoff or replace its historical run association.
+The current packet has no additional prior dispositions or reconciled rework.
+
+Never replay the once-attempted engine startup, uncertain publications or held
+parents. Preserve UNKNOWNs, rollback assets and historical cleanup uncertainty.
+No infrastructure/permission change, settings import, runtime change or new
+scope is introduced. Blob isolation remains application-enforced under
+account-wide Contributor, not storage-RBAC or malicious-host isolation.
+Historical RP-S1/RP-S2/RP-S3 remain partial; AC1-AC9/G1-G8 remain required.
+This documentation alignment is not new construction or execution progress.
+
 ## Work-conserving continuation: cold-import fixture boundary
 
 This continuation amendment consumes application `7fef48b7` and registered

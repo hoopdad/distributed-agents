@@ -1,5 +1,16 @@
 # Repository index
 
+Remaining-execution release planning: based on application `86296623` and
+accepted repaired lab `88580156`; adds only
+`docs/customer-prototype-repaired-join-remaining-release-plan.json`.
+Navigate that separate Product Owner plan for the fresh original traversal:
+zero duplicate construction assignments, original Developer E2E first, then
+original DevOps with independent existing rollback/effect investigation and
+strictly gated Linux/package/publication lanes. Historical plans, three partial
+sprints and capped outcomes remain untouched. Actual E2E scheduling, repository
+approval and all live acceptance remain unproven; planning is not progress
+toward execution acceptance. Existing closeout retains reviewed Git delivery.
+
 Repaired-join traversal applicability: based on application `d371de19` and
 selected feature lab `88580156`; no paths added/deleted. Navigate the opening
 of `docs/customer-prototype-architecture.md` for original changed-source E2E
@@ -1681,6 +1692,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-remaining-execution-release-plan.json`
 - `docs\customer-prototype-remaining-execution-sprint-plan.json`
+- `docs\customer-prototype-repaired-join-remaining-release-plan.json`
 - `docs\customer-prototype-reviewed-join-continuation-architecture.json`
 - `docs\customer-prototype-reviewed-join-continuation-sprint-plan.json`
 - `docs\customer-prototype-reviewed-ref-closeout-architecture.json`

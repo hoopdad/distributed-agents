@@ -4,12 +4,25 @@
 
 Apply the [bounded post-delivery assessment](../../customer-prototype-post-delivery-exhaustion-architecture.json).
 Original agreement `b8980bc5` and fresh exact remote reads close the ref-only
-slice below: application `8b50f343`, lab `88580156`. Preserve existing final
+slice below: application `8b50f343`, lab `88580156` (prior readbacks, not rerun
+for this correction). Preserve existing final
 closeout ownership without another duplicate delivery assignment. Original
 changed-source E2E and the required repository check remain unmet; no supported
 DevOps reassessment is supplied. Independent existing rollback/effect work is
 not globally exhausted. Canonical model, runtime tiers and all release guards
 are unchanged; no new construction or live capability is claimed.
+
+The corrected assessment withdraws `d964941d`'s unsupported exhausted
+disposition. Independent common rollback-byte/effect investigation remains a
+feasible split with **no Linux prerequisite**. The visible original DevOps
+invocations are completed; this continuation cannot message them or separately
+address their investigation lane. Its validator rejects new DevOps tasks and
+accepts only supplied blocker keys, here the unchanged whole DevOps stage.
+Existing Scrum/orchestrator must resolve that precise internal needs-replan
+route through original ownership. Do not substitute empty continue, duplicate
+investigation, unchanged DevOps resume, fabricated keys or runtime/journal edits.
+An exact existing-owner locator/effect finding or evidence/access boundary
+suffices for this bounded handoff; live/rollback readiness remains downstream.
 
 ## RE-EXEC-1 continuation: reviewed join is ready for exact-ref delivery
 

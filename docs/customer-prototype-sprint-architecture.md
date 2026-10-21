@@ -1,10 +1,10 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
-## RE-EXEC-1 continuation: accepted ref delivery, bounded queue exhausted
+## RE-EXEC-1 continuation: accepted ref delivery, independent-work dispatch boundary
 
 The [post-delivery assessment](customer-prototype-post-delivery-exhaustion-architecture.json)
-consumes original delivery agreement `b8980bc5`. Fresh remote reads return
-application `8b50f343` and lab `88580156`; the ref-only queue below is historical,
+consumes original delivery agreement `b8980bc5`. Previously verified remote refs
+are application `8b50f343` and lab `88580156`; the ref-only queue below is historical,
 not an unfinished assignment. No duplicate construction or resume is supplied.
 Original changed-source E2E dispatch and repository-check execution remain
 unresolved. Existing DevOps rollback/effect investigation is independently
@@ -13,6 +13,28 @@ Scrum/orchestrator retains original-stage scheduling and originating rejection
 record coordination. No new module/fixture gap or unused approved backlog slice
 is evidenced. Retain partial delivery and every actual source/package/live gate;
 this checkpoint is neither release success nor new execution progress.
+
+Correction of `d964941d`, per exact disposition
+`["yaml-loops-v1:sprint/1/RE-EXEC-1/continuation/4/SprintArchitectureLoop","RE-EXEC-1-EXHAUSTION-HANDOFF"]`:
+the four work-exhaustion checks **do not establish exhaustion**. The existing
+DevOps owner's common rollback-byte locator/effect questions remain useful
+independent work; the mirror finding is not absence elsewhere. Original DevOps
+invocations are completed in the visible registry, not messageable running/idle
+owners. Installed continuation validation rejects new DevOps tasks and permits
+only supplied blocked keys; the sole key addresses the entire unchanged DevOps
+stage, not its investigation lane. The original-stage scheduler cannot separately
+dispatch that lane from this packet. This is a precise internal **needs-replan**
+boundary, not an empty continue queue, a claim of exhausted investigation or a
+missing human permission.
+
+Existing Scrum/orchestrator coordination must route the existing owner's bounded
+nonsecret locator/effect investigation through original DevOps placement without
+repeating mirror inspection or dependent operations. Require an inspectable
+locator/effect finding or precise record/access boundary, not completed rollback
+readiness, to close this bounded handoff. Do not create a duplicate investigator,
+fabricate a resume key, relabel DevOps as construction or edit runtime/journals.
+The amendment records the exact owner report, scheduling sources and four-check
+assessment. Coordinator/specialist contracts and canonical model remain unchanged.
 
 ## RE-EXEC-1 continuation: accepted join, newly eligible ref closeout
 

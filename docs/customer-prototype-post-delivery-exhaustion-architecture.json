@@ -1,13 +1,13 @@
 {
-  "kind": "bounded-continuation-exhaustion-assessment",
+  "kind": "bounded-continuation-scheduling-boundary-assessment",
   "sprintId": "RE-EXEC-1",
   "featureBranch": "feature/customer-hosted-session-prototype",
   "sourceAccounting": {
-    "applicationLocal": "3ba218e39519483387f61fcd0727e7a7e6e41486",
+    "applicationLocal": "d964941d7ce4840608021c75cbf019c8a48736a3",
     "applicationRemote": "8b50f343b649f75ec02b187f871bb0d77b9cee24",
     "labLocalAndRemote": "885801565ae11878a7c4f33c29f6b45b0eb19af7",
     "sourceContract": "docs/design.md#reviewed-discovery-repair-source-join",
-    "observation": "Both selected feature working trees were clean. Fresh remote reads confirm the accepted ref-only delivery. Later local ancestry contains only architecture, planning and index documentation; it is not additional executable construction."
+    "observation": "Application working tree was clean at correction start. Remote/lab refs are retained from the accepted delivery and preceding assessment, not freshly reread in this correction. Later local ancestry contains architecture, planning and index documentation; it is not additional executable construction."
   },
   "solutionModel": {
     "reference": "docs/customer-prototype-architecture.md#solutionmodel",
@@ -19,7 +19,7 @@
   "findings": [
     {
       "reference": "b8980bc50d8037b2a68d7d6d9835a44ad6950ab1b4798c00a414f7d296e04b65.json",
-      "observation": "Original Architect/Critic agreed that the exact-ref delivery slice is complete. Fresh remote reads match application 8b50f343 and lab 88580156.",
+      "observation": "Original Architect/Critic agreed that the exact-ref delivery slice is complete. Its exact remote readbacks match application 8b50f343 and lab 88580156; those operations are not repeated here.",
       "consequence": "Do not redispatch accepted repair, integration or ref-only delivery. Remaining local planning documentation is retained, not abandoned code, and remains with existing final-closeout ownership; another ref-only task is not an unlocking construction slice."
     },
     {
@@ -40,7 +40,7 @@
     {
       "reference": "4e6d08bb2f9036b5a59f12ff48d5d2db4644cf1222cf1c9e2d2ba90adcf90854.json#/artifact/Deployments",
       "observation": "The existing DevOps owner inspected the authorized mirror and found metadata/logs, not actual common rollback ZIP bytes. Its report explicitly does not establish absence elsewhere or overall investigation exhaustion.",
-      "consequence": "Rollback/effect work remains independently authorized under that existing owner and original YAML placement. This assessment does not certify its exhaustion or appoint a duplicate investigator. No new byte locator, accepted effect handoff or materially changed route is supplied to justify reassessing the exact blocked DevOps outcome. Retain this incomplete owner handoff rather than falsely declaring release-wide exhaustion."
+      "consequence": "Rollback/effect work remains independently authorized under that existing owner and original YAML placement. The mirror result does not rule out a useful bounded next investigation. Retain the original owner's unresolved locator/effect questions; do not equate the lack of a newly supplied locator with exhaustion. The execution-route boundary below, not exhaustion or missing user authority, prevents dispatch from this continuation."
     }
   ],
   "blastRadius": [
@@ -69,26 +69,51 @@
     "[\"yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop\",\"RE-EXEC-1-DISCOVERY-OWNERSHIP\"]",
     "[\"yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop\",\"RE-EXEC-1-REPOSITORY-CHECK\"]",
     "[\"yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop\",\"RE-EXEC-1-RELEASE-READINESS\"]",
-    "[\"yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop\",\"RE-EXEC-1-REVIEWED-GIT-DELIVERY\"]"
+    "[\"yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop\",\"RE-EXEC-1-REVIEWED-GIT-DELIVERY\"]",
+    "[\"yaml-loops-v1:sprint/1/RE-EXEC-1/continuation/4/SprintArchitectureLoop\",\"RE-EXEC-1-EXHAUSTION-HANDOFF\"]"
   ],
   "SprintPlan": {"tasks": []},
-  "Continuation": {
-    "disposition": "exhausted",
-    "scope": "New dispatchable construction and supported reassessments in this bounded continuation, not exhaustion of existing DevOps ownership or completion of the release.",
-    "summary": "All supplied construction/integration/ref-only tasks are accepted. No new approved source gap, unused backlog slice, changed denial condition or supported original-stage dispatch handoff is evidenced. Preserve independent existing owner obligations without duplicate assignments or unchanged resume.",
-    "evidence": [
-      "Accepted delivery audit b8980bc5 and fresh exact remote reads close the last queued independent slice.",
-      "Approved remaining ReleasePlan contains one sprint and empty constructionTasks; current packet has no remaining or pending assignments.",
-      "Original scheduling blocker and negative rejection-record investigation remain unchanged.",
-      "Existing rollback/effect investigation is incomplete, not globally exhausted; no new locator or authoritative readiness evidence supplies a permitted exact-key reassessment."
-    ],
-    "resumes": []
+  "continuationDecision": {
+    "status": "needs-replan",
+    "summary": "Withdraw the unsupported exhausted conclusion in d964941d. Independent rollback/effect investigation is not exhausted. The current continuation cannot separately dispatch its existing original owner without an unchanged whole-stage DevOps resume. Neither exhausted nor an empty continue queue truthfully represents this internal scheduling boundary.",
+    "tasks": [],
+    "resumes": [],
+    "representationBoundary": "No executable Continuation object is proposed. continuation.mjs validateContinuation accepts only continue with tasks/resumes or exhausted with neither, rejects devops tasks and restricts resume keys to current blocked outcomes. The supplied sole key is the unchanged whole DevOps stage. Do not fabricate a key, relabel original DevOps investigation as construction, or submit a knowingly false exhaustion result to satisfy that enum."
+  },
+  "fourCheckAudit": [
+    {"check": "ready-or-executing-work", "finding": "All supplied construction and exact-ref tasks are accepted. The visible agent registry has only this Architect running; original DevOps owners are completed. This is not evidence that their remaining work is exhausted."},
+    {"check": "feasible-splits", "finding": "Rollback/effect investigation is a feasible architectural split from dependent Linux/package execution. The approved plan already has that split with no Linux prerequisite; no new owner, task scope or readiness waiver is needed."},
+    {"check": "independent-approved-backlog", "finding": "The one approved remaining sprint contains independent rollback/effect work. No unused construction or pending sprint is evidenced. Later reviewed documentation delivery remains with existing final-closeout ownership, not a duplicate ref-only assignment."},
+    {"check": "bounded-unlocking-investigation", "finding": "The original DevOps report leaves actual common rollback ZIP location and next-operation effect readiness unresolved. Bounded further owner investigation has not been ruled out. Original-stage dispatch and originating rejection-record coordination also remain unresolved. Therefore the four checks do not support exhaustion."}
+  ],
+  "existingOwnerInvestigationHandoff": {
+    "owner": "Existing original DevOps Engineer, not a new investigator",
+    "source": "4e6d08bb2f9036b5a59f12ff48d5d2db4644cf1222cf1c9e2d2ba90adcf90854.json#/artifact/Deployments/independentRollbackEffectInvestigation",
+    "remainingQuestion": "Can the existing owner's retained nonsecret locator/provenance records identify actual common rollback ZIP bytes, as distinct from the diagnostic ZIP, and a reconciled next-operation route/effect state?",
+    "permissibleSlice": "Resume only the existing owner's nonsecret locator/effect investigation outside the already-inspected mirror, through its original DevOps placement. Follow an exact authorized locator if established; otherwise return the precise unavailable-record/access boundary. Do not repeat the mirror inventory, search excluded private-state trees, infer absence elsewhere, replay operations or claim rollback readiness from metadata.",
+    "doneWhen": "The existing owner supplies an inspectable common-byte locator/verification and effect finding, or an evidence-backed exact record/access boundary. Full rollback readiness and live acceptance are not prerequisites for this bounded planning correction.",
+    "coordinationEvidence": "Visible registry inspection found original DevOps doer 71faa28e-1371-4607-9b32-b1102f9c84cd and resumed doer 47b4ef83-c883-4a3b-8fa4-cb1f54a1f07c completed, not running or idle. write_agent supports running/idle same-task recipients, not these completed invocations; no message was sent and no owner acknowledgement is claimed.",
+    "executionRoute": {
+      "required": "Existing Scrum/orchestrator coordination must provide an original-placement route to that independent slice without rerunning the unchanged blocked full DevOps stage.",
+      "observed": "Read-only inspection of installed delivery-workspace continuation.mjs lines 20-45 and loop-workflow.mjs lines 392-404, 434-437, 517-527 confirms devops tasks are rejected/deferred, resume keys must be supplied blocked outcomes, and a resume removes only that full recorded stage. The current supplied key names the entire DevOpsWorkLoop, not its independent investigation lane.",
+      "boundary": "The only current key is sprint/1/RE-EXEC-1/resume/1/DevOpsWorkLoop. Original changed-source E2E and repository-check prerequisites for dependent operations remain unmet; no materially changed evidence authorizes that whole-stage reassessment. There is no supported separately addressable existing-owner investigation route in the supplied continuation.",
+      "prohibitedWorkarounds": "No duplicate investigator, unchanged whole-stage resume, invented key, substitute assigned-work E2E, new sprint, task relabeling, runtime/journal edit, accounting reset or human-permission request."
+    }
   },
   "handoff": {
-    "ScrumMasterAndOrchestrator": "Preserve partial sprint and exact original-stage limitation. Obtain a supported way to schedule original Developer changed-source E2E with original Architect/Critic/Product Owner reviews; do not replay unchanged DevOps continuation. Coordinate originating-owner rejection-record recovery.",
+    "ScrumMasterAndOrchestrator": "Resolve the precise independent-investigation execution-route boundary above through existing ownership, and obtain a supported original changed-source E2E route with original reviewers. Do not declare work exhausted or emit an empty continue queue. Preserve originating-owner rejection-record recovery, all partial sprints and capped accounting.",
     "DevOpsEngineer": "Retain independent nonsecret rollback ZIP-byte/effect investigation in original placement. After actual source prerequisites, revalidate the same selected engine read-only without startup replay and run BOTH corrected complete Linux suites and hosting/package gates. Both actual readiness exits precede one serialized publisher.",
     "FinalCloseoutDeveloper": "Retain later intended reviewed documentation delivery and final accounting; accepted repaired-join push/readback is not redispatched.",
     "Acceptance": "All original AC1-AC9/G1-G8 remain binding. This bounded assessment can be reviewed as complete without accepting the sprint or release."
+  },
+  "verification": {
+    "schedulingProbes": "Three read-only calls to installed validateContinuation rejected empty continue, a new devops task, and an absent original-stage resume key. No workflow was launched or state changed.",
+    "installedSourceSha256": {
+      "continuation.mjs": "97fcdfde53fe651e05f8a80b6872d350f18c3a0dd4d6bf8ac7dc1782abe2c4dd",
+      "loop-workflow.mjs": "19e4a4c2f5ff9d8567993e0c8710d3c53617eda6bff9c8a0c0ea3c9ebc6af907"
+    },
+    "checkCorrection": "Initial focused canonical-model assertion expected a nested solutionModel property and failed. The committed document uses a directly fenced components/flows object; the validation parser was corrected, not the model.",
+    "notPerformed": "No original E2E, repository suite, Linux/package check, settings import, engine/cloud operation, push, publication, inference or hosted stop/resume. No completed owner was messaged or reappointed."
   },
   "preservation": "No runtime/journal, historical plan, source seal, coordinator/specialist tier contract, infrastructure, permission, private state or cloud effect is changed. Preserve all UNKNOWN effects, held parents, rollback assets, historical branches, cleanup uncertainty and capped invocation accounting. Planning earns no new execution-progress credit."
 }

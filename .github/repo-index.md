@@ -1,6 +1,15 @@
 # Repository index
 
-Post-delivery applicability: based on local `3ba218e3`, delivered application
+Post-review correction: based on `d964941d`; no paths added/deleted.
+The post-delivery assessment now withdraws unsupported exhaustion and records
+all four checks, the existing DevOps owner's unresolved rollback-byte/effect
+questions and the exact original-placement scheduling boundary. Navigate its
+`existingOwnerInvestigationHandoff` and `continuationDecision`: no executable
+continue/exhausted claim is supplied when neither can truthfully encode the
+boundary. Existing Scrum/orchestrator retains coordination; no duplicate owner,
+unchanged resume, runtime/journal edit or execution-progress claim is introduced.
+
+Historical post-delivery applicability: based on local `3ba218e3`, delivered application
 `8b50f343` and lab `88580156`; adds only
 `docs/customer-prototype-post-delivery-exhaustion-architecture.json`.
 Original delivery agreement `b8980bc5` closes the prior ref-only queue. Navigate

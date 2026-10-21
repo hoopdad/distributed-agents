@@ -1,5 +1,16 @@
 # Repository index
 
+Continuation-2 architecture: inspected application `9ae328c8`; adds
+`docs/customer-prototype-repaired-join-continuation-2-architecture.json`.
+Original status and prior-delivery agreements close both continuation-1 tasks.
+Fresh remote remains `b42ab2f8`, so existing closeout retains exact delivery of
+the newly accepted customer-status correction through `9ae328c8` and its
+reviewed ancestry. No prose rework, construction, test replay or unchanged
+DevOps resume. Navigate the separate amendment and sprint/client-release
+openings; runtime model/tiers, original gates and independent DevOps/Scrum
+locator coordination are unchanged. This planning is not execution progress;
+planning-only ancestry alone must not generate another delivery carousel.
+
 Continuation-1 Scrum dispatch: inspected application `340cf208`; adds
 `docs/customer-prototype-repaired-join-continuation-1-sprint-plan.json`.
 This separate amendment assigns factual customer-status correction and reviewed
@@ -1737,6 +1748,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-remaining-execution-release-plan.json`
 - `docs\customer-prototype-remaining-execution-sprint-plan.json`
 - `docs\customer-prototype-repaired-join-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-repaired-join-continuation-2-architecture.json`
 - `docs\customer-prototype-repaired-join-continuation-architecture.json`
 - `docs\customer-prototype-repaired-join-remaining-release-plan.json`
 - `docs\customer-prototype-repaired-join-remaining-sprint-plan.json`

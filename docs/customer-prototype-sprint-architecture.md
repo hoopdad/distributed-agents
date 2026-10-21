@@ -1,5 +1,24 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Continuation 2: deliver the newly accepted customer-status handoff
+
+Apply the [separate second amendment](customer-prototype-repaired-join-continuation-2-architecture.json).
+Original agreements `266ca3fe` and `e94141c6` close the status correction and
+prior pinned delivery respectively. The latter delivered only `b42ab2f8`;
+fresh remote inspection still returns that ref. The newly reviewed correction
+at `9ae328c8`, with reviewed architecture/plan ancestry, remains undelivered.
+Existing closeout Developer can deliver exactly that ref without editing status,
+repeating accepted construction or adopting this new planning ancestry.
+Canonical components and runtime tiers remain unchanged; only `release-close`
+for Terminal client / Guarded lab release toolchain is affected (AC8/AC9).
+
+This is not an unchanged DevOps resume or an exhaustion finding. Required
+repository approval and dependent execution remain blocked; independent exact
+common-package/effect record coordination stays with original DevOps/Scrum.
+No new locator or execution approval was obtained. Planning is not new progress;
+later planning-only commits alone must not manufacture another delivery loop.
+All actual Linux/package, common-byte/effect, live and cleanup gates remain.
+
 ## Remaining-execution continuation: actual stage entry, independent closeout
 
 The separate [first-continuation architecture amendment](customer-prototype-repaired-join-continuation-architecture.json)

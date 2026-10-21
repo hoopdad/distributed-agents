@@ -1,5 +1,22 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Accepted customer-status delivery after continuation 1
+
+The [second architecture amendment](../../customer-prototype-repaired-join-continuation-2-architecture.json)
+supersedes pending-correction/delivery assertions below, not their historical
+results. Original Architect/Critic accepted the actual status correction
+`9ae328c8`; prior delivery intentionally stopped at `b42ab2f8`, still the fresh
+remote ref. Existing closeout Developer now has a bounded exact-ref delivery
+slice through `9ae328c8` and its reviewed ancestry, excluding this amendment
+and later planning. No additional customer prose or terminal construction is
+needed. Canonical `release-close`, AC8/AC9, privacy, original reviewers and
+Git-resource serialization remain unchanged.
+
+Required source validation and dependent Linux/package/publication remain
+blocked; independent existing DevOps/Scrum record coordination is not exhausted.
+This new customer-status delivery neither unlocks DevOps nor establishes any
+deployed/live capability. Retain every original gate and partial-sprint boundary.
+
 ## Continuation after original repaired-join execution
 
 Apply the [current separate architecture amendment](../../customer-prototype-repaired-join-continuation-architecture.json).

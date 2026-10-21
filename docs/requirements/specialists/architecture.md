@@ -1,5 +1,25 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current remaining execution: retained history, actual remote proof outstanding
+
+Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#repaired-join-remaining-execution-original-execution-of-the-accepted-repair).
+Keep Hosted architect, Hosted reviewer and shared conversation/artifact/identity
+components with canonical IDs/support links. The source/criteria table maps
+existing specialist modules and fixtures; no new specialist construction,
+identity bypass, service or local fallback is assigned.
+
+Actual `collaboration-design/review` still requires trusted architect ingress
+before reviewer against a verified final common bundle. `continuity-invoke/verify`
+must compare both real hosted/framework bindings and pins while responses,
+histories and current artifacts advance; repeated-call fixtures remain offline.
+Supported recovery requires the completed non-held initial parent and durable
+once-only stop confirmation; separate-parent isolation needs final bindings
+and actual scope comparisons, not recovery success. Neither identity path is
+selected live. Preserve historical held children and UNKNOWNs. Application
+enforcement under account-wide Blob Contributor is not storage-RBAC or
+malicious-host isolation. Original source/package/live gates are unchanged;
+independent original DevOps investigation is not gated on Linux success.
+
 ## RE-EXEC-1: accepted specialist history, unverified hosted ingress
 
 Follow the [current sprint contract](../../customer-prototype-sprint-architecture.md#re-exec-1-accepted-corrected-join-original-integration-gate-first).

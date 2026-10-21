@@ -1,5 +1,16 @@
 # Repository index
 
+Remaining-execution sprint applicability: based on application `1800e116`;
+no paths added/deleted. Navigate the opening of
+`docs/customer-prototype-sprint-architecture.md` and all three
+`docs/requirements/*/architecture.md` tiers for the current normal-traversal
+handoff. Canonical solutionModel IDs/support links are retained, accepted
+repair is not redispatched, and original E2E precedes original DevOps.
+Independent rollback/effect investigation stays separate from the denied
+repository check and dependent Linux/package/publication gates. Historical
+continuation-only routing statements are superseded, not historical results.
+This documentation refinement is not execution progress or live acceptance.
+
 Remaining-execution release planning: based on application `86296623` and
 accepted repaired lab `88580156`; adds only
 `docs/customer-prototype-repaired-join-remaining-release-plan.json`.

@@ -1,5 +1,25 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current remaining execution: retain coordinator contracts and actual gates
+
+Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#repaired-join-remaining-execution-original-execution-of-the-accepted-repair).
+Hosted coordinator, Decision-1 routing and admission, Parent and specialist
+conversation state, MAF workflow checkpoints and Private Blob artifacts and
+effect journal retain their canonical IDs/support links and source mappings.
+No runtime or contract change and no coordinator construction task is introduced.
+The accepted repaired join requires actual original E2E/reviews; denied required
+repository validation still blocks dependent Linux/package/publication, not
+independent original DevOps rollback/effect investigation.
+
+`collaboration-bind/route/design/review/return` still needs real trusted ingress,
+exact artifacts, genuine Decision-1 and completed non-held common-bundle G1-G4.
+That parent gates `continuity-revise/invoke/verify` and once-only
+`recovery-stop/resume/verify`; `isolation-bind/execute/verify` needs final deployed
+bindings and comparison evidence, not recovery success. Preserve immutable
+outputs, parent scope, pins, restored history, ETag/fencing, checkpoints and
+UNKNOWN holds. Offline/source acceptance is not live proof; stricter current
+authority, no startup replay and no uncertain resend remain binding.
+
 ## RE-EXEC-1: consume coordinator construction, retain actual live joins
 
 Follow the [current sprint contract](../../customer-prototype-sprint-architecture.md#re-exec-1-accepted-corrected-join-original-integration-gate-first).

@@ -1,5 +1,81 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## REPAIRED-JOIN-REMAINING-EXECUTION: original execution of the accepted repair
+
+This current sprint consumes the agreed
+[Architecture applicability](customer-prototype-architecture.md#current-repaired-join-traversal-source-acceptance-is-not-execution-acceptance-october-21-2026),
+[remaining release plan](customer-prototype-repaired-join-remaining-release-plan.json)
+and retained [sprint screens](customer-prototype-sprint-design.md). It supersedes
+dated source-selection and continuation-routing statements below, not historical
+outcomes, accepted construction or actual release criteria. Both supplied
+priorDispositions arrays are empty; no accepted task is reopened.
+
+At inspection, application HEAD was `1800e116c5ef352368959afa56f9069e9e225f36`
+on `feature/customer-hosted-session-prototype` with a clean working tree.
+Its ancestry after accepted integration `8b50f343` changes eight
+documentation/index paths only. The selected repaired lab remains the accepted
+`885801565ae11878a7c4f33c29f6b45b0eb19af7` handoff, not a fresh lab observation
+in this turn. Use [the reviewed source join](design.md#reviewed-discovery-repair-source-join).
+Original E2E must inventory its actual execution HEAD and account for this
+documentation overlay; non-documentation drift needs original source review.
+
+The canonical [solutionModel](customer-prototype-architecture.md#solutionmodel)
+is incorporated unchanged: ten stable components, five triggered flows,
+eighteen steps and their support links. The following table refines evidence
+and operation dependencies, not implementation or public contracts.
+
+| Canonical components / steps / criteria | Actual source and retained handoff | Missing verification and receiving owner |
+| --- | --- | --- |
+| Guarded lab release toolchain / `release-join`, `release-package` / AC7 | `Test-Demo.ps1`, accepted retained discovery bootstrap and seven fresh-process regressions, reviewed source join above. Repair/integration/ref-delivery acceptance is retained. | Original Developer EndToEndTestLoop runs permitted application/retained suites with pinned absolute Python and explicit roots, then original Architect/Critic/Product Owner review. No duplicate implementation tasks or assigned-work E2E substitute. |
+| Guarded lab release toolchain; Trusted identity and private transport / `release-package`, `release-discriminate` / AC7, G1, G8 | Retained packaging/transport wrappers and [existing owner investigation contract](customer-prototype-post-delivery-exhaustion-architecture.json#existingOwnerInvestigationHandoff). | Original DevOps independently follows genuinely new permitted nonsecret common rollback ZIP-byte/provenance and next-operation effect locators. No E2E PASS or Linux-success dependency for that investigation. Return actual findings or an exact observed boundary, not mirror absence as global absence. |
+| Hosted coordinator; Decision-1 routing and admission; MAF workflow checkpoints; Private Blob artifacts and effect journal / `collaboration-bind` through `collaboration-return` / AC1, AC5 | `demo/workflow.py`, `demo/foundry.py`, `demo/contracts.py`, `demo/artifacts.py`, `demo/routing.py`, `live_acceptance.py`; accepted fixtures and source contracts. | Actual trusted architect-before-reviewer ingress, genuine Decision-1/private Blob provenance, final common bundle and completed NON-HELD G1-G4 initial parent remain unverified. Source acceptance does not select a live identity path. |
+| Hosted architect; Hosted reviewer; Parent and specialist conversation state / `continuity-revise/invoke/verify`, `recovery-stop/resume/verify`, `isolation-bind/execute/verify` / AC2-AC4 | `demo/architect_agent.py`, `demo/reviewer_agent.py`, `demo/specialist.py`, `demo/foundry.py`, `demo/artifact_store.py`, `tests/test_workflow.py`, `live_acceptance.py`; accepted continuation/revision/recovery/isolation fixtures remain offline. | Actual two-turn binding/pin comparisons, new responses and current requirements; once-only supported stop/resume with no duplicate effects; separate-parent scope evidence. Completed non-held initial parent gates follow-up and stop/resume. Isolation needs final bindings/comparison evidence, not recovery success. |
+| Terminal client; Guarded lab release toolchain / `collaboration-return`, `release-close` / AC6, AC8, AC9 | `README.md`, `main.py`, `demo/terminal.py`, retained UX/screens and existing closeout ownership. | Existing closeout Developer refreshes measured customer status and delivers only reviewed intended ancestry. Actual demo, exact final/rollback bindings and attributable cleanup remain obligations; no duplicate clarity construction. |
+
+### Source denial, independent lane and dependent execution
+
+The recovered originating `scripts/Test-Repository.ps1` requests were denied
+by interactive tool approval when no user response was available. This is an
+unmet required AC7 check, not an executed test failure or diagnosed Azure
+permission defect. No affirmative approval exists. Do not retry it, invoke an
+alternate path or run constituent checks as substitutes. Affirmative approval
+of that exact bounded interactive execution/tool prompt is the unblock condition.
+No new architecture decision or broader permission is required here.
+
+Scrum hands zero construction assignments directly to original E2E, followed
+by original DevOps. An accurate reviewed predeployment FAIL can close E2E
+reporting, never AC7 readiness. The fresh original traversal offers the normal
+stage route; this document does not assert successful E2E/DevOps scheduling.
+Historical continuation-validator limits below do not prohibit the current
+normal route, nor authorize another unchanged resume or runtime/journal edit.
+
+Within original DevOps, independent rollback/effect investigation stays useful
+while required source readiness is blocked. Dependent changed-tool execution
+waits for original E2E/reviews and all required source checks actually passing.
+Then revalidate the SAME selected engine read-only, without replaying
+Ensure-LinuxEngine startup or restarting Docker, and run BOTH complete corrected
+actual Linux suites plus hosting/package gates. Actual package readiness AND
+actual common rollback-byte/reconciled-effect readiness precede ONE serialized
+guarded publisher. A bounded negative investigation report is not readiness.
+
+Preserve existing Git/engine/stage/publication/context/transport/mount and parent
+exclusive-resource contracts; Scrum names their actual assignment use without
+creating whole-sprint dependencies or a second publisher/investigator. Settings
+remain exclusively `scripts/Use-Settings.ps1`; no secret/private-state access,
+canonical dirty-lab adoption, infrastructure/permission change, local specialist,
+identity bypass or uncertain-effect replay. Account-wide Blob Contributor
+still means application-enforced, not storage-RBAC or malicious-host isolation.
+
+Opened current original agreement records `59abdb6c`, `89791f90` and `eefeb59d`
+under delivery run `490ad8fa-3d48-4905-a216-d2159f43d446`: their original
+reviewers agreed to Architecture, ReleasePlan and SprintDesign respectively.
+Those votes justify bounded reuse, not this refinement's pending reviewer votes
+or live success. This is documentation applicability only, no new execution
+progress. No tests, repository-check constituents, settings, engine/cloud
+operations, publication, inference, stop/resume or push were performed.
+All three historical sprints and this remaining-execution sprint stay partial;
+AC1-AC9/G1-G8, historical UNKNOWNs, held parents and rollback assets remain.
+
 ## RE-EXEC-1 continuation: accepted ref delivery, independent-work dispatch boundary
 
 The [post-delivery assessment](customer-prototype-post-delivery-exhaustion-architecture.json)

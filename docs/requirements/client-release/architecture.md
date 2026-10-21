@@ -1,5 +1,32 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current remaining execution: accepted repair, original validation first
+
+Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#repaired-join-remaining-execution-original-execution-of-the-accepted-repair)
+and its canonical solutionModel/source/criteria table. Selected accepted join is
+application `8b50f343` plus repaired lab `88580156`; inspected application
+`1800e116` adds only documentation/index ancestry. Original Developer E2E must
+account for its actual HEAD and permitted application/retained suites, then
+original Architect/Critic/Product Owner review. No duplicate source, fixture,
+clarity, integration or ref-delivery construction is assigned.
+
+This fresh normal traversal supersedes historical continuation-only dispatch
+limits below; actual scheduling is not yet proven. Within original DevOps,
+existing nonsecret common rollback ZIP-byte/effect investigation needs no E2E
+PASS or Linux success. Its exact owner/locator contract remains in the linked
+sprint overlay. Do not repeat mirror inventory or denied access, infer global
+absence or replay uncertain effects. Required repository validation remains
+unmet after exact interactive denial: no retry, alternate-path or constituent
+substitute without affirmative exact execution/tool approval.
+
+Dependent `release-package/discriminate` execution still requires original
+E2E/reviews and passing source checks, same-engine read-only revalidation with
+no startup replay, BOTH actual Linux/hosting suites and package gates. Both
+package readiness and common rollback-byte/reconciled-effect readiness gate
+one serialized publisher. `release-close` retains existing measured-status,
+reviewed-document Git delivery and positively owned cleanup duties.
+No live or package capability is accepted by this tier update.
+
 ## RE-EXEC-1 continuation: consume completed repaired-join ref delivery
 
 Apply the [bounded post-delivery assessment](../../customer-prototype-post-delivery-exhaustion-architecture.json).

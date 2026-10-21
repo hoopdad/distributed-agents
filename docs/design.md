@@ -1,5 +1,82 @@
 # Distributed agents: MAF/Foundry workflow and shared artifacts
 
+## Reviewed discovery-repair source join
+
+`RE-EXEC-1-REPAIRED-JOIN-DELIVERY` consumes accepted lab repair
+`885801565ae11878a7c4f33c29f6b45b0eb19af7` at application
+`acda9656760c7ba85c3d3797450bfea744693bd1` on
+`feature/customer-hosted-session-prototype`. Original repair audit
+`4334061aa76b82fe51fcda7911b1007d42d680fae4bb95bda2fa76fa71409872`
+records Architect/Critic agreement, task-complete, no unmet criteria.
+Original architecture agreement `16a18997` authorizes this retained
+integration slice, not duplicate repair or replacement E2E.
+The earlier cold-import join below remains historical and unchanged.
+
+The repair imports and verifies application `demo` and `live_acceptance`
+before retained discovery can prepend lab tools. Missing/wrong owners fail
+before discovery; synthetic import configuration is restored. The new
+`tests/test_release_discovery.py` exercises the actual embedded bootstrap
+in fresh processes. Accepted cold-import fixtures and runtime code are unchanged.
+
+Focused checks in this integration turn loaded `demo`/`live_acceptance` from
+the application and `release_roots`, `identity_decision`, `bundle_package`,
+`wsl_release` and `observe_agent` from the selected feature lab. PowerShell
+`Resolve-ReleaseRoots` loaded from that same lab and validated the explicit
+root pair. All 22 application and nine lab runtime entries matched committed
+bytes after LF normalization. Their raw-byte compact sorted-key JSON seal
+remains `bfd6ed4d380a354a11104e1207605f169991d16a08b71db7344e4cea7e9815e9`.
+
+**The named retained-input seal changes.** `Test-Demo.ps1` is one of the
+15 lab helpers in `Build-Demo.ps1`'s mount loop. Together with application
+`live_acceptance.py` and `tests/test_workflow.py`, the 17 raw-byte input
+mapping now seals to
+`93819423f7b8efc4ba1bdca9d96b38de5f39fcfb7ad59dad61d5883397960b5b`.
+Only `lab:Test-Demo.ps1` differs from the historical mapping sealed as
+`5fc1a496665ee4db35235799c73443b243e7c5cf040953653832fd47cd17e1ad`.
+All 17 inputs match committed bytes after LF normalization. These are
+offline source mappings, not image, package or execution receipts.
+
+Repair inputs, relative to the lab's `foundry-tf/multi-agent/`:
+
+| Input | Raw working SHA256 | LF-normalized/committed SHA256 |
+| --- | --- | --- |
+| `Test-Demo.ps1` | `7a29104c53861939c4ae29a64147d6be2a68203e961668241e943c45fc19579f` | `7a29104c53861939c4ae29a64147d6be2a68203e961668241e943c45fc19579f` |
+| `tests/test_release_discovery.py` | `22f414451831a6e766f3f6fe5d93e255471fdc234ac8b5c706061b2cd70ef436` | `1fd1c081d330e2218a2fef73fe902164d34cf00eca3384712f6571153e3377db` |
+
+The discovery regression is outside that named helper mapping. The accepted
+cold-import test remains separately bound to raw `89a403dd462ae32a74f5132fd78ba6524a3fdce0bb8a1c3f381f90196cb6250c`
+and LF/committed `4b5086bbb3c60dfbf15e9cbc5fad965b1f0e03c06e8ae5d8769c2bc343ae64b3`.
+Both test files matched committed bytes; none of these seals binds a whole
+test directory or substitutes for complete actual Linux suites.
+
+Windows results are attributed to the accepted repair audit, **not rerun
+here**: seven targeted tests passed; the complete corrected wrapper passed
+206 application tests and 230 of 233 retained tests, with only three
+native-Linux exclusions. The historical original E2E FAIL at lab `651a2290`
+remains preserved; those repair results are not original changed-source E2E.
+
+After inspecting original acceptance records and rechecking clean selected
+HEADs, explicit non-force pushes advanced the application remote from
+`b18cf3ec481690180f557e93259aac479424b648` to reviewed
+`55cf0216a869bf135432c3304f6dfd408b738520`, and the lab remote from
+`651a22908984174d3947b9d04ed68f6cd13ea90c` to reviewed
+`885801565ae11878a7c4f33c29f6b45b0eb19af7`.
+Independent `git ls-remote` readbacks returned those exact feature refs.
+Application `acda9656` and this new integration documentation were excluded
+pending their applicable original reviews. No merge, branch switch,
+abandoned task branch/code or canonical dirty-source adoption was needed.
+
+Original Architect/Critic review this integration commit. Existing closeout
+owns its later reviewed push/readback. Original Developer E2E and original
+Architect/Critic/Product Owner reviews still precede dependent DevOps.
+Integration does not fix the confirmed original-stage dispatch limitation;
+Scrum/orchestrator must resolve it without another unchanged DevOps resume.
+The denied repository suite remains unmet, without retry or constituent-check
+bypass. Both complete actual Linux suites, hosting/package gates and independent
+rollback ZIP-byte/effect readiness remain required before one serialized
+publisher. No settings import, engine, cloud, inference, publication or hosted
+stop/resume occurred; UNKNOWN effects, held parents and cleanup uncertainty stay.
+
 ## Reviewed cold-import fixture source join
 
 `RP-S3-FIXTURE-SOURCE-JOIN` joins reviewed application

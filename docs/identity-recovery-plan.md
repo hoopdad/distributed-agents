@@ -1,5 +1,54 @@
 # Identity propagation recovery: design and execution plan
 
+## Reviewed discovery-repair integration and delivery (October 21, 2026)
+
+The retained integration/final-closeout Developer consumed original repair
+agreement `4334061a` and architecture agreement `16a18997`, without reopening
+accepted construction. The [repaired source join](design.md#reviewed-discovery-repair-source-join)
+binds lab `885801565ae11878a7c4f33c29f6b45b0eb19af7` and application
+`acda9656760c7ba85c3d3797450bfea744693bd1`, actual imported owners,
+committed-byte equality and separately hashed repair inputs.
+The runtime seal is unchanged. The named 17-input helper seal is **not**
+unchanged: its `lab:Test-Demo.ps1` entry changes it to
+`93819423f7b8efc4ba1bdca9d96b38de5f39fcfb7ad59dad61d5883397960b5b`.
+Historical seals and joins below retain their original scope.
+
+Actual explicit reviewed-ref pushes and independent remote readbacks passed:
+
+- Application: `b18cf3ec481690180f557e93259aac479424b648` ->
+  `55cf0216a869bf135432c3304f6dfd408b738520`.
+- Lab: `651a22908984174d3947b9d04ed68f6cd13ea90c` ->
+  `885801565ae11878a7c4f33c29f6b45b0eb19af7`.
+
+Both target `feature/customer-hosted-session-prototype`. Application ancestry
+includes reviewed integration `28636214`, UX accounting `7322ed7a` and the
+reviewed planning/architecture through `55cf0216`. Unreviewed application
+plan `acda9656` and this integration documentation were excluded. Their later
+reviewed delivery remains with existing closeout; these pushes do not complete
+AC8 or the release. No task code or branch was abandoned, merged or discarded.
+Selected source trees were clean; canonical dirty lab work was not adopted.
+
+The coordination message returned verbatim to this same invocation; it is not
+evidence of an independent second writer. Selected HEADs and clean trees were
+rechecked before proceeding with only the assigned application documentation.
+No second integration owner or additional approval stage was introduced.
+
+The repair audit's complete Windows results are existing attributed evidence,
+not fresh integration execution. No complete suite was rerun here. Original
+changed-source E2E remains required and internally unscheduled; integration
+does not fix that dispatch limitation. Scrum/orchestrator retains that action
+and the originating repository-check rejection-record coordination. Preserve
+the denied suite as unmet without retry/bypass or speculative human request.
+Original Architect/Critic review this commit; original Developer E2E and its
+Architect/Critic/Product Owner reviews must precede dependent DevOps.
+
+Independent rollback-byte/effect investigation stays with existing DevOps.
+Both complete actual Linux suites/package readiness and rollback/effect
+readiness still precede one publisher. No engine startup replay, settings
+import, cloud operation, inference or hosted stop/resume occurred. Historical
+UNKNOWNs, held parents, rollback assets and cleanup uncertainty are untouched.
+AC1-AC9/G1-G8 and the partial sprint remain incomplete.
+
 ## Terminal UX accounting receiving-owner reconciliation (October 21, 2026)
 
 The retained terminal outcome at

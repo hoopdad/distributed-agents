@@ -1,5 +1,17 @@
 # Repository index
 
+Repaired-source integration freshness: based on application `acda9656` and
+original-reviewed lab `88580156`; no paths added/deleted. Navigate
+`docs/design.md#reviewed-discovery-repair-source-join` and the October 21
+discovery-repair entry in `docs/identity-recovery-plan.md` for exact input
+hashes, loaded owners and actual reviewed-ref delivery. Runtime seal remains
+unchanged; the 17-input helper seal changes because it includes `Test-Demo.ps1`.
+Reviewed app `55cf0216` and lab `88580156` were pushed and exactly read back;
+`acda9656` and this documentation await their original reviews/later delivery.
+Original changed-source E2E dispatch, denied repository suite, actual Linux/
+package gates and independent rollback/effect readiness remain unmet. This
+join neither schedules original E2E nor authorizes another DevOps resume.
+
 RE-EXEC-1 reviewed-join dispatch freshness: based on application `55cf0216`
 and accepted feature lab `88580156`; adds only
 `docs/customer-prototype-reviewed-join-continuation-sprint-plan.json`.

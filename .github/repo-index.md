@@ -1,5 +1,14 @@
 # Repository index
 
+Fresh original traversal UX freshness: based on accepted architecture `a6443b6c`;
+no paths added/deleted, runtime or presentation contracts changed. Navigate
+`docs/customer-prototype-ux.md#current-recovery-traversal-source-acceptance-is-not-execution-october-21-2026`
+for retained principles, five canonical journeys and evidence-qualified screen
+direction. Original corrected-join E2E precedes DevOps; accepted construction
+is not redispatched. Independent rollback/effect investigation and reviewed Git
+delivery continue; BOTH actual readiness exits gate one publisher. This is UX
+direction, not execution progress, live proof or renewed human approval.
+
 Fresh original traversal architecture freshness: inspected application `6035a775`
 and selected feature lab `651a2290`, both clean; no paths added/deleted.
 Navigate `docs/customer-prototype-architecture.md#current-recovery-traversal-validate-the-accepted-corrected-join-first-october-21-2026`

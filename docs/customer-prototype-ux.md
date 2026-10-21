@@ -1,5 +1,89 @@
 # Customer hosted-session prototype: user experience
 
+## Current recovery traversal: source acceptance is not execution (October 21, 2026)
+
+Consumes accepted Architecture `a6443b6ccc52175140f0a304605a96c3fca2c666`,
+[corrected-join-first handoff](customer-prototype-architecture.md#current-recovery-traversal-validate-the-accepted-corrected-join-first-october-21-2026).
+Designer opened originating ArchitectureLoop audit
+`a09c594f64c53e9db045ea59d433e4510d810e338d5c65e8559680dd5ec34489.json`
+under current run `12429312-cb2b-4dce-9da4-cacfb08206a3/context`: Product Owner,
+Red Team and Critic each agree and mark that bounded architecture complete.
+Those votes establish neither UX agreement nor execution. No prior dispositions
+or reconciled feedback are supplied in this UX packet.
+
+This entry supersedes only stale pending-construction and continuation-routing
+direction below. The existing-engine helper, exact mounts, fixture correction,
+source joins, terminal view and README construction are accepted handoffs, not
+new assignments. Selected application `6035a775` plus feature lab `651a2290`
+remain the execution baseline; `a6443b6c` adds only architecture/index
+documentation. This UX amendment adds only UX/index documentation.
+The original accepted source boundaries remain in
+[the cold-import source join](design.md#reviewed-cold-import-fixture-source-join);
+original E2E must inspect its exact fixture/integration audits before execution.
+Neither fresh planning nor this wording is new execution progress.
+
+### Retained full-scope experience
+
+Retain the six [UX principles and existing toolset](#ux-principles-tools-and-framework),
+all five [canonical journeys and eighteen steps](#canonical-journey-to-screen-map),
+and the [screen direction](#user-journeys-and-screen-direction).
+README leads with the customer goal, three-role diagram, two-turn invariant and
+short source reading path. Terminal human mode remains opt-in stderr alongside
+unchanged machine stdout/parser, useful current design/review output and ordered
+repeated specialist calls. Plain text, labeled states, wrapped content, sanitized
+line-prefixed generated text and terminal-default light/dark colors remain the
+accessibility framework. No browser UI, renderer, dependency, public field,
+session store, extra role or new control is introduced.
+
+Screen A stays goal-first and explicitly blocked; B/C show initial/follow-up
+results only when observed; D gives held/unknown effects precedence. Screen F
+separates source, local integration, actual Linux/package and rollback/effect
+readiness; G reports only actual publication/role outcomes. The existing
+[evidence-to-display contract](#evidence-to-display-contract) still applies:
+aliases do not prove exact bindings, fresh responses or model-history continuity.
+
+### Screen F and measured-closeout direction
+
+Use the existing boundary -> observation -> missing gate -> owner/action layout.
+These are reporting rules, not new status codes, commands or acceptance fields:
+
+| Reached boundary | Visible distinction and existing next action |
+|---|---|
+| Accepted corrected source; formal corrected-join E2E absent | Source accepted; exact-join integration not yet verified. Original ReleasePlan/Scrum puts original Developer EndToEndTestLoop with Architect/Critic/Product Owner review FIRST, before DevOps, directly consuming construction without duplicate tasks. |
+| Exact-join local integration passes | Report local integration PASS separately from overall predeployment FAIL. It does not replace actual corrected Linux/package or live gates. |
+| Actual Linux/package or rollback/effect readiness missing | Show each branch separately. After E2E, original DevOps revalidates the SAME selected Linux engine read-only, without startup replay, and runs BOTH complete corrected Linux suites plus hosting/package gates. Independent authorized nonsecret rollback-byte/effect investigation and reviewed Git delivery continue with existing owners. |
+| Both actual readiness exits satisfied | Only then may one serialized guarded publisher proceed. Metadata matches, an image, offline fixture totals or report agreement alone never unlock it. |
+| Initial live parent held/incomplete, or final bindings unverified | Do not offer the follow-up or once-only supported stop/resume without a completed non-held initial parent. Isolation needs final deployed bindings, not recovery success. Preserve every historical UNKNOWN, held parent and rollback asset. |
+| Original E2E cannot be scheduled | Report the exact internal routing limitation to original planning owners. Do not invent human approval, redispatch source work, replay a continuation or edit installed runtime. |
+
+The next existing measured closeout should keep README status concise: release
+BLOCKED, accepted source is not a customer-ready demonstration, original
+corrected-join E2E and actual Linux/package and rollback/effect exits remain
+outstanding, and live continuity/recovery/isolation remain unverified.
+Link detailed attributed counts/history to the existing recovery document.
+Do not replace README with this operator table or freeze stale test counts.
+Retain the existing conditional two-turn command and setup; no command was
+executed against hosted agents by Designer. Supported compute stop/resume is
+not local engine startup, and the earlier timeout is not startup success.
+
+Designer scope ends at this UX/navigation handoff for original Product Owner
+and Critic review. Existing final-closeout ownership retains later measured
+copy changes and reviewed push/readback; no extra approval stage is introduced.
+Actual AC1-AC9/G1-G8, exact bindings, application-enforced Blob isolation limits,
+owned cleanup and historical uncertainty remain unchanged. No settings import,
+engine operation, cloud query, publication, inference or hosted stop/resume
+occurs in this amendment.
+
+Validation of this entry: an in-memory check using the existing absolute
+Python 3.12 x64 executable passed canonical references (ten components, five
+flows, eighteen steps), current-entry link/anchor resolution and the two-path
+documentation-only scope. `git diff --check` passed. The repository-local
+`scripts/Test-Repository.ps1` invocation was denied because interactive tool
+approval was unavailable, both in the initial combined probe and the isolated
+script invocation; it did not run. No full repository, formal E2E, actual Linux
+or live PASS is claimed. This access observation does not establish missing
+project authority, a user-only blocker or any runtime defect.
+
 ## Current continuation: existing-engine readiness and truthful next actions (October 20, 2026)
 
 Consumes accepted Architecture

@@ -1,5 +1,15 @@
 # Repository index
 
+Continuation-2 Scrum dispatch: inspected application `f4bed5a3`; adds
+`docs/customer-prototype-repaired-join-continuation-2-sprint-plan.json`.
+One dependency-ready existing-closeout task delivers exact accepted customer
+status `9ae328c8`, not moving HEAD or the already completed `b42ab2f8` slice.
+Original review records and fresh remote read establish that substantive gap.
+No construction, test replay or unchanged DevOps resume is assigned. Shared
+Git resources retain existing reconciliation ownership; planning-only ancestry
+cannot justify another delivery carousel. Historical plans and unmet gates
+remain intact. Planning is not execution-progress credit.
+
 Continuation-2 architecture: inspected application `9ae328c8`; adds
 `docs/customer-prototype-repaired-join-continuation-2-architecture.json`.
 Original status and prior-delivery agreements close both continuation-1 tasks.
@@ -1749,6 +1759,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-remaining-execution-sprint-plan.json`
 - `docs\customer-prototype-repaired-join-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-repaired-join-continuation-2-architecture.json`
+- `docs\customer-prototype-repaired-join-continuation-2-sprint-plan.json`
 - `docs\customer-prototype-repaired-join-continuation-architecture.json`
 - `docs\customer-prototype-repaired-join-remaining-release-plan.json`
 - `docs\customer-prototype-repaired-join-remaining-sprint-plan.json`

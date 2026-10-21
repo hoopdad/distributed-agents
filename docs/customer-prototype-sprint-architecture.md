@@ -1,5 +1,34 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## RE-EXEC-1 continuation: consume accepted repair, retain original-stage limits
+
+The [reviewed-join amendment](customer-prototype-reviewed-join-continuation-architecture.json)
+consumes original repair agreement `4334061a` for lab `88580156` and the
+accepted negative repository-check investigation `26415128`. Do not redispatch
+either task. Original resumed DevOps audit `4e6d08bb` confirms that the current
+continuation retains/skips agreed E2E `0a08120c`, which covers lab `651a2290`,
+not the repair. No supported dispatch correction has been established here.
+Do not invent an E2E resume key, substitute assigned-work E2E, modify runtime
+or journals, or repeat an unchanged DevOps resume.
+
+The last source-join record in `docs/design.md` still binds lab `651a2290`.
+Scrum can queue the **existing integration/final-closeout Developer's**
+unfinished repaired-join and reviewed Git-delivery slice, once, using its
+existing Git resources. This is useful approved `release-join`/`release-close`
+work, not new construction or a scheduler repair. Deliver only exact
+already-reviewed ancestry; new documentation and this amendment need their
+own original reviews before push. The amendment supplies the bounded card.
+No new owner or whole-sprint barrier is introduced.
+
+Original changed-source Developer E2E and Architect/Critic/Product Owner
+reviews remain mandatory before dependent changed-tool DevOps. The denied
+repository suite remains unmet; originating-owner rejection-record recovery
+is coordination, not a repeat of accepted negative research. Existing DevOps
+rollback-byte/effect investigation remains independent. BOTH readiness exits,
+all actual Linux/package and cloud gates, historical unknowns and no-startup
+replay remain binding. This continuation is not exhausted: the retained
+integration slice is ready. It creates no execution-progress credit.
+
 ## RE-EXEC-1 continuation: retained discovery ownership
 
 The separate [discovery continuation amendment](customer-prototype-discovery-continuation-architecture.json)

@@ -1,5 +1,17 @@
 # Repository index
 
+RE-EXEC-1 reviewed-join continuation freshness: based on application `3e8a1cf9`
+and accepted feature lab `88580156`; adds only
+`docs/customer-prototype-reviewed-join-continuation-architecture.json`.
+Navigate that separate amendment and sprint/client-release tier openings.
+Accepted repair and negative denial-evidence investigation are not redispatched.
+The existing integration/final-closeout owner's unfinished exact repaired-join
+and reviewed Git delivery slice is ready independently of live success; queue
+it once with existing Git resources. Original changed-source E2E still cannot
+be dispatched by the current DevOps-only continuation. No resume, scheduling
+repair, runtime edit or execution-progress claim is introduced. Existing
+rollback/effect ownership and all source/Linux/package/cloud gates remain.
+
 RE-EXEC-1 dispatch amendment freshness: based on application `b4250351`
 and selected feature lab `651a2290`; added
 `docs/customer-prototype-discovery-continuation-sprint-plan.json`, no deletions.
@@ -1596,6 +1608,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-remaining-execution-release-plan.json`
 - `docs\customer-prototype-remaining-execution-sprint-plan.json`
+- `docs\customer-prototype-reviewed-join-continuation-architecture.json`
 - `docs\customer-prototype-rp-s2-execution-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-execution-resume-sprint-plan.json`

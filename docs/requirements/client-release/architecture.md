@@ -1,5 +1,23 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## RE-EXEC-1 continuation: accepted repair requires its exact integration join
+
+Apply the [reviewed-join amendment](../../customer-prototype-reviewed-join-continuation-architecture.json)
+to **Guarded lab release toolchain** / `release-join`, `release-close` /
+AC7, AC8 and AC9. Original source reviewers accepted lab `88580156`;
+the durable design source join still binds lab `651a2290`. Queue only the
+existing integration/final-closeout Developer's unfinished join and reviewed
+feature-ref delivery slice, with the existing Git resources and no parallel
+replacement writer. No runtime or coordinator/specialist contract changes.
+
+The current continuation cannot dispatch required original changed-source
+E2E: it retains the historical agreed FAIL and resumes only DevOps. Integration
+does not fix that limitation. Return it directly to Scrum/orchestrator; do not
+add a speculative resume, substitute E2E task, runtime edit or unchanged retry.
+Accepted denial-evidence research remains closed and the repository suite
+remains unmet. Independent existing rollback/effect work continues. Both
+actual readiness exits and all original E2E/Linux/package/cloud gates remain.
+
 ## RE-EXEC-1 continuation: discovery is an entrypoint boundary
 
 Apply the [scoped discovery amendment](../../customer-prototype-discovery-continuation-architecture.json)

@@ -4,6 +4,7 @@ from __future__ import annotations
 import copy
 import dataclasses
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -44,6 +45,14 @@ class CapturedRemote(RecordingRemote):
 
 class ScenarioEvidenceTests(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
+        settings = patch.dict(os.environ, {
+            "DECISION_REQUESTS_PER_MINUTE": "17",
+            "DECISION_MODEL_DEPLOYMENT": "synthetic-decision",
+        })
+        settings.start()
+        # asyncTearDown is not run after a failed setup. Register restoration
+        # before calibration or any initial/follow-up/restart/isolated capture.
+        self.addCleanup(settings.stop)
         self.backend = MemoryBackend()
         self.remote = CapturedRemote(self.backend)
         self.checkpoints = {}
@@ -313,6 +322,77 @@ class ScenarioEvidenceTests(unittest.IsolatedAsyncioTestCase):
                 data["isolated"] = await self.capture("isolated", "leaked-" + role)
             with self.assertRaisesRegex(RuntimeError, "EVIDENCE_CONTENT_LEAK"):
                 self.validate(data)
+
+
+class ScenarioSettingsTests(unittest.TestCase):
+    def test_all_captures_own_settings_and_restore_ambient_values_and_absence(self):
+        for ambient in (None, ("invalid", ""), ("1", "ambient-decision")):
+            with self.subTest(ambient=ambient), patch.dict(os.environ):
+                names = ("DECISION_REQUESTS_PER_MINUTE", "DECISION_MODEL_DEPLOYMENT")
+                for index, name in enumerate(names):
+                    if ambient is None:
+                        os.environ.pop(name, None)
+                    else:
+                        os.environ[name] = ambient[index]
+                before = dict(os.environ)
+                captures = []
+                original = ScenarioEvidenceTests.capture
+
+                async def checked_capture(fixture, scenario, parent):
+                    self.assertEqual(
+                        tuple(os.environ[name] for name in names),
+                        ("17", "synthetic-decision"),
+                    )
+                    captures.append(scenario)
+                    return await original(fixture, scenario, parent)
+
+                with patch.object(ScenarioEvidenceTests, "capture", checked_capture):
+                    result = unittest.TestResult()
+                    ScenarioEvidenceTests(
+                        "test_actual_offline_graph_captures_pass_including_four_call_revision"
+                    ).run(result)
+                self.assertTrue(result.wasSuccessful(), result.errors + result.failures)
+                self.assertEqual(captures, ["initial", "followup", "restart", "isolated"])
+                self.assertEqual(dict(os.environ), before)
+
+    def test_setup_failure_restores_settings_before_and_during_capture(self):
+        for ambient in (None, ("invalid", "ambient-decision")):
+            for failure in ("calibration", "initial", "followup", "restart", "isolated"):
+                with self.subTest(ambient=ambient, failure=failure), patch.dict(os.environ):
+                    names = ("DECISION_REQUESTS_PER_MINUTE", "DECISION_MODEL_DEPLOYMENT")
+                    for index, name in enumerate(names):
+                        if ambient is None:
+                            os.environ.pop(name, None)
+                        else:
+                            os.environ[name] = ambient[index]
+                    before = dict(os.environ)
+                    original = ScenarioEvidenceTests.capture
+                    original_calibration = synthetic_calibration
+
+                    def calibration():
+                        self.assertEqual(
+                            tuple(os.environ[name] for name in names),
+                            ("17", "synthetic-decision"),
+                        )
+                        if failure == "calibration":
+                            raise RuntimeError("SYNTHETIC_SETUP_FAILURE")
+                        return original_calibration()
+
+                    async def capture(fixture, scenario, parent):
+                        if scenario == failure:
+                            raise RuntimeError("SYNTHETIC_SETUP_FAILURE")
+                        return await original(fixture, scenario, parent)
+
+                    with patch(__name__ + ".synthetic_calibration", side_effect=calibration), \
+                         patch.object(ScenarioEvidenceTests, "capture", capture):
+                        result = unittest.TestResult()
+                        ScenarioEvidenceTests(
+                            "test_actual_offline_graph_captures_pass_including_four_call_revision"
+                        ).run(result)
+                    self.assertEqual(len(result.errors), 1, result.errors)
+                    self.assertIn("SYNTHETIC_SETUP_FAILURE", result.errors[0][1])
+                    self.assertFalse(result.failures)
+                    self.assertEqual(dict(os.environ), before)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,19 @@
 # Repository index
 
+Remaining-execution release planning freshness: based on application `7322ed7a`
+and selected feature lab `651a2290`; added only
+`docs/customer-prototype-remaining-execution-release-plan.json`, no deletions.
+Navigate that separate plan for fresh original traversal: one remaining-execution
+sprint, zero duplicate construction, original Developer E2E and its original
+reviews FIRST, then original DevOps. Historical ReleasePlan, execution-resume
+contract, all three partial sprints and capped invocations remain untouched.
+Current Architecture/UX outcomes and original fixture/integration audits were
+opened; accepted source/UX accounting is consumed, not redispatched.
+BOTH actual Linux/package and independent rollback-byte/effect exits gate one
+publisher. Reviewed Git delivery stays independent under existing closeout
+ownership. This navigation/planning change proves neither actual dispatch nor
+execution/live progress; no startup replay, new scope or acceptance waiver.
+
 Fresh original traversal UX freshness: based on accepted architecture `a6443b6c`;
 no paths added/deleted, runtime or presentation contracts changed. Navigate
 `docs/customer-prototype-ux.md#current-recovery-traversal-source-acceptance-is-not-execution-october-21-2026`
@@ -1532,6 +1546,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`
+- `docs\customer-prototype-remaining-execution-release-plan.json`
 - `docs\customer-prototype-rp-s2-execution-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-execution-resume-sprint-plan.json`

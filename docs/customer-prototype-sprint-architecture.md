@@ -1,5 +1,44 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## RE-EXEC-1 continuation: retained discovery ownership
+
+The separate [discovery continuation amendment](customer-prototype-discovery-continuation-architecture.json)
+localizes the newly observed original E2E failure at application `66224a3d` /
+selected feature lab `651a2290`. Opened original E2E audit `0a08120c` and
+DevOps audit `78728c47` with their original review decisions. E2E agreement
+accepts an actionable FAIL; DevOps remains incomplete. The retained runner
+does not bind application modules before discovery, while the Windows identity
+trace test prepends lab tools. This affects **Guarded lab release toolchain** /
+`release-join`, `release-package` / AC7, not hosted identity or the accepted
+cold-import fixture correction.
+
+This overlay supersedes only the earlier zero-new-construction statement:
+there is now one bounded Developer entrypoint repair/regression and a separate
+read-only investigation of the exact repository-check denial/changed condition.
+The amendment supplies their source criteria, ownership, doneWhen, exclusions
+and original-review handoffs for Scrum's queue. The two tasks are independent.
+Missing `scripts/Test-Repository.ps1` execution remains unmet, not a waiver,
+new user-permission request or license to retry/bypass the denial.
+
+Consume the four exact originating dispositions under
+`["yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop", ...]`:
+`RE-EXEC-1-DISCOVERY-OWNERSHIP`, `RE-EXEC-1-REPOSITORY-CHECK`,
+`RE-EXEC-1-RELEASE-READINESS`, `RE-EXEC-1-REVIEWED-GIT-DELIVERY`.
+Do not reopen accepted fixture source or UX accounting. The canonical
+solutionModel, coordinator/specialist tiers, five flows and eighteen step IDs
+are unchanged.
+
+New reviewed source returns through existing integration ownership to actual
+original changed-join E2E and Architect/Critic/Product Owner reviews before
+dependent DevOps. Historical agreed FAIL is not a cached passing prerequisite.
+If original changed-source E2E cannot dispatch, report the precise internal
+scheduling limitation; do not replace that stage or loop unchanged continuations.
+Existing rollback ZIP-byte/effect investigation and reviewed Git delivery remain
+independent under their existing owners. BOTH actual readiness exits still
+precede one serialized guarded publisher. Preserve all live gates, historical
+plans, UNKNOWNs, held parents and the no-startup-replay restriction. This
+architecture amendment is not execution progress or release acceptance.
+
 ## RE-EXEC-1: accepted corrected join, original integration gate first
 
 This sprint consumes the accepted [holistic recovery architecture](customer-prototype-architecture.md#current-recovery-traversal-validate-the-accepted-corrected-join-first-october-21-2026),

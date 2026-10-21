@@ -1,5 +1,27 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## RE-EXEC-1 continuation: discovery is an entrypoint boundary
+
+Apply the [scoped discovery amendment](../../customer-prototype-discovery-continuation-architecture.json)
+over the prior zero-construction handoff. For **Guarded lab release toolchain** /
+`release-join`, `release-package` / AC7, Developer owns only the retained Windows
+runner, a new discovery-order regression and the lab index. Assert selected
+application `demo` and `live_acceptance` ownership before test discovery can
+prepend lab tools; wrong owner must fail rather than skip. Retain original-layout
+support, legitimate platform exclusions and the accepted cold-import fixtures.
+Complete corrected retained checks and original source review hand back through
+existing integration to actual original changed-join E2E, not a substitute
+assigned-work E2E task. The denied required repository check remains unmet;
+independent bounded evidence discovery must not retry or bypass it.
+
+This defect gates passing source readiness, not its repair, existing independent
+rollback/effect work or reviewed Git delivery. The coordinator/specialist tier
+contracts and canonical model remain unchanged. Original DevOps still requires
+passing reviewed source checks, SAME-engine read-only revalidation without startup
+replay, BOTH actual Linux suites/package gates and independent rollback-byte/effect
+readiness before one publisher. Neither this amendment nor the historical agreed
+E2E FAIL establishes runtime, package or live acceptance.
+
 ## RE-EXEC-1: original corrected-join E2E before guarded execution
 
 The [current sprint contract](../../customer-prototype-sprint-architecture.md#re-exec-1-accepted-corrected-join-original-integration-gate-first)

@@ -1,5 +1,18 @@
 # Repository index
 
+RE-EXEC-1 discovery continuation freshness: based on application `66224a3d`
+and selected feature lab `651a2290`; added only
+`docs/customer-prototype-discovery-continuation-architecture.json`, no deletions.
+Navigate that separate architecture/task amendment and the current sprint/client
+release tier openings. Original E2E `0a08120c` accepts actionable FAIL; DevOps
+`78728c47` remains incomplete. One scoped retained Windows entrypoint repair
+and one independent read-only repository-check condition investigation replace
+only the stale zero-new-construction assumption. Accepted cold-import fixtures,
+runtime tiers and canonical solutionModel remain unchanged. Original changed-join
+E2E/reviews still precede dependent DevOps; independent rollback/effect and reviewed
+Git delivery retain existing ownership. No test denial bypass, startup replay,
+new feature or live/implementation progress is authorized by this amendment.
+
 RE-EXEC-1 sprint planning freshness: based on accepted sprint architecture
 `c4b58286`, application baseline `7322ed7a` and selected lab `651a2290`.
 Added only `docs/customer-prototype-remaining-execution-sprint-plan.json`;
@@ -1559,6 +1572,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\customer-prototype-architecture.md`
 - `docs\customer-prototype-current-sprint-plan.json`
+- `docs\customer-prototype-discovery-continuation-architecture.json`
 - `docs\customer-prototype-engine-mount-amendment.json`
 - `docs\customer-prototype-engine-recovery-sprint-plan.json`
 - `docs\customer-prototype-fixture-continuation-architecture.json`

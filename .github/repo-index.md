@@ -1,5 +1,20 @@
 # Repository index
 
+RP-S3 continuation-plan freshness: baseline application `6bd10951` / selected
+feature lab `5da7a2ea`; one public plan added:
+`docs/customer-prototype-rp-s3-retained-input-sprint-plan.json`. Earlier saved
+plans remain history. Consumes accepted current design/architecture and stopped
+DevOps `7e74a2ea`, applying exact `retained-linux-test-input-closure` reference.
+Existing Developer owns named retained import/workflow-fixture inputs and
+regressions, then source integration and reviewed Git delivery. Independent
+original DevOps finishes rollback ZIP bytes/effects without waiting on source.
+Original changed-join E2E and BOTH actual readiness exits precede one publisher.
+Completed initial parent gates H/I; final deployment gates J without G6/full-
+sprint dependency. Matching primary-parent/transport resources serialize actual
+mutation. Eleven task cards preserve canonical scope, original partial sprints,
+UNKNOWNs and stop accounting; no duplicate accepted fixture/UI/runtime work.
+Planning only: actual dispatch/original votes follow resolved owner response.
+
 RP-S3 cumulative architecture freshness: baseline `a066bdf8`; no added/deleted
 paths. `docs/customer-prototype-sprint-architecture.md` current RP-S3 overlay
 and all three `docs/requirements/*/architecture.md` contracts preserve the
@@ -1398,6 +1413,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-rp-s2-execution-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
+- `docs\customer-prototype-rp-s3-retained-input-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-sprint-plan.json`
 - `docs\customer-prototype-sprint-architecture.md`
 - `docs\customer-prototype-sprint-design.md`

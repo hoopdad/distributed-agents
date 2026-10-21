@@ -2,28 +2,102 @@
 
 ## Release decision
 
-**October 20, 2026 — BLOCKED; not customer-ready. No release PASS.**
+**October 21, 2026 — BLOCKED; not customer-ready. No release PASS.**
 The customer goal is a hosted coordinator repeatedly calling remote architect
 and reviewer agents while preserving each specialist's session within one
 parent conversation. Exactly three hosted roles and no hidden local fallback
 remain required.
 
-This closeout documents available outcomes; it does not complete the customer
-outcome. Original RP-S3 E2E reporting is accepted with **predeployment FAIL**.
-The enclosing DevOps cloud-pass condition remains unmet. Agreement on reporting
-cannot establish deployment or waive AC1–AC9/G1–G8.
+### Current measured execution and evidence boundary
 
-Evidence basis: supplied originating sprint outcomes and original reviewer
-agreements, plus public application inspection at
-`23e7d48d4b227638638294072092427942a15e7e` on
-`feature/customer-hosted-session-prototype`. Initial worktree/index were clean.
-Compared execution inputs are unchanged from accepted application baseline
-`b74b84edb6c05fb4dc7f58ba7f88925e2402ddc9` across runtime, tests, scripts,
-configuration, dependencies and release descriptors. This comparison is not
-operational installation or new test execution. No private capture, lab
-checkout, settings, transport or current cloud state was inspected here.
+Original repaired-join E2E **actually executed** on application
+`b42ab2f84e023f52c6c70e46c93d77b86949831d` and selected lab
+`885801565ae11878a7c4f33c29f6b45b0eb19af7`. The original report and original
+Architect, Critic and Product Owner records were opened for this correction:
 
-## Retained source and accepted bounded handoffs
+- Application wrapper: 206 tests passed.
+- Complete corrected retained wrapper: another 206 application tests passed;
+  233 retained tests were reported, with 230 passes, three explicit native-Linux
+  exclusions and no failures/errors. All seven fresh-process discovery
+  regressions and the committed split-root case passed; application imports
+  resolved to their intended owner.
+- The E2E owner accounted for documentation/index-only ancestry after accepted
+  application integration `8b50f343`. These Windows Python 3.12.10 results
+  cover that reported join, not a final Linux/amd64/Python 3.13 package.
+- All three original reviewers agreed to completion of bounded E2E reporting
+  with **predeployment FAIL**. Required `scripts/Test-Repository.ps1`
+  validation remains **unexecuted** under its exact interactive-approval
+  denial: no user response was available and no affirmative approval followed.
+  This is not an executed test failure or a diagnosed Azure permission defect.
+
+Original DevOps then entered and reported an accurate incomplete outcome.
+Its owner followed a provenance-linked original stage proof and reported a
+matching commitment for the **diagnostic** package. The package bytes were
+not rehashed. Original reviewers' direct proof reads were denied; the
+proof-content/hash comparison remains owner-attributed, not independently
+confirmed here. That finding does not locate or verify common rollback ZIP
+bytes, reconcile the separate historical UNKNOWN publication, or establish
+next-operation effect readiness. Original reviewers agreed with the
+incomplete report, with `taskComplete=false`; cloud-pass remains unmet.
+
+Evidence references: original E2E outcome `bc39274e` and original DevOps
+outcome `15229112` in delivery run
+`490ad8fa-3d48-4905-a216-d2159f43d446`, including their original reviewer
+records; [accepted repaired-source join](design.md#reviewed-discovery-repair-source-join);
+[current continuation architecture](customer-prototype-repaired-join-continuation-architecture.json);
+[remaining release plan](customer-prototype-repaired-join-remaining-release-plan.json).
+These are inspected, attributed execution results, **not tests rerun by this
+documentation correction**. No settings, engine, cloud or denied proof access
+was attempted here. Agreement on a FAIL report cannot waive AC1–AC9/G1–G8.
+
+### Current closing owners and localized gates
+
+1. **Exact repository-check approval:** obtain affirmative approval of the
+   previously denied bounded execution and its actual interactive tool prompt,
+   then run and pass the required validation. No retry before approval,
+   alternate-path bypass or constituent-check substitute is permitted.
+2. **Existing original DevOps, coordinated by Scrum:** independently obtain
+   provenance-backed common-package ZIP and operation-bound unresolved-effect
+   record locators, then verify the actual bytes and applicable effects.
+   This lane does not require Linux success. The diagnostic finding is a
+   bounded record boundary, not global absence, exhaustion or a user-only
+   locator problem. Do not repeat denied access or uncertain effects.
+3. **Dependent original DevOps execution:** after required source checks pass,
+   revalidate the same selected engine read-only without startup replay or
+   Docker restart; run both complete corrected actual Linux suites and
+   hosting/package gates. Actual package readiness **and** independent common
+   rollback-byte/effect readiness must pass before one serialized publisher.
+4. **Live acceptance:** verify actual final common-bundle G1–G4 and a completed
+   non-held initial parent before same-parent follow-up and once-only supported
+   stop/resume. Separate-parent isolation requires final deployed bindings,
+   not recovery success. Preserve all continuity, provenance and cleanup gates.
+5. **Existing integration/final-closeout Developer:** retain reviewed delivery
+   through application `8b50f343` and lab `88580156`. The sibling delivery
+   assignment is pinned to earlier reviewed application `b42ab2f8`, excluding
+   this correction and subsequent planning. This correction needs its own
+   original Architect/Critic review before later exact-ref delivery; no
+   moving-HEAD push or completed final AC8 claim is authorized.
+
+Final deployed/common-bundle and rollback bindings remain unverified.
+Historical UNKNOWN publications, held parents and cleanup uncertainty remain
+open. Independent investigation and reviewed-document delivery are not blocked
+by Linux success; dependent execution is not unlocked by this status update.
+The sprint and release remain partial.
+
+## Historical October 20 source and bounded handoffs
+
+The following source history is retained, not redispatched. The October 21
+measured status and closing owners above supersede obsolete pending-construction
+and pending-E2E assertions below, without erasing their original outcomes.
+
+The earlier closeout inspected application
+`23e7d48d4b227638638294072092427942a15e7e` on the feature branch with a clean
+worktree/index, comparing unchanged runtime, tests, scripts, configuration,
+dependencies and release descriptors to baseline
+`b74b84edb6c05fb4dc7f58ba7f88925e2402ddc9`. That was source inspection, not
+operational installation or new test execution. It reported accepted RP-S3
+predeployment FAIL and an unmet DevOps cloud-pass condition. Those historical
+findings remain distinct from the repaired-join execution reported above.
 
 - Customer-first README and opt-in human stderr presentation remain implemented.
   Machine delegation/result contracts and acceptance parsing are unchanged.
@@ -42,7 +116,7 @@ checkout, settings, transport or current cloud state was inspected here.
   `673d1e9e9913bd636c35c91aa9b013b05b355d69`. It maps
   `live_acceptance.py`, workflow/history fixtures and private input requirements.
   Supplied JSON consistency is not independently authenticated provenance.
-- Current accepted RP-S3 backlog review:
+- Historical accepted RP-S3 backlog review:
   `be996f84694f9c94f163448f8afcc3ddce095223`; retrospective:
   `23e7d48d4b227638638294072092427942a15e7e`.
 
@@ -64,8 +138,8 @@ of a provider defect or missing grant.
 | AC4: recovery/isolation | Unreached live | Confirm once-only supported compute stop/resume with retained checkpoints/effects and no duplicates; separately prove distinct-parent bindings/scope/content. |
 | AC5: G1–G8 | Not passed | See gate ledger; no verified final common bundle or completed non-held initial parent. |
 | AC6: customer clarity | Implemented; live demonstration unreached | README/source path and opt-in human view retained; actual two-turn demonstration remains unobserved. |
-| AC7: exact release validation | Incomplete | Windows checks are attributed offline evidence, not exact operational-join, retained-suite or final Linux/amd64/hosting-Python package validation. |
-| AC8: shareable source/push | Partial; incomplete | Application handoffs retained; integration owns actual loaded-root reconciliation, complete task/branch/commit accounting, remote freshness and reviewed scoped push. |
+| AC7: exact release validation | Incomplete; original repaired-join offline suites passed | Required repository validation remains unexecuted under the exact approval denial; both corrected actual Linux suites and final hosting/package validation remain outstanding. |
+| AC8: shareable source/push | Partial; reviewed source delivery retained | Application `8b50f343` / lab `88580156` delivery is accepted; existing closeout retains exact reviewed-document delivery, current correction review and final scoped Git accounting. |
 | AC9: truthful delivery | Blocked documentation supplied; verified delivery incomplete | Conditional setup/demo available; exact final/rollback bindings, actual continuity proof, final package/push and release-owned cleanup remain unestablished. |
 
 | Gate | Current disposition |
@@ -79,7 +153,11 @@ of a provider defect or missing grant.
 | G7 | Separate-parent live binding/scope/content-exclusion proof unreached; offline controls retained. |
 | G8 | Truthful blocked status documented; fresh exact bindings and release-owned cleanup proof incomplete; historical UNKNOWNs remain open. |
 
-## Existing closing owners and immediate stops
+## Historical October 20 closing owners and stops (superseded routing)
+
+These were the earlier closeout's actions, not current assignments. Accepted
+ownership, runner, integration and repaired-join E2E work must not be reopened.
+Use the current closing-owner list above for remaining work.
 
 1. **Existing ownership Developer and originating Architect/Critic:** provide
    actual nonsecret Python/PowerShell resolver contents, attributable sibling
@@ -123,7 +201,7 @@ Exact applicable prior references remain binding:
   and `["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","devops-exact-release-cloud-pass"]`:
   accepted bounded reports remain closed; enclosing cloud-pass remains unmet.
 
-Current RP-S3 review/retro acceptance is consumed through its own supplied
+Historical RP-S3 review/retro acceptance is consumed through its own supplied
 original agreements, not transferred earlier votes. No prior disposition is
 superseded, release criterion waived or originating stop/no-progress history
 reset. No authoritative stop-count inference is made from aggregate rounds.
@@ -158,7 +236,11 @@ Raw terminal capture is not enriched cross-scenario evidence. DevOps must
 associate actual request captures, manifests, immutable artifacts, cumulative
 journals and checkpoints; do not reconstruct observed sends from intentions.
 
-## Validation attribution, bindings, Git and cleanup
+## Historical validation attribution, bindings, Git and cleanup
+
+This section preserves the October 20 closeout's attributed observations and
+then-outstanding work. It is not a fresh inventory or the current E2E/DevOps
+status. See the October 21 execution and ownership sections above.
 
 Supplied accepted RP-S1 Developer evidence reports 204 Windows offline tests
 in **47.262 seconds**, dependency/compilation checks and repository validation.

@@ -20,58 +20,36 @@ session IDs, framework session IDs and pinned deployed versions. New
 invocations get new response IDs and produce current design/review artifacts.
 A separate parent gets its own child bindings and artifact scope.
 
-**Release status — blocked, not customer-ready (October 20, 2026):**
-originating ownership, runner corrections and source integration handoffs are
-accepted, including the operational-context correction and local integration.
-The existing-engine helper and its source/mount regressions are accepted.
-In the predecessor DevOps execution, its startup command timed out; a later
-read-only observation found the same selected Linux engine ready without
-another startup. These are separate outcomes, not recovery-command success.
-The latest actual Linux/amd64 hosting run passed the application gate:
-206 tests, 199 passed, seven platform/optional skips. Separate retained
-discovery reached 224 tests: 178 passed, 43 platform skips and three fixture
-configuration errors. All seven native-observation cases passed. Neither image
-construction nor the application gate alone is complete package validation.
-The accessible, hash-verified inspection record establishes the prior inspected
-image ID separately from exported manifest/config digests; it is not a new build.
-The cold-import fixture correction now has original Architect/Critic acceptance.
-Fresh joined offline checks passed: all 206 application tests; 223 of 226
-retained tests, with three explicit native-Linux exclusions and no dirty-source
-or missing-fixture skip. Runtime and named helper-input seals are unchanged;
-the changed test-only bytes are recorded separately in the
-[fixture source join](docs/design.md#reviewed-cold-import-fixture-source-join).
-Original changed-join E2E precedes DevOps same-selection readiness revalidation,
-without startup replay, and BOTH complete Linux suites and package gates.
-Those actual gates remain outstanding; offline success does not supersede the
-failed retained-container result.
+**Release status — blocked, not customer-ready (October 21, 2026):**
+original repaired-join E2E executed against application `b42ab2f8` and lab
+`88580156`: 206 application tests passed; the retained wrapper passed another
+206 application tests and 230 of 233 retained tests, with three native-Linux
+exclusions. Original Architect/Critic/Product Owner agreed to the bounded
+**predeployment FAIL** report, not release readiness. Required repository
+validation remains unexecuted because its exact interactive execution was
+denied when no user response was available; this is not an executed test
+failure. No retry before affirmative approval, alternate-path bypass or
+constituent-check substitute is permitted.
 
-Original reviewers inspected four accessible exact-version private reads with
-package/identity matches and attributable newly owned cleanup. This advances
-bounded metadata evidence, not runtime health, collaboration or common rollback
-ZIP-byte availability. Complete rollback-byte and unresolved-effect accounting
-remains outstanding independently of Linux/package validation; operational
-freshness must be revalidated before external effects. Both actual readiness
-gates must pass before one serialized guarded publisher proceeds to final
-common-bundle live checks. Reviewed source-integration refs in both repositories
-are pushed and read back through application `b18cf3ec` and lab `651a2290`,
-including the earlier reviewed closeout and continuation planning. This new
-join's documentation still requires original review and the existing final
-execution closeout's reviewed-document push.
+Original DevOps entered, but deployment and cloud-pass remain incomplete.
+Its diagnostic-only provenance finding does not verify common rollback ZIP
+bytes or reconcile unresolved effects. Existing DevOps/Scrum record-locator
+coordination remains independent work. Dependent Linux/hosting/package
+execution and publication still wait for passing required source checks;
+both actual package readiness and rollback/effect readiness must pass before
+one serialized publisher. No engine-startup or uncertain-effect replay.
 
-Accepted offline assertions are not a live demonstration. Neither identity
-path is live-selected; live two-turn continuity, supported compute stop/resume
-and separate-parent isolation remain unverified. The historical remote failure
-was `NATIVE_HOST_PRINCIPAL`, before the architect application executed; this
-is not a fresh observation of the current candidate. The mixed diagnostic
-deployment is not a final common-bundle release.
-[Release notes and requirement status](docs/customer-prototype-release-notes.md)
-retain the earlier blocked closeout; the
-[current release plan](docs/customer-prototype-release-plan.md) routes the
-same-selection package validation, independent inventory and remaining gates. Final
-deployed and rollback bindings remain unverified.
-[Recovery evidence and gates](docs/identity-recovery-plan.md)
-retain the publication **UNKNOWN**, held parents and unproven historical
-cleanup; none may be cleared or replayed to make a demo pass.
+Offline results are not live proof: neither identity path is live-selected;
+final common-bundle collaboration, two-turn continuity, supported compute
+stop/resume and separate-parent isolation remain unverified. Reviewed source
+delivery through application `8b50f343` / lab `88580156` is retained; later
+documentation has separate reviewed-delivery ownership, not an automatic
+moving-HEAD push. See [current evidence and remaining gates](docs/customer-prototype-release-notes.md)
+and the [remaining execution plan](docs/customer-prototype-repaired-join-remaining-release-plan.json).
+The [recovery chronology](docs/identity-recovery-plan.md) preserves earlier
+Linux failures, the historical `NATIVE_HOST_PRINCIPAL` failure, publication
+**UNKNOWN**, held parents and unproven cleanup. Final deployed/rollback
+bindings remain unverified; none of that history is closed by offline passes.
 
 **Read the source:** [workflow](demo/workflow.py) (`begin` -> `route` ->
 `execute` -> `publish`) -> [remote session restore/invoke](demo/foundry.py)

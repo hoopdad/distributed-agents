@@ -1,5 +1,21 @@
 # Repository index
 
+RP-S3 Git-closeout freshness: baseline application `8287395e` / selected
+feature lab `1526012`; no added/deleted paths. Opened original join agreement
+`fc2a6414` (Architect/Critic task-complete) and stopped DevOps `7e74a2ea`.
+Both exact reviewed feature refs now pushed/read back, including application
+`98128bb8`/`0cac08c9`, lab `5da7a2ea` and current reviewed ancestry; no abandoned
+code/branches. README measured status now distinguishes later application
+container PASS from retained discovery failure and accepted offline correction,
+accessible exact private metadata from missing rollback ZIP bytes/effect
+readiness, and owner-attributed image inspection from historical digest labels.
+Navigate `docs/identity-recovery-plan.md#reviewed-git-delivery-and-measured-status-closeout-october-20-2026`
+for delivery accounting and original E2E/DevOps handoffs. No runtime or tool
+changes; both actual readiness exits and all live gates remain. This new
+documentation requires original review; existing final execution closeout
+Developer owns subsequent reviewed push/readback and evidence-warranted wording.
+Earlier entries retain dated history, not current pending-ref status.
+
 RP-S3 retained-input integration freshness: based on reviewed application
 `86bc10a5` / selected feature lab `f3a7d0a`; no added/deleted paths.
 Opened original retained correction agreement `e95d1ebb`, current architecture/

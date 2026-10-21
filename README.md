@@ -27,27 +27,33 @@ The existing-engine helper and its source/mount regressions are accepted.
 In the predecessor DevOps execution, its startup command timed out; a later
 read-only observation found the same selected Linux engine ready without
 another startup. These are separate outcomes, not recovery-command success.
-A Linux/amd64 hosting image built, but application container tests failed
-(191 tests, 14 errors, seven skips); the separate retained Linux suite was
-not reached. Image construction is not package validation. The exported
-manifest digest is not an authoritative image ID, which remains unverified.
-The public test-input/isolated-fixture and selected-WSL exact-inventory source
-corrections now have original review acceptance. Their final joined offline
-checks passed (206 application tests; 217 of 220 retained tests, with three
-native-Linux exclusions). Original changed-join E2E precedes DevOps
-same-selection readiness revalidation, without startup replay, and complete
-Linux application **and** retained-container checks. These actual gates remain
-outstanding; offline success does not supersede the failed container result.
+That first Linux application run failed (191 tests, 14 errors, seven skips).
+After accepted input/fixture corrections, the later actual Linux/amd64 hosting
+run passed the application gate: 206 tests, 199 passed, seven platform/optional
+skips. Its separate retained discovery failed: 184 tests, 145 passed,
+38 Windows-specific skips and one missing-module import error. Neither image
+construction nor the application gate alone is complete package validation.
+The latest image inspection remains owner-attributed pending accessible proof;
+historical exported manifest/config digests are not authoritative image IDs.
+The retained import/workflow-fixture correction and its source join now have
+original Architect/Critic acceptance. Joined offline checks passed: 206
+application tests; 221 of 224 retained tests, with three explicit native-Linux
+exclusions and no dirty-source or missing-fixture skip. Original changed-join
+E2E precedes DevOps same-selection readiness revalidation, without startup
+replay, and complete Linux application **and** retained-container checks for
+the corrected inputs. Those actual gates remain outstanding; offline success
+does not supersede the failed retained-container result.
 
-Earlier accepted evidence established bounded selected-WSL read-only access
-and newly owned closure. The latest DevOps report also describes private
-reads and closure, but its fresh receipt was inaccessible to original review;
-those latest claims remain owner-attributed. Neither is final runtime health
-or collaboration proof; operational freshness must be revalidated before
-external effects. Complete
-rollback-version/package and unresolved-effect inventory remains outstanding
-independently of Linux/package validation. Both actual readiness gates must pass before
-one serialized guarded publisher proceeds to final common-bundle live checks.
+Original reviewers inspected four accessible exact-version private reads with
+package/identity matches and attributable newly owned cleanup. This advances
+bounded metadata evidence, not runtime health, collaboration or common rollback
+ZIP-byte availability. Complete rollback-byte and unresolved-effect accounting
+remains outstanding independently of Linux/package validation; operational
+freshness must be revalidated before external effects. Both actual readiness
+gates must pass before one serialized guarded publisher proceeds to final
+common-bundle live checks. Reviewed source-integration refs in both repositories
+are now pushed and read back; this measured-status update still requires original
+review and the existing final execution closeout's reviewed-document push.
 
 Accepted offline assertions are not a live demonstration. Neither identity
 path is live-selected; live two-turn continuity, supported compute stop/resume

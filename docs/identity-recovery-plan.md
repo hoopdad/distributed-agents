@@ -1,5 +1,55 @@
 # Identity propagation recovery: design and execution plan
 
+## Reviewed Git delivery and measured-status closeout (October 20, 2026)
+
+`RP-S3-GIT-CLOSEOUT` inspected original source-join agreement `fc2a6414`:
+Architect and Critic both agree, taskComplete true, no unmet criteria.
+The exact reviewed feature refs are now pushed and independently read back:
+
+| Repository | Delivered reviewed feature commit |
+| --- | --- |
+| Application | `8287395e331a7182e4730d02d676aaa0a9ab2bb1` |
+| Selected feature lab | `152601209af4f0dcabe0acf0a7d7984fbf05c99d` |
+
+Ancestry checks retain application `0cac08c9`, `98128bb8`, `86bc10a5`
+and lab `5da7a2ea`, `00bb63c`, `f3a7d0a`, including current reviewed
+planning and source corrections. No merge, abandoned task code, retained
+task branch or canonical dirty-source adoption was needed. This closes the
+previous join's deferred reviewed-ref delivery, not a runtime gate.
+
+The opened stopped DevOps audit `7e74a2ea` supersedes older measured status
+only for its actual observations: the later Linux application gate passed
+(206 run, 199 passed, seven platform/optional skips), while separate retained
+discovery failed (184 run, 145 passed, 38 Windows-specific skips, one import
+error). Original reviewers inspected four accessible exact private version
+reads with package/identity matches and attributable newly owned cleanup.
+These receipts are metadata/route evidence, not verified common rollback ZIP
+bytes, complete effect readiness, specialist ingress or collaboration.
+The latest inspected image binding remains owner-attributed pending accessible
+inspection proof. Historical exported manifest/config digests retain their
+correct labels; the startup timeout and later same-selection readiness remain
+separate, with no startup replay or inferred helper success.
+
+The accepted retained-input correction and [reviewed join](design.md#reviewed-retained-input-source-join)
+now pass local checks (206 application; 221 of 224 retained, three attributed
+native-Linux exclusions). These are the integration owner's measurements,
+not rerun by this documentation-only closeout and not actual Linux success.
+Original changed-join E2E must precede complete corrected-input Linux suites.
+Independent original DevOps rollback ZIP-byte/effect accounting continues.
+BOTH actual exits still gate one publisher, trusted architect-before-reviewer
+ingress and final common-bundle G1-G4. A completed non-held parent gates
+follow-up/recovery; isolation does not depend on recovery success.
+
+This closeout changes only README, this recovery document and the application
+index. Its new commit awaits original Architect/Critic review. The existing
+Developer in `RP-S3-DELIVERY-LEDGER`/final execution closeout owns its subsequent
+reviewed push/readback and any later evidence-warranted measured wording;
+source delivery need not wait for live testing. Preserve all UNKNOWNs, held
+parents, rollback assets and historical cleanup uncertainty. No settings,
+authentication, engine/build, transport/cloud, inference or hosted stop/resume
+operation is established by this Git delivery. Earlier sections remain dated
+history rather than current pending-ref status.
+
 ## Reviewed retained-input integration handoff (October 20, 2026)
 
 `RP-S3-RETAINED-SOURCE-JOIN` consumes original Architect/Critic source
@@ -9,9 +59,10 @@ records actual loaded owners, committed-byte equality, unchanged runtime/
 Decision seal, separate build/helper/test input provenance and fresh checks.
 Reviewed application `86bc10a5` and lab `f3a7d0a` were pushed and exactly
 read back, retaining `98128bb8`, `5da7a2ea`, `0cac08c9` and current planning.
-No task code was abandoned. This new documentation/index slice awaits original
-review; `RP-S3-GIT-CLOSEOUT`'s existing integration Developer owns its later
-reviewed push/readback, with final execution closeout retaining any remainder.
+No task code was abandoned. Original review and subsequent reviewed push/readback
+of this documentation/index slice are now complete, as recorded in the Git
+delivery closeout above. Final execution closeout retains delivery ownership
+for the new measured-status documentation after its own original review.
 
 The exact originating reference
 `["yaml-loops-v1:sprint/2/RP-S2/DevOpsWorkLoop","retained-linux-test-input-closure"]`

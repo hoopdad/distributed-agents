@@ -1,0 +1,191 @@
+{
+  "kind": "SprintArchitecture",
+  "sprintId": "REPAIRED-JOIN-REMAINING-EXECUTION",
+  "purpose": "Separate first-continuation amendment after actual original repaired-join E2E and DevOps entry; retain historical plans.",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "source": {
+    "applicationInspected": "b42ab2f84e023f52c6c70e46c93d77b86949831d",
+    "acceptedIntegration": "8b50f343b649f75ec02b187f871bb0d77b9cee24",
+    "selectedLab": "885801565ae11878a7c4f33c29f6b45b0eb19af7",
+    "labQualification": "Consumed original current E2E/DevOps handoff; no fresh lab inspection in this amendment.",
+    "sourceContract": "docs/design.md#reviewed-discovery-repair-source-join",
+    "applicationRemoteRead": "git ls-remote --exit-code origin refs/heads/feature/customer-hosted-session-prototype returned 8b50f343b649f75ec02b187f871bb0d77b9cee24 during this assessment.",
+    "ancestry": "Eight commits after accepted integration change eleven documentation/index paths only. Current application working tree was clean at initial inspection."
+  },
+  "solutionModel": {
+    "reference": "docs/customer-prototype-architecture.md#solutionmodel",
+    "disposition": "Retain all ten component IDs, five triggered flows, eighteen steps and support links unchanged.",
+    "affectedComponents": ["terminal-client", "release-toolchain"],
+    "affectedFlowSteps": ["release-close"],
+    "unchangedRuntimeTiers": [
+      "docs/requirements/coordinator/architecture.md",
+      "docs/requirements/specialists/architecture.md"
+    ]
+  },
+  "evidence": {
+    "auditRoot": "gh-dynamic-workflows/.delivery-runs/490ad8fa-3d48-4905-a216-d2159f43d446/context/",
+    "originalE2E": "bc39274e19fff206ead6593cac4f1a925733b4f26a82636577cc14495406bda5.json",
+    "originalDevOps": "15229112c19f6d98ff6178ffc857174a49ce769a44343377564513393a57d8a7.json",
+    "agreementsInspected": [
+      "59abdb6c95cb456bd56c589aad8e53e8fb6802a227625136192aa30e6bc4d808.json",
+      "89791f902a97e5e1849477d65c81b27e9aa58c77bdde3962c2d51724f22e1bbb.json",
+      "e10de39514df71d5a702b708af3932d4a9a8166821ded23397116d9cca945a7c.json",
+      "bbb250c9208c6211538703746df733ac5052a4d7fc11678f8c0f8b5e1dd207cd.json"
+    ],
+    "e2eFinding": "Original Developer actually tested app b42ab2f8/lab88580156; all three original reviewers agreed to bounded reporting. Application206pass; complete retained wrapper application206pass and retained230/233 with three explicit native-Linux exclusions. These are inspected attributed results, not rerun here. Required repository validation remains unexecuted; overall E2E FAIL remains.",
+    "devOpsFinding": "Original stage actually entered and supplied a bounded diagnostic-stage provenance finding. It does not establish common rollback bytes or next-operation effect readiness. All three reviewers agree to the accurate incomplete outcome with taskComplete=false.",
+    "reviewAccessLimit": "Original DevOps reviewers were denied direct external diagnostic-proof access. Do not retry that read or use another path. The proof-content/hash comparison remains owner-attributed; no independent confirmation is claimed here.",
+    "publicStatusGap": "README opening still reports cold-import lab651a2290/226-retained history and pending original changed-join E2E. Release notes still lead with October20/RP-S3 and obsolete ownership prerequisites. Current original outcomes materially change those status assertions, not the accepted clarity design.",
+    "deliveryGap": "Fresh exact remote application read remains 8b50f343. Reviewed current documentation through b42ab2f8 is not delivered there. Prior accepted push/readback through 8b50f343 remains closed.",
+    "priorDispositions": "Both supplied arrays are empty. Retain originating bounded acceptances; no scope decision or release criterion is superseded."
+  },
+  "blastRadius": {
+    "requiredRepositoryCheck": {
+      "operation": "scripts/Test-Repository.ps1 with the pinned absolute Python312-x64 execution",
+      "condition": "Exact originating interactive execution denial remains unchanged; affirmative approval is absent.",
+      "affected": ["AC7 required repository validation", "dependent Linux/hosting/package execution", "publication and dependent live acceptance"],
+      "unblock": "Affirmative approval of the exact bounded interactive execution and actual tool prompt, followed by actual passing validation.",
+      "guard": "No retry, alternate execution path or constituent-check substitute."
+    },
+    "independentInvestigation": {
+      "owner": "Existing original DevOps Engineer, coordinated by Scrum Master",
+      "contract": "docs/customer-prototype-post-delivery-exhaustion-architecture.json#existingOwnerInvestigationHandoff",
+      "remaining": "Obtain a provenance-backed original common-package build/publication record with an actual ZIP locator and operation-bound unresolved-effect record locators.",
+      "boundary": "Current diagnostic-stage finding closes its bounded reporting slice, not common rollback readiness or global investigation. No new authoritative common/effect locator has been obtained in this amendment.",
+      "routing": "Do not resume unchanged whole DevOps on this documentation work. Scrum retains exact record handoff coordination; a genuinely new permitted locator/effect handoff can later justify reassessment of the supplied original key.",
+      "exclusions": "No duplicate investigator, repeated mirror inventory, denied proof reaccess, private-tree search, historical ZIP regeneration, uncertain-effect replay or user-only locator claim."
+    },
+    "availableCloseout": "Measured public-status refresh and delivery of exactly reviewed intended documentation are independent of repository-suite approval, Linux success and common-byte readiness.",
+    "dependentGuards": "Preserve same-engine read-only revalidation with no startup replay; both complete actual Linux suites and hosting/package gates AND common rollback-byte/reconciled-effect readiness before one serialized publisher. Preserve all live AC1-AC9/G1-G8 requirements and historical unknowns."
+  },
+  "fourCheckAudit": {
+    "readyOrExecuting": "No construction tasks are assigned in the approved sprint. Original E2E reporting has actually completed; DevOps remains needs-input. A fresh remote comparison establishes the unfinished reviewed-document closeout slice.",
+    "feasibleSplit": "Separate truthful public status and already-reviewed Git delivery from blocked package/publication/live execution. These slices are independent: deliver only reviewed b42ab2f8 now; the new status commit awaits its own original reviews and later closeout delivery. Neither task depends on DevOps PASS.",
+    "independentApprovedBacklog": "Approved remaining sprint criteria explicitly require measured customer status, reviewed generic source/documentation push and truthful handoff. No new feature or duplicate clarity implementation is needed.",
+    "boundedUnlockingInvestigation": "The existing DevOps record-locator/effect handoff remains an independent lane, not exhausted. The supplied audit gives a precise next record boundary but no new locator authorizing another whole-stage resume. Do not duplicate its completed diagnostic-only investigation.",
+    "conclusion": "Work is not exhausted. Queue only the existing closeout owner's measured-status and reviewed-delivery slices; do not invent DevOps progress or waive the user-only repository-check approval."
+  },
+  "SprintPlan": {
+    "tasks": [
+      {
+        "id": "RJ-CURRENT-STATUS-CLOSEOUT",
+        "title": "Refresh customer status from original repaired-join execution",
+        "kind": "developer",
+        "owner": "Developer",
+        "ownerBinding": "Existing integration/final-closeout Developer; no replacement source or release owner.",
+        "sourceSprintId": "REPAIRED-JOIN-REMAINING-EXECUTION",
+        "sourceCriterion": "Approved sprint criteria: README and terminal clarity remain accurate; final handoff records limitations. AC6/AC9 measured-status portion only, not live demonstration acceptance.",
+        "dependsOn": [],
+        "exclusiveResources": ["application-git-integration"],
+        "ownedPaths": ["README.md", "docs/customer-prototype-release-notes.md"],
+        "consumes": [
+          "Original E2E bc39274e and DevOps15229112 with original reviewer records",
+          "Current source join and remaining-execution release plan",
+          "Accepted terminal/README clarity design; do not redispatch construction"
+        ],
+        "produces": "A scoped committed customer-status correction and exact owned diff for original Architect/Critic review, with current source/test attribution and unmet gates.",
+        "doneWhen": "README and release notes accurately distinguish actual original repaired-join offline results, agreed E2E FAIL, unmet repository approval, incomplete DevOps/common rollback/live gates and existing owners. Supersede obsolete current-status assertions without erasing history. Preserve concise goal-first reading path, demo commands and machine contracts. Commit only owned intended paths with required trailers; return actual source/commit and limitations for original reviews.",
+        "exclusions": [
+          "No runtime, terminal renderer, test, script, settings or dependency changes; no repository suite or constituent substitutes.",
+          "No new live/package result, final-binding claim, global exhaustion claim, copied private evidence or private absolute locator.",
+          "No repeated accepted UX accounting or construction; update only factual status and owner applicability.",
+          "No push before applicable original review, branch switch, amend, force-push, broad staging or adoption of unrelated work."
+        ],
+        "handoff": "Original Architect/Critic review the actual commit. Retain its exact accepted ref for later existing closeout delivery after all its ancestry has applicable original review. The independent delivery task in this amendment is pinned to earlier b42ab2f8 and must not include this status commit. Do not resume DevOps from public-status changes.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Refresh measured customer prototype release status",
+          "goal": "Replace materially stale customer status with actual original repaired-join execution and truthful unmet gates.",
+          "components": ["Terminal client", "Guarded lab release toolchain"],
+          "flows": ["Exact-source guarded release"],
+          "flowSteps": ["release-close"],
+          "doneWhen": "Commit the scoped accurate README/release-notes update for original Architect/Critic review, without changing accepted clarity or claiming release success.",
+          "failureCategories": ["UI/presentation"],
+          "mustAct": "Developer",
+          "locations": ["README.md", "docs/customer-prototype-release-notes.md"],
+          "evidence": "Original E2Ebc39274e and DevOps15229112 supersede the currently displayed pending-E2E and old ownership status.",
+          "cause": "Public status predates actual repaired-join original-stage execution; runtime readiness remains separately unmet.",
+          "verification": {"status": "not-yet-verified", "evidence": "Status gap inspected; downstream correction not yet performed."},
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      },
+      {
+        "id": "RJ-REVIEWED-DOC-DELIVERY",
+        "title": "Deliver reviewed remaining-execution documentation",
+        "kind": "developer",
+        "owner": "Developer",
+        "ownerBinding": "Existing integration/final-closeout Developer; retain original Architect/Critic review.",
+        "sourceSprintId": "REPAIRED-JOIN-REMAINING-EXECUTION",
+        "sourceCriterion": "Approved sprint criterion: intended reviewed generic source/documentation are committed, pushed and read back while unrelated work and historical assets remain preserved. AC8 and AC9 exact Git-delivery portion only.",
+        "dependsOn": [],
+        "exclusiveResources": ["application-git-integration", "lab-git-integration"],
+        "ownedPaths": [],
+        "consumes": [
+          "Original review coverage of documentation ancestry through b42ab2f8",
+          "Pinned application target b42ab2f84e023f52c6c70e46c93d77b86949831d; exclude this amendment, its later Scrum plan and the new status commit",
+          "Accepted remote delivery through app8b50f343/lab88580156; do not redo that closed slice"
+        ],
+        "produces": "Actual safe non-force exact application ref push/readback and exact lab remote readback, or a precise non-destructive delivery limitation for original reviewers.",
+        "doneWhen": "Inspect current status, full intended outgoing ancestry and applicable original review coverage. Perform authorized non-force feature-ref delivery pinned to application b42ab2f84e023f52c6c70e46c93d77b86949831d and independent exact readback; verify intended lab88580156 remote without unnecessary repush. Exclude this amendment, its later Scrum plan and the new status commit. Report exact commits and remaining limitations; stop on unreviewed ancestry or independent remote divergence rather than overwrite it.",
+        "exclusions": [
+          "No moving-HEAD push, unreviewed amendment adoption, source editing, artificial metadata/evidence commit or duplicate delivery through8b50f343.",
+          "No tests, denied-check workaround, settings import, engine/cloud operation, publication, inference or hosted recovery.",
+          "No branch switch, merge, amend, force-push, broad staging, historical branch deletion or canonical dirty-lab mutation."
+        ],
+        "handoff": "Original Architect/Critic inspect actual delivery evidence. Scrum retains partial sprint, exact repository approval and independent DevOps locator coordination; neither delivery nor its review authorizes changed-tool execution.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Deliver exactly reviewed prototype documentation",
+          "goal": "Close the newly reviewed documentation delivery gap without repeating accepted source integration or pushing unreviewed moving ancestry.",
+          "components": ["Guarded lab release toolchain"],
+          "flows": ["Exact-source guarded release"],
+          "flowSteps": ["release-close"],
+          "doneWhen": "Safely push pinned reviewed application b42ab2f8, independently read back intended feature refs, exclude newer amendment/status ancestry, and report actual results or an exact non-destructive limitation.",
+          "failureCategories": [],
+          "mustAct": "Developer",
+          "locations": ["docs/customer-prototype-repaired-join-remaining-sprint-plan.json", "docs/customer-prototype-release-notes.md"],
+          "evidence": "Fresh application ls-remote returned8b50f343 while reviewed local documentation extends throughb42ab2f8.",
+          "cause": "Later reviewed-document delivery remains assigned to existing closeout ownership, independently of blocked deployment.",
+          "verification": {"status": "not-yet-verified", "evidence": "Remote gap observed; new exact-ref delivery not yet performed."},
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      }
+    ]
+  },
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Use the existing closeout owner for independent newly measured public status and already-reviewed exact-ref delivery through b42ab2f8 only. The new status commit remains for later reviewed closeout delivery. Do not replay original E2E, duplicate DevOps investigation or resume its unchanged blocker.",
+    "evidence": [
+      "Original E2Ebc39274e actually completed and all three reviewers agreed to its evidence-qualified FAIL.",
+      "Original DevOps15229112 entered and closed a bounded diagnostic-only provenance reporting slice, not common-byte/effect readiness.",
+      "README/release-notes current-status sections still precede these original outcomes.",
+      "Fresh application remote read returned8b50f343, behind reviewed documentation throughb42ab2f8.",
+      "Approved remaining sprint explicitly retains measured status and reviewed Git delivery with existing closeout ownership."
+    ],
+    "resumes": []
+  },
+  "handoff": {
+    "nextOwner": "Scrum Master",
+    "action": "Use this separate amendment in original SprintPlanLoop. Retain existing owner/resource names; the two tasks have no dependency edge but share application-git-integration for serialized mutation. Pin immediate delivery to already-reviewed b42ab2f8 to avoid waiting on this amendment's or the new status commit's pending reviews. Dispatch substantive useful closeout only; no new features, duplicate investigators or unchanged DevOps resume.",
+    "independentRecordCoordination": "Obtain exact original common-package and unresolved-effect nonsecret record locators through existing DevOps/Scrum ownership. No user-only requirement is established for that handoff.",
+    "userOnlyAction": "Affirmative approval of exact previously denied repository-check execution/tool prompt remains necessary for that check and dependent execution, not the queued closeout.",
+    "acceptance": "Architect owner acceptance covers this continuation assessment only. Original Product Owner/Critic/Red Team votes remain pending. All historical and current sprints remain partial."
+  },
+  "verification": {
+    "status": "partial",
+    "performed": [
+      "Repository instructions/index, required design/process context, delivery principles and current tier/source contracts inspected.",
+      "Opened original E2E and DevOps audit reports/reviews plus current Architecture/ReleasePlan/SprintArchitecture/SprintPlan agreements.",
+      "Inspected application status, HEAD, outgoing documentation-only ancestry and actual feature remote."
+    ],
+    "notPerformed": [
+      "Fresh application/retained/repository suites or constituent substitutes",
+      "Denied external diagnostic proof access",
+      "Fresh lab, settings, engine/cloud, package, deployment or live verification",
+      "Push or downstream closeout execution"
+    ],
+    "progressRule": "This assessment and documentation are not new implementation/execution progress; do not reclaim prior E2E or DevOps activity."
+  }
+}

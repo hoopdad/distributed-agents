@@ -1,5 +1,25 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Continuation after original repaired-join execution
+
+Apply the [current separate architecture amendment](../../customer-prototype-repaired-join-continuation-architecture.json).
+Original E2E reporting and original DevOps entry now have actual outcome/review
+records; the pending-entry statements below are historical. E2E remains FAIL
+because required repository validation is unexecuted. The diagnostic-only
+DevOps finding is not common rollback-byte/effect readiness.
+
+For Terminal client / Guarded lab release toolchain / `release-close`, the
+existing closeout Developer can correct measured public status for original
+review and independently deliver already-reviewed documentation through
+`b42ab2f8` only. New amendment/status commits await later reviewed delivery. This
+AC6/AC8/AC9 slice is independent of repository approval and Linux success.
+Preserve source/test attribution, blocked customer status, privacy and machine
+contracts; no terminal implementation or suite redispatch is required.
+Existing Git resource names and commit-review-deliver ordering remain binding.
+No unchanged DevOps resume is supplied. Exact common/effect record coordination
+stays with existing DevOps/Scrum; original deployment/live gates and all runtime
+tier contracts remain unchanged.
+
 ## Current remaining execution: accepted repair, original validation first
 
 Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#repaired-join-remaining-execution-original-execution-of-the-accepted-repair)

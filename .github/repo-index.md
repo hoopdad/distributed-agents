@@ -1,5 +1,17 @@
 # Repository index
 
+First remaining-execution continuation: inspected application `b42ab2f8`;
+adds only `docs/customer-prototype-repaired-join-continuation-architecture.json`.
+Navigate that separate amendment and sprint/client-release openings for actual
+original E2E/DevOps outcomes and two independent existing-closeout slices:
+measured public status and reviewed document delivery pinned to `b42ab2f8`.
+New amendment/status commits await later review/delivery. Remote read returned
+application `8b50f343`. No duplicate source/clarity construction, stage replay
+or DevOps resume; denied required validation and dependent execution remain
+blocked. Independent exact common-package/effect record coordination is not
+exhausted. Canonical model/runtime tiers and partial delivery remain unchanged.
+Planning is not execution-progress credit.
+
 Remaining-execution sprint dispatch: based on application `449c6e98` and
 selected accepted lab `88580156`; adds only
 `docs/customer-prototype-repaired-join-remaining-sprint-plan.json`.
@@ -1713,6 +1725,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-release-plan.md`
 - `docs\customer-prototype-remaining-execution-release-plan.json`
 - `docs\customer-prototype-remaining-execution-sprint-plan.json`
+- `docs\customer-prototype-repaired-join-continuation-architecture.json`
 - `docs\customer-prototype-repaired-join-remaining-release-plan.json`
 - `docs\customer-prototype-repaired-join-remaining-sprint-plan.json`
 - `docs\customer-prototype-reviewed-join-continuation-architecture.json`

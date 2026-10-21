@@ -1,5 +1,34 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Remaining-execution continuation: actual stage entry, independent closeout
+
+The separate [first-continuation architecture amendment](customer-prototype-repaired-join-continuation-architecture.json)
+consumes original current E2E `bc39274e` and DevOps `15229112`, including their
+original reviews. E2E is no longer unscheduled: permitted repaired-join suites
+actually passed offline, while its overall FAIL retains the denied repository
+check. Original DevOps also actually entered; its diagnostic-only provenance
+finding closes a bounded reporting slice, not common rollback/effect readiness.
+Do not replay either stage merely to update historical scheduling statements.
+
+The amendment preserves the canonical solutionModel and runtime tiers. It
+identifies two independent existing closeout-owner slices under `release-close`:
+correct materially stale README/release status for original review, and deliver
+already-reviewed documentation pinned to `b42ab2f8`, excluding this amendment
+and the new status commit. Fresh application remote inspection
+returned `8b50f343`; current local documentation extends through `b42ab2f8`.
+This is a newly measured unfinished documentation slice, not redispatch of the
+accepted delivery through `8b50f343`, new clarity construction or a live claim.
+Scrum consumes the bounded tasks and original resource/owner contracts through
+its existing loop. This architecture amendment itself is not execution progress.
+
+Required repository approval and dependent Linux/package/publication stay
+blocked. Existing original DevOps/Scrum coordination still needs exact common
+package and unresolved-effect record locators; no new locator was obtained here.
+Do not retry denied proof access, duplicate diagnostic investigation, infer
+global exhaustion or resume unchanged DevOps from unrelated closeout work.
+Both readiness exits, no engine-startup/uncertain-effect replay, actual live
+acceptance and partial-sprint accounting remain unchanged.
+
 ## REPAIRED-JOIN-REMAINING-EXECUTION: original execution of the accepted repair
 
 This current sprint consumes the agreed

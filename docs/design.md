@@ -1,5 +1,102 @@
 # Distributed agents: MAF/Foundry workflow and shared artifacts
 
+## Reviewed retained-input source join
+
+`RP-S3-RETAINED-SOURCE-JOIN` consumes application
+`86bc10a5ee6b3698e702863cdd98d0efcd529bae` and selected feature-lab
+`f3a7d0afd0036219ffafbc0f6b97930752167a25` on
+`feature/customer-hosted-session-prototype`. Original Architect/Critic
+agreement for both retained-input commits (`00bb63c` and `f3a7d0a`) was
+inspected in current-run audit `e95d1ebb`; both task-complete votes have no
+unmet criteria. Current architecture and plan agreements were also inspected
+(`e568cf6a`, `3009f694`). This applies only the source/integration slice of
+`["yaml-loops-v1:sprint/2/RP-S2/DevOpsWorkLoop","retained-linux-test-input-closure"]`;
+accepted helper, ownership, context, fixture and runtime work stays closed.
+
+Both exact reviewed input refs were pushed and read back from origin.
+Application ancestry retains `0cac08c9`, `98128bb8` and current planning;
+lab ancestry retains `5da7a2ea`, `00bb63c` and `f3a7d0a`. No merge, task
+branch abandonment, branch switch or canonical dirty-source adoption was
+needed. This join's new documentation/index commits require their own
+original review before later push/readback by the existing integration
+Developer in `RP-S3-GIT-CLOSEOUT` (and existing final execution closeout).
+The companion lab index commit is
+`152601209af4f0dcabe0acf0a7d7984fbf05c99d`; it changes navigation only,
+not the measured source or inputs below, and is not included in that input push.
+
+Actual imported `release_roots`, `identity_decision`, `bundle_package`,
+`wsl_release` and `observe_agent` belong to the selected feature tools.
+Actual PowerShell `Resolve-ReleaseRoots` belongs to the same tools.
+Both matched explicit-root validations passed, without settings import.
+Operational context remains separate: eventual execution imports only through
+`scripts/Use-Settings.ps1` and supplies the unchanged dedicated operational root;
+this no-effect join neither selects a profile nor authenticates it.
+All 22 application and nine lab runtime/Decision source entries match committed
+bytes after LF normalization. Their **raw-byte**, compact sorted-key JSON seal
+is unchanged:
+`bfd6ed4d380a354a11104e1207605f169991d16a08b71db7344e4cea7e9815e9`.
+
+### Distinct retained inspection and fixture provenance
+
+The separate retained invocation in lab `Build-Demo.ps1` now supplies named
+read-only `identity_decision.py`, application `tests/test_workflow.py`, and
+the observer's demonstrated `live_acceptance.py` dependency. Existing image
+runtime/config/dependencies and the other named helper mounts supply the rest.
+File/reparse checks precede Docker; separate suites, network-none execution,
+exact mount equality/duplicate rejection and compilation remain guarded.
+No Dockerfile, runtime/ZIP allowlist, application fixture or runtime behavior
+changed. Native-package fixture absence fails rather than hiding observation
+coverage; the inherited monolithic-layout exclusion remains explicit.
+
+`retained_input_sha256` binds 17 raw-byte entries: the 15 named lab helpers in
+the build's mount loop plus `application:live_acceptance.py` and
+`application:tests/test_workflow.py`. Independently recomputed SHA256 of that
+mapping serialized as compact sorted-key JSON is
+`5fc1a496665ee4db35235799c73443b243e7c5cf040953653832fd47cd17e1ad`.
+This offline mapping seal is **not** a runtime, image, package or build receipt.
+Actual DevOps must record the build output's complete input mapping.
+Key changed/test inputs are:
+
+| Input (lab paths relative to `foundry-tf/multi-agent/`) | Raw SHA256 |
+| --- | --- |
+| Lab `Build-Demo.ps1` | `99187efe5f2ede1ac695c275e4f6655007c0bd92586b3a26531a1d0f6f5bf461` |
+| Lab `identity_decision.py` | `ee74ce3b1703e927bfe45233aaeda91dae1e22ccd5ba0bc91622cbc82dd505d7` |
+| Application `tests/test_workflow.py` | `922db4b6f05021ca138fb2999006ffc0c550f5862a81dbbfc53f28f16842ff54` |
+| Application `live_acceptance.py` | `8361d965fc0c3f55d2c98a46a90a915ac6bc5e33125b37170ce36e3447192b44` |
+| Lab `tests/test_release_native_settings.py` | `f3172a3daba62a1320bc341a6ee3f553638f6d6f423705c02cec4a1c4f5cb9c5` |
+| Lab `tests/test_release_identity_decision.py` | `57b649cc947b0dcdcfb89b7fbf2b16f0fbf122755cf0a147a2727add10c9a41a` |
+
+All 17 mounted inputs and both regression files match committed bytes after
+LF normalization. For differing entries, LF hashes are: workflow fixture
+`9eb985bb231d98f024c93322bca927c5bd99f3745d897ab136fae6efa371e517`,
+identity module
+`0e36ad8496f2592041a325adaa92e495ab8a6055189a6c15c930ad51134f590d`,
+identity regression
+`57a4ada1b30dffe71f9bea7be1445dd460fc0de939229a9a7f5f553873c0346c`.
+Existing helper `Ensure-LinuxEngine.ps1` retains raw
+`6f07700ad8c11990ed203969a004b7bd3530fb0bdccba0f9cf75ef1ea8cc2324`
+and LF `08b47f61b38f5855906c552753896ecb2e57d58222d2070b01c953b8bd573ac5`.
+The separate application-script `test_input_sha256` mapping remains unchanged
+from the [earlier join](#final-linux-input-and-inventory-source-join); its three
+inputs were independently rechecked against those raw/LF hashes.
+
+Fresh joined Windows checks used the pinned absolute Python and explicit
+feature lab: 206 application tests passed in 59.823 seconds, plus dependency
+consistency and compilation. Complete retained `test_release*.py` discovery,
+with application `demo`/`live_acceptance` bound before lab discovery, ran
+224 tests in 175.641 seconds: 221 passed, zero failures, three required
+native-Linux exclusions (credential-bridge tenant handling, code-artifact
+predeploy guard, token-context/private-proxy handling). No dirty-source or
+missing-native-fixture skip remained. These are local checks, not container
+execution. `scripts/Test-Repository.ps1` passed all 86 public-file/index,
+boundary, JSON, PowerShell, context-frontmatter and whitespace checks.
+Build, helper, resolver and WSL-wrapper PowerShell parsed successfully;
+both scoped documentation diffs passed CRLF-aware whitespace checks.
+Original changed-join E2E precedes DevOps running BOTH complete
+Linux suites and package gates. Independent rollback ZIP-byte/effect readiness
+continues; BOTH actual exits gate the single publisher. No engine, settings,
+authentication, transport, cloud, inference or hosted stop/resume ran here.
+
 ## Final Linux-input and inventory source join
 
 Task `RP-S2-CORRECTION-SOURCE-JOIN` joins reviewed application

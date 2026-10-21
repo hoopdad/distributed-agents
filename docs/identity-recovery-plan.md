@@ -1,5 +1,49 @@
 # Identity propagation recovery: design and execution plan
 
+## Reviewed retained-input integration handoff (October 20, 2026)
+
+`RP-S3-RETAINED-SOURCE-JOIN` consumes original Architect/Critic source
+acceptance of lab `00bb63c` / `f3a7d0a` (opened audit `e95d1ebb`), not a
+new operational PASS. The [reviewed retained-input join](design.md#reviewed-retained-input-source-join)
+records actual loaded owners, committed-byte equality, unchanged runtime/
+Decision seal, separate build/helper/test input provenance and fresh checks.
+Reviewed application `86bc10a5` and lab `f3a7d0a` were pushed and exactly
+read back, retaining `98128bb8`, `5da7a2ea`, `0cac08c9` and current planning.
+No task code was abandoned. This new documentation/index slice awaits original
+review; `RP-S3-GIT-CLOSEOUT`'s existing integration Developer owns its later
+reviewed push/readback, with final execution closeout retaining any remainder.
+
+The exact originating reference
+`["yaml-loops-v1:sprint/2/RP-S2/DevOpsWorkLoop","retained-linux-test-input-closure"]`
+now has an accepted source correction and locally validated join. Fresh local
+checks pass 206 application tests and 221 of 224 retained tests, with only
+three attributed native-Linux exclusions and no hidden dirty/fixture skip.
+They do not supersede the actual stopped DevOps result: application-container
+PASS (206 run, seven attributed skips), followed by retained discovery failure
+(184 run, one missing import, 38 Windows-specific skips). Required native
+observation coverage must execute with the supplied fixture during the next
+actual retained Linux run.
+
+Original changed-join E2E must validate this exact reviewed join before original
+DevOps executes changed build tooling. DevOps revalidates the same selected
+engine read-only, without replaying historical startup, and completes BOTH
+Linux suites plus hosting/package gates. Independent rollback ZIP-byte and
+unresolved-effect accounting continues using the accepted exact-read handoff;
+four accessible exact metadata receipts are not common rollback ZIP bytes.
+Only BOTH actual readiness exits allow the single serialized publisher,
+architect-before-reviewer trusted ingress, final common bindings and G1-G4.
+Completed non-held parent gates follow-up/recovery; isolation uses final
+deployment and actual reference scopes without a recovery-success dependency.
+
+Historical startup timeout remains distinct from later readiness observations.
+New image inspection remains owner-attributed pending accessible proof;
+exported manifest/config digests are not an authoritative image ID.
+No new deployment/current/rollback bindings or live AC1-AC9 outcome are
+established by this join. No settings import, engine/build, authentication,
+transport/cloud, inference or hosted stop/resume occurred. Preserve UNKNOWNs,
+held parents, rollback assets and historical cleanup uncertainty. Earlier
+entries keep their originating evidence and pending-push history.
+
 ## Final corrected-source handoff and measured status (October 20, 2026)
 
 `RP-S2-CORRECTION-SOURCE-JOIN` consumes original-reviewed Linux fixture/input

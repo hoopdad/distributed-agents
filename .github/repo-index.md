@@ -1,5 +1,21 @@
 # Repository index
 
+RP-S3 retained-input integration freshness: based on reviewed application
+`86bc10a5` / selected feature lab `f3a7d0a`; no added/deleted paths.
+Opened original retained correction agreement `e95d1ebb`, current architecture/
+plan agreements and prior E2E/DevOps outcomes. Both exact reviewed feature refs
+were pushed/read back, retaining `98128bb8`, `5da7a2ea`, `0cac08c9` and current
+planning; no merge/abandonment. `docs/design.md#reviewed-retained-input-source-join`
+binds actual loaded roots/committed bytes, unchanged runtime/Decision closure,
+17-entry retained raw input mapping and separate test/helper provenance.
+Fresh joined offline checks: 206 application PASS; 221 of 224 retained PASS,
+three explicit native-Linux exclusions, no dirty/missing-native-fixture skip.
+Recovery handoff routes original changed-join E2E -> BOTH complete actual Linux
+suites; independent rollback ZIP-byte/effect readiness continues. BOTH actual
+exits still gate one publisher; no package/live success. This documentation/
+index slice awaits original review, then existing RP-S3-GIT-CLOSEOUT/final
+execution closeout Developer push/readback. Earlier entries retain history.
+
 RP-S3 continuation-plan freshness: baseline application `6bd10951` / selected
 feature lab `5da7a2ea`; one public plan added:
 `docs/customer-prototype-rp-s3-retained-input-sprint-plan.json`. Earlier saved

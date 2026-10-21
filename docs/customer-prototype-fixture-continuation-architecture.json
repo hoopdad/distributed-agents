@@ -1,0 +1,169 @@
+{
+  "kind": "SprintArchitectureContinuation",
+  "sprintId": "RP-S1",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "baseline": {
+    "application": "7fef48b761e5d39ec6fb0fdc31baedc1c4e4b125",
+    "lab": "152601209af4f0dcabe0acf0a7d7984fbf05c99d"
+  },
+  "solutionModel": {
+    "reference": "docs/customer-prototype-architecture.md#solutionmodel",
+    "unchanged": true,
+    "components": 10,
+    "flows": 5,
+    "steps": 18
+  },
+  "originatingDisposition": "[\"yaml-loops-v1:sprint/3/RP-S3/DevOpsWorkLoop\",\"retained-live-preparation-fixture-initialization\"]",
+  "findings": [
+    {
+      "id": "cold-import-failure",
+      "component": "release-toolchain",
+      "flow": "guarded-release",
+      "step": "release-package",
+      "source": "lab:foundry-tf/multi-agent/tests/test_release_identity_decision.py:358-412",
+      "evidence": "Original audit 0413fdfc and independently hashed linux-final-7fef48b7-1526012.log: all three LivePreparationTests fail importing demo.contracts before synthetic FOUNDRY_PROJECT_ENDPOINT exists.",
+      "state": "Confirmed fixture defect; runtime rejection behaviors not reached."
+    },
+    {
+      "id": "independent-rollback-readiness",
+      "component": "identity-boundary",
+      "flow": "guarded-release",
+      "step": "release-package",
+      "evidence": "Audit 0413fdfc reports two located ZIPs do not match expected common rollback bytes; complete effect readiness is unestablished. Detailed ZIP/journal findings remain owner-attributed in this architecture audit.",
+      "state": "Existing DevOps continues provenance-backed locator/byte/effect inventory independently; no user-only blocker or publication readiness established."
+    },
+    {
+      "id": "preserved-live-joins",
+      "evidence": "Accepted architecture e568cf6a, plan 3009f694 and E2E 2f339393 preserve final common-bundle and completed non-held initial-parent handoffs. No unimplemented independent approved runtime/UI work was identified.",
+      "state": "Continuity and recovery need completed parent; isolation needs final bindings, not recovery success. Fixtures and source agreements do not prove live behavior."
+    }
+  ],
+  "evidence": {
+    "auditDirectory": "gh-dynamic-workflows/.delivery-runs/0159ec9f-a89c-47f9-986f-80d9dfe6740a/context",
+    "openedAuditPrefixes": ["0413fdfc", "e568cf6a", "3009f694", "2f339393", "7e74a2ea", "d29bb042"],
+    "approvedMirror": "request.input.evidenceLocators.recoveryExceptionV1",
+    "log": {
+      "name": "linux-final-7fef48b7-1526012.log",
+      "sha256": "af9c4422b6f970d84b42ab87fb83e4f5c6396ea11d2c6f9a26fddf90a8fcaeb0"
+    },
+    "inspection": {
+      "name": "linux-inspection-7fef48b7-1526012.json",
+      "sha256": "083556f41e382fa4b436635701f4f0560627fc8eefff04b9395ee480c1b4933e"
+    }
+  },
+  "tasks": [
+    {
+      "id": "RP-S3-LIVE-PREPARATION-FIXTURE",
+      "title": "Make retained preparation rejection fixtures cold-import safe",
+      "kind": "developer",
+      "owner": "Developer",
+      "sourceSprintId": "RP-S2",
+      "sourceCriterion": "AC7; RP-S2-LINUX-PACKAGE-VALIDATION acceptance criterion 2 and doneWhen: both complete actual Linux suites and hosting/package gates for exact delivered inputs.",
+      "dependsOn": [],
+      "exclusiveResources": ["lab-linux-test-input-source", "lab-public-index"],
+      "ownedPathsByRepository": {
+        "lab": [
+          "foundry-tf/multi-agent/tests/test_release_identity_decision.py",
+          ".github/repo-index.md"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Establish fixture-owned synthetic configuration before configuration-dependent imports, reliably restoring environment on success and setup/error paths without reading operational settings.",
+        "Fresh-process coverage begins without ambient operational configuration or warmed application imports and executes all three LivePreparationTests through intended rejection guards, not incidental ConfigurationError.",
+        "Preserve UNKNOWN no-inventory, version/identity-drift rejection and no-parent-creation assertions and strict runtime configuration validation. No runtime, mount, helper, context, selector or package behavior edits.",
+        "Run focused cold-process and affected applicable retained checks with pinned absolute Python and explicit application/lab roots. Preserve attributed platform exclusions and required assertions.",
+        "Commit only owned paths on the registered feature sibling with required Copilot trailer; return exact commit/test-only hashes, checks and limitations for original Architect/Critic review."
+      ],
+      "doneWhen": "Committed fixture-owned initialization/restoration and cold-process regressions pass affected and applicable retained checks, with exact source/check evidence ready for original review and integration.",
+      "exclusions": [
+        "No actual Linux build, engine startup, settings import, authentication, private transport, cloud query, inference or publication",
+        "No runtime, Build-Demo, mount, helper, context, selector, application fixture, dependency manifest or package-allowlist changes",
+        "No canonical dirty checkout adoption, branch switching, unknown-effect replay or replacement of assertions with skips"
+      ],
+      "handoff": "Original Architect/Critic review, then RP-S3-FIXTURE-SOURCE-JOIN, original changed-join E2E and original DevOps both complete actual Linux suites.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Make retained preparation rejection fixtures cold-import safe",
+        "goal": "Remove the demonstrated fixture initialization defect without weakening release rejection or runtime configuration.",
+        "components": ["Guarded lab release toolchain"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-package"],
+        "doneWhen": "Committed fixture-owned initialization/restoration and cold-process regressions pass affected and applicable retained checks, with exact source/check evidence ready for original review and integration.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["foundry-tf/multi-agent/tests/test_release_identity_decision.py", ".github/repo-index.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": "New assignment; no implementation or checks claimed."},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "RP-S3-FIXTURE-SOURCE-JOIN",
+      "title": "Join reviewed fixture correction and measured release handoff",
+      "kind": "developer",
+      "owner": "Developer",
+      "sourceSprintId": "RP-S3",
+      "sourceCriterion": "AC7 exact joined-source validation; AC8 reviewed scoped feature delivery; AC9 truthful measured delivery status and handoff.",
+      "dependsOn": ["RP-S3-LIVE-PREPARATION-FIXTURE"],
+      "exclusiveResources": ["application-public-docs-index", "feature-source-reconciliation"],
+      "ownedPathsByRepository": {
+        "application": ["README.md", "docs/design.md", "docs/identity-recovery-plan.md", ".github/repo-index.md"]
+      },
+      "acceptanceCriteria": [
+        "Consume original-reviewed correction, verify actual loaded Python/PowerShell owners and committed bytes in explicit selected roots, and record changed test-only input hashes separately from unchanged runtime/Decision closure.",
+        "Run applicable changed-join application, retained and repository checks with pinned absolute Python and explicit lab root; preserve exclusions and return exact source/provenance/check evidence to original E2E.",
+        "Account for all reviewed task/planning commits including application 7fef48b7; push and read back intended already-reviewed feature refs without branch switches, amendments, broad staging or dirty-source adoption.",
+        "Refresh only stale measured README/recovery/source-join/index status from accessible new evidence: 206 application tests, 224 retained with three fixture errors, seven native observations; distinguish inspected image ID from historical digest labels and startup timeout.",
+        "Commit scoped documentation with required trailer before original review. Newly created documentation push/readback stays with existing final execution closeout after acceptance; no self-acceptance or extra approval stage."
+      ],
+      "doneWhen": "Reviewed fixture source is joined with attributable root/byte/hash/check evidence and intended reviewed feature delivery accounting, and scoped measured documentation is committed for original review/E2E.",
+      "exclusions": [
+        "No fixture/runtime/tool implementation edits or original plan/ReleasePlan changes",
+        "No operational/cloud effects, rollback-asset regeneration, historical reseal, UNKNOWN clearing or live success claims",
+        "No duplicate accepted clarity work or repeated unchanged test runs for progress credit"
+      ],
+      "handoff": "Original Architect/Critic review and original changed-join E2E precede latest original RP-S3 DevOps execution; final closeout delivers newly reviewed docs. Independent existing DevOps rollback/effect work does not wait on this task.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Join reviewed fixture correction and measured release handoff",
+        "goal": "Bind the new test-only correction to exact reviewed source and truthful execution handoffs without reopening accepted construction.",
+        "components": ["Guarded lab release toolchain", "Terminal client"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-join", "release-close"],
+        "doneWhen": "Reviewed fixture source is joined with attributable root/byte/hash/check evidence and intended reviewed feature delivery accounting, and scoped measured documentation is committed for original review/E2E.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["README.md", "docs/design.md", "docs/identity-recovery-plan.md", ".github/repo-index.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": "New integration assignment; prior accepted join is retained, not proof of this changed join."},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    }
+  ],
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Correct only the demonstrated retained cold-import fixture and integrate its changed test-only join. Existing DevOps independently continues rollback-byte/effect inventory; both actual readiness exits remain required.",
+    "evidence": [
+      "Independently hashed mirrored execution log and inspection match 0413fdfc; all three configuration failures precede rejection assertions.",
+      "Inspected registered feature lab source 1526012 and application config validation; no runtime/mount/helper/context/selector change is needed.",
+      "Original accepted architecture/plan/E2E retain useful existing runtime/fixture contracts and independent inventory/closeout ownership. No new feature or duplicated accepted construction is assigned."
+    ],
+    "resumes": [
+      {
+        "key": "sprint/3/RP-S3/DevOpsWorkLoop",
+        "after": ["RP-S3-LIVE-PREPARATION-FIXTURE", "RP-S3-FIXTURE-SOURCE-JOIN"],
+        "evidence": "New original-reviewed fixture and changed exact join, followed by original E2E, permit reassessment of the latest retained-suite failure. Original DevOps reruns both actual Linux suites; rollback-byte/effect readiness independently remains mandatory before one publisher. Earlier partial DevOps boundaries remain recorded, not separate deployment retries."
+      }
+    ]
+  },
+  "preservation": [
+    "Original plans and ReleasePlan unchanged; canonical model unchanged",
+    "Original roles, reviewers, authority, no-progress limit five and partial sprints unchanged",
+    "All historical UNKNOWNs, held parents, rollback assets and cleanup uncertainty retained",
+    "No live gate waived; no user-only blocker established; no new publisher or operational path"
+  ]
+}

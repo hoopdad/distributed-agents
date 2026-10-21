@@ -1,5 +1,29 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Continuation: fixture-only repair and independent rollback readiness
+
+The [cold-import continuation](../../customer-prototype-sprint-architecture.md#work-conserving-continuation-cold-import-fixture-boundary)
+is the current overlay; earlier observations below retain dated provenance.
+At application `7fef48b7` / lab `1526012`, inspected mirrored evidence records
+206 application tests (seven skips) and 224 retained tests (three configuration
+errors, 43 skips); all seven native-observation cases execute. Exact originating
+reference is
+`["yaml-loops-v1:sprint/3/RP-S3/DevOpsWorkLoop","retained-live-preparation-fixture-initialization"]`.
+Only lab LivePreparationTests synthetic configuration/import ordering and
+fresh-process regression/index work is newly assigned. Preserve all accepted
+named mounts, runtime/package exclusions, roots, helper and selector contracts.
+Integration records test-only provenance and reviewed Git delivery; original
+source reviews and changed-join E2E precede both actual Linux suites.
+
+Independent existing DevOps continues common rollback ZIP-byte/effect accounting;
+metadata and nonmatching ZIPs do not satisfy it. BOTH actual readiness exits
+still gate one publisher and G1-G4. Resume the latest original RP-S3 DevOps,
+not parallel publishers for earlier partial sprints. Accessible inspection now
+supports separately labelled image ID/digests; it does not close package gates
+or alter the historical timeout. Existing closeout updates only measured status
+and reviewed-ref readback, not accepted terminal clarity or machine contracts.
+No current source, fixture or architecture agreement is live release acceptance.
+
 ## Current RP-S3: retained inputs and independent release-readiness exits
 
 Consume the [current cumulative overlay](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-evidence-joins-and-retained-linux-input-closure-october-20-2026)

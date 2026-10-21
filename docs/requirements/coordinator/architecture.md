@@ -1,5 +1,22 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Continuation: no coordinator change for retained fixture initialization
+
+Consume the [cold-import continuation](../../customer-prototype-sprint-architecture.md#work-conserving-continuation-cold-import-fixture-boundary).
+The new defect is fixture-owned configuration before imports in lab
+`tests/test_release_identity_decision.py`, not `demo.contracts`,
+`demo/config.py`, coordinator routing or identity behavior. Strict configuration
+validation, UNKNOWN holds and no-send/no-parent rejection behavior remain.
+Fresh-process synthetic rejection coverage is a local contract, never actual
+Decision-1 or deployment evidence. Accepted source/model IDs are unchanged.
+
+Independent rollback/effect discovery does not await that fixture correction.
+Both actual readiness exits, one serialized publisher, trusted specialist
+ingress and completed non-held G1-G4 parent remain necessary for same-parent
+continuation and supported once-only stop/resume. Isolation still needs final
+bindings but not recovery success. No accepted runtime/history work is
+redispatched; neither partial sprint completion nor missing live proof is waived.
+
 ## Current RP-S3: same-parent continuation and once-only supported recovery
 
 Consume the [current cumulative overlay](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-evidence-joins-and-retained-linux-input-closure-october-20-2026).

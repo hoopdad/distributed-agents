@@ -1,5 +1,23 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Continuation: retained preparation failures do not diagnose specialist runtime
+
+Consume the [cold-import continuation](../../customer-prototype-sprint-architecture.md#work-conserving-continuation-cold-import-fixture-boundary).
+Three retained fixture errors occur before intended rejection assertions;
+they are not observations of hosted specialist identity, history or ingress.
+Only fixture synthetic configuration/restoration and cold-process regressions
+are newly assigned; `demo/architect_agent.py`, `demo/reviewer_agent.py`,
+`demo/specialist.py`, `demo/foundry.py` and runtime validation remain unchanged.
+Existing named test mounts and all seven now-executed native-observation cases
+remain accepted construction, not a complete Linux/package PASS.
+
+Both actual readiness exits still precede a single publisher and trusted
+architect-before-reviewer ingress. Actual same-parent calls must preserve
+both hosted/framework child bindings/pins with fresh responses; separate-parent
+scope and application-enforced Blob isolation remain independently required.
+No fallback, identity bypass, new service, whole-sprint dependency or retry of
+uncertain effects is introduced. All prior specialist live gates remain unmet.
+
 ## Current RP-S3: both-role history comparisons and independent parent scope
 
 Consume the [current cumulative overlay](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-evidence-joins-and-retained-linux-input-closure-october-20-2026).

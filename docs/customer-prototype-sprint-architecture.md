@@ -1,5 +1,92 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Work-conserving continuation: cold-import fixture boundary
+
+This continuation amendment consumes application `7fef48b7` and registered
+feature lab `1526012`. Original RP-S1/RP-S2/RP-S3 DevOps boundaries remain
+partial. The latest authoritative execution is audit `0413fdfc` under current-run
+`gh-dynamic-workflows/.delivery-runs/0159ec9f-a89c-47f9-986f-80d9dfe6740a/context`;
+its reconciled governance, not individual reviewer suggestions, drives this
+amendment. Opened accepted architecture `e568cf6a`, plan `3009f694` and exact-join
+E2E `2f339393`, plus earlier blocked audits `d29bb042` and `7e74a2ea`.
+Their bounded agreements are not deployment acceptance.
+
+The separate [continuation architecture and task contract](customer-prototype-fixture-continuation-architecture.json)
+preserves the original plans and ReleasePlan unchanged. Its solutionModel
+incorporates the canonical ten components, five flows and eighteen steps
+[by reference](customer-prototype-architecture.md#solutionmodel); no new runtime,
+service, model, operation, permission or acceptance gate is introduced.
+
+### Verified failure, source boundary and missing construction
+
+Independently hashed the approved mirrored `linux-final-7fef48b7-1526012.log`
+(`af9c4422b6f970d84b42ab87fb83e4f5c6396ea11d2c6f9a26fddf90a8fcaeb0`)
+and `linux-inspection-7fef48b7-1526012.json`
+(`083556f41e382fa4b436635701f4f0560627fc8eefff04b9395ee480c1b4933e`).
+The log records 206 application tests (199 passed, seven skips) and 224 retained
+tests (178 passed, 43 platform skips, three configuration errors). All seven
+native-observation cases now execute. Inspected sibling source:
+`LivePreparationTests.check_rejection` imports `demo.contracts` at line 360
+before establishing synthetic configuration; `demo/config.py` validates the
+project at import. All three errors terminate at missing
+`FOUNDRY_PROJECT_ENDPOINT`, before the intended rejection assertions.
+
+Apply exactly
+`["yaml-loops-v1:sprint/3/RP-S3/DevOpsWorkLoop","retained-live-preparation-fixture-initialization"]`.
+The existing Developer owns only lab
+`foundry-tf/multi-agent/tests/test_release_identity_decision.py` and necessary
+lab index updates for the correction. Establish fixture-owned synthetic
+configuration before configuration-dependent imports; register reliable
+restoration including setup/error paths. Add fresh-process coverage that removes
+ambient operational configuration and starts without warmed application imports,
+executes all three rejection cases and verifies the expected guards were reached.
+Preserve UNKNOWN's no-inventory assertion, version/identity drift rejection and
+no-parent-creation behavior, alongside strict runtime configuration validation.
+Do not weaken assertions to accept a configuration exception as the desired
+rejection. Use the existing validated dependencies, pinned absolute Python,
+explicit roots and mocks; no credentials or real service calls.
+
+This is a **Guarded lab release toolchain** test-only correction at
+`release-package` (AC7), not an identity/runtime failure or a mount redesign.
+Accepted mount/provenance/native-observation work under
+`["yaml-loops-v1:sprint/2/RP-S2/DevOpsWorkLoop","retained-linux-test-input-closure"]`
+remains consumed. No edits to Build-Demo, runtime, helper, context, selector,
+application fixtures or package allowlists are needed by the new source task.
+The existing integration Developer then verifies actual loaded owners and
+committed bytes, records changed test-only provenance separately from the
+unchanged runtime/Decision closure, delivers reviewed refs and refreshes only
+stale measured documentation. Original reviews and changed-join E2E precede
+changed-tool execution. Source-task completion does not require deployment.
+
+### Blast radius, independent work and exact resume
+
+| Scope / criterion | What can proceed | What remains blocked and receiving owner |
+| --- | --- | --- |
+| Toolchain / `release-join`, `release-package` / AC7 | Two bounded source/integration tasks in the separate amendment, then original E2E | Original DevOps reruns BOTH actual complete Linux suites and hosting/package gates for the new exact join; no startup replay or fixture PASS substitution. |
+| Toolchain and **Trusted identity and private transport** / `release-package` / AC9, G1/G8 | Existing DevOps continues provenance-backed common rollback ZIP locator/byte hashing and next-operation effect accounting independently of fixture repair | Neither of the two located ZIPs matches the expected common rollback hash per `0413fdfc`; those byte/journal findings remain owner-attributed here. No exhaustive private-tree search, reseal, regeneration or inferred availability. |
+| Three hosted roles, Decision-1, artifacts / `release-discriminate`, collaboration steps / AC1, AC5 | Existing reviewed scripts/fixtures are usable contracts, not new construction | BOTH real readiness exits gate one original serialized publisher, architect-before-reviewer ingress, final common bundle, genuine G1-G4 and completed non-held initial parent. |
+| Conversation state, checkpoints, terminal, artifacts / continuity/recovery/isolation / AC2-AC6 | Accepted implementation and offline fixtures remain available; no duplicate preparation task | Continuity/recovery need that completed parent; isolation needs final bindings/safe effects but not recovery success. No full-sprint dependency is introduced. |
+| Terminal and toolchain / `release-close` / AC8-AC9 | Existing integration/closeout can push/read back already reviewed documentation and refresh measured status on new evidence | Final live ledger, final/rollback bindings and attributable cleanup still need real execution; preserve UNKNOWNs, held parents, rollback assets and historical cleanup uncertainty. |
+
+Resume only `sprint/3/RP-S3/DevOpsWorkLoop` after the two new source/join
+handoffs and original E2E. It is the current execution frontier, not a new
+publisher. Earlier partial DevOps outcomes remain in review/retro reconciliation;
+do not launch three deployments to revisit historical failures. Independent
+rollback/effect work has no fixture dependency and can continue through that
+existing owner before the resume gate. No user-only blocker is established.
+
+Accessible inspection evidence now supports the separately labelled inspected
+image ID, exported manifest and config digests. This addresses the evidence
+gap under
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","release-binding-report-accuracy"]`,
+not the failed package gate or historical startup timeout. Preserve that timeout
+separately from later same-selection readiness; never replay startup.
+The original
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","guarded-execution-and-closeout"]`
+and selected-WSL exact-inventory boundaries remain binding. Four accepted exact
+metadata reads are not common rollback bytes, trusted ingress or live memory.
+All AC1-AC9/G1-G8 remain required; the original five-round accounting is unchanged.
+
 ## Current RP-S3: live evidence joins and retained Linux input closure (October 20, 2026)
 
 This is the current cumulative overlay for **RP-S3**; earlier entries retain

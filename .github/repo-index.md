@@ -1,5 +1,21 @@
 # Repository index
 
+Continuation architecture freshness: baseline application `7fef48b7` / feature
+lab `1526012`. Added only
+`docs/customer-prototype-fixture-continuation-architecture.json`; no deleted
+paths. Navigate the new cold-import overlay in
+`docs/customer-prototype-sprint-architecture.md` and all three tier contracts.
+Opened latest original DevOps governance `0413fdfc`, accepted cumulative
+architecture/plan/E2E `e568cf6a`/`3009f694`/`2f339393`, and historical blocked
+`d29bb042`/`7e74a2ea`. Independently hashed mirrored Linux log/inspection;
+fixture imports configuration before synthetic setup. Two bounded Developer
+source/join tasks preserve runtime/mount/helper/context/selector behavior and
+canonical solutionModel; existing DevOps independently continues rollback-byte/
+effect inventory. Original E2E and BOTH actual readiness exits still gate one
+publisher. No original plan/ReleasePlan change, execution or live acceptance.
+Latest original RP-S3 DevOps is the only resume frontier; earlier partial sprints,
+UNKNOWNs/held parents, reviewed closeout ownership and five-round count remain.
+
 RP-S3 Git-closeout freshness: baseline application `8287395e` / selected
 feature lab `1526012`; no added/deleted paths. Opened original join agreement
 `fc2a6414` (Architect/Critic task-complete) and stopped DevOps `7e74a2ea`.
@@ -1438,6 +1454,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-current-sprint-plan.json`
 - `docs\customer-prototype-engine-mount-amendment.json`
 - `docs\customer-prototype-engine-recovery-sprint-plan.json`
+- `docs\customer-prototype-fixture-continuation-architecture.json`
 - `docs\customer-prototype-linux-inventory-sprint-plan.json`
 - `docs\customer-prototype-operational-context-amendment.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`

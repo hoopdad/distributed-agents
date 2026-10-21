@@ -1,6 +1,7 @@
 """Synthetic boundary captures only: no hosted or compute-recovery claims."""
 from __future__ import annotations
 
+import asyncio
 import copy
 import dataclasses
 import json
@@ -9,17 +10,50 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
+from contextlib import ExitStack
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from agent_framework import InMemoryCheckpointStorage
 
 from live_acceptance import SCENARIOS, events, validate_artifact_evidence, validate_scenario_evidence
+from demo import routing, workflow
 from demo.artifacts import decode_document
 from test_workflow import (
     FakeRouter, MemoryBackend, RecordingRemote, TestRuntime, graph, make_store,
     synthetic_calibration,
 )
+
+
+class ScenarioClock:
+    """Fixture-owned wall time; only admission waits advance it, never the host."""
+
+    epoch = 2_000_000_000.0
+
+    def __init__(self):
+        self.now = self.epoch
+        self.reads = 0
+        self.waits = []
+
+    def time(self):
+        self.reads += 1
+        if self.reads > 10_000:
+            raise AssertionError("SYNTHETIC_CLOCK_READ_LIMIT")
+        return self.now
+
+    async def sleep(self, delay):
+        if not 0 < delay <= 65 or len(self.waits) >= 20 or self.now + delay > self.epoch + 600:
+            raise AssertionError("SYNTHETIC_CLOCK_WAIT_LIMIT")
+        self.waits.append(delay)
+        self.now += delay
+        await asyncio.sleep(0)  # Yield without changing or waiting on the event-loop clock.
+
+
+def clock_bindings():
+    # Include shared clocks to detect accidental stdlib/event-loop clock mutation.
+    return (workflow.time, routing.time, routing.asyncio, time.time, time.monotonic, asyncio.sleep)
 
 
 class CapturedRemote(RecordingRemote):
@@ -45,14 +79,19 @@ class CapturedRemote(RecordingRemote):
 
 class ScenarioEvidenceTests(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
-        settings = patch.dict(os.environ, {
+        self.fixture_resources = resources = ExitStack()
+        # Registered before *any* acquisition/calibration/capture can fail.
+        self.addCleanup(resources.close)
+        self.clock = ScenarioClock()
+        resources.enter_context(patch.object(
+            workflow, "time", SimpleNamespace(time=self.clock.time, monotonic=time.monotonic),
+        ))
+        resources.enter_context(patch.object(routing, "time", SimpleNamespace(time=self.clock.time)))
+        resources.enter_context(patch.object(routing, "asyncio", SimpleNamespace(sleep=self.clock.sleep)))
+        resources.enter_context(patch.dict(os.environ, {
             "DECISION_REQUESTS_PER_MINUTE": "17",
             "DECISION_MODEL_DEPLOYMENT": "synthetic-decision",
-        })
-        settings.start()
-        # asyncTearDown is not run after a failed setup. Register restoration
-        # before calibration or any initial/follow-up/restart/isolated capture.
-        self.addCleanup(settings.stop)
+        }))
         self.backend = MemoryBackend()
         self.remote = CapturedRemote(self.backend)
         self.checkpoints = {}
@@ -129,6 +168,23 @@ class ScenarioEvidenceTests(unittest.IsolatedAsyncioTestCase):
         self.validate()
         # File contract must round-trip JSON, not depend on live Python objects.
         self.validate(json.loads(json.dumps(self.data)))
+
+    async def test_real_admission_wait_expires_quota_using_only_fixture_time(self):
+        backend = MemoryBackend()
+        runtime = TestRuntime(backend, None)
+        store = make_store(backend, runtime.scope, "coordinator")
+        started = self.clock.time()
+        waits_before = len(self.clock.waits)
+        for operation in ("1" * 32, "2" * 32):
+            await routing.reserve_decision(
+                store, operation_id=operation, deployment="synthetic",
+                limit=1, deadline=self.clock.time() + 65,
+            )
+        self.assertEqual(self.clock.time() - started, 60)
+        self.assertEqual(self.clock.waits[waits_before:], [60])
+        state = decode_document(next(iter(backend.blobs.values())))
+        self.assertEqual([item["operation_id"] for item in state["reservations"]], ["2" * 32])
+        self.assertFalse(backend.leases)
 
     def change_initial_final_call_prerequisites(self, data, role, input_refs):
         kind = {"architect": "candidate", "reviewer": "review"}[role]
@@ -325,6 +381,10 @@ class ScenarioEvidenceTests(unittest.IsolatedAsyncioTestCase):
 
 
 class ScenarioSettingsTests(unittest.TestCase):
+    def assert_clock_bindings(self, before):
+        for actual, expected in zip(clock_bindings(), before):
+            self.assertIs(actual, expected)
+
     def test_all_captures_own_settings_and_restore_ambient_values_and_absence(self):
         for ambient in (None, ("invalid", ""), ("1", "ambient-decision")):
             with self.subTest(ambient=ambient), patch.dict(os.environ):
@@ -335,10 +395,15 @@ class ScenarioSettingsTests(unittest.TestCase):
                     else:
                         os.environ[name] = ambient[index]
                 before = dict(os.environ)
+                clocks_before = clock_bindings()
                 captures = []
                 original = ScenarioEvidenceTests.capture
 
                 async def checked_capture(fixture, scenario, parent):
+                    self.assertIs(workflow.time.time.__self__, fixture.clock)
+                    self.assertIs(routing.time.time.__self__, fixture.clock)
+                    self.assertEqual(clock_bindings()[3:], clocks_before[3:])
+                    self.assertIs(workflow.time.monotonic, time.monotonic)
                     self.assertEqual(
                         tuple(os.environ[name] for name in names),
                         ("17", "synthetic-decision"),
@@ -354,6 +419,7 @@ class ScenarioSettingsTests(unittest.TestCase):
                 self.assertTrue(result.wasSuccessful(), result.errors + result.failures)
                 self.assertEqual(captures, ["initial", "followup", "restart", "isolated"])
                 self.assertEqual(dict(os.environ), before)
+                self.assert_clock_bindings(clocks_before)
 
     def test_setup_failure_restores_settings_before_and_during_capture(self):
         for ambient in (None, ("invalid", "ambient-decision")):
@@ -366,6 +432,7 @@ class ScenarioSettingsTests(unittest.TestCase):
                         else:
                             os.environ[name] = ambient[index]
                     before = dict(os.environ)
+                    clocks_before = clock_bindings()
                     original = ScenarioEvidenceTests.capture
                     original_calibration = synthetic_calibration
 
@@ -393,6 +460,80 @@ class ScenarioSettingsTests(unittest.TestCase):
                     self.assertIn("SYNTHETIC_SETUP_FAILURE", result.errors[0][1])
                     self.assertFalse(result.failures)
                     self.assertEqual(dict(os.environ), before)
+                    self.assert_clock_bindings(clocks_before)
+
+    def test_nested_setup_restores_outer_clock_and_environment_after_success_and_failures(self):
+        before, clocks_before = dict(os.environ), clock_bindings()
+
+        async def exercise():
+            outer = ScenarioEvidenceTests()
+            try:
+                await outer.asyncSetUp()
+                outer.validate()
+                outer_environment, outer_clocks = dict(os.environ), clock_bindings()
+                original_capture = ScenarioEvidenceTests.capture
+                original_calibration = synthetic_calibration
+                for failure in (None, "calibration", "initial", "followup", "restart", "isolated"):
+                    with self.subTest(failure=failure):
+                        inner = ScenarioEvidenceTests()
+
+                        def calibration():
+                            self.assertIs(workflow.time.time.__self__, inner.clock)
+                            self.assertIsNot(inner.clock, outer.clock)
+                            if failure == "calibration":
+                                raise RuntimeError("SYNTHETIC_SETUP_FAILURE")
+                            return original_calibration()
+
+                        async def capture(fixture, scenario, parent):
+                            if scenario == failure:
+                                raise RuntimeError("SYNTHETIC_SETUP_FAILURE")
+                            return await original_capture(fixture, scenario, parent)
+
+                        try:
+                            with patch(__name__ + ".synthetic_calibration", side_effect=calibration), \
+                                 patch.object(ScenarioEvidenceTests, "capture", capture):
+                                if failure is None:
+                                    await inner.asyncSetUp()
+                                    inner.validate()
+                                else:
+                                    with self.assertRaisesRegex(RuntimeError, "^SYNTHETIC_SETUP_FAILURE$"):
+                                        await inner.asyncSetUp()
+                        finally:
+                            # We directly await setup inside the outer event loop,
+                            # not a second IsolatedAsyncioTestCase runner. Close its
+                            # registered scope directly; normal-runner failure
+                            # cleanup is covered by the tests above.
+                            inner.fixture_resources.close()
+                        self.assertEqual(dict(os.environ), outer_environment)
+                        self.assert_clock_bindings(outer_clocks)
+                # Continue a real outer capture after nested clocks have been removed.
+                with patch("demo.workflow.DecisionClient", return_value=FakeRouter()), patch(
+                    "demo.workflow.load_calibration", return_value=synthetic_calibration(),
+                ):
+                    await outer.capture("isolated", "outer-after-nesting")
+            finally:
+                outer.fixture_resources.close()
+
+        asyncio.run(exercise())
+        self.assertEqual(dict(os.environ), before)
+        self.assert_clock_bindings(clocks_before)
+
+    def test_synthetic_waits_advance_only_owned_time_and_fail_closed_at_bounds(self):
+        clock = ScenarioClock()
+        before = clock_bindings()
+        asyncio.run(clock.sleep(60))
+        self.assertEqual(clock.time(), clock.epoch + 60)
+        self.assertEqual(clock.waits, [60])
+        for delay in (0, -1, 66, float("nan"), float("inf")):
+            with self.subTest(delay=delay), self.assertRaisesRegex(AssertionError, "CLOCK_WAIT_LIMIT"):
+                asyncio.run(clock.sleep(delay))
+        clock.now = clock.epoch + 600
+        with self.assertRaisesRegex(AssertionError, "CLOCK_WAIT_LIMIT"):
+            asyncio.run(clock.sleep(1))
+        clock.reads = 10_000
+        with self.assertRaisesRegex(AssertionError, "CLOCK_READ_LIMIT"):
+            clock.time()
+        self.assert_clock_bindings(before)
 
 
 if __name__ == "__main__":

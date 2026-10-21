@@ -1760,6 +1760,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-engine-recovery-sprint-plan.json`
 - `docs\customer-prototype-fixture-continuation-architecture.json`
 - `docs\customer-prototype-fixture-continuation-sprint-plan.json`
+- `docs\customer-prototype-linux-clock-architecture-amendment.json`
 - `docs\customer-prototype-linux-inventory-sprint-plan.json`
 - `docs\customer-prototype-operational-context-amendment.json`
 - `docs\customer-prototype-post-delivery-exhaustion-architecture.json`

@@ -182,26 +182,46 @@ class RoutingTests(unittest.IsolatedAsyncioTestCase):
         second = TestRuntime(backend, None, parent="second-parent")
         store = make_store(backend, first.scope, "coordinator")
         other = make_store(backend, second.scope, "coordinator")
-        with patch("demo.routing.time.time", return_value=1000.0):
+        with patch("demo.routing.time", SimpleNamespace(time=lambda: 1000.0)):
             await reserve_decision(store, operation_id="1" * 32, deployment="synthetic", limit=1, deadline=1100)
             with self.assertRaises(ArtifactError) as caught:
                 await reserve_decision(other, operation_id="1" * 32, deployment="synthetic", limit=1, deadline=1100)
             self.assertEqual(caught.exception.code, "DECISION_ADMISSION_REPLAY")
-            with patch("demo.routing.asyncio.sleep", side_effect=asyncio.CancelledError):
+            with patch("demo.routing.asyncio", SimpleNamespace(
+                sleep=AsyncMock(side_effect=asyncio.CancelledError),
+            )):
                 with self.assertRaises(asyncio.CancelledError):
                     await reserve_decision(other, operation_id="2" * 32, deployment="synthetic", limit=1, deadline=1100)
         self.assertEqual(len(backend.blobs), 1)
         state = decode_document(next(iter(backend.blobs.values())))
         self.assertEqual([item["operation_id"] for item in state["reservations"]], ["1" * 32])
         self.assertFalse(backend.leases)
-        with patch("demo.routing.time.time", return_value=1061.0):
+        with patch("demo.routing.time", SimpleNamespace(time=lambda: 1061.0)):
             await reserve_decision(other, operation_id="2" * 32, deployment="synthetic", limit=1, deadline=1100)
+
+    async def test_admission_rejects_backward_clock_without_changing_reservations(self):
+        backend = MemoryBackend()
+        runtime = TestRuntime(backend, None)
+        store = make_store(backend, runtime.scope, "coordinator")
+        clock = SimpleNamespace(time=lambda: 1000.0)
+        with patch("demo.routing.time", clock):
+            await reserve_decision(store, operation_id="1" * 32, deployment="synthetic", limit=17, deadline=1100)
+            before = copy.deepcopy(backend.blobs)
+            # A real prior reservation is now ten seconds in the future (>5).
+            clock.time = lambda: 990.0
+            with self.assertRaises(ArtifactError) as caught:
+                await reserve_decision(
+                    store, operation_id="2" * 32, deployment="synthetic", limit=17, deadline=1100,
+                )
+            self.assertEqual(caught.exception.code, "DECISION_ADMISSION_CLOCK")
+            self.assertEqual(backend.blobs, before)
+            self.assertFalse(backend.leases)
 
     async def test_admission_configuration_conflicts_are_explicit(self):
         backend = MemoryBackend()
         runtime = TestRuntime(backend, None)
         store = make_store(backend, runtime.scope, "coordinator")
-        with patch("demo.routing.time.time", return_value=1000.0):
+        with patch("demo.routing.time", SimpleNamespace(time=lambda: 1000.0)):
             await reserve_decision(store, operation_id="1" * 32, deployment="synthetic", limit=17, deadline=1100)
             with self.assertRaises(ArtifactError) as caught:
                 await reserve_decision(store, operation_id="2" * 32, deployment="synthetic", limit=18, deadline=1100)

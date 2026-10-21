@@ -1,0 +1,114 @@
+{
+  "kind": "SprintPlanContinuation",
+  "sprintId": "RE-EXEC-1",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "architecture": "docs/customer-prototype-reviewed-ref-closeout-architecture.json",
+  "architectureCommit": "48edc34e332b2ef174549e6c2eb99dccaaae1c62",
+  "originalPlan": "docs/customer-prototype-remaining-execution-sprint-plan.json",
+  "releasePlan": "docs/customer-prototype-remaining-execution-release-plan.json",
+  "sourceAccounting": {
+    "acceptedApplication": "8b50f343b649f75ec02b187f871bb0d77b9cee24",
+    "acceptedLab": "885801565ae11878a7c4f33c29f6b45b0eb19af7",
+    "applicationRemoteObserved": "55cf0216a869bf135432c3304f6dfd408b738520",
+    "applicationPlanningHeadObserved": "48edc34e332b2ef174549e6c2eb99dccaaae1c62",
+    "sourceContract": "docs/design.md#reviewed-discovery-repair-source-join",
+    "rule": "Push only the pinned accepted application ref after fresh safety checks. This plan and subsequent unreviewed ancestry are excluded. Preserve both selected feature checkouts and all canonical dirty work."
+  },
+  "tasks": [
+    {
+      "id": "RE-EXEC-1-ACCEPTED-REF-CLOSEOUT",
+      "title": "Deliver the newly reviewed repaired-join feature ref",
+      "kind": "developer",
+      "owner": "Developer",
+      "ownerBinding": "Existing integration/final-closeout Developer; no replacement integration writer.",
+      "sourceSprintId": "RE-EXEC-1",
+      "sourceCriterion": "AC8 reviewed feature-branch push/readback and AC9 exact delivery accounting; original SprintPlan existingGitReconciliation permits this independently of live success.",
+      "dependsOn": [],
+      "exclusiveResources": ["application-git-integration", "lab-git-integration"],
+      "ownedPaths": [],
+      "estimatedMinutes": {"implementation": 10, "review": 5, "integration": 0},
+      "consumes": [
+        "Original integration agreement cc7f2e827137a5760fe0aae31acf47a7d5e5083032ea10dd367dacfa2bfd81c5",
+        "Original parent-plan agreement c0843a7e363985ddea15a1a6b29ddcd42e25d0f3c85b6800a1dd9c20e81da6f1",
+        "Original closeout architecture agreement 2c2fa70d9aebb5d50c340c633d8d038b7c929ff7c6e867445efeab27423efb05",
+        "Pinned application 8b50f343b649f75ec02b187f871bb0d77b9cee24 and lab 885801565ae11878a7c4f33c29f6b45b0eb19af7"
+      ],
+      "produces": [
+        "Actual non-force pinned application push result and independent exact remote readback",
+        "Fresh exact lab feature-ref readback without unnecessary repush",
+        "Precise delivery report for original Architect/Critic, with excluded ancestry and any non-destructive limitation"
+      ],
+      "doneWhen": "The existing owner verifies applicable original reviews, intended ancestry and safe remote state; performs the authorized non-force application push pinned to 8b50f343 and independent exact readback, verifies lab88580156 remotely, and returns actual results or a precise actionable non-destructive delivery limitation for original Architect/Critic review.",
+      "exclusions": [
+        "No duplicate integration, repair, hash recomputation, suite execution, denial investigation or source/document editing; no artificial ledger commit.",
+        "Do not push moving HEAD, this amendment, subsequent unreviewed planning or unrelated ancestry; stop rather than overwrite an independently advanced remote.",
+        "No branch switch, merge, amend, force-push, broad staging, secret/evidence commit, canonical dirty adoption or historical branch deletion.",
+        "No substitute E2E, runtime/journal edit, DevOps resume, engine operation, settings import, cloud operation, publication, inference or stop/resume."
+      ],
+      "handoff": "Original Architect/Critic inspect actual exact-ref delivery and limitations. Existing owner reconciles refs only; task source commits already reside on authorized feature ancestry, so no merge or abandonment is required. Scrum retains original changed-source E2E dispatch and required repository-check limitations. This slice does not finish AC8 or release closeout.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Deliver the newly reviewed repaired-join feature ref",
+        "goal": "Deliver the newly review-eligible exact source ancestry without repeating accepted integration or including unreviewed planning.",
+        "components": ["Guarded lab release toolchain"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-close"],
+        "doneWhen": "The existing owner verifies applicable original reviews, intended ancestry and safe remote state; performs the authorized non-force application push pinned to 8b50f343 and independent exact readback, verifies lab88580156 remotely, and returns actual results or a precise actionable non-destructive delivery limitation for original Architect/Critic review.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["docs/design.md", "docs/identity-recovery-plan.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    }
+  ],
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDeveloper": ["RE-EXEC-1-ACCEPTED-REF-CLOSEOUT"],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": [],
+  "assignmentDecision": {
+    "dispatch": "Return this one dependency-ready task to the original orchestrator for dispatch before original planning reviews. Do not launch substitute agents.",
+    "parallelism": "Only one new eligible assignment exists. It has no dependency on live success, Linux readiness or the whole sprint. Existing independent DevOps rollback/effect investigation retains its owner and original placement; no duplicate investigator is dispatched.",
+    "gitReconciliation": "Existing integration/final-closeout Developer owns both feature refs and matching existing Git resources. No source editing, task branch, merge or abandoned code is introduced by this ref-only assignment."
+  },
+  "criticalPath": {
+    "readySlice": "Accepted integration and parent-plan votes unlock exact reviewed-ref delivery now; there is no new prerequisite task.",
+    "releasePath": "Actual original changed-source E2E and reviews plus required passing source checks precede dependent same-engine read-only revalidation, BOTH complete corrected actual Linux suites and hosting/package gates. Independent common rollback ZIP-byte/effect readiness joins package readiness before one serialized guarded publisher.",
+    "dispatchLimitation": "The current continuation retains the earlier agreed E2E FAIL against lab651a2290 and resumes only DevOps. Accepted repair/integration does not resolve that original-stage scheduling limitation. No unchanged resume or assigned-work E2E is proposed.",
+    "downstream": "Actual architect-before-reviewer ingress, final common bundle and G1-G4 must establish a completed non-held initial parent before follow-up and once-only supported stop/resume. Separate-parent isolation depends on final deployed bindings and comparison evidence, not recovery success."
+  },
+  "dispositions": [
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop\",\"RE-EXEC-1-DISCOVERY-OWNERSHIP\"]",
+      "handling": "Consume accepted repair4334061a and integrationcc7f2e82; do not redispatch construction. Original changed-source E2E is still required and unscheduled."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop\",\"RE-EXEC-1-REPOSITORY-CHECK\"]",
+      "handling": "Keep scripts/Test-Repository.ps1 unmet. Accepted negative investigation26415128 established no originating record or changed permitted condition. Do not repeat it, retry/bypass the denial or invent missing user authority; existing originating-owner record recovery remains assigned."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop\",\"RE-EXEC-1-RELEASE-READINESS\"]",
+      "handling": "Preserve original DevOps ownership and both actual readiness exits. No startup replay, UNKNOWN resend, held-parent reuse or inference/publication is unlocked by Git delivery."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop\",\"RE-EXEC-1-REVIEWED-GIT-DELIVERY\"]",
+      "handling": "Newly accepted exact integration/parent-plan ancestry makes this remaining ref-only slice eligible. Exclude concurrent unreviewed ancestry and retain final delivery/closeout obligations."
+    }
+  ],
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Dispatch one newly review-eligible exact-ref delivery slice to existing closeout ownership independently of unresolved original execution gates.",
+    "evidence": [
+      "Original integration audit cc7f2e82 and parent-plan audit c0843a7e record agreed status and all applicable original reviewer taskComplete=true votes with no unmet criteria.",
+      "Original closeout architecture audit 2c2fa70d accepts the bounded ref-only split; current application remote readback remains55cf0216 below accepted8b50f343.",
+      "Read-only ancestry check confirms55cf0216 is an ancestor of pinned8b50f343; both selected feature working trees are clean, and selected lab HEAD is88580156.",
+      "Original resumed DevOps audit4e6d08bb remains needs-replan; no changed-source E2E, permitted repository-check condition or dependent readiness execution has been established.",
+      "Approved remaining ReleasePlan contains only RE-EXEC-1 with no missing construction backlog. Accepted repair and negative investigation are not repeated; independent rollback/effect work retains its existing owner."
+    ],
+    "resumes": []
+  },
+  "preservation": "Original plans, release scope, canonical model, accepted source, historical/capped invocations and no-progress accounting remain unchanged. Preserve UNKNOWN effects, held parents, rollback assets and cleanup uncertainty. No new ceiling, authority, feature, reviewer stage or acceptance waiver. Planning and repeated applicability inspection earn no execution-progress credit."
+}

@@ -1,5 +1,15 @@
 # Repository index
 
+Reviewed-ref dispatch freshness: based on accepted architecture `48edc34e`,
+application `8b50f343` and selected feature lab `88580156`; adds only
+`docs/customer-prototype-reviewed-ref-closeout-sprint-plan.json`.
+Navigate that separate Scrum amendment for the existing closeout Developer's
+single ready ref-only delivery assignment. Pin application delivery to reviewed
+`8b50f343`, not moving HEAD or this planning; preserve existing Git resources.
+Original changed-source E2E dispatch and the repository check remain unmet.
+No DevOps resume, duplicate construction/investigator or new execution-progress
+credit is introduced. Independent rollback/effect ownership remains unchanged.
+
 Reviewed-ref closeout freshness: based on application `8b50f343` and selected
 feature lab `88580156`; adds only
 `docs/customer-prototype-reviewed-ref-closeout-architecture.json`.
@@ -1646,6 +1656,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-reviewed-join-continuation-architecture.json`
 - `docs\customer-prototype-reviewed-join-continuation-sprint-plan.json`
 - `docs\customer-prototype-reviewed-ref-closeout-architecture.json`
+- `docs\customer-prototype-reviewed-ref-closeout-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-execution-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-execution-resume-sprint-plan.json`

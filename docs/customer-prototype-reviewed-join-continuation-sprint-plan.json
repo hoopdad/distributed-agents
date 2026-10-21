@@ -1,0 +1,141 @@
+{
+  "kind": "SprintPlanContinuation",
+  "sprintId": "RE-EXEC-1",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "architecture": "docs/customer-prototype-reviewed-join-continuation-architecture.json",
+  "architectureCommit": "55cf0216a869bf135432c3304f6dfd408b738520",
+  "originalPlan": "docs/customer-prototype-remaining-execution-sprint-plan.json",
+  "releasePlan": "docs/customer-prototype-remaining-execution-release-plan.json",
+  "sourceAccounting": {
+    "applicationBeforeAmendment": "55cf0216a869bf135432c3304f6dfd408b738520",
+    "selectedFeatureLab": "885801565ae11878a7c4f33c29f6b45b0eb19af7",
+    "historicalE2ELab": "651a22908984174d3947b9d04ed68f6cd13ea90c",
+    "observation": "Both selected feature working trees were clean. Accepted repair already belongs to the feature branch; no merge, duplicate repair or branch switch is needed.",
+    "rule": "Account for this plan/index commit and later intended reviewed documentation separately from runtime and test inputs. Original changed-source E2E must verify the actual joined committed source; historical E2E FAIL is not validation of lab88580156."
+  },
+  "tasks": [
+    {
+      "id": "RE-EXEC-1-REPAIRED-JOIN-DELIVERY",
+      "title": "Integrate and deliver the reviewed discovery-repair source join",
+      "kind": "developer",
+      "owner": "Developer",
+      "ownerBinding": "Retained RP-S2-SOURCE-INTEGRATE / existing integration-final-closeout Developer responsibility. Activate this unfinished slice once; do not appoint a second integration writer.",
+      "sourceSprintId": "RE-EXEC-1",
+      "sourceCriterion": "AC7 exact reviewed source, AC8 reviewed feature-branch delivery, AC9 truthful source/evidence handoff; original SprintPlan existingGitReconciliation permits this work independently of live success.",
+      "dependsOn": [],
+      "exclusiveResources": [
+        "application-git-integration",
+        "lab-git-integration"
+      ],
+      "estimatedMinutes": {
+        "implementation": 25,
+        "review": 12,
+        "integration": 8
+      },
+      "repositoryId": "application",
+      "ownedPaths": [
+        "docs/design.md",
+        "docs/identity-recovery-plan.md",
+        ".github/repo-index.md"
+      ],
+      "ownedPathsByRepository": {
+        "application": [
+          "docs/design.md",
+          "docs/identity-recovery-plan.md",
+          ".github/repo-index.md"
+        ],
+        "lab": []
+      },
+      "consumes": [
+        "Accepted original repair audit 4334061aa76b82fe51fcda7911b1007d42d680fae4bb95bda2fa76fa71409872 and lab885801565ae11878a7c4f33c29f6b45b0eb19af7",
+        "Original architecture agreement 16a1899738203257aa8c9fa5912eeb64d965b9ebbe1dd0a5577184e0fe72e73c",
+        "docs/design.md#reviewed-cold-import-fixture-source-join and original SprintPlan existingGitReconciliation",
+        "Original resumed DevOps audit 4e6d08bb2f9036b5a59f12ff48d5d2db4644cf1222cf1c9e2d2ba90adcf90854; historical E2E and repository-check limitations remain binding"
+      ],
+      "produces": [
+        "Committed exact repaired-source join including entrypoint and discovery regression bytes, actual loaded owners and source ancestry",
+        "Actual original-reviewed feature-ref push/readback ledger or precise actionable delivery limitation",
+        "Original Architect/Critic integration review handoff and exact source handoff for original Developer EndToEndTestLoop"
+      ],
+      "acceptanceCriteria": [
+        "Consume the original accepted repair without reopening it. Verify exact feature ancestry, committed changed inputs and actual application/lab module ownership; coordinate absence of conflicting integration writers before edits.",
+        "Append a concise repaired-join record preserving historical joins. Bind Test-Demo.ps1 and tests/test_release_discovery.py separately from unchanged runtime/helper seals. Attribute prior Windows results to their audit and distinguish any checks actually performed.",
+        "Inspect remote refs and deliver only intended already original-reviewed ancestry. Read back exact refs independently, recheck HEAD before push, and exclude concurrent unreviewed ancestry, this plan before its reviews, and new integration documentation before its reviews. A precise delivery limitation can complete this bounded task but never satisfies outstanding AC8.",
+        "Commit only owned paths with required Copilot co-author, Copilot-Session and current Delivery-Run provenance. Retain every task commit on the authorized feature branch or a named branch with task/commit/abandonment accounting in a feature-branch message; preserve all historical branches.",
+        "Hand off actual integration commits, bindings and delivery results to original Architect/Critic. Retain original Developer E2E and Architect/Critic/Product Owner reviews before dependent DevOps; no automatic DevOps resume is authorized."
+      ],
+      "doneWhen": "The existing integration owner commits the exact repaired-source join, records actual reviewed-ref push/readback results or a precise actionable delivery limitation, and hands exact provenance to original reviewers and original E2E ownership; a delivery limitation does not satisfy AC8 or complete the release.",
+      "exclusions": [
+        "No duplicate accepted entrypoint repair, accepted cold-import rewrite, repeated negative rejection-record investigation or new feature.",
+        "No substitute assigned-work E2E, scheduling-runtime/journal edit, invented resume key or claim that integration fixes original-stage dispatch.",
+        "No denied repository-suite retry or constituent-check bypass, complete-suite rerun to reclaim progress, dependency installation, settings import, engine operation or cloud operation.",
+        "No lab source mutation, canonical dirty adoption, shared branch switch, amend, force-push, broad staging, secret/evidence commit or historical cleanup."
+      ],
+      "handoff": "Original Architect/Critic inspect actual integration commits and delivery accounting. Scrum/orchestrator must expose actual original changed-source E2E dispatch and recover the originating rejection-record pointer through existing coordination; do not repeat accepted negative research or unchanged DevOps continuation.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Integrate and deliver the reviewed discovery-repair source join",
+        "goal": "Complete the retained source-integration and reviewed-ref delivery slice independently of live success, without replacing original E2E.",
+        "components": ["Guarded lab release toolchain"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-join", "release-close"],
+        "doneWhen": "The existing integration owner commits the exact repaired-source join, records actual reviewed-ref push/readback results or a precise actionable delivery limitation, and hands exact provenance to original reviewers and original E2E ownership; a delivery limitation does not satisfy AC8 or complete the release.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["docs/design.md", "docs/identity-recovery-plan.md", ".github/repo-index.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    }
+  ],
+  "assignmentDecision": {
+    "AssignedWorkUIDeveloper": [],
+    "AssignedWorkDeveloper": ["RE-EXEC-1-REPAIRED-JOIN-DELIVERY"],
+    "AssignedWorkDevOpsEngineer": [],
+    "AssignedWorkDesigner": [],
+    "dispatch": "Return this single dependency-ready retained-owner assignment to the original orchestrator for dispatch before planning reviews. No substitute agents are launched by Scrum. Actual dispatch is not claimed by this planning turn.",
+    "parallelism": "No new-task dependency exists. The retained integration assignment is independent of existing DevOps rollback/effect inventory work and Scrum/originating-owner coordination. Preserve those owners and their existing resource locks; do not create duplicate inventory or publication assignments."
+  },
+  "criticalPath": {
+    "readySlice": "Retained integration/delivery: approximately 25 implementation + 12 review + 8 integration minutes; estimates are not execution caps.",
+    "releasePath": "Reviewed exact join -> actual original changed-source E2E and reviews plus passing required source checks -> same-engine read-only revalidation, both actual Linux suites and hosting/package gates -> join independent rollback-byte/effect readiness -> one serialized publisher -> actual G1-G4 and eligible initial parent -> continuity and once-only supported recovery.",
+    "minimalEdges": "Source integration does not depend on live success, Linux success or whole-sprint acceptance. Separate-parent isolation requires final bindings and actual comparison evidence, not recovery success.",
+    "internalConstraint": "The installed continuation retains the agreed historical E2E and resumes DevOps only. No changed scheduling evidence exists; integration alone cannot unlock that original-stage dispatch or justify another DevOps resume.",
+    "coordination": "Existing Scrum/originating owner must supply the direct repository-check rejected request/response pointer before proposing a permitted changed condition. Accepted negative research is closed; no repeat investigation task is created."
+  },
+  "existingDevOpsOwnership": {
+    "owner": "Existing DevOps inventory and original DevOps Engineer",
+    "independentWork": "Authorized nonsecret common rollback ZIP-byte and effect-readiness investigation continues independently of integration and Linux success.",
+    "guards": "Keep existing engine/stage, publication/transport/context/mount and conversation exclusive resources from the original plan. Do not replay engine startup, uncertain publications or held parents. Both actual readiness exits precede the single existing guarded publisher.",
+    "acceptance": "Original DevOps cloud-pass and original release AC1-AC9/G1-G8 remain incomplete."
+  },
+  "dispositions": {
+    "origin": "yaml-loops-v1:sprint/1/RE-EXEC-1/DevOpsWorkLoop",
+    "RE-EXEC-1-DISCOVERY-OWNERSHIP": "Consume accepted repair audit4334061a; preserve exact integration, original changed-source E2E and actual Linux/package obligations.",
+    "RE-EXEC-1-REPOSITORY-CHECK": "Keep required suite unmet and accepted negative audit26415128 closed; no unchanged retry, alternate invocation or speculative human-permission request.",
+    "RE-EXEC-1-RELEASE-READINESS": "Retain independent existing inventory owner, both readiness exits, original DevOps placement and actual cloud-pass criteria.",
+    "RE-EXEC-1-REVIEWED-GIT-DELIVERY": "Activate existing unfinished integration/delivery slice once with existing Git resources; no duplicate owner, artificial commit or whole-release barrier."
+  },
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Dispatch the existing owner's unfinished reviewed repaired-join integration/delivery slice. This is useful approved work, not a scheduling fix. No unchanged DevOps reassessment is requested.",
+    "evidence": [
+      "Original architecture audit16a18997 records Product Owner/Critic/Red Team agreement and accepts this retained integration slice with no unmet bounded criteria.",
+      "Original repair audit4334061a records Architect/Critic acceptance of lab88580156; docs/design.md still binds historical lab651a2290.",
+      "Original SprintPlan existingGitReconciliation retains independent integration/delivery ownership and application-git-integration/lab-git-integration resource names.",
+      "Original resumed DevOps audit4e6d08bb remains needs-replan; accepted negative audit26415128 establishes no changed permitted repository-check condition.",
+      "Only RE-EXEC-1 is available. No additional approved construction backlog is identified; independent existing rollback/effect work and retained integration remain feasible without duplicating accepted tasks."
+    ],
+    "resumes": []
+  },
+  "preservation": [
+    "Original ReleasePlan, original SprintPlan, earlier amendment, historical FAIL and capped invocations remain unchanged.",
+    "No task reuses either continuation.scheduledTaskIds entry. No new E2E task or duplicate integration owner is introduced.",
+    "No source/runtime/package/live progress is claimed for this planning artifact. Preserve maxNoProgressRounds=5 without additional ceilings.",
+    "Preserve historical UNKNOWN effects, held parents, rollback assets, unrelated dirty/staged work and cleanup uncertainty.",
+    "Account-wide Blob Contributor means application-enforced role/parent isolation, not storage-RBAC or malicious-host isolation."
+  ]
+}

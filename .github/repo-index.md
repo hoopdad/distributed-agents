@@ -1,5 +1,15 @@
 # Repository index
 
+RE-EXEC-1 reviewed-join dispatch freshness: based on application `55cf0216`
+and accepted feature lab `88580156`; adds only
+`docs/customer-prototype-reviewed-join-continuation-sprint-plan.json`.
+Navigate that separate Scrum amendment for the retained integration/final-closeout
+Developer's single unfinished repaired-join delivery slice. Existing Git resource
+names and independent rollback/effect ownership are preserved. No duplicate
+repair, denial investigation, inventory owner or substitute E2E is dispatched.
+Original changed-source E2E remains unscheduled by the current continuation;
+resumes is empty. Planning does not establish execution or live progress.
+
 RE-EXEC-1 reviewed-join continuation freshness: based on application `3e8a1cf9`
 and accepted feature lab `88580156`; adds only
 `docs/customer-prototype-reviewed-join-continuation-architecture.json`.
@@ -1609,6 +1619,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-remaining-execution-release-plan.json`
 - `docs\customer-prototype-remaining-execution-sprint-plan.json`
 - `docs\customer-prototype-reviewed-join-continuation-architecture.json`
+- `docs\customer-prototype-reviewed-join-continuation-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-execution-sprint-plan.json`
 - `docs\customer-prototype-rp-s2-sprint-plan.json`
 - `docs\customer-prototype-rp-s3-execution-resume-sprint-plan.json`

@@ -23,19 +23,30 @@ A separate parent gets its own child bindings and artifact scope.
 **Release status — blocked, not customer-ready (October 20, 2026):**
 originating ownership, runner corrections and source integration handoffs are
 accepted, including the operational-context correction and local integration.
-The predecessor Linux build failed at the unavailable selected Docker
-Linux-engine endpoint, before image/container validation; the underlying cause
-is not established. Bounded recovery of the existing engine is specified, not
-yet verified as implemented, reviewed or executed. Its changed exact source
-join must pass original E2E validation before DevOps execution. Actual
-Linux/hosting-package checks remain outstanding.
+The existing-engine helper and its source/mount regressions are accepted.
+In the predecessor DevOps execution, its startup command timed out; a later
+read-only observation found the same selected Linux engine ready without
+another startup. These are separate outcomes, not recovery-command success.
+A Linux/amd64 hosting image built, but application container tests failed
+(191 tests, 14 errors, seven skips); the separate retained Linux suite was
+not reached. Image construction is not package validation. The exported
+manifest digest is not an authoritative image ID, which remains unverified.
+The public test-input/isolated-fixture and selected-WSL exact-inventory source
+corrections now have original review acceptance. Their final joined offline
+checks passed (206 application tests; 217 of 220 retained tests, with three
+native-Linux exclusions). Original changed-join E2E precedes DevOps
+same-selection readiness revalidation, without startup replay, and complete
+Linux application **and** retained-container checks. These actual gates remain
+outstanding; offline success does not supersede the failed container result.
 
-The selected WSL route previously passed authenticated private read-only
-checks and closed that operation's newly owned resources. This is bounded
-route-readiness evidence, not final runtime health or collaboration proof;
-operational freshness must be revalidated before external effects. Complete
+Earlier accepted evidence established bounded selected-WSL read-only access
+and newly owned closure. The latest DevOps report also describes private
+reads and closure, but its fresh receipt was inaccessible to original review;
+those latest claims remain owner-attributed. Neither is final runtime health
+or collaboration proof; operational freshness must be revalidated before
+external effects. Complete
 rollback-version/package and unresolved-effect inventory remains outstanding
-independently of engine recovery. Both actual readiness gates must pass before
+independently of Linux/package validation. Both actual readiness gates must pass before
 one serialized guarded publisher proceeds to final common-bundle live checks.
 
 Accepted offline assertions are not a live demonstration. Neither identity
@@ -47,7 +58,7 @@ deployment is not a final common-bundle release.
 [Release notes and requirement status](docs/customer-prototype-release-notes.md)
 retain the earlier blocked closeout; the
 [current release plan](docs/customer-prototype-release-plan.md) routes the
-existing-engine recovery, independent inventory and remaining gates. Final
+same-selection package validation, independent inventory and remaining gates. Final
 deployed and rollback bindings remain unverified.
 [Recovery evidence and gates](docs/identity-recovery-plan.md)
 retain the publication **UNKNOWN**, held parents and unproven historical

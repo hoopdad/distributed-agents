@@ -1,5 +1,24 @@
 # Repository index
 
+Final correction-join freshness: `RP-S2-CORRECTION-SOURCE-JOIN` consumes
+original-reviewed application `b906d5eb` / lab `f6e7d8b`, both now pushed/read
+back with all accepted correction/helper/planning ancestry including `0cac08c9`.
+No added/deleted paths. `docs/design.md#final-linux-input-and-inventory-source-join`
+binds actual loaded owners, committed bytes, closure `bfd6ed4d...` and separate
+raw/LF test-input/helper provenance. `Build-Demo.ps1` mounts only public
+identity-handoff test input with diagnostic dependency; runtime/ZIP unchanged.
+`tests/test_scenario_evidence.py` owns/restores both synthetic Decision settings
+before calibration/all four captures, including setup-failure cleanup.
+Fresh complete offline checks: 206 application PASS; 217 of 220 retained PASS,
+three explicit native-Linux exclusions, no dirty-source skip. README/recovery
+now distinguish accepted source, timeout versus later same-selection observation,
+image construction versus failed container tests, manifest digest versus
+unverified image ID, and owner-attributed inaccessible fresh private receipts.
+Original E2E -> DevOps actual Linux AND independent exact inventory exits ->
+one publisher/G1-G4; no operational/live evidence here. Both indexes refreshed;
+this slice's docs await original review and existing closeout push/readback.
+Older entries retain their historical measurements, source and push boundaries.
+
 Inventory-only integration freshness: `RP-S2-INVENTORY-SOURCE-JOIN` consumes
 original-reviewed lab inventory `410b9a0c` at application `88d365f2` / lab
 `903614f9`; both explicit input feature refs were pushed/read back, including

@@ -1,5 +1,84 @@
 # Distributed agents: MAF/Foundry workflow and shared artifacts
 
+## Final Linux-input and inventory source join
+
+Task `RP-S2-CORRECTION-SOURCE-JOIN` joins reviewed application
+`b906d5eb153183d7c4eb8574b054f12c8ff13eab` and lab
+`f6e7d8b598db8907295954bf52df6efc56c187ef` on
+`feature/customer-hosted-session-prototype`. Original Architect/Critic
+task-complete votes with no unmet criteria were inspected in current-run
+audits `f0698a28` (Linux correction) and `e18e846e` (inventory integration).
+Both exact input refs were pushed and remotely read back, retaining `0cac08c9`,
+fixture `88d365f2`, build/input `97bba71c`/`903614f9`, inventory `410b9a0c`,
+and all preceding accepted helper/context/planning ancestry. No task code
+was abandoned or merged from another branch. This integration's documentation
+requires its own original review before the existing closeout owner pushes
+and reads back its commits; the reviewed-input push does not include them.
+The companion lab navigation commit is
+`5da7a2ea20a67561ca29fae11c049bfe9748ba3b`; it changes only the lab index,
+so the source and check bindings below remain unchanged.
+
+Actual loaded Python owners (`release_roots`, `identity_decision`,
+`bundle_package`, `wsl_release`, `observe_agent`) and PowerShell
+`Resolve-ReleaseRoots` match the selected feature lab. Matched explicit
+application/tool roots passed both resolvers without settings import.
+All 22 application and nine lab source-set entries match committed bytes
+after LF normalization. The raw-byte `identity_decision.source_files`
+compact sorted-key JSON closure remains
+`bfd6ed4d380a354a11104e1207605f169991d16a08b71db7344e4cea7e9815e9`.
+The [inventory contract](#readonly-exact-inventory-caller-contract) and
+operational-context separation are unchanged. This seal is **not** the helper,
+wrapper or Linux test-input seal; the historical seal cannot cover changed WSL
+source. Separate inputs below also match committed source after LF normalization.
+
+| Input (lab paths relative to `foundry-tf/multi-agent/`) | LF-normalized SHA256 |
+| --- | --- |
+| Application `tests/test_scenario_evidence.py` | `68cf048eca210805bde28c994b1c7fbf5df87d24a21e2462f98ae0ef4b9d1863` |
+| Application `scripts/identity_handoff.py` | `2b72afc64944f9e7c00b545fac47e9dccd12cdd3604743d5590c297996422ce1` |
+| Application `scripts/diagnose_identity.py` | `f3f6a592dc6f1e6fce5ef4fca8b22a20483fee6c73cacd5d46e395b020cdab94` |
+| Application `scripts/calibrate_routing.py` | `2438e8f7f2d78387dfb60abcdf4ca9f2377f2bca00d08070a5b908fdb04677c0` |
+| Lab `Build-Demo.ps1` | `f50e8249093c09e24499bfbd703253e50708ac2ed675eab2fc1639d6c91f7c57` |
+| Lab `tests/test_release_native_settings.py` | `b2955af09f70654a3304b1532458d9781c2cfcea9f4a34f475eab6254d98a4af` |
+| Lab `Ensure-LinuxEngine.ps1` | `08b47f61b38f5855906c552753896ecb2e57d58222d2070b01c953b8bd573ac5` |
+| Lab `tests/test_release_linux_engine.py` | `08c833156dd08e49dacce6ad40037bee1147f2606457de8769e2ee8ce9f9f3da` |
+
+`Build-Demo.ps1` retains named read-only mounts, network-none tests and separate
+application/retained container suites. Only public `identity_handoff.py` is
+added as a test input, with its diagnostic dependency and file/reparse guards;
+the whole scripts tree, private settings and checkout are not mounted.
+Its `test_input_sha256` output binds **raw bytes**, independently of runtime
+provenance. Current raw script hashes, which differ from LF-normalized Git
+content because of checkout line endings, are:
+
+| Application test-only input | Raw SHA256 |
+| --- | --- |
+| `scripts/identity_handoff.py` | `12483afd788b3eb9f1924861472880c2ff2a412572a3ab09e3e614395b4c6dfd` |
+| `scripts/diagnose_identity.py` | `e046e7f718c4bae1f66ac7009488d6b5c02e4c9a0781bd44e803ccd9d4c7e914` |
+| `scripts/calibrate_routing.py` | `82d62c887b3369753846ab139ac499d5ce174ceec674b0c7f60a2934166eddc7` |
+
+These are source observations, not a newly built package receipt; DevOps must
+bind the actual build's inputs. Runtime/ZIP allowlists and Dockerfile are
+unchanged. Scenario fixtures own synthetic `DECISION_REQUESTS_PER_MINUTE`
+and `DECISION_MODEL_DEPLOYMENT` before calibration and all four captures,
+register cleanup before possible setup failure, and restore prior values or
+absence. Existing negative/journal assertions and runtime validation remain.
+
+Fresh final-join Windows checks with the pinned absolute Python and explicit
+lab source passed 206 application tests in 57.217 seconds, dependency checking
+and compilation. Complete retained `test_release*.py` discovery ran 220 tests
+in 166.945 seconds: 217 passed, zero failures, three native-Linux exclusions
+(credential-bridge tenant handling, code-artifact predeploy guard, token-context/
+private-proxy handling). No dirty-source skip remained. Application `demo` and
+`live_acceptance` were bound before retained discovery. Affected Python sources
+compiled and helper/build/resolver/WSL wrapper PowerShell parsed successfully.
+`scripts/Test-Repository.ps1` passed all 85 public-file, index, JSON,
+PowerShell, frontmatter, public/private-boundary and whitespace checks;
+both indexes have no structural inventory changes.
+Original final-join E2E precedes DevOps complete Linux checks; actual package and
+independent exact rollback/effect exits still gate one publisher. No engine,
+settings, authentication, transport/cloud, publication or live operation ran.
+Earlier entries retain their originating measurements and pending-push history.
+
 ## Reviewed selected-WSL exact-inventory source join
 
 Task `RP-S2-INVENTORY-SOURCE-JOIN` consumes original Architect/Critic acceptance

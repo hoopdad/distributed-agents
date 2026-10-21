@@ -1,5 +1,65 @@
 # Identity propagation recovery: design and execution plan
 
+## Final corrected-source handoff and measured status (October 20, 2026)
+
+`RP-S2-CORRECTION-SOURCE-JOIN` consumes original-reviewed Linux fixture/input
+corrections and inventory integration (current-run audits `f0698a28` and
+`e18e846e`). The [final source join](design.md#final-linux-input-and-inventory-source-join)
+records exact reviewed refs, actual loaded-source equality, separate raw/LF
+input hashes and fresh complete offline checks. Application `b906d5eb` and
+lab `f6e7d8b` were pushed and exactly read back, retaining `0cac08c9` and every
+intended correction. No abandoned code or branch switching. This new
+documentation/index slice awaits original review and later explicit push/
+readback by the existing integration/closeout owner.
+
+This applies the originating DevOps dispositions
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","linux-application-test-closure"]`,
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","selected-wsl-exact-inventory"]`,
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","release-binding-report-accuracy"]`
+and
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","guarded-execution-and-closeout"]`
+only within this integration's source/check/status boundary. Accepted helper/
+mount ownership stays closed. Source correction acceptance does not close
+the originating DevOps execution criteria.
+
+The opened original DevOps audit `d29bb042` establishes the current reported
+sequence: one helper startup timed out (`LINUX_ENGINE_COMMAND_TIMEOUT`);
+subsequent read-only observation found the same selected engine ready without
+another startup. Do not infer helper success or replay startup. Linux/amd64/
+Python 3.13.15 image construction reached application tests, which failed:
+191 tests, 14 errors, seven skips. The separate retained Linux suite was not
+reached. Fresh offline joined checks now pass, but **do not replace that actual
+container failure or establish current engine readiness**.
+
+Correct the old image label: exported manifest digest
+`b0c7ebf170ae375553947a339ad894a134f8ca794b0c34b66705f6a4cad9d8c6`
+is not an image ID; exported config digest
+`294fc139b2cac7ab6b6d66f3267fc60639a3c634bbc94840a9007c85ac6fe01b`
+is separately reported. Authoritative inspected image ID remains unverified.
+The DevOps report's latest private read/owned-closure receipt was inaccessible
+to original reviewers; those fresh operational claims remain owner-attributed,
+not independently verified here. Earlier accepted bounded route evidence
+does not establish current exact rollback/effect readiness or runtime health.
+
+Original changed-join E2E validates the final join before original DevOps
+revalidates only same-selected-engine readiness (no startup replay) and runs
+full Linux application **and** retained-container gates, including required
+native-Linux cases. Inventory retains its smaller independent reviewed handoff:
+after applicable original E2E, DevOps joins exact private version/package/
+identity reads to retained rollback bytes and unresolved-effect accounting,
+with accessible evidence and attributable newly owned cleanup. No package
+dependency or unused Windows-helper gate is added to inventory.
+
+BOTH actual readiness exits precede one serialized guarded publisher,
+architect-before-reviewer trusted ingress, final common-bundle G1-G4 and a
+completed non-held initial parent. Live continuity, supported hosted stop/resume
+and separate-parent isolation remain subsequent unverified gates. No current/
+rollback deployment bindings, identity-path selection or AC1-AC9 completion
+are established here. Preserve all UNKNOWN operations, held parents, rollback
+assets and historical cleanup uncertainty. This turn imported no settings and
+performed no engine/build/authentication/transport/cloud/inference operations.
+Earlier sections retain historical source seals and pending-push statements.
+
 ## Reviewed inventory-only integration handoff (October 20, 2026)
 
 Task `RP-S2-INVENTORY-SOURCE-JOIN` returns the bounded source/caller handoff.

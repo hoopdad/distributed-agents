@@ -1,0 +1,87 @@
+{
+  "kind": "SprintArchitecture",
+  "sprintId": "REPAIRED-JOIN-REMAINING-EXECUTION",
+  "amendment": "linux-clock-fixture-boundary",
+  "purpose": "Close the newly observed synthetic capture timing boundary without changing production admission semantics or treating fixture success as Linux/package readiness.",
+  "baseline": {
+    "application": "2b2973fb1b5bac77f9c3d6f8468987f714350e0f",
+    "lab": "885801565ae11878a7c4f33c29f6b45b0eb19af7",
+    "branch": "feature/customer-hosted-session-prototype",
+    "sourceContract": "docs/design.md#reviewed-discovery-repair-source-join",
+    "coverage": "The accepted repository check covers the baseline only. This substantive amendment and subsequent fixture changes require new affirmative approval and actual exact-source repository validation. The consumed one-shot approval is not reusable."
+  },
+  "solutionModel": {
+    "reference": "docs/customer-prototype-architecture.md#solutionmodel",
+    "disposition": "Retain all component IDs, support links, triggers and steps unchanged.",
+    "affectedComponents": ["decision-routing", "release-toolchain"],
+    "affectedFlow": "guarded-release",
+    "affectedSteps": ["release-package"],
+    "tiers": {
+      "coordinator": "docs/requirements/coordinator/architecture.md",
+      "specialists": "docs/requirements/specialists/architecture.md",
+      "client-release": "docs/requirements/client-release/architecture.md"
+    },
+    "tierDisposition": "Retain production tier contracts. Only synthetic admission-time inputs and their rejection coverage need construction. No deployment topology, public schema, dependency, specialist implementation or runtime clock policy changes."
+  },
+  "observedBoundary": {
+    "audit": "Original current DevOpsWorkLoop outcome 71fb357f83c0ee26c44247d5ef04532396e3ed122b6032b0f673138fc716a338",
+    "actualLinux": "Inspected original execution log: 206 application tests, one failure and seven skips. Settings-restoration followup subtest expected SYNTHETIC_SETUP_FAILURE but received DECISION_ADMISSION_CLOCK during an earlier graph capture. Retained suite and package gates were not reached.",
+    "source": [
+      "tests/test_scenario_evidence.py:47-64",
+      "tests/test_scenario_evidence.py:359-395",
+      "demo/workflow.py:275-313",
+      "demo/routing.py:296-325",
+      "tests/test_routing.py:179-208"
+    ],
+    "confirmed": [
+      "The fixture mocks the Decision provider and calibration, but still runs real workflow reservation logic against ambient wall time.",
+      "Failure-injection subtests execute preceding real graph captures before the selected synthetic failure. An unrelated admission rejection can therefore prevent reaching that failure.",
+      "Reservation timestamps and caller deadlines use wall time. Production rejects reservations more than five seconds ahead and rejects operation replay.",
+      "Existing direct admission tests cover shared-parent replay, quota/expiry and configuration conflict; the inspected test_routing.py has no explicit DECISION_ADMISSION_CLOCK assertion."
+    ],
+    "notEstablished": "Backward execution-log timestamps are observed, not proof of host clock, emulation, Docker, provider or SDK causation. No supported clock stabilization operation has been established. The production rejection is not proven defective."
+  },
+  "decision": {
+    "path": "Test-only deterministic admission-time isolation plus explicit clock-rejection regression.",
+    "rationale": "The affected tests prove synthetic artifact/continuity capture and settings restoration, not the host wall clock. Give their real reservation logic coherent controlled time; independently test rejection of unsafe reservation time. This removes ambient time as an unrelated prerequisite without disabling admission.",
+    "constructionOwner": "Developer",
+    "ownedPaths": ["tests/test_scenario_evidence.py", "tests/test_routing.py", ".github/repo-index.md"],
+    "constraints": [
+      "Keep actual graph capture, revision/continuation, artifact and settings-restoration assertions. Do not mock reserve_decision to success, clear reservations between turns, suppress ArtifactError, change expected errors or skip the failing test.",
+      "Scope the clock to synthetic fixture ownership, including setup failures and nested ScenarioSettingsTests runs. Register restoration before setup work and prove restoration of patched references and environment after success and injected failures.",
+      "Keep workflow deadline creation/comparison and routing reservation time in a coherent synthetic epoch. Use module-local clock replacements or equivalent narrow test injection; do not mutate the shared stdlib time module, SDK/logging clock, event-loop monotonic clock or unrelated tests.",
+      "Exercise real reserve_decision with controlled prior reservation time and a backward jump exceeding five seconds; assert DECISION_ADMISSION_CLOCK and no added reservation. Retain shared-parent replay, configuration, quota and expiry assertions.",
+      "Bound synthetic time progression and waits so fixture isolation cannot introduce unbounded admission waiting. No production tolerance, runtime clock, retry, dependency, engine or platform change is authorized by this decision."
+    ],
+    "doneWhen": "Owned test changes are committed and originally reviewed; targeted scenario/settings and admission tests pass with deterministic timing, restoration and explicit unsafe-clock/replay rejection evidence. Exact source and test provenance are handed to original E2E/DevOps. This construction acceptance is not whole-tree, Linux/package or live acceptance.",
+    "exclusions": "No clock repair claim, Docker restart/startup, engine switch, production guard change, historical reseal, fixture-as-live claim, consumed repository-check replay or public runtime implementation change.",
+    "handoff": "Scrum dispatches one bounded Developer correction under AC7 and LINUX-CLOCK-BOUNDARY. Include authorized index regeneration for changed public inventory. New source requires original integration/E2E review and new affirmative repository-check approval before dependent original DevOps execution. If coherent isolation needs production changes, return the concrete conflict to existing Architect/PO scope decisions rather than broaden this task."
+  },
+  "dependencies": {
+    "affectedLane": "Accepted fixture correction -> current-source original E2E/reviews and genuinely newly approved passing repository check -> original DevOps BOTH complete actual Linux suites and hosting/package gates.",
+    "independentLane": "Existing original DevOps/Scrum continue permitted authoritative COMMON rollback ZIP/provenance and operation-bound effect-record coordination. No Linux-success or fixture-task prerequisite, no duplicate investigator.",
+    "publicationJoin": "Actual package readiness AND actual COMMON rollback/effect readiness before the single original guarded publisher.",
+    "laterFlows": "Final common bundle and trusted architect-before-reviewer ingress must establish a completed non-held initial parent before followup or once-only supported recovery. Separate-parent isolation needs final bindings and comparison evidence, not recovery success.",
+    "closeout": "Existing integration/final-closeout ownership retains eligible exact reviewed-ref delivery and truthful customer handoff; no duplicate planning-only delivery assignment."
+  },
+  "dispositions": [
+    {
+      "reference": ["yaml-loops-v1:sprint/1/REPAIRED-JOIN-REMAINING-EXECUTION/DevOpsWorkLoop", "LINUX-CLOCK-BOUNDARY"],
+      "application": "Select bounded deterministic fixture isolation while preserving production guard and adding explicit negative coverage. Actual complete Linux/package gates remain mandatory."
+    },
+    {
+      "reference": ["yaml-loops-v1:sprint/1/REPAIRED-JOIN-REMAINING-EXECUTION/DevOpsWorkLoop", "COMMON-READINESS-COORDINATION"],
+      "application": "Retain original owner coordination independently. This amendment supplies no new common-byte/effect locator or readiness evidence."
+    },
+    {
+      "reference": ["yaml-loops-v1:sprint/1/REPAIRED-JOIN-REMAINING-EXECUTION/DevOpsWorkLoop", "GUARDED-DELIVERY-CLOSURE"],
+      "application": "Sprint and DevOps remain partial. Original reviewers and actual cloud passes remain required. Preserve interrupted UNKNOWN build, historical unknown effects, held parents, rollback assets, unrelated work and unproven cleanup."
+    }
+  ],
+  "verification": {
+    "architecture": "Source and exact original failure trace inspected; correction selected, not implemented or executed here.",
+    "index": "Navigation entry added. Attempted scripts/repo_index.py regeneration was tool-denied because no interactive response was available; not retried or bypassed. Generated inventory does not yet include this new amendment. Carry approved regeneration with the fixture correction before claiming repository readiness.",
+    "release": "Failed actual Linux application execution remains unresolved. No retained Linux-suite, hosting/package, deployment or cloud pass is claimed.",
+    "authority": "No user-only clock remedy established. Request genuinely new exact-source repository-check approval when the reviewed changed tree is ready; do not reuse prior permission."
+  }
+}

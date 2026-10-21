@@ -1,5 +1,16 @@
 # Repository index
 
+Linux clock fixture boundary: application baseline `2b2973fb`, selected lab
+`88580156`; adds `docs/customer-prototype-linux-clock-architecture-amendment.json`.
+Navigate there for the newly failed actual Linux settings-restoration capture,
+test-only coherent time isolation in `tests/test_scenario_evidence.py`, and
+explicit unsafe-clock rejection in `tests/test_routing.py`. Production admission
+and all runtime tier contracts remain unchanged. Original DevOps still requires
+both complete Linux suites/package gates and independent COMMON byte/effect
+readiness. This genuine correction requires new exact-source repository-check
+approval; historical one-shot approval is consumed. No test/runtime fix or live
+success is claimed by the architecture amendment.
+
 Continuation-2 Scrum dispatch: inspected application `f4bed5a3`; adds
 `docs/customer-prototype-repaired-join-continuation-2-sprint-plan.json`.
 One dependency-ready existing-closeout task delivers exact accepted customer

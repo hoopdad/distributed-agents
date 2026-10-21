@@ -1,5 +1,15 @@
 # Repository index
 
+Remaining-execution sprint dispatch: based on application `449c6e98` and
+selected accepted lab `88580156`; adds only
+`docs/customer-prototype-repaired-join-remaining-sprint-plan.json`.
+Navigate that separate Scrum plan for the empty construction assignment graph
+and direct original E2E -> original DevOps handoff. No accepted source/UX/ref
+delivery is redispatched. Independent rollback/effect investigation and existing
+reviewed-document Git closeout retain their owners; the denied repository check
+still blocks dependent Linux/package/publication. Actual stage entry and current
+planning votes remain unobserved. Planning is not execution-progress credit.
+
 Remaining-execution sprint applicability: based on application `1800e116`;
 no paths added/deleted. Navigate the opening of
 `docs/customer-prototype-sprint-architecture.md` and all three
@@ -1704,6 +1714,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-remaining-execution-release-plan.json`
 - `docs\customer-prototype-remaining-execution-sprint-plan.json`
 - `docs\customer-prototype-repaired-join-remaining-release-plan.json`
+- `docs\customer-prototype-repaired-join-remaining-sprint-plan.json`
 - `docs\customer-prototype-reviewed-join-continuation-architecture.json`
 - `docs\customer-prototype-reviewed-join-continuation-sprint-plan.json`
 - `docs\customer-prototype-reviewed-ref-closeout-architecture.json`

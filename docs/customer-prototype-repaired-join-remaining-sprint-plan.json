@@ -1,0 +1,155 @@
+{
+  "kind": "SprintPlan",
+  "sprintId": "REPAIRED-JOIN-REMAINING-EXECUTION",
+  "goal": "Enter original corrected-source E2E directly, then finish remaining guarded execution through the original owners without repeating accepted construction.",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "planningOwner": "Scrum Master",
+  "reviewers": ["Product Owner", "Architect", "Critic"],
+  "references": {
+    "releasePlan": "docs/customer-prototype-repaired-join-remaining-release-plan.json",
+    "sprintArchitecture": "docs/customer-prototype-sprint-architecture.md#repaired-join-remaining-execution-original-execution-of-the-accepted-repair",
+    "sprintDesign": "docs/customer-prototype-sprint-design.md",
+    "sourceContract": "docs/design.md#reviewed-discovery-repair-source-join",
+    "independentInvestigation": "docs/customer-prototype-post-delivery-exhaustion-architecture.json#existingOwnerInvestigationHandoff"
+  },
+  "sourceAccounting": {
+    "applicationInspected": "449c6e9817e9897bc088ffad49a8e0eb600b9329",
+    "acceptedApplicationIntegration": "8b50f343b649f75ec02b187f871bb0d77b9cee24",
+    "selectedLabInspected": "885801565ae11878a7c4f33c29f6b45b0eb19af7",
+    "inspection": "Both selected checkouts were clean on the authorized feature branch. Ten application paths changed after accepted integration, all documentation/index paths. This plan adds only planning/index documentation.",
+    "executionBinding": "Original E2E must record actual execution HEADs, verify the accepted source join still applies and account for all documentation-only ancestry, including this plan. Non-documentation drift requires original source review, not assumed acceptance.",
+    "originatingAgreementsInspected": {
+      "sourceRepair": "4334061aa76b82fe51fcda7911b1007d42d680fae4bb95bda2fa76fa71409872",
+      "integration": "cc7f2e827137a5760fe0aae31acf47a7d5e5083032ea10dd367dacfa2bfd81c5",
+      "reviewedRefDelivery": "b8980bc50d8037b2a68d7d6d9835a44ad6950ab1b4798c00a414f7d296e04b65",
+      "currentReleasePlan": "89791f902a97e5e1849477d65c81b27e9aa58c77bdde3962c2d51724f22e1bbb",
+      "currentSprintArchitecture": "e10de39514df71d5a702b708af3932d4a9a8166821ded23397116d9cca945a7c"
+    },
+    "qualification": "Originating agreements and original reviewer agree/taskComplete records were opened. They preserve bounded source/delivery acceptance, not current E2E, package or live capability."
+  },
+  "tasks": [],
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDeveloper": [],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": [],
+  "assignmentDecision": {
+    "construction": "No remaining construction defect is established by the accepted handoffs. Zero duplicate implementation, repair, integration, UX, denial-audit or delivered-ref tasks.",
+    "routing": "Return an empty pre-E2E assignment graph to the existing orchestrator. Its normal original YAML traversal proceeds directly to EndToEndTestLoop after SprintPlan agreement, then DevOpsWorkLoop. These stage handoffs are not scheduler tasks or invented resume keys.",
+    "parallelDispatch": "No dependency-ready construction assignments exist to fan out. Do not manufacture assignments to satisfy a parallelism count. In original DevOps, independent rollback/effect investigation is runnable despite unmet source readiness; source/package and rollback readiness are separate lanes joined only before publication. Existing reviewed-document Git closeout is independent of live success.",
+    "observation": "Installed sprintTasks accepts an empty array; inspected normal runSprint placement invokes original stages after assignment settlement. Actual dispatch and stage entry have not occurred in this planning turn. The orchestrator, not Scrum-created substitute agents, owns execution.",
+    "failureBoundary": "If the normal route cannot enter original E2E, return the exact observed internal scheduling limitation. Do not resume cached predecessor E2E/DevOps, edit runtime/journals, invent keys, relabel stages as assigned work or request new human product authority."
+  },
+  "originalStageHandoffs": [
+    {
+      "loopId": "EndToEndTestLoop",
+      "owner": "Developer",
+      "reviewers": ["Architect", "Critic", "Product Owner"],
+      "title": "Validate the repaired application and retained release source join",
+      "estimatedMinutes": {"implementation": 25, "review": 15, "integration": 0},
+      "components": ["Guarded lab release toolchain"],
+      "flows": ["Exact-source guarded release"],
+      "flowSteps": ["release-join", "release-package"],
+      "locations": ["Test-Demo.ps1", "tests/", "docs/design.md"],
+      "externalLocations": ["lab:foundry-tf/multi-agent/Test-Demo.ps1", "lab:foundry-tf/multi-agent/tests/test_release_discovery.py"],
+      "consumes": "Accepted lab88580156 and app8b50f343 source join plus accounted current documentation ancestry. Use the existing validated pinned absolute Python and explicit application/selected feature-lab roots.",
+      "action": "Actually run the permitted deterministic application and retained suites via their existing local scripts. Check actual discovery ownership and native-Linux exclusions. Attribute old owner results rather than copying them as fresh E2E.",
+      "produces": "Exact source/command/result evidence and an accurate actionable original E2E report, including the required denied repository check as unmet.",
+      "doneWhen": "Permitted repaired-join suites have actual results against identified source, or an exact newly observed execution boundary is reported; all required unexecuted checks and limitations remain explicit for original Architect/Critic/Product Owner review. Accurate predeployment FAIL may close reporting, never AC7 readiness.",
+      "exclusions": [
+        "Do not retry scripts/Test-Repository.ps1, change its tool/path or run constituent checks as substitutes without affirmative exact interactive execution approval.",
+        "No source repair redispatch, installation absent a manifest change or missing-tool failure, settings import, Linux/package/cloud execution, publication or live success claim.",
+        "No reuse of historical E2E FAIL on lab651a2290 as a test of repaired lab88580156."
+      ],
+      "handoff": "Original reviewers judge actual bounded E2E evidence. Then original DevOps receives both results and unmet prerequisites; agreement on accurate FAIL does not prohibit its independent investigation or authorize dependent execution."
+    },
+    {
+      "loopId": "DevOpsWorkLoop",
+      "owner": "DevOps Engineer",
+      "ownerBinding": "Existing original DevOps ownership; no duplicate investigator or publisher.",
+      "reviewers": ["Architect", "Critic", "Developer"],
+      "title": "Investigate rollback readiness independently and gate exact hosted delivery",
+      "estimatedMinutes": {"implementation": 110, "review": 25, "integration": 15},
+      "components": ["Guarded lab release toolchain", "Trusted identity and private transport", "Hosted coordinator", "Hosted architect", "Hosted reviewer", "Parent and specialist conversation state", "MAF workflow checkpoints", "Private Blob artifacts and effect journal", "Decision-1 routing and admission"],
+      "flows": ["Exact-source guarded release", "Remote design and review", "Same-parent specialist continuation", "Supported compute stop and resume", "Separate-parent isolation"],
+      "flowSteps": ["release-package", "release-discriminate", "collaboration-bind", "collaboration-route", "collaboration-design", "collaboration-review", "collaboration-return", "continuity-revise", "continuity-invoke", "continuity-verify", "recovery-stop", "recovery-resume", "recovery-verify", "isolation-bind", "isolation-execute", "isolation-verify", "release-close"],
+      "locations": ["scripts/Use-Settings.ps1", "live_acceptance.py", "demo/workflow.py", "demo/foundry.py", "docs/identity-recovery-plan.md"],
+      "externalLocations": ["lab:foundry-tf/multi-agent/Build-Demo.ps1", "lab:foundry-tf/multi-agent/Invoke-IdentityDecision.ps1"],
+      "independentLane": {
+        "consumes": "existingOwnerInvestigationHandoff and original DevOps audit4e6d08bb findings. Its historical continuation-routing restriction is superseded by this fresh normal original-stage placement, not by a fabricated resume.",
+        "action": "Follow genuinely new exact authorized nonsecret locator/provenance records outside the already-inspected mirror to distinguish common rollback ZIP bytes from diagnostic ZIPs and reconcile next-operation route/effects.",
+        "prerequisites": "Original stage entry; no E2E PASS, repository-suite PASS, engine readiness or Linux-success dependency.",
+        "boundedDoneWhen": "Supply inspectable common-byte/provenance and effect findings, or the precise evidence-backed unavailable-record/access boundary. Actionable negative findings complete this bounded investigation only, not rollback readiness or the DevOps cloud-pass condition.",
+        "exclusions": "No repeated mirror inventory or denied access via another path; no excluded private-state search, speculative global absence, secret read, uncertain-effect replay or substitute investigator."
+      },
+      "dependentLane": {
+        "prerequisites": "Original repaired-join E2E/reviews and all required source checks actually passing, including the currently denied repository check.",
+        "action": "Revalidate the SAME selected engine read-only without startup replay or Docker restart; run BOTH complete corrected actual Linux/amd64/Python suites plus hosting/package checks. Bind final exact source/settings/package/version before publication.",
+        "publicationJoin": "Actual complete Linux/package readiness AND actual common rollback ZIP-byte/provenance and reconciled next-operation effect readiness. Only one serialized guarded publisher.",
+        "liveDependencies": [
+          "Actual supported architect-before-reviewer ingress and verified final common bundle precede genuine G1-G4 initial collaboration.",
+          "Completed NON-HELD initial parent precedes same-parent follow-up and once-only supported stop/resume, with durable intent and confirmed stopped/idle evidence.",
+          "Separate-parent isolation requires final deployed bindings and comparison evidence, not recovery success.",
+          "Final closure joins all AC1-AC9/G1-G8 evidence, exact final/rollback bindings, reviewed intended Git and attributable owned cleanup."
+        ]
+      },
+      "doneWhen": "Original DevOps reporting preserves the independent investigation findings and every unmet gate; the full DevOps stage is complete only when its original reviewers agree and actual cloud-deployed tests pass. A bounded negative report or source-test PASS cannot waive that condition.",
+      "exclusions": [
+        "No Ensure-LinuxEngine startup replay, Docker restart, held-parent reuse, blind resend or historical cleanup certification.",
+        "No dependent execution through the denied required repository check, no uncertain publication replay and no upload/metadata/mocked-result substitution for actual live acceptance.",
+        "No production/default profile, copied .azure, secret read/copy, canonical dirty-lab adoption, infrastructure/permission change, identity bypass or local specialist."
+      ],
+      "handoff": "Existing SprintReview/SprintRetro and release closeout reconcile actual findings, partial delivery and follow-on work. No additional approval stage. Preserve all historical UNKNOWN publications, held parents, rollback assets and unproven cleanup."
+    }
+  ],
+  "existingGitReconciliation": {
+    "owner": "Existing integration/final-closeout Developer",
+    "components": ["Terminal client", "Guarded lab release toolchain"],
+    "flows": ["Exact-source guarded release"],
+    "flowSteps": ["release-close"],
+    "locations": ["README.md", "docs/identity-recovery-plan.md", ".github/repo-index.md"],
+    "independence": "Reviewed intended-document delivery does not require Linux success or live acceptance. Do not redispatch completed app8b50f343/lab88580156 delivery. Later reviewed documentation and measured status remain with this owner.",
+    "doneWhen": "Intended task commits are accounted for on the authorized feature ancestry and reviewed eligible refs are non-force pushed/read back; measured customer status, exact bindings, limitations and positively attributable cleanup are reported without adopting unrelated work. Actual incomplete release criteria remain incomplete.",
+    "handoff": "Existing sprint review/retro and final release closeout inspect exact reviewed Git delivery and measured customer handoff.",
+    "rules": [
+      "Each writer inspects status and commits explicit owned paths with git commit --only before original review; never sweep another writer's index.",
+      "This planning turn owns only this separate plan and its index entry. No source or lab writing ownership is newly assigned.",
+      "No moving-HEAD automatic push, shared branch switch, amend, force-push, stash/reset, lock removal, secret/evidence commit or historical branch deletion.",
+      "If task work remains off the feature branch, retain its named branch and record task, branch, commit IDs and abandonment reason in a feature-branch commit message. No task code is abandoned by this plan.",
+      "Required Copilot co-author and current Copilot-Session trailers apply; Delivery-Run is separate provenance. Include observed usage metadata only."
+    ]
+  },
+  "resourceOwnership": {
+    "planning": ["application-public-index"],
+    "gitReconciliation": ["application-git-integration", "lab-git-integration"],
+    "dependentPackage": ["lab-linux-engine", "lab-linux-stage", "lab-package-stage"],
+    "publisherAndTransport": ["lab-hosted-release", "lab-private-transport", "lab-cli-context", "lab-ssh-mount"],
+    "liveParents": ["lab-primary-parent", "lab-isolated-parent"],
+    "rule": "Retain original resource names for actual shared mutation, including reviews. Read-only investigation avoids unrelated exclusive resources but coordinates with any overlapping mutable context. Same-owner lanes are not two deployers. Scheduler names are not OS/cross-run isolation."
+  },
+  "criticalPath": {
+    "readyNow": "Empty construction graph -> original E2E and original reviews -> original DevOps. Rough E2E/report review: 40 minutes; not a cap or proof of scheduling.",
+    "independent": "Within original DevOps, bounded rollback-byte/effect investigation has no source-test or Linux-pass edge. Existing reviewed-document Git closeout also needs no live PASS. These must not be withheld behind a whole-sprint barrier.",
+    "dependent": "Affirmative exact repository-check execution approval and actual required passing source checks -> same-engine read-only revalidation -> BOTH actual Linux/hosting suites and exact package gates. Package readiness joins rollback/effect readiness -> one publisher -> final common-bundle G1-G4.",
+    "later": "Completed non-held initial parent -> two-turn continuity and once-only supported recovery; final deployed bindings/comparison evidence -> separate-parent isolation independently of recovery success. Final closeout joins real gates and Git/cleanup.",
+    "estimates": "DevOps rough 110 implementation +25 review +15 integration minutes exclude human approval/provider waiting. All estimates are planning hints, not timeouts, quotas, productive-round limits or concurrency ceilings."
+  },
+  "localizedBlocker": {
+    "operation": "scripts/Test-Repository.ps1 with the pinned absolute Python312-x64",
+    "basis": "Exact originating call_MBUbgz5OT2M0CERK96jC2pRn and call_JchUNw5zhfgpanLGpahJDbS6 returned denied because no interactive user response was available, as supplied in repairedJoinRecovery20261021.deniedRepositoryCheckEvidence.",
+    "condition": "No affirmative exact interactive execution/tool approval has been received.",
+    "affected": ["Required AC7 repository validation", "Dependent Linux/package execution", "Publication and dependent live acceptance"],
+    "unaffected": ["Permitted original repaired-source E2E reporting", "Existing original DevOps nonsecret rollback/effect investigation", "Existing reviewed-document Git closeout"],
+    "unblock": "Affirmative approval of the exact bounded interactive execution/tool prompt, then actual required validation.",
+    "guard": "Do not retry, change tools/paths or execute constituent checks as a substitute. This is not an executed test failure or identified Azure permission defect."
+  },
+  "acceptanceAndDispatch": {
+    "ownerAcceptance": "Dispatch-ready planning deliverable only; original current Product Owner/Architect/Critic votes and actual original-stage entry remain to be observed.",
+    "taskCards": [],
+    "historicalAccounting": "Keep historical plans, all three original partial sprints, this partial remaining-execution sprint and capped predecessor outcomes unchanged.",
+    "priorDispositions": "Both supplied arrays are empty. Apply inspected original bounded acceptances only to their originating repair/integration/delivery scopes; none waives unrelated gates.",
+    "limits": {"maxNoProgressRounds": 5},
+    "otherCaps": "No attempts, maxSprints, total productive-round, cost or concurrency ceiling introduced.",
+    "progress": "This planning artifact is not new execution progress. Do not credit launch, reinstall, restatement or planning acceptance toward repaired-join E2E or live delivery.",
+    "verificationBoundary": "No application, retained, repository or Linux suites, repository constituent substitutes, settings import, engine/cloud operation, publication, inference, stop/resume or push performed by this planning turn."
+  }
+}

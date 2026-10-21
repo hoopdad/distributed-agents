@@ -1,5 +1,14 @@
 # Repository index
 
+Post-delivery applicability: based on local `3ba218e3`, delivered application
+`8b50f343` and lab `88580156`; adds only
+`docs/customer-prototype-post-delivery-exhaustion-architecture.json`.
+Original delivery agreement `b8980bc5` closes the prior ref-only queue. Navigate
+the separate bounded assessment for empty new tasks/resumes, original changed-
+source E2E/repository-check limitations and preserved independent DevOps
+rollback/effect ownership. This does not certify release-wide exhaustion,
+runtime readiness or live success; no execution-progress credit is claimed.
+
 Reviewed-ref dispatch freshness: based on accepted architecture `48edc34e`,
 application `8b50f343` and selected feature lab `88580156`; adds only
 `docs/customer-prototype-reviewed-ref-closeout-sprint-plan.json`.
@@ -1648,6 +1657,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-fixture-continuation-sprint-plan.json`
 - `docs\customer-prototype-linux-inventory-sprint-plan.json`
 - `docs\customer-prototype-operational-context-amendment.json`
+- `docs\customer-prototype-post-delivery-exhaustion-architecture.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

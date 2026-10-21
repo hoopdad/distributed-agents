@@ -1,5 +1,16 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## RE-EXEC-1 continuation: consume completed repaired-join ref delivery
+
+Apply the [bounded post-delivery assessment](../../customer-prototype-post-delivery-exhaustion-architecture.json).
+Original agreement `b8980bc5` and fresh exact remote reads close the ref-only
+slice below: application `8b50f343`, lab `88580156`. Preserve existing final
+closeout ownership without another duplicate delivery assignment. Original
+changed-source E2E and the required repository check remain unmet; no supported
+DevOps reassessment is supplied. Independent existing rollback/effect work is
+not globally exhausted. Canonical model, runtime tiers and all release guards
+are unchanged; no new construction or live capability is claimed.
+
 ## RE-EXEC-1 continuation: reviewed join is ready for exact-ref delivery
 
 Apply the [ref-only closeout amendment](../../customer-prototype-reviewed-ref-closeout-architecture.json).

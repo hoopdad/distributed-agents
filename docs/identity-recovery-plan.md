@@ -1,5 +1,47 @@
 # Identity propagation recovery: design and execution plan
 
+## Reviewed inventory-only integration handoff (October 20, 2026)
+
+Task `RP-S2-INVENTORY-SOURCE-JOIN` returns the bounded source/caller handoff.
+The [selected-WSL source join](design.md#reviewed-selected-wsl-exact-inventory-source-join)
+consumes original Architect/Critic agreement in current-run audit `4f2b6c31`
+for `410b9a0c9627a8a69e5be57e84468d427a4025b9`. It closes the source/caller
+slice of originating disposition
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","selected-wsl-exact-inventory"]`,
+not its required actual rollback/effect readiness. The linked contract maps the
+ReadOnly-only selector quartet, preexisting independent private identity
+baseline, exact GET, unchanged observer validation and sanitized receipt fields.
+Partial/invalid selectors, monitoring or publishing combinations, absent or
+mismatching versions and transport/cleanup failures never establish readiness.
+No latest/list fallback or inference is part of exact inventory.
+
+Reviewed inputs application `88d365f28a22cee725e4e60253ac505399216d5a` and lab
+`903614f9b2d3e41453dfff551fb310bec8451168` were pushed and exactly read back
+on the authorized feature refs. They retain integration `0cac08c9`, all current
+planning and accepted inventory/Linux source commits; no task code was abandoned.
+This integration's documentation/index commits require original review before
+their later push by existing integration/closeout. Their source set now has
+runtime/Decision closure
+`bfd6ed4d380a354a11104e1207605f169991d16a08b71db7344e4cea7e9815e9`,
+not the historical seal below. Actual loaded Python/PowerShell ownership and
+committed-byte equality were checked; wrapper/test hashes are separately listed
+in the linked handoff. Helper and public test inputs remain separate provenance,
+with final package-branch integration owned by `RP-S2-CORRECTION-SOURCE-JOIN`.
+
+Affected local root/caller/inventory/cleanup discovery ran 100 tests: 97 passed,
+zero failures, three native-Linux exclusions. Original applicable changed-join
+E2E precedes changed tooling execution. Original DevOps can then complete
+`RP-S2-FRESH-INVENTORY` independently of engine/package readiness, joining
+preexisting expected version/package/identity bindings with actual exact reads,
+available rollback bytes, unresolved-effect accounting and newly owned cleanup.
+The same imported dedicated context, explicit source roots, strict trust and
+read-only mount remain mandatory. BOTH actual readiness exits still gate the
+single publisher; no current/rollback deployment or live gate is established by
+this source handoff. No settings, credentials, authentication, engine, build,
+transport, cloud, publication or inference operation occurred here. Preserve
+every historical UNKNOWN, held parent, rollback asset and cleanup uncertainty.
+Older source/push statements below retain their historical scope.
+
 ## Reviewed engine-recovery integration handoff (October 20, 2026)
 
 The [current recovery source join](design.md#reviewed-linux-engine-recovery-source-join)

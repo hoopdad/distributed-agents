@@ -1,5 +1,23 @@
 # Repository index
 
+Inventory-only integration freshness: `RP-S2-INVENTORY-SOURCE-JOIN` consumes
+original-reviewed lab inventory `410b9a0c` at application `88d365f2` / lab
+`903614f9`; both explicit input feature refs were pushed/read back, including
+retained `0cac08c9` and current planning/accepted source ancestry. No paths
+added/deleted. `docs/design.md#reviewed-selected-wsl-exact-inventory-source-join`
+maps the ReadOnly quartet to Python arguments, independent private baseline,
+exact GET and fail-closed receipt/cleanup contract; recovery docs route original
+E2E -> DevOps exact inventory independently of package readiness. Actual loaded
+Python/PowerShell owners/committed bytes match selected tools; changed WSL source
+requires new closure `bfd6ed4d...`, not the historical seal. Wrapper/tests and
+helper/Linux inputs retain distinct provenance. Affected local discovery:
+100 tests, 97 passed, three native-Linux exclusions; not operational evidence.
+Both actual readiness exits still gate one publisher. This integration's docs/
+indexes await original review and later owned push; final integration retains
+complete checks/input hashes and measured README ownership. No settings, engine,
+build, transport/cloud or live activity; UNKNOWNs/held parents/rollback preserved.
+Earlier freshness entries retain originating history, not current pending work.
+
 RP-S2 Linux/inventory planning freshness: based on clean application
 `1e705fd3` and feature-lab `1dab1e01`, with current originating input,
 source/E2E and stopped DevOps audits opened. New

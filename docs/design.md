@@ -1,5 +1,111 @@
 # Distributed agents: MAF/Foundry workflow and shared artifacts
 
+## Reviewed selected-WSL exact-inventory source join
+
+Task `RP-S2-INVENTORY-SOURCE-JOIN` consumes original Architect/Critic acceptance
+of lab inventory commit `410b9a0c9627a8a69e5be57e84468d427a4025b9`
+(current-run audit `4f2b6c31`). It implements the originating disposition
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","selected-wsl-exact-inventory"]`
+only at its source/caller boundary, not as actual rollback readiness.
+Selected reviewed inputs are application
+`88d365f28a22cee725e4e60253ac505399216d5a` and lab
+`903614f9b2d3e41453dfff551fb310bec8451168` on
+`feature/customer-hosted-session-prototype`. Both exact inputs were pushed and
+read back from origin, including retained integration `0cac08c9`, planning
+`b29d9a0b`/`1e705fd3`/`aa236e8a` and inventory `410b9a0c`.
+The concurrently completed, separately accepted Linux fixture/input commits
+`88d365f2`/`97bba71c`/`903614f9` are also retained in this ancestry (audit
+`f0698a28`); this smaller inventory handoff does not certify their final Linux
+join. No merge, abandoned code, branch switch or canonical dirty adoption was
+needed. The documentation/index commits from this integration await original
+review before their later explicit push by existing integration/closeout.
+The lab companion index is retained at
+`f6e7d8b598db8907295954bf52df6efc56c187ef`; it changes navigation only.
+
+### ReadOnly exact-inventory caller contract
+
+After the unchanged application settings import, the retained lab
+`foundry-tf/multi-agent/Invoke-WslCodeRelease.ps1` takes explicit
+`ApplicationRoot`, reviewed `LabRepositoryRoot` and imported
+`OperationalLabRoot`. Keep the dedicated context separate from loaded source.
+With the retained host fingerprint, private output and approved read-only SSH
+mount guards, supply **all four** selectors together:
+
+| PowerShell parameter | Python argument |
+| --- | --- |
+| `InventoryService` | `--inventory-service` |
+| `InventoryVersion` | `--inventory-version` |
+| `InventoryExpectedPackageSha256` | `--inventory-expected-package-sha256` |
+| `InventoryIdentityBaseline` | `--inventory-identity-baseline` |
+
+Use `-Mode ReadOnly` only, for one of `multi-agent-architect`,
+`multi-agent-reviewer`, `multi-agent-coordinator`. Version is a canonical
+positive decimal of at most nine digits; package expectation is a 64-hex
+SHA256. The baseline must already exist as an absolute private regular file,
+at most 131072 bytes, outside the protected application/tool/operational
+roots, with no reparse file or ancestor. Its matching `agent`, `exists: true`
+and nonempty `instance_identity.principal_id` / `client_id` expectations must
+be established independently **before** observation. Never derive expectations
+from the response being checked or print their private values.
+
+Partial quartets, Publish, InspectOwner and combined session monitoring fail
+closed; absent selectors retain the prior latest-only ReadOnly behavior.
+`wsl_release.inventory_selection` checks selectors, baseline and actual
+`observe_agent.py` owner before transport. The inventory branch uses the
+retained strict-trust/private-DNS/scoped-credential route for exact
+`GET /agents/<service>/versions/<version>?api-version=v1`, reusing unchanged
+`observe_agent.exact_metadata`. It does not list/latest-fallback or invoke
+a session. Sanitized receipt `inventory` fields retain requested/returned
+version, existence/status, package/identity matches, Responses protocol and
+zero-inference evidence, not identity values or environment contents.
+Absence, mismatches, malformed/HTTP/transport failures cannot pass; observation
+alone is not rollback readiness before attributable outer cleanup and complete
+rollback-package/effect accounting.
+
+### Changed source evidence and downstream validation
+
+Fresh no-effect imports verified actual owners for `release_roots`,
+`identity_decision`, `bundle_package`, `wsl_release` and `observe_agent` in the
+selected feature lab. Loaded PowerShell `Resolve-ReleaseRoots` belongs to that
+same checkout and validates the matched explicit roots. All 22 application and
+nine lab entries from `identity_decision.source_files` match committed source
+after LF normalization. Its compact sorted-key JSON SHA256 is now
+`bfd6ed4d380a354a11104e1207605f169991d16a08b71db7344e4cea7e9815e9`;
+the historical `8974f4cd...` seal does **not** cover changed WSL bytes.
+This runtime/Decision source set is not the wrapper, helper or Linux test-input
+closure. Separately checked raw and LF-normalized hashes (equal here), all
+matching committed bytes:
+
+| Lab path under `foundry-tf/multi-agent/` | SHA256 |
+| --- | --- |
+| `Invoke-WslCodeRelease.ps1` | `25413d7100e93b8edd367b254986e57d736a7fb630123673e50dd3ba1ba5c37e` |
+| `wsl_release.py` | `fb4bd55eae6554856f2f2d3955ce175f479f3da521374a674ec4a0c0d0d3aaf4` |
+| `observe_agent.py` (unchanged) | `8768c3e4d7fa97886b2152db46bc1c950843fad35a3be763a678dc16298f7afe` |
+| `release_roots.py` (unchanged) | `312c926b91a416c957efe66c387428dec179988f32164b6706892e0d5bb09fd1` |
+| `Release-Roots.ps1` (unchanged) | `8438d8bdbc04f94bd1b8380601fe8423a66b3045ddd561ec46bc69eb9e987e27` |
+| `tests/test_release_exact_metadata.py` | `7ea3800530e996be759768bdf908d304d0971a9d486a2f5a4905b0271dfa81d7` |
+| `tests/test_release.py` | `3e548833c1401a17a98973c8fe147e829e5b515f157689e220c11316ae36fea9` |
+
+Affected explicit-root/caller, exact-inventory and release/cleanup discovery
+ran 100 tests in 50.001 seconds: 97 passed, zero failures, three inherited
+native-Linux exclusions. Application `demo` and `live_acceptance` were explicitly
+bound before retained discovery using the existing absolute validated Python.
+These are local fixtures, not actual route or Linux/container results.
+Source-owner complete suite evidence remains in audit `4f2b6c31`; it is not
+reclaimed as fresh integration execution.
+
+Original applicable E2E validates this inventory join before original DevOps
+`RP-S2-FRESH-INVENTORY` executes exact private reads and joins local rollback/
+effect preparation. It need not wait for package correction or unused Windows
+helper acceptance. `RP-S2-CORRECTION-SOURCE-JOIN` separately owns final joined
+input hashes, complete offline validation and measured README refresh before
+actual Linux gates. Both actual readiness exits still gate one publisher and
+common-bundle G1-G4/non-held initial parent. No settings import, authentication,
+engine/build, transport/cloud, publication or inference occurred here.
+Historical UNKNOWNs, held parents, rollback assets and cleanup uncertainty
+remain; older sections below retain their originating evidence, not current
+source seals or pending push status.
+
 ## Reviewed Linux-engine recovery source join
 
 Task `RP-S2-ENGINE-SOURCE-JOIN` integrates reviewed application input

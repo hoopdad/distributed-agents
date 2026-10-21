@@ -1,5 +1,67 @@
 # Distributed agents: MAF/Foundry workflow and shared artifacts
 
+## Reviewed cold-import fixture source join
+
+`RP-S3-FIXTURE-SOURCE-JOIN` joins reviewed application
+`b18cf3ec481690180f557e93259aac479424b648` and selected feature lab
+`651a22908984174d3947b9d04ed68f6cd13ea90c`. Opened original source agreement
+`bb19091a`: Architect/Critic both agree, task-complete, no unmet criteria.
+Opened architecture `fd5fb443`, continuation planning `dea825a5` and Git
+closeout `820ff4c8` agreements before delivering their ancestry. This consumes
+only the source correction under
+`["yaml-loops-v1:sprint/3/RP-S3/DevOpsWorkLoop","retained-live-preparation-fixture-initialization"]`.
+No runtime, mount, helper, selector or operational-context contract changed.
+
+Both exact reviewed feature refs were pushed and independently read back.
+Application ancestry retains `0cac08c9`, `7fef48b7`, `45c74a3b` and `b18cf3ec`;
+lab ancestry retains the accepted helper/input/inventory commits, `1526012`
+and `651a2290`. No merge, abandoned task code/branch, branch switch or adoption
+of canonical dirty source was needed. This new documentation is not included
+in that reviewed-ref push; existing final execution closeout owns its later
+push/readback after original review.
+
+Actual imported `release_roots`, `identity_decision`, `bundle_package`,
+`wsl_release` and `observe_agent` resolve to the selected feature lab.
+Actual PowerShell `Resolve-ReleaseRoots` loads from that same lab's
+`Release-Roots.ps1`. Both explicit matched-root validations passed. All 22
+application and nine lab runtime/Decision entries match committed bytes after
+LF normalization; the raw-byte compact sorted-key JSON seal remains
+`bfd6ed4d380a354a11104e1207605f169991d16a08b71db7344e4cea7e9815e9`.
+The independently recomputed 17-entry named retained-input mapping remains
+`5fc1a496665ee4db35235799c73443b243e7c5cf040953653832fd47cd17e1ad`.
+All its entries, the native-settings regression, resolver and three separate
+application-script test inputs match committed bytes after LF normalization.
+The earlier [retained-input mapping](#reviewed-retained-input-source-join)
+remains the helper/fixture mapping, not a seal of the entire test directory.
+
+The changed lab test `tests/test_release_identity_decision.py` is separately
+bound: raw working SHA256
+`89a403dd462ae32a74f5132fd78ba6524a3fdce0bb8a1c3f381f90196cb6250c`;
+LF-normalized and committed SHA256
+`4b5086bbb3c60dfbf15e9cbc5fad965b1f0e03c06e8ae5d8769c2bc343ae64b3`.
+The accepted correction registers cleanup before imports, owns synthetic
+configuration and checks ten fresh-process rejection/restoration scenarios.
+These test bytes are not covered by the unchanged runtime seal and are not a
+package receipt. Actual Linux execution must use this committed test directory.
+
+Fresh Windows joined checks: 206 application tests passed in 54.157 seconds
+(61.369 seconds for Test-Demo including dependency check/compilation).
+Complete retained discovery ran 226 tests in 199.126 seconds: 223 passed,
+zero failures, three native-Linux exclusions: credential-bridge tenant handling,
+native code-artifact predeploy guard, and token-context/private-proxy handling.
+Application `demo`/`live_acceptance` owners were bound before retained discovery.
+All seven native-observation tests and cold-process cases ran; no dirty-source
+or missing-fixture skip. Resolver, build, engine helper and WSL wrapper parsed.
+Repository/index/public-boundary checks accompany this documentation commit.
+
+Original changed-join E2E validates this join before original DevOps runs BOTH
+complete actual Linux suites and hosting/package gates. Settings import remains
+solely `scripts/Use-Settings.ps1`; reviewed tooling and the unchanged dedicated
+operational context remain separate. No settings, credentials, engine, build,
+transport, cloud, inference, publication or hosted stop/resume was used here.
+Independent rollback ZIP-byte/effect readiness continues; BOTH actual exits
+still gate one publisher. Earlier sections retain their dated measurements.
+
 ## Reviewed retained-input source join
 
 `RP-S3-RETAINED-SOURCE-JOIN` consumes application

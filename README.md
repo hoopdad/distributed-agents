@@ -27,22 +27,23 @@ The existing-engine helper and its source/mount regressions are accepted.
 In the predecessor DevOps execution, its startup command timed out; a later
 read-only observation found the same selected Linux engine ready without
 another startup. These are separate outcomes, not recovery-command success.
-That first Linux application run failed (191 tests, 14 errors, seven skips).
-After accepted input/fixture corrections, the later actual Linux/amd64 hosting
-run passed the application gate: 206 tests, 199 passed, seven platform/optional
-skips. Its separate retained discovery failed: 184 tests, 145 passed,
-38 Windows-specific skips and one missing-module import error. Neither image
+The latest actual Linux/amd64 hosting run passed the application gate:
+206 tests, 199 passed, seven platform/optional skips. Separate retained
+discovery reached 224 tests: 178 passed, 43 platform skips and three fixture
+configuration errors. All seven native-observation cases passed. Neither image
 construction nor the application gate alone is complete package validation.
-The latest image inspection remains owner-attributed pending accessible proof;
-historical exported manifest/config digests are not authoritative image IDs.
-The retained import/workflow-fixture correction and its source join now have
-original Architect/Critic acceptance. Joined offline checks passed: 206
-application tests; 221 of 224 retained tests, with three explicit native-Linux
-exclusions and no dirty-source or missing-fixture skip. Original changed-join
-E2E precedes DevOps same-selection readiness revalidation, without startup
-replay, and complete Linux application **and** retained-container checks for
-the corrected inputs. Those actual gates remain outstanding; offline success
-does not supersede the failed retained-container result.
+The accessible, hash-verified inspection record establishes the prior inspected
+image ID separately from exported manifest/config digests; it is not a new build.
+The cold-import fixture correction now has original Architect/Critic acceptance.
+Fresh joined offline checks passed: all 206 application tests; 223 of 226
+retained tests, with three explicit native-Linux exclusions and no dirty-source
+or missing-fixture skip. Runtime and named helper-input seals are unchanged;
+the changed test-only bytes are recorded separately in the
+[fixture source join](docs/design.md#reviewed-cold-import-fixture-source-join).
+Original changed-join E2E precedes DevOps same-selection readiness revalidation,
+without startup replay, and BOTH complete Linux suites and package gates.
+Those actual gates remain outstanding; offline success does not supersede the
+failed retained-container result.
 
 Original reviewers inspected four accessible exact-version private reads with
 package/identity matches and attributable newly owned cleanup. This advances
@@ -52,8 +53,10 @@ remains outstanding independently of Linux/package validation; operational
 freshness must be revalidated before external effects. Both actual readiness
 gates must pass before one serialized guarded publisher proceeds to final
 common-bundle live checks. Reviewed source-integration refs in both repositories
-are now pushed and read back; this measured-status update still requires original
-review and the existing final execution closeout's reviewed-document push.
+are pushed and read back through application `b18cf3ec` and lab `651a2290`,
+including the earlier reviewed closeout and continuation planning. This new
+join's documentation still requires original review and the existing final
+execution closeout's reviewed-document push.
 
 Accepted offline assertions are not a live demonstration. Neither identity
 path is live-selected; live two-turn continuity, supported compute stop/resume

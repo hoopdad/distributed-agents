@@ -1,5 +1,23 @@
 # Repository index
 
+Cold-import source-join freshness: reviewed application `b18cf3ec` and feature
+lab `651a2290`; no added/deleted paths. Opened original fixture agreement
+`bb19091a`, architecture `fd5fb443`, planning `dea825a5`, closeout `820ff4c8`
+and stopped DevOps `0413fdfc`. Exact reviewed refs pushed/read back, retaining
+`7fef48b7`, `0cac08c9` and all intended ancestry; no abandoned task branches.
+Navigate `docs/design.md#reviewed-cold-import-fixture-source-join` for actual
+Python/PowerShell owners, committed equality, unchanged runtime/helper seals
+and separate changed test-only hashes. Fresh offline join: 206 application
+PASS; 223/226 retained PASS, three native-Linux exclusions, no hidden skips.
+README and recovery now reflect latest actual Linux 206/seven skips and
+224/three fixture errors with seven native observations, plus hash-verified
+accessible image inspection separate from historical digest/startup labels.
+Original changed-join E2E precedes BOTH complete actual Linux suites. Independent
+rollback-byte/effect work continues; BOTH actual exits still gate one publisher
+and live checks. This documentation slice awaits original review and existing
+final execution closeout's reviewed push; no source/runtime/operational change.
+Older freshness entries retain their dated scopes and pending-ref history.
+
 Continuation planning freshness: based on accepted architecture `45c74a3b`
 and selected feature lab `1526012`; added only
 `docs/customer-prototype-fixture-continuation-sprint-plan.json`, no deletions.

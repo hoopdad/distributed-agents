@@ -1,5 +1,59 @@
 # Identity propagation recovery: design and execution plan
 
+## Reviewed cold-import correction handoff (October 20, 2026)
+
+`RP-S3-FIXTURE-SOURCE-JOIN` consumes the original Architect/Critic agreement
+`bb19091a` for lab `651a22908984174d3947b9d04ed68f6cd13ea90c`.
+The [current join](design.md#reviewed-cold-import-fixture-source-join) records
+actual loaded Python/PowerShell owners, committed-byte equality, unchanged
+runtime and named-helper seals, and separately changed test-only hashes.
+Fresh joined offline checks passed 206 application tests and 223 of 226
+retained tests; the only three exclusions require native Linux. No missing
+fixture or dirty-source exclusion remained. This satisfies the bounded source
+handoff, not actual Linux/package readiness.
+
+Opened stopped original DevOps audit `0413fdfc` and hash-verified its accessible
+log and inspection records. Latest actual Linux results remain: application
+206 run, 199 passed, seven skips; retained 224 run, 178 passed, 43 platform
+skips and three configuration errors before intended rejection assertions.
+All seven native-observation cases and required native-Linux cases passed.
+The log SHA256 is
+`af9c4422b6f970d84b42ab87fb83e4f5c6396ea11d2c6f9a26fddf90a8fcaeb0`;
+inspection SHA256 is
+`083556f41e382fa4b436635701f4f0560627fc8eefff04b9395ee480c1b4933e`.
+These records are nonsecret mirrored evidence outside the source repositories.
+Inspection records the prior Linux/amd64/Python 3.13.15 image ID
+`sha256:b0c7ebf170ae375553947a339ad894a134f8ca794b0c34b66705f6a4cad9d8c6`.
+Its separately labelled exported manifest digest happens to match; exported
+config digest is
+`sha256:294fc139b2cac7ab6b6d66f3267fc60639a3c634bbc94840a9007c85ac6fe01b`.
+This accessible inspection supersedes only the earlier owner-attribution/
+unverified-image wording, not a failed test gate or historical mislabelling.
+Startup timeout remains separate from subsequent same-selection readiness;
+no startup was replayed and no recovery-command success is inferred.
+
+Reviewed feature refs were pushed/read back exactly: application
+`b18cf3ec481690180f557e93259aac479424b648`, lab
+`651a22908984174d3947b9d04ed68f6cd13ea90c`. The application push includes
+reviewed `7fef48b7`, continuation architecture `45c74a3b` and plan `b18cf3ec`;
+both refs retain all earlier intended commits, including `0cac08c9`.
+No task code/branches were abandoned; no canonical dirty paths were adopted.
+This new four-path documentation commit requires original Architect/Critic
+review before its later push/readback by the existing final execution
+closeout Developer. No new approval stage is introduced.
+
+Next: original changed-join E2E, then original latest RP-S3 DevOps revalidates
+the same selected engine without startup replay and runs BOTH complete Linux
+suites and remaining hosting/package gates. Independent common rollback
+ZIP-byte and unresolved-effect accounting must continue; exact metadata reads
+do not prove those bytes exist. Only BOTH actual readiness exits permit one
+publisher, trusted architect-before-reviewer ingress and final common-bundle
+G1-G4 with a completed non-held initial parent. Follow-up/recovery require that
+parent; separate-parent isolation requires final bindings, not recovery success.
+Historical UNKNOWNs, held parents, rollback assets and cleanup uncertainty
+remain untouched. No operational/cloud effects or live acceptance occurred
+in this source join. Earlier sections retain dated evidence, not current status.
+
 ## Reviewed Git delivery and measured-status closeout (October 20, 2026)
 
 `RP-S3-GIT-CLOSEOUT` inspected original source-join agreement `fc2a6414`:

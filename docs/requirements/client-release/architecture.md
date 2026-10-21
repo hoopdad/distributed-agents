@@ -1,5 +1,51 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current RP-S2: test-only package closure and exact WSL reads
+
+Consume the [current cumulative contract](../../customer-prototype-sprint-architecture.md#current-rp-s2-linux-test-closure-and-selected-wsl-exact-inventory-october-20-2026).
+Canonical **Guarded lab release toolchain**, **Trusted identity and private
+transport**, **Terminal client** and `guarded-release` IDs remain unchanged.
+Two independent source corrections affect `release-package`; reviewed-source
+reconciliation belongs to `release-join`, final measured handoff to `release-close`.
+
+Package correction owns lab `Build-Demo.ps1` and
+`tests/test_release_native_settings.py`, application
+`tests/test_scenario_evidence.py` and relevant indexes. Explicit read-only
+`scripts/identity_handoff.py` test input needs file/reparse guards and separate
+test-input hash/provenance, not Dockerfile/runtime/ZIP inclusion. Keep the
+diagnostic dependency available and all exact mount, network-none, exclusion,
+compilation and separate-container assertions. Fixture-owned synthetic Decision
+settings must span all captures and restore previous values/absence even on
+failure; tests cannot consume operational configuration or weaken runtime guards.
+
+Independent inventory correction owns lab `Invoke-WslCodeRelease.ps1`,
+`wsl_release.py`, `tests/test_release_exact_metadata.py`, `tests/test_release.py`
+and lab index. The cumulative contract defines all-or-none ReadOnly-only
+`InventoryService` / `InventoryVersion` / `InventoryExpectedPackageSha256` /
+`InventoryIdentityBaseline` selectors and corresponding Python arguments.
+Reuse unchanged `observe_agent.py` exact validation on retained selected WSL
+transport; reject invalid modes/selectors/unsafe baseline before transport.
+Exact absence, mismatched package/identity or uncertain cleanup is not readiness.
+No latest fallback, publication, inference, profile/context substitution or
+private output leakage. Return accessible sanitized receipt evidence through
+the approved handoff, not an access-denial workaround.
+
+Both corrections need original source review/integration and applicable original
+changed-join E2E before changed tooling executes. Existing DevOps continues
+feasible local rollback-package/effect accounting independently, then joins
+actual complete inventory with actual Linux application AND retained PASS.
+Only both exits permit one publisher, architect-before-reviewer ingress and
+G1-G4/non-held initial parent. Unused Windows-helper acceptance is no WSL gate.
+
+Screen F/G from accepted SprintDesign `b29d9a0b` retain machine stdout/parser
+and separate human stderr. Report timeout versus later readiness separately
+without startup replay, image construction versus failed tests, and exported
+manifest digest versus unverified image ID. Existing closeout owns measured
+README/recovery status and reviewed-ref push/readback including `0cac08c9`.
+Accepted helper/mount source remains closed; UNKNOWNs, held parents, rollback,
+stop accounting and live AC1-AC9 remain unchanged. This tier contract is not
+Linux, transport, inventory or deployed-test evidence.
+
 ## Scoped helper mount regression ownership amendment
 
 Consume the [scoped cumulative disposition](../../customer-prototype-sprint-architecture.md#scoped-amendment-exact-read-only-helper-mount-regression-october-20-2026)

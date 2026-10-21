@@ -1,5 +1,22 @@
 # Repository index
 
+RP-S2 correction-architecture freshness: based on application `b29d9a0b` and
+inspected feature lab `1dab1e01`, accepted exact join `0cac08c9`, and opened
+originating DevOps audit `d29bb042` with its reconciled dispositions.
+`docs/customer-prototype-sprint-architecture.md` now specifies two independent
+bounded corrections: explicit public Linux test-input/provenance mounts plus
+fixture-owned synthetic Decision settings, and ReadOnly-only selected-WSL exact
+role/version/hash/identity-baseline inventory reusing existing validation.
+All three `docs/requirements/*/architecture.md` contracts retain canonical
+component/flow IDs and localize these changes to release inputs, not runtime.
+Existing Scrum scopes dispatch/path ownership; existing integration reconciles
+reviewed refs/hashes, original E2E validates the changed join, original DevOps
+executes actual Linux AND inventory exits before one publisher/G1-G4.
+Accepted helper/mount work stays closed; timeout is not helper success, manifest
+digest is not image ID, and inaccessible fresh receipts stay owner-attributed.
+No paths added/deleted, runtime/source-tool/settings changes or external effects.
+Historical entries retain originating boundaries, not current pending tasks.
+
 RP-S2 observed-failure design freshness: based on application `0cac08c9`,
 accepted Architecture/UX and opened original DevOps audit `d29bb042...`.
 `docs/customer-prototype-sprint-design.md` retains A-D/F/G and specializes F

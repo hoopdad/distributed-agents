@@ -1,5 +1,158 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Current RP-S2: Linux test closure and selected-WSL exact inventory (October 20, 2026)
+
+This entry governs the current correction; earlier entries retain their original
+task/evidence boundaries. Inputs are accepted Architecture `cef352f4`, UX
+`6b6975c0`, ReleasePlan `48e3faf3`, current SprintDesign `b29d9a0b` and
+source join application `0cac08c9` / lab `1dab1e01`. Opened current-run audits
+`398b66fa`, `bf7fed70`, `5a82b2df`, `c8ea93a8`, `c96ccaae`, `9932d390`,
+`bc59f888` and `6024e98b`: original votes accept their bounded documents/source/
+local checks, not cloud readiness. Opened stopped DevOps audit `d29bb042`
+including its reconciled governance instructions: needs-replan, original
+Architect/Critic/Developer taskComplete false. RP-S1 remains partial at that
+execution boundary; RP-S2 remains incomplete and RP-S3 live verification pending.
+
+### Stable model and localized construction
+
+The authoritative [solutionModel](customer-prototype-architecture.md#solutionmodel)
+remains unchanged: ten components, five flows, eighteen steps, including all
+support links. This cumulative sprint artifact incorporates that model by
+reference rather than forking it. The following are implementation-contract
+refinements within **Guarded lab release toolchain** (`release-toolchain`) and
+shared **Trusted identity and private transport** (`identity-boundary`), not new
+services or a runtime architecture rewrite.
+
+| Approved criterion / step | Actual modules and state | Missing construction / receiving handoff |
+| --- | --- | --- |
+| AC7, RP-S2 Linux validation / `release-package` | Lab `Build-Demo.ps1` mounts `scripts/diagnose_identity.py`, but not the `scripts/identity_handoff.py` imported by application discovery. Dockerfile correctly excludes that offline-only utility from hosting. Application `tests/test_scenario_evidence.py` mocks DecisionClient without owning required admission configuration. | Developer supplies explicit public read-only test inputs and isolated synthetic Decision settings; original source review and changed-join E2E precede complete DevOps Linux application AND retained suites. |
+| AC9, G1/G8, RP-S2 fresh inventory / `release-package` | Lab `wsl_release.py:Release.observe` reads latest metadata. `observe_agent.py` already implements strict exact selectors, exact GET, package/identity comparison and sanitized absence results. Selected WSL has no caller contract for these exact reads. | Separate Developer correction exposes the existing exact-read validation through retained WSL transport. DevOps joins exact rollback availability with local package hashes and unresolved-effect accounting. Metadata alone cannot establish the full exit. |
+| AC8 / `release-join`, `release-close` | Accepted helper/mount `1dab1e01`, integration `0cac08c9` and original exact-join E2E remain consumed. Runtime/Decision closure is separate from build/test/helper inputs. | Existing integration owner reconciles new reviewed commits, actual loaded roots/bytes, changed input hashes and push/readback, including `0cac08c9`; existing closeout refreshes only measured status. |
+| AC1/AC5 G1-G4 / `release-discriminate`, all five `collaboration-*` steps | Hosted workflow, immutable artifacts, fencing, checkpoints, child bindings and finite identity runner are implemented and locally verified, not independently live-proven by this turn. | BOTH actual readiness exits precede one serialized publisher, trusted architect ingress before reviewer, common-bundle G1-G4 and completed non-held initial parent. |
+| AC2-AC4 / `continuity-*`, `recovery-*`, `isolation-*` | Accepted RP-S1 binding/history/revision fixtures and terminal projection remain unchanged. | RP-S3 consumes actual final bindings; follow-up needs a completed non-held initial turn, supported stop/resume its once-only marker, isolation its own scope. Independent approved source/preparation need not wait for another full sprint. |
+
+### Package branch: explicit test inputs, not hosted dependencies
+
+Existing Scrum assigns the existing Developer application
+`tests/test_scenario_evidence.py`, lab `foundry-tf/multi-agent/Build-Demo.ps1`,
+`foundry-tf/multi-agent/tests/test_release_native_settings.py` and the two
+repository indexes. These are the precise source ownership boundaries for this
+correction. `scripts/identity_handoff.py`, `scripts/diagnose_identity.py`,
+`demo/workflow.py`, Dockerfile and runtime/package allowlists are read-only
+inputs, not permission to change behavior or broaden the shipped package.
+
+Build-Demo supplies the demonstrated missing `scripts/identity_handoff.py` as
+an explicit read-only application-test mount, using selected ApplicationRoot,
+file-presence/reparse guards and test-input provenance hashing consistent with
+the diagnostic input. Keep its existing diagnostic dependency available;
+do not mount all scripts, a checkout, private settings or operational profiles.
+Update affected exact input/mount/provenance regressions without weakening
+exact equality, duplicate/file-presence, network-none, runtime exclusion,
+compilation or separate application/retained-container assertions.
+New test-only bytes must be bound separately even if the runtime seal is unchanged.
+
+Scenario captures own synthetic `DECISION_REQUESTS_PER_MINUTE` and
+`DECISION_MODEL_DEPLOYMENT` before calibration/graph capture, across initial,
+follow-up, restart and isolated scenarios. Restore prior values AND prior
+absence on success and setup failure, with cleanup registered before captures.
+Use existing synthetic fixture conventions, not ambient lab configuration.
+Cover environment-independent execution/restoration, retaining all current
+artifact/journal and negative scenario assertions. Runtime's required settings,
+admission limits and genuine live Decision-1 checks remain mandatory.
+
+Bounded source doneWhen: committed explicit input/fixture correction and passing
+affected application/retained/provenance checks returned to original
+Architect/Critic review. This is not actual Linux readiness. Exclusions include
+engine startup/build/cloud execution, identity-handoff/runtime behavior changes,
+dependency installation without a missing-tool/manifest cause, settings edits,
+package expansion and skips used to hide failed required checks.
+
+### Inventory branch: a read-only exact selector on the existing route
+
+Independent source ownership is lab
+`foundry-tf/multi-agent/Invoke-WslCodeRelease.ps1`,
+`foundry-tf/multi-agent/wsl_release.py`,
+`foundry-tf/multi-agent/tests/test_release_exact_metadata.py`,
+`foundry-tf/multi-agent/tests/test_release.py` and lab `.github/repo-index.md`.
+Reuse `observe_agent.py` unchanged as the validation/observation contract;
+do not duplicate its package/identity rules or modify publishing semantics.
+
+Expose an all-or-none selector quartet on the existing wrapper:
+`InventoryService`, `InventoryVersion`, `InventoryExpectedPackageSha256`,
+`InventoryIdentityBaseline`, propagated as explicit corresponding Python
+`--inventory-*` arguments. It is valid only in ReadOnly, never Publish,
+InspectOwner or combined session monitoring. Absent selectors retain current
+latest-only ReadOnly behavior. Exact service is one of the existing three;
+version uses `exact_version`, hash uses `package_hash`, and baseline is an
+existing validated private non-reparse file outside source repositories,
+bound to that role's identity baseline. Validate selectors/combination/path
+before starting owned transport or performing external work. Preserve the
+separate application/tool/operational roots and loaded-source equality.
+
+Within the already selected retained WSL route, perform only the exact version
+GET and existing exact metadata validation, using the existing scoped credential,
+strict host trust, remote-DNS/private-origin transport, bounded command handling,
+read-only mount and owner containment/cleanup. Do not create another route,
+switch profiles/contexts, read/copy credentials, infer expected identity from the
+new observation, or fall back to latest/list/public access on a failed exact read.
+Preserve existing `observe_exact`/`exact_metadata` sanitized fields: requested
+and returned version, existence/status, expected-package match, identity match,
+protocol presence and zero inference. An exact 404 is observed absence, never
+availability; hash/identity mismatches or incomplete observations cannot satisfy
+rollback readiness. Fail closed on invalid selector, malformed result,
+authentication/transport/error/cleanup uncertainty; never emit success-shaped
+readiness from a partial receipt. Private identity values and response bodies
+stay outside public output/Git. Return accessible sanitized receipt evidence
+through the approved mirror/handoff; access denials remain denials.
+
+Bounded source doneWhen: committed wrapper/runner/regressions pass targeted and
+applicable retained checks for valid exact reads, incomplete/invalid selectors,
+wrong modes/roots, missing/unsafe baseline, absent versions, package/identity
+mismatch, HTTP/transport failure, no fallback/inference and attributable cleanup.
+Original Architect/Critic review and applicable changed-join E2E precede
+execution of changed tooling. No live inventory or publication is required or
+claimed by that source assignment. Existing DevOps continues feasible retained
+rollback-package/effect-journal accounting independently; inventory construction
+does not depend on the package branch or unused Windows-helper acceptance.
+
+### Disposition application, execution and reporting
+
+Apply exact origin `["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop", ...]` for
+`linux-application-test-closure`, `selected-wsl-exact-inventory`,
+`release-binding-report-accuracy` and `guarded-execution-and-closeout`.
+The different originating
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LINUX-ENGINE-READINESS/AssignedWorkDeveloperLoop","linux-engine-exact-mount-contract"]`
+is satisfied by original accepted helper/mount source; do not reopen it.
+
+The opened DevOps report attributes a once-only startup command timeout followed
+by later same-selection read-only readiness, not helper success. Do not replay
+that startup. Image construction reached Linux/amd64/Python 3.13.15; application
+discovery then had 191 tests, 14 errors and seven skips; separate retained Linux
+checks were not reached. Exported manifest digest
+`b0c7ebf170ae375553947a339ad894a134f8ca794b0c34b66705f6a4cad9d8c6`
+is NOT an authoritative image ID; leave image ID unverified pending inspection.
+These are attributed execution findings, not new Architect executions.
+The fresh private route/cleanup receipt was unavailable to original reviewers;
+its claims remain owner-reported, not independently accepted inventory.
+
+Scrum records two independent bounded Developer corrections, minimal review/
+integration handoffs and exclusive resources for actual shared writes. Lab index
+edits require coordinated path-scoped reconciliation, not a dependency between
+the two code contracts. Keep the accepted outer plan as history; existing Scrum
+owns the scoped replacement dispatch and named integration, not this document.
+Original E2E checks the changed exact join; original DevOps then revalidates the
+same selected engine without startup replay, reruns complete Linux gates and
+finishes exact rollback/effect readiness. BOTH actual exits gate one publisher.
+Source review, image build, ReadOnly metadata or agreement on FAIL cannot meet
+DevOps cloud-pass or the RP-S2 G1-G4/non-held-parent doneWhen.
+
+Keep all historical UNKNOWNs, held parents, rollback assets, cleanup uncertainty,
+five-consecutive-no-new-progress accounting and no new infrastructure/permissions.
+No user-only action is established. Existing closeout pushes/readbacks intended
+reviewed refs and updates stale measured README/recovery wording without
+reopening customer clarity. No scripts, engine, settings or cloud effects are
+executed in this architecture turn; tier updates refine only affected contracts.
+
 ## Scoped amendment: exact read-only helper mount regression (October 20, 2026)
 
 This amendment applies only to `RP-S2-LINUX-ENGINE-READINESS`, under originating

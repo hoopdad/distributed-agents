@@ -1,5 +1,32 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current RP-S2: exact metadata is not specialist ingress
+
+Consume the [current cumulative contract](../../customer-prototype-sprint-architecture.md#current-rp-s2-linux-test-closure-and-selected-wsl-exact-inventory-october-20-2026).
+**Hosted architect**, **Hosted reviewer** and **Parent and specialist
+conversation state** keep canonical IDs, support links and five-stage source
+implementations. Accepted direct-history/binding fixtures remain consumed.
+No new specialist, history rekey, identity relaxation or runtime edit follows
+from Linux test-input/fixture failure or missing WSL inventory selectors.
+
+Independent selected-WSL exact reads reuse the existing strict role/version/
+package/identity contract through retained transport. They establish only
+observed metadata/absence and comparison results, not runtime health,
+trusted receiver entry, model memory or collaboration. A package/identity
+mismatch or absent rollback version cannot pass readiness; preserve pins,
+rollback assets, held children and every UNKNOWN. Do not infer identity
+expectations from the newly observed response or fall back to latest.
+
+After original changed-source reviews/E2E and both actual readiness exits,
+one original publisher proves `collaboration-design` architect ingress before
+`collaboration-review` reviewer ingress, each with exact current immutable
+inputs, then common-bundle G1-G4 and a non-held initial parent. RP-S3 independently
+measures stable hosted/framework children, advancing responses/history,
+supported stop/resume and distinct-parent scope. Application-enforced Blob
+isolation is not malicious-host or storage-RBAC isolation. Original live gates,
+no hidden fallback/no duplicate effects and stop accounting remain intact;
+this documentation supplies no new live verification.
+
 ## Current RP-S1 continuation: retained specialist sessions and ingress gates
 
 Consume the [current cumulative sprint contract](../../customer-prototype-sprint-architecture.md#current-rp-s1-continuation-retained-session-contracts-and-engine-readiness-join-october-20-2026)

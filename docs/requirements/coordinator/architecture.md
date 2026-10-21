@@ -1,5 +1,33 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current RP-S2: isolate fixture repair from coordinator configuration
+
+Consume the [current cumulative contract](../../customer-prototype-sprint-architecture.md#current-rp-s2-linux-test-closure-and-selected-wsl-exact-inventory-october-20-2026).
+**Hosted coordinator**, **Decision-1 routing and admission**, **MAF workflow
+checkpoints** and shared conversation/artifact structures keep existing model
+IDs and contracts. `demo/workflow.py` required Decision configuration is correct
+fail-closed runtime behavior; do not change it to fix synthetic captures.
+Application `tests/test_scenario_evidence.py` must own synthetic admission/deployment
+settings before calibration and every graph capture, restoring values and
+absence on success/setup failure. Keep original artifact/journal negative cases;
+synthetic DecisionClient results never prove genuine live Decision-1.
+
+Package input/fixture and selected-WSL exact inventory corrections are separate
+`release-package` construction, not new coordinator session/identity work.
+Accepted helper, child-binding/history, fencing/revision and source handoffs
+are not redispatched. Source review and changed-join E2E precede original
+DevOps execution; both actual readiness exits still gate serialized publication.
+No model, metadata, container build or accurate FAIL report establishes
+`collaboration-bind` through `collaboration-return` or the non-held initial
+parent. Preserve begin/route/execute/publish, immutable current refs, checkpoint
+and unknown-effect holds, no duplicate sends and no hidden local specialist.
+
+RP-S3 receives actual common-bundle G1-G4 parent/both-child bindings and pins
+for follow-up, supported stop/resume and independent isolation; no full-sprint
+dependency is added to unrelated construction. Runtime and machine contracts,
+historical UNKNOWNs and five-round stop remain unchanged. No hosted execution
+is asserted by this tier refinement.
+
 ## Current RP-S1 continuation: unchanged hosted acceptance boundary
 
 Consume the [current cumulative sprint contract](../../customer-prototype-sprint-architecture.md#current-rp-s1-continuation-retained-session-contracts-and-engine-readiness-join-october-20-2026)

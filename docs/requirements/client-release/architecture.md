@@ -1,5 +1,41 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current RP-S3: retained inputs and independent release-readiness exits
+
+Consume the [current cumulative overlay](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-evidence-joins-and-retained-linux-input-closure-october-20-2026)
+and accepted SprintDesign `a066bdf8`, retaining canonical toolchain, identity
+boundary and terminal components and `release-join/package/discriminate/close`.
+Earlier entries below retain their originating history, not current missing
+inventory selectors or pending application-fixture implementation.
+
+At reviewed application `98128bb8` / lab `5da7a2ea`, actual application Linux
+checks passed (206 run, seven explicit skips); retained discovery failed
+(184 run, one import error, 38 Windows-specific skips). Apply exact reference
+`["yaml-loops-v1:sprint/2/RP-S2/DevOpsWorkLoop","retained-linux-test-input-closure"]`:
+existing Developer's minimal `Build-Demo.ps1` and affected regression/index
+correction supplies named public `identity_decision.py` and workflow-fixture
+inputs for retained discovery/observation. Preserve file/reparse validation,
+separate test provenance, exact read-only mounts, network-none, compilation,
+runtime/ZIP exclusion and both container suites. No whole-tree mount or
+fixture-absence skip can replace required coverage. Original source review,
+integration and changed-join E2E precede complete actual Linux reexecution.
+
+Four accessible exact private reads advance metadata/package/identity evidence;
+independent common rollback ZIP-byte/effect accounting remains incomplete.
+No repeat selector implementation or unused Windows-helper gate. BOTH actual
+readiness exits still precede one publisher and real common-bundle G1-G4.
+The newer separately inspected image ID is owner-attributed until accessible
+inspection evidence supports it; exported digests and startup timeout remain
+distinct from that claim and subsequent engine-readiness observation.
+
+H/I need a completed non-held initial parent; J needs final deployed bindings,
+not recovery success or full prior-sprint acceptance. Keep H-K reporting,
+machine stdout/parser and optional human stderr; no new command/schema/UI.
+Existing closeout joins actual G5-G8/AC1-AC9 proof, exact final/rollback bindings,
+reviewed scoped pushes (including `98128bb8`/`5da7a2ea`) and attributable new
+cleanup. Historical UNKNOWNs, held parents and cleanup uncertainty remain.
+This contract is not a fresh execution or release-acceptance receipt.
+
 ## Current RP-S2: test-only package closure and exact WSL reads
 
 Consume the [current cumulative contract](../../customer-prototype-sprint-architecture.md#current-rp-s2-linux-test-closure-and-selected-wsl-exact-inventory-october-20-2026).

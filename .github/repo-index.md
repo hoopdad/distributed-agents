@@ -1,5 +1,22 @@
 # Repository index
 
+RP-S3 cumulative architecture freshness: baseline `a066bdf8`; no added/deleted
+paths. `docs/customer-prototype-sprint-architecture.md` current RP-S3 overlay
+and all three `docs/requirements/*/architecture.md` contracts preserve the
+canonical ten-component/five-flow/eighteen-step solutionModel by reference.
+Opened original `7e74a2ea` reconciled DevOps feedback plus accepted design,
+source-join/E2E and Architecture/ReleasePlan votes. Scope the new retained-only
+Linux input closure (named identity_decision module and workflow fixture,
+exact read-only/provenance guards), not accepted application/helper/selector
+work. Independent rollback ZIP-byte/effect accounting continues; four exact
+private metadata reads do not close it. Both actual readiness exits still
+gate one publisher/G1-G4 and completed non-held initial parent. H/I consume
+that parent; J requires final bindings but not recovery success. New image
+inspection remains owner-attributed pending accessible evidence; historical
+exported digest/startup timeout stay distinct. Existing Scrum owns precise
+dispatch, integration/closeout owns reviewed refs and measured status.
+Documentation only; no operational or live capability asserted.
+
 RP-S3 current design freshness: baseline application `98128bb8`; no added/deleted
 paths. `docs/customer-prototype-sprint-design.md` current RP-S3 entry retains
 H-K/A-D/F-G and canonical continuation/recovery/isolation/release-close steps.

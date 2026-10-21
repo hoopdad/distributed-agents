@@ -1,5 +1,36 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current RP-S3: both-role history comparisons and independent parent scope
+
+Consume the [current cumulative overlay](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-evidence-joins-and-retained-linux-input-closure-october-20-2026).
+Canonical architect, reviewer and conversation-state components remain:
+`demo/architect_agent.py` and `demo/reviewer_agent.py` restore specialist model
+history, `demo/specialist.py` supplies shared model/resource behavior,
+`demo/foundry.py` restores the pinned AgentSession, and
+`demo/artifacts.py`/`demo/artifact_store.py` enforce
+current immutable inputs/outputs and parent scope. No runtime/history/identity
+change is part of the retained Linux test-input correction.
+
+For `continuity-invoke/verify`, both roles must execute on initial and queue
+follow-up turns with unchanged actual parent, hosted/framework child identities
+and pins, new invocation responses and current exact requirements/candidate/
+review revisions. Two total child creations and retained model continuation
+must be observed, not inferred from recalled prose or unchanged serialized
+sessions. Offline repeated-call/history fixtures remain accepted, not live proof.
+Supported recovery preserves these original bindings and reconciled effects;
+it is not permission to recreate held children or retry uncertain sends.
+
+For `isolation-bind/execute/verify`, require distinct actual parent/both-child
+bindings, artifact namespaces and exclusion of the first parent's requirements,
+with existing cross-scope rejection regressions. Final deployed bindings and
+safe preconditions are necessary; recovery success is not. Account-wide Blob
+Contributor means application-enforced isolation, not storage-RBAC/malicious-host
+protection. Four exact private package/identity reads are useful inventory
+observations, not trusted specialist ingress or memory. BOTH actual readiness
+exits precede one publisher, architect-before-reviewer ingress and final
+common-bundle G1-G4/non-held initial-parent handoff. No hidden local fallback,
+new service, relaxed pins or live acceptance claim is introduced.
+
 ## Current RP-S2: exact metadata is not specialist ingress
 
 Consume the [current cumulative contract](../../customer-prototype-sprint-architecture.md#current-rp-s2-linux-test-closure-and-selected-wsl-exact-inventory-october-20-2026).

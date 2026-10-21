@@ -1,5 +1,33 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current RP-S3: same-parent continuation and once-only supported recovery
+
+Consume the [current cumulative overlay](../../customer-prototype-sprint-architecture.md#current-rp-s3-live-evidence-joins-and-retained-linux-input-closure-october-20-2026).
+Canonical coordinator, Decision-1, checkpoint, conversation-state and artifact
+components/support links remain. `demo/workflow.py`, `demo/foundry.py`,
+`demo/contracts.py` and `live_acceptance.py` retain their existing contracts;
+the retained Linux input repair authorizes no coordinator/configuration change.
+Application fixture/settings correction and controlled revision/history cases
+are accepted source, not work to redispatch or genuine live Decision-1 proof.
+
+For `continuity-revise/invoke/verify`, consume the real completed non-held
+G1-G4 parent and final common-bundle bindings. Preserve earlier requirements,
+append the queue, invalidate stale approval, restore both pinned child sessions
+and require current exact candidate/review references, producers/hashes/revisions
+before fenced acceptance. Compare actual parent/hosted/framework identities and
+pins, exactly two children across both turns and fresh responses for new calls.
+History continuation, graph checkpoints and artifact/effect persistence remain
+different state concerns; replayed brief text or aliases cannot prove memory.
+
+For `recovery-stop/resume/verify`, retain durable once-only stop intent and
+independent stopped/idle confirmation before continuation. Reconcile checkpoints,
+known responses and journaled effects; no uncertain resend, marker deletion,
+hard-kill or exactly-once claim. Separate-parent isolation does not depend on
+recovery success. Holds constrain affected operations, not independent source
+repair or rollback accounting. BOTH actual readiness exits and serialized
+publication still precede missing G1-G4; no live capability follows from this
+architecture refinement or from accepted predeployment E2E FAIL.
+
 ## Current RP-S2: isolate fixture repair from coordinator configuration
 
 Consume the [current cumulative contract](../../customer-prototype-sprint-architecture.md#current-rp-s2-linux-test-closure-and-selected-wsl-exact-inventory-october-20-2026).

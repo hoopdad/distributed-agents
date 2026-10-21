@@ -1,5 +1,164 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Current RP-S3: live evidence joins and retained Linux input closure (October 20, 2026)
+
+This is the current cumulative overlay for **RP-S3**; earlier entries retain
+their originating evidence and task boundaries, not current pending ownership.
+Baseline is application `a066bdf8908f6873d0e0ae12a82e348a586f9a82` on
+`feature/customer-hosted-session-prototype`, with reviewed source join
+application `98128bb8` / selected feature lab `5da7a2ea`. Consume accepted
+Architecture `cef352f4`, UX `6b6975c0`, ReleasePlan `48e3faf3` and current
+SprintDesign `a066bdf8`. Opened original current-run audits `398b66fa`,
+`5a82b2df`, `40c04f03`, `c803c95d` and `293c1688`: their original reviewers
+accept the bounded architecture, plan, design, source join and local E2E
+report. None establishes deployed acceptance. Opened stopped DevOps audit
+`7e74a2ea`, including its single reconciled governance instruction set:
+Architect, Critic and Developer each retain taskComplete false and four
+unmet criteria. RP-S1 and RP-S2 remain partial at original DevOps boundaries.
+
+### Canonical model, implemented state and smallest live joins
+
+The authoritative [solutionModel](customer-prototype-architecture.md#solutionmodel)
+is incorporated unchanged: ten components, five flows, eighteen steps and
+the existing shared support links. This overlay adds neither component nor
+flow, session manager, service, CLI/schema nor alternative execution path.
+The following connects current approved criteria to its actual implementations.
+
+| Criteria / canonical flow steps | Components and existing modules | State and smallest receiving contract |
+| --- | --- | --- |
+| AC7 / `release-join`, `release-package` | **Guarded lab release toolchain**; lab `Build-Demo.ps1`, `tests/test_release_identity_decision.py`, `tests/test_release_native_settings.py`; application `tests/test_workflow.py` | Reviewed application input/fixture correction is implemented and locally accepted. Actual application container run: 206 tests, 199 passed, seven platform/optional skips. Separate retained discovery: 184 run, 145 passed, 38 Windows-specific skips, one import error. New retained-input correction below needs source review, changed-join E2E and complete actual Linux execution; no package readiness yet. |
+| AC9/G1/G8 / `release-package` | **Trusted identity and private transport**, toolchain; lab `Invoke-WslCodeRelease.ps1`, `wsl_release.py`, `observe_agent.py` | Exact selector implementation and join are accepted. Original DevOps/review records four accessible exact private version/package/identity matches and attributable new-resource closure. Complete common rollback ZIP-byte availability and effect ledger remain unproven; metadata is not rollback-byte proof. Independent accounting does not wait for Linux repair. |
+| AC1/AC5 G1-G4 / `release-discriminate`, `collaboration-bind`, `collaboration-route`, `collaboration-design`, `collaboration-review`, `collaboration-return` | **Hosted coordinator**, **Hosted architect**, **Hosted reviewer**, **Decision-1 routing and admission**, shared state/artifacts/checkpoints; `demo/workflow.py`, `demo/specialist.py`, `demo/foundry.py`, `demo/routing.py`, `live_acceptance.py` | Implemented/local evidence is consumed, not redispatched. BOTH actual readiness exits still precede one publisher, trusted architect-before-reviewer ingress and actual common-bundle G1-G4. The completed non-held initial-parent handoff is missing, not implied by accepted E2E FAIL or exact metadata. |
+| AC2/G5 / `continuity-revise`, `continuity-invoke`, `continuity-verify` | **Terminal client**, hosted roles, **Parent and specialist conversation state**, **Private Blob artifacts and effect journal**; `demo/terminal.py`, `demo/contracts.py`, `demo/foundry.py`, `demo/workflow.py`, `demo/specialist.py`, `live_acceptance.py` | Accepted fixture/history/presentation work remains implemented and locally verified. Live execution needs the actual completed initial parent and final common-bundle bindings, not acceptance of an entire earlier sprint. Compare observations and assertions independently as specified below. |
+| AC4/G6 / `recovery-stop`, `recovery-resume`, `recovery-verify` | Toolchain, trusted transport, hosted roles, conversation state, **MAF workflow checkpoints**, artifacts/effects; `live_acceptance.py:stop_hosting_for_acceptance`, `demo/workflow.py` | Supported once-only stop requires completed non-held parent, durable intent and exact stopped/idle confirmation. No current live stop/resume evidence; uncertainty holds affected operations. |
+| AC4/G7 / `isolation-bind`, `isolation-execute`, `isolation-verify` | Terminal, hosted roles, conversation state, artifact plane, trusted transport; `live_acceptance.py`, `demo/artifacts.py`, `demo/artifact_store.py`, `demo/foundry.py` | Accepted cross-scope fixtures remain. Live separate parent needs final deployed bindings and safe effects, not recovery success; its preparation is independent of the missing initial-parent continuation. |
+| AC6-AC9/G8 / `release-close` | Terminal, toolchain, artifact plane; `README.md`, `demo/terminal.py`, `live_acceptance.py`, `docs/identity-recovery-plan.md` | Retain screens H-K, machine stdout/parser and opt-in human stderr. Existing integration/closeout joins actual proof, final-source/package checks, reviewed scoped pushes and new-resource cleanup; no customer-ready claim before all required criteria. |
+
+The specialist model-history stages live in `demo/architect_agent.py` and
+`demo/reviewer_agent.py`; `demo/specialist.py` is shared instructions/resource
+lifecycle, while `demo/foundry.py:RemoteAgents.invoke` restores the coordinator's
+per-child framework session. These are distinct continuation boundaries.
+
+### Retained Linux correction: public test inputs, not a runtime repair
+
+Apply the exact required reference
+`["yaml-loops-v1:sprint/2/RP-S2/DevOpsWorkLoop","retained-linux-test-input-closure"]`.
+Direct source inspection at selected lab `5da7a2ea` confirms:
+`test_release_identity_decision.py` imports `identity_decision` at discovery,
+but `Build-Demo.ps1` omits it from the explicit `/lab-tools` mounts.
+The same test module's `NativeObservationTests` dynamically loads application
+`tests/test_workflow.py`; the separate retained container invocation does not
+supply that fixture and can skip the coverage when absent. Fix both public
+input omissions in one bounded correction, not only the first import error.
+
+Existing Scrum scopes the existing Developer precisely to lab
+`foundry-tf/multi-agent/Build-Demo.ps1`,
+`foundry-tf/multi-agent/tests/test_release_native_settings.py`,
+`foundry-tf/multi-agent/tests/test_release_identity_decision.py` where needed
+for missing-input coverage, and lab `.github/repo-index.md`. The fixture,
+`identity_decision.py`, its existing dependencies, application Dockerfile,
+runtime/ZIP allowlists and configuration are read-only inputs. There is no
+application runtime or fixture behavior change authorized by this repair.
+Shared index freshness belongs to the designated writer/integration handoff,
+not competing source writers.
+
+Supply `identity_decision.py` and the required workflow fixture through named
+read-only mounts in the separate retained invocation. Trace their actual
+import/inspection dependencies against the existing image and named mounts;
+add only demonstrated required public inputs. Preserve explicit application/
+reviewed-tool roots, loaded-source ownership, file-presence/reparse rejection,
+exact mount equality, duplicate rejection, compilation, `--network none`,
+runtime/package exclusions and separate application/retained suites.
+Bind added test-only/helper bytes and their source owners separately from
+runtime/Decision closure; an unchanged runtime hash cannot seal new inputs.
+Do not mount a whole checkout, all scripts or private settings, alter discovery
+to hide errors, or replace required native-observation coverage with fixture-
+absence skips. Existing original-layout/platform exclusions must remain
+attributed, not silently removed or counted as executed coverage.
+
+Bounded source doneWhen is committed input/provenance correction with passing
+affected exact-mount and retained-observation regressions plus applicable
+offline checks, exact source/input hashes and original Architect/Critic
+handoff. No engine startup, Linux build, authentication, transport or cloud
+effect is part of that source assignment. Existing integration verifies actual
+loaded roots/committed bytes, refreshes caller/index handoffs, accounts for
+reviewed refs and returns the exact changed join to original E2E before original
+DevOps reruns BOTH full Linux suites. Do not reuse the failed retained run or
+application-only success as complete package evidence.
+
+### RP-S3 observations, effect discipline and release closure
+
+RP-S3 consumes a completed non-held initial parent with actual G1-G4 and exact
+final common-bundle/three-role version, identity and parent/both-child bindings.
+Retain the same private terminal session file for the queue follow-up. AC2
+compares stable parent and both hosted/framework child identities and pins,
+exactly two child creations across initial/follow-up, fresh response IDs per
+new invocation, both roles on both turns, earlier private-ingress requirements
+plus queue, current immutable prerequisites/hashes/revisions and invalidated
+stale approval. Restored specialist model history is distinct from replayed
+brief text; known-response retrieval is distinct from a new invocation.
+Do not require complete serialized sessions to remain constant as continuation
+advances. Offline controlled reject/revise/review remains AC3 evidence, not live.
+
+For G6 retain `live_acceptance.py`'s durable `.hosting-restart.json` intent,
+one supported stop, independent exact stopped/idle confirmation and original
+bindings/checkpoints/effect reconciliation on continuation. A pending stop is
+observed, never resent; missing confirmation is unresolved. Demonstrate actual
+no-duplicate send/create effects, not only similar output. G7 separately compares
+distinct actual parent/both-child identities and artifact namespaces, excludes
+the first parent's requirements and retains cross-scope rejection. It has no
+dependency on G6 success. Neither operation evades held state by inventing a
+replacement parent. Account-wide Blob Contributor provides application-enforced
+parent/role isolation, not storage-RBAC or malicious-host isolation.
+
+Existing DevOps independently locates/hashes authorized retained common rollback
+ZIP bytes against preexisting expectations and completes unresolved-effect
+accounting. Four exact private observations do not replace those bytes or clear
+historical UNKNOWNs. Revalidate source/operational freshness before later effects.
+Both actual package and rollback/effect readiness exits gate the one original
+serialized publisher. Publication, trusted architect then reviewer ingress,
+final common bundle and completed initial parent remain unperformed.
+
+Apply the original report-accuracy reference
+`["yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop","release-binding-report-accuracy"]`
+without flattening evidence provenance: the newer DevOps owner reports a
+separate inspected image ID; original reconciled feedback keeps that ID
+owner-attributed until accessible inspection evidence supports it. The mirrored
+build log supports exported manifest/config digests, not that separate inspect
+output. Their claimed equality does not retroactively validate the historical
+mislabel. Preserve startup timeout separately from subsequent same-selection
+readiness; no helper success or startup replay is inferred.
+
+The other originating required references at
+`yaml-loops-v1:sprint/1/RP-S1/DevOpsWorkLoop` remain bounded:
+`linux-application-test-closure` is consumed as corrected source plus this
+tested join's actual application success, not redispatched;
+`selected-wsl-exact-inventory` is consumed as accepted source and inspected
+exact-read receipts, not complete rollback readiness;
+`guarded-execution-and-closeout` retains both exits, original E2E/DevOps
+placement, scoped Git push/readback and actual cloud-test completion.
+The accepted helper/mount reference
+`["yaml-loops-v1:sprint/1/RP-S1/task/RP-S2-LINUX-ENGINE-READINESS/AssignedWorkDeveloperLoop","linux-engine-exact-mount-contract"]`
+is closed in its source boundary; do not reopen helper/context/ownership work.
+No disposition is superseded and no new user-only blocker is established.
+
+Scrum's next plan may split retained-input source/integration from independent
+rollback-byte/effect accounting and RP-S3 local evidence preparation. Do not
+redispatch accepted fixtures or invent construction simply to fill capacity.
+Use only necessary contract dependencies; no whole-sprint gate is added.
+Serialize actual publisher/transport/profile/mount mutation with original
+exclusive resources, and shared docs/index/Git reconciliation by designated
+ownership. Existing closeout owns reviewed application `98128bb8` / lab
+`5da7a2ea` and subsequent intended feature-ref push/readback, measured status
+and durable task/commit/branch accounting. Preserve rollback assets, held
+parents, historical UNKNOWNs/cleanup uncertainty and unrelated staged/dirty work.
+Original five-consecutive-no-new-progress accounting is unchanged.
+
+This Architect turn changes documentation contracts only. Document checks
+cannot establish Linux/package readiness, private operational freshness, hosted
+continuity/recovery/isolation or customer AC1-AC9. Original reviewers assess this
+bounded deliverable; original sprint review/retro retains incomplete live gates.
+
 ## Current RP-S2: Linux test closure and selected-WSL exact inventory (October 20, 2026)
 
 This entry governs the current correction; earlier entries retain their original

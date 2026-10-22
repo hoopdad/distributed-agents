@@ -87,9 +87,11 @@ Python/selected-lab root **359 tests / 57.506 s**, all exit zero. Repository
 checks passed against the preserved unowned specification/index overlay, not
 a clean checkout. Initial fixture import/empty-output/pre-consumed-stream
 mistakes were corrected without changing accepted runtime behavior. A focused
-stderr assertion under parallel load also captured an asyncio slow-task warning;
-it now checks private sentinels while preserving those warnings, not suppressing
-them. Final focused and full runs passed. No dependency installation or retained
+stderr-emptiness assertion failed during parallel load; the filtered summary
+did not retain that captured message, so its exact cause is unproven. Asyncio
+slow-task warnings were independently observed elsewhere. The assertion now
+checks private sentinels while permitting debug warnings, not suppressing them.
+Final focused and full runs passed. No dependency installation or retained
 suite/Linux rerun occurred because manifests and retained tooling are unchanged.
 
 ### Remaining original-owner obligations

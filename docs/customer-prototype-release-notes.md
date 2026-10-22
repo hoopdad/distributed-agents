@@ -1,5 +1,193 @@
 # Customer hosted-session prototype: blocked release notes
 
+## Fixed reviewed-source reconciliation handoff — October 22, 2026
+
+**Developer handoff for original Architect/Critic review; NOT pushed.**
+Task `IP-S1-RECONCILE-REVIEWED-REF` prepares source delivery only, not
+AC1-AC9/G1-G8 completion. Both supplied `priorDispositions` arrays were empty.
+Historical dispositions remain confined to their original task boundaries.
+
+### Fixed candidate and smallest justified join
+
+- Candidate: `b7671214dfd68025517ce57f12a3cfaaaffa1912`.
+- Retained branch: `integration/ip-s1-reviewed-reconciliation-20261022`.
+- First parent / fresh remote feature baseline:
+  `14ee132e6c5145122759bec857811b655b371849`.
+- Second parent / fixed local seed:
+  `19b7a3ace2a448cbd7c88ac51db48d84a57b4517`.
+- Common ancestor / retained runtime:
+  `f9fcd9cf4f04075e609196ebb90b30e09a91dd98`.
+- Candidate tree: `4dffd180cf65696b50c77e7e6de3831f7f8a2ee5`,
+  **identical to the fixed local seed tree**.
+
+Fresh `git ls-remote` and an explicit non-tag feature fetch both returned the
+baseline above before candidate construction. The histories differ by exactly
+31 local commits and one remote commit. `git merge-tree --write-tree` reported
+no conflicts and returned the seed tree. Both tips already contain the same
+deployment-skill blob, `ac10b0395a5ae034735d46210f7310b8ac5de7a1`.
+Consequently one two-parent commit, created with `commit-tree` and retained
+without checking it out, reconciles the accepted histories with **zero invented
+content resolutions**. Neither accepted skill lineage is reverted or replaced.
+
+This is deliberately an ancestry-preserving join of the fixed, individually
+reviewed history below, not a blanket selection of today's HEAD. Retaining
+reviewed historical architecture/planning alongside its qualified source avoids
+reconstructing or silently dropping either accepted lineage. It does not
+redispatch those plans or make their dated exhaustion statements current.
+The newer accepted telemetry architecture still governs the current workflow.
+No runtime correction or new qualification is introduced by this join.
+
+### Independently inspected original review coverage
+
+Audit roots below are application-repository-relative, except **R**, which is
+delivery-workspace-relative. These are original saved votes, not inferred
+acceptance from ancestry. The audit files themselves remain private/untracked;
+only exact references and bounded review facts are recorded here.
+
+| Alias | Audit directory / record |
+| --- | --- |
+| A | `gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/` |
+| B | `gh-dynamic-workflows/.delivery-runs/76e49846-d1f2-4c9d-86ff-ee268dd47c2c/context/` |
+| C | `gh-dynamic-workflows/.delivery-runs/c40bef06-de14-4df7-865f-4d4dfb8815a9/context/` |
+| D | `gh-dynamic-workflows/.delivery-runs/86584995-9703-4052-a927-cef4a1cface1/context/c27f330428412d0209b34f7a229e6b4be72067287353d880495a6d4805b63b1e.json` |
+| R | `gh-dynamic-workflows/.delivery-runs/3e548e8c-1c32-4b6c-aea7-b9c2027550f7/result.json` |
+
+Path notation is exhaustive for each commit, not a subsystem approximation:
+
+- **I** = `.github/repo-index.md`.
+- **S** = `docs/customer-prototype-sprint-architecture.md`.
+- **T** = all three `docs/requirements/{client-release,coordinator,specialists}/architecture.md`.
+- **C1** = only `docs/requirements/client-release/architecture.md`.
+- **N** = `docs/customer-prototype-release-notes.md`.
+- **Skill** = `.github/skills/lab-deployment/SKILL.md`.
+- Bare document filenames in the table are relative to `docs/`.
+- Audit hashes in A/B/C are filenames with the `.json` suffix.
+
+For architecture rows, original Product Owner/Critic/Red Team votes are
+affirmative and task-complete; for Scrum planning rows, original Product
+Owner/Architect/Critic votes are affirmative and task-complete. Design rows
+have affirmative, complete Product Owner/Critic votes. The differing substantive
+DevOps scope is stated separately below; its overall task is **not complete**.
+
+| Exact local commit | Exact changed paths | Original review reference |
+| --- | --- | --- |
+| `c8dc0454a98b8d167cb5a007ac93884b1cb906d8` | I, S, T, `customer-prototype-profiling-continuation-2-architecture.json` | A:`ac3cd0aec5bf7a5ac6cc363b31c0ebc0ba5e0a6c3aa9eace87db70eaee816a4f` |
+| `709c4a0f68c226868a1d6c8b7ee1fcde03ba2019` | I, `customer-prototype-profiling-continuation-2-sprint-plan.json` | A:`11b07090d11718c4ce3fa14982973bcbe700da38df9eceb53b51f9c4b44a3c73` |
+| `d63ffa6624881611d608bfe8a97847fe2fd48c25` | I, S, T, `customer-prototype-profiling-s2-continuation-2-architecture.json` | A:`de1de398d509d394290cffb2235c97d935641c8b6d88f0478a1387c45c9848d5` |
+| `eac8f2f6942f9d2baeaaf7c9889878577adac3ff` | I, `customer-prototype-profiling-s2-continuation-2-sprint-plan.json` | A:`14197a785c30ee74b647e418120b16daa28f83c84c199e9776a068c754e52e7e` |
+| `2343445b39e532bf03743e711d9f85d926953cb9` | I, S, T, `customer-prototype-profiling-s3-continuation-2-architecture.json` | A:`048ecbf24c54bd47533649d68e8d1e3634b24a609cc2f5f5fd72ed0216767db5` |
+| `716cfd4f3aef7d85bdbe3422b73a60fcca98901e` | I, `customer-prototype-profiling-s3-continuation-2-sprint-plan.json` | A:`60bd7b863ef51d8afcc37070878c71609a23c7a7a2a91f8d2e4133705385fac3` |
+| `da8432d42ecfc1ab1a7e568a3603079a427d4ab9` | I, S, T, `customer-prototype-profiling-continuation-3-architecture.json` | A:`e2742597a71dc83c4d73676644e9d46259c94f58213416335ec947af1351a071` |
+| `bad10d910c035814c50311586c5ddb78605bf510` | I, `customer-prototype-profiling-continuation-3-sprint-plan.json` | A:`41ee44de584aba4d73339978da72875a817be3f7c8b68a72abfd5a6eef2ed5cf` |
+| `fe8d6432b66bcce396bb200d547fa0ca2ac32926` | `customer-prototype-architecture.md` | D:`outcomes[key=ArchitectureLoop]` |
+| `c087b95de1a2b37b692803f839b2992212e4172e` | `customer-prototype-ux.md` | D:`outcomes[key=UserExperienceLoop]` |
+| `01f0cd55a4c55608152c94185c89e5e5b5a58b9e` | `customer-prototype-release-plan.md` | D:`outcomes[key=ReleasePlanLoop]` |
+| `c5c40239b342bfd40be3d2ff3c448d90bc7833e5` | `customer-prototype-sprint-design.md` | B:`4f986ada9fe598b67ab0ceb0c6bf17bc8edd1f68d1646e44c1c7539b85ab3229` |
+| `7e2de85608974aba4824e5ea034ce439718a1b06` | S, T | B:`d50408133db0fdd52c2fa2c5c66501087be45d9d90e345d35fb07261173bd2cc` |
+| `5c94f1f302c76f9f4222ee569b1e8aee2fcc4d59` | Skill | B:`dead28119b47d7edf0da2ab8fce9d21557af27622f14addad4d2637570a2c055` |
+| `45f8598058998f10c118aad084aca3b21315795d` | S, C1 | B:`57f1611a64323f59c94d20296def4cd58a3d5b7321992c823a748bf7a7c72dd7` |
+| `243ccdfba48172171fab1f7532633fdcce524888` | S, T | B:`84a5318fb306fb42311d267cd5abccfbf686fc6769b319d3526a563de2cfcfc7` |
+| `5908b6f9c5c2e94541ab005f036565563fed587e` | S, T | B:`02ab099804c6fee2b3b71f43ea4a3d5d84c2ebd5962867a4751c8bcd2d0d70f9` |
+| `65b3cda354ff872872ba6a9327dd470e7edeb466` | I, S, `customer-prototype-network-recovery-continuation-1-architecture.json` | B:`7c203cd958ab8825c0ce5d034aa1e34096962e08b4117fe89ddb635b6bd01856` |
+| `36bd2d5ea31992e0eeef58b1038c6b8e1f9337d8` | I, `customer-prototype-network-recovery-continuation-1-sprint-plan.json` | B:`ee81a122aed387039fd7cac0c6febe057af7c76350daf5ad3a71c1651b81b821` |
+| `712cc84c5041b60451e4b54be2120aadfb9bf7ca` | N | C:`36425a3c59f64c3ab3f2666bb843297dd79be969a0d56329a7690d3f019a0b79` |
+| `6e7d66feb0dc5d7f5a36ccd4b81f683b974aac8a` | N | C:`ec8cf50be49f9e6603aca5a8ed646f6cb29fa1457af5e2ab8c33f1f3c51b4e44` |
+| `f5d5d807c99a8728ad83f1334d08c4c8453e5612` | N | C:`57e4059a9f8f74a392f44d9b418deeeef70351c30e0d1d3e451c6faa005c9740` |
+| `0b57ffdda5866852abfaafb7596de6263eadda61` | N | C:`57e4059a9f8f74a392f44d9b418deeeef70351c30e0d1d3e451c6faa005c9740` |
+| `662d918115587f2e6cea2d272d78feffed8588ca` | N, `live_acceptance.py`, `tests/test_host_diagnostics.py`, `tests/test_workflow.py` | C:`14843fd3923cde0f6d3f2dc382ea85925038635c95ed4e2353c11f95f3f8e3ca` |
+| `622c1607a4e501e40bed1e7bf6226240cce49777` | N, `tests/test_workflow.py` | C:`737b7366fc475690a04e6cc625e32ae572d089217605d26a9a5d154e1053fa0f` |
+| `d9f29764f4b789b4d306f5ad6eadc3237bb9e701` | S, T | C:`e4799f7feff7e446e818cd064095c1e7f3abd3613aad41ec72e89674bf46098d` |
+| `7a2f1862943876daaeaf6c0491b7bb23dd2c91c7` | `identity-scenario-collection-qualification.md` | C:`91e08648bf8ed10af6f298829496baedd1facc0842c078e51b4cca0fb13ef4fd` |
+| `166fac6ebc491a46b6c812da821a314a5dcde318` | S, T | C:`89c54e761e65e3d78beb896237dc25de10734fe46692d39eb71cedf96da0555d` |
+| `95def5955cf9633d4a106ccf4abdabb9a1c5b5da` | S, T, `customer-prototype-permission-recovery-continuation-1-architecture.json` | C:`776d78c791e66886209cd8adb780adf4fd815fcbdc465467969d2fb3efe94c94` |
+| `9ba40982149d5878d6a860b527acf3affd9c0d15` | `customer-prototype-permission-recovery-continuation-1-sprint-plan.json` | C:`072f8d80bd81750d396fa68dcd1efa71d834846290f90737fae76cbbfbec10c7` (final corrected plan) |
+| `19b7a3ace2a448cbd7c88ac51db48d84a57b4517` | I, `customer-prototype-permission-recovery-continuation-1-sprint-plan.json` | C:`072f8d80bd81750d396fa68dcd1efa71d834846290f90737fae76cbbfbec10c7` |
+
+The remote-only `14ee132e6c5145122759bec857811b655b371849` changes **Skill**
+only. Original Architect/Critic acceptance is B:
+`4f7a923c0b09fdba51969844a3d1f244b492a71150da36afe825a60b2612538e.json`
+(integration) and
+`47b2b4ffc34b3d98ca7ad65dd42c1d0794851a9c52fcc0cf711b6e641b3fc307.json`
+(exact non-force publication/readback). Both have affirmative, complete votes
+with no unmet criteria. Their original exclusion of planning ancestry applied
+to that skill-only task; it is not silently waived or retroactively broadened.
+The current assignment separately authorizes reconciliation of the 31 commits.
+
+Scope qualifications:
+
+- D's enclosing run reports error; its three nested agreed outcomes, not the
+  run status, establish the architecture, UX and ReleasePlan votes. ReleasePlan
+  has all four original Stakeholder/Architect/Designer/Critic votes.
+- The isolation audit has affirmative, complete Architect/Critic votes for
+  the **readiness assessment**, not a completed isolation scenario.
+- The five DevOps review records above have affirmative Architect/Critic/
+  Developer agreement on bounded advances, but `taskComplete=false` for the
+  original cloud-tested task. Their feedback explicitly inspects the named
+  source commits and verifies the relevant progress; this is not a fabricated
+  overall acceptance. In particular, `14843fd3` accepts observer/regression
+  progress at `662d918`; `737b7366` inspects the synthetic credential regression
+  at `622c1607`. Their respective recorded 363/364-test executions are retained
+  owner evidence, not tests repeated by this reconciliation.
+- Original bounded runtime/tooling qualification is B:
+  `45e3e909f87d67d66a5f40c089068c667a9d37399febf8cf21864975ea1866d6.json`,
+  with affirmative complete Architect/Critic/Product Owner votes for runtime
+  `f9fcd9cf` / selected tooling `ceaba6ee`. That earlier qualification is not
+  misrepresented as covering later observer/credential tests; the latter have
+  the separate original reviews just identified.
+- R's final continuation outcome and C:`072f8d80` cover the corrected plan and
+  selective inventory additions, not acceptance of the earlier uncorrected
+  inventory claim. No unowned specification inventory line is included.
+
+### Exclusions, preservation and dependent delivery
+
+The candidate excludes current-run planning commits
+`f0d0e74c010366cae3d0936d2851ea7bd4defa8a` and
+`86cb171dfe273a0ba7865b2c585b8948d5175abc`, this handoff's later bookkeeping,
+the unowned index overlay, the untracked specification and all private evidence.
+It has exactly 26 changed paths relative to the remote baseline; **Skill**
+has no content delta. Historical committed index additions are included only
+as covered in the table; they do not absorb the current unowned overlay.
+
+Shared checkout remained on `feature/customer-hosted-session-prototype`;
+HEAD at candidate construction was `86cb171dfe273a0ba7865b2c585b8948d5175abc`.
+The index was empty before construction. The two preserved unowned file hashes:
+
+- `.github/repo-index.md` SHA-256:
+  `790412ac66951f5e259c278656fbe755ed0f7d42f3a8bbfadffc4994113b4223`.
+- `docs/identity-profiling-workflow.md` SHA-256:
+  `1122cdc8a82979151728b7f29d054610919247890b779dc31830b0e847aadc80`.
+
+No checkout switch, stash, reset, lock deletion, force operation, push, dependency
+installation, unchanged suite, packaging, publication or live call was used.
+No task code is abandoned; the candidate must remain on its named branch.
+The ledger is appended to this existing document so no structural index refresh
+or ownership of the dirty index is necessary.
+
+Executed verification passed: all 31 ledger rows match exact Git commit order
+and exhaustive changed-path sets; every referenced original review has
+affirmative agreement with its complete/partial distinction checked. Candidate
+parents, both ancestry links, conflict-free seed-tree equality, 26-path delta,
+accepted skill equality, qualification-source equality, exclusion of the two
+current planning commits, both unowned hashes, empty index and unchanged shared
+branch all passed. Candidate and owned-ledger `git diff --check` passed.
+No unchanged application/retained/runtime suite was rerun for this Git-only task.
+
+Original Architect/Critic now assess this exact candidate, its zero-conflict
+join and the coverage/exclusion ledger through the existing work loop. Their
+votes are **pending**, not claimed here. After their acceptance, only dependent
+task `IP-S1-DELIVER-RECONCILED-REF` may integrate/deliver this fixed SHA. It must
+recheck fresh remote ancestry, staging and preserved overlays immediately before
+mutation, preserve the candidate branch, use an explicit non-force fixed-SHA
+refspec and independently read back the exact remote feature ref. A changed
+remote must return to bounded reconciliation, not force or moving-HEAD delivery.
+
+Retain satisfied `release-current-common-package` / `release-guarded-publication`
+at `yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop`. Its
+`release-cloud-verification`, hosted provenance, attributable acceptance cleanup,
+review/retro/closeout and actual non-held collaboration/continuity/recovery/
+isolation remain incomplete. Held/UNKNOWN effects remain unchanged.
+COMMON rollback provenance remains **WAIVED, never PASS**.
+
 ## Credential-route discriminator and receiving design boundary — October 22, 2026
 
 **OFFLINE ONLY; needs original Architect/Scrum coordination, not cloud PASS.**

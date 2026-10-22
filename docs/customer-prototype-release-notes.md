@@ -1,5 +1,83 @@
 # Customer hosted-session prototype: blocked release notes
 
+## Guarded common publication and actual initial failure — October 22, 2026
+
+**DEPLOYED; cloud acceptance FAILED, not complete.** This advances the required
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-guarded-publication"]`
+disposition. The same origin's `release-cloud-verification` remains unmet.
+Retain accepted packaging and qualification; no unchanged package or suite was
+repeated.
+
+- One serialized retained publisher replaced architect **18 -> 19**, reviewer
+  **16 -> 17** and coordinator **24 -> 25**. Every deploy exited zero; all three
+  authenticated readbacks are active, `python_3_13`, bundled, on common ZIP
+  `cb506ae15a8942d5dd6a8570cf5b29533e0d744621c4eb1b8d9b69cf1656b2f8`.
+  Each actual native upload package matched that hash before upload.
+  Accepted runtime remains `f9fcd9cf4f04075e609196ebb90b30e09a91dd98`;
+  selected tooling remains clean at `ceaba6eea5b0f6bf3c4e265f7fde40bb177aae6e`.
+- Exclusive prospective intent bound current/expected versions, package,
+  stage seal, accepted host and prior readback before launch. The retained
+  attempt additionally bound invoked sources and journaled version checks,
+  dispatch intent and UNKNOWN before each effect. Its 53-event journal has
+  contiguous sequence numbers, three successful service outcomes, successful
+  publication and proven inner/outer cleanup. Slow stage verification/copying
+  was monitored through the exact owner, not mistaken for inactivity or retried.
+- A separately identified synthetic Harbor initial invocation then ran once
+  through retained Acceptance with its own durable purpose/effect intent.
+  It checked the deployed package, created a new parent and sent the initial
+  turn. The terminal used known-response GET recovery after a stream exception,
+  **not another send**. Acceptance exited one with `PARENT_OPERATION_UNCERTAIN`.
+  The result is held at `SPECIALIST_INCOMPLETE`, with an UNKNOWN architect call.
+  The parent remains pending on coordinator version 25 with a known response.
+- A separate retained Observe invocation retrieved only that known parent and
+  child and exact hosted diagnostics. It exited zero with **zero inference**;
+  the held parent bytes were unchanged. The SDK parent envelope is completed,
+  but the architect response failed with `server_error`. Exact child diagnostics
+  show preparation rejection `NATIVE_HOST_PRINCIPAL`, SDK ingress
+  `has_user_id=false`, `has_call_id=true`. Parent diagnostics show architect
+  outbound delegated-user presence and a call matching its context. A
+  `ManagedIdentityCredential` log marker alone establishes no RBAC or storage
+  failure.
+- This localizes the observed identity gap between coordinator outbound
+  context and specialist SDK trusted-user resolution. It does **not** identify
+  the actual authenticated outbound principal, raw platform-delivered header
+  translation or a supported remedy. The retained observer limits were time
+  for child logs and bytes for parent logs; it did not export the complete new
+  structured ingress/context profiling stream. Do not infer header substitution
+  or weaken trust gates from these observations.
+- Publisher cleanup proves its Linux owner cgroup/listeners absent and temporary
+  read-only SSH namespace released. Both newly owned Windows connectivity
+  receipts prove their jobs empty and listeners absent. This does not certify
+  historical cleanup or reconcile older held/UNKNOWN effects.
+
+Private evidence remains in the authorized permission-recovery directory:
+
+| Evidence | SHA256 |
+| --- | --- |
+| `common-package-20261022-DevOps/multi-agent-zip-0fae990a578f484abc3be93a23e63ad5.json` | `dd7184cb39ce3caa148d98720f2e1a2c0f755820ae510e3851262ea60bd80c65` |
+| Same owner `.attempt.json` | `17d4ef9213979bceb5bfb5a9aa60396c78bb59407d61d83715a3c05e79f1f94b` |
+| Same owner `.events.jsonl` | `dd7973219f6e3690e567652197f5a863fd5f59a6dd995b85e474efc1bace1971` |
+| `live-current-common-20261022-DevOps/connectivity-f0d8410b7cf14405b33d41e13a7088c1-receipt.json` | `1509e8b80fc0db04506f4537d1d286d8b4a25ae8d516dbc62697d191580501d8` |
+| Same directory `connectivity-2644123bc81b46d285f741486daab225-receipt.json` | `22823a849e643b85382d3683bd8faa4ef740b766a75dbda297629fec793ab1ab` |
+
+The private readable publisher, initial-test and known-response-observation
+scripts were actually executed. No generic denied validation helper was
+replayed or claimed complete. An additional mixed evidence-directory listing
+and skill-source read received a noninteractive permission denial, with no
+partial results; it was not retried as the same operation. No missing Azure
+permission is established by that denial.
+
+**Next action — original DevOps:** collect the exact newly bound structured
+profiling observations through supported read-only monitoring, preserve this
+new held operation, and route any evidence-supported source correction through
+its original owners/reviewers before affected checks and guarded release.
+Completed non-held collaboration, continuity, once-only supported recovery,
+independently ready isolation, hosted provenance and original review/retro/
+closeout remain unverified. Isolation is not gated on recovery success; it
+requires its own safe bindings/comparison readiness. No stop, followup or
+isolation was sent here. No global work-exhaustion or user-only decision is
+claimed. COMMON rollback provenance remains **WAIVED, never PASS**.
+
 ## Final common package and trusted readback — October 22, 2026, 18:03 UTC
 
 **PARTIAL; packaged, not published or live-accepted.** Original DevOps consumed

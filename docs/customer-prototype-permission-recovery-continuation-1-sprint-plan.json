@@ -106,13 +106,17 @@
   "gitReconciliation": {
     "accountableRole": "Scrum Master",
     "featureBranch": "feature/customer-hosted-session-prototype",
-    "ownedPaths": ["docs/customer-prototype-permission-recovery-continuation-1-sprint-plan.json"],
+    "ownedPaths": ["docs/customer-prototype-permission-recovery-continuation-1-sprint-plan.json", ".github/repo-index.md (only the two continuation inventory additions)"],
     "sharedResources": ["application-feature-branch-reconciliation", "selected-lab-release-source", "three-role-nonproduction-publisher"],
-    "integration": "No new task code or abandoned task branch exists. Commit only this amendment on the established feature branch. Future correction assignments must deliver exact reviewed commits there, or retain named branches with task/commit/abandonment records in a feature-branch commit.",
+    "integration": "No new task code or abandoned task branch exists. Commit this assessment correction and only the two owned continuation inventory additions on the established feature branch, using an isolated commit index/worktree to exclude the unrelated index overlay. Future correction assignments must deliver exact reviewed commits there, or retain named branches with task/commit/abandonment records in a feature-branch commit.",
     "preservation": "No branch switch, push, broad merge, force-push, moving-HEAD delivery, stash or discard. Preserve the pre-existing index/specification overlays and accepted divergent skill ancestry.",
-    "index": "The index is pre-existing unowned work. In-memory scripts/repo_index.py render identifies two missing inventory entries: the accepted continuation architecture and this amendment. Preserve the overlay rather than committing it wholesale. No persisted refreshed index or full repository-check PASS is claimed."
+    "index": "Reconciled required feedback 319d188fb1a93c547da1de8a4ef981f9b35a14f80d84c3db51380d014ccc5866.json: scripts/repo_index.py persisted the two missing continuation architecture/plan entries. The unrelated identity-profiling-workflow.md inventory line remains an uncommitted overlay and its source remains untracked. The scoped commit excludes both. This closes the bounded inventory correction, not any live acceptance criterion; no full repository-check PASS is claimed."
   },
   "priorDispositions": [
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/IP-S1/continuation/1/SprintPlanLoop\",\"continuation-index-reconciliation\"]",
+      "application": "Required scoped inventory correction completed: persist the two owned continuation entries, preserve the unrelated overlay and update this assessment. Submit to the original Product Owner, Architect and Critic; no runtime research, suite or publication replay."
+    },
     {
       "reference": "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"release-current-common-package\"]",
       "application": "Required, not waived or superseded. Retain satisfaction explicitly recorded in the inspected current blocked DevOps artifact and accepted later architecture; no unchanged repackaging."
@@ -134,13 +138,15 @@
       "Current DevOps audit 737b7366 retains packaging/publication satisfaction but original reviewers taskComplete=false; actual hosted caller/resolution and cloud acceptance remain unproven.",
       "Later accepted plan a288c951 has no tasks; later DevOps 17ac2d78 retains missing comparison/capture handoffs, not a new executable operation.",
       "Direct source inspection confirms caller-owned private capture and no installation in demo/host.py; exact private attestation handoff is UNSENT and establishes no supported seam.",
-      "Application verification inputs are unchanged from 622c1607 and selected lab is clean at ceaba6ee; no integration correction or changed-source E2E subject is demonstrated.",
-      "Queue audit covers all available IP-S1/IP-S2/IP-S3 criteria without whole-sprint barriers, including independent isolation and later closeout. No new authoritative evidence changes the exact current blocked stage."
+      "Prior applicability inspection found application verification inputs unchanged from 622c1607 and selected lab clean at ceaba6ee. Reviewer-identified inventory integration correction is now resolved by the two persisted continuation entries; documentation-only reconciliation establishes no changed-source E2E subject or DevOps resume.",
+      "Queue audit covers all available IP-S1/IP-S2/IP-S3 criteria without whole-sprint barriers, including independent isolation and later closeout. No new authoritative evidence changes the exact current blocked stage.",
+      "Reconciled feedback audit 319d188f requires only selective inventory persistence. That bounded correction is completed within this owner loop; tasks/resumes remain empty and original reviewers assess the updated exhaustion finding."
     ],
     "resumes": []
   },
   "verification": {
-    "scope": "Read-only original audits/votes/governance, approved backlog, exact private handoff, source contracts and Git applicability. JSON, six source/criterion mappings, canonical components/flows/steps, empty graph and four original outcome/vote checks passed. Initial in-memory inventory assertion expected only the new amendment; render also exposed the already-missing accepted architecture entry. Correct that validation expectation, not historical source or user-owned index content.",
+    "scope": "Retain the prior bounded audit and its source/criterion mappings without repeating runtime research. This correction reads exact reconciled feedback and successfully refreshes the persisted inventory with scripts/repo_index.py. Separate repository-only Git inspection confirms exactly two owned inventory additions plus the original unrelated inventory line, no staged work, and passing whitespace checks. No historical source or evidence is resealed.",
+    "correctionCheckLimitation": "A combined Python index-check/inline JSON ownership assertion/Git command was denied because no interactive user response was available. No component execution or Python assertion PASS is claimed for that denied call; it was not retried or bypassed. Separate repository-only Git inspection succeeded. Full repository validation and runtime/live checks were not repeated.",
     "notPerformed": "No runtime suite, authentication, service readback, packaging, publication, hosted invocation, capture activation, stop, external submission or full repository-check retry.",
     "acceptanceBoundary": "Owner accepts this bounded planning assessment for the original Product Owner, Architect and Critic reviews; their votes are not claimed in advance."
   },

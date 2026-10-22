@@ -1,5 +1,65 @@
 # Customer hosted-session prototype: blocked release notes
 
+## Native readiness advance — October 22, 2026, 17:42 UTC
+
+**PARTIAL; no release PASS.** Original DevOps executed the corrected readable
+PowerShell route and actual native checks, not just CLI help. This supersedes
+only the older native-readiness/approval-unblock statements below; it does not
+supersede historical observations or grant broader permissions.
+
+- Native dedicated Azure CLI tenant and subscription matched the allowlisted
+  application settings. No account identifiers or credential contents were
+  logged.
+- The exact retained output-owned azd configuration initially lacked
+  `auth.useAzCliAuth`. Supported `azd config set auth.useAzCliAuth true` restored
+  it there only. `config get` returns the JSON string `"true"`; an initial
+  bare-string comparison failed after the set, not an authentication failure.
+  Subsequent inspection established the value without repeating the mutation.
+- Actual `azd auth login --check-status` passed using that configuration and the
+  dedicated native Azure CLI profile. No interactive login, device-code action,
+  token copying, credential dump or global configuration change occurred.
+- The native extension catalog initially reported no installed agents
+  extension. Supported installation of exactly `azure.ai.agents`
+  `1.0.0-beta.18` succeeded. The CLI also installed its declared dependencies:
+  inspector beta.8, projects beta.13, connections beta.10 and toolboxes beta.11.
+  Catalog beta.21 was not installed.
+- The retained release implementation's own
+  `wsl_release.require_azd_prerequisites()` then passed in native WSL under the
+  same retained configuration. The final check also passed native account-scope
+  comparison and azd authentication status. Ordinary PowerShell execution
+  receipt 138 exited zero at 17:42 UTC.
+
+Private evidence is retained in the operator-authorized permission-recovery
+directory, separate from immutable historical inputs and package evidence.
+`Verify-RetainedNativeGate-20261022-DevOps.ps1` has SHA256
+`97dbffe0e2f55293b0a855c206d3f99253c8260f89640f6c2f96891ef99e7859`.
+The private handoff records earlier failures as well as successful checks.
+An optional mixed explicit-binary help inspection received a fresh
+noninteractive permission denial; it was not retried. That denial does not
+establish a native account, RBAC or network failure, nor negate the separately
+executed actual readiness checks.
+
+Application runtime remains the accepted `f9fcd9cf4f04075e609196ebb90b30e09a91dd98`;
+the selected release tooling is clean at
+`ceaba6eea5b0f6bf3c4e265f7fde40bb177aae6e`. Accepted correction/qualification
+are carried forward, not repeated. Application index/specification overlays,
+held parents, UNKNOWN effects and historical package stages remain untouched.
+No application suite, package command, publisher, hosted invocation, tunnel or
+listener was started by this readiness work.
+The documented `Test-Repository.ps1` check passed with the existing explicit
+lab Python: current index, 139-file public boundary, JSON, PowerShell, context
+frontmatter and whitespace checks. This documentation check is not cloud proof.
+
+**Next action — original DevOps:** complete current exact-source final common
+packaging, package/version/trusted-host/connectivity and write-ahead effect
+bindings, then one serialized guarded publisher for the three existing
+nonproduction roles. Publication and passing cloud-deployed tests remain unmet,
+including actual initial collaboration, continuity, supported once-only
+recovery, independently schedulable separate-parent isolation, attributable
+cleanup and original reviews/retro/closeout. No new routine approval or duplicate
+qualification is requested. COMMON rollback provenance remains **WAIVED, never
+PASS**. This checkpoint records progress, not work exhaustion or completion.
+
 ## Current measured correction status — October 22, 2026
 
 **PARTIAL; BLOCKED, not customer-ready. No release PASS.** Exactly three

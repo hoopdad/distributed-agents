@@ -1,5 +1,144 @@
 # Sprint design: understandable, evidence-ready continuity
 
+## Current IP-S1: paired diagnostic evidence, unchanged customer screens (October 21, 2026)
+
+This is the **SprintDesign** for IP-S1, not a replacement for accepted UX or a
+new UI implementation assignment. Consume Architecture
+`e247969942a343c9b1662a59a54ef47c3c714386`, UserExperience
+`56076795b4524e82ab4beb2b1f1ff958c26c7eac` and ReleasePlan
+`4999ce5817a1714c6c2dc65ebbecb933bf49ecb4` on
+`feature/customer-hosted-session-prototype`. Opened their supplied current-run
+audits in `eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context`:
+`4241c18ddb85c123bb3e4d00c3c38658def66dd3fe04d77a6604f1d8056410a3.json`,
+`33b776afca6daafd69eee5bcf54a17ffd50ddda99fe1ab479ef0c10d3e4d1b32.json`,
+and `0c2598dcfa07a6e154b8452a4baf4387d8d2dc0f4f6356193eb919c3f8181f67.json`.
+Each records agreed status and taskComplete for its original reviewers.
+Those agreements do not accept this design, implemented diagnostics or live
+collaboration. Both supplied priorDispositions arrays are empty; no reconciled
+feedback or additional blocked-item design assignment is supplied.
+
+This overlay governs only the current correction. Earlier dated overlays below
+are historical, not concurrent dispatch instructions. In particular, the
+historical COMMON rollback ZIP/build-provenance prerequisite is **WAIVED**,
+never PASS; older rollback-investigation and one-shot/manual-check direction
+does not become an IP-S1 gate. Current automated source/package/version,
+trusted-host and next-operation effect checks remain required. No permission,
+infrastructure or speculative identity change is authorized.
+
+### Sprint journey and component-to-surface map
+
+Retain the canonical ten components, five flows and eighteen steps.
+Diagnostics belong to **Trusted identity and private transport**; they are not
+a fourth hosted role, product flow or customer-visible tracing service.
+The evaluator still asks for a useful design/review and a same-parent queue
+follow-up. The operator inspects private, attributed evidence without changing
+that evaluator's experience.
+
+| Canonical flow / affected steps | Components and screen behavior | Smallest handoff |
+| --- | --- | --- |
+| Remote design and review / `collaboration-bind`, `collaboration-route`, `collaboration-design`, `collaboration-review`, `collaboration-return` | Terminal client -> Hosted coordinator -> Hosted architect -> Hosted reviewer -> coordinator result. Trusted identity and private transport adds private boundary observations; Private Blob artifacts and effect journal retains accepted artifacts. Screens B/C retain chronological calls and useful finalized output; Screen D leads with HELD/UNKNOWN if preparation or execution fails. | `demo/foundry.py`, `demo/host.py`, `demo/workflow.py`: reviewed transport/ingress/context events and tests. Do not synthesize missing customer output from logs. |
+| Same-parent specialist continuation / `continuity-invoke` | Parent and specialist conversation state preserves both specialists' bindings and versions. B/C/H retains the same-parent comparison after a completed non-held initial turn. | Context/concurrency regression evidence; no new live follow-up on the held original parent. |
+| Supported compute stop and resume / `recovery-resume` | MAF workflow checkpoints and Private Blob artifacts and effect journal preserve supported recovery. D/I distinguishes known-response retrieval from a new send and ASGI return from background completion. | Actual pinned resilient-background and known-response-only recovery regressions, not a new stop/resume UI or replay. |
+| Separate-parent isolation / `isolation-execute` | Separate Parent and specialist conversation state and trusted scope; J/F records request/background isolation without identity disclosure. | Concurrent/context isolation tests. Fixture success is not deployed isolation proof. |
+| Exact-source guarded release / `release-join` | Guarded lab release toolchain joins source, event contract, coverage matrix and tests. Screen F supplies the private construction handoff; G/K remains a later actual release/acceptance report. | Original E2E receives exact reviewed source and gaps; original DevOps later consumes passing prerequisites, not this design alone. |
+
+No new CLI flag, renderer, public event field or diagnostic network call is
+needed. `demo/terminal.py`'s existing opt-in human stderr remains a finalized
+projection; machine stdout, parser, exit behavior and public output contract
+stay unchanged. Do not delay independent transport, ASGI or context fixtures
+for a missing live ingress observation. Shared helper/event ownership is
+coordinated by Scrum Master through the normal SprintPlan.
+
+### Screen F: private operator evidence layout
+
+Screen F is a Markdown/plain-text report layout for existing private evidence,
+not a dashboard, automatic aggregator or promised runtime screen. Its reading
+order is outcome -> evidence level -> boundary observations -> gaps -> next
+owner/action. Do not stream private diagnostic events into customer output.
+
+```text
+Identity boundary report                         Evidence: LOCAL FIXTURE
+Construction: <implemented / pending, exact reviewed source reference>
+Local checks: <actual check result and source join, or not run>
+Publication: <actual current package result, or not performed>
+Live acceptance: <observed result, or NOT VERIFIED>
+Historical parent: HELD; preserved; not resent
+
+Boundary             Coverage       Presence             Association
+Actual outbound      <state>        <state or unavailable> <proven/unproven>
+Raw ingress          <state>        <state or unavailable> <proven/unproven>
+SDK request          <state>        <state or unavailable> <proven/unproven>
+Workflow/background  <state>        <state or unavailable> <proven/unproven>
+Same-format scope/request-context match: <true / false / not-comparable>
+Milestones: <sent>; <HTTP headers>; <stream outcome>; <execution outcome>
+Unobserved interval: <precise gap; no cause inferred>
+Next: <existing owner; concrete supported action>
+```
+
+Placeholders above are design examples, not captured output. Use one evidence
+level per observation: attributed historical receipt, local fixture or new live
+capture. Mixed reports label each row separately. Exact operation/response/
+source/package joins stay in authorized private evidence; customer summaries
+use safe aliases only. An alias or temporal proximity never proves a join.
+No arbitrary inbound correlation token grants authority.
+
+Coverage is **observed**, **unavailable**, or **not reached**. Presence is
+**absent**, **empty**, **nonempty**, or **malformed/duplicate** only where
+actually observed. For observed coverage, name the relevant header/context
+slot without exposing its value. Missing coverage never renders as absent.
+Equality is only a same-representation scope/request-context comparison;
+public delegation and platform identity are not assumed to share a format.
+ASGI response completion and resilient background completion have separate
+rows/milestones when observed. Unknown execution stays unknown after HTTP 2xx.
+
+| Evidence condition / report state | Required interpretation and next action |
+| --- | --- |
+| Preparation rejects before workflow factory | D/F: rejected, not successful execution. Retained pinned-log checkpoint may describe safe request-context presence; if unavailable, say so. Developer checks the supported early-failure path without suppressing rejection. |
+| Actual outbound delegation nonempty; platform user absent at associated ingress | F: observable interval is outbound-to-ingress; authenticated principal/platform resolution remain unproven. No RBAC/platform diagnosis or guessed replacement header. |
+| Platform user nonempty at ingress; SDK request identity missing | F: investigate supported pinned parser/context boundary; preserve trust checks. Public header absence alone is not identity loss. |
+| SDK request identity nonempty; background/scope identity missing | F: investigate supported lifecycle propagation; no identity cache or arbitrary header-to-trusted-context population. |
+| Association unproven, SDK-owned path uncovered, or hook not reached | F: label the exact gap and affected conclusion. Continue authorized inventory/fixtures; do not replay the historical operation to fill the row. |
+| Stream exhausted but execution rejected, cancelled or held | D before useful-looking content: report actual rejection/cancellation/hold. A completed stream, handler return or SDK envelope does not finalize the turn. |
+| Diagnostics fail while the underlying request rejects | Preserve the original rejection/result. Diagnostic failure cannot authorize work or turn missing evidence into PASS. |
+
+Use terminal-default light/dark colors, plain status words and wrapped labeled
+blocks at narrow widths. No color-only signals or wide table dependency in
+human text. Preserve generated-line prefixes and control-character
+neutralization. Never display raw identities or identity hashes, bearer tokens,
+credential responses, full headers, bodies, queries, private URLs/settings or
+exception messages. Do not add a verbose workaround for redaction.
+
+### Construction checks and receiving-owner handoff
+
+This design assigns no duplicate renderer or accepted fixture reconstruction.
+Developer's current implementation/check handoff covers:
+
+- Missing/empty, mixed-case and duplicate headers; concurrent and actual pinned
+  resilient-background contexts; pre-factory rejection and unmatched bindings.
+- Redaction sentinels, outbound errors, stream chunks/close/disconnect/
+  cancellation parity and known-response-only recovery without a second send.
+- Private milestone labels distinct from execution success; existing
+  stdout/parser behavior and original rejection unchanged. Diagnostics neither
+  authorize a request nor hide an existing failure.
+- Coverage matrix: factory/transport, supported hook, observed event, uncovered
+  SDK-owned stores/credential internals/gateway, regression and exact source.
+  One policy must not be presented as universal transport coverage.
+
+Original E2E runs documented exact-join application/repository checks with an
+explicit existing Python and linked lab root. Original DevOps owns later actual
+Linux/package/live checks and a new reviewed common package for all three roles.
+Any necessary new synthetic diagnostic invocation first receives a distinct
+private identity, purpose, effect intent and owned-cleanup plan. This does not
+recover or resend the held original parent; known-response retrieval remains
+retrieval. IP-S2/IP-S3 retain actual non-held collaboration, continuity,
+once-only recovery, isolation, review/retro/closeout and attributable cleanup.
+
+Architecture's inspected historical publication and `NATIVE_HOST_PRINCIPAL` /
+`SPECIALIST_INCOMPLETE` finding are attributed inputs, not new Designer cloud
+observations. No implementation, deployment or live-pass claim is made here.
+Designer accepts this bounded screen/flow handoff for original Product Owner
+and Critic review; their votes remain pending for this SprintDesign.
+
 ## Current RP-S3: continuation screens with localized release prerequisites (October 20, 2026)
 
 This packet selects **RP-S3**. Inspected clean application baseline

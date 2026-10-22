@@ -1,4 +1,198 @@
 {
+  "identityProfilingPublication": {
+    "kind": "SprintPlan",
+    "sprintId": "IP-S2",
+    "featureBranch": "feature/customer-hosted-session-prototype",
+    "goal": "Unblock the exact changed-source release handoff and prepare attributable live evidence, retaining original publication and cloud-test ownership.",
+    "currentPlanSelector": "/identityProfilingPublication",
+    "dispatchSerialization": "Dispatch this selected object inline, never the historical root tasks or identityProfilingCorrection tasks.",
+    "acceptedInputs": {
+      "Architecture": "e247969942a343c9b1662a59a54ef47c3c714386",
+      "UserExperience": "56076795b4524e82ab4beb2b1f1ff958c26c7eac",
+      "ReleasePlan": "4999ce5817a1714c6c2dc65ebbecb933bf49ecb4",
+      "SprintDesign": "6aaf96018ab5c5f2b7ab8a74eceaf1fc09638ab5",
+      "SprintArchitecture": "833b4ad90a8429cc6b1453abf5ece22eb54c51d1"
+    },
+    "sourceJoin": {
+      "applicationRuntimeBaseline": "c52786b7dd1595f3048a78061f893dc79635069f",
+      "applicationPlanningHeadAtInspection": "833b4ad90a8429cc6b1453abf5ece22eb54c51d1",
+      "selectedLabCorrection": "9b4919d8bcdbf07203f32657936c27328ea6ccc1",
+      "selectedLabPrevious": "1e9ddb8560a5637d639f4657111f3bca49d38d78",
+      "finding": "Three named read-only application-test mounts correct missing public package-verification inputs; no identity or runtime-image correction is established.",
+      "candidateBinding": "Bind actual candidate commits, loaded roots and relevant committed bytes. Account for later documentation-only ancestry and unowned overlays; never equate moving HEAD with the accepted runtime baseline."
+    },
+    "dispatch": {
+      "owner": "Existing orchestrator",
+      "status": "ready-for-dispatch",
+      "readyInParallel": ["IP-S2-JOIN-HANDOFF", "IP-S2-DIAGNOSTIC-EVIDENCE"],
+      "observedDispatchedTaskIds": [],
+      "instruction": "Dispatch both dependency-ready original Developer loops in parallel before planning reviews. Scrum Master starts no substitute agents. Original reviewers still collect their own votes."
+    },
+    "governance": {
+      "reviewers": ["Product Owner", "Architect", "Critic"],
+      "implementationReviewers": ["Architect", "Critic"],
+      "gitReconciliationOwner": "Developer assigned IP-S2-JOIN-HANDOFF; original E2E verifies the final candidate ledger before dependent release.",
+      "git": "The application feature branch is already established. Each task commits only its owned paths using git commit --only and checks its commit is on that branch; never switch shared checkouts, absorb staged work, discard work, remove locks or rewrite history. JOIN-HANDOFF reconciles reviewed source/branch ancestry, including accepted task commits available at handoff. Every task's code must be an ancestor of the feature branch or retained on its named branch with task, commit IDs and abandonment reason recorded in a feature-branch commit. Keep abandoned branches. Original E2E accounts for any later evidence-document commit as documentation-only ancestry, not another runtime correction.",
+      "ownership": "JOIN-HANDOFF owns only a current changed-join overlay in docs/identity-profiling-coverage.md and necessary navigation in .github/repo-index.md. DIAGNOSTIC-EVIDENCE owns only a current prospective evidence overlay in docs/identity-candidate-handoff.md. Both preserve prior sections and reference, rather than edit, accepted runtime/tests and architecture/design. Cross-owned changes require a handoff, not opportunistic edits. No retained-lab edit is assigned.",
+      "resources": "These tasks have disjoint write resources and no live operations. Resource names coordinate assignments including reviews, not cross-run locks. Short Git operations retry ordinary transient contention without deleting locks. Original DevOps alone holds lab-hosted-release and lab-private-transport across effect reconciliation and cleanup; never race a second publisher or live acceptance against it.",
+      "preservedWork": [".github/repo-index.md existing untracked-specification inventory line", "docs/identity-profiling-workflow.md untracked specification", "All historical plans, accepted application work, held parents, known responses and unknown effects"],
+      "authority": "Historical COMMON rollback ZIP/build provenance stays WAIVED, never PASS. Current automated source/package/version/trusted-host/effect checks remain required. No new infrastructure/RBAC/quota/network/DNS/registry/VPN changes, production profile, secret retrieval, external upload, denial bypass or uncertain-effect replay. No guessed identity/header repair or private SDK patch.",
+      "checks": "Use existing absolute Python and explicit selected-lab root for documented checks. Restore dependencies only for manifest change or missing-tool failure. Reuse applicable captured evidence with its exclusions and exact bindings; original E2E independently decides necessary changed-join checks. A failing supported gate is not waived by a negative report.",
+      "stageOwnership": "No AssignedWorkDevOpsEngineer task duplicates the original later DevOpsWorkLoop. Original E2E retains Developer ownership and Architect/Critic/Product Owner review. Original DevOps retains DevOps Engineer ownership and Architect/Critic/Developer review, actual Linux/hosting/package gates, common-package publication, new live traffic, cloud tests and attributable cleanup. Original sprint review/retro/release closeout remain required."
+    },
+    "priorDispositions": [
+      {
+        "reference": ["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop", "RELEASE-CHANGED-JOIN-HANDOFF"],
+        "application": "Route the changed application/lab join through the existing original same-sprint E2E prerequisite; retain accepted application construction and old audits."
+      },
+      {
+        "reference": ["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop", "RELEASE-COMMON-PACKAGE-PUBLICATION"],
+        "application": "After the updated accepted E2E handoff, the single original DevOps publisher creates and publishes one newly identified common package to all three existing roles."
+      },
+      {
+        "reference": ["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop", "RELEASE-LIVE-ACCEPTANCE"],
+        "application": "Keep cloud completion unmet until actual required live tests and cleanup pass; prospective evidence work neither invokes traffic nor closes G1-G8."
+      },
+      {
+        "reference": ["yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop", "SDK-CREDENTIAL-TIMEOUT-PRESERVATION"],
+        "application": "Preserve accepted credential transport/auth/retry behavior within its originating SDK task; no accepted implementation is reopened."
+      },
+      {
+        "reference": ["yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop", "SDK-TIMEOUT-REGRESSION-EVIDENCE"],
+        "application": "Retain accepted pinned IMDS/App Service and remaining-budget regressions; do not impose duplicate implementation or claim broader diagnostic coverage."
+      }
+    ],
+    "originalEvidence": {
+      "auditDirectory": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context",
+      "architecture": "26adb308b85ae4732ca698f4dcdd8985c3c1096516154c481dad23e63ee9282f.json",
+      "design": "12edb53e8280ea614239d71ecd83c7e33a4a0d6628981387dc54014cb181cc6f.json",
+      "earlierE2E": "da4425177dd7b48116a3b6eb9aa04742eb2f0cb3d4d4196494c5a4416c2e34a0.json",
+      "blockedDevOps": "f7b942e94652c10a41c6e32a96cef0d447c00995ec1fbcd2a35cb65a28677dec.json",
+      "observedVotes": "Architecture Product Owner/Critic/Red Team, design Product Owner/Critic and earlier E2E Architect/Critic/Product Owner record agree=true, taskComplete=true. DevOps Architect/Critic/Developer record agree=true, taskComplete=false. These votes do not accept the new plan or changed-join E2E.",
+      "capturedChecks": "Original DevOps reports Windows 278 application passes and 236/240 retained passes; Linux 270/278 application and 197/240 retained passes. Exclusions remain exclusions. Both corrected wrappers exited zero. Those are prior attributed checks, not Scrum-run tests or publication/live evidence.",
+      "limitations": "Linux selected-lab closure fixture lacked an explicitly linked checkout and passed on linked Windows. The amd64 image ran on an arm64 host. Combined tool streams are not separated OS stdout/stderr. No final bundle, new publication or live success is evidenced."
+    },
+    "tasks": [
+      {
+        "id": "IP-S2-JOIN-HANDOFF",
+        "title": "Reconcile the changed profiling release source handoff",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": [],
+        "exclusiveResources": ["application-sdk-coverage-document", "application-repository-index"],
+        "estimatedMinutes": {"implementation": 25, "review": 15, "integration": 5},
+        "produces": ["Reviewed exact application/lab source ledger, relevant committed-byte and loaded-root bindings, attributed check/exclusion references and bounded original E2E reassessment handoff."],
+        "consumes": ["Accepted IP-S2 architecture source pair and original DevOps correction/reviews; earlier original E2E audit and retained verification receipts."],
+        "ownedPaths": ["docs/identity-profiling-coverage.md", ".github/repo-index.md"],
+        "sourceLocations": ["demo", "tests/test_profiling_integration.py", "Test-Demo.ps1", "package_guard.py", "scripts/Test-Repository.ps1", "selected-lab:foundry-tf/multi-agent/Build-Demo.ps1", "selected-lab:foundry-tf/multi-agent/tests/test_release_native_settings.py"],
+        "acceptanceCriteria": [
+          "Independently inspect correction 9b4919d8 with unchanged runtime c52786b7 and current committed candidate ancestry. Bind actual loaded application/selected-lab roots, relevant hashes and original Architect/Critic/Developer correction reviews without including private settings.",
+          "Record which captured Windows/Linux cases and exclusions remain applicable, including the missing linked Linux closure fixture and amd64-on-arm64 limitation. Do not convert excluded cases to passes or replace original E2E with this task.",
+          "Reconcile accepted source commits and owned task commits on the authorized feature branch or durably account for retained branches; preserve unowned index/specification edits and historical audits. Identify later documentation-only ancestry explicitly.",
+          "Issue the smallest exact-source handoff for the existing same-sprint E2E recheck before original DevOps. No blanket application rebuild, source correction, extra approval stage or claim of completed E2E/publication is requested."
+        ],
+        "doneWhen": "A reviewed exact-source and evidence ledger is committed on the feature branch and handed to original E2E for only necessary changed-join reassessment, with all available intended task commits reconciled or durably accounted for.",
+        "exclusions": ["No runtime/test/lab correction without a concrete new unmet criterion; no accepted-work redispatch.", "No substitute formal E2E, package creation, publication, live invocation or historical evidence resealing."],
+        "handoff": "Exact application/lab commits, loaded roots and byte bindings, original review references, applicable evidence/exclusions and Git ledger to original sprint/1/IP-S1/EndToEndTestLoop through supported continuation; original E2E independently verifies and reviews the updated handoff before original DevOps resumes.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Reconcile the changed profiling release source handoff",
+          "goal": "Account for the retained Linux test-input correction without reopening accepted application construction.",
+          "components": ["Guarded lab release toolchain"],
+          "flows": ["Exact-source guarded release"],
+          "flowSteps": ["release-join", "release-package"],
+          "doneWhen": "A reviewed exact-source and evidence ledger is committed on the feature branch and handed to original E2E for only necessary changed-join reassessment, with all available intended task commits reconciled or durably accounted for.",
+          "failureCategories": [],
+          "mustAct": "Developer",
+          "locations": ["docs/identity-profiling-coverage.md", ".github/repo-index.md"],
+          "evidence": "",
+          "cause": "",
+          "verification": {"status": "not-yet-verified", "evidence": ""},
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      },
+      {
+        "id": "IP-S2-DIAGNOSTIC-EVIDENCE",
+        "title": "Prepare attributable profiling evidence for the new live diagnostic",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": [],
+        "exclusiveResources": ["application-identity-evidence-document"],
+        "estimatedMinutes": {"implementation": 35, "review": 15, "integration": 5},
+        "produces": ["Reviewed prospective diagnostic evidence/association and outcome checklist tied to current instrumentation and retained acceptance utilities, with explicit unsupported observations and receiving-owner actions."],
+        "consumes": ["Accepted diagnostic event API/coverage, IP-S2 Screen F/G contracts, live_acceptance.py and retained scenario/unknown-effect fixtures; no deployed observations are prerequisites."],
+        "ownedPaths": ["docs/identity-candidate-handoff.md"],
+        "sourceLocations": ["demo/diagnostics.py", "demo/foundry.py", "demo/host.py", "demo/workflow.py", "live_acceptance.py", "tests/test_scenario_evidence.py", "tests/test_host_diagnostics.py"],
+        "acceptanceCriteria": [
+          "Add a current prospective overlay, preserving historical content. Map existing outbound, ingress, reachable SDK/background/preparation events and safe bindings to the observable interval; explicitly distinguish not reached/unavailable from absent/empty/nonempty and comparable safe equality.",
+          "Define the private pre-send record original DevOps must populate: distinct new operation identity/purpose/effect intent, actual common-package and three role/version bindings, current-effect readiness and attributable owned-process/listener cleanup. Keep real IDs/private logs out of Git; do not reserve/send an operation or imply readiness.",
+          "Map request send, response headers, stream outcome and actual non-held execution acceptance separately to existing assertions and initial parent/both-child/artifact provenance. Missing public delegation header alone cannot diagnose platform translation/loss or authenticated principal.",
+          "Document supported-remedy decision inputs and the smallest private external-tracing handoff if the platform interval remains unresolved. Actionable unsupported or unavailable observations complete this bounded evidence-preparation task, not live diagnosis or acceptance. Any concrete source/contract gap returns to existing Architect/Scrum coordination rather than speculative runtime edits.",
+          "Identify which original IP-S3 follow-up/recovery checks require completed non-held initial bindings and which separate-parent checks need final deployment/comparison scope independently; preserve known-response-only retrieval and no-replay holds. Retain unchanged machine stdout and private evidence boundaries."
+        ],
+        "doneWhen": "A reviewed source-bound prospective evidence and decision checklist is committed for original DevOps, explicitly naming unsupported associations, pre-send intent and cleanup obligations without claiming live readiness or a supported identity remedy.",
+        "exclusions": ["No new renderer/CLI/schema/service, duplicate accepted fixtures or speculative source correction.", "No settings/credentials, live traffic, actual stop/resume, external upload, publication, trusted-context population or held/unknown-operation replay."],
+        "handoff": "Reviewed overlay commit and source/assertion references to original DevOps for actual private intent, collection and cleanup after accepted release gates, and to original IP-S3 planning for only the completed-parent/final-binding handoffs it needs. This checklist is not an extra approval gate for publication.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Prepare attributable profiling evidence for the new live diagnostic",
+          "goal": "Make later live observations and supported-remedy decisions attributable without guessing identity propagation.",
+          "components": ["Trusted identity and private transport", "Hosted coordinator", "Hosted architect", "Hosted reviewer", "Guarded lab release toolchain"],
+          "flows": ["Exact-source guarded release", "Remote design and review"],
+          "flowSteps": ["release-discriminate", "collaboration-bind", "collaboration-design", "collaboration-review", "collaboration-return"],
+          "doneWhen": "A reviewed source-bound prospective evidence and decision checklist is committed for original DevOps, explicitly naming unsupported associations, pre-send intent and cleanup obligations without claiming live readiness or a supported identity remedy.",
+          "failureCategories": [],
+          "mustAct": "Developer",
+          "locations": ["docs/identity-candidate-handoff.md"],
+          "evidence": "",
+          "cause": "",
+          "verification": {"status": "not-yet-verified", "evidence": ""},
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      }
+    ],
+    "continuationRequest": {
+      "owner": "Existing orchestrator through original Architect/Scrum continuation",
+      "blockedKey": "sprint/1/IP-S1/DevOpsWorkLoop",
+      "requiredAcceptedHandoff": "IP-S2-JOIN-HANDOFF",
+      "recheck": ["sprint/1/IP-S1/EndToEndTestLoop"],
+      "status": "Requested routing, not an executed continuation or accepted prerequisite.",
+      "availability": "The current packet exposes no continuation.recheckable list. Submit this exact request only through the supported continuation when that original key is exposed; do not write runtime/SQLite state, mutate a live input or launch duplicate loops.",
+      "sequence": "Accepted changed-join ledger -> necessary original same-sprint E2E reassessment and Architect/Critic/Product Owner review -> single original blocked DevOps continuation. Reuse applicable Linux/Windows proofs only with valid current bindings. DIAGNOSTIC-EVIDENCE is independent and is not an additional E2E/publication gate.",
+      "changedEvidence": "Selected-lab 9b4919d8 corrected three missing public test inputs and passed captured affected checks; original DevOps reviewers and accepted IP-S2 architecture now account for that exact pair. Earlier accepted E2E named the previous lab source.",
+      "remainingOriginalDevOps": ["Actual Linux/hosting/native common-package gates and exact current automated source/package/version/trusted-host/effect bindings", "One serialized guarded publication of the new common package to all three existing roles", "Distinct privately recorded synthetic intent before necessary new traffic; attributable paired observations and evidence-supported remediation if justified", "Completed non-held G1-G4 initial collaboration and final parent/both-child/artifact bindings; original G5-G8 continuity/recovery/isolation/cleanup and review/retro/closeout remain required"]
+    },
+    "criticalPath": {
+      "estimatedMinutesScope": "Rough task implementation/review/integration estimates in minutes, never limits. Cloud execution duration is unknown.",
+      "path": ["IP-S2-JOIN-HANDOFF", "original IP-S1 EndToEndTestLoop changed-join recheck", "original IP-S1 DevOpsWorkLoop common-package gates/publication", "new synthetic diagnostic and supported remediation if justified", "completed non-held G1-G4 initial parent"],
+      "parallelWaves": [["IP-S2-JOIN-HANDOFF", "IP-S2-DIAGNOSTIC-EVIDENCE"]],
+      "reason": "Exact-pair reconciliation is the smallest publication-unlocking handoff. Prospective evidence preparation uses the accepted event API and source fixtures, not a deployed role or the entire join task. It can run beside source reconciliation and the supported original recheck. No whole-sprint barrier or new diagnostic-plan approval gate is introduced.",
+      "laterIndependentWork": "Original IP-S3 planning can prepare approved continuity/recovery/isolation evidence comparisons and measured closeout without waiting for IP-S2 completion. Actual follow-up and supported stop/resume consume completed non-held parent bindings; separate-parent isolation consumes final deployment/comparison scope, not recovery success. Do not duplicate accepted fixtures or invent enhancements.",
+      "workExhaustion": "If the continuation route or live observation remains unavailable, keep IP-S1/IP-S2 partial, audit feasible source splits and approved IP-S3 backlog through existing planning, and investigate only concrete changed evidence. Waiting is incomplete; no unchanged denial/uncertain effect replay or invented cap."
+    },
+    "AssignedWorkUIDeveloper": [],
+    "AssignedWorkDeveloper": ["IP-S2-JOIN-HANDOFF", "IP-S2-DIAGNOSTIC-EVIDENCE"],
+    "AssignedWorkDevOpsEngineer": [],
+    "AssignedWorkDesigner": [],
+    "verificationThisPlanningTurn": {
+      "scope": "Planning graph/document checks and local application regression only; not independent changed-join E2E or deployed acceptance.",
+      "checks": [
+        "PASS: direct assertions for unchanged historical JSON, two unique complete dependency-ready assignments, disjoint owned resources/paths, canonical component/flow/step names, matching fresh workCards and five provenance-qualified dispositions.",
+        "PASS: application branch and accepted runtime ancestry verified; selected-lab HEAD is the named correction and its checkout is clean.",
+        "PASS: deterministic repository index refresh and scripts/Test-Repository.ps1 with existing explicit Python; current inventory, 113 public files, boundary, JSON, PowerShell, frontmatter and whitespace.",
+        "PASS: documented Test-Demo.ps1 with existing absolute Python and explicit selected-lab root; dependency check, 278 tests in 49.626 seconds, compilation; exit zero."
+      ],
+      "limitations": [
+        "Unowned specification/index overlay was present during repository validation; this is not clean-checkout inventory certification.",
+        "No retained lab source changed here, so no new retained suite or actual Linux build was run. Earlier captured Windows/Linux evidence keeps its original source/exclusion scope.",
+        "No dependencies installed, continuation executed, task dispatched, package created, publication/live invocation performed or cleanup claimed.",
+        "Original same-sprint changed-join E2E handoff remains required. Historical rollback provenance is WAIVED, not PASS; live principal/platform resolution and G1-G8 remain unproven."
+      ]
+    },
+    "planningCompletion": "Owner dispatch-readiness only. The orchestrator dispatches original ready tasks before Product Owner/Architect/Critic planning review. No dispatch, collective agreement, changed-join E2E, publication, cloud pass or unattended readiness is asserted by saving this plan."
+  },
   "identityProfilingCorrection": {
     "kind": "SprintPlan",
     "sprintId": "IP-S1",

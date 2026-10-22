@@ -1,5 +1,12 @@
 # Repository index
 
+Current IP-S2 dispatch: `docs/customer-prototype-sprint-plan.json` selector
+`/identityProfilingPublication` (not historical root tasks). Parallel source-join
+reconciliation and prospective diagnostic evidence preparation feed the original
+same-sprint E2E recheck and single original DevOps publisher. Application runtime
+`c52786b7` joins selected-lab `9b4919d8`; missing changed-join acceptance blocks
+dependent release effects, not independent approved IP-S3 preparation.
+
 IP-S1 profiling integration: accepted task ancestry through `4c58849`;
 see `docs/identity-profiling-coverage.md#ip-s1-integration-join` for the commit
 ledger, application factory closure and remaining SDK/platform gaps.

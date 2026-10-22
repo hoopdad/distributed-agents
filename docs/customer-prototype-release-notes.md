@@ -1,5 +1,67 @@
 # Customer hosted-session prototype: blocked release notes
 
+## Final common package and trusted readback — October 22, 2026, 18:03 UTC
+
+**PARTIAL; packaged, not published or live-accepted.** Original DevOps consumed
+the three required dispositions from
+`yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop`: `release-current-common-package`,
+`release-guarded-publication` and `release-cloud-verification`.
+
+- Created the final common bundled ZIP with the retained native `azd package`
+  path. SHA256:
+  `cb506ae15a8942d5dd6a8570cf5b29533e0d744621c4eb1b8d9b69cf1656b2f8`;
+  size **24,311,015 bytes**. The sole package attempt exited zero in 25.591
+  seconds. A subsequent retained read-only inspection proved exact ZIP closure
+  and equality with its committed package hash.
+- Reused the accepted prepared dependency stage only after verifying its
+  historical hash, all 25 current source bindings, runtime archive equality,
+  108 locked distributions and runtime calibration. Copied it to a new
+  exclusive prospective stage before packaging; no historical seal was changed.
+  The original proof remains
+  `9cc4ccac8558421e3de89a44b35a61065bb336352f1fc42be09e26bfed9d8975`.
+  The tested Linux/amd64 image remains
+  `sha256:71dcb02efe6ec2b18c0362818da29cd5e9a0fe5b889cac5b143b981f32cf6c56`.
+  This adds final-package proof, not native-amd64-host certification.
+- Configured and checked the **new publisher output's own** isolated azd
+  directory through supported CLI controls. Dedicated native account scope,
+  CLI-auth bridge, authentication status and required beta.18 passed. Missing
+  beta.18 and its CLI-declared dependencies were installed there only. No
+  login, credential copying, global configuration or CLI upgrade occurred.
+- The retained common-package preview passed. A fresh retained **ReadOnly**
+  invocation verified accepted host trust, private DNS, original-hostname TLS
+  and authenticated project HTTP 200. It observed active architect **18**,
+  reviewer **16** and coordinator **24**, all still on the historical common
+  ZIP `9732e5d5986545ab23856c7db10b3f751376676df91f03372cf8a33c9ca5ef57`.
+  These are current observations, not deployment of the new ZIP.
+- Its owner-specific cleanup proved Linux cgroup/listener absence and release
+  of the temporary read-only SSH mount namespace. No inference was sent.
+  Historical held parents, UNKNOWN effects and historical cleanup uncertainty
+  are not reconciled by this newly owned cleanup.
+
+Private evidence is under the authorized permission-recovery directory:
+`common-package-20261022-DevOps/`, including the package attempt and
+`multi-agent-zip-bec6e738ab954e7a97b0f4896d1a9b99.json`.
+The packaging script SHA256 is
+`ac8616b05271a69afe8d6263a207cf63544653dc409aa455cbd7289bc7f3d857`;
+the current-output readiness script SHA256 is
+`830272a883a340ae3a8b9dd694312a7e6be41f6f9b4f40940ee8fa9ecf1ad345`.
+Private artifacts and allowlisted settings are not committed.
+An additional generic validation-helper invocation was denied by ordinary tool
+approval with no results; it was not retried through another tool or relabeled
+as a passed check. This is not evidence of a retained publisher, cloud, RBAC or
+network failure. It does not supersede the actual retained checks above or add
+a new product acceptance stage.
+
+**Next action — original DevOps:** finish exact current-operation version and
+write-ahead effect bindings, then one serialized guarded publisher for the
+three roles using this common package, followed by actual deployed tests.
+Keep the original reviewers and original review/retro/closeout. Initial
+collaboration, same-parent continuity, supported once-only recovery and
+independently ready isolation remain unperformed. No accepted suite was
+repeated, no publisher was started and no new user-only decision is established
+by this checkpoint. COMMON rollback provenance remains **WAIVED, never PASS**.
+This is useful release progress, not completion or a work-exhaustion finding.
+
 ## Native readiness advance — October 22, 2026, 17:42 UTC
 
 **PARTIAL; no release PASS.** Original DevOps executed the corrected readable

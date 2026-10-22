@@ -1,0 +1,232 @@
+{
+  "kind": "SprintPlanContinuation",
+  "sprintId": "IP-S2",
+  "round": 1,
+  "owner": "Scrum Master",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "acceptedArchitecture": "9e6562d38ce657525c052e04bb8a5e6087c4dea1",
+  "architecturePath": "docs/customer-prototype-profiling-s2-continuation-1-architecture.json",
+  "architectureAudit": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/1b8ca632bac303d95308550976e46de36f7d4c33d5340b6347234bffe50fca77.json",
+  "reviewers": ["Product Owner", "Architect", "Critic"],
+  "readyInParallel": ["IP-S2-C1-SCOPED-STATE-READER", "IP-S2-C1-EFFECT-BOUNDARY-BRIDGE", "IP-S2-C1-TYPED-CHECKPOINT-EXPORT"],
+  "AssignedWorkDeveloper": ["IP-S2-C1-SCOPED-STATE-READER", "IP-S2-C1-EFFECT-BOUNDARY-BRIDGE", "IP-S2-C1-TYPED-CHECKPOINT-EXPORT", "IP-S2-C1-OBSERVATION-INTEGRATION"],
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": [],
+  "dispatch": {
+    "owner": "Existing YAML orchestrator",
+    "status": "ready-for-dispatch",
+    "observedDispatchedTaskIds": [],
+    "instruction": "Dispatch the three dependency-ready original Developer loops in parallel before planning review, then the integration task after their accepted handoffs. Return this selected plan only; no historical executable collections or substitute agents. Planning agreement does not wait for implementation."
+  },
+  "criticalPath": {
+    "construction": ["IP-S2-C1-EFFECT-BOUNDARY-BRIDGE", "IP-S2-C1-OBSERVATION-INTEGRATION", "later scoped original E2E handoff when justified"],
+    "parallelBranches": [["IP-S2-C1-SCOPED-STATE-READER"], ["IP-S2-C1-TYPED-CHECKPOINT-EXPORT"]],
+    "release": ["Observable supported resolution of recorded native approval", "original DevOps native tool/auth readiness", "current exact-source/package/host/effect gates", "serialized common three-role publication", "initial non-held collaboration", "continuity and once-only recovery; isolation independently after final bindings/safe scope", "original review/retro/closeout"],
+    "explanation": "The boundary bridge has the largest runtime/package join risk. Reader and typed-only qualification have disjoint paths and no native permission prerequisite. Integration joins source and inventory, not live success. It accepts an actionable negative typed-export result without pretending checkpoint equality works. Missing native approval still holds the original DevOps operation, not construction. No resume or E2E recheck is emitted on prospective source changes.",
+    "estimates": "estimatedMinutes are rough implementation/review/integration scheduling estimates, never execution limits. Native/cloud duration is unknown."
+  },
+  "governance": {
+    "implementationReviewers": ["Architect", "Critic"],
+    "gitReconciliationOwner": "Developer assigned IP-S2-C1-OBSERVATION-INTEGRATION",
+    "ownership": "The first three tasks own only their disjoint listed paths. They do not edit the index, common integration tests, coverage document, canonical architecture, dependency manifests or each other's modules. Bridge supplies its optional sink/dispatch contract within its owned module before its internal wiring; reader consumes existing ScopeBinding/Manifest, not bridge implementation. No common foundation task is necessary.",
+    "git": "All task commits stay on the established feature branch in the shared checkout. Inspect staging and use git commit --only with explicit owned paths; ordinary transient index contention is retried without removing locks. Do not stage, stash, discard or commit another owner's work. Do not switch branches, force push or push moving HEAD. Disjoint source commits need no whole-assignment Git resource. Integration checks ancestry and records every task commit on the feature branch; any retained unmerged branch requires task/branch/commit IDs and abandonment reason in a feature-branch commit message, and the branch is kept.",
+    "resources": "Each initial task has its own scoped mutable resource and temporary fixture namespace. No shared index or Git resource serializes the initial fan-out. Use unique owned temp directories and no fixed ports/listeners. Integration exclusively owns repository-index refresh and full application/repository validation after accepted handoffs. Initial tasks run focused suites; integration runs the documented full checks once for the actual joined source and carries those results to original review. No concurrently running full checks, shared test state or package creation.",
+    "integration": "The explicit integration task reconciles the three accepted commits, updates index/package-closure fixtures and coverage only as necessary, and emits exact tested source bindings and limitations. This is construction integration, not the original formal E2E or DevOps stage. An essential selected-lab allowlist change not already covered must be evidenced and routed through existing Architect/Scrum scope, not silently added. No positive typed-export result is required to integrate the independently useful reader/bridge.",
+    "checks": "Use existing absolute Python and explicit selected-lab root from the authorized execution packet for Test-Demo.ps1, and scripts/Test-Repository.ps1. No dependency installation without manifest change or missing-tool failure. Affected retained checks are required only if retained tooling changes. Preserve baseline cases and report exclusions.",
+    "priorDispositions": {
+      "satisfiedWithinOriginatingBoundary": [
+        "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-CREDENTIAL-TIMEOUT-PRESERVATION\"]",
+        "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-TIMEOUT-REGRESSION-EVIDENCE\"]",
+        "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-CHANGED-JOIN-HANDOFF\"]",
+        "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-NORMALIZED-PLAN-HANDOFF\"]",
+        "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-OBSERVED-PARALLEL-DISPATCH\"]"
+      ],
+      "remainingRequired": [
+        "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-COMMON-PACKAGE-PUBLICATION\"]",
+        "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-LIVE-ACCEPTANCE\"]"
+      ],
+      "superseded": []
+    },
+    "preservation": "Preserve accepted collection qualification 6e639517, exact-ref delivery de2deae/9b4919d8 and accepted unchanged-runtime E2E. No duplicate delivery, generic SDK inventory, new UI or re-review of accepted work. New source must earn its own affected verification. Preserve exactly three remote roles, deterministic gates, trusted binding, immutable outputs/exact refs, ETag publication, checkpoints, write-ahead holds and machine stdout. Historical rollback provenance stays WAIVED, never PASS.",
+    "restrictions": "No native denial retry or alternate route, credential acquisition, live create/send/stop/retrieval, cloud writes, publication, infrastructure/RBAC/network mutation, external upload, production profile, lossy checkpoint projection, SDK private patch or uncertain-effect replay. All sprints remain partial. Actual model-history provenance and live comparison gaps remain explicit."
+  },
+  "tasks": [
+    {
+      "id": "IP-S2-C1-SCOPED-STATE-READER",
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "ReleasePlan IP-S3 acceptanceCriteria[0,1,2,5]: continuity, recovery, isolation and attributable closeout; identity-profiling specification Required acceptance[7].",
+      "title": "Build the private scoped scenario state reader",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-scoped-state-reader"],
+      "estimatedMinutes": {"implementation": 85, "review": 25, "integration": 10},
+      "ownedPaths": ["scenario_state_reader.py", "tests/test_scenario_state_reader.py"],
+      "consumes": ["Accepted IP-C1-COLLECTION-SEAMS audit 91007b1bf7e28ab1ab8fa9dcf0a9db9a4da5e6c394f78b1073dd1bf9fb0db8f3 at 6e639517", "Existing ScopeBinding, Manifest and unchanged aggregate input contract"],
+      "produces": ["Private injected-client/scoped reader and paginated synthetic SDK fixtures", "Exact retained-byte/completeness contract and consistency limitations"],
+      "acceptanceCriteria": [
+        "Use an already authorized injected Blob client, exact trusted ScopeBinding and owned-turn head/ref bindings. Public list/download only: no credential factory, settings, store creation or scope discovery.",
+        "Exercise actual public paginated SDK surfaces with synthetic transport: multiple pages, empty terminal page, missing/truncated cursor, duplicate name, disappeared/changed blob, cross-scope record and UNKNOWN/failed transitions. Preserve exact private bytes, source receipts and all distinct named immutable transitions; journal records never prove sends.",
+        "Recheck attributed quiescent manifest generation/head/ETag and immutable refs. Movement/gaps mark evidence incomplete; never claim an atomic multi-object snapshot.",
+        "Keep the aggregate schema/validator/stdout unchanged; do not publish private values. Focused offline tests pass. Supply exact commit and test results to integration for documented full checks."
+      ],
+      "doneWhen": "A committed private scoped reader passes positive/negative paginated fixtures and has a precise injected-client and incomplete-window handoff ready for original Architect/Critic review; no live completeness is claimed.",
+      "exclusions": ["No network, credentials, live export or native-preflight retry.", "No checkpoint codec, writer, diagnostic-log change, CLI, schema, shared index or other task paths."],
+      "handoff": "Exact feature commit, reader/client/scope interface, fixture results and consistency limits to IP-S2-C1-OBSERVATION-INTEGRATION, then original E2E/DevOps evidence owners.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Build the private scoped scenario state reader",
+        "goal": "Collect scoped manifest, immutable artifacts and cumulative journal observations without manufacturing effect counts.",
+        "components": ["Private Blob artifacts and effect journal", "Guarded lab release toolchain"],
+        "flows": ["Same-parent specialist continuation", "Supported compute stop and resume", "Separate-parent isolation", "Exact-source guarded release"],
+        "flowSteps": ["continuity-verify", "recovery-verify", "isolation-verify", "release-close"],
+        "doneWhen": "A committed private scoped reader passes positive/negative paginated fixtures and has a precise injected-client and incomplete-window handoff ready for original Architect/Critic review; no live completeness is claimed.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["scenario_state_reader.py", "tests/test_scenario_state_reader.py"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "IP-S2-C1-EFFECT-BOUNDARY-BRIDGE",
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "ReleasePlan IP-S3 acceptanceCriteria[0,1,5]: actual creation/continuity, once-only stop/no duplicate effects and closeout; IP-S1 acceptanceCriteria[0,4,5]: behavior-preserving private transport observation.",
+      "title": "Bind private effect receipts to actual application transports",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-effect-boundary-bridge"],
+      "estimatedMinutes": {"implementation": 130, "review": 35, "integration": 20},
+      "ownedPaths": ["demo/effect_observation.py", "demo/foundry.py", "demo/workflow.py", "live_acceptance.py", "tests/test_effect_observation.py"],
+      "consumes": ["Accepted collection qualification create/send/stop and history gaps at 6e639517", "Trusted AssignmentLocator/write-ahead effects and actual application-owned transports"],
+      "produces": ["Optional private sink/dispatch contract and actual transport receipt bridge", "Preservation/provenance fixtures, runtime-module list and explicit uncovered intervals"],
+      "acceptanceCriteria": [
+        "Associate trusted operation/role/target/version at actual dispatch with Project Azure Core, Responses httpx2 and retained application stop request boundaries through supported public hooks. Create has no wire operation field: source-owned association is required, never timing or aliases.",
+        "Capture all matching actual create/send/stop request occurrences and responses/errors independently of journal intentions. Preserve duplicate attempts and incomplete windows; HTTP status is not execution success. Compose with existing once-only stop intent/204 checks and never resend an uncertain stop.",
+        "Keep permitted exact operation/target bindings only in the optional private sink, never public diagnostics/Git. No identity/hash, token/header collection, body dump, query, private settings or raw exception message. Receipt failure leaves evidence incomplete, without authorization, retry or suppression of rejection.",
+        "Use actual public SDK transport fixtures to test concurrent/background isolation, duplicate/missing capture, redaction/errors, unchanged streaming/cancellation/close, credential timeout behavior and known-response-only GET recovery. Retain zero automatic retries, TLS/exact HTTPS origin/no redirects.",
+        "Report any unobservable consumed-model-history interval; pending-store snapshots and previous response IDs do not prove consumed input. Do not patch SDK internals, add model body logging or weaken aggregate validation.",
+        "Pass focused tests and supply new runtime/package input inventory and exact source refs to integration. Do not change selected-lab allowlists without evidenced scope coordination; integration owns package-closure tests and full joined checks."
+      ],
+      "doneWhen": "A committed trusted dispatch-to-boundary bridge passes preservation/provenance fixtures and supplies an exact private sink/package handoff with unsupported intervals explicit for original Architect/Critic review; no live capability is asserted.",
+      "exclusions": ["No actual create/send/stop, publication, credential acquisition, denial retry or uncertain-effect replay.", "No new public schema, generic ledger, identity values, SDK private patch, trust-gate change or specialist-agent history guess.", "No shared index, common integration fixtures, coverage document or other task paths."],
+      "handoff": "Reviewed bridge commits, private sink interface, exact runtime inventory, tests and history/observation limitations to IP-S2-C1-OBSERVATION-INTEGRATION, then original E2E/DevOps. New runtime invalidates affected proofs, not accepted old work.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Bind private effect receipts to actual application transports",
+        "goal": "Attribute actual effect attempts without altering trusted authorization, streaming or supported recovery.",
+        "components": ["Trusted identity and private transport", "Hosted coordinator", "Parent and specialist conversation state", "Guarded lab release toolchain"],
+        "flows": ["Same-parent specialist continuation", "Supported compute stop and resume", "Separate-parent isolation", "Exact-source guarded release"],
+        "flowSteps": ["continuity-verify", "recovery-stop", "recovery-verify", "isolation-verify", "release-join"],
+        "doneWhen": "A committed trusted dispatch-to-boundary bridge passes preservation/provenance fixtures and supplies an exact private sink/package handoff with unsupported intervals explicit for original Architect/Critic review; no live capability is asserted.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["demo/effect_observation.py", "demo/foundry.py", "demo/workflow.py", "live_acceptance.py", "tests/test_effect_observation.py"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "IP-S2-C1-TYPED-CHECKPOINT-EXPORT",
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "ReleasePlan IP-S3 acceptanceCriteria[1,5]: actual checkpoint-state comparison and attributable recovery/closeout; identity-profiling specification Required acceptance[7].",
+      "title": "Qualify lossless public typed checkpoint export",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-typed-checkpoint-export"],
+      "estimatedMinutes": {"implementation": 65, "review": 25, "integration": 10},
+      "ownedPaths": ["docs/identity-typed-checkpoint-export.md", "tests/test_typed_checkpoint_export.py"],
+      "consumes": ["Accepted actual typed-checkpoint negative result at 6e639517 and supported response/scope/store association", "Pinned public checkpoint/session serialization and unchanged aggregate comparison contract"],
+      "produces": ["Tested public lossless round-trip contract or reproducible exact unsupported interval", "Source/version/hash and smallest public SDK capability handoff"],
+      "acceptanceCriteria": [
+        "Investigate only unresolved actual typed export for WorkflowInvocationKwargs and real local native checkpoints using supported public serialization/round-trip seams. Do not repeat accepted generic inventory or plain-JSON success.",
+        "Execute actual-host synthetic typed-checkpoint public round-trip preserving comparison state, graph/ID, scope association and exact persisted encoding hash, or retain a reproducible negative fixture and exact missing public export handoff.",
+        "No default=str, dropped typed fields, private codec, guessed store/context hashes or validator projection. Only explicitly owned temporary local persistence; no remote load/list probe or credential acquisition.",
+        "Record exact source/version and supported/unsupported interval. Pass focused checks and hand off for documented joined checks. No pin/schema/dependency change without justified original scope coordination."
+      ],
+      "doneWhen": "A committed tested lossless public export contract or actionable exact negative typed-checkpoint result is ready for original Architect/Critic review; negative findings complete only this qualification and never waive actual recovery equality.",
+      "exclusions": ["No live stores, credentials, SDK private patch, pin/schema change, lossy projection or runtime collector.", "No repeat accepted qualification, shared index, runtime edits or other task paths."],
+      "handoff": "Exact fixture/decision commit, focused results and export semantics or smallest missing public capability to IP-S2-C1-OBSERVATION-INTEGRATION and original Architect/Scrum, then existing E2E/DevOps. Essential contract changes use needs-replan.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Qualify lossless public typed checkpoint export",
+        "goal": "Resolve real typed checkpoint serialization without hiding state or weakening recovery equality.",
+        "components": ["MAF workflow checkpoints", "Guarded lab release toolchain"],
+        "flows": ["Supported compute stop and resume"],
+        "flowSteps": ["recovery-verify"],
+        "doneWhen": "A committed tested lossless public export contract or actionable exact negative typed-checkpoint result is ready for original Architect/Critic review; negative findings complete only this qualification and never waive actual recovery equality.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["docs/identity-typed-checkpoint-export.md", "tests/test_typed_checkpoint_export.py"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "IP-S2-C1-OBSERVATION-INTEGRATION",
+      "sourceSprintId": "IP-S2",
+      "sourceCriterion": "ReleasePlan IP-S2 acceptanceCriteria[0]: reviewed exact-source handoff and package closure before effects; IP-S3 acceptanceCriteria[4,5]: final source/reviewed feature integration and accurate closeout evidence.",
+      "title": "Integrate private observation adapters and package closure",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": ["IP-S2-C1-SCOPED-STATE-READER", "IP-S2-C1-EFFECT-BOUNDARY-BRIDGE", "IP-S2-C1-TYPED-CHECKPOINT-EXPORT"],
+      "exclusiveResources": ["application-repository-index", "application-observation-integration", "application-full-validation"],
+      "estimatedMinutes": {"implementation": 45, "review": 25, "integration": 20},
+      "ownedPaths": ["tests/test_profiling_integration.py", "docs/identity-profiling-coverage.md", ".github/repo-index.md"],
+      "consumes": ["Original Architect/Critic accepted exact commits and interfaces from the three new tasks", "Existing selected-lab release-roots package contract and retained unchanged validator"],
+      "produces": ["Exact joined feature commit ledger and tested runtime/package inventory", "Focused integration fixtures, refreshed index, accurate coverage/gaps and formal-stage handoff"],
+      "acceptanceCriteria": [
+        "Reconcile all three tasks' intended commits onto the authorized feature branch by ancestry without branch switching, rewriting or sweeping unowned files. Preserve unmerged branches and durably record any abandonment reason/task/commits in a feature-branch commit.",
+        "Verify actual joined optional sink/dispatch wiring, injected reader interface and nonauthorization/failure isolation with synthetic fixtures. Consume the typed task's supported result or exact negative finding; a negative finding is not a capability or an excuse to block unrelated source integration.",
+        "Verify runtime-module closure using existing application allowlists and selected-lab public release_roots seam; keep the private root reader out of hosted runtime unless actually required. Update only owned tests/coverage/index. A demonstrated essential extra path or retained-tooling change returns through existing Architect/Scrum scope rather than inventing support.",
+        "Run Test-Demo.ps1 with existing absolute Python and explicit selected-lab root, scripts/Test-Repository.ps1, and necessary focused integration checks. Preserve all baseline cases, unsupported intervals, historical evidence and exclusions. Do not install dependencies for unchanged manifests.",
+        "Hand off exact application/lab source and affected test/package inputs to original E2E/DevOps; do not claim formal E2E, deployed evidence or permission resolution. Any later changed-source recheck/resume must cite accepted actual changed refs and supplied canonical stage keys through existing coordination."
+      ],
+      "doneWhen": "Accepted task commits are reconciled on the feature branch with passing affected integration and documented repository/application checks, accurate package/coverage limits and an exact-source handoff ready for original Architect/Critic review; release and live criteria remain incomplete.",
+      "exclusions": ["No original E2E or DevOps replacement, native-denial retry, remote push, build/publication or live effect.", "No schema/pin/validator change, private evidence in Git or implicit selected-lab source edit.", "No reopening accepted qualification/ref delivery or claiming unsupported checkpoint/model-history comparisons pass."],
+      "handoff": "Exact reviewed joined feature/lab refs, task ancestry, commands/results, package closure and remaining unsupported comparisons to original Architect/Scrum for necessary original E2E/DevOps routing; no unchanged DevOps resume.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Integrate private observation adapters and package closure",
+        "goal": "Join reviewed private observation construction into an exact tested source handoff without manufacturing release readiness.",
+        "components": ["Guarded lab release toolchain", "Trusted identity and private transport", "Private Blob artifacts and effect journal", "MAF workflow checkpoints"],
+        "flows": ["Exact-source guarded release", "Same-parent specialist continuation", "Supported compute stop and resume", "Separate-parent isolation"],
+        "flowSteps": ["release-join", "release-close", "continuity-verify", "recovery-verify", "isolation-verify"],
+        "doneWhen": "Accepted task commits are reconciled on the feature branch with passing affected integration and documented repository/application checks, accurate package/coverage limits and an exact-source handoff ready for original Architect/Critic review; release and live criteria remain incomplete.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["tests/test_profiling_integration.py", "docs/identity-profiling-coverage.md", ".github/repo-index.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    }
+  ],
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Dispatch three independent approved source/qualification tasks and their explicit integration join. Keep native permission and original publication/live obligations localized; no unchanged blocked-stage reassessment.",
+    "evidence": [
+      "Architecture audit 1b8ca632bac303d95308550976e46de36f7d4c33d5340b6347234bffe50fca77 records Product Owner/Critic/Red Team agree:true, taskComplete:true, unmetCriteria:[] for 9e6562d38ce657525c052e04bb8a5e6087c4dea1 and its three source-local candidates.",
+      "Accepted collection audit 91007b1bf7e28ab1ab8fa9dcf0a9db9a4da5e6c394f78b1073dd1bf9fb0db8f3 completes bounded offline qualification, not cumulative state reading, effect-boundary attribution or typed lossless export.",
+      "Accepted exact-ref delivery audit fed8eed3b05f7622180a57b7e6809d4de5127bc6c1125191b73dcdffd81ab8cc closes the de2deae/9b4919d8 delivery gap; no repeat push task is assigned.",
+      "Original DevOps audit dfd473725551074526ddec41e0dbc23a0ca81a6d7d265e89dbf8a669004f8a3f retains taskComplete:false for native readiness, package/publication and actual cloud acceptance. No new approval-resolution evidence is supplied; resumes is empty.",
+      "Original changed-join E2E audit 4797ab07efa9ab46e5f8882caa9f7b3957910cec20b4c9ed5ec3574bbed1c8d2 is accepted only at its unchanged-runtime/lab boundary. Prospective bridge code is not current changed-source evidence and cannot reopen it now.",
+      "Approved ReleasePlan has no whole-sprint dependency edges. Its IP-S3 recovery/continuity/isolation evidence and IP-S2 source-closure criteria authorize these remaining slices without cloud traffic. Accepted companion/status/delivery work is not redispatched."
+    ],
+    "resumes": []
+  }
+}

@@ -1,5 +1,17 @@
 # Repository index
 
+IP-S2 continuation-1 planning at architecture `9e6562d3`:
+`docs/customer-prototype-profiling-s2-continuation-1-sprint-plan.json` is the
+separate current dispatch amendment, not a replacement historical plan.
+Three disjoint Developer tasks build the private scoped Blob reader and trusted
+effect-boundary bridge and qualify actual typed-checkpoint public export in
+parallel. The explicit integration task owns package-closure fixtures, coverage,
+index and joined full checks after accepted handoffs; a typed negative result
+does not waive recovery equality or block independent source construction.
+Existing YAML dispatch/review owns execution; no substitute agents, unchanged
+native denial retry, E2E reopening, publication or live acceptance is claimed.
+Preserve the unowned specification inventory overlay and all partial gates.
+
 Collection qualification at application baseline `ef6cbc4d`:
 `docs/identity-scenario-collection-qualification.md` and
 `tests/test_scenario_collection_seams.py` map the retained aggregate to public
@@ -1831,6 +1843,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-profiling-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
+- `docs\customer-prototype-profiling-s2-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

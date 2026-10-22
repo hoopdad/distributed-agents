@@ -1,5 +1,193 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Permission-recovery continuation 1
+
+Consume the [bounded continuation amendment](../../customer-prototype-permission-recovery-continuation-1-architecture.json).
+Canonical client/release components and contracts are unchanged. Earlier
+permission correction and successful publication are already consumed, not
+grounds for unchanged retries. No ready construction task or resume is
+established; actual cloud verification and original closeout remain incomplete.
+
+## Current IP-S3: consume unavailable comparison and capture handoffs
+
+Consume the [current IP-S3 disposition](../../customer-prototype-sprint-architecture.md#current-ip-s3-comparison-and-hosted-capture-disposition).
+Terminal client / Guarded lab release toolchain and canonical IDs are unchanged.
+Retain accepted isolation audit `91e08648` at `7a2f186`; do not redispatch it.
+No completed comparison or supported hosted capture owner/destination is supplied.
+The final all-scenario validator is not an isolation execution gate, but actual
+comparison/capture and current-effect prerequisites still are. Scrum Master
+coordinates concrete handoffs; original DevOps owns effects. No new collector,
+unchanged publication or cloud PASS follows. Original live criteria/closeout,
+held/UNKNOWN effects and rollback provenance WAIVED remain unchanged.
+
+## Current IP-S2: retain publication and route unavailable attestation
+
+Consume the [current attestation refinement](../../customer-prototype-sprint-architecture.md#current-ip-s2-server-side-attestation-boundary-after-guarded-publication).
+Canonical Terminal client / Guarded lab release toolchain and `guarded-release`
+steps are unchanged. Accepted common package/publication binds versions
+19/17/25; later `622c160` is test/documentation-only, not a reason to republish.
+The exact DevOps outcome retains partial cloud acceptance. Original Scrum
+Master/DevOps receive a private unsent current-pair tracing handoff: local
+correlation aliases do not attest the server-side caller/resolution.
+No supported public attestation seam or source repair is established.
+Do not repeat log collection, denied inspection or inference absent changed
+evidence. Isolation remains independently schedulable against its own final
+readiness and safe comparison/capture scope; held parents are not completed
+comparison scopes. Hosted provenance, actual live scenarios, cleanup and
+original review/retro/closeout remain required. External submission is excluded;
+COMMON rollback provenance remains WAIVED, never PASS. Historical status below
+does not reset satisfied package/publication or the resolved permission change.
+
+## Current IP-S3 recovery: independent execution, joined final acceptance
+
+Consume the [IP-S3 recovery refinement](../../customer-prototype-sprint-architecture.md#current-ip-s3-recovery-consume-accepted-qualification-preserve-live-handoffs).
+Canonical Terminal client / Guarded lab release toolchain and all IDs remain.
+`f9fcd9cf`/`ceaba6ee` affected offline qualification and the tooling correction
+are now accepted; do not repeat them as missing reviews. Final native readiness,
+common package/publication and live evidence remain incomplete. Continuity
+needs completed initial collaboration; supported recovery needs genuine two-turn
+proof. Isolation needs final bindings/safe scope, not recovery success.
+`live_acceptance.py::validate_scenario_evidence` remains a final all-scenario
+join, not an isolation execution gate. Preserve partial observations, existing
+H/I/J/K screens, stdout/parser, exact reviewed delivery and attributable cleanup.
+Scrum Master owns scheduling/Git reconciliation; original DevOps owns effects.
+No unchanged denied inspection retry. Rollback provenance is WAIVED, never PASS.
+
+## Current IP-S2 recovery: preserve qualification and localize native readiness
+
+Consume the [current IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-recovery-current-package-and-observable-initial-collaboration).
+Canonical **Terminal client**, **Guarded lab release toolchain** and
+**Exact-source guarded release** IDs/steps remain unchanged. Original E2E
+accepts `f9fcd9cf`/`9b4919d8`; selected-lab `ceaba6ee` is the actual subsequent
+test-only reader mount/provenance correction, not a hosted-runtime addition.
+Original correction review and affected qualification precede dependent effects.
+The actual CLI approval denial blocks native readiness/publication/traffic,
+not independent review or approved IP-S3 preparation. No unchanged retry.
+
+`release-package` still needs a final common bundle and exact current bindings;
+`release-discriminate` needs changed permission evidence, per-output isolated
+azd bridge/beta.18/account, trusted-host/connectivity/effect checks and one
+serialized three-role publisher. `release-close` retains all actual live gates
+and attributable cleanup. Preserve stdout/parser and existing truthful screens.
+Consumed skill dispositions apply only at their exact originating delivery
+task: accepted `14ee132e` readback is not reopened or a runtime prerequisite.
+COMMON rollback provenance is **WAIVED, never PASS**; held/UNKNOWN effects
+remain held. No packaging, authentication, publication or live success is
+established by this architecture.
+
+## IP-S1 scoped amendment: preserve skill content, reconcile delivery identity
+
+Apply the [scoped integration disposition](../../customer-prototype-sprint-architecture.md#ip-s1-scoped-amendment-skill-only-integration-identity)
+only to `IP-S1-SKILL-DELIVER`. Required decisions
+`SKILL-DELIVERY-IDENTITY-CONFLICT` and `SKILL-REMOTE-VERIFICATION` originate at
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SKILL-DELIVER/AssignedWorkDeveloperLoop`,
+reconciled audit `7b79d02c58a5d25175297ec2b8cd8085714adce4f62cc4157c3943f2387a8484.json`.
+Canonical **Guarded lab release toolchain** / **Exact-source guarded release**
+steps `release-join` and `release-close` remain unchanged.
+
+Preserve accepted skill source `5c94f1f302c76f9f4222ee569b1e8aee2fcc4d59`
+and blob `ac10b0395a5ae034735d46210f7310b8ac5de7a1`. Permit only a separately
+reviewed skill-only integration commit based on a freshly verified authorized
+remote feature tip, without excluded planning ancestry. Scrum Master assigns
+isolated integration to the existing Developer; preserve the shared checkout
+and record named original-commit retention/provenance/reason in the integration
+commit message. Original Architect/Critic verify the integration delta and
+ancestry without repeating accepted documentation validation. Explicit reviewed
+non-force publication plus independent remote commit/blob readback are still
+required, not completed here. Incompatible concurrent movement returns to Scrum
+Master; no force or moving-HEAD substitution.
+
+This is a delivery-identity amendment, not a runtime, authentication, deployment
+or acceptance waiver. Skill delivery does not gate independent original E2E or
+eligible DevOps execution. All existing runtime/live criteria, private-state
+boundaries and COMMON rollback provenance **WAIVED, never PASS** remain intact.
+
+## Current IP-S1: separate source qualification and requested skill delivery
+
+Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-ip-s1-qualify-retained-observation-source-after-transport-recovery),
+accepted Architecture `fe8d6432`, ReleasePlan `01f0cd55` and SprintDesign
+`c5c40239`. Canonical terminal/release IDs, machine stdout/parser and human
+stderr projection stay unchanged. Original E2E qualifies later observation
+`f9fcd9cf`/lab `9b4919d8`; the requested
+`.github/skills/lab-deployment/SKILL.md` review/exact delivery is independent.
+Scrum Master assigns owners and feature-branch reconciliation. Neither lane
+establishes package/deployment/live PASS.
+
+Original DevOps alone creates the new private stage, validates its own
+`azd-wsl-config` bridge/beta.18/account status and actual Linux/dependency/
+image/package/host/effect readiness, then serializes one common-three-role
+publication. Never reseal the stale stage or bypass a new denial. Hosted
+capture ownership/coverage and real continuity/recovery/isolation/cleanup
+remain required; isolation does not depend on recovery success. Preserve
+held/UNKNOWN effects and all partial sprints. COMMON rollback provenance
+remains **WAIVED, never PASS**; no new infrastructure or permission mutation.
+
+## IP-S1 continuation 3: consume substantive delivery and retain native boundary
+
+Apply the [round-3 assessment](../../customer-prototype-profiling-continuation-3-architecture.json).
+Original fixed `f9fcd9cf` delivery/readback is accepted; no duplicate or
+planning-only push is assigned. The old `c52786b7`/`9b4919d8` changed join stays
+accepted within its boundary, not qualification of later observation runtime.
+Native preflight approval remains unresolved with the exact permission
+unidentified. No denied call is retried, no eligible new sourceSubject exists
+and no unchanged DevOps resume/recheck is emitted. The caller-owned private
+consumer is not an automatic hosted installer or complete evidence collector.
+Keep terminal stdout/parser unchanged, automated current bindings and original
+qualification/publication/live stages, independent isolation and owned cleanup.
+Historical COMMON rollback provenance remains **WAIVED, never PASS**.
+
+## IP-S3 continuation 2: keep operational prerequisites separate from construction
+
+Apply the [IP-S3 assessment](../../customer-prototype-profiling-s3-continuation-2-architecture.json).
+Canonical terminal/release IDs, stdout/parser and comparison contracts remain
+unchanged. Accepted `f9fcd9cf` delivery is not another push assignment. Old
+`de2deae` E2E is not later-runtime qualification; necessary original E2E/package
+checks remain. Exact native-preflight denial is unresolved, missing permission
+unidentified; no unchanged retry, alternate route or resume is emitted.
+Original DevOps retains native readiness, automated current bindings, serialized
+three-role common publication and real private capture/cleanup obligations.
+Once-only stop needs intent, actual 204 and stopped/idle proof; uncertain stop
+cannot be resent. Isolation needs final bindings/safe scope, not recovery
+success. Empty new tasks/resumes record bounded exhaustion only. All partial
+sprints, actual AC1-AC9/G1-G8 and original review/retro/closeout remain incomplete.
+Historical COMMON rollback provenance remains WAIVED, never PASS.
+
+## IP-S2 continuation 2: delivered source is not native or live readiness
+
+Apply the [bounded assessment](../../customer-prototype-profiling-s2-continuation-2-architecture.json).
+Original final audit `b542da12` accepts fixed reviewed `f9fcd9cf` delivery and
+readback. Earlier pending-ref entries are history, not new push assignments.
+Canonical model, terminal/stdout/parser and original release contracts remain
+unchanged. All approved source-local branches and later status/companion work
+have accepted handoffs; no new task or DevOps resume is emitted.
+
+Affected new-runtime original E2E/package qualification remains required;
+the packet supplies no eligible new source subject. Actual native-preflight
+denial remains unresolved, exact permission unidentified. Do not retry it or
+route around it. Original DevOps must eventually establish native readiness,
+current automated source/package/version/host/effect bindings, owned hosted
+capture/cleanup and one serialized common three-role publication. Independent
+isolation needs final bindings and safe scope, not recovery success. Empty new
+tasks/resumes certify only bounded work exhaustion. All three sprints, actual
+AC1-AC9/G1-G8 and original review/retro/closeout remain incomplete. Historical
+COMMON rollback provenance remains WAIVED, never PASS.
+
+## IP-S1 continuation 2: close only the new reviewed-ref delivery gap
+
+Apply the [current cumulative assessment](../../customer-prototype-sprint-architecture.md#ip-s1-continuation-2-deliver-newly-accepted-observation-source).
+Terminal/release canonical IDs, flows, parser and stdout remain unchanged.
+Fresh application remote `de2deae` predates accepted substantive reader/bridge/
+consumer source through `f9fcd9cf`. The earlier exact-ref delivery is complete
+within that older boundary. One new existing-closeout slice may non-force push
+and read back only fixed reviewed `f9fcd9cf`, after original review/ancestry
+checks. Exclude this amendment/later planning and unchanged lab delivery.
+New runtime needs affected original E2E/package qualification, never automatic
+promotion of old source proofs. No eligible new original E2E subject or native
+approval resolution is supplied; no unchanged DevOps resume/recheck. Actual
+hosted capture ownership/coverage, independent anchors/quiescence, final common
+publication, cloud scenarios and attributable cleanup remain unproven.
+Historical COMMON rollback provenance stays WAIVED, never PASS.
+
 ## IP-S3 continuation 1: private retention is not release readiness
 
 Apply the [current cumulative amendment](../../customer-prototype-sprint-architecture.md#ip-s3-continuation-1-retain-actual-private-occurrence-receipts).

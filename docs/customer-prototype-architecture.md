@@ -1,5 +1,145 @@
 # Customer hosted-session prototype: release architecture
 
+## Native-authentication resumption architecture (October 22, 2026)
+
+This is a bounded remaining-release amendment, not a replacement architecture
+or accepted-work replay. It supersedes the unchanged-readiness/exhaustion
+conclusion of `customer-prototype-profiling-continuation-3-architecture.json`
+and its Scrum plan only for the changed execution condition described here.
+Both current priorDispositions arrays are empty; no disposition is invented or
+silently broadened. The canonical [solutionModel](#solutionmodel), component
+IDs, five triggered flows, eighteen steps, stack and trust contracts stay
+unchanged. This section governs current resumption over dated readiness
+statements in the cumulative/tier documents; historical reports stay intact.
+
+### Evidence, subject and verification states
+
+The Architect inspected local feature HEAD
+`bad10d910c035814c50311586c5ddb78605bf510`, the supplied immutable preflight,
+prior result/outcome and exact original audits below. Preflight records actual
+native WSL execution, expected account scope, isolated az/azd delegated status
+and `azure.ai.agents` **1.0.0-beta.18** passing after installing that missing
+extension in the isolated preflight config. Controller drift is recorded empty.
+These are inspected upstream observations, not execution repeated by Architect,
+not proof of private connectivity and not evidence that authentication caused
+the historical noninteractive denial. Any new denial remains binding.
+
+- **Accepted construction/delivery:** application observation runtime through
+  `f9fcd9cf4f04075e609196ebb90b30e09a91dd98`, including scoped reader,
+  effect bridge/late-window handling and durable receipt consumer; selected-lab
+  source `9b4919d8bcdbf07203f32657936c27328ea6ccc1`. Original consumer audit
+  `0e118edd3d85f96b6ff15fbd7786a6d1ada936584045a3f25c2168638fec24bd`
+  and fixed-ref delivery audit
+  `b542da129063c9de7bcb1ee685ff3fb179be80fbc56e229f494169184ae257ce`
+  retain their original Architect/Critic agreement within their task boundaries.
+- **Local evidence only:** consumer documentation attributes 359 application
+  tests, focused 15 and joined 5 passing tests. This turn does not rerun or
+  promote those owner checks to original formal E2E.
+- **Accepted older E2E:** audit
+  `4797ab07efa9ab46e5f8882caa9f7b3957910cec20b4c9ed5ec3574bbed1c8d2`
+  qualifies runtime `c52786b7` with lab `9b4919d8`, not later observation
+  modules. Preserve that accepted early join; do not replay it.
+- **Not currently qualified/deployed/live-proven:** later observation runtime
+  still needs affected original E2E and current Linux/image/dependency/package
+  binding. Earlier `identity-profiling-package-20261022T0455Z` preparation binds
+  the older runtime; preserve it, but do not reuse its ZIP or reseal its proof.
+  Audit `dfd473725551074526ddec41e0dbc23a0ca81a6d7d265e89dbf8a669004f8a3f`
+  remains the historical native-denial/package-incomplete record.
+
+These audit IDs resolve under the original run
+`gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/`.
+No current package, deployed version or live success is asserted by this design.
+
+### Remaining component/flow contracts and smallest handoffs
+
+| Canonical components and steps | Actual source / remaining action | Criterion, state and receiving owner |
+| --- | --- | --- |
+| Trusted identity and private transport; Hosted coordinator, Hosted architect, Hosted reviewer / `collaboration-bind`, `collaboration-design`, `collaboration-review` | `demo/foundry.py`, `demo/host.py`, `demo/diagnostics.py`, `demo/workflow.py`; retain pinned public hooks, exact-origin transport and safe request/background checkpoints. | Profiling acceptance 1-3, AC1/AC5/AC7: implemented/local-reviewed. Original E2E qualifies actual later source and regressions, including unchanged rejection, streaming/cancellation, redaction and context isolation. No reconstruction task. |
+| Private Blob artifacts and effect journal; Parent and specialist conversation state; MAF workflow checkpoints / `collaboration-return`, `continuity-verify`, `recovery-verify`, `isolation-verify` | `demo/effect_observation.py`, `scenario_state_reader.py`, `demo/private_effect_capture.py`, `live_acceptance.py`; retain caller-owned capture, independent manifest/operation anchors, quiescence and typed/history limitations. | Profiling acceptance 5-7, AC2-AC5/G1-G8: local contracts accepted, hosted collection/provenance still unproven. Original Developer/E2E expose actual missing wiring; DevOps owns runtime collection, not fabricated aggregates. |
+| Guarded lab release toolchain / `release-join`, `release-package` | `Test-Demo.ps1`, `scripts/Test-Repository.ps1`, `package_guard.py`, selected-lab retained build/root-resolution/release helpers. Fresh stage must include the actual later observation modules and exact source pair. | Profiling acceptance 2-4: original E2E before original DevOps. Explicit existing Python/selected-lab roots; fresh Linux tests with exclusions disclosed; dependency, image, architecture and common-package bindings remain required. |
+| Guarded lab release toolchain / `release-discriminate`, `release-close` | Retained serialized publisher and `live_acceptance.py`; newly identified common package for exactly three existing nonproduction roles; current effect/trusted-host/version checks. | Profiling acceptance 4-7/AC1-AC9/G1-G8: pending guarded publication, live observation and attributable cleanup. Original DevOps plus original review/retro/closeout; no substitute publisher. |
+| Guarded lab release toolchain / `release-join` | `.github/skills/lab-deployment/SKILL.md`: existing supervising-session diff specifies device-code az authentication, isolated azd Azure CLI bridge, separate WSL validation and status/account checks. | Explicit user-requested documentation delta: original Developer review/scoped delivery lane, independent of live success. Preserve unowned specification/index overlay; do not deliver planning-only ancestry by moving HEAD. |
+
+Use existing Python/MAF/Foundry, pure ASGI, httpx2, Azure Core and private
+bounded receipts. No dependency, resource, public interface or identity
+substitution is proposed. Diagnostics never grant trust. Public delegation
+header absence at ingress alone cannot establish platform loss; compare the
+observable transport, ingress and supported SDK-context interval.
+
+### Execution order and independent useful work
+
+Scrum Master owns task decomposition, critical-path scheduling and the single
+feature-branch Git integration assignment in the original ReleasePlan/SprintPlan
+stages. Preserve **IP-S1, IP-S2 and IP-S3 as partial**, with their original live
+criteria. Reassess only affected original stages with the new readiness
+evidence and actual later-runtime subject, through supported existing
+continuation/recheck handoffs. Do not create an E2E-shaped documentation task
+to stand in for that subject or reopen every accepted early join.
+
+1. Route the existing deployment-skill diff through original source review and
+   exact reviewed non-force delivery. Keep that lane independent of live
+   acceptance. No new user approval is required for already authorized checks.
+2. Original E2E qualifies the later observation source with selected lab
+   `9b4919d8`, recording loaded roots, tested bytes/refs and package-input
+   closure. Preserve accepted reader/bridge/consumer semantics. A newly
+   demonstrated defect returns only its affected correction to Developer and
+   original reviewers, followed by the affected checks.
+3. Original DevOps creates a **new exclusive private stage**. Load only the
+   allowlisted native lab settings with `scripts/Use-Settings.ps1`. Retained
+   wrappers select their own `OutputDirectory/azd-wsl-config`: configure
+   `auth.useAzCliAuth=true` there, restore beta.18 if absent, then run
+   `require_azd_prerequisites`, delegated-status and expected account-scope
+   checks before initialization. The separate preflight config is evidence,
+   not an implicit wrapper override. No token/config dumps, token copying,
+   browser login or global configuration changes.
+4. Re-prove current Linux/image/dependency/package bindings and private
+   connectivity, then serialize one guarded common-three-role publication.
+   Historical COMMON rollback ZIP/build provenance remains **WAIVED, never
+   PASS**. No infrastructure, RBAC, quota, network/DNS/registry/VPN-server,
+   production profile, secret retrieval or external submission is authorized.
+5. Only after current-effect readiness, record a fresh synthetic purpose,
+   operation identity and effect intent, then observe actual new traffic.
+   Preserve the held original parent, known response IDs and UNKNOWN effects;
+   retrieval is not a new invocation, and no uncertain operation is replayed.
+   An HTTP/SDK-completed envelope is not completed collaboration.
+
+Hosted capture is a localized evidence requirement, not a new global gate.
+Source inspection confirms `PrivateEffectCapture` is caller-owned and opt-in;
+`demo/host.py` installs diagnostics but not that consumer, while aggregate
+validation does not authenticate provenance. Before relying on a hosted
+aggregate, the original execution owner must prove private sink installation
+before inherited tasks, exclusive retention, independent anchors and actual
+quiescence. If the retained route lacks that handoff, split only the supported
+missing integration/collection work with original Developer/E2E review;
+do not rebuild the accepted consumer or infer hosted coverage from fixtures.
+Typed checkpoint round trips and model-history evidence retain their documented
+representation/provenance limits. Missing authoritative platform visibility
+becomes a bounded private handoff, not guessed identity repair.
+
+After a completed non-held initial collaboration, same-parent follow-up and
+once-only supported stop/resume consume their genuine prerequisites. Separate
+parent isolation is independent of recovery success once its own final-release
+prerequisites exist. Original AC1-AC9/G1-G8, original review/retro/closeout and
+owned-process/listener cleanup remain unmet until observed. If any branch
+blocks, continue the skill lane, affected local corrections and other approved
+ready work; audit feasible splits and bounded unlocking investigation before
+declaring exhaustion. No invented sprint/attempt/time/credit ceilings, denial
+bypass, live workflow/runtime edits or duplicate publisher.
+
+### Verification of this architecture amendment
+
+`scripts/Test-Repository.ps1` passed index, public-boundary (137 files), JSON,
+PowerShell, frontmatter and whitespace checks using an explicit existing Python.
+Inventory refresh preserved all three unowned overlays byte-for-byte. Parsed
+assertions verified the unchanged canonical model and valid references,
+unchanged historical sections, existing mapped source modules and
+documentation-only tracked ancestry after the delivered observation ref.
+An initial literal scope assertion failed on Markdown/line wrapping; the
+Markdown-normalized assertion passed without changing the requirement.
+No application/Linux suite, authentication, package, deployment or live check
+was executed by Architect. Original Product Owner/Red Team/Critic review of this
+amendment remains for the orchestrator; this is owner acceptance only.
+
 ## Identity-profiling correction architecture (October 21, 2026)
 
 This is the current material construction delta for

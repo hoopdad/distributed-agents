@@ -1,0 +1,162 @@
+{
+  "kind": "SprintPlan",
+  "sprintId": "IP-S1",
+  "continuationRound": 2,
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "owner": "Scrum Master",
+  "reviewers": ["Product Owner", "Architect", "Critic"],
+  "goal": "Deliver the fixed newly reviewed observation source independently of blocked native packaging and live acceptance.",
+  "acceptedInputs": {
+    "SprintArchitecture": {
+      "path": "docs/customer-prototype-profiling-continuation-2-architecture.json",
+      "commit": "c8dc0454a98b8d167cb5a007ac93884b1cb906d8",
+      "audit": "ac3cd0aec5bf7a5ac6cc363b31c0ebc0ba5e0a6c3aa9eace87db70eaee816a4f.json",
+      "votes": "Opened original Product Owner/Critic/Red Team agree:true, taskComplete:true, unmetCriteria:[]. The accepted candidate is exact-ref delivery; the already accepted receiving consumer is not rebuilt."
+    },
+    "SprintDesign": {
+      "path": "docs/customer-prototype-sprint-design.md",
+      "application": "Retain existing presentation and machine-output contracts; no UI or Designer construction."
+    },
+    "ReleasePlan": {
+      "path": "docs/customer-prototype-release-plan.md",
+      "commit": "4999ce5817a1714c6c2dc65ebbecb933bf49ecb4",
+      "criterion": "Current IP-S3 acceptanceCriteria[4], reviewed explicit-ref feature delivery/readback (AC7/AC8). No whole-sprint dependency."
+    },
+    "auditDirectory": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/",
+    "acceptedConsumer": {
+      "codeCommit": "bafa3d6a10979527a82b235f67d1bf460a253527",
+      "targetCommit": "f9fcd9cf4f04075e609196ebb90b30e09a91dd98",
+      "audit": "0e118edd3d85f96b6ff15fbd7786a6d1ada936584045a3f25c2168638fec24bd.json",
+      "votes": "Opened original Architect/Critic agree:true, taskComplete:true, unmetCriteria:[]; bounded local construction, not hosted installation or live acceptance."
+    },
+    "earlierDelivery": {
+      "application": "de2deaeaddf0509116d8f45d2a3ae73419dd11f3",
+      "selectedLab": "9b4919d8bcdbf07203f32657936c27328ea6ccc1",
+      "audit": "fed8eed3b05f7622180a57b7e6809d4de5127bc6c1125191b73dcdffd81ab8cc.json",
+      "votes": "Opened original Architect/Critic completion votes. Earlier exact delivery remains accepted; do not repeat it."
+    },
+    "remoteObservedThisPlanningTurn": "de2deaeaddf0509116d8f45d2a3ae73419dd11f3",
+    "remoteObservation": "git ls-remote origin refs/heads/feature/customer-hosted-session-prototype; remote-to-fixed-target ancestry passed. This is read-only Git evidence, not a push."
+  },
+  "tasks": [
+    {
+      "id": "IP-S1-C2-OBSERVATION-REF-DELIVERY",
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "docs/customer-prototype-release-plan.md current IP-S3 acceptanceCriteria[4]: reviewed explicit-path non-force feature delivery/readback with exact intended commits (AC7/AC8); identity-profiling-workflow.md Required acceptance[3].",
+      "title": "Deliver reviewed private observation source",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-git-integration"],
+      "estimatedMinutes": {"implementation":25,"review":15,"integration":5},
+      "ownedPaths": [],
+      "sourceLocations": ["demo/effect_observation.py", "demo/private_effect_capture.py", "scenario_state_reader.py", "tests/test_profiling_integration.py"],
+      "consumes": [
+        "Original accepted reader, bridge, typed qualification, integration and consumer outcomes; independently inspect review coverage for the complete intended ancestry before mutation.",
+        "Fixed reviewed target f9fcd9cf4f04075e609196ebb90b30e09a91dd98, not current or moving HEAD.",
+        "Earlier completed delivery fed8eed3 through application de2deae and selected-lab 9b4919d8; preserve that boundary.",
+        "Fresh remote de2deae observed in this planning turn; reread immediately before any push."
+      ],
+      "produces": [
+        "Exact intended/before/after Git refs, original review-coverage ledger and independent remote readback.",
+        "Actual non-force fixed-ref delivery or precise reconciliation/review-coverage failure; never an automatic release-readiness claim."
+      ],
+      "acceptanceCriteria": [
+        "Independently open original accepted outcomes covering every substantive source slice and target ancestry. Ancestry or this plan alone is not code acceptance; distinguish superseded negative intermediate revisions from unresolved current findings.",
+        "Inspect branch, HEAD, status, staging, exact target diff and fresh remote. Preserve all unowned/staged bytes and private boundaries. Require remote-to-target fast-forward safety. No branch switch, force, reset, lock deletion or absorption of unreviewed changes.",
+        "Push only f9fcd9cf4f04075e609196ebb90b30e09a91dd98:refs/heads/feature/customer-hosted-session-prototype through origin, non-force. Never push moving HEAD, this amendment or later planning commits. If already exact, read back without mutation. If advanced or divergent, report concrete reconciliation facts without resetting or force-pushing.",
+        "Independently read back the remote after success and retain actual commands/results, refs and preservation facts. No new source commit or unchanged full-suite replay is needed for no-file-change delivery. Any necessary new scoped change must be explicitly owned, committed and originally reviewed before its delivery.",
+        "Report Git delivery separately from changed-runtime original E2E, native readiness, package closure/freshness, publication, hosted capture installation and live cleanup/acceptance. Do not re-deliver unchanged lab source or resume unchanged DevOps."
+      ],
+      "doneWhen": "The fixed newly reviewed application observation ref is non-force delivered and independently read back, with original Architect/Critic review and all source/private-state boundaries preserved. Unresolved review coverage or remote reconciliation leaves delivery incomplete.",
+      "exclusions": [
+        "No duplicate de2deae or selected-lab 9b4919d8 delivery, moving-HEAD push, unreviewed amendment delivery or planning-only activity carousel.",
+        "No runtime, test, manifest or validator changes, dependency installation, speculative hosted collector or repeated negative qualification.",
+        "No native-denial retry, credential retrieval, packaging/publication, invocation, stop/resume, uncertain-effect replay, live cleanup or release-completion claim."
+      ],
+      "handoff": "Exact intended/before/after refs, original reviewed-ancestry ledger, push/readback results and preserved-work facts to Architect/Critic, Scrum Master and original release closeout. Retain affected original E2E/package qualification and all DevOps blockers; this task does not unlock them.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Deliver reviewed private observation source",
+        "goal": "Close the actual remote gap for newly accepted observation source without pushing unreviewed moving ancestry or touching blocked cloud operations.",
+        "components": ["Guarded lab release toolchain"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-close"],
+        "doneWhen": "The fixed newly reviewed application observation ref is non-force delivered and independently read back, with original Architect/Critic review and all source/private-state boundaries preserved. Unresolved review coverage or remote reconciliation leaves delivery incomplete.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": [],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status":"not-yet-verified","evidence":""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    }
+  ],
+  "AssignedWorkDeveloper": ["IP-S1-C2-OBSERVATION-REF-DELIVERY"],
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": [],
+  "readyInParallel": ["IP-S1-C2-OBSERVATION-REF-DELIVERY"],
+  "dispatch": {
+    "owner": "Existing YAML orchestrator",
+    "status": "ready-for-dispatch",
+    "observedDispatchedTaskIds": [],
+    "instruction": "Dispatch this dependency-ready original Developer loop before original planning review. One useful task remains, so there is no independent pair to fan out. Do not start substitute agents or redispatch accepted work. Planning agreement follows actual dispatch and original Product Owner/Architect/Critic votes, not implementation completion.",
+    "serialization": "Return this selected amendment itself as artifact.SprintPlan, its matching assignment arrays and exactly one matching top-level taskCards item. Never return historical executable plan containers."
+  },
+  "criticalPath": {
+    "estimatedMinutesScope": "Rough scheduling estimates, not limits.",
+    "path": ["IP-S1-C2-OBSERVATION-REF-DELIVERY", "original release closeout Git ledger"],
+    "explanation": "Accepted contracts and substantive implementations already exist. Review-coverage inspection, exact-ref non-force delivery and independent readback are one cohesive task. No artificial investigation or integration dependency is added.",
+    "separateReleasePath": "Affected original E2E/package qualification and supported native-denial resolution remain necessary before original DevOps publication/live acceptance. Git delivery does not satisfy either. No duration estimate or new cap is imposed on external readiness."
+  },
+  "governance": {
+    "implementationReviewers": ["Architect", "Critic"],
+    "gitReconciliationOwner": "Developer assigned IP-S1-C2-OBSERVATION-REF-DELIVERY, coordinated by Scrum Master",
+    "git": "Keep the authorized shared feature branch. Reviewed observation task commits are already in feature ancestry; the assigned owner reconciles complete intended review coverage and exact remote delivery, not a merge of moving HEAD. If any task code is retained off-feature, keep its named branch and record task, commits and abandonment reason in an explicitly owned feature-branch commit. No destructive reconciliation or unowned staged work.",
+    "sharedFiles": "This Scrum amendment owns only its new JSON and incremental repository-index additions. Preserve pre-existing specification/index overlay. The assigned delivery task owns no files and holds application-git-integration through its original reviews; coordinate any genuinely necessary new file ownership before editing.",
+    "priorDispositions": {
+      "satisfiedWithinOriginatingBoundaries": [
+        "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-CREDENTIAL-TIMEOUT-PRESERVATION\"]",
+        "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-TIMEOUT-REGRESSION-EVIDENCE\"]",
+        "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-CHANGED-JOIN-HANDOFF\"]",
+        "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-NORMALIZED-PLAN-HANDOFF\"]",
+        "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-OBSERVED-PARALLEL-DISPATCH\"]",
+        "[\"yaml-loops-v1:sprint/2/IP-S2/continuation/1/task/IP-S2-C1-EFFECT-BOUNDARY-BRIDGE/AssignedWorkDeveloperLoop\",\"EFFECT-LATE-INHERITED-CAPTURE\"]"
+      ],
+      "remainingRequired": [
+        "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-COMMON-PACKAGE-PUBLICATION\"]",
+        "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-LIVE-ACCEPTANCE\"]"
+      ],
+      "superseded": [],
+      "application": "Retain exact accepted boundaries; no new runtime qualification or live waiver follows. Historical COMMON rollback ZIP/build provenance remains WAIVED, never PASS."
+    },
+    "originalStages": "No substitute E2E or cloud stage. Original owners/reviewers retain new-source qualification, package/publication, non-held collaboration, continuity, once-only supported recovery, independent isolation, attributable cleanup, review/retro/closeout. All three sprints remain partial.",
+    "resumeDecision": "No resumes, recheck or e2eSubject: native denial is unchanged, its exact missing permission is unidentified, and continuation.sourceSubjects is empty. Git delivery does not materially unlock any supplied DevOps blocker. Do not reopen the accepted old changed-join boundary as certification of new runtime."
+  },
+  "workExhaustionAudit": {
+    "readyOrExecuting": "Current packet contains no executing unaccepted construction assignment. Original accepted task outcomes cover reader, late-preserving bridge, typed qualification, joined fixtures and durable consumer. Do not duplicate them.",
+    "feasibleSplit": "Separate exact new-source delivery from native package/publication/live effects; the former uses ordinary authorized Git without native execution or credentials.",
+    "independentApprovedBacklog": "IP-S3 AC7/AC8 supplies one concrete unmet remote-delivery slice. Previously accepted companion/status/old delivery remain closed. Sprint order creates no implicit whole-sprint dependency.",
+    "boundedInvestigation": "Accepted architecture inspected actual host, injected consumer and background fixture; no supported hosted destination/ownership contract was found. Preserve original typed-encoding/model-history negative handoffs. No new wrapper, repeated inventory or speculative contract change is assigned.",
+    "reviewEvidence": [
+      "Opened reader 45c1d10a, bridge 04e3e134, typed qualification a2b5fd54, integration 694f192f and consumer 0e118edd: original Architect/Critic agree:true, taskComplete:true, unmetCriteria:[].",
+      "Opened old changed-join 4797ab07: original Architect/Critic/Product Owner completion votes apply only to that earlier source pair.",
+      "Opened original DevOps f7b942e9 and ae0bade0: original reviewers retain taskComplete:false. No new denial-resolution, native readiness, publication or live-pass evidence was obtained."
+    ],
+    "qualification": "This is a continuation with useful assigned work, not global exhaustion, live acceptance or permission resolution."
+  },
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Dispatch one original Developer exact-ref delivery task for accepted substantive observation source. Preserve completed construction and every unresolved original release condition.",
+    "evidence": [
+      "Accepted architecture c8dc0454, audit ac3cd0ae, has original Product Owner/Critic/Red Team completion votes and scopes one fixed-ref delivery candidate, not a new receiving consumer.",
+      "Fresh planning-turn git ls-remote reports de2deaeaddf0509116d8f45d2a3ae73419dd11f3; ancestry to f9fcd9cf4f04075e609196ebb90b30e09a91dd98 passed. The interval contains substantive reader/bridge/consumer source and tests.",
+      "Original consumer audit 0e118edd accepts bafa3d6a/f9fcd9cf locally; earlier delivery audit fed8eed3 covers only application de2deae and selected-lab 9b4919d8. Neither is reopened.",
+      "Native denial, hosted installation/quiescence, typed original-encoding attachment and consumed-model-history evidence remain unchanged; no DevOps resume or original E2E reopening is justified by this Git-only task."
+    ],
+    "resumes": []
+  }
+}

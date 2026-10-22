@@ -1,5 +1,141 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Permission-recovery continuation 1
+
+Consume the [bounded continuation amendment](../../customer-prototype-permission-recovery-continuation-1-architecture.json).
+Canonical remote specialist and trusted identity contracts are unchanged.
+Supported context diagnostics cannot attest the platform caller/resolution;
+no new evidence-supported source repair is established. Preserve fail-closed
+identity checks, held parents and UNKNOWN effects; live criteria remain unmet.
+
+## Current IP-S3: retain remote trust and explicit missing evidence
+
+Consume the [current IP-S3 disposition](../../customer-prototype-sprint-architecture.md#current-ip-s3-comparison-and-hosted-capture-disposition).
+Hosted architect / Hosted reviewer and canonical support IDs remain unchanged.
+Preserve immutable outputs, exact prerequisite refs and fail-closed trusted
+parent checks. A held specialist or an SDK-completed parent is not a completed
+comparison scope. Hosted capture ownership is separate from server-side caller
+attestation and cannot establish consumed history. Do not repeat unchanged
+inference, substitute headers or add local specialists. Only a demonstrated
+supported correction returns through original implementation and release gates.
+
+## Current IP-S2: keep the missing trusted-user boundary fail closed
+
+Consume the [current attestation refinement](../../customer-prototype-sprint-architecture.md#current-ip-s2-server-side-attestation-boundary-after-guarded-publication).
+Canonical Hosted architect / Hosted reviewer, identity support and remote
+design/review steps remain unchanged. `demo/host.py` observes raw ingress before
+SDK parsing and request/background/executor context without establishing trust.
+Architect call-present/user-absent ingress and preparation rejection are
+locally joined, not independently joined to the coordinator's actual send.
+`NATIVE_HOST_PRINCIPAL` remains a truthful rejection, not a permission diagnosis.
+The pinned public hooks provide no server-side caller/resolution attestation.
+Preserve immutable role outputs, exact prerequisites, two remote specialists
+and trusted parent binding. No header substitution, SDK upgrade, identity echo
+or populating trusted context from arbitrary ingress is justified.
+The private current-pair handoff requests an authoritative discriminator,
+not another unchanged invocation. Preserve held/UNKNOWN work; independent
+isolation still needs its own current bindings and safe comparison/provenance.
+Published common versions 19/17/25 do not establish completed live work.
+Historical permission/unpublished assessments below remain historical.
+
+## Current IP-S3 recovery: preserve pinned remote histories and isolation
+
+Consume the [IP-S3 recovery refinement](../../customer-prototype-sprint-architecture.md#current-ip-s3-recovery-consume-accepted-qualification-preserve-live-handoffs).
+Canonical Hosted architect / Hosted reviewer and shared supports remain.
+`demo/architect_agent.py`, `demo/reviewer_agent.py`, `demo/foundry.py` and
+`demo/host.py` retain exactly two remote specialists, immutable outputs and
+exact prerequisites. Same-parent continuity/recovery keeps hosted/framework
+identities and versions while actual responses/artifacts advance; isolation
+uses distinct children/namespaces under final common-package bindings.
+Accepted `f9fcd9cf` offline qualification is not consumed-history or trusted
+ingress proof. No guessed header mapping, local replacement, uncertain replay
+or automatic capture installation is justified. Independent isolation does
+not require recovery success; original DevOps supplies real observations.
+
+## Current IP-S2 recovery: preserve trusted remote specialist observations
+
+Consume the [current IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-recovery-current-package-and-observable-initial-collaboration).
+Canonical **Hosted architect**, **Hosted reviewer**, shared identity/conversation/
+artifact components and `collaboration-design`/`collaboration-review` are
+unchanged. `demo/host.py`, `demo/foundry.py`, `demo/architect_agent.py` and
+`demo/reviewer_agent.py` retain pinned supported SDK/background hooks, exact
+assignments and immutable role outputs. Original later-runtime offline E2E
+is accepted, not actual trusted ingress, history consumption or live completion.
+
+Both specialists and coordinator must bind to the same new reviewed common
+package before current acceptance. After readiness and distinct synthetic
+intent, paired outbound/ingress/SDK observations localize only their observable
+interval. Missing public delegation header does not prove platform loss;
+never substitute a guessed header or populate trust from arbitrary ingress.
+No evidenced specialist correction is established by the CLI denial or
+test-only lab mount repair. Hosted capture/provenance, exact histories and
+actual continuity/isolation stay explicit live obligations. Keep remote roles,
+same-parent hosted/framework pins, fresh responses and immutable prerequisites;
+no hidden local specialist, uncertain replay or inferred live PASS.
+
+## Current IP-S1: retain remote specialist trust during qualification
+
+Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-ip-s1-qualify-retained-observation-source-after-transport-recovery)
+and accepted Architecture `fe8d6432`; Hosted architect/Hosted reviewer and all
+canonical model IDs/supports remain unchanged. `demo/host.py`, `demo/foundry.py`,
+`demo/architect_agent.py` and `demo/reviewer_agent.py` retain supported pinned
+hooks, exact assignments and immutable role outputs. Profiling 1-3/AC1/AC5/AC7
+need later-source original E2E, then the same new common package for both remote
+roles and coordinator. Outbound/ingress/SDK context observations localize an
+interval; missing public header at ingress alone proves no platform loss.
+No guessed header mapping, history patch, hidden local specialist or identity
+remedy is established. Actual trusted identity, history consumption and
+continuity/isolation remain live proof obligations, not fixture conclusions.
+
+## IP-S1 continuation 3: preserve the observable identity interval
+
+Apply the [round-3 assessment](../../customer-prototype-profiling-continuation-3-architecture.json).
+Keep exactly two remote specialists and their canonical IDs, supported ingress
+hooks, immutable role outputs and exact prerequisites. Accepted source delivery
+does not establish current trusted identity or model-history consumption.
+Absence of the public delegation header at ingress alone does not prove platform
+loss; actual outbound principal and resolved SDK identity remain unproven.
+No new supported source seam or evidenced specialist correction is supplied.
+Retain accepted typed/history limitations and all real continuity/recovery/
+isolation requirements; no held-parent replay or trusted-context repair.
+
+## IP-S3 continuation 2: preserve remote history and comparison requirements
+
+Apply the [IP-S3 assessment](../../customer-prototype-profiling-s3-continuation-2-architecture.json).
+Canonical architect/reviewer IDs/supports and accepted source are unchanged.
+No newly supported history/export seam or demonstrated specialist defect
+justifies construction. Retain both hosted/framework child identities and pins
+while new response IDs, exact prerequisite refs and immutable outputs advance.
+Local typed persistence and private occurrence accounting do not prove original
+checkpoint encoding, consumed model history or authenticated identity resolution.
+Both remote roles still require final common-package bindings and actual
+continuity/isolation evidence. Do not replay accepted research, invent a codec,
+substitute headers, weaken trust or hide a local specialist.
+
+## IP-S2 continuation 2: retain unsupported intervals without repeated research
+
+Apply the [bounded assessment](../../customer-prototype-profiling-s2-continuation-2-architecture.json).
+Canonical architect/reviewer IDs and their shared supports remain unchanged.
+Delivered accepted source does not establish authenticated principal resolution,
+consumed model history or specialist completion. Accepted typed round-trip
+qualification still does not export original persisted encoding into the
+unchanged aggregate. No new supported seam or approved contract change is
+supplied; no duplicate inventory, codec/history patch, header substitution,
+hidden local specialist or new SDK pin is assigned. Both remote roles still
+need the final common package and actual continuity/isolation evidence.
+
+## IP-S1 continuation 2: preserve accepted specialists and missing live proof
+
+Apply the [current cumulative assessment](../../customer-prototype-sprint-architecture.md#ip-s1-continuation-2-deliver-newly-accepted-observation-source).
+Hosted architect/reviewer, canonical IDs/supports, immutable prerequisites and
+trusted identity contracts stay unchanged. Accepted private occurrence retention
+does not establish consumed model history or actual specialist completion.
+No header substitution, history repair, codec/pin change or hidden local agent
+is justified. Typed original-encoding and model-history negative handoffs are
+not redispatched. Both remote specialists still require final common-package
+bindings and independently live-verified continuity/isolation; Git delivery
+through fixed reviewed `f9fcd9cf` cannot supply those observations.
+
 ## IP-S3 continuation 1: preserve specialist behavior and observation limits
 
 Apply the [current cumulative amendment](../../customer-prototype-sprint-architecture.md#ip-s3-continuation-1-retain-actual-private-occurrence-receipts).

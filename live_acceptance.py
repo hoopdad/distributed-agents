@@ -109,13 +109,62 @@ def workflow_failure(line):
     return {"phase": match[1], "exception_type": match[2]} if match else None
 
 
-async def observe_host_failure(http, credential, hosted_id, version, *, role="coordinator", response_id=None):
+def project_profile_event(text: str, role: str) -> dict | None:
+    """Closed private emitter schema, not raw logs or an authenticated join.
+
+    The logstream URL binds a hosted session/version. Local observation UUIDs
+    do not independently bind a response, operation or authenticated user.
+    """
+    from demo import diagnostics as d
+
+    if type(text) is not str or len(text) > 8192:
+        return None
+    try:
+        value = json.loads(text)
+        if type(value) is dict and type(value.get("message")) is str:
+            value = json.loads(value["message"])
+        if type(value) is not dict or type(value.get("schema_version")) is not int:
+            return None
+        if value["schema_version"] != 1 or value.get("role") != role:
+            return None
+        fields = {name: cls(value[name]) for name, cls in (
+            ("role", d.Role), ("stage", d.Stage), ("kind", d.Kind),
+            ("method", d.Method), ("route", d.Route), ("category", d.Category),
+            ("scope_request_match", d.Match),
+        )}
+        for name in ("status", "duration_ms"):
+            if name in value:
+                fields[name] = value[name]
+        if "binding" in value:
+            fields["binding"] = d.Binding(**{
+                name: uuid.UUID(item) for name, item in value["binding"].items()
+            })
+        for name in ("delegation", "platform", "call", "scope_user", "request_user"):
+            if name in value:
+                slot = value[name]
+                fields[name] = d.Observation(
+                    d.Coverage(slot["coverage"]),
+                    d.Presence(slot["presence"]) if "presence" in slot else None,
+                )
+        result = d.event_fields(d.Event(**fields))
+        if result != value or len(json.dumps(result)) > 4096:
+            return None
+        return result
+    except (ValueError, TypeError, KeyError, AttributeError, OverflowError):
+        return None
+
+
+async def observe_host_failure(http, credential, hosted_id, version, *, role="coordinator", response_id=None,
+                               structured=False):
     token = await credential.get_token("https://ai.azure.com/.default")
     path = (
         f"/agents/{quote(AGENTS[role], safe='')}/versions/{quote(version, safe='')}"
         f"/sessions/{quote(hosted_id, safe='')}:logstream"
     )
     diagnostics = {"failures": [], "limit": None}
+    if structured:
+        diagnostics["structured_profiles"] = []
+        diagnostics["structured_scope"] = "exact hosted session/version; local aliases not independently joined to response"
     # The pinned SDK's log API is a never-ending SSE stream. Bound both time and bytes.
     deadline = asyncio.timeout(30)
     try:
@@ -131,7 +180,7 @@ async def observe_host_failure(http, credential, hosted_id, version, *, role="co
             pending = b""
             async for chunk in response.aiter_bytes():
                 size += len(chunk)
-                if size > 131072:
+                if size > (2097152 if structured else 131072):
                     diagnostics["limit"] = "bytes"
                     break
                 pending += chunk
@@ -139,6 +188,14 @@ async def observe_host_failure(http, credential, hosted_id, version, *, role="co
                     line, pending = pending.split(b"\n", 1)
                     if line.startswith(b"data:"):
                         text = line[5:].strip().decode("utf-8")
+                        if structured:
+                            event = project_profile_event(text, role)
+                            if event is not None:
+                                if len(diagnostics["structured_profiles"]) >= 512:
+                                    diagnostics["limit"] = "records"
+                                    return diagnostics
+                                # Preserve occurrences; repetition is not deduplicated.
+                                diagnostics["structured_profiles"].append(event)
                         identity = ingress_identity(text, response_id)
                         if identity is not None:
                             observations = diagnostics.setdefault("ingress_identity", [])
@@ -678,7 +735,7 @@ async def run(args):
                 raise RuntimeError("PARENT_RESPONSE_CHANGED")
             if response.status == "failed":
                 result["host_diagnostics"] = await observe_host_failure(
-                    http, credential, hosted_id, state["version"], response_id=response.id,
+                    http, credential, hosted_id, state["version"], response_id=response.id, structured=True,
                 )
             elif response.status == "completed":
                 result["pending_child"] = await observe_pending_child(project, response)
@@ -692,11 +749,11 @@ async def run(args):
                     version = session["version_indicator"]["agent_version"]
                     child["host_diagnostics"] = await observe_host_failure(
                         http, credential, child["agent_session_id"], version, role=child["role"],
-                        response_id=child["response_id"],
+                        response_id=child["response_id"], structured=True,
                     )
                 if child and child["status"] == "failed":
                     result["parent_host_diagnostics"] = await observe_host_failure(
-                        http, credential, hosted_id, state["version"], response_id=response.id,
+                        http, credential, hosted_id, state["version"], response_id=response.id, structured=True,
                     )
             print(json.dumps(result))
         return

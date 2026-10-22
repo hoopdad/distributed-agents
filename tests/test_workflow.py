@@ -551,7 +551,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
     async def test_native_resources_forward_sdk_context_without_redelegating_platform_user(self):
         import httpx2
         from azure.ai.agentserver.core import FoundryAgentRequestContext
-        from azure.core.credentials import AccessToken
+        from azure.core.credentials import AccessTokenInfo
         from agent_framework.exceptions import ChatClientException
         from demo.contracts import PROJECT
         from demo.foundry import data_client
@@ -571,6 +571,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
                     "x-agent-foundry-call-id", "x-ms-user-identity", "x-agent-user-id",
                 ) if key in request.headers
             }, "method": request.method, "path": request.url.path,
+                "synthetic_bearer_matches": request.headers.get("authorization") == "Bearer synthetic-token",
                 "session": json.loads(request.content).get("agent_session_id")})
             return httpx2.Response(418, json={"error": {
                 "message": "Synthetic context probe.", "type": "probe", "code": "probe",
@@ -578,7 +579,8 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         credential = MagicMock()
         credential.__aenter__ = AsyncMock(return_value=credential)
         credential.__aexit__ = AsyncMock(return_value=False)
-        credential.get_token = AsyncMock(return_value=AccessToken("synthetic-token", 4102444800))
+        credential.get_token = AsyncMock(side_effect=AssertionError("Unexpected legacy credential route"))
+        credential.get_token_info = AsyncMock(return_value=AccessTokenInfo("synthetic-token", 4102444800))
         store = MagicMock()
         store.__aenter__ = AsyncMock(return_value=store)
         store.__aexit__ = AsyncMock(return_value=False)
@@ -587,13 +589,15 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         session.state[FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY] = "a" * 32
         child = Child(role="architect", name=AGENTS["architect"], version="1",
                       hosted_id="a" * 32, framework=session.to_dict())
-        with patch.dict(os.environ, EXPECTED_AZURE_TENANT_ID=self.runtime.scope.tenant), \
+        with patch.dict(os.environ, EXPECTED_AZURE_TENANT_ID=self.runtime.scope.tenant,
+                        OPENAI_API_KEY="synthetic-unrelated-key"), \
                 patch("demo.workflow.ManagedIdentityCredential", return_value=credential), \
                 patch("demo.workflow.data_client", wraps=data_client) as data_factory, \
                 patch("demo.foundry.httpx2.AsyncHTTPTransport", return_value=httpx2.MockTransport(handle)), \
                 patch("demo.workflow.create_artifact_store", return_value=store), \
                 self.assertLogs("demo.foundry.outbound_context", level="INFO") as logs:
-            async with WorkflowRuntime.resources(self.runtime) as (_, remote, project, _, _, headers):
+            async with WorkflowRuntime.resources(self.runtime) as (_, remote, project, actual_credential, _, headers):
+                self.assertIs(actual_credential, credential)
                 # Original resources still never redelegate the platform user;
                 # only the B candidate's distinct specialist client does.
                 self.assertEqual(headers, {"x-agent-foundry-call-id": "synthetic-opaque-call"})
@@ -610,11 +614,18 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
                 "x-ms-user-identity": self.runtime.scope.principal,
             },
             "method": "POST",
+            "synthetic_bearer_matches": True,
             "path": urlsplit(PROJECT).path + "/agents/" + AGENTS["architect"]
                     + "/endpoint/protocols/openai/responses",
             "session": "a" * 32,
         }])
         store.verify_private_path.assert_awaited_once()
+        # The public pinned Project/OpenAI path, not a mocked OpenAI client,
+        # obtains its bearer from the resource-owned credential for this scope.
+        # This is a synthetic credential-route check, not a live principal ID.
+        credential.get_token.assert_not_awaited()
+        self.assertEqual(credential.get_token_info.await_count, 1)
+        self.assertEqual(credential.get_token_info.await_args.args, ("https://ai.azure.com/.default",))
         data_factory.assert_called_once_with(
             expected_call_id=self.runtime.context.call_id, response_id=self.runtime.response_id,
         )
@@ -624,6 +635,34 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
             "has_delegated_user": True, "has_container_user": False,
         })
         self.assertNotIn("synthetic-opaque-call", logs.output[0])
+
+    async def test_specialist_credential_failure_never_falls_back_to_environment_key(self):
+        import httpx2
+        from azure.identity import CredentialUnavailableError
+        from demo.foundry import ProjectClient, OriginTransport
+
+        credential = SimpleNamespace(
+            get_token=AsyncMock(side_effect=AssertionError("Unexpected legacy credential route")),
+            get_token_info=AsyncMock(
+                side_effect=CredentialUnavailableError("Synthetic credential unavailable."),
+            ),
+        )
+        sends = []
+
+        def handle(request):
+            sends.append(request.method)
+            return httpx2.Response(500)
+
+        with patch.dict(os.environ, OPENAI_API_KEY="synthetic-unrelated-key"):
+            async with httpx2.AsyncClient(transport=OriginTransport(httpx2.MockTransport(handle))) as http:
+                async with ProjectClient(credential, http, {}) as project:
+                    client = project.get_openai_client(agent_name=AGENTS["architect"])
+                    with self.assertRaises(CredentialUnavailableError):
+                        await client.responses.create(input="Synthetic credential-route probe.")
+        self.assertEqual(sends, [])
+        credential.get_token.assert_not_awaited()
+        self.assertEqual(credential.get_token_info.await_count, 1)
+        self.assertEqual(credential.get_token_info.await_args.args, ("https://ai.azure.com/.default",))
 
     async def step_to_call(self):
         await self.runtime.begin("Synthetic requirements.")
@@ -1858,10 +1897,10 @@ class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(observe.await_count, 2)
         self.assertEqual(observe.await_args_list[0].args[2:], ("known-child-session", "17"))
         self.assertEqual(observe.await_args_list[0].kwargs,
-                         {"role": "architect", "response_id": "known-child-response"})
+                         {"role": "architect", "response_id": "known-child-response", "structured": True})
         self.assertEqual(observe.await_args_list[1].args[2:], ("known-parent-session", "22"))
         self.assertEqual(observe.await_args_list[1].kwargs,
-                         {"response_id": "known-parent-response"})
+                         {"response_id": "known-parent-response", "structured": True})
         self.assertIn("parent_host_diagnostics", json.loads(output.getvalue()))
         client.responses.retrieve.assert_awaited_once_with(
             "known-parent-response", extra_query={"agent_session_id": "known-parent-session"},

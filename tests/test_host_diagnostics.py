@@ -10,7 +10,8 @@ import os
 import tempfile
 from types import SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import AsyncMock, MagicMock, patch
+from uuid import UUID
 
 import httpx2
 from agent_framework_foundry_hosting import ResponsesHostServer
@@ -28,6 +29,83 @@ from demo.host import (
 from demo.workflow import create_workflow, parse_turn
 from demo.artifacts import ArtifactError
 from demo.contracts import AGENTS, PROJECT
+
+
+class HostProfileProjectionTests(unittest.TestCase):
+    def event(self):
+        return diag.event_fields(diag.Event(
+            diag.Role.ARCHITECT, diag.Stage.INGRESS, diag.Kind.CONTEXT,
+            binding=diag.Binding(UUID("12345678-1234-4234-8234-123456789abc")),
+            platform=diag.observe_value(None), delegation=diag.observe_value(""),
+        ))
+
+    def test_strict_projection_raw_and_wrapped(self):
+        from live_acceptance import project_profile_event
+        event = self.event()
+        for text in (json.dumps(event), json.dumps({"message": json.dumps(event), "ignored": "private"})):
+            self.assertEqual(project_profile_event(text, "architect"), event)
+        self.assertIsNone(project_profile_event(json.dumps(event), "coordinator"))
+
+    def test_malformed_private_or_extra_data_never_escapes(self):
+        from live_acceptance import project_profile_event
+        event = self.event()
+        variants = [
+            event | {"secret": "private-sentinel"},
+            event | {"schema_version": True}, event | {"route": "https://private"},
+            event | {"binding": {"observation": "private-sentinel"}},
+            event | {"platform": {"coverage": "observed", "presence": "absent", "value": "private"}},
+            event | {"status": True}, event | {"duration_ms": float("nan")},
+            event | {"scope_user": {"coverage": "unavailable", "presence": "absent"}},
+        ]
+        for value in variants:
+            with self.subTest(value=value):
+                self.assertIsNone(project_profile_event(json.dumps(value), "architect"))
+        for text in ("private-sentinel", "[]", "{}", "x" * 8193):
+            self.assertIsNone(project_profile_event(text, "architect"))
+
+
+class HostProfileStreamTests(unittest.IsolatedAsyncioTestCase):
+    async def collect(self, chunks):
+        from live_acceptance import observe_host_failure
+
+        async def stream():
+            for chunk in chunks:
+                yield chunk
+        response = SimpleNamespace(
+            status_code=200, headers={"content-type": "text/event-stream"}, aiter_bytes=stream,
+        )
+        manager = MagicMock()
+        manager.__aenter__ = AsyncMock(return_value=response)
+        manager.__aexit__ = AsyncMock(return_value=False)
+        http = SimpleNamespace(stream=MagicMock(return_value=manager))
+        credential = SimpleNamespace(get_token=AsyncMock(return_value=SimpleNamespace(token="private-token")))
+        result = await observe_host_failure(
+            http, credential, "bound-session", "19", role="architect",
+            response_id="known-response", structured=True,
+        )
+        self.assertEqual(http.stream.call_args.args[0], "GET")
+        self.assertIn("/versions/19/sessions/bound-session:logstream", http.stream.call_args.args[1])
+        manager.__aexit__.assert_awaited_once()
+        self.assertNotIn("private-token", json.dumps(result))
+        return result
+
+    async def test_fragmented_occurrences_not_deduplicated_or_response_claimed(self):
+        event = HostProfileProjectionTests().event()
+        line = ("data: " + json.dumps({"message": json.dumps(event)}) + "\n\n").encode()
+        result = await self.collect([line[:20], line[20:], line, b"data: private-sentinel\n\n"])
+        self.assertEqual(result["structured_profiles"], [event, event])
+        self.assertIn("not independently joined", result["structured_scope"])
+        self.assertNotIn("private-sentinel", json.dumps(result))
+
+    async def test_record_and_byte_limits_close_stream(self):
+        event = HostProfileProjectionTests().event()
+        line = ("data: " + json.dumps(event) + "\n\n").encode()
+        result = await self.collect([line] * 513)
+        self.assertEqual(result["limit"], "records")
+        self.assertEqual(len(result["structured_profiles"]), 512)
+        result = await self.collect([b"x" * 2097153])
+        self.assertEqual(result["limit"], "bytes")
+        self.assertEqual(result["structured_profiles"], [])
 
 
 def scope(headers=(), **kwargs):

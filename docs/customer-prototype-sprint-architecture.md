@@ -1,5 +1,793 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Permission-recovery continuation 1: bounded current construction assessment
+
+The separate [continuation amendment](customer-prototype-permission-recovery-continuation-1-architecture.json)
+maps the approved IP-S1/IP-S2/IP-S3 criteria to retained source, missing handoffs
+and independently executable boundaries. It incorporates the canonical
+solutionModel unchanged. No new task or exact-stage resume is established:
+the readable-script correction has already been consumed by later DevOps,
+while current caller attestation, completed comparison and hosted capture
+ownership remain unavailable in accepted handoffs. This is bounded construction
+exhaustion for the inspected queue, not release acceptance or a fresh denial.
+Original Scrum Master and reviewers assess the amendment; only concrete changed
+evidence or an Architect-advised Product Owner contract decision unlocks new
+work. Isolation is independent of recovery success, not of its own readiness.
+Retain required dispositions at their exact original references, satisfied
+unchanged publication, partial sprints and incomplete cloud verification.
+Held/UNKNOWN effects remain unchanged; rollback provenance remains WAIVED.
+No new runtime execution or live evidence is claimed.
+
+## Current IP-S3: comparison and hosted capture disposition
+
+October 22, 2026. Receiving architecture decision for the two handoffs in
+IP-S2 DevOps outcome `d0ae0d1469ea7ae627c2b93eeffc8bc45e1b345fa33eb3d7eb8ef71f674a7cd6.json`,
+under `gh-dynamic-workflows/.delivery-runs/c40bef06-de14-4df7-865f-4d4dfb8815a9/context/`.
+Original Architect/Critic/Developer agree with that partial report, each with
+taskComplete=false. Consume, do not redispatch, the accepted isolation audit
+`91e08648bf8ed10af6f298829496baedd1facc0842c078e51b4cca0fb13ef4fd.json`
+(Architect/Critic agree and taskComplete=true) at application `7a2f186`.
+The accepted IP-S2 architecture outcome `e4799f7f` and IP-S3 design outcome
+`3034ac1d` retain their original votes and bounded scope.
+
+The canonical [solutionModel](customer-prototype-architecture.md#solutionmodel)
+is incorporated unchanged: ten components, five flows, eighteen steps.
+This refinement introduces no component, public contract, infrastructure,
+capture activation or additional approval stage. The IP-S2 attestation decision
+below and its private UNSENT handoff remain accepted within their own scope.
+
+### Resolve the two returned handoffs
+
+**Completed comparison: unavailable in the supplied exact handoffs.** A source
+change cannot manufacture an accepted historical parent. The retained held
+parent, successful publication and completed SDK envelope are not substitutes.
+The existing comparison contract remains `_evidence_turn` and
+`validate_scenario_evidence` in `live_acceptance.py`: trusted scope, completed
+non-held artifacts/journal, actual parent and both hosted/framework child
+bindings, exact release metadata and independently accounted effects.
+Original DevOps can consume an exact already-authorized completed scope if
+one is supplied; no private-store discovery or unchanged new initial inference
+is assigned to search for one. Otherwise this remains an unavailable live
+prerequisite, not missing comparison implementation.
+
+**Hosted capture: no supported installation/ownership handoff is established.**
+The accepted audit and inspected `demo/effect_observation.py`,
+`demo/private_effect_capture.py` and `demo/host.py` establish a caller-owned
+opt-in source interface, not a configured remote destination. A terminal sink
+does not reach the hosted coordinator's execution context. Do not activate a
+new host-wide logger, expose an export endpoint, select arbitrary container
+storage or assume local fsync is remote durable retention.
+
+The smallest integration handoff must name an existing authorized private
+destination, its responsible hosted execution-context owner, exclusive handle
+and lifetime/permission controls, trusted expected operation bindings, and
+supported installation before relevant background creation. It must also
+provide quiescence, independent operation anchors, readback/cleanup ownership
+and explicit uncovered traffic. These are inputs to existing capture interfaces,
+not a newly approved wire schema or proof of consumed model history. Without
+those concrete inputs, no contract-backed capture implementation task is ready.
+Any proposed new destination/lifecycle or trust contract returns to original
+Architect-advised Product Owner scope review and Scrum decomposition; it is
+not implicitly authorized by this refinement.
+
+### Localized readiness graph and original-owner handoff
+
+| Approved criterion / canonical steps | Retained source and state | Closing action and blast radius |
+| --- | --- | --- |
+| AC4/G7; `isolation-bind`, `isolation-execute`, `isolation-verify` | `live_acceptance.py`, `scenario_state_reader.py`, `demo/effect_observation.py`, `demo/private_effect_capture.py`: implemented and locally qualified in retained handoffs; no completed comparison or hosted capture proof. | Scrum Master records the two unavailable prerequisites above, without redispatching accepted negative audits. Original DevOps executes only when exact comparison, hosted capture and operation-specific current bindings/readiness are supplied. Recovery success and platform attestation are not added isolation prerequisites. |
+| AC1/AC5/AC7; `collaboration-design`, `collaboration-review`, `release-discriminate` | `demo/host.py`, `demo/foundry.py`, `demo/workflow.py`: published diagnostics, but actual authenticated caller and independent cross-process correlation remain unknown. | Consume the existing UNSENT private attestation handoff. Only authoritative changed evidence or a demonstrated supported defect reopens correction through original Developer/E2E/DevOps stages. Capture installation alone does not close this identity boundary. |
+| AC2/G5; `continuity-revise`, `continuity-invoke`, `continuity-verify` | Same source plus `live_acceptance.py`: existing continuity construction; live prerequisite absent. | Completed non-held initial collaboration is the smallest required handoff. Do not use a held parent or weaken continuity checks. |
+| AC4/G6; `recovery-stop`, `recovery-resume`, `recovery-verify` | `demo/workflow.py`, `demo/foundry.py`, `demo/private_effect_capture.py`: retained checkpoint/effect and known-response recovery contracts. | Genuine two-turn evidence, durable once-only stop readiness and supported checkpoint evidence remain recovery-specific. Do not make their absence a dependency of isolation construction. |
+| Profiling 4-5; `release-package`, `release-discriminate`; AC1-AC9/G1-G8; `release-close` | Retained common package/version publication, not a fresh readback or cloud PASS. | Required current package/publication criteria remain binding at their exact origin; retain their inspected satisfaction for unchanged runtime. A demonstrated runtime correction needs affected qualification and one current-bound serialized publisher. Original reviews, attributable cleanup, retro and closeout still require actual live evidence. |
+
+Scrum Master owns the next readiness/assignment decision and Git reconciliation;
+DevOps owns supported current-state checks, collection and effects. Do not bounce
+the same two negative findings back as a new research assignment. No new
+construction gap or executable live operation is established by this refinement.
+This does not declare release-wide exhaustion: retain partial IP-S1/IP-S2/IP-S3,
+and assess any independent approved work on its own concrete handoff.
+
+Apply the exact original references
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-current-common-package"]`,
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-guarded-publication"]`
+and
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-cloud-verification"]`.
+The first two remain required, with retained satisfaction established in the
+accepted IP-S2 architecture, not waived or superseded by this decision.
+Cloud verification remains incomplete. Preserve held/UNKNOWN effects and all
+historical seals. COMMON rollback provenance remains **WAIVED, never PASS**.
+No external submission or new user action is requested.
+
+Verification for this documentation-only refinement: standard-library assertions
+confirm the canonical model equals accepted `fe8d6432`, component/step references,
+named source paths and all three current tier links resolve. Owned-path
+`git diff --check` passes. No application suite, authentication, service readback,
+publication or live scenario was run. The previously denied full repository
+check was not retried; no full repository PASS is claimed. No file inventory,
+entry point, topology or public contract changed; preserve the unowned index
+overlay and specification.
+
+## Current IP-S2: server-side attestation boundary after guarded publication
+
+October 22, 2026. This is the current refinement for IP-S2 and its IP-S1/IP-S3
+handoffs. The older exhaustion, permission and unpublished-package assessments
+below remain historical, not current dispatch instructions. Retain accepted
+Architecture `fe8d6432`, design `c5c40239` and canonical
+[solutionModel](customer-prototype-architecture.md#solutionmodel) by reference:
+ten components, five flows, eighteen steps, unchanged IDs, names and supports.
+No new component, identity service, capture infrastructure or trust contract is
+introduced. All three tier files consume this refinement.
+
+### Evidence and decision
+
+Opened current DevOps outcome
+`gh-dynamic-workflows/.delivery-runs/c40bef06-de14-4df7-865f-4d4dfb8815a9/context/737b7366fc475690a04e6cc625e32ae572d089217605d26a9a5d154e1053fa0f.json`:
+Architect/Critic/Developer agree with the partial report, all taskComplete=false.
+Its reconciled governance retains packaging/publication as satisfied and calls
+for this bounded design decision, not another unchanged publisher. Also opened
+the IP-S2 design outcome `ab629fa5f418defc6ed1fe3f1c38cece27bf2d7a355bdd1c63d85fa6f4cb2c24.json`
+in that directory: agreed, Product Owner/Critic taskComplete=true.
+
+Independently hash-matched the exact private publication and Observe receipts
+listed in [release notes](customer-prototype-release-notes.md#guarded-common-publication-and-actual-initial-failure--october-22-2026):
+publication `dd7184cb39ce3caa148d98720f2e1a2c0f755820ae510e3851262ea60bd80c65`,
+Observe `7aef63470037dc5c724f57392640d16908d262112051a0b226f6ae3fc1337979`.
+Observe records zero inference and proven owned job/listener closure.
+The accepted publication outcome records architect/reviewer/coordinator
+versions **19/17/25**, common package
+`cb506ae15a8942d5dd6a8570cf5b29533e0d744621c4eb1b8d9b69cf1656b2f8`.
+This inspection is not a new authenticated deployed-version readback.
+
+`622c1607a4e501e40bed1e7bf6226240cce49777` corrects a credential fixture and
+adds tests/documentation only. Original execution reports 364 passing tests;
+this architecture turn did not rerun them. Git comparison of hosted `demo/`,
+requirements and Dockerfile against accepted runtime `f9fcd9cf` is empty.
+The later local observer change is not new hosted runtime. Selected-tooling
+`ceaba6ee` remains the accepted handoff, not newly qualified here.
+
+**Decision: no supported request-correlated caller/resolution attestation seam
+is established in the inspected application and pinned public contracts.**
+This is a bounded negative finding, not proof that the platform has no internal
+trace or that every possible service interface was searched. Reuse, rather than
+reopen, the [accepted supported-remedy research](identity-recovery-plan.md#rp-s1-supported-remedy-handoff-2026-10-19-s1-remedy).
+Its old parent locators must not be substituted for this new held pair.
+
+The inspected public [runtime contract][s2-runtime-contract] still specifies
+opaque unchanged call forwarding and container-only user delivery; the
+[delegation contract][s2-delegation-contract] documents a distinct impersonation
+permission and HTTP 403 on missing permission. These are constraints, not a
+new research milestone or evidence that RBAC is missing here.
+
+| Existing seam and source | What it can establish; what it cannot |
+| --- | --- |
+| Resource-owned credential / public OpenAI transport, `demo/workflow.py`, `demo/foundry.py`; synthetic regression in `tests/test_workflow.py` | Fixture proves selected bearer/scope and zero-send acquisition failure, not the authenticated principal of a historical hosted request. Do not retrieve/decode tokens or add an identity echo endpoint. |
+| `OriginTransport`, `demo/foundry.py` | Actual outbound header presence, route, status and stream outcome. Neither header presence nor HTTP 200 attests caller identity or execution success. |
+| `IngressDiagnostics`, context/options/executor hooks, `demo/host.py` | Raw ingress presence before SDK parsing, request/scope presence and safe equality through supported hooks. The preparation failure retains missing trusted user; no public hook resolves an opaque call into an authenticated user. |
+| Closed event schema/bindings, `demo/diagnostics.py`; strict reader in `live_acceptance.py` | Bounded private records and local observation/operation/response aliases. The ASGI-created alias is not independently a cross-process join. Repeated session log reads cannot create missing historical correlation. |
+| Public token-info/session readback, as inspected in `622c160` | Token lifetime and session lifecycle are not principal attestation. Configured agent identity metadata is not the effective caller for the measured send. |
+
+The observed coordinator send has nonempty delegation/call; the observed
+architect ingress has absent platform-user and nonempty call; its locally
+joined preparation checkpoint has absent request user. However the two streams
+lack an independently proven cross-process request join. Therefore the
+**candidate interval** is outbound authentication/platform resolution through
+specialist ingress, not a proven transformation/loss of the same request.
+Neither a platform defect nor missing RBAC is diagnosed. No guessed header,
+call-ID-as-user, trust-gate removal, SDK upgrade or speculative source repair
+follows. Capture installation cannot recover that missing platform fact.
+
+### Smallest handoff and executable branches
+
+A new exclusive **private, unsent** handoff is prepared under the authorized
+permission-recovery evidence root:
+`architect-attestation-20261022-1949/handoff.json`. It binds the exact current
+receipt hashes, source/review references and existing response/session locator
+fields without copying tokens, raw identities, bodies or complete headers.
+It is an output-owned evidence artifact, not a new repository API or historical
+reseal. The receiving original Scrum Master/DevOps must retain it privately.
+No external destination is selected or contacted.
+
+The closing answer must independently bind the current parent/child, deployed
+versions, UTC interval and server request correlation; identify the actual
+authenticated caller and delegation/resolution outcome at that boundary; and
+name the authoritative supported remedy, affected versions/state implications
+and non-replaying verification. Local aliases alone, an unrelated trace,
+generic grant advice or successful session GET do not satisfy that contract.
+If those historical correlators were not retained, return explicit unavailable
+coverage, not an inferred join or a new inference to recreate it.
+
+| Approved criteria and canonical flow steps | Construction, verification and receiving-owner boundary |
+| --- | --- |
+| Profiling 1-3/6; AC1/AC5/AC7; `release-discriminate`, `collaboration-design`, `collaboration-review` | Trusted identity and private transport; Hosted coordinator/architect/reviewer. Existing diagnostics and credential fixtures are implemented/local-qualified; runtime is published, actual authenticated caller/resolution is unproven. Original Scrum Master routes the prepared negative design handoff to original DevOps. Only a supported authoritative finding or demonstrated defect reopens a source correction; original Developer, affected E2E and original reviews then apply. |
+| Profiling 4-5; AC7; `release-package`, `release-discriminate` | Guarded lab release toolchain. Preserve satisfied current packaging/publication at the exact prior origin below. Documentation/test-only changes do not require republishing unchanged runtime. Any actual runtime correction later requires current package/source/version/trusted-host/effect bindings and one serialized publisher. |
+| Profiling 5/7; AC2-AC5/G1-G8; `collaboration-return`, `continuity-verify`, `recovery-verify`, `isolation-verify` | Private Blob artifacts and effect journal; Parent and specialist conversation state; MAF workflow checkpoints. Opt-in capture source exists, but hosted installation, private destination/owner, pre-background coverage, independent anchors, quiescence and consumed-history provenance remain unproven. Do not assign speculative capture infrastructure or repeat accepted typed/history research. A concrete supported destination/ownership handoff is the minimum for an integration task; it is not a replacement for platform attestation. |
+| AC2/G5; `continuity-revise`, `continuity-invoke`; AC4/G6; `recovery-stop`, `recovery-resume` | Same-parent specialist continuation needs completed NON-HELD initial collaboration. Supported compute stop and resume additionally needs genuine two-turn evidence and durable once-only stop/readiness. Both remain incomplete; preserve existing held parents/UNKNOWN effects and use known-response recovery only. |
+| AC4/G7; `isolation-bind`, `isolation-execute`, `isolation-verify` | Separate-parent isolation is independent of successful recovery and this attestation answer. Original Scrum Master/DevOps assess its own final readiness, supported capture/comparison scope and effect intent. The newly held parent is not a completed comparison scope. Schedule ready portions independently; do not send without those actual prerequisites or make aggregate all-scenario validation an execution gate. |
+| AC1-AC9/G1-G8; `release-close` | Original DevOps, reviews/retro/closeout join actual evidence and attributable owned cleanup. Nothing in this architecture accepts the release or converts offline/SDK/HTTP success into live acceptance. |
+
+This resolves the architecture decision requested by the blocked IP-S1 DevOps
+handoff within the existing IP-S2 owner loop; it does not create an approval
+stage. Original Scrum Master owns decomposition, exact-ref Git reconciliation
+and independent approved IP-S3 readiness audit. No blanket exhaustion is
+declared: the packet's empty assignment list is not evidence that all useful
+approved work is exhausted. No new construction defect or supported capture
+contract is demonstrated here, so no speculative implementation is dispatched.
+No native authentication, publication, new inference, stop or cleanup process
+was started by this turn.
+
+The three prior dispositions remain bound to their exact original task:
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-current-common-package"]`
+and `["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-guarded-publication"]`
+are retained as satisfied by the later inspected outcome, not waived;
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-cloud-verification"]`
+is still required and incomplete. All partial sprints, original reviewers and
+AC1-AC9/G1-G8 persist. COMMON rollback provenance remains **WAIVED, never PASS**.
+External tracing submission would require a named destination/disclosure
+authorization; preparing this private handoff requires no new user action.
+
+### Architecture verification and execution limitation
+
+Standard-library validation compared the parsed canonical model to `fe8d6432`:
+unchanged ten components, five flows and eighteen steps; component supports,
+flow-step references, named source files and all three tier links resolve.
+Both private receipt hashes and all six exact locator pointers in the new
+handoff validate. Repository-local `git diff --check` passed (line-ending
+normalization warnings only). No runtime tests were repeated for these
+documentation-only changes.
+
+The attempted documented `scripts/Test-Repository.ps1` command with explicit
+existing Python was denied: **"Permission denied because no interactive user
+response was available."** The mixed request also contained Git stat/whitespace
+commands; no partial execution is claimed. A separate repository-local Git
+inspection succeeded. The denied check was not retried through another entry
+point/tool; its exact request/decision is retained in the private handoff.
+The precise missing permission is unidentified, not an Azure authentication,
+RBAC or application diagnosis. The full repository check is not claimed PASS.
+This local verification limitation does not establish global work exhaustion
+or authorize a permission bypass.
+
+[s2-runtime-contract]: https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agent-contract#platform-request-headers-container-protocol-200
+[s2-delegation-contract]: https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agent-permissions#delegate-the-end-user-identity
+
+## Network-recovery continuation: bounded construction exhaustion
+
+The separate [current continuation amendment](customer-prototype-network-recovery-continuation-1-architecture.json)
+audits IP-S1/IP-S2/IP-S3 at application `5908b6f9` and clean selected lab
+`ceaba6ee`. It consumes actual original affected E2E, substantive correction
+and skill-publication votes, maps approved criteria to the unchanged canonical
+solutionModel and existing tier contracts, and returns empty candidate tasks
+and resumes. No new supported source split or changed exact approval condition
+is established. Original Scrum Master/reviewers assess this bounded exhaustion;
+it is not sprint/release completion. Native readiness, final common publication,
+hosted provenance, actual live scenarios, cleanup and review/retro/closeout
+remain incomplete. No denied operation is retried; COMMON rollback provenance
+remains **WAIVED, never PASS**. Original plans and historical assessments persist.
+
+## Current IP-S3 recovery: consume accepted qualification, preserve live handoffs
+
+October 22, 2026. This refinement consumes the accepted IP-S3 design at
+`c5c40239b342bfd40be3d2ff3c448d90bc7833e5` and cumulative IP-S2 architecture at
+`243ccdfba48172171fab1f7532633fdcce524888`. Retain Architecture `fe8d6432`,
+UX `c087b95d` and ReleasePlan `01f0cd55`. It updates evidence readiness only;
+the historical IP-S3 source pairs and preparation candidates below are not
+current dispatch instructions. No new source defect, interface, SDK hook,
+resource, UI feature or implementation task is established.
+
+### Current accepted handoffs
+
+Opened original outcomes in
+`gh-dynamic-workflows/.delivery-runs/76e49846-d1f2-4c9d-86ff-ee268dd47c2c/context/`:
+
+- `4131bfbf1e2a6647161f67ba82011dfd7304da6309d0736b1b3a5493811a6f16.json`:
+  IP-S3 design agreed; Product Owner/Critic both agree/taskComplete. Reuse
+  H/I/J/K and supporting F/G; no new UI implementation.
+- `45e3e909f87d67d66a5f40c089068c667a9d37399febf8cf21864975ea1866d6.json`:
+  affected offline E2E agreed by Architect/Critic/Product Owner with
+  taskComplete. Actual qualified runtime is `f9fcd9cf`, selected lab `ceaba6ee`;
+  attributed Windows checks report 359 application passes and 236 retained
+  passes/four skips. This is source-input qualification, not a current archive,
+  fresh Linux execution, native-amd64 certification or deployed/live proof.
+- `737459e8124be0e6a2b7e036fbbdfdda708e912dee07b9f2c717c3598437cbcb.json`:
+  original DevOps and Architect/Critic/Developer explicitly consume substantive
+  acceptance of correction `ceaba6ee` and the affected E2E. Do not recollect
+  either as missing. Overall DevOps remains incomplete: retained-stage integrity
+  and exact-image dependency evidence do not establish native readiness, final
+  common packaging, publication or initial collaboration. The historical scoped
+  CLI denial lacks changed approval-resolution evidence; its exact missing
+  permission is unidentified, not diagnosed authentication/RBAC/network failure.
+
+### solutionModel and smallest IP-S3 dependencies
+
+The canonical [solutionModel](customer-prototype-architecture.md#solutionmodel)
+at `fe8d6432` remains incorporated by reference: ten components, five triggered
+flows, eighteen steps, unchanged IDs/supports/personas. These mappings refine
+its existing flow steps, not a second graph or replacement public evidence API.
+
+| Approved criteria / canonical steps | Components and actual source | Smallest handoff and verification state |
+| --- | --- | --- |
+| AC2/G5; `continuity-revise`, `continuity-invoke`, `continuity-verify` | Terminal client; Hosted coordinator; Hosted architect; Hosted reviewer; Parent and specialist conversation state; Private Blob artifacts and effect journal. `demo/terminal.py`, `demo/foundry.py`, `demo/workflow.py`, `live_acceptance.py::_evidence_continuation`; `tests/test_specialist_continuity.py`, `tests/test_scenario_evidence.py`. | Implemented/offline-qualified, not current deployed/live-verified. Original DevOps supplies final common source/package/version bindings and completed NON-HELD initial parent, both hosted/framework child identities, independent create/send observations and current immutable artifacts. Then follow up on that same parent: unchanged identities/pins, fresh invocation responses, retained earlier requirements and no extra child creations. |
+| AC4/G6; `recovery-stop`, `recovery-resume`, `recovery-verify` | Guarded lab release toolchain; MAF workflow checkpoints; conversation/artifact components and all three hosted roles. `live_acceptance.py::stop_hosting_for_acceptance`, `validate_scenario_evidence`, `demo/workflow.py`, `demo/foundry.py`; existing scenario/workflow regressions. | Genuine completed two-turn proof precedes durable once-only stop intent. Require actual 204 plus independently observed stopped/idle state, retained checkpoint equality and complete effect accounting. Resume/retrieve only through supported known-response/checkpoint paths; an uncertain stop/send stays held. No hard-crash exactly-once guarantee. |
+| AC4/G7; `isolation-bind`, `isolation-execute`, `isolation-verify` | Terminal client; all three hosted roles; Trusted identity and private transport; conversation/artifact components. `demo/artifact_store.py`, `demo/artifacts.py`, `demo/workflow.py`, `live_acceptance.py`, `tests/test_scenario_evidence.py`. | Final deployed bindings, safe comparison scope and current-effect readiness permit independent distinct-parent execution; recovery success and whole-sprint acceptance are not prerequisites. Compare real child identities, namespaces, effects and requirement exclusion, retaining cross-scope rejection. Application Blob isolation is not storage-RBAC isolation. |
+| Profiling 5-7, AC3/AC6-AC9/G8; `release-close` | Terminal client; Guarded lab release toolchain; Private Blob artifacts and effect journal. `demo/private_effect_capture.py`, `demo/effect_observation.py`, `scenario_state_reader.py`, `live_acceptance.py`, README and release notes. | Existing caller-owned capture/comparison source is locally qualified, not installed hosted coverage. Original DevOps proves installation before inherited tasks, exclusive retention, independent manifest/operation anchors, coverage and actual quiescence. Typed original checkpoint encoding and consumed-history provenance remain unproven. Original review/retro/closeout joins actual receipts, final source/package/readback and attributable owned cleanup; offline AC3 fixtures and stdout/parser remain unchanged. |
+
+`validate_scenario_evidence` still joins all four scenarios and stopped-session
+evidence at final acceptance; that aggregate signature must not gate independent
+isolation execution or turn missing recovery into fabricated live input.
+Package drift cannot silently migrate saved parents or mix evidence versions.
+
+### Work-conserving handoff and boundaries
+
+Scrum Master owns the existing IP-S3 decomposition and Git reconciliation.
+Reuse accepted companion/status/reader/bridge/consumer, fixture and negative
+research handoffs; do not redispatch them or invent a new qualification subject.
+Offline planning and comparison preparation do not depend on resolving native
+approval. The inspected sources establish no new missing construction; if the
+actual retained hosting/collection route exposes missing supported wiring,
+split only that demonstrated integration with original Developer/E2E review.
+No automatic host activation or alternate publisher is authorized here.
+
+The exact denial gates its inspection and dependent native readiness, publication
+and traffic, not independent source work. Reassess only after concrete supported
+approval-resolution evidence, never an unchanged retry or alternate-tool bypass.
+Original DevOps consumes the retained exclusive stage, verifies actual current
+bindings and per-output azd bridge/beta.18/account readiness, and creates another
+stage only for changed inputs. Historical seals stay unchanged. Before new
+synthetic traffic record distinct purpose, operation identity, effect intent,
+release bindings and owned cleanup plan. No held-parent replay or trust repair.
+
+Required dispositions at exact origin
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SKILL-DELIVER/AssignedWorkDeveloperLoop`,
+`SKILL-REMOTE-VERIFICATION` and `SKILL-DELIVERY-IDENTITY-CONFLICT`, remain
+satisfied only within their accepted delivery boundary through publication
+audit `47b2b4ffc34b3d98ca7ad65dd42c1d0794851a9c52fcc0cf711b6e641b3fc307.json`.
+No skill redelivery or broader waiver follows. Preserve all partial sprints,
+AC1-AC9/G1-G8, deterministic Decision-1 gates, exact trusted assignments,
+immutable prerequisites, ETag publication, MAF checkpoints and UNKNOWN holds.
+COMMON rollback provenance remains **WAIVED, never PASS**. This architecture
+does not establish global exhaustion, release readiness or live acceptance.
+Original Product Owner/Critic/Red Team assess this bounded refinement.
+
+Verification: documented `scripts/Test-Repository.ps1` passed with existing
+explicit Python: current index, 137-file public boundary, JSON/PowerShell/
+frontmatter and whitespace checks. Four Git-filtered addition-only overlays,
+canonical graph/support/step references, mapped source paths and unchanged
+unowned index/specification hashes were checked. No structural/model change
+requires an index refresh. No application tests, authentication, denied
+inspection, package/publication, live traffic or cleanup ran in this turn.
+
+## Current IP-S2 recovery: current package and observable initial collaboration
+
+October 22, 2026. This overlay consumes accepted Architecture `fe8d6432`,
+ReleasePlan `01f0cd55`, SprintDesign `c5c40239` and the retained IP-S1
+architecture `45f85980`. It supersedes dated readiness statements below only
+for the current IP-S2 subject. It adds no runtime, UI, public contract,
+infrastructure, authentication mechanism or new approval stage.
+
+### Accepted inputs and precise remaining boundary
+
+Opened original outcome JSONs in
+`gh-dynamic-workflows/.delivery-runs/76e49846-d1f2-4c9d-86ff-ee268dd47c2c/context/`:
+
+- `da89e32a5bf2627d8bccb9592394e8b612faee1e9a0be7e67d27c013dec66014.json`:
+  IP-S2 SprintDesign agreed; Product Owner/Critic both agree/taskComplete.
+  Reuse its F/G and initial-collaboration layouts, not its dated missing-join
+  claim or older source baseline.
+- `abfda8a6410fdfa1e153492f498cc4c0295fd071a40b78be7a8e56de76ef0e5d.json`:
+  original later-runtime E2E agreed with Architect/Critic/Product Owner
+  taskComplete. Application runtime `f9fcd9cf4f04075e609196ebb90b30e09a91dd98`
+  and lab `9b4919d8bcdbf07203f32657936c27328ea6ccc1` have source-input
+  closure and Windows qualification: 359 application passes; retained
+  236 passes/four skips. This is not qualification of a later tooling delta,
+  an archive, Linux image, publication or live acceptance.
+- `0bc89e8cee824666e0fa6823338ba5957bc74a8d48749f4f8162cf01b963f524.json`:
+  DevOps needs-input; Architect/Critic/Developer agree with the partial report
+  but all retain taskComplete false. Lab correction
+  `ceaba6eea5b0f6bf3c4e265f7fde40bb177aae6e` adds the named read-only
+  `scenario_state_reader.py` application-test mount and independent input hash.
+  Inspected actual commit/diff; hosted runtime closure is unchanged. Attributed
+  corrected Linux results are 351 application passes/eight skips and
+  197 retained passes/43 skips on an arm64 host running linux/amd64, not
+  native-amd64 certification. Dependency preparation is not a final bundle.
+  Mixed dedicated-account/native CLI inspection was tool-denied because no
+  interactive approval response was available; neither partial execution nor
+  a specific missing permission was established.
+
+The two required dispositions at exact origin
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SKILL-DELIVER/AssignedWorkDeveloperLoop`
+remain confined to that delivery identity/readback contract.
+`SKILL-DELIVERY-IDENTITY-CONFLICT` and `SKILL-REMOTE-VERIFICATION` are consumed
+through accepted publication audit
+`47b2b4ffc34b3d98ca7ad65dd42c1d0794851a9c52fcc0cf711b6e641b3fc307.json`
+(Architect/Critic agree/taskComplete) and aggregate
+`de3e8ff27ed3c746bf92c87290398b67c7275e980f18d1bb55838d742ddc7030.json`.
+Reviewed integration/delivered identity is `14ee132e6c5145122759bec857811b655b371849`,
+original `5c94f1f302c76f9f4222ee569b1e8aee2fcc4d59` is retained on
+`retained/ip-s1-skill-original-20261022`, and skill blob is
+`ac10b0395a5ae034735d46210f7310b8ac5de7a1`. No new push/readback or reopening
+of accepted skill work is needed here. Shared planning history remains separate
+from that delivered integration history; Scrum Master owns future reconciliation,
+not a moving-HEAD push or shared-checkout reset.
+
+### Retained solutionModel and current evidence map
+
+The single canonical [solutionModel](customer-prototype-architecture.md#solutionmodel)
+is retained by reference at accepted `fe8d6432`: ten components, five triggered
+flows, eighteen stable steps, with unchanged supports and personas. The tier
+files refine the same model; no duplicate graph or renamed IDs are introduced.
+
+| Components / canonical steps | Approved criteria and actual modules | State / smallest receiving handoff |
+| --- | --- | --- |
+| Guarded lab release toolchain; Trusted identity and private transport / `release-join`, `release-package` | Profiling 2-4, AC7/AC8. `Test-Demo.ps1`, `scripts/Test-Repository.ps1`, `package_guard.py`; selected-lab `foundry-tf/multi-agent/Build-Demo.ps1` and `tests/test_release_native_settings.py`. | Original E2E qualifies the original pair above. Original DevOps correction review remains substantive, not an inferred pass from report agreement. Scrum routes affected changed-tooling qualification through original E2E/DevOps and their original reviewers before dependent effects, retaining applicable captured tests and exclusions rather than replaying the older join. |
+| Guarded lab release toolchain / `release-package`, `release-discriminate` | Profiling 4-5, AC7. Retained `bundle_package.py`, `wsl_release.py`, `Invoke-WslCodeRelease.ps1` and `Build-Demo.ps1`. | Prepared runtime/dependencies only; no final bundle/publication. After accepted affected handoffs and changed exact permission evidence, original DevOps proves wrapper-owned per-output azd bridge/beta.18/account, trusted host/connectivity and current effects. One serialized publisher binds all three existing roles to one newly identified common package. Preserve the new private stage and historical stages separately; revalidate actual bindings, never reseal old evidence. |
+| Hosted coordinator; Hosted architect; Hosted reviewer; Trusted identity and private transport / `collaboration-bind`, `collaboration-route`, `collaboration-design`, `collaboration-review` | Profiling 1, 3, 5-6; AC1/AC5/AC7. `demo/foundry.py`, `demo/host.py`, `demo/diagnostics.py`, `demo/workflow.py`, `demo/architect_agent.py`, `demo/reviewer_agent.py`. | Implemented/local-qualified, not current deployed/live proof. After current-effect readiness, original DevOps records a distinct synthetic purpose and effect intent before send. Correlate outbound, raw ingress, SDK and supported background checkpoints without changing trust or inferring platform loss from public-header absence. |
+| Private Blob artifacts and effect journal; Parent and specialist conversation state; MAF workflow checkpoints / `collaboration-return`, `continuity-verify`, `recovery-verify`, `isolation-verify` | Profiling 5-7; AC2-AC5/G1-G8. `demo/effect_observation.py`, `demo/private_effect_capture.py`, `scenario_state_reader.py`, `live_acceptance.py`. | Local contracts only. Hosted capture installation before background work, ownership, independent anchors, complete coverage and quiescence remain unproven. Typed original encoding and consumed-history provenance remain limitations. Completed non-held initial bindings/artifacts are the IP-S3 continuity handoff; supported recovery consumes genuine continuity. Separate-parent isolation consumes final bindings and safe comparison scope, not recovery success. |
+| Terminal client; Guarded lab release toolchain / `collaboration-return`, `release-close` | AC1-AC9/G1-G8, profiling 7. `main.py`, `live_acceptance.py`, retained release/cleanup wrappers and existing release notes. | Preserve existing stdout/parser and truthful human presentation. Original reviews/retro/closeout distinguish implemented, locally verified, deployed and independently live-verified results, including attributable cleanup. No successful HTTP/SDK envelope or agreed partial report is release acceptance. |
+
+### Localized blocker and work-conserving next steps
+
+The exact CLI denial gates the denied inspection and dependent native readiness,
+publication and traffic, not architecture, original correction review, affected
+offline qualification or approved IP-S3 evidence/comparison preparation.
+Only supported interactive resolution of that exact approval, with concrete
+changed evidence, permits original DevOps to reassess; this turn does not retry
+the call, diagnose RBAC/authentication/network failure or invent an alternate
+route. Routine project authority is already supplied, not a new approval request.
+
+Scrum Master owns the smallest remaining task/handoff graph and Git integration:
+collect the original correction reviews and affected qualification, schedule
+approved independent IP-S3 preparation, and preserve the partial IP-S1/IP-S2
+sprints. No new source defect or missing independent implementation is established
+by these inputs. Do not duplicate accepted reader/bridge/consumer construction,
+skill delivery, negative SDK research or source delivery merely to create tasks.
+Existing unproven hosted capture is an operation-scoped evidence requirement,
+not permission to add infrastructure or claim fixture coverage as live proof.
+
+Retain deterministic gates before Decision-1, trusted parent/exact assignment,
+immutable role outputs/prerequisites, ETag publication, MAF checkpoints and
+write-ahead UNKNOWN holds. Preserve held parents and known response IDs; no
+uncertain-effect replay or retroactive ingress capture. Correct identity only
+when an observed defect and supported contract justify it, through existing
+Developer/reviews/checks and affected common-package release gates. No guessed
+headers, call-ID-as-user substitution, secret retrieval, production profile,
+external submission or infrastructure/RBAC/network/quota changes.
+Historical COMMON rollback provenance remains **WAIVED, never PASS**.
+Actual publication, initial collaboration, continuity, recovery, isolation,
+cleanup and original review/retro/closeout all remain incomplete.
+
+### Verification of this IP-S2 refinement
+
+The normal `scripts/Test-Repository.ps1` with the existing explicit Python
+passed index, 137-file public-boundary, parser/frontmatter and whitespace checks.
+Git-filtered diff assertions confirm four addition-only documentation overlays;
+canonical model counts/support/step references, mapped application paths and
+unchanged unowned index/specification hashes passed. An initial decoded
+`git show` suffix assertion failed; preservation was checked using Git's own
+filtered diff rather than assuming decoded text equality. No files were added,
+no graph/ownership boundary changed and no index refresh was needed.
+No application tests, Azure commands, denied CLI inspection, private settings,
+authentication, packaging, publication, traffic or cleanup were executed here.
+The attributed E2E/DevOps results above are not new executions. This architecture
+is owner-accepted for original Product Owner/Critic/Red Team review, not
+collective agreement or release acceptance.
+
+## IP-S1 scoped amendment: skill-only integration identity
+
+October 22, 2026. This disposition changes only `IP-S1-SKILL-DELIVER`.
+Apply the two required decisions at exact origin
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SKILL-DELIVER/AssignedWorkDeveloperLoop`:
+`SKILL-DELIVERY-IDENTITY-CONFLICT` and `SKILL-REMOTE-VERIFICATION`.
+Their reconciled source is current-run context audit
+`7b79d02c58a5d25175297ec2b8cd8085714adce4f62cc4157c3943f2387a8484.json`.
+This is the authorized bounded identity amendment, not permission to publish
+excluded planning ancestry or reopen accepted skill documentation.
+
+### Affected model and contract
+
+The canonical solutionModel referenced below stays unchanged: component
+**Guarded lab release toolchain**, flow **Exact-source guarded release**,
+steps `release-join` and `release-close`. Actual changed content remains solely
+`.github/skills/lab-deployment/SKILL.md`. Original documentation acceptance is
+retained from audit
+`dead28119b47d7edf0da2ab8fce9d21557af27622f14addad4d2637570a2c055.json`,
+with affirmative Architect/Critic votes for source commit
+`5c94f1f302c76f9f4222ee569b1e8aee2fcc4d59` and skill blob
+`ac10b0395a5ae034735d46210f7310b8ac5de7a1`.
+
+Inspection confirms 13 planning-only ancestors between delivered observation
+`f9fcd9cf4f04075e609196ebb90b30e09a91dd98` and that skill commit's parent.
+Consequently exact original-commit publication conflicts with the assignment's
+ancestry exclusion. That exclusion remains binding. Replace only the required
+delivery identity with a separately reviewed skill-only integration identity;
+the accepted content identity remains unchanged.
+
+### Smallest receiving handoff
+
+Scrum Master supplies a self-contained scoped replacement graph to the existing
+Developer, preserving the outer SprintPlan. Integration must use a freshly
+verified authorized remote feature tip in an isolated worktree or equivalent
+isolated integration context; never switch the shared checkout. Retain the
+original commit on a named branch. The integration commit message must durably
+identify task `IP-S1-SKILL-DELIVER`, the original full commit, the actual retained
+branch and the reason direct publication was rejected (excluded planning-only
+ancestry). Record original and integration identities; do not invent a branch
+or receipt before it exists.
+
+Before delivery, original Architect/Critic review verifies only the integration
+delta, outgoing ancestry, provenance and identical skill blob. No repeat of
+accepted documentation validation is needed. Publish only the explicit reviewed
+integration commit, non-force, to `feature/customer-hosted-session-prototype`;
+independently query the remote commit and read back its skill blob. Incompatible
+concurrent ref movement returns to Scrum Master without overwrite or automatic
+moving-HEAD substitution. Preserve all existing history and index/specification
+overlays. No history rewrite, deletion, additional publication scope,
+authentication, deployment or operational mutation is introduced.
+
+### Evidence state and blast radius
+
+The skill is implemented and locally documentation-validated/reviewed. The
+existing delivery audit reports remote `f9fcd9cf`; this architecture turn does
+not refresh or assert current remote state. Integration construction, integration
+review, remote delivery and independent commit/blob readback remain pending.
+Only those skill-delivery criteria are affected; they are not waived by this
+accepted architecture disposition.
+
+Original later-runtime E2E qualification and eligible original DevOps work remain
+independent, with their smallest genuine prerequisites and original reviewers.
+This amendment changes neither canonical runtime modules nor deployed/live
+states. Actual AC1-AC9/G1-G8, held/UNKNOWN effects, attributable cleanup and
+original review/retro/closeout remain required. COMMON rollback provenance
+remains **WAIVED, never PASS**. Coordinator/specialist tier contracts are
+unaffected; the client-release tier carries this same scoped disposition.
+
+Scoped checks passed: both prior document suffixes are unchanged, accepted
+commit/blob references match Git, and the two-path whitespace check is clean.
+Original sprint architecture and skill acceptance votes, and the reconciled
+governance instructions, were opened from their exact current-run audits.
+No runtime or repository-wide suite was run for this documentation-only
+amendment; the earlier reported repository-check denial was not retried.
+These checks verify the disposition, not integration or live capability.
+
+## Current IP-S1: qualify retained observation source after transport recovery
+
+October 22, 2026. Apply accepted Architecture `fe8d6432b66bcce396bb200d547fa0ca2ac32926`,
+ReleasePlan `01f0cd55a4c55608152c94185c89e5e5b5a58b9e` and SprintDesign
+`c5c40239b342bfd40be3d2ff3c448d90bc7833e5`. Opened current outcome audits
+under `gh-dynamic-workflows/.delivery-runs/76e49846-d1f2-4c9d-86ff-ee268dd47c2c/context/`:
+Architecture `086d0f474c2573fed97813a1c5b1da8ad3f6da42c2c470cd3a6b3f8a45db7db5.json`,
+ReleasePlan `f028ee204f0feabcbe764305c58e458fa6d6b57413c6a947f5be0754f66a31d8.json`,
+and SprintDesign `4f986ada9fe598b67ab0ceb0c6bf17bc8edd1f68d1646e44c1c7539b85ab3229.json`.
+Each records agreement and affirmative original reviewer votes; SprintDesign's
+Product Owner/Critic collection is now complete. Those votes accept documents,
+not later runtime qualification or live capability. Both supplied
+priorDispositions arrays are empty; no reconciled correction is supplied.
+
+### Retained solutionModel and current scope
+
+The sprint's solutionModel is the single canonical
+[components/flows/steps model](customer-prototype-architecture.md#solutionmodel)
+at accepted `fe8d6432`: ten components, five triggered flows, eighteen steps.
+Keep its IDs, names, support links and personas unchanged. The accepted
+[resumption contract](customer-prototype-architecture.md#native-authentication-resumption-architecture-october-22-2026)
+governs over historical exhaustion/readiness conclusions below. Restored
+Copilot reachability permits new original-role execution, not denial bypass,
+effect replay, a diagnosed identity remedy or release PASS.
+
+| Canonical components / flow steps | Approved criterion and actual source | State and smallest receiving handoff |
+| --- | --- | --- |
+| Trusted identity and private transport; Hosted coordinator, Hosted architect, Hosted reviewer / `collaboration-bind`, `collaboration-design`, `collaboration-review` | Profiling 1-3; AC1/AC5/AC7. `demo/foundry.py`, `demo/host.py`, `demo/diagnostics.py`, `demo/workflow.py`; `tests/test_profiling_integration.py` and focused diagnostic regressions. | Implemented/local-reviewed through `f9fcd9cf`; original E2E must qualify actual later bytes with selected lab `9b4919d8`, loaded roots, rejection/redaction/context/streaming/cancellation and known-response recovery. Older accepted `c52786b7` join is not replayed. |
+| Private Blob artifacts and effect journal; Parent and specialist conversation state; MAF workflow checkpoints / `collaboration-return`, `continuity-verify`, `recovery-verify`, `isolation-verify` | Profiling 5-7; AC2-AC5/G1-G8. `demo/effect_observation.py`, `demo/private_effect_capture.py`, `scenario_state_reader.py`, `live_acceptance.py`. | Accepted local contracts, not hosted proof. Consumer is caller-owned and opt-in; downstream execution must establish installation before inherited background work, exclusive retention, independent anchors and quiescence. Typed original-encoding and consumed-history gaps stay explicit. |
+| Guarded lab release toolchain / `release-join`, `release-package` | Profiling 2-4; AC7. `Test-Demo.ps1`, `scripts/Test-Repository.ps1`, `package_guard.py`, retained selected-lab release helpers. | Original E2E current-source qualification/package-input closure precedes dependent original DevOps packaging, not all independent work. New private stage must bind later runtime, image/dependencies/Linux checks and all three roles to one new common package. Historical stage remains untouched. |
+| Guarded lab release toolchain / `release-join`, `release-close` | Requested deployment-skill edit; AC8. `.github/skills/lab-deployment/SKILL.md`. | Independent original Developer review/scoped delivery lane. Preserve supervising-session diff; designate its owner before editing. Git reconciliation/non-force delivery uses exact reviewed refs and independent readback, never moving HEAD or a planning-only push. |
+| Guarded lab release toolchain / `release-discriminate`, `release-close` | Profiling 4-7; AC1-AC9/G1-G8. Retained publisher and `live_acceptance.py`. | Publication and live results remain unverified. Original DevOps owns serialized publication, current-effect readiness and new synthetic purpose/intent before traffic; original review/retro/closeout retains actual acceptance and owned cleanup. |
+
+### Localized dependencies and preserved boundaries
+
+Scrum Master now decomposes the two IP-S1 lanes and assigns Git reconciliation
+through the original SprintPlan. No new role, framework, dependency, public
+schema, resource, trust rule or whole-sprint dependency is introduced.
+E2E failures return only demonstrated affected defects to original Developer
+and reviewers, followed by affected rechecks. Skill delivery proceeds without
+waiting for live acceptance. Do not rebuild accepted reader/bridge/consumer,
+repeat negative research or manufacture an E2E-shaped documentation task.
+
+Original DevOps revalidates the actual retained execution route: per-output
+`azd-wsl-config` needs its own supported Azure CLI bridge and pinned beta.18,
+delegated status and expected account scope. Separate preflight configuration
+is not an implicit wrapper override or current private-connectivity proof.
+Any actual new denial binds its affected operation; no alternate-tool bypass.
+No infrastructure/RBAC/quota/network/DNS/registry/VPN changes, production profile,
+secret retrieval or external submission is authorized.
+
+Preserve held parents, known responses and UNKNOWN effects; retrieval is not
+a new invocation. No retrospective ingress observation or guessed identity
+substitution. Hosted capture gaps gate only claims that consume that evidence,
+not independent approved preparation. After actual non-held initial completion,
+follow-up and once-only supported stop/resume consume their genuine handoffs;
+separate-parent isolation needs final bindings and safe comparison scope,
+not successful recovery. IP-S1/IP-S2/IP-S3 remain partial. Historical COMMON
+rollback provenance remains **WAIVED, never PASS**. Current package bindings,
+real AC1-AC9/G1-G8 and attributable cleanup remain required.
+
+### Verification of this sprint refinement
+
+Read-only assertions passed for all four preserved historical suffixes,
+unchanged accepted canonical model (10 components/5 flows/18 steps), valid
+support/step references, mapped source existence and all original affirmative
+votes in the three current audits above. The normal
+`scripts/Test-Repository.ps1 -Python <explicit-existing-python>` invocation
+was tool-denied because no interactive response was available; it did not run.
+The exact missing permission is unidentified. No alternate route or retry was
+used. Repository-wide validation therefore remains unverified for this edit;
+that denial establishes neither missing project authority nor an Azure defect.
+No runtime, lab source, dependencies, authentication, packaging, deployment or
+live traffic changed or ran. Only these sprint/tier documentation paths are
+owned by this turn; the existing index, skill and specification overlays remain
+unowned. Original Product Owner/Critic/Red Team review follows owner submission.
+
+## IP-S1 continuation 3: reconcile accepted delivery without replaying release
+
+October 22, 2026. The [separate round-3 assessment](customer-prototype-profiling-continuation-3-architecture.json)
+consumes accepted fixed observation-ref delivery `f9fcd9cf` and the subsequent
+original IP-S2/IP-S3 exhaustion reviews. All eleven tracked paths after that
+delivered ref are architecture/planning/index only. The canonical ten-component,
+five-flow model, prior contracts and accepted construction remain unchanged.
+Its per-flow source/criterion mapping separates implementation/local fixtures
+from missing final deployed bindings and independently verified cloud results.
+
+The historical Linux closure repair and old changed-join handoff are accepted;
+do not rebuild them. Later observation runtime still requires affected original
+E2E/package qualification. No eligible `sourceSubjects` or new exact native
+approval-resolution evidence is supplied, so tasks/resumes/rechecks are empty.
+Host ownership, capture installation/coverage/anchors, original-encoding export
+and consumed model-history provenance remain unproven; another wrapper is not
+proof. Isolation remains recovery-independent after its own final bindings and
+safe comparison scope. No unchanged denial retry or planning-only push.
+
+This bounded architecture assessment is ready for original review, not release
+acceptance. Original Scrum Master carries the incomplete checkpoint through
+existing review/retro/closeout. All three sprints remain partial; actual common
+publication, AC1-AC9/G1-G8 and attributable cleanup remain required. Historical
+COMMON rollback provenance remains **WAIVED, never PASS**. Held parents and
+UNKNOWN effects remain unchanged.
+
+## IP-S3 continuation 2: retain the incomplete live comparison boundary
+
+October 22, 2026. The [separate IP-S3 assessment](customer-prototype-profiling-s3-continuation-2-architecture.json)
+maps continuity, once-only recovery, independent isolation and measured delivery
+to unchanged canonical components/steps, approved criteria and actual modules.
+Current `eac8f2f6` adds only architecture/planning/index ancestry after accepted
+observation ref `f9fcd9cf`. Opened original consumer/delivery final votes
+`0e118edd`/`b542da12` and preceding architecture/planning `de1de398`/`14197a78`;
+those bounded handoffs are accepted, not work to redispatch.
+
+Opened exact blocked `ae0bade0`: original reviewers agree with its partial
+report but all retain **taskComplete:false**. Native approval resolution is
+absent, exact missing permission unidentified. Final package/publication and
+live conditions remain unmet. Old accepted `4d29a861` qualifies the `de2deae`
+documentation-only/offline join, not later observation runtime. Affected
+original E2E/package qualification remains required; no eligible new source
+subject or changed native condition is supplied, so no resume/recheck is emitted.
+
+Actual host/consumer/background fixture and unchanged aggregate comparisons
+confirm the remaining boundaries: opt-in receipt retention needs a caller-owned
+exclusive destination, installation before background creation, independent
+anchors/quiescence and actual hosted coverage. Typed local persistence is not
+original-encoding export; pending state and response IDs are not consumed
+model-history proof. No new supported seam, source defect or comparison-contract
+decision justifies another adapter, codec, automatic activation or research loop.
+
+Audited all approved sprints and already accepted companion/status/fixture/Git
+preparation. No new useful source candidate remains in this packet. Return
+**exhausted** with empty tasks/resumes for original Scrum coordination, not
+release success. Isolation remains independent of recovery success after its
+own final-binding/safe-scope handoff; aggregate joining does not serialize it.
+All three sprints remain partial. Preserve held/UNKNOWN effects, actual
+AC1-AC9/G1-G8, attributable cleanup and original review/retro/closeout.
+Historical COMMON rollback provenance remains **WAIVED, never PASS**.
+
+## IP-S2 continuation 2: assess the drained construction boundary
+
+October 22, 2026. The [separate bounded assessment](customer-prototype-profiling-s2-continuation-2-architecture.json)
+supersedes the earlier **pending delivery state**, not any accepted source or
+criterion. Opened final audit `b542da12`: original Architect/Critic both agree
+and complete fixed-ref delivery/readback of `f9fcd9cf`. Current `709c4a0f`
+adds only architecture/planning/index ancestry. Do not assign another push for
+documentation ancestry or rebuild accepted reader/bridge/consumer work.
+
+The canonical ten-component/five-flow/eighteen-step solutionModel remains
+unchanged, with criterion/module/state mappings in the assessment. Accepted
+local profiling/observation and substantive Git delivery are distinct from
+changed-runtime original E2E/package qualification, hosted capture installation,
+independent anchors/quiescence and cloud acceptance. Current host does not
+auto-install the opt-in private consumer. Its caller-owned handle contract is
+not a supported remote destination or ownership proof.
+
+Audited all three approved sprint contracts, final companion/status/integration
+votes, accepted collection/typed-export negatives and original DevOps audits
+`dfd47372`/`ae0bade0`. No new supported pure-source gap or permission-resolution
+evidence is supplied. Exact native denial remains local to native readiness/
+packaging/publication and dependent live operations; its missing permission
+is unidentified. Source-only branches were independent and have been drained.
+Original-encoding attachment and consumed model-history gaps stay explicit,
+without private codecs, comparison waivers or repeated negative research.
+Isolation still does not depend on recovery success.
+
+This bounded continuation returns **exhausted**, empty candidate tasks and
+empty resumes, for existing Scrum coordination and original architecture
+review. No eligible new E2E subject is supplied; do not invent one or reopen
+accepted construction. Necessary changed-runtime original qualification remains
+required and cannot alone resolve native approval. Supported operator
+resolution evidence, a newly supported seam or an explicitly reviewed scope
+decision can justify future reassessment; unchanged waiting cannot.
+
+IP-S1/IP-S2/IP-S3 remain **partial**. Final common-package publication,
+non-held collaboration, same-parent continuity, once-only supported recovery,
+separate-parent isolation, attributable cleanup and original review/retro/
+closeout remain required. Historical COMMON rollback provenance stays
+**WAIVED, never PASS**. No denied command, live operation or historical
+held/UNKNOWN effect was replayed by this architecture assessment.
+
+## IP-S1 continuation 2: deliver newly accepted observation source
+
+October 22, 2026. The [separate continuation assessment](customer-prototype-profiling-continuation-2-architecture.json)
+updates all prior sprint states without changing the canonical ten-component,
+five-flow, eighteen-step solutionModel or original ReleasePlan. Opened original
+consumer audit `0e118edd`: Architect/Critic agree and complete bounded code
+`bafa3d6a` plus attribution clarification `f9fcd9cf`. The opt-in
+`demo/private_effect_capture.py` is now implemented and locally verified,
+**not deployed or independently live verified**. Earlier candidate descriptions
+below remain history, not instructions to rebuild the reader/bridge/consumer.
+Its injected exclusive-handle, existing `private_sink`, checkpoint/readback and
+conditional reconciliation contracts remain unchanged. Independent trusted
+anchors, quiescence, hosted installation/coverage and live cleanup remain
+caller/original DevOps obligations; fsync is not an observation certificate.
+
+One useful independent IP-S3 AC7/AC8 slice remains: this turn's actual
+`git ls-remote` returns application feature `de2deae`, an ancestor of reviewed
+`f9fcd9cf`. Opened earlier delivery audit `fed8eed3`: it accepted exactly
+`de2deae`/lab `9b4919d8`, not the subsequently accepted substantive observation
+source. One original Developer closeout candidate may deliver/read back the
+**fixed** `f9fcd9cf` target after checking original review coverage and fresh
+fast-forward safety. Never push moving HEAD, this amendment or later planning
+ancestry. Do not repeat unchanged lab delivery or turn documentation-only
+ancestry into another activity carousel. Scrum owns decomposition/dispatch,
+Git reconciliation and the original review/retro/closeout handoff.
+
+Opened original changed-join E2E `4797ab07`: that bounded source pair remains
+accepted, not reopened merely because the old blocker packet still cites it.
+New reader/bridge/consumer runtime is different and still needs affected
+original source/package qualification. No eligible `continuation.sourceSubjects`
+is supplied here; do not invent one or substitute a new Developer test task for
+original E2E. Opened original DevOps `f7b942e9`/`ae0bade0`: cloud criteria remain
+incomplete. The native denial is unchanged, exact missing permission unidentified;
+Git delivery does not resolve it. No DevOps resume/recheck is emitted.
+
+Actual `demo/host.py:main` does not install capture; the accepted pinned local
+fixture installs it with an explicitly owned temporary file before background
+creation. No supported private hosted destination/ownership or cross-process
+coverage has been demonstrated. Do not invent an automatic capture registry,
+path/configuration or another wrapper to claim that interval. Accepted typed
+original-encoding attachment and consumed-model-history negatives are preserved;
+no repeated inventory, private codec, schema/pin change or guessed history proof.
+Independent isolation remains schedulable after final bindings and safe scope,
+not after recovery success. No global exhaustion or unattended-readiness claim.
+
+Exact prior disposition references are retained in the amendment. Historical
+COMMON rollback provenance remains **WAIVED, never PASS**. Publication and
+actual AC1-AC9/G1-G8, held/UNKNOWN preservation, attributable cleanup and original
+review/retro/closeout remain required. This turn changes architecture only;
+the remote read is not a push, deployment or live observation.
+
+This architecture turn ran documented `Test-Demo.ps1` with the existing absolute
+Python and explicit selected-lab root: dependency checking, **359 tests in
+60.462 seconds** and compilation passed; exit zero. `Test-Repository.ps1`
+passed current inventory, **130 public files**, boundary/JSON/PowerShell/
+frontmatter/whitespace checks. Direct assertions preserved canonical graph,
+original plans, all four historical document suffixes after LF normalization
+and unowned specification bytes. These shared-checkout checks include the
+preserved unowned index/specification overlay and do not replace formal
+new-runtime original E2E or hosting/Linux/live qualification.
+
 ## IP-S3 continuation 1: retain actual private occurrence receipts
 
 October 22, 2026. The [separate architecture amendment](customer-prototype-profiling-s3-continuation-1-architecture.json)

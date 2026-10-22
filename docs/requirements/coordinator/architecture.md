@@ -1,5 +1,145 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Permission-recovery continuation 1
+
+Consume the [bounded continuation amendment](../../customer-prototype-permission-recovery-continuation-1-architecture.json).
+Canonical coordinator/state/checkpoint contracts are unchanged. Caller-owned
+capture construction does not establish hosted installation, destination or
+lifetime. No new supported integration input is supplied; no speculative
+activation is assigned. Isolation remains independent of recovery success.
+
+## Current IP-S3: separate capture ownership from coordinator correctness
+
+Consume the [current IP-S3 disposition](../../customer-prototype-sprint-architecture.md#current-ip-s3-comparison-and-hosted-capture-disposition).
+Hosted coordinator and shared support IDs are unchanged. Existing caller-owned
+`private_sink` / `PrivateEffectCapture` are not installed hosted collection.
+Do not invent a destination or activate a logger to close missing ownership;
+the concrete supported host-context/lifetime handoff precedes integration.
+A sink cannot attest platform caller resolution or consumed model history.
+Continuity needs completed initial collaboration; recovery needs genuine
+two-turn/once-only prerequisites; isolation does not depend on recovery.
+No runtime defect or new coordinator implementation is established.
+
+## Current IP-S2: distinguish outbound observation from caller attestation
+
+Consume the [current attestation refinement](../../customer-prototype-sprint-architecture.md#current-ip-s2-server-side-attestation-boundary-after-guarded-publication).
+Canonical Hosted coordinator, shared supports and collaboration/continuity/
+recovery steps remain unchanged. `demo/workflow.py` and `demo/foundry.py`
+retain resource-owned credentials, opaque context and exact trusted assignments.
+The deployed runtime has an observed outbound delegation/call presence, not an
+independently attested authenticated principal or cross-process join.
+`622c160` qualifies a synthetic credential fixture only. The supported SDK
+hooks do not resolve the opaque call on behalf of the platform; no guessed
+header, token parsing or trust bypass is authorized. Existing diagnostics/
+caller-owned capture are not a platform attestation service. Original Scrum
+Master/DevOps receive the private current-pair tracing handoff. Preserve
+UNKNOWN effects/held parents, genuine completed-initial/two-turn prerequisites
+and once-only stop semantics. Independent isolation does not wait for recovery
+success. Published versions are not successful collaboration or hosted provenance.
+Historical unpublished/permission status below is not current readiness.
+
+## Current IP-S3 recovery: retain completed-parent and checkpoint contracts
+
+Consume the [IP-S3 recovery refinement](../../customer-prototype-sprint-architecture.md#current-ip-s3-recovery-consume-accepted-qualification-preserve-live-handoffs).
+Canonical Hosted coordinator and shared support IDs stay unchanged.
+`demo/workflow.py`, `demo/foundry.py` and `live_acceptance.py` bind continuity
+to a completed NON-HELD initial parent and unchanged child identities/pins,
+fresh responses, current artifacts and no extra creations. Recovery consumes
+actual two-turn proof, once-only confirmed stop and retained checkpoints/effects;
+known-response retrieval is not a new invocation. Accepted offline runtime
+qualification does not establish hosted capture installation, independent
+anchors, quiescence, typed encoding or consumed-history provenance.
+Preserve deterministic gates, ETags, exact assignments and UNKNOWN holds.
+No new coordinator repair is established; independent preparation remains
+eligible without native approval. Actual live criteria stay incomplete.
+
+## Current IP-S2 recovery: qualified diagnostics are not initial collaboration
+
+Consume the [current IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-recovery-current-package-and-observable-initial-collaboration).
+Keep canonical **Hosted coordinator**, supporting identity/artifact/checkpoint/
+conversation/routing components and `collaboration-bind` through
+`collaboration-return`. Original E2E accepts later `f9fcd9cf` with lab
+`9b4919d8`; lab `ceaba6ee` changes only Linux test mounting/provenance and
+needs original affected review/qualification, not coordinator reconstruction.
+`demo/workflow.py`, `demo/foundry.py`, `demo/host.py`, `demo/diagnostics.py`
+retain supported hooks, deterministic gates before Decision-1, ETag publication,
+exact trusted assignment, immutable prerequisites and write-ahead holds.
+
+Before a fresh synthetic invocation, original DevOps needs current common-package
+bindings, effect readiness and recorded purpose/intent. Keep send, HTTP headers,
+stream completion and execution completion distinct. Caller-owned capture in
+`demo/private_effect_capture.py` is not automatically installed hosted coverage;
+ownership, background coverage, anchors/quiescence and consumed-history evidence
+remain unproven. Hand completed non-held initial bindings/artifacts to IP-S3;
+diagnostic success never satisfies that handoff or authorizes identity mapping.
+Native CLI approval blocks dependent effects only; independent preparation and
+original reviews continue. Preserve held/UNKNOWN parents and known-response-only
+recovery; no trust relaxation or live capability is claimed.
+
+## Current IP-S1: qualify existing trusted observation paths
+
+Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-ip-s1-qualify-retained-observation-source-after-transport-recovery)
+and accepted Architecture `fe8d6432`; canonical solutionModel IDs/supports stay
+unchanged. `demo/workflow.py`, `demo/foundry.py`, `demo/host.py` and
+`demo/diagnostics.py` retain deterministic gates, parent binding, ETag publication,
+MAF checkpoints and supported request/background diagnostics. Profiling 1-3/
+AC1/AC5/AC7 require original E2E qualification of later `f9fcd9cf` with lab
+`9b4919d8`, not replay of the older accepted join. No coordinator repair is
+justified merely by restored model transport. Caller-owned
+`demo/private_effect_capture.py` is not auto-installed hosted coverage;
+anchors/quiescence and consumed-history provenance remain downstream evidence
+requirements. Diagnostics never authorize or suppress rejection. Preserve
+streaming/cancellation, immutable refs and held/UNKNOWN effects.
+
+## IP-S1 continuation 3: retain paired diagnostics and trusted dispatch
+
+Apply the [round-3 assessment](../../customer-prototype-profiling-continuation-3-architecture.json).
+Accepted profiling, scoped reader, late-preserving bridge and private consumer
+remain source/local capabilities, not hosted capture or consumed model-history
+proof. `demo/host.py`, `demo/workflow.py` and `demo/foundry.py` retain supported
+hooks, deterministic gates and trusted parent binding. No new supported repair
+or identity substitution is justified. No new coordinator construction task
+is identified; affected original qualification and actual non-held collaboration
+remain incomplete. Canonical component/step IDs and prior suffixes are retained.
+
+## IP-S3 continuation 2: preserve the accepted coordinator and missing live handoffs
+
+Apply the [IP-S3 assessment](../../customer-prototype-profiling-s3-continuation-2-architecture.json).
+Canonical components/supports/steps and coordinator source remain unchanged.
+Accepted receipt retention/delivery closes the prior source candidates, not
+initial collaboration or continuity. Keep exact trusted parent/child binding,
+immutable prerequisites, ETag publication, checkpoint/journal reconciliation,
+late incomplete receipts and held/UNKNOWN behavior. No arbitrary header-to-
+trusted-context mapping or automatic capture activation is justified.
+Completed NON-HELD initial evidence still gates follow-up; completed two-turn
+proof gates supported stop. Actual hosted ownership/coverage and independent
+anchors are unproven. No new construction or unchanged DevOps resume is emitted.
+
+## IP-S2 continuation 2: retain the delivered local observation boundary
+
+Apply the [bounded assessment](../../customer-prototype-profiling-s2-continuation-2-architecture.json).
+Canonical components, support links and flow steps remain unchanged. Original
+delivery audit `b542da12` accepts substantive observation ref `f9fcd9cf`;
+it does not establish hosted collector installation, independent anchors or
+quiescence. No new coordinator correction or source-local adapter is justified.
+Keep trusted preparation/rejection, ETag publication, checkpoints, late receipt
+retention, streaming/cancellation and UNKNOWN holds intact. Initial completed
+non-held collaboration remains unverified. Empty new work is an assessment
+boundary, not coordinator acceptance or permission to resend a held operation.
+
+## IP-S1 continuation 2: retain accepted observation behavior
+
+Apply the [current cumulative assessment](../../customer-prototype-sprint-architecture.md#ip-s1-continuation-2-deliver-newly-accepted-observation-source).
+Canonical coordinator/state/identity/artifact/checkpoint IDs and support links
+are unchanged. Reader/bridge/consumer source through `f9fcd9cf` is accepted
+within its local task boundaries, not deployed/live verified. Preserve trusted
+bindings, late receipt retention, unknown holds, streaming and rejection.
+No coordinator edit or capture auto-activation is assigned. Caller-owned
+private storage, independent quiescence/anchors and actual hosted coverage
+remain unproven original DevOps handoffs. Exact reviewed Git delivery is
+independent of native readiness, not evidence that either readiness or actual
+initial collaboration has passed.
+
 ## IP-S3 continuation 1: consume accepted observations without changing trust
 
 Apply the [current cumulative amendment](../../customer-prototype-sprint-architecture.md#ip-s3-continuation-1-retain-actual-private-occurrence-receipts).

@@ -1,5 +1,371 @@
 # Customer hosted-session prototype: blocked release notes
 
+## Credential-route discriminator and receiving design boundary — October 22, 2026
+
+**OFFLINE ONLY; needs original Architect/Scrum coordination, not cloud PASS.**
+This addresses the next discriminator for
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-cloud-verification"]`.
+Retain satisfied `release-current-common-package` and
+`release-guarded-publication` at that exact origin: no runtime, package,
+deployment, authentication, inference or held-state operation was changed.
+The prior profile receipt was independently hash-matched to
+`7aef63470037dc5c724f57392640d16908d262112051a0b226f6ae3fc1337979`.
+
+The strengthened existing resource regression now observes **synthetic bearer
+equality at the actual public OpenAI/httpx2 boundary**, not just delegation
+headers. It checks the same resource-owned credential, the SDK-requested
+`https://ai.azure.com/.default` scope and independence from an unrelated
+`OPENAI_API_KEY`. A new negative control makes credential acquisition fail:
+the public SDK propagates `CredentialUnavailableError`, makes zero transport
+sends and does not fall back to the environment key.
+
+This exposed a **fixture issue**, not a demonstrated hosted authentication
+defect: the old unrestricted credential `MagicMock` implicitly supplied
+`get_token_info`, so its configured `get_token` result was not the bearer
+provider's selected path. The fixture now explicitly supplies synthetic
+`AccessTokenInfo` and verifies `get_token_info` is awaited exactly once and
+legacy `get_token` is not awaited. No real token is requested, decoded or logged.
+The first focused launch also inherited a nonsynthetic project environment and
+was rejected before sending by `CANDIDATE_PARENT_BINDING`; subsequent checks
+set the synthetic project/model values explicitly. No trust gate was weakened.
+
+Inspection of the installed public SDK surface narrows the next seam:
+
+- `AIProjectClient.get_openai_client` uses the supplied credential's bearer
+  provider at the scope above. The measured local route rules out an implicit
+  environment-key substitution **in this fixture**, not in an unobserved
+  historical deployed request.
+- Public `AccessTokenInfo` exposes token, expiry, token type and refresh time,
+  **not an independently authenticated principal identifier**. Do not parse its
+  token or mistake acquisition success for principal attestation.
+- Public `AgentSessionResource` exposes session, version, status and lifecycle
+  timestamps, **not the caller principal**. Configured agent identity metadata
+  or another successful session GET cannot fill that gap.
+- The public request context documents call-ID server-side resolution and
+  container-only `x-agent-user-id`; it supplies no client-side resolution API.
+  Keep the opaque call ID opaque and the receiver's trust checks unchanged.
+
+The already-cited public [delegation contract][credential-delegation] still
+requires the explicit impersonation action and describes missing permission as
+HTTP 403. It does not explain the retained HTTP-200/rejected-execution interval
+or establish a missing assignment here. No RBAC mutation or permission diagnosis
+follows. Public documentation was reread for constraints, not claimed as a new
+research milestone.
+
+**Smallest receiving decision — original Architect / Scrum Master:** select
+and scope a supported, request-correlated **server-side caller/identity-resolution
+attestation seam**, or record that seam unavailable and prepare the private
+bounded tracing handoff. Current public credential/session readbacks cannot
+supply it. Any hosted capture integration must name its supported private
+destination, ownership and independent anchors before installation; this
+round does not invent that contract or reopen accepted consumer research.
+Route a demonstrated source defect through the original Developer and affected
+E2E reviews. Do not republish this test/documentation-only change or send another
+synthetic collaboration merely to reproduce the unchanged failure.
+
+This is a localized design/evidence handoff, **not global work exhaustion or
+a user-only approval request**. Independently scheduled isolation still needs
+its own final bindings and a safe completed comparison scope, as specified by
+the accepted IP-S3 companion; recovery success is not its prerequisite.
+The current held initial parent does not supply that completed comparison.
+Continuity, genuine once-only recovery, hosted provenance, original downstream
+reviews/retro/closeout and AC1–AC9/G1–G8 remain incomplete. No owned cloud
+process/listener was started this round. Held/UNKNOWN effects and historical
+seals are untouched; COMMON rollback provenance remains **WAIVED, never PASS**.
+
+Verification: the two affected focused cases passed in **0.351 seconds**.
+The documented application entry point, with explicit existing lab Python,
+selected-lab root and synthetic project/model environment, passed dependency
+checking, **364 tests / 74.878 seconds** and compilation. Repository checks
+passed the current index and **139-file** public boundary. An initial repository
+check omitted its mandatory `-Python` argument and did not run; the corrected
+explicit invocation passed. Selected tooling remains clean at `ceaba6ee`; no
+retained suite rerun or dependency installation was needed. These are affected
+local checks, not final-package, native-amd64-host or hosted-principal proofs.
+
+[credential-delegation]: https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agent-permissions#delegate-the-end-user-identity
+
+## Hosted structured identity interval — October 22, 2026
+
+**PARTIAL; cloud acceptance remains incomplete.** This continues
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-cloud-verification"]`.
+The same origin's accepted common package and guarded publication remain
+satisfied for versions **19 / 17 / 25**; no package, deployment or inference
+was repeated.
+
+The retained observer previously discarded the structured profiling events.
+`live_acceptance.py` now strictly projects the existing emitter's closed
+schema, including wrapped logstream messages. It rejects extra/private fields,
+wrong roles and malformed values, preserves occurrences without deduplication,
+and bounds each session stream to 30 seconds, 2 MiB and 512 profile records.
+Legacy diagnostic-only callers keep their original byte limit. This changes
+the local read-only observer, not hosted runtime, authentication or trust.
+
+An exclusive prospective intent preceded one retained **Observe** execution
+against the newly held parent and known child. Receipt
+`live-current-common-20261022-DevOps/connectivity-073124da375449f4abdb760a2848dd4f-receipt.json`
+has SHA256
+`7aef63470037dc5c724f57392640d16908d262112051a0b226f6ae3fc1337979`.
+All private paths here are relative to the authorized permission-recovery root.
+
+- Collection exited zero with **zero inference**, unchanged held-parent bytes,
+  and proven closure of its owned jobs and listeners.
+- Architect session/version collection retained **23** structured events.
+  A POST `/responses` ingress event observes delegation **absent**, platform
+  `x-agent-user-id` **absent**, and call **nonempty**. A preparation rejection
+  shares its local observation alias: request user **absent**, scope user
+  **unavailable**, call **nonempty**. Response-bound legacy diagnostics still
+  identify `NATIVE_HOST_PRINCIPAL`. A 200 response-header event is not execution
+  success.
+- Coordinator session/version collection retained **109** structured events.
+  Its actual outbound POST transport checkpoint observes delegation **nonempty**,
+  platform user **absent**, call **nonempty**; headers and stream-completion
+  checkpoints also survive. This advances beyond merely observing client
+  context before transport. It does not identify the bearer principal.
+- Both streams ended at their time bound. Session URLs/version bindings and
+  local aliases are retained, but aliases do not independently prove a
+  cross-process response/operation join. The parent stream lacks some early
+  ingress/context checkpoints. No complete historical log, complete occurrence
+  accounting, authenticated-principal measurement or platform translation
+  diagnosis is claimed. Public delegation-header absence alone proves no loss.
+
+Four added observer regressions cover strict redaction, malformed/extra data,
+fragmented SSE, occurrence preservation and record/byte bounds. The existing
+known-response/no-resend regression now explicitly requires structured capture.
+Initial focused execution exposed its old keyword-argument expectation; that
+assertion was updated, not removed. A full changed-observer application run
+passed **363 tests / 77.422 seconds** with explicit existing Python and linked
+lab. Final consolidated-source execution also passed **363 / 59.220 seconds**;
+repository checks passed the current index and **139-file** public boundary.
+No manifest change, dependency installation or retained-tool modification.
+
+Executed pre-consolidation observer sources are exclusively retained in
+`profile-monitor-source/`; their bytes independently match the *pre-execution*
+intent hashes. The parser and four fixtures were subsequently consolidated
+into existing files to preserve the unowned index/specification overlay.
+Historical intent, receipt and source hashes were not resealed.
+
+**Receiving owners — Architect / Scrum Master:** select the smallest supported
+identity discriminator/correction and any necessary hosted capture integration
+against this new measured interval, then route source changes through original
+Developer/E2E reviews. No supported application fix follows from header presence
+alone; do not substitute IDs, remove trust gates or infer RBAC failure.
+The current host installs diagnostics but not the opt-in caller-owned durable
+effect consumer. A supported private destination, installation before inherited
+tasks, independent state anchors and quiescence remain required for hosted
+provenance; session logs do not supply them.
+
+Independent isolation is not made dependent on recovery: its implemented fresh
+parent path is available, but needs its own final readiness and safe comparison
+bindings/capture. This round did not send it or claim aggregate validation as
+its execution prerequisite. Continuity still requires a completed non-held
+initial turn; once-only stop/resume requires genuine two-turn evidence.
+No global exhaustion, user-only action, new approval stage or release PASS is
+asserted. Preserve all held/UNKNOWN effects and original downstream reviews,
+retro/closeout. COMMON rollback provenance remains **WAIVED, never PASS**.
+
+## Guarded common publication and actual initial failure — October 22, 2026
+
+**DEPLOYED; cloud acceptance FAILED, not complete.** This advances the required
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-guarded-publication"]`
+disposition. The same origin's `release-cloud-verification` remains unmet.
+Retain accepted packaging and qualification; no unchanged package or suite was
+repeated.
+
+- One serialized retained publisher replaced architect **18 -> 19**, reviewer
+  **16 -> 17** and coordinator **24 -> 25**. Every deploy exited zero; all three
+  authenticated readbacks are active, `python_3_13`, bundled, on common ZIP
+  `cb506ae15a8942d5dd6a8570cf5b29533e0d744621c4eb1b8d9b69cf1656b2f8`.
+  Each actual native upload package matched that hash before upload.
+  Accepted runtime remains `f9fcd9cf4f04075e609196ebb90b30e09a91dd98`;
+  selected tooling remains clean at `ceaba6eea5b0f6bf3c4e265f7fde40bb177aae6e`.
+- Exclusive prospective intent bound current/expected versions, package,
+  stage seal, accepted host and prior readback before launch. The retained
+  attempt additionally bound invoked sources and journaled version checks,
+  dispatch intent and UNKNOWN before each effect. Its 53-event journal has
+  contiguous sequence numbers, three successful service outcomes, successful
+  publication and proven inner/outer cleanup. Slow stage verification/copying
+  was monitored through the exact owner, not mistaken for inactivity or retried.
+  Publication elapsed **3,601.871 seconds**, measured from durable intent UTC
+  to final receipt filesystem UTC; this is not a sum of per-role CLI durations.
+- A separately identified synthetic Harbor initial invocation then ran once
+  through retained Acceptance with its own durable purpose/effect intent.
+  It checked the deployed package, created a new parent and sent the initial
+  turn. The terminal used known-response GET recovery after a stream exception,
+  **not another send**. Acceptance exited one with `PARENT_OPERATION_UNCERTAIN`.
+  The result is held at `SPECIALIST_INCOMPLETE`, with an UNKNOWN architect call.
+  The parent remains pending on coordinator version 25 with a known response.
+- A separate retained Observe invocation retrieved only that known parent and
+  child and exact hosted diagnostics. It exited zero with **zero inference**;
+  the held parent bytes were unchanged. The SDK parent envelope is completed,
+  but the architect response failed with `server_error`. Exact child diagnostics
+  show preparation rejection `NATIVE_HOST_PRINCIPAL`, SDK ingress
+  `has_user_id=false`, `has_call_id=true`. Parent diagnostics show architect
+  outbound delegated-user presence and a call matching its context. A
+  `ManagedIdentityCredential` log marker alone establishes no RBAC or storage
+  failure.
+- This localizes the observed identity gap between coordinator outbound
+  context and specialist SDK trusted-user resolution. It does **not** identify
+  the actual authenticated outbound principal, raw platform-delivered header
+  translation or a supported remedy. The retained observer limits were time
+  for child logs and bytes for parent logs; it did not export the complete new
+  structured ingress/context profiling stream. Do not infer header substitution
+  or weaken trust gates from these observations.
+- Publisher cleanup proves its Linux owner cgroup/listeners absent and temporary
+  read-only SSH namespace released. Both newly owned Windows connectivity
+  receipts prove their jobs empty and listeners absent. This does not certify
+  historical cleanup or reconcile older held/UNKNOWN effects.
+
+Private evidence remains in the authorized permission-recovery directory:
+
+| Evidence | SHA256 |
+| --- | --- |
+| `common-package-20261022-DevOps/multi-agent-zip-0fae990a578f484abc3be93a23e63ad5.json` | `dd7184cb39ce3caa148d98720f2e1a2c0f755820ae510e3851262ea60bd80c65` |
+| Same owner `.attempt.json` | `17d4ef9213979bceb5bfb5a9aa60396c78bb59407d61d83715a3c05e79f1f94b` |
+| Same owner `.events.jsonl` | `dd7973219f6e3690e567652197f5a863fd5f59a6dd995b85e474efc1bace1971` |
+| `live-current-common-20261022-DevOps/connectivity-f0d8410b7cf14405b33d41e13a7088c1-receipt.json` | `1509e8b80fc0db04506f4537d1d286d8b4a25ae8d516dbc62697d191580501d8` |
+| Same directory `connectivity-2644123bc81b46d285f741486daab225-receipt.json` | `22823a849e643b85382d3683bd8faa4ef740b766a75dbda297629fec793ab1ab` |
+
+The private readable publisher, initial-test and known-response-observation
+scripts were actually executed. No generic denied validation helper was
+replayed or claimed complete. An additional mixed evidence-directory listing
+and skill-source read received a noninteractive permission denial, with no
+partial results; it was not retried as the same operation. No missing Azure
+permission is established by that denial.
+
+**Next action — original DevOps:** collect the exact newly bound structured
+profiling observations through supported read-only monitoring, preserve this
+new held operation, and route any evidence-supported source correction through
+its original owners/reviewers before affected checks and guarded release.
+Completed non-held collaboration, continuity, once-only supported recovery,
+independently ready isolation, hosted provenance and original review/retro/
+closeout remain unverified. Isolation is not gated on recovery success; it
+requires its own safe bindings/comparison readiness. No stop, followup or
+isolation was sent here. No global work-exhaustion or user-only decision is
+claimed. COMMON rollback provenance remains **WAIVED, never PASS**.
+
+## Final common package and trusted readback — October 22, 2026, 18:03 UTC
+
+**PARTIAL; packaged, not published or live-accepted.** Original DevOps consumed
+the three required dispositions from
+`yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop`: `release-current-common-package`,
+`release-guarded-publication` and `release-cloud-verification`.
+
+- Created the final common bundled ZIP with the retained native `azd package`
+  path. SHA256:
+  `cb506ae15a8942d5dd6a8570cf5b29533e0d744621c4eb1b8d9b69cf1656b2f8`;
+  size **24,311,015 bytes**. The sole package attempt exited zero in 25.591
+  seconds. A subsequent retained read-only inspection proved exact ZIP closure
+  and equality with its committed package hash.
+- Reused the accepted prepared dependency stage only after verifying its
+  historical hash, all 25 current source bindings, runtime archive equality,
+  108 locked distributions and runtime calibration. Copied it to a new
+  exclusive prospective stage before packaging; no historical seal was changed.
+  The original proof remains
+  `9cc4ccac8558421e3de89a44b35a61065bb336352f1fc42be09e26bfed9d8975`.
+  The tested Linux/amd64 image remains
+  `sha256:71dcb02efe6ec2b18c0362818da29cd5e9a0fe5b889cac5b143b981f32cf6c56`.
+  This adds final-package proof, not native-amd64-host certification.
+- Configured and checked the **new publisher output's own** isolated azd
+  directory through supported CLI controls. Dedicated native account scope,
+  CLI-auth bridge, authentication status and required beta.18 passed. Missing
+  beta.18 and its CLI-declared dependencies were installed there only. No
+  login, credential copying, global configuration or CLI upgrade occurred.
+- The retained common-package preview passed. A fresh retained **ReadOnly**
+  invocation verified accepted host trust, private DNS, original-hostname TLS
+  and authenticated project HTTP 200. It observed active architect **18**,
+  reviewer **16** and coordinator **24**, all still on the historical common
+  ZIP `9732e5d5986545ab23856c7db10b3f751376676df91f03372cf8a33c9ca5ef57`.
+  These are current observations, not deployment of the new ZIP.
+- Its owner-specific cleanup proved Linux cgroup/listener absence and release
+  of the temporary read-only SSH mount namespace. No inference was sent.
+  Historical held parents, UNKNOWN effects and historical cleanup uncertainty
+  are not reconciled by this newly owned cleanup.
+
+Private evidence is under the authorized permission-recovery directory:
+`common-package-20261022-DevOps/`, including the package attempt and
+`multi-agent-zip-bec6e738ab954e7a97b0f4896d1a9b99.json`.
+The packaging script SHA256 is
+`ac8616b05271a69afe8d6263a207cf63544653dc409aa455cbd7289bc7f3d857`;
+the current-output readiness script SHA256 is
+`830272a883a340ae3a8b9dd694312a7e6be41f6f9b4f40940ee8fa9ecf1ad345`.
+Private artifacts and allowlisted settings are not committed.
+An additional generic validation-helper invocation was denied by ordinary tool
+approval with no results; it was not retried through another tool or relabeled
+as a passed check. This is not evidence of a retained publisher, cloud, RBAC or
+network failure. It does not supersede the actual retained checks above or add
+a new product acceptance stage.
+
+**Next action — original DevOps:** finish exact current-operation version and
+write-ahead effect bindings, then one serialized guarded publisher for the
+three roles using this common package, followed by actual deployed tests.
+Keep the original reviewers and original review/retro/closeout. Initial
+collaboration, same-parent continuity, supported once-only recovery and
+independently ready isolation remain unperformed. No accepted suite was
+repeated, no publisher was started and no new user-only decision is established
+by this checkpoint. COMMON rollback provenance remains **WAIVED, never PASS**.
+This is useful release progress, not completion or a work-exhaustion finding.
+
+## Native readiness advance — October 22, 2026, 17:42 UTC
+
+**PARTIAL; no release PASS.** Original DevOps executed the corrected readable
+PowerShell route and actual native checks, not just CLI help. This supersedes
+only the older native-readiness/approval-unblock statements below; it does not
+supersede historical observations or grant broader permissions.
+
+- Native dedicated Azure CLI tenant and subscription matched the allowlisted
+  application settings. No account identifiers or credential contents were
+  logged.
+- The exact retained output-owned azd configuration initially lacked
+  `auth.useAzCliAuth`. Supported `azd config set auth.useAzCliAuth true` restored
+  it there only. `config get` returns the JSON string `"true"`; an initial
+  bare-string comparison failed after the set, not an authentication failure.
+  Subsequent inspection established the value without repeating the mutation.
+- Actual `azd auth login --check-status` passed using that configuration and the
+  dedicated native Azure CLI profile. No interactive login, device-code action,
+  token copying, credential dump or global configuration change occurred.
+- The native extension catalog initially reported no installed agents
+  extension. Supported installation of exactly `azure.ai.agents`
+  `1.0.0-beta.18` succeeded. The CLI also installed its declared dependencies:
+  inspector beta.8, projects beta.13, connections beta.10 and toolboxes beta.11.
+  Catalog beta.21 was not installed.
+- The retained release implementation's own
+  `wsl_release.require_azd_prerequisites()` then passed in native WSL under the
+  same retained configuration. The final check also passed native account-scope
+  comparison and azd authentication status. Ordinary PowerShell execution
+  receipt 138 exited zero at 17:42 UTC.
+
+Private evidence is retained in the operator-authorized permission-recovery
+directory, separate from immutable historical inputs and package evidence.
+`Verify-RetainedNativeGate-20261022-DevOps.ps1` has SHA256
+`97dbffe0e2f55293b0a855c206d3f99253c8260f89640f6c2f96891ef99e7859`.
+The private handoff records earlier failures as well as successful checks.
+An optional mixed explicit-binary help inspection received a fresh
+noninteractive permission denial; it was not retried. That denial does not
+establish a native account, RBAC or network failure, nor negate the separately
+executed actual readiness checks.
+
+Application runtime remains the accepted `f9fcd9cf4f04075e609196ebb90b30e09a91dd98`;
+the selected release tooling is clean at
+`ceaba6eea5b0f6bf3c4e265f7fde40bb177aae6e`. Accepted correction/qualification
+are carried forward, not repeated. Application index/specification overlays,
+held parents, UNKNOWN effects and historical package stages remain untouched.
+No application suite, package command, publisher, hosted invocation, tunnel or
+listener was started by this readiness work.
+The documented `Test-Repository.ps1` check passed with the existing explicit
+lab Python: current index, 139-file public boundary, JSON, PowerShell, context
+frontmatter and whitespace checks. This documentation check is not cloud proof.
+
+**Next action — original DevOps:** complete current exact-source final common
+packaging, package/version/trusted-host/connectivity and write-ahead effect
+bindings, then one serialized guarded publisher for the three existing
+nonproduction roles. Publication and passing cloud-deployed tests remain unmet,
+including actual initial collaboration, continuity, supported once-only
+recovery, independently schedulable separate-parent isolation, attributable
+cleanup and original reviews/retro/closeout. No new routine approval or duplicate
+qualification is requested. COMMON rollback provenance remains **WAIVED, never
+PASS**. This checkpoint records progress, not work exhaustion or completion.
+
 ## Current measured correction status — October 22, 2026
 
 **PARTIAL; BLOCKED, not customer-ready. No release PASS.** Exactly three

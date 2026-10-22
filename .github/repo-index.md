@@ -1,5 +1,79 @@
 # Repository index
 
+IP-S1 continuation-3 Scrum assessment at accepted architecture `da8432d4`:
+`docs/customer-prototype-profiling-continuation-3-sprint-plan.json` consumes
+accepted fixed observation-source delivery and IP-S2/IP-S3 exhaustion reviews.
+The selected amendment has empty tasks, assignments and resumes after checking
+approved criteria, source contracts and original votes. No duplicate work,
+invented E2E subject, unchanged native-denial retry or planning-only push.
+Original qualification, native readiness, final common publication, hosted
+capture/provenance, actual cloud scenarios, cleanup and review/retro/closeout
+remain incomplete. Original planning reviewers assess bounded exhaustion only.
+
+IP-S1 continuation-3 architecture at inspected `716cfd4f`:
+`docs/customer-prototype-profiling-continuation-3-architecture.json` and newest
+cumulative/tier openings consume accepted substantive `f9fcd9cf` delivery and
+subsequent IP-S2/IP-S3 exhaustion handoffs. Canonical graph unchanged; per-flow
+criteria/source/evidence mapping distinguishes local construction from missing
+hosted capture/provenance, qualification, common publication and actual live
+acceptance. Empty tasks/resumes retain bounded incomplete exhaustion, not release
+success. No duplicate delivery, unchanged denial retry, invented E2E subject or
+planning-only push; original Scrum/review/retro/closeout retain ownership.
+
+IP-S3 continuation-2 Scrum assessment at architecture `2343445b`:
+`docs/customer-prototype-profiling-s3-continuation-2-sprint-plan.json` preserves
+the separate original plan and records an empty task/assignment/resume graph
+after original handoff, source-contract and all-sprint backlog inspection.
+Accepted consumer, companion/status/join and fixed-ref delivery are consumed.
+No new supported split or changed exact native-denial condition is established;
+original qualification, hosted capture/provenance, common publication, actual
+cloud scenarios, cleanup and review/retro/closeout remain incomplete.
+Existing original planning reviewers assess bounded exhaustion, not delivery
+success. No substitute dispatch, unchanged retry or planning-only push.
+
+IP-S3 continuation-2 architecture at `eac8f2f6`:
+`docs/customer-prototype-profiling-s3-continuation-2-architecture.json` and
+current sprint/tier openings map continuity/recovery/isolation/delivery to the
+unchanged canonical graph, approved criteria and actual source. Accepted private
+consumer and fixed-ref delivery are consumed. Empty candidate tasks/resumes
+retain bounded exhaustion, not release success. Exact native denial, affected
+original qualification, hosted ownership/coverage, typed/history limits and
+all actual cloud/cleanup/closeout obligations remain. No duplicate construction,
+planning-only push, unchanged denied operation or accepted-work replay.
+
+IP-S2 continuation-2 bounded architecture at `709c4a0f`, consuming original
+accepted delivery/readback of substantive observation source `f9fcd9cf`:
+`docs/customer-prototype-profiling-s2-continuation-2-architecture.json` and
+the newest cumulative sprint/tier sections. Canonical solutionModel unchanged.
+All approved construction/companion/status/ref-delivery branches have accepted
+handoffs; empty tasks/resumes record exhaustion, not release acceptance.
+Retain affected original E2E/package qualification, unresolved exact native
+denial, hosted ownership/coverage, typed/history limits and all actual live
+criteria. No duplicate push, speculative wrapper, unchanged denial retry or
+planning-only activity carousel.
+
+IP-S1 continuation-2 Scrum dispatch at architecture `c8dc0454`:
+`docs/customer-prototype-profiling-continuation-2-sprint-plan.json` assigns one
+original Developer closeout task to deliver only fixed reviewed observation
+source `f9fcd9cf`, with complete original review coverage and independent remote
+readback. Planning observed remote `de2deae`; no push occurred. No artificial
+parallel task, duplicate receiving consumer, moving-HEAD delivery or unchanged
+DevOps resume. Original YAML dispatch/review owns execution; affected original
+E2E/package qualification, native-denial resolution and actual live criteria
+remain separate. Original plans, unowned overlay and partial sprints persist.
+
+IP-S1 continuation-2 architecture at accepted observation target `f9fcd9cf`:
+`docs/customer-prototype-profiling-continuation-2-architecture.json` and current
+sprint/tier openings reconcile implemented/local reader/bridge/consumer work,
+not deployed/live proof. Fresh feature remote is still `de2deae`; one original
+closeout candidate delivers only the fixed newly reviewed substantive source
+through `f9fcd9cf`, never moving HEAD, this amendment or unchanged lab source.
+Earlier exact-ref delivery is accepted within its older boundary. Canonical
+graph, runtime, original plans and negative typed/model-history handoffs remain
+unchanged. No native denial retry, DevOps resume/recheck, duplicate construction
+or global exhaustion. Original Scrum owns dispatch/Git coordination; affected
+original source/package qualification and actual hosted/live coverage remain.
+
 IP-S3 continuation-1 receiving consumer (against planning `f4dc71b3`):
 `demo/private_effect_capture.py` accepts only a caller-owned new exclusive
 private handle and trusted bindings. Navigate
@@ -1884,14 +1958,26 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-fixture-continuation-sprint-plan.json`
 - `docs\customer-prototype-linux-clock-architecture-amendment.json`
 - `docs\customer-prototype-linux-inventory-sprint-plan.json`
+- `docs\customer-prototype-network-recovery-continuation-1-architecture.json`
+- `docs\customer-prototype-network-recovery-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-operational-context-amendment.json`
+- `docs\customer-prototype-permission-recovery-continuation-1-architecture.json`
+- `docs\customer-prototype-permission-recovery-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-post-delivery-exhaustion-architecture.json`
 - `docs\customer-prototype-profiling-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-profiling-continuation-2-architecture.json`
+- `docs\customer-prototype-profiling-continuation-2-sprint-plan.json`
+- `docs\customer-prototype-profiling-continuation-3-architecture.json`
+- `docs\customer-prototype-profiling-continuation-3-sprint-plan.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-profiling-s2-continuation-2-architecture.json`
+- `docs\customer-prototype-profiling-s2-continuation-2-sprint-plan.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-profiling-s3-continuation-2-architecture.json`
+- `docs\customer-prototype-profiling-s3-continuation-2-sprint-plan.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

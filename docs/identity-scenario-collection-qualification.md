@@ -1,5 +1,112 @@
 # Private scenario collection: pinned public-seam qualification
 
+## Current-release isolation readiness audit — October 22, 2026
+
+Developer assignment `IP-S2-CURRENT-ISOLATION-READINESS`, against application
+HEAD `d9f29764f4b789b4d306f5ad6eadc3237bb9e701` and selected tooling
+`ceaba6eea5b0f6bf3c4e265f7fde40bb177aae6e`. This section is a current
+source-and-exact-evidence audit, **not** repeated collection-seam research,
+new capture implementation, qualification, or live isolation. Historical
+qualification below retains its original scope and findings.
+
+**Conclusion:** independent isolation has an existing execution path, but no
+ready live isolation operation is established by the supplied exact handoffs.
+Neither an authorized completed comparison scope nor an installed, owned
+hosted occurrence-capture destination is supplied. These are separate missing
+prerequisites, not a dependency on successful recovery or platform attestation.
+The current held Harbor parent cannot fill the comparison gap. No new
+runtime/construction defect is demonstrated; do not build a speculative
+collector or change a public contract to close an evidence gap.
+
+### Evidence actually inspected
+
+Consumed the accepted IP-S2 architecture outcome
+`e4799f7feff7e446e818cd064095c1e7f3abd3613aad41ec72e89674bf46098d.json`
+and originating DevOps outcome
+`737b7366fc475690a04e6cc625e32ae572d089217605d26a9a5d154e1053fa0f.json`,
+both under
+`gh-dynamic-workflows/.delivery-runs/c40bef06-de14-4df7-865f-4d4dfb8815a9/context/`.
+Architecture reviewers accept the bounded design, not live acceptance.
+DevOps reconciled governance
+retains satisfied package/publication and incomplete cloud verification.
+No earlier accepted source/research handoff is reopened.
+
+The exact private handoff is
+`architect-attestation-20261022-1949/handoff.json` under the authorized
+permission-recovery evidence root; independently matched SHA256
+`6a7f7d6355e81de084b2cf798824f4fd8b564f971d9efdb0fc7dcc11a4e7492e`.
+It is **UNSENT**, has no external destination, and supplies historical
+publication/Observe locators, not a capture installation/ownership contract.
+Only exact linked receipts were read; no private directory discovery,
+session-file reads, configuration/cache reads or service calls occurred.
+
+| Exact private receipt relative to that evidence root | Independently matched SHA256; observed coverage |
+| --- | --- |
+| `common-package-20261022-DevOps/multi-agent-zip-0fae990a578f484abc3be93a23e63ad5.json` | `dd7184cb39ce3caa148d98720f2e1a2c0f755820ae510e3851262ea60bd80c65`; publication succeeded, three zero deploy exits and active after-readbacks: architect/reviewer/coordinator **19/17/25**, bundled common package `cb506ae15a8942d5dd6a8570cf5b29533e0d744621c4eb1b8d9b69cf1656b2f8`. Each native upload package hash agrees. Publisher closure is recorded proven. |
+| `live-current-common-20261022-DevOps/connectivity-f0d8410b7cf14405b33d41e13a7088c1-receipt.json` | `1509e8b80fc0db04506f4537d1d286d8b4a25ae8d516dbc62697d191580501d8`; linked by current release notes. Acceptance has no accepted scenario entries, exit-one error contains `PARENT_OPERATION_UNCERTAIN`; owned jobs/listeners recorded closed. Not a completed comparison scope. |
+| `live-current-common-20261022-DevOps/connectivity-073124da375449f4abdb760a2848dd4f-receipt.json` | `7aef63470037dc5c724f57392640d16908d262112051a0b226f6ae3fc1337979`; Observe, zero inference, parent envelope completed but architect child failed (`server_error`), parent hold `SPECIALIST_INCOMPLETE`; owned jobs/listeners recorded closed. Retrieval is not a new turn or accepted collaboration. |
+
+These are retained receipts, **not fresh authenticated readbacks**, and their
+closure does not certify historical unrelated effects. No alternative completed
+comparison artifact is identified in these exact inputs; this is not a claim
+that none could exist elsewhere. Original DevOps must hand off an exact
+authorized completed scope if one exists, not discover it by scanning private
+stores or substitute a held parent/fixture.
+
+### Readiness matrix and smallest closing actions
+
+| Flow step / prerequisite | Supported source/interface and current coverage | Receiving owner and concrete closing action |
+| --- | --- | --- |
+| `isolation-bind`: final release | Retained receipt binds common package and versions above. Git comparison of `demo/`, requirements/lock and Dockerfile from accepted runtime `f9fcd9cf4f04075e609196ebb90b30e09a91dd98` to audit HEAD is empty; selected-tooling HEAD matches and status is clean. Neither this nor local metadata authenticates current service state. | Original DevOps retains the satisfied publication, verifies current three-role active package/version bindings for the new effect and reconciles any material drift; no unchanged republish. |
+| `isolation-bind`: safe completed comparison | `live_acceptance.py:420-549` (`_evidence_turn`) requires `ACCEPTED_ADVISORY`, accepted/reconciled journal transitions, bound parent/both children, exact artifacts and independently accounted creations/sends. Exact current initial/Observe receipts instead show an uncertain/held turn. | Original DevOps supplies the authorized completed non-held comparison snapshot, full trusted scope, actual parent/child hosted and framework IDs, versions, immutable refs and effect/response receipts on this release. If unavailable, report that prerequisite unavailable; do not resume/replay the held parent to manufacture it. Any new initial collaboration remains its original DevOps work, not an action performed by this audit. |
+| `isolation-execute`: distinct new parent | `live_acceptance.py:29-44,715-848`: canonical Cedar brief; `--scenario isolated` takes the noncontinuation path, rejects an existing session file, checks all role package bindings before `chat`, and validates actual artifacts/child versions after completion. It has no recovery-success check. | Original DevOps records a distinct intent, new private session/evidence paths, protected held/UNKNOWN exclusions, current dedicated authentication, trusted-host/connectivity and write-ahead effect readiness before any send. Run only through retained guarded execution, not the audit. |
+| `isolation-execute`: supported occurrence capture ownership | `demo/effect_observation.py:1-17,61-68,110-135` exposes opt-in `private_sink` before background creation; application dispatch/transport association exists. `demo/private_effect_capture.py:222-390` accepts a caller-owned new exclusive private binary handle and trusted expected `Binding`s, then independently anchored `checkpoint`/`readback`/`reconcile`. Source search in `demo/` and `live_acceptance.py` finds definitions, not host activation of `private_sink` or construction of `PrivateEffectCapture`. The handoff supplies no installed hosted sink/destination/owner. | Original DevOps identifies an already-supported private destination and responsible execution-context owner, proves installation before relevant background work, permissions/exclusive handle lifetime, trusted operation/target/version bindings, coverage and attributable cleanup. A terminal-only sink does not install capture inside the remote coordinator. If no such supported handoff exists, report it unavailable to Architect/Scrum; do not invent infrastructure, public schema or automatic activation. |
+| `isolation-verify`: scoped artifacts/journal and independent accounting | `scenario_state_reader.py:113-168` accepts existing authorized async Blob service, three distinct containers, trusted scope/head/ETag, exact accepted refs, caller-attributed quiescence and previously retained operation names. It creates no client or credentials. `PrivateEffectCapture.reconcile` additionally needs matching manifest digest/ETag, common quiescence receipt and independent `OperationAnchor` name/digest bindings; journal acceptance alone is not a send count. No such current completed capture bundle is supplied. | Original DevOps supplies those exact owned inputs and retains raw scoped pages/bytes/read receipts and independent occurrence anchors after all relevant tasks/transports quiesce. Missing/late/truncated coverage remains incomplete. Do not invoke the reader with guessed scope, hashes or store names, or infer historical completeness from two agreeing listings. |
+| `isolation-verify`: comparisons and eventual join | `live_acceptance.py:653-685` checks same project/tenant/principal but different parent hosted/framework IDs, prefix and both child hosted/framework IDs; isolated turn 1 and exact Cedar brief; nonoverlapping creations/sends/call responses; candidate/review excludes Harbor and asynchronous queue; equal release metadata. Actual provenance is still separately required. Existing final `validate_scenario_evidence` also consumes followup/restart/stop captures. | Original DevOps retains independently collected isolation proof for original E2E/DevOps comparison and final joining. Do not require successful recovery before preparing/executing otherwise-ready isolation, fabricate restart inputs or weaken the final validator. Complete comparison, source provenance and attributable cleanup before claiming isolation PASS. |
+
+**Not additional isolation scheduling prerequisites:** typed restart checkpoint
+export, once-only stop confirmation and successful recovery remain their own
+original acceptance obligations, not new gates on Cedar execution. Accepted
+negative typed/history/capture-consumer research is consumed, not repeated.
+Consumed model-history provenance remains an explicit product limitation; the
+occurrence sink does not observe it. Local aliases and nearby timestamps do not
+establish cross-process attestation.
+
+### Handoff, preservation and audit verification
+
+Original Scrum Master receives this matrix and routes the two precise missing
+handoffs (completed comparison scope; supported hosted capture ownership) to
+original DevOps, with Architect involvement only if closing either requires a
+material new contract. Current authentication/connectivity/effect readiness is
+operation-specific and remains DevOps-owned. A ready independently bound Cedar
+operation need not wait for recovery or the separate attestation answer.
+This bounded negative audit is complete; no live-ready claim or global
+work-exhaustion conclusion follows.
+
+Preserve the exact originating dispositions
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-current-common-package"]`
+and
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-guarded-publication"]`
+as retained satisfied at outcome `737b7366...`, not waived or repeated.
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-cloud-verification"]`
+remains required/incomplete. AC1-AC9/G1-G8, held/UNKNOWN effects, historical seals,
+original reviews/retro/closeout and COMMON rollback provenance **WAIVED, never
+PASS** are unchanged.
+
+Verification in this audit: matched the handoff and three exact receipt hashes;
+inspected actual publication after-readbacks/upload hashes, initial failure
+and zero-inference held-child Observe; checked source interfaces and unchanged
+hosted-runtime diff plus clean exact selected-tooling HEAD. No runtime suite,
+authentication, network, publication, inference, stop, private capture activation
+or process/listener was started. Documentation-only addition to this existing
+file changes no inventory/entry point; the unowned index/specification overlays
+are preserved. Full repository validation was previously denied in the
+architecture turn; it is not claimed or retried here.
+Repository-local audit assertions passed for all four hashes, all three
+retained package/version/upload bindings and the initial/Observe negative
+comparison findings. Path-scoped `git diff --check` passed (line-ending
+normalization warning only).
+
 ## Decision and boundary
 
 Developer task **IP-C1-COLLECTION-SEAMS**, originating in IP-S3 criteria

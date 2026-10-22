@@ -1,5 +1,111 @@
 # Sprint design: understandable, evidence-ready continuity
 
+## Current IP-S1 resumption: qualify observation source and deliver the requested skill (October 22, 2026)
+
+This **SprintDesign** is the current IP-S1 design overlay. Consume Architecture
+`fe8d6432b66bcce396bb200d547fa0ca2ac32926`, UserExperience
+`c087b95de1a2b37b692803f839b2992212e4172e` and ReleasePlan
+`01f0cd55a4c55608152c94185c89e5e5b5a58b9e`. Designer opened their exact
+current outcome objects under application run
+`gh-dynamic-workflows/.delivery-runs/86584995-9703-4052-a927-cef4a1cface1/context/`:
+
+- Architecture `f17ebc19120d48f40b84f02827b16ba04662af513cccc319c2ee0d84521fc60a.json`:
+  Product Owner, Red Team and Critic agree/taskComplete.
+- UserExperience `eee79a47cb2012517acf7f88a6f4eb1337d0bdb65ad6cad440fe76a10481f551.json`:
+  Product Owner and Critic agree/taskComplete.
+- ReleasePlan `2594abf4106f90d8334051f2514359d152a3cce5f9932fcd16471d917f465d17.json`:
+  Stakeholder, Architect, Designer and Critic agree/taskComplete.
+
+Those are upstream document votes, not acceptance of this SprintDesign or
+working runtime. Both supplied priorDispositions arrays are empty and no
+reconciled correction is supplied. Preserve earlier overlays/storyboards
+below within their original boundaries; their historical denial and package
+instructions do not override the current resumption contracts. Preserve all
+three partial sprints and every original live criterion.
+
+### Bounded screen and flow design
+
+No new customer screen, terminal flag, renderer, public schema, theme or
+implementation feature is needed for IP-S1. Retain Python/argparse plain text,
+opt-in human stderr and unchanged machine stdout/parser. Screens B/C still
+show useful synthetic design/review first; diagnostics are private operator
+evidence, not another hosted role or a customer-facing debug transcript.
+Screen F's existing report and Screen G's existing closeout distinguish two
+independent lanes rather than a single "ready" or "blocked" status.
+
+| Trigger / canonical flow and steps | Retained screen and component interaction | Source boundary / receiving owner |
+| --- | --- | --- |
+| Actual later observation source is submitted for formal qualification; **Exact-source guarded release**, `release-join` | F: **Guarded lab release toolchain** checks the actual application/selected-lab pair and reports loaded roots, tested bytes, regressions and package-input closure. Private diagnostics cover **Trusted identity and private transport**, **Hosted coordinator**, **Hosted architect** and **Hosted reviewer** without authorizing their requests. Return the actual qualification result and smallest correction, not a live-success badge. | `Test-Demo.ps1`, `scripts/Test-Repository.ps1`, `demo/foundry.py`, `demo/host.py`, `demo/diagnostics.py`, `demo/effect_observation.py`, `scenario_state_reader.py`, `demo/private_effect_capture.py`, `live_acceptance.py`, `package_guard.py`; original E2E owns qualification, original Developer owns only demonstrated scoped corrections. |
+| The operator's requested device-code instructions are submitted for review; **Exact-source guarded release**, `release-join`, `release-close` | F/G: **Guarded lab release toolchain** handoff reports requested skill review, exact intended commit and non-force remote readback separately from runtime qualification. A passed documentation lane cannot turn package/live rows green; a live blocker cannot unnecessarily stop this lane. | `.github/skills/lab-deployment/SKILL.md`; original source reviewers and existing scoped delivery/closeout owner. Scrum Master assigns Git reconciliation; Designer does not edit or deliver that unowned diff here. |
+
+The runtime subject is accepted observation source through application
+`f9fcd9cf4f04075e609196ebb90b30e09a91dd98` with selected lab
+`9b4919d8bcdbf07203f32657936c27328ea6ccc1`. Older E2E qualified `c52786b7`;
+it is retained, not replayed or represented as later-source qualification.
+Keep source acceptance, formal E2E and package-input closure separately
+attributed. Do not rebuild the accepted reader/bridge/consumer or invent an
+E2E-shaped documentation task.
+
+### Screen F/G sketch and state transitions
+
+This is a private report layout specification, not emitted output, parser
+fields or a newly collected observation:
+
+```text
+Goal: qualify retained observation source; deliver requested auth instructions
+Qualification: <actual later source pair; pending / passed / failed>
+Evidence: <loaded/tested scope and package-input closure; private reference>
+Skill delivery: <review pending / reviewed / exact remote readback verified>
+Native readiness: upstream preflight passed; old denial cause unknown
+Package/deployment: <actual current bindings / NOT VERIFIED>
+Live acceptance: <actual criterion evidence / NOT VERIFIED>
+Remaining: <specific gap; original owner; next supported action>
+```
+
+Read top-to-bottom: goal -> reached boundary -> evidence -> uncertainty ->
+owner/next action. Wrap labeled blocks for narrow terminals; use terminal
+default light/dark colors and explicit words, never color alone. Preserve
+safe aliases, generated-text labeling and control-character neutralization.
+Do not print private settings, absolute evidence paths, raw identities,
+complete headers, tokens, bodies or customer text.
+
+- Qualification pending -> passed only on actual original E2E evidence for
+  later source; failure -> the concrete affected correction and recheck.
+  Report excluded checks explicitly; unavailable evidence is not absence.
+- Skill review pending -> reviewed -> delivered only on original review and
+  exact intended non-force remote readback. Preserve unowned specification/
+  index overlays and exclude planning-only ancestry from source delivery.
+- Native readiness is attributed to accepted upstream preflight, not Designer
+  execution, private-connectivity proof or a diagnosis of the historical
+  denial. Any new actual denial remains binding; offer no alternate bypass.
+- HELD/UNKNOWN overrides successful-looking prose. Keep historical parent,
+  responses and unknown effects untouched. Retrieval is not a new send.
+  Distinguish request send, HTTP headers, stream completion and execution
+  completion; none alone establishes finalized collaboration.
+
+### Smallest downstream handoff and exclusions
+
+Original E2E's passing current-source qualification/package-input closure
+unlocks original DevOps's dependent fresh private stage, not a whole-sprint
+dependency. DevOps re-proves wrapper-owned azd bridge/beta.18/account status,
+Linux/image/dependency/package/host/effect readiness and serialized publication
+for exactly three existing nonproduction roles. Preserve the older stage;
+it is not current. Historical COMMON rollback provenance stays **WAIVED,
+never PASS**. Current checks remain required.
+
+Hosted capture installation/retention, independent anchors and quiescence
+remain localized downstream proof obligations before relying on aggregates,
+not fixture-proven capability or reasons to reconstruct accepted source.
+No new invocation, packaging, publication or authentication is performed here.
+Later fresh synthetic traffic needs recorded purpose/effect intent and actual
+readiness; no historical ingress can be retroactively observed.
+
+Screens B/C/D/E and H/I/J/K retain continuity, once-only supported recovery,
+independent isolation and closeout direction for IP-S2/IP-S3. No missing UI
+decision blocks those independent preparations. Scrum Master decomposes the
+two current lanes and assigns reconciliation through existing planning;
+original Product Owner and Critic review this bounded SprintDesign.
+
 ## Current IP-S3: continuity, supported recovery and independent isolation (October 22, 2026)
 
 This **SprintDesign** applies the accepted B/C/D and H/I/J/K layouts to IP-S3.

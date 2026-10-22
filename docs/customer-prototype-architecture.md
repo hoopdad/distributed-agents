@@ -1,5 +1,235 @@
 # Customer hosted-session prototype: release architecture
 
+## Identity-profiling correction architecture (October 21, 2026)
+
+This is the current material construction delta for
+[identity-profiling-workflow.md](identity-profiling-workflow.md), not another
+unchanged DevOps retry. It takes precedence over dated execution-authority,
+one-shot check, rollback-prerequisite and pending-deployment statements below
+only within this invocation's scope. Historical evidence, accepted source,
+original owners/reviewers and AC1-AC9/G1-G8 remain intact. Both supplied
+priorDispositions arrays and reconciled feedback are empty.
+
+The current user authority permits routine scoped corrections, normal checks,
+reviewed commits/pushes and guarded repeated publication of the three existing
+nonproduction roles. The historical COMMON rollback ZIP/build-provenance
+requirement is **WAIVED**, never PASS; do not investigate it as a prerequisite
+again. Current source/package/version, trusted-host and operation-effect
+readiness checks remain material automated gates. No new infrastructure,
+RBAC, network/DNS/VPN/registry/quota mutation, production profile, secret
+retrieval, external log upload or uncertain-effect replay is authorized.
+Actual tool/policy denial cannot be bypassed. Historical denial records are
+not rewritten, and do not themselves prohibit newly authorized normal checks.
+
+### Observed state and uncertainty
+
+Application inspection started at `200f2ff04f88e0990816058b6a5d49070425e028`
+on `feature/customer-hosted-session-prototype`. The pre-existing index edit
+and untracked execution specification are not this Architect's owned changes.
+No runtime correction is implemented by this architecture amendment.
+
+Opened the supplied private `terminal-verification.json` and exact initial
+observation receipt `connectivity-29756bf8f0e340c09caab3e408a974a5-receipt.json`.
+These record successful common-package three-role publication, but failed
+initial architect preparation (`NATIVE_HOST_PRINCIPAL`) and a parent held at
+`SPECIALIST_INCOMPLETE`. Outbound delegated-header presence was observed;
+the actual authenticated outbound principal and platform delegation resolution
+were not proven. The receiver diagnostic is resolved-context evidence, not a
+raw-header capture. Neither an RBAC defect nor a platform defect is established.
+Original reviewers agreed with the incomplete report, not release completion.
+Known responses, held parent, historical UNKNOWNs and their effects stay intact.
+New middleware cannot retrospectively observe that ingress.
+
+Read the reference `RequestResponseProfilerPolicy` implementation: it supplies
+timing/status/exception and query-free URL ideas, not header or universal
+transport interception. This design does not copy its storage-probe server,
+DNS patches, invocation protocol or raw-path logging.
+
+### Canonical solutionModel and affected source
+
+The [solutionModel](#solutionmodel) below remains the single authoritative model:
+ten components, five flows, eighteen steps, unchanged stable IDs and support
+links. Diagnostics are implementation detail of **Trusted identity and private
+transport**, not a fourth service, shared secret, new Azure resource or new
+product flow. Existing tier documents inherit this current overlay; their
+historical execution assertions do not override it.
+
+| Canonical component / steps | Implementation and bounded delta | Criteria and receiving owner |
+| --- | --- | --- |
+| Trusted identity and private transport; Hosted coordinator / `collaboration-design`, `collaboration-review`, `continuity-invoke`, `recovery-resume` | `demo/foundry.py`: extend `OriginTransport`; inventory `ProjectClient`, remote create/get/invoke/recover and credential clients. Shared safe event helpers may live in `demo/diagnostics.py`. | Profiling requirements 1, 4, 5; AC1, AC2, AC5, AC7. Developer delivers transport/coverage and focused regressions. |
+| Trusted identity and private transport; Hosted architect; Hosted reviewer / `collaboration-bind`, `collaboration-design`, `collaboration-review`, `isolation-execute` | `demo/host.py`: pure-ASGI middleware before `run()`, existing preparation failure filter; `demo/workflow.py`: `create_workflow`, `parse_turn`, `WorkflowRuntime` and executor boundaries. | Profiling requirements 2, 3, 5 and no authorization change; AC1, AC4, AC5, AC7. Developer delivers ingress/context tests through pinned host hooks. |
+| Private Blob artifacts and effect journal; Parent and specialist conversation state; MAF workflow checkpoints / `collaboration-route`, `collaboration-return`, `recovery-resume` | `demo/artifact_store.py`, `demo/workflow.py` resource factories, `demo/foundry.py` session factories; retain `demo/artifacts.py` scope, immutable refs, ETag/fencing and write-ahead holds. | Profiling requirement 4; AC3-AC5, AC7. Developer inventories Azure Core policy injection and explicitly uncovered SDK-owned paths. |
+| Guarded lab release toolchain; Terminal client / `release-join`, `release-package`, `release-discriminate`, `release-close` | `Test-Demo.ps1`, `scripts/Test-Repository.ps1`, `package_guard.py`, `live_acceptance.py` and retained selected-lab release entry points. No tooling change is presumed; check closure if a new runtime module is added. | Profiling acceptance 2-7; AC1-AC9/G1-G8. Original E2E validates the join; original DevOps publishes/proves live effects; closeout retains truthful status/delivery/cleanup. |
+
+### End-to-end diagnostic contract
+
+Use the existing pinned Python/MAF/Foundry stack, `httpx2`, public host hooks,
+Azure Core policies, structured Python logging and deterministic offline tests.
+No manifest/pin change is needed on present evidence. Inspection of the
+existing Python 3.12.10 environment confirmed core `2.2.0`, responses `2.3.0`
+and Foundry hosting `1.0.0b261002`, matching the specification.
+
+1. **Outbound boundary.** Keep exact HTTPS origin, certificate verification,
+   no redirects, `trust_env=False` and zero automatic retries in
+   `OriginTransport`/`data_client`. Observe actual final request headers there,
+   not only client defaults. Emit send, response-headers and exception events.
+   If observing stream exhaustion, wrap only the existing async byte iterator:
+   yield original chunks unchanged, delegate close exactly once, re-raise
+   cancellation/errors unchanged and distinguish exhausted, closed-early,
+   failed and cancelled. Never call read/aread, buffer, parse or regenerate a
+   body for diagnostics. Transport receipt/stream completion does not certify
+   execution completion or trigger retries.
+2. **Raw ingress.** Construct the existing `ResponsesHostServer`, call public
+   `add_middleware()` before `run()`, then run it unchanged. A pure-ASGI wrapper
+   examines only HTTP scope metadata/header names; non-HTTP scopes pass through.
+   Preserve duplicate headers without merging them into a fabricated identity.
+   Header names compare case-insensitively; report duplicate/ambiguous presence,
+   not their values. Pass receive through and forward every send message intact.
+   Observe response-start and final body/disconnect/cancellation separately;
+   ASGI return is not resilient background completion. Do not mutate scope,
+   headers, bodies, trusted context or task/backend settings.
+3. **SDK context and failure visibility.** The pinned Responses
+   `hosting/_endpoint_handler.py::_extract_platform_context` reads
+   `x-agent-user-id`; missing is None, explicitly empty is an empty string.
+   Public delegation `x-ms-user-identity` is not that parser input.
+   `FoundryRequestScope.from_context` requires hosted user/call identity BEFORE
+   `prepare_options`, the workflow factory or `parse_response` can run.
+   Therefore an options hook alone cannot observe this early failure.
+   Retain the existing `WorkflowPreparationDiagnostics` failure filter to
+   snapshot safe request-context presence on that rejected preparation path;
+   keep its existing codes and propagate the rejection. Test the pinned log
+   event and mark this observation unavailable if that event is not emitted.
+   Do not patch SDK private methods to manufacture a checkpoint.
+4. **Reachable preparation/execution checkpoints.** Public `prepare_options`
+   is available; it can observe a successfully resolved `HostedResponseRequest`
+   without changing options. Record scope and `get_request_context()` states
+   before `WorkflowRuntime` checks in `create_workflow`, at `parse_turn`, and
+   at existing request-aware executor/resource entry/exit. These run on the
+   reachable resilient workflow path, not a guessed background task wrapper.
+   Tests must exercise the actual pinned host's resilient background path and
+   known-response recovery, not only direct fake requests. Check context after
+   request scope exits and in detached/background work; no request-global
+   identity cache. Missing raw/request/background association is an explicit
+   coverage gap, never evidence of platform loss.
+5. **Other transports.** Inventory each actual factory/call: application
+   `ProjectClient` session creation/lookup uses Azure Core; inner OpenAI
+   Responses/model clients and DecisionClient use `httpx2`; `BlobArtifacts`
+   uses Azure Storage/Core; `ManagedIdentityCredential` has its own pipeline.
+   Attach a small sanitized policy only through supported constructor/policy
+   options verified against the installed SDK. Preserve retry/auth semantics.
+   Session/history/checkpoint/response stores created inside
+   `AgentSessionStoreProvider`, `CheckpointStoreProvider` or host internals are
+   NOT covered merely by instrumenting the application Blob client. Report
+   their real transport/hook availability separately, including credential
+   internals without a supported injection point. Do not modify site-packages,
+   add DNS interception, turn on generic HTTP body/header logging or claim
+   visibility into the Foundry gateway or authenticated bearer principal.
+
+### Safe event schema and interpretation
+
+Use a versioned bounded allowlist with role, stage, event kind, method, route
+template, duration in milliseconds, HTTP status and fixed error category.
+Reject/drop unexpected fields rather than serializing arbitrary SDK objects.
+Routes are allowlisted templates such as Responses create/retrieve, session,
+artifact or credential; never raw URLs, path IDs, queries or fragments.
+Do not format exceptions with their messages, repr, request or response body.
+
+Identity fields have `absent`, `empty`, `nonempty` (and malformed/duplicate
+where needed) states; no raw identity or identity hash is logged. Same-format
+scope/request-context equality is true/false/not-comparable. Do not compare a
+public delegated value with a potentially translated platform partition key
+as if those representations must match. Call/session matching emits booleans,
+not their contents. Use existing nonidentity operation/response digest bindings
+where available and bounded validated allowlisted request/trace correlation
+tokens. Arbitrary inbound correlation values confer no authority. If early
+ingress has no safe common binding, retain local event identity and disclose
+that the cross-boundary association is unproven; do not infer it by timing alone.
+
+Per-request immutable state/local variables or properly reset ContextVars must
+isolate concurrent requests. No middleware-global current user/response fields.
+Expected logging/serialization failures must not change request results,
+suppress original exceptions or consume cancellation. Bound event field sizes
+and counts; do not create a shared logging secret or cloud logging prerequisite.
+Logs/receipts stay private, not in Git or external cases.
+
+Interpret only the observed interval. Nonempty actual outbound delegation plus
+absent platform-delivered user at ingress localizes uncertainty between the
+outbound boundary and ingress, not its cause or authenticated principal.
+Nonempty raw platform user but empty SDK context motivates a pinned parsing/
+context-propagation investigation. Nonempty SDK request context but absent
+background/scope identity motivates a supported lifecycle investigation.
+Each comparison needs attributable bindings; absent public delegation at
+ingress alone proves neither translation failure nor identity loss. No guessed
+header substitution, raw-header-to-trusted-context copy, call-ID-as-user,
+trust-gate removal or speculative permission change is a permissible remedy.
+
+### Minimal handoffs, verification and remaining release path
+
+Scrum Master decomposes/assigns through existing stages, with Git reconciliation
+on the authorized feature branch and exclusive publication/parent resources.
+Agree the small event/helper contract before parallel edits to shared modules;
+transport tests and raw-ASGI fixtures can otherwise proceed independently.
+SDK coverage inventory, resilient-context fixtures, recovery/redaction/isolation
+regressions and packaging-source closure do not depend on new live traffic.
+No whole-sprint dependency or artificial attempt/time/credit cap is introduced.
+
+Developer's bounded exit is reviewed instrumentation plus a coverage matrix:
+factory/transport, supported hook, events actually observed, uncovered paths,
+tests and source references. Required negatives include absent/empty/mixed-case/
+duplicate headers, malformed correlation values, concurrent and background
+isolation, rejection before workflow factory, unchanged authorization failures,
+redaction sentinel values in URLs/errors/bodies, outbound failures, streaming
+chunk/close/disconnect/cancellation parity and known-response-only retrieval
+without a second send. Preserve existing baseline test names and cases.
+
+Original E2E then runs the normal documented application/repository checks
+using an explicit existing Python and selected lab root. Retained release
+checks are required if lab tooling changes; actual Linux/hosting/package gates
+remain with original DevOps. Dependency installation requires a changed
+manifest or observed missing tool. Original reviewers inspect supported hooks,
+coverage gaps and exact source, not a report-only claim of runtime success.
+
+After source review/E2E and current operation-effect readiness, original DevOps
+builds a newly identified common package, verifies source/bytes/version/trusted
+host automatically and serializes guarded publication to all three roles.
+Record historical rollback prerequisite WAIVED; preserve historical held/UNKNOWN
+operations. Before any new diagnostic traffic, persist its distinct intent,
+identity, purpose, package/role bindings and owned-effect cleanup plan privately.
+Never reuse the failed parent or treat a known-response GET as a new invocation.
+Use paired evidence to justify the smallest supported remediation; changed
+source requires affected tests, review and a new exact common package again.
+External tracing, if truly necessary, is a bounded private handoff while useful
+independent construction continues, not authorization to upload logs.
+
+Real completion remains: G1 final common bundle/versions; G2 completed non-held
+remote collaboration; G3 MI/private Blob provenance; G4 genuine Decision-1;
+G5 same-parent follow-up with both pinned children and fresh responses; G6
+once-only supported stop/resume without duplicate effects; G7 distinct-parent
+isolation; G8 truthful cleanup/unknown accounting. Follow-up and stop/resume
+require the completed non-held initial parent. Isolation requires final bindings
+and comparison evidence, not recovery success. Preserve deterministic gates,
+immutable exact prerequisite refs, ETag publication, MAF checkpoints and
+application-enforced (not malicious-host/RBAC) Blob isolation.
+
+This amendment establishes design and handoffs, not diagnostic implementation,
+new deployment, live acceptance or unattended readiness. Current launch/runtime/
+Studio/authentication/permission preflight and one exact-run monitor remain
+operational responsibilities under the specification; no runtime installation,
+workflow replacement, cloud call or monitor was started here. Owner acceptance
+of this architecture awaits original Product Owner, Red Team and Critic review.
+
+Architecture validation executed with the existing absolute Python and explicit
+selected-feature lab root: `Test-Demo.ps1` passed dependency checks, all 210
+application tests (77.244 seconds, unittest scope) and compilation.
+`scripts/Test-Repository.ps1` passed index/public boundary (106 public files),
+JSON, PowerShell, frontmatter and whitespace checks. Index regeneration retained
+only the pre-existing inventory edit; it is not adopted into this change.
+Parsed-model assertions compared against starting HEAD: unchanged ten
+components, five triggered flows, eighteen unique steps and valid component/
+support references. No dependencies were installed. These are architecture/
+baseline offline checks, not tests of the as-yet unimplemented diagnostic
+increment, formal changed-runtime E2E, actual Linux packaging or cloud acceptance.
+
 ## Current repaired-join traversal: source acceptance is not execution acceptance (October 21, 2026)
 
 This applicability amendment consumes `request.input.repairedJoinRecovery20261021`.

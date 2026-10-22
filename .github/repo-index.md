@@ -1926,6 +1926,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-s2-continuation-2-architecture.json`
+- `docs\customer-prototype-profiling-s2-continuation-2-sprint-plan.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`

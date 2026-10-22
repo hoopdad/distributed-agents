@@ -1,0 +1,128 @@
+{
+  "kind": "SprintPlan",
+  "sprintId": "IP-S2",
+  "continuationRound": 2,
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "owner": "Scrum Master",
+  "reviewers": ["Product Owner", "Architect", "Critic"],
+  "goal": "Record the bounded work-exhaustion audit after accepted observation-source delivery without replaying accepted work or unchanged denied operations.",
+  "acceptedInputs": {
+    "SprintArchitecture": {
+      "path": "docs/customer-prototype-profiling-s2-continuation-2-architecture.json",
+      "commit": "d63ffa6624881611d608bfe8a97847fe2fd48c25",
+      "audit": "de1de398d509d394290cffb2235c97d935641c8b6d88f0478a1387c45c9848d5.json",
+      "inspection": "Opened saved architecture and final original Product Owner/Critic/Red Team votes: agree:true, taskComplete:true, unmetCriteria:[]. Acceptance is bounded architecture assessment, not release completion."
+    },
+    "SprintDesign": {
+      "path": "docs/customer-prototype-sprint-design.md",
+      "application": "Retain dated IP-S2/IP-S3 presentation contracts. No newly justified UI or Designer construction; accepted companion/status work already consumes the design."
+    },
+    "ReleasePlan": {
+      "path": "docs/customer-prototype-release-plan.md",
+      "commit": "4999ce5817a1714c6c2dc65ebbecb933bf49ecb4",
+      "inspection": "Audited current IP-S1/IP-S2/IP-S3 criteria and readiness graph, including later independent isolation and measured delivery. No whole-sprint dependency is introduced."
+    },
+    "auditDirectory": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/",
+    "inspectedApplicationHead": "d63ffa6624881611d608bfe8a97847fe2fd48c25",
+    "acceptedDeliveredRuntimeRef": "f9fcd9cf4f04075e609196ebb90b30e09a91dd98",
+    "selectedLabAcceptedReference": "9b4919d8bcdbf07203f32657936c27328ea6ccc1",
+    "sourceQualification": "Git diff from delivered f9fcd9cf to inspected HEAD lists eight architecture/planning/index files only. Selected-lab and remote readbacks are attributed to accepted handoffs, not newly executed here."
+  },
+  "tasks": [],
+  "AssignedWorkDeveloper": [],
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": [],
+  "readyInParallel": [],
+  "dispatch": {
+    "owner": "Existing YAML orchestrator",
+    "status": "no-new-work-to-dispatch",
+    "observedNewDispatch": false,
+    "instruction": "Return this amendment itself with empty assignment lists and taskCards. No substitute agents, accepted-task redispatch or artificial parallel fan-out. Existing original planning reviewers assess exhaustion; implementation completion and cloud acceptance are not planning prerequisites."
+  },
+  "workExhaustionAudit": {
+    "readyOrExecuting": {
+      "finding": "Supplied delivery.remainingWork and pendingSprints are empty; all scheduled IP-S2 source slices and the final independent fixed-ref delivery are accepted. No new task is ready within this packet. This is not a global process/Studio census.",
+      "evidence": [
+        "b542da129063c9de7bcb1ee685ff3fb179be80fbc56e229f494169184ae257ce.json: opened original Architect/Critic final votes; both agree and complete with no unmet criteria.",
+        "c07f32c175087bbabfd6c194a9936d3d4246b7b7dd208295c0d9cb5a5aebec1f.json: opened original Product Owner/Architect/Critic completion votes for normalized IP-S3 planning. No repeated serialization or dispatch task."
+      ]
+    },
+    "feasibleSplits": {
+      "finding": "Scoped state reader, actual-attempt bridge, typed export qualification, observation integration, durable private consumer and reviewed-ref delivery have already been split and accepted. No demonstrated missing source-local interface or justified identity defect remains to assign.",
+      "modules": ["scenario_state_reader.py", "demo/effect_observation.py", "demo/private_effect_capture.py", "demo/host.py", "docs/identity-profiling-coverage.md"],
+      "evidence": [
+        "0e118edd3d85f96b6ff15fbd7786a6d1ada936584045a3f25c2168638fec24bd.json: original Architect/Critic accept the final consumer; source explicitly requires caller-owned exclusive handle, trusted bindings, installation before background creation and independently attested quiescence/anchor.",
+        "Read demo/host.py main: capture remains opt-in, not automatically installed. Actual hosted ownership, destination, installation and full execution coverage are operational proof obligations, not established by another local wrapper."
+      ]
+    },
+    "independentApprovedBacklog": {
+      "finding": "Audited all three approved sprints, not only the native release blocker. Later companion, measured status, fixtures and Git delivery are consumed. Independent isolation remains schedulable after final deployed bindings and safe comparison scope, without recovery success, but those actual prerequisites are absent.",
+      "criteria": ["IP-S1 acceptanceCriteria[0-6]", "IP-S2 acceptanceCriteria[0-5]", "IP-S3 acceptanceCriteria[0-5]"],
+      "evidence": [
+        "Opened 10544854fcc4df728cb8bc4d5c9e40e5d2a659dc602882142a4648f2e05a9096.json, 840944fb5b24b2469ada0c3d4f50b88871e28a2ceea99150fec5b36ccc00be23.json and d31a370ba112ab92141400214b19d80175b03166366ee5cb02bc8fe2332e2162.json: original Architect/Critic agree and complete status, acceptance companion and delivery join.",
+        "No new terminal feature, unchanged fixture replay, planning-only push or duplicate acceptance comparison is justified by the approved criteria."
+      ]
+    },
+    "boundedUnlockingInvestigation": {
+      "finding": "Inspected exact native-blocker reviews, accepted qualification negatives, host/consumer source contracts and current Git advancement. No supplied approval-resolution evidence, new supported original-encoding/model-history seam or explicit Architect-advised Product Owner contract change unlocks a new task.",
+      "evidence": [
+        "dfd473725551074526ddec41e0dbc23a0ca81a6d7d265e89dbf8a669004f8a3f.json and ae0bade07582d467826277da2ca92c61252811c39543d8d40cd8b85272a7dd1c.json: original Architect/Critic/Developer each agree with partial reports but retain taskComplete:false and native, package/publication and live unmet criteria.",
+        "Opened a2b5fd546b4d4d3a9e714f0ae1e74a90cf83e2429af1f278375d5c59ab112a91.json and 91007b1bf7e28ab1ab8fa9dcf0a9db9a4da5e6c394f78b1073dd1bf9fb0db8f3.json: original Architect/Critic complete both bounded qualifications. Read exact typed-export and scenario-collection documents; local typed round-trip is not original-encoding aggregate export or consumed model-history provenance.",
+        "4797ab07efa9ab46e5f8882caa9f7b3957910cec20b4c9ed5ec3574bbed1c8d2.json: original Architect/Critic/Product Owner completed the old bounded changed-join E2E. It does not qualify the later observation runtime. continuation.sourceSubjects is empty; no eligible changed-subject resume can be invented."
+      ]
+    }
+  },
+  "criticalPath": {
+    "remainingReleasePath": [
+      "Required exact observation-runtime original E2E/package qualification",
+      "Supported resolution evidence for the recorded native execution denial, then native pinned-tool and dedicated-auth readiness",
+      "Current automated source/package/version/trusted-host/effect gates and serialized three-role common-package publication",
+      "Separately intended diagnostic traffic and supported evidence-based remediation if justified",
+      "Completed non-held collaboration, same-parent continuity, once-only supported recovery and independently eligible isolation",
+      "Attributable cleanup and original review/retro/closeout"
+    ],
+    "qualification": "Source qualification and permission readiness are separate obligations; neither resolves the other. These are retained original-stage conditions, not new tasks or a replacement sequential workflow. Isolation does not depend on recovery success.",
+    "estimatedMinutes": {"implementation": 0, "review": 15, "integration": 0},
+    "estimateScope": "Rough estimate for this empty-task planning amendment's remaining original review only; no external readiness estimate or execution/time/credit cap."
+  },
+  "governance": {
+    "gitReconciliationOwner": "Scrum Master owns only this separate amendment and its generated index addition on the existing feature branch. Original accepted task commits remain there; no new code branch is created or abandoned.",
+    "sharedFiles": "Preserve original sprint plan, ReleasePlan, architecture, historical amendments, unowned specification and its existing index inventory overlay. No branch switch, stash, reset, force push, lock deletion or global staging.",
+    "originalE2E": "Later observation runtime still requires affected original E2E/package qualification. No sourceSubjects are supplied; no e2eSubject or substitute Developer certification. Do not reopen accepted construction or the unchanged earlier changed-join acceptance.",
+    "nativeBoundary": "Recorded noninteractive permission denial remains unresolved; exact missing permission is unidentified. Supported operator resolution evidence is needed before reassessing that operation. No unchanged native retry or alternate-tool route.",
+    "evidenceBoundary": "Private capture ownership/installation/anchors and real checkpoint/history evidence remain explicit. Fixtures, source delivery, agreed negative reports and HTTP/SDK envelopes are not deployed acceptance."
+  },
+  "priorDispositions": {
+    "retainedSatisfiedWithinOriginatingBoundaries": [
+      "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-CREDENTIAL-TIMEOUT-PRESERVATION\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-TIMEOUT-REGRESSION-EVIDENCE\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-CHANGED-JOIN-HANDOFF\"]",
+      "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-NORMALIZED-PLAN-HANDOFF\"]",
+      "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-OBSERVED-PARALLEL-DISPATCH\"]",
+      "[\"yaml-loops-v1:sprint/2/IP-S2/continuation/1/task/IP-S2-C1-EFFECT-BOUNDARY-BRIDGE/AssignedWorkDeveloperLoop\",\"EFFECT-LATE-INHERITED-CAPTURE\"]"
+    ],
+    "remainingRequired": [
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-COMMON-PACKAGE-PUBLICATION\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-LIVE-ACCEPTANCE\"]"
+    ],
+    "superseded": [],
+    "rollback": "Historical COMMON rollback ZIP/build provenance remains WAIVED, never PASS."
+  },
+  "Continuation": {
+    "disposition": "exhausted",
+    "summary": "The last independent observation-source delivery is accepted. No ready work, feasible new source split, independent approved backlog or bounded new unlocking investigation remains in this packet. Preserve all three partial sprints and every unmet release criterion; do not resume unchanged denied DevOps.",
+    "evidence": [
+      "Accepted architecture d63ffa66 and original de1de398 review agree on the bounded exhaustion assessment; inspected current source advancement is architecture/planning/index only.",
+      "Opened b542da12 original delivery completion and 0e118edd final consumer completion; reader/bridge/consumer/delivery cannot be relabeled as new work.",
+      "Opened accepted IP-S3 planning/status/companion/join votes and current ReleasePlan: useful independent documentation/fixture preparation is consumed; isolation still needs actual final deployed bindings and safe comparison scope.",
+      "Opened dfd47372/ae0bade0 original partial reviews and accepted typed/collection negatives. No approval resolution, new supported seam, approved contract change or eligible sourceSubject is supplied; no valid exact-blocker resume is emitted."
+    ],
+    "resumes": []
+  },
+  "handoff": {
+    "receivingOwners": ["Original planning reviewers", "Scrum Master", "Original release closeout owner", "Original DevOps Engineer"],
+    "next": "Review this bounded assessment through existing Product Owner/Architect/Critic planning review, then existing sprint review/retro/closeout. Preserve incomplete waiting status. Reassess exact blockers only on concrete resolution evidence, eligible original qualification handoffs or an explicit Architect-advised Product Owner decision; no unchanged polling loop.",
+    "state": "Implemented/local source acceptance and fixed-ref delivery are retained. Final correction common-package publication, actual AC1-AC9/G1-G8, owned live cleanup and original closeout remain incomplete. Waiting is not acceptance."
+  }
+}

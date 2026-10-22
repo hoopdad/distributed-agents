@@ -1,5 +1,186 @@
 # Identity evidence handoff: prospective profiling and retained candidate history
 
+## IP-S3 prospective acceptance companion — October 22, 2026
+
+**Comparison preparation only; no new live receipt, invocation, stop or cleanup.**
+This additive `IP-S3-ACCEPTANCE-COMPANION` overlay consumes the accepted
+[IP-S3 architecture](customer-prototype-sprint-architecture.md#current-ip-s3-continuity-once-only-recovery-and-independent-isolation)
+and [IP-S3 design](customer-prototype-sprint-design.md#current-ip-s3-continuity-supported-recovery-and-independent-isolation-october-22-2026).
+The IP-S2 overlay and RP-S1 historical body below remain unchanged. Their dated
+missing-prerequisite statements are not new instructions. Exactly three hosted
+roles, remote specialists, deterministic gates before Decision-1, immutable
+role outputs, exact prerequisites, ETag fencing, MAF checkpoints and unknown
+effect holds remain required; this companion changes no runtime or parser.
+
+### Source boundary and original votes
+
+Comparison source is runtime/tests `c52786b7dd1595f3048a78061f893dc79635069f`
+on `feature/customer-hosted-session-prototype`, with selected-lab
+`9b4919d8bcdbf07203f32657936c27328ea6ccc1`. The current sprint architecture
+document is `8f5da03931e4ad13fe1bd1166a8b7f6bb3c7c7ac`, design
+`c544588b570a2e5ae9f6d5a88f2e96a32cc3ec77`, and accepted IP-S2 companion
+`13aecc39fba90d1475de057db07566c69b4ffc27`. These are source references,
+not deployed bindings. Independently opened original audits under
+`gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/`
+(each filename ends in `.json`):
+
+- `6c19a86535b0b0b133a52e31ee77f89fdb90370742805ac6eeac25811bd499ee`:
+  IP-S3 architecture; Product Owner/Critic/Red Team agree and task-complete.
+- `cb73116068dae88e649376c587fa360cd2f56a6b5b3b09a06e73065be7d14602`:
+  IP-S3 design; Product Owner/Critic agree and task-complete.
+- `9bc452275610e015f8ec3f0ad3af80a637966fcbe0c98d9b4a9e1bb541673794`:
+  IP-S2 diagnostic overlay; Architect/Critic agree and task-complete.
+
+All inspected votes have empty unmet criteria; none accepts this new companion
+or proves a cloud turn. Retain the accepted changed-join boundary for
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","RELEASE-CHANGED-JOIN-HANDOFF"]`;
+do not reassess that source ledger here. At that same origin,
+`RELEASE-COMMON-PACKAGE-PUBLICATION` and `RELEASE-LIVE-ACCEPTANCE` remain
+required. Both SDK timeout dispositions at
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop`
+remain accepted in their unchanged source/test boundary, not new work here.
+Historical COMMON rollback ZIP/build provenance is **WAIVED, never PASS**.
+Current automated source/package/version/trusted-host/effect checks remain.
+Planning serialization/dispatch dispositions belong to the originating Scrum
+loop, not to comparison acceptance; this task launches no substitute agents.
+
+### Comparison contract — keep actual values private
+
+Use the existing [scenario validator](../live_acceptance.py)
+`_evidence_turn`, `_evidence_continuation`, `validate_scenario_evidence` and
+`SCENARIOS`, not aliases, whole-session equality or a new public evidence API.
+Each scenario snapshot contains `proof`, `manifest`, cumulative `operations`,
+independently observed boundary `creations` and `sends`; followup/restart also
+need `checkpoints`. Restart adds `stops` and `proof.hosting_restart`; the final
+join additionally consumes `stopped_session`. `proof` carries scenario,
+framework, version, metadata, child-session readbacks, delegations and result.
+Journal intentions are not observed sends. Keep complete values, receipt
+bodies and authentication provenance outside public Git.
+
+| Criterion / canonical steps | Exact comparison and receiving original owner | Retained offline fixtures (not live captures) |
+| --- | --- | --- |
+| AC2/G5; `continuity-revise`, `continuity-invoke`, `continuity-verify` | Original DevOps hands E2E completed **non-held** initial/followup snapshots. `_evidence_turn` requires `ACCEPTED_ADVISORY`, current artifact refs, active response, accepted/reconciled effects and both bound children. `_evidence_continuation` compares identical `scope_binding` (project/tenant/principal/parent), parent `proof.framework.session_id`, both child tuples `(hosted_id, framework.session_id, version)` and coordinator version. Child framework state must name its actual hosted ID; producer and service readbacks must agree. Compare these identity fields, not complete mutable serialized sessions. | `ScenarioEvidenceTests.test_actual_parent_and_both_child_identities_and_versions_are_required`; `test_actual_offline_graph_captures_pass_including_four_call_revision` in [scenario tests](../tests/test_scenario_evidence.py). |
+| AC2/G5; `continuity-verify` | Across initial/followup, retain exactly two cumulative child creations (one per role), with unchanged creation set. Every actual new specialist call has a unique accepted `response_id`; parent active responses differ. `turn` increments once, `generation` increases; old operation transitions remain equal, and new `sends` exactly match current call operations with no duplicates. New responses for invocations do not mean retrieval creates an invocation. | `test_extra_creations_duplicate_sends_and_unreconciled_effects_fail`, `test_stale_approval_and_journal_drift_fail` in [scenario tests](../tests/test_scenario_evidence.py); `test_reject_revise_review_reuses_both_children_with_fresh_responses` in [workflow tests](../tests/test_workflow.py). Four calls in the reject/revise fixture are valid, not a requirement of exactly two calls. |
+| AC2/G5; `continuity-revise`, `continuity-verify` | Earlier requirements `content.chunks` remain an exact prefix with new chunks appended, including the canonical private-ingress initial and queue followup briefs. Candidate/review refs must change; current requirements/candidate/review revisions equal the current turn. Compare every `ArtifactRef` field: container, name, sha256, artifact_type, schema_version, requirements_revision, candidate_revision. Validate artifact content hash, scope, producer role/name/session/version/response and ordered `input_refs`. Current call prerequisites start with current requirements; final reviewer inputs equal the current review artifact inputs, including the exact current candidate, never an earlier same-turn candidate. | `test_missing_queue_requirement_is_rejected_even_with_current_valid_artifacts`, `test_final_reviewer_cannot_omit_candidate_in_consistent_journal`, `test_final_reviewer_cannot_use_earlier_same_turn_candidate`; workflow `test_followup_invalidates_old_approval_and_preserves_children`. |
+| AC4/G6; `recovery-stop`, `recovery-resume`, `recovery-verify` | Original DevOps consumes completed two-turn proof, exact active parent/version and reconciled effect readiness before any supported stop. Persist once-only intent first; retain observed POST accounting, response and independently observed stopped/idle state. Resume the same parent/both children/pins; compare followup/restart with `_evidence_continuation`, cumulative journals and sends as above, not a new child or replay. E2E compares checkpoint scope, unique checkpoint_id, workflow_name `distributed-agents-v1`, nonempty graph_signature_hash, nonnegative integer iteration_count and dictionary state: all old records unchanged, additional records present, one graph signature. | Scenario `test_stop_confirmation_once_only_and_checkpoint_retention_fail_closed`; workflow `test_hosting_restart_stops_exact_active_parent_and_proves_idle_compute`, `test_native_checkpoint_resumes_fresh_graph_without_duplicate_effects`, `test_known_response_reconciles_after_crash_without_new_remote_call`, `test_unknown_effect_is_held_and_never_redispatched`. |
+| AC4/G7; `isolation-bind`, `isolation-execute`, `isolation-verify` | With final deployed bindings and a safe completed comparison scope, original DevOps may independently execute the distinct Cedar parent. E2E compares same project/tenant/principal but different parent hosted/framework IDs, scope prefix and both child hosted/framework IDs; isolated turn is 1, requirements exactly the canonical isolated brief. No overlapping sends, creations or accepted call response IDs; isolated candidate/review content must contain neither Harbor nor asynchronous queue. All scenario metadata equals initial metadata; independently verify actual package/version provenance rather than treating metadata equality as authentication. | Scenario `test_isolation_content_scope_and_release_drift_fail`, `test_valid_hashed_but_leaked_isolated_content_is_rejected`; workflow `test_two_parents_remain_isolated_on_the_same_backend`. [ArtifactRef.assert_scope / Assignment.validate_receiver](../demo/artifacts.py) and [BlobArtifacts.read_artifact](../demo/artifact_store.py) retain trusted-scope rejection and hash verification. |
+| AC7-AC9/G8; `release-join`, `release-package`, `release-discriminate`, `release-close` | IP-S3-DELIVERY-JOIN receives reviewed document commits/votes, unchanged-runtime assessment and explicit-root application/repository checks. Original DevOps supplies final common package and three-role source/version/readback/effect bindings, actual live outcomes and attributable cleanup. Existing Scrum review/retro and closeout retain exact reviewed non-force feature delivery/readback, reproducible setup/commands, sanitized evidence and every missing/held/UNKNOWN condition. No fixture or validator PASS closes publication, live criteria or historical cleanup. | Retain scenario `test_documented_private_json_invocation_passes_and_fails_nonzero`, `test_missing_inputs_fail_closed_without_echoing_private_values`; documented `Test-Demo.ps1` and `scripts/Test-Repository.ps1`. No selected-lab tooling changes are assigned here. |
+
+Runtime links: [Terminal client](../demo/terminal.py) `chat` restores the
+private parent, pins version, rejects pending ambiguous turns and permits
+`recover_only` only for a known response. [RemoteAgents](../demo/foundry.py)
+`create`, `_check`, `invoke`, `recover` retain hosted/framework/version checks
+and response-only recovery. [Workflow](../demo/workflow.py) `WorkflowRuntime`,
+`EffectExecutor` and publication reconcile immutable role artifacts and
+write-ahead effects with fenced manifest publication. These paths are distinct
+from specialist model history and MAF checkpoint state.
+
+Both roles' [SpecialistContinuityTests](../tests/test_specialist_continuity.py)
+`test_architect_persists_and_restores_model_continuation_with_fresh_history_control`
+and reviewer counterpart prove, offline, restored framework session identity,
+prior `service_session_id` forwarded as model `conversation_id`, then advancing
+service response and exact artifact prerequisites. The fresh-history negative
+control lacks that continuation despite the same brief. The paired
+`test_architect_known_response_recovery_persists_continuation_without_send` /
+reviewer counterpart and `*_unknown_and_mismatched_pending_effects_remain_held`
+distinguish retrieval from a new model call. Aggregate scenario snapshots
+do not independently prove that model-history link in a deployed specialist;
+original DevOps/E2E must attribute available private history evidence or report
+that observation unavailable, not substitute remembered prose.
+
+### Once-only stop and final-join limitations
+
+`stop_hosting_for_acceptance` writes `stop_pending` before the POST; an existing
+matching pending journal permits observation only, never another stop POST.
+The aggregate validator requires `phase=stop_confirmed`, matching parent/version,
+`stop_http_status=204`, idle readback, matching finite positive `stopped_at`
+newer than `previous_stopped_at` (if present), and `restart.stops == [parent]`
+from actual boundary capture. Workflow
+`test_unknown_host_stop_is_observed_not_sent_again` demonstrates that an
+uncertain POST can later be observed idle **without** a recorded HTTP status.
+That safe reconciliation is not aggregate G6 acceptance: the missing 204
+receipt remains missing; never repeat stop to manufacture it. Unknown effects
+remain held unless supported evidence reconciles them. No hard-crash or
+universal exactly-once guarantee follows from this supported-stop test.
+
+`validate_scenario_evidence(initial, followup, restart, isolated,
+stopped_session)` needs all five inputs for the **final join**, including
+restart-versus-isolated effect comparisons. This is not a scheduling
+dependency on successful recovery for isolation. Preserve independently
+collected isolation observations until final joining is possible; do not
+fabricate restart data or change the validator. Its syntactic content exclusions
+are bounded synthetic checks, not a proof of all possible information leakage.
+Account-wide Blob permission still relies on application enforcement, not
+storage-RBAC or malicious-host isolation. Validator acceptance authenticates
+neither source/package/version receipts nor log provenance, outbound principal,
+platform identity resolution or process ownership. Raw-ingress/response and
+cross-container association gaps from IP-S2 remain explicit.
+
+`live_acceptance.py:run` emits a per-turn proof and service readbacks; it does
+not export the full aggregate snapshot's manifest, cumulative operation
+documents, independently counted sends/creations/stops or checkpoint records.
+`ScenarioEvidenceTests.capture` obtains those from synthetic MemoryBackend,
+CapturedRemote and InMemoryCheckpointStorage, not a deployed evidence collector.
+Original DevOps/E2E must identify supported authorized private collection
+seams for the missing records, or return the exact unavailable comparison to
+Architect/Scrum. This companion promises no new collector or SDK-internal
+access. Aggregate comparisons also do not fetch historical Blob versions or
+prove ETag fencing: retain independently attributable immutable artifact-byte
+and publication/effect evidence where needed, rather than infer it from a
+matching ref or a correctly hashed supplied snapshot.
+
+### Missing receipts and smallest receiving handoffs
+
+All following live evidence is **missing for this correction**, not fabricated
+by the fixtures or by this document:
+
+1. **Original DevOps -> continuity:** final common-package/source and three-role
+   active-version readbacks, current-effect readiness and completed non-held
+   initial parent; both child hosted/framework identities/pins, actual responses,
+   immutable artifacts/prerequisites and independently observed creations/sends.
+   Private pre-send purpose/intent and ownership are required for new traffic.
+   The historical held parent must never be reused to fill this gap.
+2. **Original DevOps -> recovery:** completed initial/followup pair and accepted
+   comparison; exact active parent/version; durable once-only stop intent,
+   actual stop boundary/204/idle receipts, followup/restart checkpoints,
+   cumulative journal/output/send reconciliation. Known-response retrieval alone
+   cannot supply those receipts. A missing stop receipt or unknown effect is a
+   concrete unresolved comparison, not authorization for another operation.
+3. **Original DevOps -> independent isolation:** final bindings and safe
+   completed comparison parent/scope, distinct synthetic intent/state and
+   isolated parent/both-child/artifact/effect/content observations. No
+   recovery-success handoff is required to schedule it.
+4. **Original E2E -> existing review/closeout:** attribute and compare actual
+   private snapshots, retain partial independent observations and identify
+   unavailable model-history/stop/checkpoint/request-accounting evidence.
+   Route a demonstrated source defect or essential unsupported comparison to
+   original Architect/Scrum scoped replanning; do not guess a remedy, relax the
+   trust gate or add runtime work to this documentation assignment.
+5. **IP-S3-DELIVERY-JOIN -> original Scrum/E2E/DevOps/closeout:** this companion's
+   exact reviewed commit/anchor and votes plus the separately reviewed measured
+   status handoff; then original delivery, all AC1-AC9/G1-G8 receipts,
+   newly owned process/listener cleanup and honest historical UNKNOWN/unproven
+   cleanup accounting. Local preparation can complete while these remain open.
+
+The existing native-preflight denial remains localized to original DevOps/
+operator supported interactive approval; its exact missing permission and
+native tool/authentication readiness remain unproven. This task does not retry
+it, request routine authority again, or block independent comparison/status
+preparation. No new live identity root cause or supported remedy is established.
+
+### Local preparation verification
+
+The documented `Test-Demo.ps1` with existing absolute Python and explicit
+selected-lab root passed dependency checking, **278 tests in 47.334 seconds**
+and compilation. `scripts/Test-Repository.ps1` passed current index, 113-file
+public boundary, JSON, PowerShell, frontmatter and whitespace checks.
+Direct assertions verified the complete preexisting IP-S2/historical suffix
+unchanged, new links/anchors/named fixtures and owning-repository commit refs,
+and unchanged runtime/test source relative to `c52786b7`. No dependency install,
+retained-tooling change, package, live effect or cleanup operation occurred.
+These checks verify preparation only; original Architect/Critic review of this
+new companion remains pending.
+
 ## IP-S2 prospective diagnostic evidence overlay — October 22, 2026
 
 **Preparation only: NOT SENT, NOT LIVE-READY, no identity remedy selected.**

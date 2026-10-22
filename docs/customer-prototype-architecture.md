@@ -1,5 +1,169 @@
 # Customer hosted-session prototype: release architecture
 
+## Existing-telemetry resumption architecture (October 22, 2026)
+
+This amendment consumes the new private `newEvidenceHandoff` supplied by the
+operator. It changes the **absence of cross-process observation** conclusion,
+not the trust contract, stack, accepted implementation or release criteria.
+The canonical [solutionModel](#solutionmodel) remains exactly ten components,
+five triggered flows and eighteen steps, with unchanged IDs and supports.
+This section governs the new evidence boundary over dated statements below
+and in the cumulative sprint/tier documents. It does not reopen their accepted
+handoffs or claim that all previously unavailable evidence is now available.
+
+### Inspected subjects and retained acceptance
+
+Inspected feature HEAD is `19b7a3ace2a448cbd7c88ac51db48d84a57b4517` on
+`feature/customer-hosted-session-prototype`. Application `demo` bytes match
+accepted runtime `f9fcd9cf4f04075e609196ebb90b30e09a91dd98`; tests, scripts and
+scenario readers match qualification `622c1607a4e501e40bed1e7bf6226240cce49777`.
+Retain selected-lab source `ceaba6eea5b0f6bf3c4e265f7fde40bb177aae6e`, common
+package `cb506ae15a8942d5dd6a8570cf5b29533e0d744621c4eb1b8d9b69cf1656b2f8`
+and published architect19/reviewer17/coordinator25. These are retained subjects,
+not a fresh service readback, new qualification or successful agent turns.
+
+Exact original records are retained through prior result
+`3e548e8c-1c32-4b6c-aea7-b9c2027550f7/result.json` in the delivery workspace:
+its `documents` identifies Architecture `fe8d6432`, UX `c087b95d`, ReleasePlan
+`01f0cd55`, qualification and source-delivery origins. Application run
+`c40bef06-de14-4df7-865f-4d4dfb8815a9/context/27920a2a5e7e690b8149d63fea516f7bb381227aa8285066d721461860a4d6a3.json`
+records all three original Architecture votes affirmative. Its
+`89c54e761e65e3d78beb896237dc25de10734fe46692d39eb71cedf96da0555d.json`
+records the accepted attestation architecture; its
+`737b7366fc475690a04e6cc625e32ae572d089217605d26a9a5d154e1053fa0f.json`
+retains agreement on incomplete cloud delivery, not cloud PASS.
+Retain attestation `d9f29764`, isolation readiness `7a2f1862`, IP-S3 architecture
+`166fac6e`, continuation `95def595` and index reconciliation `19b7a3ac` within
+their exact originating boundaries.
+
+The new handoff changes only the evidence-absence finding in
+`customer-prototype-permission-recovery-continuation-1-architecture.json`
+(`95def595`) readiness entry for IP-S2 attestation and its exhaustion rationale.
+It does not supersede required dispositions
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-cloud-verification"]`,
+`release-current-common-package` or `release-guarded-publication` at that same
+origin. The latter two retain their recorded satisfaction; cloud verification
+remains incomplete. No deferred enhancement or new mandatory stage is created.
+
+### Independently inspected existing observations
+
+Architect matched all four SHA-256 values from `newEvidenceHandoff` to exact
+saved files in the authorized permission-recovery evidence root, then inspected
+the executed KQL and actual result tables of the three query receipts below.
+All are retained read-only observations: zero new inference or cloud mutations.
+The fixed query window is 2026-10-22 19:02:22Z through 19:22:22Z, limited to
+the configured account/project and existing linked Application Insights scope.
+No private resource IDs, response/session values or raw identities belong here.
+
+| Private evidence filename | SHA-256 | Observed boundary |
+| --- | --- | --- |
+| `existing-identity-telemetry-discovery-v2.json` | `667405eab19e86822445963152adc699a0c0ed1d3a6b352254e0fbdf0257eb2b` | Existing-resource discovery receipt; no new telemetry destination. |
+| `existing-identity-telemetry-tracejoin-1-v2.json` | `068db17b7772fcde32a8a53827be919723be86ac3c1b4f34963002c3b8cdf97f` | Exact response-tag sets have 628 parent and 44 architect records; one nonempty OperationId each and one common OperationId. |
+| `existing-identity-telemetry-traceprovenance-1.json` | `052b683d4df67d4206754c6303bf77432561d8801400aaa70080c03627c5dad1` | All 44 architect-tagged records match version19 and retained child session; two missing-user, two principal-rejection and two preparation-rejection log matches. Parent-tagged records include 604 version25 matches and 24 not matching that version. |
+| `existing-identity-telemetry-gatewaymatches-1.json` | `8f8b71bda3e35b2f83335d09cfcc96faa6ee8fa660157d0e99d4f9b5282f0422` | 177 gateway records, 162 nonempty objectId and one nonempty callerObjectId; zero inspected locator/canonical-GUID matches to the retained pair. |
+
+The TraceJoin query labels sets by **response baggage**, not emitting role.
+Its 38 dependency records are shared-trace coverage repeated for each response
+label, not 38 independently attributed sends per role or 76 distinct records.
+The 24 nonmatching parent-tagged records are unclassified, not discarded and
+not yet proved to be specialist emissions. Version/session equality strengthens
+observational provenance but does not attest an authenticated caller.
+Repeated log matches are not evidence of repeated external requests.
+
+The handoff's pinned-SDK finding states that W3C baggage is copied to log
+attributes. Thus `user.id`, response tags and shared OperationId are diagnostic
+metadata, not trusted `context.user_id`, proof of ingress `x-agent-user-id`,
+delegation resolution or authorization. Gateway object/caller field presence
+alone is also not caller attribution. Invalid intermediate discovery and
+TraceJoin v1 results remain excluded; FieldInventory's empty gateway property
+projection is not evidence of absent properties. Current helper bytes are not
+historical pre-execution hashes; never reseal or overwrite prior receipts.
+
+### Bounded existing-telemetry discriminator and execution handoff
+
+Original Scrum Master routes this changed seam to original DevOps Engineer
+in the existing YAML placement, with original Architect/Developer/Critic
+assessment. This is useful authorized investigation, not exhausted work and
+not a new authentication, installation, packaging or publication assignment.
+DevOps independently checks the saved executed queries and retained exact
+response/version/session bindings before deriving new associations.
+
+1. **Classify actual emitters.** Within the exact response sets and shared
+   operation, compare `gen_ai.agent.name`, `gen_ai.agent.version` and
+   `microsoft.session.id` against retained role bindings, checking logger/stage
+   context separately. Return fixed expected-role, other-role, absent or
+   conflicting categories and counts. Retain the parent-tagged total of 628,
+   the 604 version25 matches and a complete accounting of the remaining 24.
+   Response tags select candidates, never decide their emitter. Distinguish
+   missing values from unequal values; ambiguous attribution stays UNKNOWN.
+2. **Qualify exact request lineage.** Inspect only scoped metadata already
+   present on the 38 correlated dependencies and matching traces: operation,
+   span/parent IDs, allowlisted request-ID fields and the observed `_MS.links`
+   field. Evaluate exact equality/link relationships server-side, with presence,
+   cardinality and ambiguity counts returned. Qualify supported field/link
+   semantics from the emitting SDK/service contract before interpreting them.
+   A trace-wide match or timestamp proximity cannot identify the downstream
+   HTTP POST. Missing dependency coverage is not proof no send occurred.
+3. **Attempt gateway attribution only on a newly established exact seam.**
+   A supported retained server-issued request/span link must connect the actual
+   downstream POST to its gateway RequestResponse record, without arbitrary
+   normalization or invented identity aliases. Establish objectId/callerObjectId
+   semantics separately before using equality against approved expected
+   principals. Never return their values. Existing direct and canonical-GUID
+   gateway joins are negative and must not be replayed unchanged.
+4. **Close the bounded investigation.** Return qualified correlation and
+   emitter accounting, exact supported joins or their concrete unavailable
+   fields/semantics, remaining caller/resolution uncertainty and affected
+   source interval. Negative results can complete this investigation, not the
+   live flow. A demonstrated supported source defect returns only its affected
+   correction to Developer and original checks/reviews. Otherwise retain the
+   private attestation handoff UNSENT; no external submission is authorized.
+
+New query scripts/immutable inputs/receipts belong exclusively in the supplied
+telemetry-recovery evidence root. Prior helper source is readable, not writable.
+Only existing resource/time-scoped telemetry may be queried; project exact
+field names, presence/equality, fixed categories and counts. Do not project
+messages, identity values, headers, bodies, queries, secrets or tokens, decode
+tokens, enumerate unrelated resources, add capture destinations or send new
+inference merely to reproduce this failure. No inferred trust or header
+substitution is authorized. Preserve held parents and all UNKNOWN effects.
+
+### Readiness graph and localized remaining work
+
+| Canonical components / flow steps | Approved criteria and actual source | Current state and smallest next handoff |
+| --- | --- | --- |
+| Trusted identity and private transport; Hosted coordinator / Hosted architect; `collaboration-design`, `release-discriminate` | Profiling 3/5/6; AC1/AC5/AC7; `demo/foundry.py` OriginTransport, `demo/host.py` preparation/ingress, `demo/diagnostics.py` | Diagnostics implemented, retained qualification and publication; new independent trace observation, not authenticated-caller proof or live success. DevOps qualifies the bounded discriminator above. No source defect established. |
+| Hosted reviewer; `collaboration-review`, `collaboration-return` | AC1/AC5; `demo/reviewer_agent.py`, `demo/workflow.py`, `demo/artifacts.py` | Accepted remote trust/artifact construction retained. Architect rejection prevents completed current collaboration; gateway attribution alone cannot manufacture immutable candidate/review acceptance. |
+| Parent and specialist conversation state; MAF workflow checkpoints; `continuity-revise`, `continuity-invoke`, `continuity-verify`, `recovery-stop`, `recovery-resume`, `recovery-verify` | AC2/G5, AC4/G6; `demo/workflow.py`, `demo/foundry.py`, `live_acceptance.py` | Implemented/offline-qualified within retained limits. Actual continuity needs completed non-held initial collaboration; recovery additionally needs genuine two-turn and once-only stop readiness. No held-operation replay or duplicate history/export research. |
+| Private Blob artifacts and effect journal; `isolation-bind`, `isolation-execute`, `isolation-verify` | AC4/G7; `demo/private_effect_capture.py`, `demo/effect_observation.py`, `scenario_state_reader.py`, `live_acceptance.py` | Independent of recovery success and of this telemetry investigation. Accepted readiness still lacks completed comparison and supported hosted capture owner/destination/lifetime, trusted anchors, quiescence and cleanup/readback ownership. Existing trace logs do not install that consumer or prove consumed history. |
+| Terminal client; Guarded lab release toolchain; `release-join`, `release-package`, `release-close` | AC3/AC6/AC7/AC8/AC9/G8; `Test-Demo.ps1`, `package_guard.py`, `README.md`, release notes | Retain native readiness/common package/guarded publication satisfaction; no unchanged suites or publisher. Original closeout reconciles exact review coverage for later local refs beyond retained remote `14ee132e`, then bounded non-force fixed-ref push/readback, never moving HEAD. Live scenarios, hosted provenance, attributable cleanup, review and retro remain incomplete. |
+
+Scrum Master owns contract-first decomposition, critical-path scheduling and
+Git reconciliation. No whole-sprint dependency on this investigation is added.
+Audit the existing independent isolation/capture handoff and approved remaining
+backlog without redispatching accepted negative readiness research. A material
+new capture lifecycle/destination/trust proposal requires Architect-advised
+Product Owner scope resolution; missing evidence alone does not authorize it.
+Only a demonstrated runtime change requires affected qualification and one
+guarded common-package publisher. Keep all partial sprints and AC1-AC9/G1-G8.
+Exactly three hosted roles, Decision-1 after deterministic gates, trusted parent
+binding, immutable outputs/exact refs, ETags, MAF checkpoints and write-ahead
+unknown-effect holds are unchanged. COMMON rollback provenance remains
+**WAIVED, never PASS**. No new infrastructure/RBAC/network/quota/registry/VPN
+change, production profile, secret retrieval or uncertain-effect replay.
+
+### Amendment verification boundary
+
+Focused read-only assertions verified the canonical model equals accepted
+`fe8d6432`, the referenced application modules exist, all four cumulative/tier
+links point to this amendment, and the exact retained evidence hashes match.
+Owned-path whitespace checks passed. This is architecture/evidence validation,
+not a rerun of accepted application suites or the previously denied full
+repository entry point, and not a substitute PASS for either. No native setup,
+new telemetry query, hosted capture activation, publication, inference, stop,
+push or external submission was performed. The unowned index/specification
+overlays remain outside this amendment's commit.
+
 ## Native-authentication resumption architecture (October 22, 2026)
 
 This is a bounded remaining-release amendment, not a replacement architecture

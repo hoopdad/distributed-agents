@@ -1,5 +1,15 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Existing-telemetry changed-condition handoff
+
+Consume the [current architecture amendment](../../customer-prototype-architecture.md#existing-telemetry-resumption-architecture-october-22-2026).
+All 44 exact architect-response-tagged records match retained version/session,
+including preparation rejections; the shared operation is observation only.
+Inherited user baggage cannot populate or attest trusted SDK user context.
+Original DevOps qualifies exact emitter/request lineage and any supported
+gateway join. Preserve fail-closed rejection, remote roles and immutable outputs;
+no source defect, platform defect or missing RBAC is established.
+
 ## Permission-recovery continuation 1
 
 Consume the [bounded continuation amendment](../../customer-prototype-permission-recovery-continuation-1-architecture.json).

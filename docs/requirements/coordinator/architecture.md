@@ -1,5 +1,14 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Existing-telemetry changed-condition handoff
+
+Consume the [current architecture amendment](../../customer-prototype-architecture.md#existing-telemetry-resumption-architecture-october-22-2026).
+The retained pair now shares an independently observed operation, not a proved
+authenticated caller. Response baggage does not identify the emitting role:
+classify all 628 parent-tagged records, including 24 not matching version25.
+No coordinator source defect or header repair is established. Canonical state,
+checkpoint, trust and unknown-effect contracts remain; no held send is replayed.
+
 ## Permission-recovery continuation 1
 
 Consume the [bounded continuation amendment](../../customer-prototype-permission-recovery-continuation-1-architecture.json).

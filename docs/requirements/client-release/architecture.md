@@ -1,5 +1,14 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Existing-telemetry changed-condition handoff
+
+Consume the [current architecture amendment](../../customer-prototype-architecture.md#existing-telemetry-resumption-architecture-october-22-2026).
+Original Scrum/DevOps qualify existing scoped telemetry; accepted native
+readiness, common package and publication are not repeated. Exact reviewed-ref
+delivery remains original closeout work, never a moving-HEAD push. Shared trace
+is not authorization, hosted capture installation or passing live acceptance.
+Independent isolation readiness, cleanup and all original criteria remain.
+
 ## Permission-recovery continuation 1
 
 Consume the [bounded continuation amendment](../../customer-prototype-permission-recovery-continuation-1-architecture.json).

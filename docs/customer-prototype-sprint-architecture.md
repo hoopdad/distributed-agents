@@ -1,5 +1,16 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Existing-telemetry changed-condition handoff
+
+The [current architecture amendment](customer-prototype-architecture.md#existing-telemetry-resumption-architecture-october-22-2026)
+supersedes only the prior absence-of-cross-process-observation finding.
+Canonical solutionModel and accepted runtime/publication remain unchanged.
+Original Scrum routes the exact saved query evidence to original DevOps for
+emitter accounting and supported request-lineage qualification, not unchanged
+publication or an authentication retry. Shared trace and inherited user baggage
+do not attest a caller. Independent isolation still requires its own comparison
+and hosted capture ownership; all actual live criteria remain incomplete.
+
 ## Permission-recovery continuation 1: bounded current construction assessment
 
 The separate [continuation amendment](customer-prototype-permission-recovery-continuation-1-architecture.json)

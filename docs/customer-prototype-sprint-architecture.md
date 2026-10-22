@@ -1,5 +1,82 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Current IP-S1: qualify retained observation source after transport recovery
+
+October 22, 2026. Apply accepted Architecture `fe8d6432b66bcce396bb200d547fa0ca2ac32926`,
+ReleasePlan `01f0cd55a4c55608152c94185c89e5e5b5a58b9e` and SprintDesign
+`c5c40239b342bfd40be3d2ff3c448d90bc7833e5`. Opened current outcome audits
+under `gh-dynamic-workflows/.delivery-runs/76e49846-d1f2-4c9d-86ff-ee268dd47c2c/context/`:
+Architecture `086d0f474c2573fed97813a1c5b1da8ad3f6da42c2c470cd3a6b3f8a45db7db5.json`,
+ReleasePlan `f028ee204f0feabcbe764305c58e458fa6d6b57413c6a947f5be0754f66a31d8.json`,
+and SprintDesign `4f986ada9fe598b67ab0ceb0c6bf17bc8edd1f68d1646e44c1c7539b85ab3229.json`.
+Each records agreement and affirmative original reviewer votes; SprintDesign's
+Product Owner/Critic collection is now complete. Those votes accept documents,
+not later runtime qualification or live capability. Both supplied
+priorDispositions arrays are empty; no reconciled correction is supplied.
+
+### Retained solutionModel and current scope
+
+The sprint's solutionModel is the single canonical
+[components/flows/steps model](customer-prototype-architecture.md#solutionmodel)
+at accepted `fe8d6432`: ten components, five triggered flows, eighteen steps.
+Keep its IDs, names, support links and personas unchanged. The accepted
+[resumption contract](customer-prototype-architecture.md#native-authentication-resumption-architecture-october-22-2026)
+governs over historical exhaustion/readiness conclusions below. Restored
+Copilot reachability permits new original-role execution, not denial bypass,
+effect replay, a diagnosed identity remedy or release PASS.
+
+| Canonical components / flow steps | Approved criterion and actual source | State and smallest receiving handoff |
+| --- | --- | --- |
+| Trusted identity and private transport; Hosted coordinator, Hosted architect, Hosted reviewer / `collaboration-bind`, `collaboration-design`, `collaboration-review` | Profiling 1-3; AC1/AC5/AC7. `demo/foundry.py`, `demo/host.py`, `demo/diagnostics.py`, `demo/workflow.py`; `tests/test_profiling_integration.py` and focused diagnostic regressions. | Implemented/local-reviewed through `f9fcd9cf`; original E2E must qualify actual later bytes with selected lab `9b4919d8`, loaded roots, rejection/redaction/context/streaming/cancellation and known-response recovery. Older accepted `c52786b7` join is not replayed. |
+| Private Blob artifacts and effect journal; Parent and specialist conversation state; MAF workflow checkpoints / `collaboration-return`, `continuity-verify`, `recovery-verify`, `isolation-verify` | Profiling 5-7; AC2-AC5/G1-G8. `demo/effect_observation.py`, `demo/private_effect_capture.py`, `scenario_state_reader.py`, `live_acceptance.py`. | Accepted local contracts, not hosted proof. Consumer is caller-owned and opt-in; downstream execution must establish installation before inherited background work, exclusive retention, independent anchors and quiescence. Typed original-encoding and consumed-history gaps stay explicit. |
+| Guarded lab release toolchain / `release-join`, `release-package` | Profiling 2-4; AC7. `Test-Demo.ps1`, `scripts/Test-Repository.ps1`, `package_guard.py`, retained selected-lab release helpers. | Original E2E current-source qualification/package-input closure precedes dependent original DevOps packaging, not all independent work. New private stage must bind later runtime, image/dependencies/Linux checks and all three roles to one new common package. Historical stage remains untouched. |
+| Guarded lab release toolchain / `release-join`, `release-close` | Requested deployment-skill edit; AC8. `.github/skills/lab-deployment/SKILL.md`. | Independent original Developer review/scoped delivery lane. Preserve supervising-session diff; designate its owner before editing. Git reconciliation/non-force delivery uses exact reviewed refs and independent readback, never moving HEAD or a planning-only push. |
+| Guarded lab release toolchain / `release-discriminate`, `release-close` | Profiling 4-7; AC1-AC9/G1-G8. Retained publisher and `live_acceptance.py`. | Publication and live results remain unverified. Original DevOps owns serialized publication, current-effect readiness and new synthetic purpose/intent before traffic; original review/retro/closeout retains actual acceptance and owned cleanup. |
+
+### Localized dependencies and preserved boundaries
+
+Scrum Master now decomposes the two IP-S1 lanes and assigns Git reconciliation
+through the original SprintPlan. No new role, framework, dependency, public
+schema, resource, trust rule or whole-sprint dependency is introduced.
+E2E failures return only demonstrated affected defects to original Developer
+and reviewers, followed by affected rechecks. Skill delivery proceeds without
+waiting for live acceptance. Do not rebuild accepted reader/bridge/consumer,
+repeat negative research or manufacture an E2E-shaped documentation task.
+
+Original DevOps revalidates the actual retained execution route: per-output
+`azd-wsl-config` needs its own supported Azure CLI bridge and pinned beta.18,
+delegated status and expected account scope. Separate preflight configuration
+is not an implicit wrapper override or current private-connectivity proof.
+Any actual new denial binds its affected operation; no alternate-tool bypass.
+No infrastructure/RBAC/quota/network/DNS/registry/VPN changes, production profile,
+secret retrieval or external submission is authorized.
+
+Preserve held parents, known responses and UNKNOWN effects; retrieval is not
+a new invocation. No retrospective ingress observation or guessed identity
+substitution. Hosted capture gaps gate only claims that consume that evidence,
+not independent approved preparation. After actual non-held initial completion,
+follow-up and once-only supported stop/resume consume their genuine handoffs;
+separate-parent isolation needs final bindings and safe comparison scope,
+not successful recovery. IP-S1/IP-S2/IP-S3 remain partial. Historical COMMON
+rollback provenance remains **WAIVED, never PASS**. Current package bindings,
+real AC1-AC9/G1-G8 and attributable cleanup remain required.
+
+### Verification of this sprint refinement
+
+Read-only assertions passed for all four preserved historical suffixes,
+unchanged accepted canonical model (10 components/5 flows/18 steps), valid
+support/step references, mapped source existence and all original affirmative
+votes in the three current audits above. The normal
+`scripts/Test-Repository.ps1 -Python <explicit-existing-python>` invocation
+was tool-denied because no interactive response was available; it did not run.
+The exact missing permission is unidentified. No alternate route or retry was
+used. Repository-wide validation therefore remains unverified for this edit;
+that denial establishes neither missing project authority nor an Azure defect.
+No runtime, lab source, dependencies, authentication, packaging, deployment or
+live traffic changed or ran. Only these sprint/tier documentation paths are
+owned by this turn; the existing index, skill and specification overlays remain
+unowned. Original Product Owner/Critic/Red Team review follows owner submission.
+
 ## IP-S1 continuation 3: reconcile accepted delivery without replaying release
 
 October 22, 2026. The [separate round-3 assessment](customer-prototype-profiling-continuation-3-architecture.json)

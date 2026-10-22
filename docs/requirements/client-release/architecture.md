@@ -1,5 +1,25 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current IP-S1: separate source qualification and requested skill delivery
+
+Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-ip-s1-qualify-retained-observation-source-after-transport-recovery),
+accepted Architecture `fe8d6432`, ReleasePlan `01f0cd55` and SprintDesign
+`c5c40239`. Canonical terminal/release IDs, machine stdout/parser and human
+stderr projection stay unchanged. Original E2E qualifies later observation
+`f9fcd9cf`/lab `9b4919d8`; the requested
+`.github/skills/lab-deployment/SKILL.md` review/exact delivery is independent.
+Scrum Master assigns owners and feature-branch reconciliation. Neither lane
+establishes package/deployment/live PASS.
+
+Original DevOps alone creates the new private stage, validates its own
+`azd-wsl-config` bridge/beta.18/account status and actual Linux/dependency/
+image/package/host/effect readiness, then serializes one common-three-role
+publication. Never reseal the stale stage or bypass a new denial. Hosted
+capture ownership/coverage and real continuity/recovery/isolation/cleanup
+remain required; isolation does not depend on recovery success. Preserve
+held/UNKNOWN effects and all partial sprints. COMMON rollback provenance
+remains **WAIVED, never PASS**; no new infrastructure or permission mutation.
+
 ## IP-S1 continuation 3: consume substantive delivery and retain native boundary
 
 Apply the [round-3 assessment](../../customer-prototype-profiling-continuation-3-architecture.json).

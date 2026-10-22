@@ -1,5 +1,20 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current IP-S1: qualify existing trusted observation paths
+
+Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-ip-s1-qualify-retained-observation-source-after-transport-recovery)
+and accepted Architecture `fe8d6432`; canonical solutionModel IDs/supports stay
+unchanged. `demo/workflow.py`, `demo/foundry.py`, `demo/host.py` and
+`demo/diagnostics.py` retain deterministic gates, parent binding, ETag publication,
+MAF checkpoints and supported request/background diagnostics. Profiling 1-3/
+AC1/AC5/AC7 require original E2E qualification of later `f9fcd9cf` with lab
+`9b4919d8`, not replay of the older accepted join. No coordinator repair is
+justified merely by restored model transport. Caller-owned
+`demo/private_effect_capture.py` is not auto-installed hosted coverage;
+anchors/quiescence and consumed-history provenance remain downstream evidence
+requirements. Diagnostics never authorize or suppress rejection. Preserve
+streaming/cancellation, immutable refs and held/UNKNOWN effects.
+
 ## IP-S1 continuation 3: retain paired diagnostics and trusted dispatch
 
 Apply the [round-3 assessment](../../customer-prototype-profiling-continuation-3-architecture.json).

@@ -1,5 +1,19 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current IP-S1: retain remote specialist trust during qualification
+
+Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-ip-s1-qualify-retained-observation-source-after-transport-recovery)
+and accepted Architecture `fe8d6432`; Hosted architect/Hosted reviewer and all
+canonical model IDs/supports remain unchanged. `demo/host.py`, `demo/foundry.py`,
+`demo/architect_agent.py` and `demo/reviewer_agent.py` retain supported pinned
+hooks, exact assignments and immutable role outputs. Profiling 1-3/AC1/AC5/AC7
+need later-source original E2E, then the same new common package for both remote
+roles and coordinator. Outbound/ingress/SDK context observations localize an
+interval; missing public header at ingress alone proves no platform loss.
+No guessed header mapping, history patch, hidden local specialist or identity
+remedy is established. Actual trusted identity, history consumption and
+continuity/isolation remain live proof obligations, not fixture conclusions.
+
 ## IP-S1 continuation 3: preserve the observable identity interval
 
 Apply the [round-3 assessment](../../customer-prototype-profiling-continuation-3-architecture.json).

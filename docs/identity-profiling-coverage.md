@@ -7,6 +7,189 @@ handoffs. The [integration join](#ip-s1-integration-join) closes those applicati
 call-site handoffs without extending coverage into SDK-owned stores or the
 platform. No section is a universal coverage or live acceptance claim.
 
+## IP-S2 changed-source handoff to original E2E
+
+October 22, 2026; Developer task **IP-S2-JOIN-HANDOFF**, not another
+implementation or formal E2E stage. This current overlay consumes
+[SprintArchitecture](customer-prototype-sprint-architecture.md#current-ip-s2-exact-changed-join-guarded-publication-and-live-localization)
+`833b4ad90a8429cc6b1453abf5ece22eb54c51d1` and Scrum assignment
+`4b30297d6b3c2282f034521f3e3a2b83034b7707`. Earlier results below remain history.
+This handoff's documentation commit is supplied by the owner report rather
+than a self-referential hash inside the document.
+
+### Exact source, ownership and ancestry
+
+Both checkouts are on `feature/customer-hosted-session-prototype`.
+Independently inspected application candidate
+`4b30297d6b3c2282f034521f3e3a2b83034b7707` retains runtime/test baseline
+`c52786b7dd1595f3048a78061f893dc79635069f`. Its three later ancestors
+`6aaf96018ab5c5f2b7ab8a74eceaf1fc09638ab5`,
+`833b4ad90a8429cc6b1453abf5ece22eb54c51d1` and
+`4b30297d6b3c2282f034521f3e3a2b83034b7707` change only index/design/
+architecture/planning documents, not runtime, tests or check entry points.
+The seven accepted implementation commits in the
+[IP-S1 ledger](#ip-s1-integration-join), plus integration `c52786b7`,
+all passed `git merge-base --is-ancestor <commit> HEAD`.
+
+Selected-lab candidate is exactly
+`9b4919d8bcdbf07203f32657936c27328ea6ccc1`; predecessor
+`1e9ddb8560a5637d639f4657111f3bca49d38d78` passed the same ancestry check.
+Inspected the complete correction diff: three named read-only application
+test mounts (`.agentignore`, `.dockerignore`, `Dockerfile`) and retained
+assertions in `foundry-tf/multi-agent/tests/test_release_native_settings.py`,
+plus its index note. They repair the observed missing `/app/.agentignore`
+test-input closure, not runtime construction or identity resolution.
+Network-none isolation and nonzero failure propagation are unchanged.
+
+Using the existing explicit Python and the two explicit roots in the private
+execution input, actual imports resolved `demo` and `live_acceptance` to the
+application; `release_roots`, `identity_decision`, `bundle_package`,
+`wsl_release` and `observe_agent` to the selected lab's
+`foundry-tf/multi-agent`. `ReleaseRoots.select(application, lab)` succeeded.
+Actual PowerShell `Resolve-ReleaseRoots` loaded from that same selected
+lab's `Release-Roots.ps1`, returned the matched application/lab/tools roots
+and succeeded. No operational-context/profile/settings loader was invoked.
+Machine-specific absolute roots stay in the private owner report, not Git.
+
+Every source input in the following mappings matched its designated commit
+after CRLF-to-LF normalization. All listed individual files also matched
+current HEAD. These are reproducible **source mappings**, not package seals.
+Each mapping is SHA256 of UTF-8 compact, sorted-key JSON
+`{repository_relative_path: sha256(file_bytes)}`; LF mappings hash normalized
+committed bytes, raw mappings hash current disk bytes.
+
+| Mapping and exact membership | Entries | Raw mapping SHA256 | LF committed mapping SHA256 |
+| --- | --- | --- | --- |
+| Application `ReleaseRoots.runtime_files()` at `c52786b7` | 20 | `0f8ea042f49af384897360e3a2267f382be0694d62b8e43ca85a821c6daa3dc2` | `513b869ddc5d93a49871114476690b87b0be1a03579bf0f42817f202a91750a5` |
+| Application tracked `demo`, `tests`, `scripts`, plus named verification inputs below, at `c52786b7` | 52 | `dd771282856e724af1e7331999e3353d46234cc1898a35ab346b34625e703b73` | `c2178cfb46837b99c258f1567c8151dcea5791b5975f02ea65d450903a06ee06` |
+| Selected-lab tracked `.py`/`.ps1` files under `foundry-tf/multi-agent`, including tests, at `9b4919d8` | 41 | `94863da6cc284c3d5976b5942d0a472f12758d73947ee18e03d067cc4abc4aea` | `bfe967c0d1671a86dba00cec541e6b6286996e61c57d6f1682733f10235286d0` |
+
+The application verification union adds `Test-Demo.ps1`, `Dockerfile`,
+`.agentignore`, `.dockerignore`, `azure.yaml`, `main.py`, `requirements.txt`,
+`requirements.lock.txt`, `native_proxy.py`, `agent_metadata.py`,
+`package_guard.py`, `live_acceptance.py`, `config/routing-corpus.json` and
+`config/routing-calibration.json`. Deduplicate/sort all paths before hashing.
+Enumerate tracked paths with `git ls-files` at the bound candidate; read
+baseline bytes with `git show <commit>:<path>`. These mappings intentionally
+exclude documentation/private settings and are not a seal of every lab file.
+
+| Individually relevant path (lab paths relative to `foundry-tf/multi-agent`) | Raw working SHA256 | LF committed SHA256 |
+| --- | --- | --- |
+| Application `tests/test_profiling_integration.py` | `b08e51e789e5efd0abd6c3bccdff4658d42915f486c76d4f309005ba0f816381` | `c2733455d42c1b138a87cd006899c48b0d93611ce0cf62a0899c6d4025cff3e0` |
+| Application `Test-Demo.ps1` | `2d6bc0fd74c70908eec572a4b73d1ec196ff01b5c6f0f9ea75cb7bcdc95464d5` | same |
+| Application `package_guard.py` | `187440c382fc1d56989593ac26865ccf24b2af0f932d70165666c79d374b88da` | `31b4f055f647cd0d8903f5b48e7a9c4a01251d271d80c3b17b0df60999f321cc` |
+| Application `scripts/Test-Repository.ps1` | `8a50384140c74590ed31057f436c9bab7dcdcddd5c34feb2d055a0c446a0a1b2` | `01565e7b999f87d38622f13c0870566420f9981fb42d4f1a1358073d078dcf83` |
+| Lab `Build-Demo.ps1` | `181cb84d999bf6a2b57ea2d7feb5c09bbaa62f9e9c919bdb9a44b14a859de209` | same |
+| Lab `tests/test_release_native_settings.py` | `baa2c9a046e83cf84b97f0e35a504ac5786038c355001fd964a0bc242425e7f4` | same |
+| Lab `release_roots.py` | `312c926b91a416c957efe66c387428dec179988f32164b6706892e0d5bb09fd1` | same |
+| Lab `Release-Roots.ps1` | `8438d8bdbc04f94bd1b8380601fe8423a66b3045ddd561ec46bc69eb9e987e27` | same |
+
+The three newly mounted application inputs also matched committed/raw bytes:
+`.agentignore` `c0b0f1dcc150191c7ada339cdca597cb76e12410bd6f0c62ac706bec5f0a16c2`;
+`.dockerignore` `07668721e93c114faef8d76b850e87457bce5b2d8daaf6ac7d534304c2e0172f`;
+`Dockerfile` `8cf14b34577830191586eb3b744535b5772b841f4f32b44099767b4d843b1eeb`.
+
+### Original reviews and applicable captured checks
+
+Opened audits under the current run's
+`gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/`:
+
+- Original E2E `da4425177dd7b48116a3b6eb9aa04742eb2f0cb3d4d4196494c5a4416c2e34a0.json`:
+  Architect/Critic/Product Owner each agree and taskComplete, no unmet criteria,
+  for the **earlier join**, not the changed lab prerequisite.
+- Original DevOps `f7b942e94652c10a41c6e32a96cef0d447c00995ec1fbcd2a35cb65a28677dec.json`:
+  Architect/Critic/Developer each agree with the bounded correction/report but
+  each records taskComplete false. All retain changed-join E2E, common-package
+  publication and actual cloud/live acceptance obligations.
+- Current architecture `26adb308b85ae4732ca698f4dcdd8985c3c1096516154c481dad23e63ee9282f.json`:
+  Product Owner/Critic/Red Team each agree and taskComplete for architecture.
+  No document vote establishes passing deployment or live identity resolution.
+
+Inspected the private DevOps `verification.json` and all three exact named
+captures in delivery workspace evidence directory
+`delivery-evidence/identity-profiling-devops-20261022T0402Z`.
+Independently verified capture SHA256 values:
+`linux-before.txt` `a682049e9fa814ba63375c75b5fdacdeef9f2fb10eae7e6bd7ff17ec00bab775`;
+`windows-after.txt` `d73c6f3847da2e869bc9245949df20baffdbf0e15e48a4492cc5b0a38e171349`;
+`linux-after.txt` `59fb415cd98193d889249c35d0d75c464e973387616a1f98792d9bc74e0b4cb7`.
+The captures are copied combined tool-returned streams, not independently
+separated OS stdout/stderr. They remain unmodified private evidence.
+
+| Attributed execution, not rerun here | Applicable result and exclusions |
+| --- | --- |
+| Initial Linux application suite | 278 run, one error, eight skipped, 231.095 seconds; `/app/.agentignore` absent. Retain the actual failure as correction evidence, never as a pass. |
+| Corrected linked Windows wrapper | 278/278 application passes in 56.625 seconds; retained 236/240 passes in 204.272 seconds, four excluded: three native-Linux bridge/artifact cases and the positive exact-clean-commit entrypoint case. Dependency and compilation checks passed. |
+| Corrected Linux wrapper | Application 270/278 passes in 305.879 seconds, eight excluded; retained 197/240 passes in 322.453 seconds, 43 excluded. Wrapper exit zero is not 518 passing cases. The three Windows-excluded native-only cases passed here. |
+| Runtime/image probe | Python 3.13.15, pinned core 2.2.0 / Responses 2.3.0 / hosting 1.0.0b261002; linux/amd64 image `mike-lab-multi-agent:74fa67b7acd0`, ID `sha256:b383102c8d67f753adb380e2930184317934248aa48fe656b8a39fc989e1612e`, source SHA256 `74fa67b7acd054750f564cf1dc4040e90c0cb17b2c4595209f9522423f0a6db3`. |
+
+The eight application Linux exclusions are two PowerShell settings bootstrap
+cases, two explicitly linked external connectivity cases, three Windows
+CLI/file-lease cases, and
+`PackageClosureTests.test_actual_selected_lab_runtime_closure_includes_all_application_modules`.
+That last fixture lacks an explicit linked lab checkout in the network-none
+Linux container; it **did not run there**. It passed with explicit linkage
+in Windows. Retained Linux exclusions are the 43 individually named Windows/
+PowerShell/Docker Desktop wrapper cases in `linux-after.txt`; they are not
+native Linux coverage. The Windows positive exact-clean-commit exclusion
+remains unproven by these captures, not silently closed by committing.
+The captures warn of amd64-on-arm64 execution: no native-amd64-host claim,
+new hosting-package gate, bundled ZIP or deployment proof follows.
+
+Source/runtime/test comparisons above support reuse of these captured cases
+at this exact join; original E2E decides applicability and any necessary
+additional verification, not a blanket rebuild. The current Developer ran only
+the four standalone `test_profiling_integration.py` cases with explicit lab
+linkage (PASS, 0.255 seconds), and retained
+`NativeSettingsTests.test_application_package_closure_inputs_are_named_readonly_test_mounts`
+plus `test_docker_source_hash_binds_calibration_input_and_preserves_original_hash`
+(PASS, two cases, 5.209 seconds). Use the existing absolute Python,
+`OTEL_SDK_DISABLED=true` and `AZURE_LAB_SOURCE_ROOT=<selected-lab>/foundry-tf/multi-agent`;
+load the retained test module from that same root. No dependency restoration
+or full application/Linux suite was rerun by this task.
+
+The documented `scripts/Test-Repository.ps1 -Python <existing-absolute-python>`
+also passed: current index, 113 public files, public/private boundary, JSON,
+PowerShell, frontmatter and whitespace. Direct assertions confirmed the two
+linked headings and three audit files exist and the complete historical
+coverage content after this overlay remains unchanged. Shared checkout note:
+the independent prospective-evidence owner was editing
+`docs/identity-candidate-handoff.md` during validation; that path is neither
+reviewed nor committed by this task.
+
+### Smallest continuation and remaining boundaries
+
+Apply exact disposition
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","RELEASE-CHANGED-JOIN-HANDOFF"]`.
+After this task's original Architect/Critic review, existing Scrum/orchestrator
+routes the accepted source/evidence ledger through supported continuation to
+the original `sprint/1/IP-S1/EndToEndTestLoop` prerequisite reassessment, with
+its original Architect/Critic/Product Owner reviews. Bind the actual candidate,
+loaded roots and any later documentation-only ancestry; assess these captures
+and exclusions, verify only the changed join as necessary and issue the updated
+handoff. Do not equate this Developer ledger with that still-missing acceptance.
+No duplicate E2E, stage-state edit or additional approval gate is requested.
+
+All supplied intended implementation/task commits are already ancestors on
+their authorized feature branches; no merge, abandoned code branch, branch
+switch or push was needed. This task adds only the current coverage/index
+overlay. Preserve the pre-existing untracked specification and its uncommitted
+index line; repository validation includes that overlay, not a clean-checkout
+inventory certification. Subsequent independently owned document commits need
+their own attribution, not runtime recertification solely for moving HEAD.
+
+At that same exact DevOps origin, `RELEASE-COMMON-PACKAGE-PUBLICATION` and
+`RELEASE-LIVE-ACCEPTANCE` remain original DevOps obligations after accepted
+changed-join E2E. Current automated source/package/version/trusted-host/effect
+checks, one serialized common-package publication for all three existing roles,
+distinct privately recorded diagnostic intent, attributable cleanup and original
+AC1-AC9/G1-G8/review/retro/closeout remain unmet by this document.
+Historical COMMON rollback provenance stays **WAIVED**, never PASS.
+The two SDK timeout dispositions at the exact SDK-POLICIES origin cited below
+remain satisfied in their accepted source/test boundary, not reopened.
+No supported identity remedy or authenticated outbound principal is established;
+SDK-internal/platform visibility gaps and all held/unknown operations persist.
+Independent prospective evidence and approved IP-S3 preparation are unaffected.
+
 ## Scope and evidence
 
 Developer inventory for IP-S1-SDK-INVENTORY, against application baseline

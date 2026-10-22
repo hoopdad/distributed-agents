@@ -1,5 +1,16 @@
 # Repository index
 
+Current IP-S2 changed-join Developer ledger:
+`docs/identity-profiling-coverage.md#ip-s2-changed-source-handoff-to-original-e2e`.
+Application candidate `4b30297d` retains runtime/test baseline `c52786b7`;
+selected lab is `9b4919d8`. Navigate there for actual loaded-root checks,
+raw/LF source mappings, original review votes, attributed Windows/Linux
+captures and explicit exclusions (including missing linked Linux closure
+fixture and amd64-on-arm64). Only focused join/mount checks ran anew.
+Original same-sprint E2E still owns changed-join reassessment before original
+DevOps package/publication/live effects. No paths added/deleted; preserve
+unowned specification inventory and all earlier notes.
+
 Current IP-S2 dispatch: `docs/customer-prototype-sprint-plan.json` selector
 `/identityProfilingPublication` (not historical root tasks). Parallel source-join
 reconciliation and prospective diagnostic evidence preparation feed the original

@@ -8,11 +8,13 @@ import io
 import json
 import math
 import re
+import uuid
 from types import SimpleNamespace
 from urllib.parse import quote
 
 from demo.contracts import AGENTS, PROJECT, Candidate, Review, alias
 from demo.foundry import ProjectClient, data_client
+from demo import effect_observation as effects
 from demo.terminal import chat, private_state_path, rest, session_lease, verify_lab, write_state
 from azure.identity.aio import AzureCliCredential
 
@@ -203,13 +205,17 @@ async def stop_hosting_for_acceptance(http, credential, state, path):
         journal = {
             "schema_version": 1, "parent": hosted_id, "version": state["version"],
             "phase": "stop_pending", "previous_stopped_at": before.get("stopped_at"),
+            "operation_id": uuid.uuid4().hex,
         }
         write_state(journal_path, journal, new=True)
         token = await credential.get_token("https://ai.azure.com/.default")
-        response = await http.request(
-            "POST", PROJECT + locator + ":stop", params={"api-version": "v1"},
-            headers={"Authorization": "Bearer " + token.token},
-        )
+        with effects.dispatch(effects.Binding(
+            journal["operation_id"], "coordinator", hosted_id, state["version"], "stop",
+        )):
+            response = await http.request(
+                "POST", PROJECT + locator + ":stop", params={"api-version": "v1"},
+                headers={"Authorization": "Bearer " + token.token},
+            )
         if response.status_code != 204:
             raise RuntimeError(f"HOST_STOP_HTTP_{response.status_code}")
         journal["stop_http_status"] = 204

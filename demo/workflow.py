@@ -31,6 +31,7 @@ from azure.identity.aio import ManagedIdentityCredential
 from pydantic import ValidationError
 from .host import context_checkpoint, execution_checkpoint
 from .diagnostics import Stage
+from . import effect_observation as effects
 
 from .artifact_store import BlobArtifacts, credential_diagnostics_options
 from .architect_agent import ArchitectAgent
@@ -394,7 +395,11 @@ class WorkflowRuntime:
                     try:
                         if manifest.effect.status == "prepared":
                             await self.transition(store, document, manifest, "dispatched")
-                            await remote.create(target)
+                            with effects.dispatch(effects.Binding(
+                                manifest.effect.operation_id, role, target.hosted_id,
+                                target.version, "create",
+                            )):
+                                await remote.create(target)
                         else:
                             await remote.recover_creation(target)
                     except DemoError as exc:
@@ -463,7 +468,10 @@ class WorkflowRuntime:
                             schema_version=1, scope_binding=self.scope, operation_id=call_op
                         )
                         async with asyncio.timeout(min(120, max(0, manifest.deadline_epoch - time.time()))):
-                            output_text = await remote.invoke(target, locator.model_dump(mode="json"), remember)
+                            with effects.dispatch(effects.Binding(
+                                call_op, role, target.hosted_id, target.version, "send",
+                            )):
+                                output_text = await remote.invoke(target, locator.model_dump(mode="json"), remember)
 
                     # STAGE 5: Record the output reference; publication validates the artifact itself.
                     output = OutputLocator.model_validate(decode_document(output_text.encode("utf-8")))

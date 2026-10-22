@@ -22,10 +22,12 @@ from azure.ai.agentserver.core import AgentConfig, get_request_context
 from azure.ai.projects.aio import AIProjectClient
 from azure.ai.projects.models import VersionRefIndicator
 from azure.core.exceptions import ResourceNotFoundError
+from azure.core.pipeline.transport import AioHttpTransport
 from azure.identity.aio import ManagedIdentityCredential
 
 from .config import required
 from . import diagnostics as diagnostic
+from . import effect_observation as effects
 from .artifact_store import SDKDiagnosticsPolicy, credential_diagnostics_options
 from .contracts import (
     AGENTS, LEDGER_KEY, ORIGIN, PROJECT,
@@ -256,15 +258,21 @@ class OriginTransport(httpx2.AsyncBaseTransport):
                     pass
         if event is not None:
             _transport_event(event, started, diagnostic.Kind.SEND)
+        attempt = effects.request_attempt(request.method, request.url, "responses")
         try:
             response = await self.inner.handle_async_request(request)
         except BaseException as exc:
+            if attempt:
+                attempt.finish("error", category=effects._category(exc))
             if event is not None:
                 _transport_event(
                     event, started, diagnostic.Kind.CANCELLED if isinstance(exc, asyncio.CancelledError)
                     else diagnostic.Kind.ERROR, category=_transport_category(exc),
                 )
             raise
+        if attempt:
+            attempt.emit("headers", status=response.status_code)
+            response.stream = effects.ResponseStream(response.stream, attempt, response.status_code)
         if event is not None:
             _transport_event(event, started, diagnostic.Kind.RESPONSE_HEADERS, status=response.status_code)
             response.stream = _ObservedStream(response.stream, event, started, response.status_code)
@@ -302,7 +310,10 @@ class ProjectClient(AIProjectClient):
             PROJECT, credential, allow_preview=True,
             retry_total=0, connection_timeout=10, read_timeout=120,
             per_call_policies=[SDKDiagnosticsPolicy()],
-            **({"transport": transport} if transport is not None else {}),
+            transport=effects.ProjectTransport(
+                transport if transport is not None else
+                AioHttpTransport(connection_timeout=10, read_timeout=120)
+            ),
         )
         self.http = http
         self.call_headers = headers

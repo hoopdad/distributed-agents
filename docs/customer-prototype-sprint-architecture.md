@@ -1,5 +1,19 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Network-recovery continuation: bounded construction exhaustion
+
+The separate [current continuation amendment](customer-prototype-network-recovery-continuation-1-architecture.json)
+audits IP-S1/IP-S2/IP-S3 at application `5908b6f9` and clean selected lab
+`ceaba6ee`. It consumes actual original affected E2E, substantive correction
+and skill-publication votes, maps approved criteria to the unchanged canonical
+solutionModel and existing tier contracts, and returns empty candidate tasks
+and resumes. No new supported source split or changed exact approval condition
+is established. Original Scrum Master/reviewers assess this bounded exhaustion;
+it is not sprint/release completion. Native readiness, final common publication,
+hosted provenance, actual live scenarios, cleanup and review/retro/closeout
+remain incomplete. No denied operation is retried; COMMON rollback provenance
+remains **WAIVED, never PASS**. Original plans and historical assessments persist.
+
 ## Current IP-S3 recovery: consume accepted qualification, preserve live handoffs
 
 October 22, 2026. This refinement consumes the accepted IP-S3 design at

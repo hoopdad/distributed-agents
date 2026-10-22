@@ -1,0 +1,146 @@
+{
+  "kind": "SprintPlanContinuation",
+  "sprintId": "IP-S1",
+  "round": 1,
+  "owner": "Scrum Master",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "acceptedArchitecture": "30d9d3308ca7b2b31f7cdbb6d1b7dfb57abfa569",
+  "architecturePath": "docs/customer-prototype-profiling-continuation-1-architecture.json",
+  "reviewers": ["Product Owner", "Architect", "Critic"],
+  "readyInParallel": ["IP-C1-COLLECTION-SEAMS", "IP-C1-REVIEWED-REF-DELIVERY"],
+  "dispatch": {
+    "owner": "Existing YAML orchestrator",
+    "status": "ready-for-dispatch",
+    "observedDispatchedTaskIds": [],
+    "instruction": "Dispatch both independent original Developer loops before planning review. Do not resolve historical executable task collections or start substitute agents. Planning acceptance does not wait for implementation."
+  },
+  "criticalPath": {
+    "path": ["Supported native approval resolution", "original DevOps native readiness and common package", "original DevOps publication and live acceptance", "original review/retro/closeout"],
+    "parallelBranches": [["IP-C1-COLLECTION-SEAMS"], ["IP-C1-REVIEWED-REF-DELIVERY"]],
+    "explanation": "Native approval still constrains release effects, not local qualification or reviewed Git delivery. Qualification can expose the smallest justified adapter or external-evidence handoff; it does not preauthorize implementation. Delivery closes an independent AC7/AC8 gap. Neither branch depends on full sprint acceptance or unlocks the unchanged denial.",
+    "estimates": "Task minutes are scheduling estimates, not limits. Native/cloud duration remains unknown."
+  },
+  "governance": {
+    "implementationReviewers": ["Architect", "Critic"],
+    "gitReconciliationOwner": "Developer assigned IP-C1-COLLECTION-SEAMS for its new qualification/test/index paths; Developer assigned IP-C1-REVIEWED-REF-DELIVERY for the two exact reviewed remote refs.",
+    "ownership": "Qualification owns only its new document, focused fixtures and additive index refresh. Delivery owns no source paths and never pushes new qualification/planning ancestry. application-git-integration serializes commits/push inspections through original reviews; it is not a whole implementation dependency.",
+    "git": "Stay on the established feature branch. Inspect status/staging; commit only owned paths using git commit --only. Preserve unowned index/specification edits, locks and dirty source. Reconcile task commits by feature ancestry; any retained unmerged task branch needs task, branch, commits and abandonment reason recorded in a feature-branch commit. No force, branch switching, reset, stash or moving-HEAD push.",
+    "integration": "No runtime join is introduced. Qualification owner performs its own focused fixture/document/index integration before original review, with exact commit/results handoff. Delivery consumes only earlier accepted refs. A justified runtime adapter needs a subsequent original Architect/Scrum assignment and affected E2E qualification; do not construct it implicitly.",
+    "priorDispositions": {
+      "retainedSatisfiedWithinOriginatingBoundaries": [
+        "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-CREDENTIAL-TIMEOUT-PRESERVATION\"]",
+        "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-TIMEOUT-REGRESSION-EVIDENCE\"]",
+        "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-CHANGED-JOIN-HANDOFF\"]",
+        "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-NORMALIZED-PLAN-HANDOFF\"]",
+        "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-OBSERVED-PARALLEL-DISPATCH\"]"
+      ],
+      "remainingRequired": [
+        "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-COMMON-PACKAGE-PUBLICATION\"]",
+        "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-LIVE-ACCEPTANCE\"]"
+      ],
+      "superseded": []
+    },
+    "preservedBoundary": "No native denial retry/bypass, credential retrieval, infrastructure/permission mutation, external upload, production profile or held/UNKNOWN replay. COMMON rollback provenance remains WAIVED, never PASS. Original package/source/version/trusted-host/effect gates and actual cloud completion remain mandatory. All three sprints remain partial."
+  },
+  "tasks": [
+    {
+      "id": "IP-C1-COLLECTION-SEAMS",
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "ReleasePlan IP-S3 acceptanceCriteria[0,1,2,5]: continuity, once-only recovery, independent isolation and attributable closeout; specification Required acceptance[7].",
+      "title": "Qualify supported private scenario evidence collection",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-scenario-collection-qualification", "application-repository-index", "application-git-integration"],
+      "estimatedMinutes": {"implementation": 65, "review": 20, "integration": 10},
+      "ownedPaths": ["docs/identity-scenario-collection-qualification.md", "tests/test_scenario_collection_seams.py", ".github/repo-index.md"],
+      "consumes": ["Accepted companion 1d6f88308cadeb120bef0f19eac7101a2859caa4", "Existing live_acceptance.validate_scenario_evidence contract", "Application-owned factories and read-only matching pinned SDK source"],
+      "produces": ["Pinned public-seam feasibility matrix and executable synthetic fixtures for supported collection claims", "Smallest justified adapter contract or exact actionable unsupported findings"],
+      "acceptanceCriteria": [
+        "Map manifest, cumulative immutable operation transitions, MAF checkpoints, independent create/send/stop accounting and model-history provenance to existing aggregate fields. Identify exact public methods/constructors, pinned source/version, scope provenance, pagination/completeness and consistency boundaries.",
+        "Qualify independent boundary-to-operation accounting rather than counting journal intentions, deduplicating captured events or treating diagnostic aliases/timing as identity. Name every unavailable association explicitly.",
+        "Execute synthetic fixtures at claimed public serialization/attachment seams for immutable retention, scoped checkpoint association and missing/duplicate/cross-scope rejection. Do not copy the aggregate validator, access real credentials/network or patch SDK internals.",
+        "Provide the smallest feasible adapter contract or actionable unsupported findings with minimal external evidence needed. Negative findings may complete qualification but never satisfy actual live comparisons or authorize unqualified hooks.",
+        "Preserve accepted companion/validator/runtime, machine stdout, known-response recovery and held/UNKNOWN effects. Run focused fixtures and documented application/repository checks with existing absolute Python and explicit selected-lab root. Install dependencies only after manifest change or missing-tool failure.",
+        "Integrate only owned document/tests/index paths on the feature branch, preserve unowned overlays and retain exact commit/test provenance for original Architect/Critic review."
+      ],
+      "doneWhen": "A source-pinned collection feasibility matrix and passing offline fixtures support every claimed public seam, exact unsupported comparisons remain explicit, and an exact-commit handoff is ready for original Architect/Critic review; actionable negative findings can complete only this qualification.",
+      "exclusions": ["No network, credential acquisition, platform log retrieval, live collection, send/stop/retry or publication.", "No new evidence schema, terminal/parser API, SDK private patch, runtime adapter, diagnostic identity disclosure or generic evidence ledger.", "No duplicate accepted SDK inventory, companion rewrite or waiver of real-service criteria."],
+      "handoff": "Reviewed feature commit, pinned public seam references, focused/documented commands and results, supported adapter contract or exact negative findings to original Architect/Scrum Master and original E2E/DevOps evidence owners. Reconcile owned commits before handoff; retain branch/commit/reason accounting for any unmerged work.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Qualify supported private scenario evidence collection",
+        "goal": "Resolve the missing aggregate-collection feasibility interval without changing trusted runtime or inventing provenance.",
+        "components": ["Guarded lab release toolchain", "Private Blob artifacts and effect journal", "MAF workflow checkpoints", "Parent and specialist conversation state"],
+        "flows": ["Same-parent specialist continuation", "Supported compute stop and resume", "Separate-parent isolation", "Exact-source guarded release"],
+        "flowSteps": ["continuity-verify", "recovery-verify", "isolation-verify", "release-close"],
+        "doneWhen": "A source-pinned collection feasibility matrix and passing offline fixtures support every claimed public seam, exact unsupported comparisons remain explicit, and an exact-commit handoff is ready for original Architect/Critic review; actionable negative findings can complete only this qualification.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": ["docs/identity-scenario-collection-qualification.md", "tests/test_scenario_collection_seams.py", ".github/repo-index.md"],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "IP-C1-REVIEWED-REF-DELIVERY",
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "ReleasePlan IP-S3 acceptanceCriteria[4,5]: reviewed explicit-ref non-force delivery/readback and original closeout; AC7/AC8.",
+      "title": "Deliver the reviewed profiling feature refs",
+      "kind": "developer",
+      "owner": "Developer",
+      "dependsOn": [],
+      "exclusiveResources": ["application-git-integration", "selected-lab-git-integration"],
+      "estimatedMinutes": {"implementation": 20, "review": 15, "integration": 5},
+      "ownedPaths": [],
+      "consumes": ["Reviewed application de2deaeaddf0509116d8f45d2a3ae73419dd11f3 and accepted ancestry in original IP-S3 E2E audit 4d29a86101220f877a5a4462a2169032ab3c033e4ebf6a6ba6a1814d527411ae", "Reviewed selected-lab 9b4919d8bcdbf07203f32657936c27328ea6ccc1 and original changed-join audit 4797ab07efa9ab46e5f8882caa9f7b3957910cec20b4c9ed5ec3574bbed1c8d2"],
+      "produces": ["Exact non-force delivery/readback evidence for both previously reviewed feature targets"],
+      "acceptanceCriteria": [
+        "Inspect original source/integration/E2E votes and current local/remote ancestry in both authorized feature checkouts; preserve staging, unrelated work and branches.",
+        "Push only application de2deaeaddf0509116d8f45d2a3ae73419dd11f3 and selected-lab 9b4919d8bcdbf07203f32657936c27328ea6ccc1 to their existing feature ref using explicit non-force refspecs. Do not push moving HEAD or new unreviewed qualification/planning ancestry.",
+        "Read both remote refs back and record exact before/intended/after IDs and outcome in workflow evidence. If already equal, verify and do not repeat a push. An unexpected remote advance/conflict requires non-destructive reconciliation, never force/reset.",
+        "Do not manufacture a source commit for no-change delivery. Preserve native denial, package/live/cleanup criteria and all held/unknown effects. Git delivery does not unlock DevOps."
+      ],
+      "doneWhen": "Both exact previously reviewed feature targets have successful non-force delivery or already-equal verification and matching remote readback, with evidence ready for original reviewers; unresolved delivery leaves the task incomplete.",
+      "exclusions": ["No runtime/document rewrite, moving-HEAD push, force, branch switch, another owner's cleanup or native-preflight retry.", "No publication, live effects or delivery carousel seeded by planning-only ancestry."],
+      "handoff": "Actual local target and remote before/after IDs, original review references and push/readback results to existing Scrum review/retro and release closeout. Preserve all native/cloud limitations; no DevOps resume.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Deliver the reviewed profiling feature refs",
+        "goal": "Close the independent remote delivery gap for accepted application and retained tooling commits.",
+        "components": ["Guarded lab release toolchain"],
+        "flows": ["Exact-source guarded release"],
+        "flowSteps": ["release-close"],
+        "doneWhen": "Both exact previously reviewed feature targets have successful non-force delivery or already-equal verification and matching remote readback, with evidence ready for original reviewers; unresolved delivery leaves the task incomplete.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": [],
+        "evidence": "",
+        "cause": "",
+        "verification": {"status": "not-yet-verified", "evidence": ""},
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    }
+  ],
+  "AssignedWorkDeveloper": ["IP-C1-COLLECTION-SEAMS", "IP-C1-REVIEWED-REF-DELIVERY"],
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": [],
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Dispatch two independent approved slices: supported scenario-collection qualification and exact reviewed feature delivery. Neither requires or resolves native approval. No unchanged DevOps reassessment or accepted E2E reopening.",
+    "evidence": [
+      "Original continuation architecture audit c146a281ceabab3537fa2a8f30feec196936e36373e11cb8bb5c14083d8cf91a records Product Owner/Critic/Red Team agree:true, taskComplete:true for these two candidates at 30d9d33.",
+      "Fresh read-only remote feature observations remain application 200f2ff04f88e0990816058b6a5d49070425e028 and selected lab 1e9ddb8560a5637d639f4657111f3bca49d38d78, not the reviewed delivery targets de2deae and 9b4919d8.",
+      "Opened original changed-join audit 4797ab07 and IP-S3 E2E audit 4d29a861: all original reviewers accept bounded offline joins. Their acceptance does not establish delivery or cloud tests.",
+      "Inspected accepted companion association limits and live_acceptance.py run path: proof/readback collection is not complete independent aggregate collection. Architecture identifies public-seam qualification as a missing useful bounded task, not a companion rewrite.",
+      "Latest original DevOps audit ae0bade0 retains taskComplete:false for unresolved native approval, common-package publication and live acceptance. No new permission-resolution evidence exists; resumes is empty.",
+      "Approved ReleasePlan has no whole-sprint dependency edges. Accepted IP-S1/IP-S2/IP-S3 construction stays retained; no other ready implementation is redispatched. New work maps only to remaining IP-S3 evidence and delivery criteria."
+    ],
+    "resumes": []
+  }
+}

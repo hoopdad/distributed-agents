@@ -1,5 +1,14 @@
 # Repository index
 
+Profiling continuation-1 Scrum dispatch: inspect
+`docs/customer-prototype-profiling-continuation-1-sprint-plan.json` directly.
+Its two independent tasks qualify missing public scenario-collection seams and
+deliver only previously reviewed application `de2deae` / selected-lab `9b4919d8`.
+Shared Git resources serialize mutation, not whole implementations. Original
+YAML dispatch/review owns execution; neither task resumes the native denial.
+Qualification includes owned fixture/document/index integration, not a runtime
+collector. Original plans, accepted joins and partial live gates are unchanged.
+
 Identity-profiling continuation 1: inspected application `de2deae` and selected
 lab `9b4919d8`; adds only
 `docs/customer-prototype-profiling-continuation-1-architecture.json`.
@@ -1809,6 +1818,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-operational-context-amendment.json`
 - `docs\customer-prototype-post-delivery-exhaustion-architecture.json`
 - `docs\customer-prototype-profiling-continuation-1-architecture.json`
+- `docs\customer-prototype-profiling-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

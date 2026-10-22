@@ -75,7 +75,9 @@ class IsolatedResourcesTests(unittest.IsolatedAsyncioTestCase):
         events, requests, projects = [], [], []
 
         @asynccontextmanager
-        async def owned_credential():
+        async def owned_credential(**kwargs):
+            self.assertEqual(set(kwargs), {"raw_request_hook", "raw_response_hook"})
+            self.assertTrue(all(callable(hook) for hook in kwargs.values()))
             try:
                 yield credential
             finally:

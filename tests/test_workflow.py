@@ -1093,7 +1093,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
                 patch(f"{module}.data_client", return_value=http) as http_factory, \
                 patch(f"{module}.ProjectClient", return_value=project_context) as project_factory, \
                 patch(f"{module}.BlobServiceClient", return_value=blob_context) as blob_factory, \
-                patch(f"{module}.AioHttpTransport") as blob_transport, \
+                patch(f"{module}.blob_diagnostics_transport") as blob_transport, \
                 patch(f"{module}.BlobArtifacts", return_value=specialist_store) as store_factory, \
                 patch.dict(os.environ, {
                     "ARTIFACT_STORAGE_ENDPOINT": "https://syntheticstorage.blob.core.windows.net",
@@ -1163,7 +1163,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
                 expected_call_id=worker.context.call_id, response_id=worker.response_id,
             )
             project_factory.assert_called_with(credential, http, worker.context.platform_headers())
-            blob_transport.assert_called_with(use_env_settings=False)
+            blob_transport.assert_called_with(role=role)
             blob_factory.assert_called_with(
                 "https://syntheticstorage.blob.core.windows.net", credential=credential,
                 retry_total=0, connection_timeout=10, read_timeout=30,

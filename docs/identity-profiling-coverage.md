@@ -3,7 +3,9 @@
 The original inventory below retains its research baseline and negative probes.
 The [SDK-POLICIES implementation delta](#sdk-policies-implementation-delta)
 records the subsequent bounded application attachments and remaining call-site
-handoffs. Neither section is a universal coverage or live acceptance claim.
+handoffs. The [integration join](#ip-s1-integration-join) closes those application
+call-site handoffs without extending coverage into SDK-owned stores or the
+platform. No section is a universal coverage or live acceptance claim.
 
 ## Scope and evidence
 
@@ -175,7 +177,7 @@ URL/query/resource name, bearer/credential payload, user identity or hash is
 logged. HTTP errors still reject normally; neither policy nor transport
 authorizes anything or changes trusted context.
 
-### Explicit integration handoffs and uncovered intervals
+### Explicit integration handoffs and uncovered intervals (historical task handoff)
 
 INTEGRATE/Scrum coordinates the remaining **application call-site wiring**
 through the original Developer ownership. The accepted inventory already
@@ -232,6 +234,137 @@ Original Architect/Critic review of this implementation remains pending.
 All remaining application call-site gaps above are explicit construction
 handoffs; the original live identity interval and release conditions remain
 unproven. No HTTP or SDK envelope result closes AC1-AC9/G1-G8.
+
+## IP-S1 integration join
+
+The original handoffs above remain historical. The current integration consumes
+their **agreed** original Architect/Critic audits; it does not reopen them.
+All seven commits below are verified ancestors on
+`feature/customer-hosted-session-prototype`. No task code is abandoned or
+retained on an unmerged branch.
+
+| Task / source | Exact accepted ancestry |
+| --- | --- |
+| EVENT-CONTRACT | `20c315e1d51908f8cbc56598fbb36052972079e8` |
+| SDK-INVENTORY | `b7b4e0e7f6d19d659a76720461d9aa948d95e9d7` |
+| TRANSPORT | `9c8dfdf0956978f46dcd6340e2fcd8f58940f73b` |
+| INGRESS-CONTEXT | `742e46abb0a3d86e93ed602b2303fe71784766bd`; attribution `743c9e6678ae3e53dd3f5adc7da167e4eac9f207` |
+| SDK-POLICIES | `87de392d3bf38f824b5c8dd1c78916edc8290a98`; accepted correction `4c58849be950931212bb858477ef69720001f72e` |
+
+### Closed application call sites
+
+`WorkflowRuntime.resources`, `ArchitectAgent.connect_and_load_assignment`
+and `ReviewerAgent.connect_and_load_assignment` now pass
+`credential_diagnostics_options(role=...)` to their existing
+`ManagedIdentityCredential` factories. Identity still selects its environment
+branch and owns transport defaults/retries; no transport or timeout is supplied
+by these factories. Credential raw hooks retain the previously documented
+send-error/cancellation, cache-hit and unverified-branch observation gaps.
+Both specialists now inject `blob_diagnostics_transport(role=...)` into their
+existing Blob service constructors. This is the smallest directly coupled
+call-site completion named by the accepted SDK-POLICIES handoff, not a change
+to specialist business logic. The wrapper retains the original
+`AioHttpTransport(use_env_settings=False)` and connection configuration.
+The same existing `AsyncExitStack` owns each credential, Project/HTTP client
+and Blob service; no new service, dependency or retry is introduced.
+
+`tests/test_profiling_integration.py` exercises the actual pinned injected
+specialist Blob clients and workflow default Blob client against synthetic
+Azure Core transports. It verifies role-attributed bounded events, credential
+constructor hook-only options, transport closure and unchanged propagated
+rejection. Retained `test_workflow` and `test_isolated_client` fixtures now
+assert the public helper/hook seam while preserving their original cases.
+The accepted SDK tests retain real synthetic credential branch/configuration
+and retry-deadline comparisons; the new factory fixtures do not claim token
+acquisition or private-network verification.
+
+### Package closure and remaining interval
+
+The retained selected-feature lab's public
+`foundry-tf/multi-agent/release_roots.py:ReleaseRoots.runtime_files` includes
+every application `demo/*.py`. Its actual method was exercised with explicit
+application/lab roots and includes `demo/diagnostics.py` and both routing config
+files. `bundle_package.runtime_archive` consumes that closure and `prepare`
+checks it against source; these functions were inspected, **not executed**.
+The application `.agentignore` and `.dockerignore` already allow `demo/*.py`,
+and Dockerfile copies `demo` intact. No allowlist, `package_guard.py` or lab
+tooling change is necessary. These offline closure checks are not an archive,
+Linux-image, version, trusted-host, publication or current-effect receipt.
+
+The event API remains `demo.diagnostics`' closed enums and frozen `Event`,
+`Observation`/`Binding`, `observe_header`/`observe_value`, `compare_values`,
+`bind`/`current_binding` and failure-isolated `emit`; see the accepted
+`tests/test_diagnostics.py` fixtures. Host context checkpoints never populate
+trusted scope. Outbound send/headers, stream end, ASGI final body and execution
+context are independent observations, not a successful business outcome.
+SDK-owned stores T/U/V, CLI internals and Foundry platform identity resolution
+remain uncovered as previously evidenced. No authenticated principal, identity
+translation/root cause or supported remediation is established locally.
+
+The exact originating dispositions
+`["yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop","SDK-CREDENTIAL-TIMEOUT-PRESERVATION"]`
+and
+`["yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop","SDK-TIMEOUT-REGRESSION-EVIDENCE"]`
+remain applied through the accepted correction and retained combined tests;
+they are not broadened into new requirements or waived.
+
+Original Architect/Critic review of this integration is next. Original E2E
+then owns the exact reviewed join's documented full verification, and original
+DevOps owns Linux/hosting/package gates, guarded common-package publication
+to all three roles, separately identified synthetic intent/live evidence and
+attributable cleanup. Original review/retro/closeout and AC1-AC9/G1-G8 remain
+required. Historical rollback provenance remains **WAIVED**, never PASS.
+The held original parent and all unknown effects are untouched. No package
+creation, deployment, live call, secret retrieval or dependency install occurs
+in this integration.
+
+### Integration verification and reproducible handoff
+
+All commands execute from the application repository. Use the existing
+absolute linked-lab Python and selected-feature lab root from the private
+execution input; do not substitute a production profile. For the combined
+focused suite set `OTEL_SDK_DISABLED=true` and `AZURE_LAB_SOURCE_ROOT` to the
+explicit selected lab's `foundry-tf/multi-agent` directory, then:
+
+```python
+import sys, unittest
+sys.path.insert(0, "tests")
+import test_demo
+names = [
+    "test_diagnostics", "test_transport_diagnostics", "test_host_diagnostics",
+    "test_sdk_diagnostics", "test_profiling_integration", "test_workflow",
+    "test_isolated_client",
+]
+result = unittest.TextTestRunner(verbosity=1).run(
+    unittest.defaultTestLoader.loadTestsFromNames(names)
+)
+raise SystemExit(not result.wasSuccessful())
+```
+
+| Executed check | Observed integration result |
+| --- | --- |
+| Combined focused command above | Final **137 tests PASS in 6.252 seconds** (preceding run: 7.595 seconds); includes actual pinned resilient background dispatch, concurrent isolation, redaction/header states, stream/disconnect/cancel/close, rejection, credential defaults/retry deadline, known-response-only recovery and new factory/closure fixtures. |
+| Standalone `python -m unittest discover -s tests -p test_profiling_integration.py -v`, with the explicit lab linkage above | Final **4 tests PASS in 0.257 seconds**, including both specialists' actual Blob pipelines and unchanged synthetic rejection. |
+| `./Test-Demo.ps1 -Python <absolute-existing-python> -LabRepositoryRoot <explicit-selected-lab-root>` | Final exit 0: **278 tests PASS in 53.398 seconds** after the standalone-bootstrap correction; `pip check` and Python compilation PASS. The preceding run passed 278 in 61.309 seconds. Includes retained deterministic routing, immutable outputs/exact refs, ETag/fencing, checkpoints, unknown-effect holds and terminal/parser tests. |
+| Existing Python `scripts/repo_index.py`, then `./scripts/Test-Repository.ps1 -Python <absolute-existing-python>` | Exit 0: generated inventory current; public/private boundary reports 113 checked public files; JSON, PowerShell, context frontmatter and whitespace PASS. |
+| Task commit ancestry and owned-path whitespace | All seven task commits above are ancestors of the integration baseline; whitespace PASS. No merge, branch switch, push or abandonment needed. |
+
+Two standalone new-fixture runs passed three cases but failed the workflow
+case at `CANDIDATE_PARENT_BINDING`: imports retained an inherited endpoint;
+`setdefault` could not override it. Following the retained `test_demo`
+bootstrap, this fixture now explicitly selects synthetic configuration before
+application imports rather than inheriting operator endpoint settings.
+The combined and full documented runs above passed with their synthetic
+bootstrap; final verification below covers the corrected standalone case too.
+The production trust gate is unchanged.
+
+The pre-existing untracked profiling specification is not owned or committed
+by INTEGRATE. Its pre-existing inventory line remains a working-tree overlay;
+the committed index includes this task's additions/notes without absorbing that
+line or rewriting earlier notes. Repository validation above includes the
+preserved overlay. Runtime source/tests are the integration commit's exact
+files; final original E2E must independently verify the reviewed join. Suite
+durations are unittest timings, not total model/task usage.
 
 ### Timeout-preservation correction
 

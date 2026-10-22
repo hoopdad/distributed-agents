@@ -32,7 +32,7 @@ from pydantic import ValidationError
 from .host import context_checkpoint, execution_checkpoint
 from .diagnostics import Stage
 
-from .artifact_store import BlobArtifacts
+from .artifact_store import BlobArtifacts, credential_diagnostics_options
 from .architect_agent import ArchitectAgent
 from .artifacts import (
     Artifact, ArtifactError, ArtifactRef, Assignment, AssignmentLocator, Candidate, ChildBinding, Decision,
@@ -529,7 +529,9 @@ class WorkflowRuntime:
         """Own the Azure clients and verify private storage before yielding to an event."""
         execution_checkpoint(self)
         async with AsyncExitStack() as stack:
-            credential = await stack.enter_async_context(ManagedIdentityCredential())
+            credential = await stack.enter_async_context(
+                ManagedIdentityCredential(**credential_diagnostics_options(role=self.role))
+            )
             http = await stack.enter_async_context(data_client(
                 expected_call_id=self.context.call_id, response_id=self.response_id,
             ))

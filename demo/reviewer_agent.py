@@ -10,11 +10,13 @@ from agent_framework import AgentSession, SessionStore
 from agent_framework.foundry import FoundryChatClient
 from agent_framework_foundry_hosting import AgentSessionStoreProvider
 from azure.ai.agentserver.core import AgentConfig, FoundryAgentRequestContext
-from azure.core.pipeline.transport import AioHttpTransport
 from azure.identity.aio import ManagedIdentityCredential
 from azure.storage.blob.aio import BlobServiceClient
 
-from .artifact_store import BlobArtifacts, validate_storage_configuration
+from .artifact_store import (
+    BlobArtifacts, blob_diagnostics_transport, credential_diagnostics_options,
+    validate_storage_configuration,
+)
 from .artifacts import (
     Artifact, ArtifactError, ArtifactRef, Assignment, AssignmentLocator, Container, OutputLocator, Review, ScopeBinding,
     canonical_bytes, decode_document, digest,
@@ -85,7 +87,9 @@ class ReviewerAgent(SpecialistAgent):
         parent = locator.scope_binding
         if parent.project != scope.project or parent.tenant != scope.tenant or parent.principal != scope.principal:
             raise ArtifactError("ASSIGNMENT_RECEIVER")
-        credential = await stack.enter_async_context(ManagedIdentityCredential())
+        credential = await stack.enter_async_context(
+            ManagedIdentityCredential(**credential_diagnostics_options(role="reviewer"))
+        )
         headers = context.platform_headers()
         http = await stack.enter_async_context(data_client(
             expected_call_id=context.call_id, response_id=response_id,
@@ -105,7 +109,7 @@ class ReviewerAgent(SpecialistAgent):
             storage_endpoint.rstrip("/"), credential=credential,
             retry_total=0, connection_timeout=10, read_timeout=30,
             logging_enable=False, max_single_get_size=131072,
-            transport=AioHttpTransport(use_env_settings=False),
+            transport=blob_diagnostics_transport(role="reviewer"),
         ))
         # The typed adapter checks scope/hashes and makes output writes immutable; Azure stores the bytes.
         store = BlobArtifacts(

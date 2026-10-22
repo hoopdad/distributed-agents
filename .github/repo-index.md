@@ -1,5 +1,18 @@
 # Repository index
 
+IP-S1 profiling integration: accepted task ancestry through `4c58849`;
+see `docs/identity-profiling-coverage.md#ip-s1-integration-join` for the commit
+ledger, application factory closure and remaining SDK/platform gaps.
+Navigate `demo/diagnostics.py` for the bounded shared event API;
+`demo/foundry.py` for httpx2 and Project observations; `demo/host.py` and
+`demo/workflow.py` for ingress/background checkpoints; `demo/artifact_store.py`
+and the two specialist agent modules for supported SDK attachments.
+Focused fixtures are `tests/test_*diagnostics.py` and
+`tests/test_profiling_integration.py`; retained workflow/isolation fixtures
+verify unchanged trusted execution. Actual selected-lab runtime closure
+includes the new shared module without a lab/allowlist change. Local tests
+never establish deployed/live acceptance. Earlier index notes remain history.
+
 Linux clock fixture boundary: application baseline `2b2973fb`, selected lab
 `88580156`; adds `docs/customer-prototype-linux-clock-architecture-amendment.json`.
 Navigate there for the newly failed actual Linux settings-restoration capture,
@@ -1744,6 +1757,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `demo\config.py`
 - `demo\contracts.py`
 - `demo\coordinator_agent.py`
+- `demo\diagnostics.py`
 - `demo\foundry.py`
 - `demo\host.py`
 - `demo\reviewer_agent.py`
@@ -1790,6 +1804,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-ux.md`
 - `docs\design.md`
 - `docs\identity-candidate-handoff.md`
+- `docs\identity-profiling-coverage.md`
 - `docs\identity-recovery-plan.md`
 - `docs\implementation-workflow.md`
 - `docs\migration-map.json`
@@ -1815,11 +1830,16 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `tests\test_config.py`
 - `tests\test_demo.py`
 - `tests\test_diagnose_identity.py`
+- `tests\test_diagnostics.py`
+- `tests\test_host_diagnostics.py`
 - `tests\test_identity_handoff.py`
 - `tests\test_isolated_client.py`
+- `tests\test_profiling_integration.py`
 - `tests\test_routing.py`
 - `tests\test_scenario_evidence.py`
+- `tests\test_sdk_diagnostics.py`
 - `tests\test_specialist_continuity.py`
+- `tests\test_transport_diagnostics.py`
 - `tests\test_workflow.py`
 
 <!-- inventory:end -->

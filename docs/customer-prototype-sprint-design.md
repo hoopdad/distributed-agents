@@ -1,5 +1,169 @@
 # Sprint design: understandable, evidence-ready continuity
 
+## Current IP-S3: continuity, supported recovery and independent isolation (October 22, 2026)
+
+This **SprintDesign** applies the accepted B/C/D and H/I/J/K layouts to IP-S3.
+It is a documentation-only design handoff, not a new terminal feature,
+renderer, command, public evidence field or implementation assignment.
+The IP-S2/IP-S1 overlays and earlier screen storyboards below remain intact
+within their originating boundaries; their dated missing-prerequisite
+statements are not current dispatch instructions. Consume UX `56076795`,
+ReleasePlan `4999ce58` (IP-S3 contract), SprintArchitecture `833b4ad9` and
+SprintDesign `6aaf9601`. Current application HEAD at inspection is
+`13aecc39fba90d1475de057db07566c69b4ffc27`, retaining runtime/tests
+`c52786b7dd1595f3048a78061f893dc79635069f`, with selected-lab source
+`9b4919d8bcdbf07203f32657936c27328ea6ccc1`. These are source references,
+not final deployed bindings.
+
+### Inspected handoffs and localized blocked backlog
+
+Opened the supplied current-run audits under
+`gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/`
+(each reference below has suffix `.json`):
+
+- UX `33b776afca6daafd69eee5bcf54a17ffd50ddda99fe1ab479ef0c10d3e4d1b32`,
+  IP-S2 design `12edb53e8280ea614239d71ecd83c7e33a4a0d6628981387dc54014cb181cc6f`,
+  and SprintArchitecture
+  `26adb308b85ae4732ca698f4dcdd8985c3c1096516154c481dad23e63ee9282f`
+  record original reviewer agreement and task completion for those documents.
+- Architecture
+  `4241c18ddb85c123bb3e4d00c3c38658def66dd3fe04d77a6604f1d8056410a3`
+  and ReleasePlan
+  `0c2598dcfa07a6e154b8452a4baf4387d8d2dc0f4f6356193eb919c3f8181f67`
+  record original agreement for the retained model and sprint scope.
+- Changed-join E2E
+  `4797ab07efa9ab46e5f8882caa9f7b3957910cec20b4c9ed5ec3574bbed1c8d2`
+  records Architect/Critic/Product Owner agreement and task completion for
+  the bounded offline source-pair reassessment, not publication or live proof.
+- Latest DevOps
+  `dfd473725551074526ddec41e0dbc23a0ca81a6d7d265e89dbf8a669004f8a3f`
+  records agreement on the partial report but all three reviewers retain
+  `taskComplete:false`. Prepared runtime/dependency stages are not a final
+  common bundled package. Native preflight was denied because no interactive
+  user response was available; the exact missing permission is not identified.
+  Native pinned-tool/authentication proof, publication and cloud tests remain
+  incomplete. Designer neither retries that operation nor tests another route.
+
+Screen F/G now attributes that native-execution stop rather than presenting
+the accepted changed-join reassessment as still missing. Original DevOps and
+the operator retain its supported interactive unblock; no new project approval
+is requested. This blocks dependent effects, not independent IP-S3 design,
+fixture preparation, evidence comparison or measured status work. No separate
+unresolved UI decision or reconciled feedback is supplied.
+
+Apply exact disposition
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","RELEASE-CHANGED-JOIN-HANDOFF"]`
+only to its source-pair boundary: the opened changed-join audit supplies that
+accepted reassessment; do not reopen it for this design-only addition.
+At the same origin, `RELEASE-COMMON-PACKAGE-PUBLICATION` and
+`RELEASE-LIVE-ACCEPTANCE` remain required, not satisfied by report agreement.
+The two dispositions `SDK-CREDENTIAL-TIMEOUT-PRESERVATION` and
+`SDK-TIMEOUT-REGRESSION-EVIDENCE` at
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop`
+remain accepted within their unchanged SDK/test boundary, not new UI work.
+Historical COMMON rollback ZIP/build provenance stays **WAIVED, never PASS**.
+Current automated package/source/version/trusted-host/effect checks remain.
+
+### Triggered journeys and smallest necessary handoffs
+
+| Trigger / canonical flow and steps | Existing screen and cross-component behavior | Actual modules / receiving owner |
+| --- | --- | --- |
+| Completed non-held initial collaboration is handed over; **Same-parent specialist continuation** / `continuity-revise`, `continuity-invoke`, `continuity-verify` | B/C/H: Terminal client reuses its private state; Hosted coordinator calls Hosted architect and Hosted reviewer remotely for the queue change. Parent and specialist conversation state retains identities/pins; Private Blob artifacts and effect journal supplies current exact candidate/review references before the finalized result returns to the evaluator. | `demo/terminal.py`, `demo/foundry.py`, `demo/workflow.py`, `demo/artifacts.py`, `live_acceptance.py`; original Developer/E2E prepares comparisons, original DevOps proves live outcomes. Requires completed parent/both-child bindings and final deployed versions, not full IP-S2 sprint acceptance. |
+| Completed two-turn proof and reconciled durable stop intent are available; **Supported compute stop and resume** / `recovery-stop`, `recovery-resume`, `recovery-verify` | D/I: Guarded lab release toolchain performs the once-only supported stop and confirms stopped/idle state. Hosted coordinator resumes existing conversations through MAF workflow checkpoints and Private Blob artifacts and effect journal. The report separates known-response retrieval from a new send and returns the actual recovered result or hold. | `demo/terminal.py`, `demo/foundry.py`, `demo/workflow.py`, `live_acceptance.py`, retained selected-lab `foundry-tf/multi-agent`; original DevOps owns effects and cleanup. No stop button or additional stop operation is designed. |
+| Final deployed bindings and a safe comparison scope exist; **Separate-parent isolation** / `isolation-bind`, `isolation-execute`, `isolation-verify` | J: Terminal client uses a distinct private state file and independent synthetic brief. Hosted coordinator creates distinct architect/reviewer children and artifact scope; trusted scope rejects cross-parent access. Compare actual bindings and leakage observations before returning an isolation conclusion. | `demo/terminal.py`, `demo/workflow.py`, `demo/artifacts.py`, `demo/artifact_store.py`, `live_acceptance.py`; original Developer/E2E retains rejection fixtures, original DevOps proves deployed isolation. Does not depend on recovery success. |
+| Original evidence owners join all required outcomes; **Exact-source guarded release** / `release-close` | F/G/K: Guarded lab release toolchain supplies final source/package/role readbacks and cleanup; Terminal client remains the useful demonstration surface. Original review/retro/closeout receives separate construction, local, deployed and live-accepted states, or the precise incomplete ledger. | README, release notes, existing acceptance reports and reviewed Git delivery; original Scrum Master coordinates, original closeout owners retain review and delivery. This document dispatches no new tasks or publishers. |
+
+Keep **Trusted identity and private transport** shared across these journeys;
+diagnostics do not become another hosted role or customer flow.
+**Decision-1 routing and admission** remains behind deterministic gates.
+No all-sprint dependency is introduced. Construction may consume accepted
+contracts/offline fixtures now; follow-up requires completed non-held initial
+collaboration, stop requires completed two-turn proof, and isolation requires
+final deployed bindings/comparison scope independently. A hold blocks its
+affected effects, never permits a different parent to evade that hold.
+
+### Screens H/I/J/K: layout and state rules
+
+Use the retained text layouts below with this current interpretation. All
+example rows are report design, not captured evidence or new parser fields:
+
+```text
+<CONTINUITY / RECOVERY / ISOLATION / DELIVERY> | <actual reached boundary>
+Evidence: <historical / offline fixture / current live, attributed per row>
+Construction: <implemented / incomplete>  Local checks: <actual scope>
+Deployed common package: <proven current bindings / NOT VERIFIED>
+Live accepted: <specific criterion and evidence / NOT VERIFIED>
+Outcome: <completed / rejected / HELD / UNKNOWN / not executed>
+Remaining: <unmet criterion; missing observation is not a pass>
+Cleanup: <confirmed attributable new ownership / incomplete / not applicable>
+Next: <original owner and smallest supported action>
+```
+
+- **H, continuity:** show useful private-ingress design and queue revision first,
+  with chronological architect/reviewer calls, including repeat revise/review
+  calls. In the separate evidence companion compare actual parent AND both
+  child hosted/framework identities and pinned versions, exactly two child
+  creations across the two turns, fresh response IDs for actual invocations,
+  and current immutable prerequisite/accepted refs. Compare identity fields,
+  not entire serialized sessions. Preserve prior requirements and invalidate
+  stale approval after revision. Aliases, remembered prose or successful
+  retrieval prove none of this; the human view must not gain a verified badge.
+- **I, recovery:** no completed two-turn proof -> NOT EXECUTED; durable intent
+  without confirmed stop -> UNKNOWN, no repeat; confirmed stopped/idle ->
+  stop observed, resume unverified; resumed without completed continuation ->
+  resume observed, recovery incomplete. Only actual same-parent/both-child/
+  version, checkpoint and no-duplicate effect evidence permits G6 acceptance.
+  Known-response retrieval reads NO RESEND and is never counted as another
+  invocation. A disconnect, HTTP 2xx, stream end or SDK-completed envelope is
+  not compute-stop or completed-work proof. Never clear holds to fill a row.
+- **J, isolation:** label two parents, not two turns. Privately compare distinct
+  parent/both-child bindings and artifact scopes, exclusion of the first
+  parent's requirements, and cross-scope rejection evidence separately.
+  Different filenames or aliases are insufficient. Offline rejection tests
+  remain labeled offline even beside live observations. Account-wide Blob
+  Contributor remains application-enforced isolation, not storage-RBAC or
+  malicious-host isolation; no permissions change is proposed.
+- **K, delivery:** lead with BLOCKED/INCOMPLETE until all original
+  AC1-AC9/G1-G8, reviewed feature delivery/readback, attributable new cleanup
+  and original review/retro/closeout pass. Show continuity/recovery/isolation
+  independently; neither a good diagnostic report nor an isolation pass
+  waives another gate. Show rollback provenance WAIVED separately from current
+  final package and role bindings. Preserve historical held/UNKNOWN outcomes
+  and historical cleanup uncertainty without certifying or replaying them.
+
+Retain terminal-default light/dark colors, explicit non-color status words,
+short labeled blocks and narrow-width wrapping. Human summaries remain opt-in
+stderr; machine stdout, exit behavior and acceptance parsing remain unchanged.
+Generated text is line-prefixed/control-character neutralized and cannot
+impersonate an accepted status. HELD/UNKNOWN or failed finalization precedes
+success-looking prose; never present unaccepted artifacts as final results.
+Full identifiers, hashes, private paths/receipts and diagnostics stay private;
+shareable summaries use safe aliases and attributed comparison outcomes.
+No secret/header/body dump, verbose bypass or external upload is designed.
+
+### Original-role review and execution handoff
+
+Designer accepts this bounded flow/screen document for Product Owner/Critic
+review; those current votes are pending. Architect/Scrum Master may use the
+small handoffs above for original SprintArchitecture/SprintPlan, without
+redispatching accepted terminal, fixture or SDK construction. Existing
+Developer/E2E verifies applicable retained presentation/parser/history/hold
+regressions; original DevOps alone executes authorized live lifecycle effects
+after actual gates. Existing closeout owns later reviewed non-force Git
+delivery and exact readback. No package, publication, live send, stop/resume,
+cleanup or live acceptance is performed or claimed by this design.
+
+Designer validation: documented `Test-Demo.ps1` with the existing absolute
+Python and explicit selected-lab root passed 278 tests in 33.376 seconds
+(unittest suite elapsed scope), dependency check and compilation; exit zero.
+`scripts/Test-Repository.ps1` passed current index, 113-file public boundary,
+JSON, PowerShell, frontmatter and whitespace checks. Direct assertions passed
+for unchanged IP-S2/historical text, all ten current step IDs, four canonical
+flow names and cited application module existence. These are offline checks,
+not final-package, clean-checkout or cloud certification. No dependency was
+installed or retained-lab source changed. The pre-existing specification/index
+overlay is preserved and excluded from this document's commit.
+
 ## Current IP-S2: guarded publication and attributable live diagnosis (October 22, 2026)
 
 This **SprintDesign** refines the accepted Screen F/G and A-D/H-K experience

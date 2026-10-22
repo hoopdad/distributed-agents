@@ -29,6 +29,8 @@ from agent_framework_foundry import FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY
 from azure.ai.agentserver.core import AgentConfig, get_request_context
 from azure.identity.aio import ManagedIdentityCredential
 from pydantic import ValidationError
+from .host import context_checkpoint, execution_checkpoint
+from .diagnostics import Stage
 
 from .artifact_store import BlobArtifacts
 from .architect_agent import ArchitectAgent
@@ -58,6 +60,7 @@ PREPARATION_CHECKS = frozenset({
 
 def create_workflow(request: HostedResponseRequest):
     """Build the coordinator graph or a specialist's assigned-output workflow."""
+    context_checkpoint(Stage.PREPARATION, request)
     try:
         runtime = WorkflowRuntime(request)
     except ArtifactError as exc:
@@ -83,6 +86,9 @@ def create_workflow(request: HostedResponseRequest):
 
 async def parse_turn(request: HostedResponseRequest) -> WorkflowTurn[str]:
     """Validate the stored, resilient request and expose its user text as workflow input."""
+    context_checkpoint(
+        Stage.BACKGROUND if request.request.get("background") is True else Stage.REQUEST, request,
+    )
     if request.request.get("store") is False or request.request.get("background") is not True:
         raise ArtifactError("STORED_RESILIENT_BACKGROUND_REQUIRED")
     text = await request.get_input_text()
@@ -521,6 +527,7 @@ class WorkflowRuntime:
     @asynccontextmanager
     async def resources(self):
         """Own the Azure clients and verify private storage before yielding to an event."""
+        execution_checkpoint(self)
         async with AsyncExitStack() as stack:
             credential = await stack.enter_async_context(ManagedIdentityCredential())
             http = await stack.enter_async_context(data_client(
@@ -742,6 +749,7 @@ class BeginExecutor(Executor):
 
     @handler
     async def run_turn(self, text: str, context: WorkflowContext[str]):
+        execution_checkpoint(self.runtime)
         await context.send_message(await self.runtime.begin(text))
 
 
@@ -752,6 +760,7 @@ class RouteExecutor(Executor):
 
     @handler
     async def route(self, token: str, context: WorkflowContext[str, str]):
+        execution_checkpoint(self.runtime)
         action, result = await self.runtime.route(token)
         if action is not None:
             await context.send_message(action)
@@ -766,6 +775,7 @@ class EffectExecutor(Executor):
 
     @handler
     async def dispatch_effect(self, action: str, context: WorkflowContext[str]):
+        execution_checkpoint(self.runtime)
         await context.send_message(await self.runtime.execute(action))
 
 
@@ -776,6 +786,7 @@ class PublishExecutor(Executor):
 
     @handler
     async def publish(self, call_op: str, context: WorkflowContext[str, str]):
+        execution_checkpoint(self.runtime)
         continuing, result = await self.runtime.publish(call_op)
         if continuing:
             if result is not None:
@@ -792,4 +803,5 @@ class SpecialistExecutor(Executor):
 
     @handler
     async def specialize(self, text: str, context: WorkflowContext[str, str]):
+        execution_checkpoint(self.runtime)
         await context.yield_output(await self.runtime.specialize(text))

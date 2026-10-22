@@ -1,5 +1,18 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## IP-S3: consume qualified lineage and retained source delivery
+
+Consume the [current sprint refinement](../../customer-prototype-sprint-architecture.md#ip-s3-qualified-telemetry-boundary-and-remaining-execution-contracts).
+Canonical Terminal client / Guarded lab release toolchain and solutionModel
+IDs remain unchanged. Qualification is task-complete, not cloud PASS.
+Fixed candidate `b7671214` delivery is accepted; no duplicate reconciliation,
+moving-HEAD push, unchanged publisher or package check is assigned.
+Original Scrum plans only concrete changed handoffs. Continuity needs a completed
+initial parent; recovery additionally needs two-turn and once-only readiness.
+Isolation retains its own comparison/capture prerequisites, not recovery success.
+Live provenance, cleanup and original review/retro/closeout remain incomplete;
+held/UNKNOWN effects persist and rollback provenance remains WAIVED.
+
 ## Existing-telemetry changed-condition handoff
 
 Consume the [current architecture amendment](../../customer-prototype-architecture.md#existing-telemetry-resumption-architecture-october-22-2026).

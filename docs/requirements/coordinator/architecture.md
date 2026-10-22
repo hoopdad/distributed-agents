@@ -1,5 +1,18 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## IP-S3: consume completed emitter and POST qualification
+
+Consume the [current sprint refinement](../../customer-prototype-sprint-architecture.md#ip-s3-qualified-telemetry-boundary-and-remaining-execution-contracts).
+Canonical Hosted coordinator and shared state/checkpoint/effect support IDs
+remain unchanged. All 628 parent-tagged records are accounted for: 604
+coordinator25 and 24 architect19 with inherited parent-session baggage.
+One architect POST span is represented twice, not two proven sends.
+The exact platform mapping and caller semantics remain missing; no coordinator
+repair is demonstrated. Preserve trusted assignments, deterministic gates,
+ETags and UNKNOWN holds. Existing caller-owned capture is not installed hosted
+capture. Original Scrum consumes concrete changed handoffs without replaying
+qualification, missing-comparison research or uncertain effects.
+
 ## Existing-telemetry changed-condition handoff
 
 Consume the [current architecture amendment](../../customer-prototype-architecture.md#existing-telemetry-resumption-architecture-october-22-2026).

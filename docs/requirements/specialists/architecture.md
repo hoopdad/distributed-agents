@@ -1,5 +1,18 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## IP-S3: retain trusted-user rejection after qualified lineage
+
+Consume the [current sprint refinement](../../customer-prototype-sprint-architecture.md#ip-s3-qualified-telemetry-boundary-and-remaining-execution-contracts).
+Canonical Hosted architect / Hosted reviewer and shared support IDs are unchanged.
+All 44 architect-tagged records match retained architect19/session; the other
+24 architect emissions carry parent-session baggage. Neither emitter accounting
+nor the common trace attests authenticated caller or delegated-user resolution.
+Twelve internal causal links provide no qualified gateway join.
+Preserve fail-closed preparation, immutable outputs and exact prerequisites;
+no guessed header, trusted-context population or hidden local role is allowed.
+No supported specialist source correction is demonstrated. Original Scrum
+retains the UNSENT platform evidence handoff; live acceptance remains incomplete.
+
 ## Existing-telemetry changed-condition handoff
 
 Consume the [current architecture amendment](../../customer-prototype-architecture.md#existing-telemetry-resumption-architecture-october-22-2026).

@@ -1,5 +1,115 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## IP-S3: qualified telemetry boundary and remaining execution contracts
+
+October 22, 2026. This refinement consumes completed IP-S2 qualification and
+the agreed current IP-S3 design; it governs their affected handoffs over the
+older dispatch and unclassified-emitter statements below. It does not reopen
+accepted readiness, change AC1-AC9/G1-G8, or accept a live flow.
+The canonical [solutionModel](customer-prototype-architecture.md#solutionmodel)
+is incorporated unchanged: ten components, five flows, eighteen steps.
+No topology, ownership, entry point, capture destination or public schema changes.
+
+### Inspected evidence and architecture decision
+
+Current run `f7011883-a3c7-4dae-b00a-6472b985901f/context/` contains:
+
+- `750a1f5238c2af4cf11c1c6f40dd0c7df19ac9e7486a029bdd0cb9753e10dbc1.json`:
+  original Architect/Critic/Developer report qualification taskComplete=true,
+  with no unmet assignment criteria; DevOps stage remains needs-replan.
+  Its reconciled `feedback.governance.instructions` closes qualification,
+  preserves the cloud gate and does not establish global work exhaustion.
+- `3995a2ec056a0ef79f2ad3b2604cc8fd7dfd7f521e8ad7a4712cb280290a479d.json`:
+  agreed IP-S3 design applies retained screens H/I/J/K without new implementation.
+- `9e1aa350127cdf44f54dfe9863b0148d4222cf3f3fc3c85bc1ac2d7920ceb679.json`:
+  agreed IP-S2 architecture retains the original bounded discriminator.
+
+Independently read the exact private `review-handoff.json` and
+`verification.json` under telemetry-recovery evidence child
+`devops-qualification-20261022-1756-v2`; all 22 listed file hashes match.
+The 54 evidence checks are reported by that retained verification, not newly
+executed application or cloud tests in this architecture turn.
+
+**Decision: close the bounded discriminator; retain a platform-owned evidence
+contract, not a speculative application correction.** All 628 parent-tagged
+records are accounted for: 604 coordinator25 and 24 architect19 emissions.
+The latter retain parent-session baggage (20 unresolved-stage, four SDK
+missing-user records), not the architect session. All 44 architect-tagged
+records match architect19 and its retained session. Resource-role metadata
+corroborates emitters, not callers. Thirty-eight dependency representations
+cover nineteen spans, including one architect HTTP POST span represented twice.
+Neither count is a network-send count. Twelve nonempty causal links close
+over internal dependencies; none targets that POST or its parent.
+Request-ID baggage equals OperationId for all 672 selected trace records.
+It is not an independent server-issued per-request discriminator.
+
+Thus the common trace and actual POST are observable, while the exact
+POST-to-gateway/receiving-span link, authenticated caller and effective
+delegation resolution remain unavailable. Preserve the observed trusted-user
+preparation rejection. Neither missing RBAC, a platform defect nor an
+application/SDK defect is demonstrated. Inherited `user.id`, response/session
+baggage, timing and successful HTTP status do not resolve that boundary.
+No unchanged gateway query, inference, header replacement, trust bypass,
+SDK upgrade or republishing is justified.
+
+### Smallest receiving contracts and blast radius
+
+| Canonical steps / approved criterion | Source and retained state | Concrete handoff; original receiving owner |
+| --- | --- | --- |
+| `collaboration-design`, `release-discriminate`; profiling 3/5/6, AC1/AC5/AC7 | `demo/foundry.py` OriginTransport -> platform -> `demo/host.py` ingress/context/preparation; `demo/diagnostics.py`. Implemented, locally qualified and published at retained runtime; no completed collaboration. | Platform-owned exact mapping from the observed client POST/retained response to a server-issued request or receiving span and its gateway RequestResponse, plus authoritative objectId/callerObjectId and delegated-user semantics. Original Scrum/Architect retain this missing evidence contract; DevOps may consume a concrete authorized changed handoff. Attestation remains UNSENT; no external submission or new capture authority follows. |
+| `continuity-revise`, `continuity-invoke`, `continuity-verify`; AC2/G5 | `demo/terminal.py`, `demo/foundry.py`, `demo/workflow.py`, `demo/artifacts.py`, `live_acceptance.py`. Existing construction/offline qualification, not live continuity. | Completed non-held initial collaboration with actual parent, both hosted/framework child identities, pins, artifacts and effects. DevOps then verifies fresh follow-up responses and exactly two child creations across both turns. Retrieval and held parents do not satisfy this handoff. |
+| `recovery-stop`, `recovery-resume`, `recovery-verify`; AC4/G6 | `demo/workflow.py`, `demo/foundry.py`, `live_acceptance.py`; retained MAF checkpoints and effect journal. No live recovery proof. | Genuine completed two-turn evidence and once-only current-effect readiness. DevOps records durable intent, actual 204 and independent stopped/idle evidence, then verifies same-parent/children/pins, checkpoints and no duplicate effects. UNKNOWN stop remains HELD; known-response retrieval never becomes resend. |
+| `isolation-bind`, `isolation-execute`, `isolation-verify`; AC4/G7 | `live_acceptance.py::_evidence_turn`, `scenario_state_reader.py`, `demo/effect_observation.py::private_sink`, `demo/private_effect_capture.py::PrivateEffectCapture`. Implemented/offline-qualified interfaces, not hosted installation or consumed-history proof. | Independently supplied completed non-held comparison plus existing authorized hosted destination/context owner, exclusive handle/lifetime, installation before background creation, trusted anchors, quiescence, coverage and readback/cleanup ownership. DevOps owns execution only after these exact handoffs. Neither telemetry completion nor recovery success is an isolation dependency. |
+| `release-join`, `release-package`, `release-close`; AC1-AC9/G1-G8 | Guarded lab release toolchain and `docs/customer-prototype-release-notes.md`. Fixed candidate `b7671214dfd68025517ce57f12a3cfaaaffa1912` delivery is already accepted; receipt `08d1bda04a43581f207d979f9efdb74c20bc3ffa` is local bookkeeping. | Original Scrum owns reconciliation; original DevOps/review/retro/closeout owners retain live scenarios, hosted provenance and attributable cleanup. Do not repeat accepted fixed-ref delivery or automatically push later architecture/planning HEAD. Only a demonstrated runtime correction needs affected original checks/reviews and one guarded publisher. |
+
+Retain runtime `f9fcd9cf`, qualification `622c1607`, selected lab `ceaba6ee`,
+common package `cb506ae15a8942d5dd6a8570cf5b29533e0d744621c4eb1b8d9b69cf1656b2f8`
+and architect19/reviewer17/coordinator25. These identify accepted subjects,
+not fresh version readbacks or independently live-verified success.
+COMMON rollback provenance remains **WAIVED, never PASS**.
+
+### Original planning handoff, not a new investigation queue
+
+Apply the exact provenance-qualified dispositions:
+
+- `["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","ROUTE-TELEMETRY-QUALIFICATION"]`:
+  qualification dispatch and bounded findings are fulfilled; cloud acceptance
+  is not. Do not return the accepted task for unchanged research.
+- `["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","ADVANCE-INDEPENDENT-ISOLATION-READINESS"]`:
+  consume accepted readiness at `7a2f1862`; no new comparison/capture handoff
+  was supplied. Do not repeat its negative audit or add recovery dependence.
+- `["yaml-loops-v1:sprint/2/IP-S2/DevOpsWorkLoop","CLOSE-QUALIFICATION-PRESERVE-CLOUD-GATE"]`:
+  retain the localized missing mapping/semantics, UNSENT attestation and partial
+  DevOps stage. Only concrete changed evidence can reopen the affected operation.
+
+For this inspected scope, splitting an application repair from the identity
+blocker is not justified without a demonstrated defect. Independent isolation
+has existing consumers but lacks its two concrete execution handoffs; telemetry
+cannot supply either. Source delivery is accepted, not an available repeat task.
+The remaining approved continuity/recovery branches have the smaller handoffs
+listed above, not whole-sprint dependencies. No new implementation assignment,
+resume or material capture-contract proposal is established here.
+
+Original Scrum Master must use this graph in the existing SprintPlan/review
+path, checking actual ready/executing work, feasible splits, independent approved
+backlog and bounded unlocking investigations/integration corrections before any
+global waiting conclusion. This architecture resolves the returned design
+question, not that release-wide scheduling audit. A genuinely new hosted
+destination/lifecycle/trust proposal requires Architect-advised Product Owner
+scope resolution; do not invent one to manufacture progress. All three sprints
+stay partial; held/UNKNOWN effects and historical cleanup uncertainty remain.
+Owner accepts this bounded refinement for Product Owner/Critic/Red Team review;
+their agreement is not presumed.
+
+Verification in this turn: private manifest integrity matched 22 files; focused
+standard-library assertions passed for canonical model equality against
+`f0d0e74c`, all 14 referenced step IDs, nine source/document paths, three tier
+links, owned whitespace, authorized branch and empty staging. Owned-path
+`git diff --check` passed. No application suite, full repository suite, telemetry
+query, authentication, inference, publication, stop/resume or cleanup execution
+was performed. No process/listener was created for this refinement.
+The unowned index overlay and specification are not part of this change.
+
 ## Existing-telemetry changed-condition handoff
 
 The [current architecture amendment](customer-prototype-architecture.md#existing-telemetry-resumption-architecture-october-22-2026)

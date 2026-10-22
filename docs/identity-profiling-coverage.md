@@ -7,6 +7,143 @@ handoffs. The [integration join](#ip-s1-integration-join) closes those applicati
 call-site handoffs without extending coverage into SDK-owned stores or the
 platform. No section is a universal coverage or live acceptance claim.
 
+## IP-S2 continuation-1 observation integration
+
+October 22, 2026; **IP-S2-C1-OBSERVATION-INTEGRATION**, a bounded
+Developer source join, not formal E2E, a durable collector or release acceptance.
+The older source mappings and measured results below remain dated history.
+Current integration commit is supplied in the owner report/commit, not a
+self-referential document hash.
+
+### Accepted task/source ledger
+
+Inspected the actual original audits in
+`gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/`:
+
+| Task | Accepted exact application commit(s) | Original audit |
+| --- | --- | --- |
+| Scoped state reader | `fa3937bdb7df9d831d6335ca66d9248fc9fee49e` | `45c1d10a62d88b37f68689d8281ce7e73598dd63e9ef1461788bc00565c4aca4.json` |
+| Effect boundary bridge | `1a3a8966d96a32b6592c4e1d46ccd55381a430ba`, `946873e2b64f828ff0658f3bf7e654a752b577a7`, correction `e377a32372f2f8e1a74c6e1c8c50323654da752c` | `04e3e134c35df1bedab5acd8931d7434e2023fe62230ea048bff8bba5d140eb5.json` |
+| Typed checkpoint qualification | `fcf301ee6e14d67e3cb94d58910de4a59a2a844d` | `a2b5fd546b4d4d3a9e714f0ae1e74a90cf83e2429af1f278375d5c59ab112a91.json` |
+
+Each current audit's Architect/Critic votes are agree/taskComplete true, with
+no unmet criteria; bridge governance history retains the earlier negative vote.
+The accepted correction closes
+`["yaml-loops-v1:sprint/2/IP-S2/continuation/1/task/IP-S2-C1-EFFECT-BOUNDARY-BRIDGE/AssignedWorkDeveloperLoop","EFFECT-LATE-INHERITED-CAPTURE"]`,
+not the downstream completeness of a live collection. The planning audit
+`ae9064e986ff6a387f363bbe559a8fb0ef5d35617c699fa1085f64428eae33e9.json`
+retains original Product Owner/Architect/Critic agreement.
+
+All five task commits passed ancestry checks against the authorized feature
+HEAD `e377a323`; the accepted reader/typed/bridge owned bytes still match their
+commits after LF normalization. No merge, branch switch, abandoned task branch,
+history rewrite or push was needed. Selected-lab feature HEAD remains clean at
+`9b4919d8bcdbf07203f32657936c27328ea6ccc1`; no retained tooling changed.
+This integration owns only its fixture, coverage and index paths. Preserve the
+preexisting untracked specification and its uncommitted index inventory line.
+
+### Joined interfaces, actual fixtures and package closure
+
+`tests/test_profiling_integration.py` retains all four original factory/package
+cases and adds a joined observation case with retained/broken/absent sink
+subcases. It runs actual `WorkflowRuntime.begin/route/execute`, existing trusted
+gates/write-ahead transitions, `RemoteAgents.create/invoke`, public Project
+Azure Core and OpenAI Responses transports. Only cloud boundaries, version
+preparation/lookup and semantic routing are synthetic. Separate create/send
+operation bindings and occurrences match the trusted child/version and journal.
+An empty SDK-completed HTTP-200 envelope is held as `SPECIALIST_EMPTY` under
+all sink modes, not upgraded to collaboration success; an invalid action is
+still rejected before another request. The initial fixture incorrectly
+expected `SPECIALIST_INCOMPLETE`; correcting that test expectation preserves
+the actual more specific rejection, not a runtime/acceptance waiver.
+
+The same synthetic owned backend bytes are then read through an injected real
+`BlobServiceClient` with a synthetic public paginated transport, using
+`scenario_state_reader.read_scoped_state(service, containers, scope, head,
+head_etag, quiescence_receipt, refs, required_operations)` (keyword-only).
+Exact manifests/artifacts and every named transition survive. Journal records
+are not sends; a conditionally complete read of a held turn is still held.
+Invalid refs reject before SDK I/O; head ETag movement makes collection
+incomplete, leaves original state unchanged and does not close the caller's
+client. This is a synthetic interface join, not an installed export command.
+
+The private `private_sink(callable)` and immutable `Binding`/`Receipt` contract
+remain optional. Install in the owning execution context before background
+creation; retain every occurrence and late marker, never deduplicate attempts.
+`window_closed` is not a final certificate: later inherited requests preserve
+their original binding, emit `request_late/incomplete` and permanently invalidate
+completeness. A broken sink cannot authorize/retry/suppress a rejection.
+Capture coverage, HTTP response/stream completion and execution success remain
+distinct. Neither adapter installs private durable storage or an aggregate
+collector; production coverage cannot be inferred from an uninstalled sink.
+
+The existing application `!demo/*.py` allowlists and Docker `COPY demo demo`
+already include `demo/effect_observation.py`. The actual selected-lab public
+`ReleaseRoots.select(...).runtime_files()` includes all 16 current `demo/*.py`
+modules plus `main.py`, both requirements files and both routing JSON files:
+**21 application runtime inputs**. No lab/allowlist modification is needed.
+The root `scenario_state_reader.py`, `live_acceptance.py` and tests are excluded
+from that hosted runtime closure; they remain private/offline acceptance inputs,
+not a fourth hosted role. The new closure fixtures enforce these exclusions.
+
+All 21 runtime files match feature HEAD after LF normalization. Reproducible
+source mapping SHA256 (compact sorted-key JSON of path to SHA256 of bytes):
+raw `fa1c97be62a0972b792c0affb9e0e02c9f821967cd2469c1ad7d6464caedae35`;
+LF/committed `a28ffbe8825318ee4194e4b5029dadbaa60a999375c98ea93bba877b03407aed`.
+These are source maps, not ZIPs, build receipts or release seals.
+Affected package runtime bytes are `demo/effect_observation.py`,
+`demo/foundry.py`, `demo/workflow.py`; coupled acceptance input is
+`live_acceptance.py`. Other affected verification inputs are the joined fixture,
+`scenario_state_reader.py`, its fixtures, bridge fixtures, typed qualification
+fixtures and their retained actual-host harness. Existing pins/schema and
+aggregate validation are unchanged.
+
+### Verification and remaining handoff
+
+Focused joined fixtures passed five tests (including all three sink subcases)
+in 1.228 seconds using the existing explicit Python and linked selected lab.
+`Test-Demo.ps1 -Python <existing-absolute-python> -LabRepositoryRoot
+<explicit-selected-lab>` passed dependency checking, **344 tests in 54.940
+seconds**, and compilation (exit zero). This includes the 30 reader, 18 bridge
+and four typed-export cases, retained stop/unknown-effect/recovery fixtures,
+and all original application cases. `scripts/Test-Repository.ps1 -Python
+<existing-absolute-python>` passed current index, **125 public files**, public/
+private boundary, JSON, PowerShell, frontmatter and whitespace (exit zero).
+No dependency installation or retained-tooling edit occurred, so no retained
+suite or Linux build was repeated. Earlier Linux evidence retains all its
+recorded exclusions and does not certify the new runtime. These checks apply
+to this shared checkout including the preserved specification/index overlay,
+not clean-checkout certification.
+
+Consume the accepted [typed qualification](identity-typed-checkpoint-export.md),
+not a manufactured export capability: complete public local-file round-trip
+works, but original persisted-encoding/unchanged-aggregate attachment remains
+unsupported without a public original encoding/hash export and supported
+restricted restoration. Matching re-encoding samples are not a canonical-byte
+guarantee. No codec/projection/pin/schema or validator change is made here;
+an essential follow-on contract change goes through original Architect/Scrum.
+Consumed-model-history remains unobservable; pending snapshots and previous
+response IDs are not proof of consumed input. Reader completeness is conditional,
+not atomic/historical completeness; keep required-operation anchors and compare
+prior immutable receipts across windows externally. Platform/SDK-internal,
+pre-install, unbound dispatch and terminal parent traffic remain uncovered.
+
+After original Architect/Critic review, original Architect/Scrum coordinates
+only the necessary affected original E2E/DevOps routing with these accepted
+changed refs and supplied canonical stage keys; this task emits no resume.
+Earlier accepted unchanged-runtime evidence remains valid only in its original
+boundary; it is not certification of the new bridge runtime. No blanket replay
+of old stages, native-denial retry or replacement E2E/DevOps is requested.
+At the original `yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop` origin,
+`RELEASE-COMMON-PACKAGE-PUBLICATION` and `RELEASE-LIVE-ACCEPTANCE` remain
+required. Current package/source/version/trusted-host/effect checks, final
+common package/publication, live initial collaboration, continuity, once-only
+recovery, isolation, attributable cleanup and original review/retro/closeout
+are incomplete. Historical rollback provenance remains **WAIVED, never PASS**.
+No permission/authentication resolution, supported live identity remedy or
+cloud pass follows from this construction join. Held/UNKNOWN effects and all
+historical inputs/proofs remain untouched.
+
 ## IP-S2 changed-source handoff to original E2E
 
 October 22, 2026; Developer task **IP-S2-JOIN-HANDOFF**, not another

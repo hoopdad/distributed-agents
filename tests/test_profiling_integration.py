@@ -20,12 +20,21 @@ os.environ.update({
 })
 
 from demo import diagnostics as d
+from demo import effect_observation as effects
 from demo.architect_agent import ArchitectAgent
 from demo.reviewer_agent import ReviewerAgent
 from demo.artifacts import ArtifactError, canonical_bytes
+from demo.foundry import OriginTransport, ProjectClient, RemoteAgents
 from demo.workflow import WorkflowRuntime, create_artifact_store
+from test_effect_observation import ProjectWire, RawBytes, credential
 from test_identity_handoff import parent
+from test_scenario_state_reader import CONTAINERS, Transport as ReaderWire
 from test_sdk_diagnostics import Credential, Transport
+from test_workflow import FakeRemote, FakeRouter, MemoryBackend, TestRuntime, make_store, synthetic_calibration
+from scenario_state_reader import read_scoped_state
+
+import httpx2
+from azure.storage.blob.aio import BlobServiceClient
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -141,6 +150,7 @@ class PackageClosureTests(unittest.TestCase):
             self.assertIn("!demo/*.py", (ROOT / name).read_text().splitlines())
         self.assertIn("COPY demo demo", (ROOT / "Dockerfile").read_text().splitlines())
         self.assertTrue((ROOT / "demo/diagnostics.py").is_file())
+        self.assertTrue((ROOT / "demo/effect_observation.py").is_file())
 
     def test_actual_selected_lab_runtime_closure_includes_all_application_modules(self):
         tools = os.environ.get("AZURE_LAB_SOURCE_ROOT")
@@ -158,10 +168,144 @@ class PackageClosureTests(unittest.TestCase):
             expected = {"demo/" + path.name for path in (ROOT / "demo").glob("*.py")}
             self.assertTrue(expected <= closure)
             self.assertIn("demo/diagnostics.py", closure)
+            self.assertIn("demo/effect_observation.py", closure)
+            self.assertNotIn("scenario_state_reader.py", closure)
+            self.assertNotIn("live_acceptance.py", closure)
+            self.assertFalse(any(path.startswith("tests/") for path in closure))
             self.assertIn("config/routing-corpus.json", closure)
             self.assertIn("config/routing-calibration.json", closure)
             for path in closure:
                 self.assertTrue(roots.source(path).is_relative_to(ROOT))
+
+
+class ObservationJoinTests(unittest.IsolatedAsyncioTestCase):
+    async def test_trusted_workflow_dispatch_public_wires_and_injected_reader_join(self):
+        """Real execute/create/send paths; an HTTP 200 still leaves a held turn."""
+        for sink_mode in ("retained", "broken", "absent"):
+            with self.subTest(sink=sink_mode):
+                receipts, seen, backend = [], [], MemoryBackend()
+                wire = ProjectWire()
+
+                def handle(request):
+                    seen.append(request)
+                    # No specialist artifact/output: the SDK-completed envelope
+                    # must not manufacture successful collaboration.
+                    response = {
+                        "id": "resp_join", "object": "response", "created_at": 1,
+                        "model": "", "status": "completed", "output": [],
+                    }
+                    return httpx2.Response(200, headers={"content-type": "text/event-stream"},
+                                           stream=RawBytes(
+                                               ("data: " + json.dumps({
+                                                   "type": "response.completed", "response": response,
+                                               }) + "\n\n").encode()))
+
+                def sink(receipt):
+                    receipts.append(receipt)
+                    if sink_mode == "broken":
+                        raise OSError("synthetic-private-sink-error")
+
+                async with httpx2.AsyncClient(
+                    transport=OriginTransport(httpx2.MockTransport(handle)),
+                ) as http:
+                    async with ProjectClient(credential(), http, {}, transport=wire) as project:
+                        remote = RemoteAgents(project, {})
+                        # Only version preparation/lookup are synthetic; actual
+                        # public Project create and OpenAI streamed send execute.
+                        remote.prepare = FakeRemote(backend).prepare
+                        project.agents.get_session = AsyncMock(return_value=SimpleNamespace(
+                            status="active",
+                            version_indicator=SimpleNamespace(agent_version="2"),
+                        ))
+                        runtime = TestRuntime(backend, remote)
+                        with patch.dict(os.environ, {"DECISION_REQUESTS_PER_MINUTE": "17"}), \
+                                patch("demo.workflow.DecisionClient", return_value=FakeRouter()), \
+                                patch("demo.workflow.load_calibration", return_value=synthetic_calibration()):
+                            await runtime.begin("Synthetic join requirements.")
+                            action, result = await runtime.route(runtime.response_id)
+                            self.assertEqual((action, result), ("ask_architect", None))
+                            with effects.private_sink(sink if sink_mode != "absent" else None):
+                                call_op = await runtime.execute(action)
+                        store = make_store(backend, runtime.scope, runtime.role)
+                        head = await store.read_manifest()
+                        self.assertEqual(head.status, "SPECIALIST_EMPTY")
+                        self.assertEqual(head.effect.operation_id, call_op)
+                        self.assertNotEqual(head.effect.status, "accepted")
+                        self.assertEqual(head.effect.response_id, "resp_join")
+                        self.assertEqual(len(wire.requests), 1)
+                        self.assertEqual([request.method for request in seen], ["POST"])
+                        # An installed observer neither authorizes a mismatched
+                        # action nor suppresses the existing deterministic gate.
+                        before = len(receipts)
+                        with effects.private_sink(sink):
+                            with self.assertRaises(ArtifactError):
+                                await runtime.execute("ask_reviewer")
+                        self.assertEqual(len(receipts), before)
+                        self.assertEqual((len(wire.requests), len(seen)), (1, 1))
+
+                attempts = [receipt for receipt in receipts if receipt.phase == "request"]
+                if sink_mode == "absent":
+                    self.assertEqual(receipts, [])
+                else:
+                    self.assertEqual([r.binding.action for r in attempts], ["create", "send"])
+                    target = head.children["architect"]
+                    self.assertTrue(all(
+                        r.binding.target == target.hosted_id and r.binding.version == target.version
+                        and r.binding.role == "architect" for r in attempts
+                    ))
+                    self.assertEqual(attempts[1].binding.operation, call_op)
+                    self.assertNotEqual(attempts[0].binding.operation, call_op)
+                    self.assertEqual(len({r.occurrence for r in attempts}), 2)
+                    closed = [r for r in receipts if r.phase == "window_closed"]
+                    self.assertEqual(len(closed), 2)
+                    self.assertTrue(all(r.category == "incomplete" for r in closed)
+                                    if sink_mode == "broken" else all(r.category is None for r in closed))
+
+                # Export ONLY synthetic owned backend bytes to a real public
+                # Blob SDK reader. No credential factory, writes or live store.
+                reader_wire = ReaderWire()
+                for (container, name), raw in backend.blobs.items():
+                    reader_wire.put(container, name, raw, str(backend.etags[container, name]))
+                names = sorted(name for container, name in backend.blobs
+                               if container == "control" and "/operations/" in name)
+                self.assertGreater(len(names), 2)
+                reader_wire.pages[runtime.scope.prefix + "operations/"] = {
+                    "": (names[:2], "rest"), "rest": (names[2:], ""),
+                }
+                options = dict(
+                    containers=CONTAINERS, scope=runtime.scope, head=head,
+                    head_etag=str(backend.etags["control", runtime.scope.prefix + "manifest.json"]),
+                    quiescence_receipt="synthetic-owned-window", refs=head.accepted,
+                    required_operations=names,
+                )
+                async with BlobServiceClient(
+                    "https://synthetic.blob.core.windows.net", credential=None,
+                    transport=reader_wire, retry_total=0,
+                ) as service:
+                    capture = await read_scoped_state(service=service, **options)
+                    self.assertTrue(capture.complete, capture.issues)
+                    self.assertEqual({r.name for r in capture.operations}, set(names))
+                    self.assertEqual(capture.manifest.raw, canonical_bytes(head))
+                    self.assertTrue(all(r.raw == backend.blobs[r.container, r.name]
+                                        for r in capture.blobs))
+                    # Complete read coverage cannot upgrade a held turn or
+                    # turn journal transition counts into observed send counts.
+                    self.assertEqual(head.status, "SPECIALIST_EMPTY")
+                    self.assertFalse(hasattr(capture, "sends"))
+                    self.assertGreater(len(capture.operations), len(attempts))
+                    request_count = len(reader_wire.requests)
+                    with self.assertRaisesRegex(ValueError, "READER_BINDING"):
+                        await read_scoped_state(service=service, **(options | {"refs": []}))
+                    self.assertEqual(len(reader_wire.requests), request_count)
+                    # A changed attributed head fails closed; it cannot repair
+                    # the held execution or alter the original backend.
+                    reader_wire.put("control", runtime.scope.prefix + "manifest.json",
+                                    canonical_bytes(head), "changed-etag")
+                    moved = await read_scoped_state(service=service, **options)
+                    self.assertFalse(moved.complete)
+                    self.assertEqual(head, await store.read_manifest())
+                    self.assertFalse(reader_wire.closed)  # injected lifecycle stays caller-owned
+                self.assertTrue(reader_wire.closed)
 
 
 if __name__ == "__main__":

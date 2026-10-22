@@ -1,5 +1,19 @@
 # Repository index
 
+IP-S2 continuation-1 joined observation source at bridge `e377a323` and
+selected lab `9b4919d8`: navigate
+`docs/identity-profiling-coverage.md#ip-s2-continuation-1-observation-integration`
+for accepted task ancestry, exact 21-input runtime source maps and gaps.
+`demo/effect_observation.py` is optional private sink/dispatch observation;
+`scenario_state_reader.py` is an injected-client private scoped reader outside
+hosted runtime. `tests/test_profiling_integration.py` joins real trusted workflow
+dispatch/public SDK transports to synthetic scoped state collection and verifies
+package closure. The typed export decision remains a bounded negative for
+original-encoding aggregate attachment, not recovery success. No durable
+collector, formal E2E, native-denial resolution, release or live pass is claimed.
+Original Architect/Critic review then Architect/Scrum stage coordination own
+the changed-source handoff; preserve all earlier accepted boundaries and gaps.
+
 IP-S2 continuation-1 planning at architecture `9e6562d3`:
 `docs/customer-prototype-profiling-s2-continuation-1-sprint-plan.json` is the
 separate current dispatch amendment, not a replacement historical plan.
@@ -1820,6 +1834,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `demo\contracts.py`
 - `demo\coordinator_agent.py`
 - `demo\diagnostics.py`
+- `demo\effect_observation.py`
 - `demo\foundry.py`
 - `demo\host.py`
 - `demo\reviewer_agent.py`
@@ -1873,6 +1888,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\identity-profiling-coverage.md`
 - `docs\identity-recovery-plan.md`
 - `docs\identity-scenario-collection-qualification.md`
+- `docs\identity-typed-checkpoint-export.md`
 - `docs\implementation-workflow.md`
 - `docs\migration-map.json`
 - `docs\migration-plan.md`
@@ -1885,6 +1901,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `package_guard.py`
 - `requirements.lock.txt`
 - `requirements.txt`
+- `scenario_state_reader.py`
 - `scripts\Initialize-LabSettings.ps1`
 - `scripts\Test-Repository.ps1`
 - `scripts\Use-Settings.ps1`
@@ -1898,6 +1915,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `tests\test_demo.py`
 - `tests\test_diagnose_identity.py`
 - `tests\test_diagnostics.py`
+- `tests\test_effect_observation.py`
 - `tests\test_host_diagnostics.py`
 - `tests\test_identity_handoff.py`
 - `tests\test_isolated_client.py`
@@ -1905,9 +1923,11 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `tests\test_routing.py`
 - `tests\test_scenario_collection_seams.py`
 - `tests\test_scenario_evidence.py`
+- `tests\test_scenario_state_reader.py`
 - `tests\test_sdk_diagnostics.py`
 - `tests\test_specialist_continuity.py`
 - `tests\test_transport_diagnostics.py`
+- `tests\test_typed_checkpoint_export.py`
 - `tests\test_workflow.py`
 
 <!-- inventory:end -->

@@ -1,5 +1,17 @@
 # Repository index
 
+IP-S3 continuation-1 receiving consumer (against planning `f4dc71b3`):
+`demo/private_effect_capture.py` accepts only a caller-owned new exclusive
+private handle and trusted bindings. Navigate
+`docs/identity-profiling-coverage.md#ip-s3-continuation-1-private-receipt-retention`
+for durability/readback, conditional occurrence accounting and remaining gaps.
+`tests/test_private_effect_capture.py` and the retained joined
+`tests/test_profiling_integration.py` exercise public transport/background
+inheritance, fail-closed partial/late/duplicate capture and runtime closure.
+The existing wildcard includes the new module; no lab/host activation occurs.
+Original E2E/DevOps own new-source qualification, actual private hosted setup,
+publication, live comparisons and cleanup. Earlier notes remain dated history.
+
 IP-S3 continuation-1 Scrum dispatch at architecture `3a49de99`:
 `docs/customer-prototype-profiling-s3-continuation-1-sprint-plan.json`
 assigns the missing private receiving consumer with its focused/joined fixtures,
@@ -1855,6 +1867,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `demo\effect_observation.py`
 - `demo\foundry.py`
 - `demo\host.py`
+- `demo\private_effect_capture.py`
 - `demo\reviewer_agent.py`
 - `demo\routing.py`
 - `demo\specialist.py`
@@ -1939,6 +1952,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `tests\test_host_diagnostics.py`
 - `tests\test_identity_handoff.py`
 - `tests\test_isolated_client.py`
+- `tests\test_private_effect_capture.py`
 - `tests\test_profiling_integration.py`
 - `tests\test_routing.py`
 - `tests\test_scenario_collection_seams.py`

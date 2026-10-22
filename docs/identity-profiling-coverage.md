@@ -7,6 +7,111 @@ handoffs. The [integration join](#ip-s1-integration-join) closes those applicati
 call-site handoffs without extending coverage into SDK-owned stores or the
 platform. No section is a universal coverage or live acceptance claim.
 
+## IP-S3 continuation-1 private receipt retention
+
+October 22, 2026; **IP-S3-C1-PRIVATE-RECEIPT-RETENTION** adds the opt-in
+`demo/private_effect_capture.py` receiving consumer. This is local construction,
+not an installed hosted collector, formal changed-source E2E or live acceptance.
+All older sections below remain historical, including their runtime counts.
+
+### Private interfaces and conditional accounting
+
+- The owning caller supplies a **new exclusive**, readable/writable binary
+  regular-file handle and trusted expected immutable `Binding` values to
+  `PrivateEffectCapture(handle, expected=..., new_exclusive=True)`. Open with
+  the caller's approved private `x+b` setup; the flag attests exclusivity rather
+  than establishing OS locking or permissions. No path, settings, credential,
+  client, host destination or logging secret is acquired by this module.
+  Caller owns permissions, lifetime and attributable cleanup; it is not closed.
+- Install the callable through existing `effect_observation.private_sink`
+  **before task creation**. Each receipt is an explicit bounded canonical JSON
+  line with sequence and preceding-line digest. Every phase/occurrence survives;
+  each acknowledged append checks prior bytes, writes, flushes, calls local
+  `os.fsync` and verifies exact readback. Errors latch unhealthy state without
+  truncating/repairing raw partial evidence or changing transport behavior.
+  Bounds (4 MiB, 4096 records, 4096 bytes/line) are capture limits, not workflow
+  budgets; overflow fails closed. No arbitrary object serialization or output.
+- Only after independently attributed quiescence of **all** inherited work,
+  independently retain `checkpoint(quiescence_receipt=...)`'s byte length,
+  SHA256, record count and expected-binding digest. `readback(anchor)` returns
+  private raw bytes, receipts and constant issue codes. Canonical records,
+  phases, bindings, ordering and occurrence state are checked strictly.
+  Missing tails/closure, duplicate requests, late markers, pending streams,
+  errors, early close and failed durability cannot supply complete accounting.
+  Window closure/fsync alone proves no quiescence. Old anchors fail after late
+  writes; earlier results remain conditional, not irrevocable certificates.
+- `reconcile(anchor, state=..., manifest_sha256=..., manifest_etag=...,
+  operations=..., stops=...)` joins the accepted scoped reader output against
+  separately retained manifest/operation anchors and expected targets/pins.
+  `OperationAnchor` references exact scoped journal names/digests, never counts
+  journal transitions as requests. `StopAnchor` is the caller's independently
+  reconciled durable-intent binding and attributed stopped/idle readback:
+  the capture must also contain exactly one actual HTTP **204** stop occurrence.
+  Intent, HTTP 200 or idle alone is insufficient. Failed reconciliation emits
+  no creations/sends/stops candidates and retains the private raw capture.
+  Successful tuples may populate the **existing** aggregate list fields;
+  they do not authenticate aggregate provenance or establish execution success.
+
+### Source and verification handoff
+
+Accepted bridge correction `e377a32372f2f8e1a74c6e1c8c50323654da752c`,
+reader `fa3937bdb7df9d831d6335ca66d9248fc9fee49e` and integration
+`91758971d6ab0c1579c6701fbfdb4bbb3d242571` are feature ancestors.
+Original bridge/reader/integration audits in the ledger below were opened:
+current Architect/Critic votes agree/taskComplete true; earlier bridge negative
+history is preserved. Architecture audit
+`e96b7f8fa5392f69867c6451205f7e49de763576d9282aeaeb6698371443fb6e.json`
+has original Product Owner/Critic/Red Team agreement on this bounded consumer.
+No accepted bridge, reader, host or aggregate contract is modified.
+
+`tests/test_private_effect_capture.py` covers durability, partial writes,
+fsync failure/cancellation, corruption, invalid fields/bindings/phases,
+pending/error/early-close/duplicate accounting, concurrent real public Project
+clients, completed-then-late Responses traffic and known-response GET-only
+recovery. It reuses pinned local host setup to install the sink before actual
+resilient background creation and verifies capture after the ingress exits.
+`tests/test_profiling_integration.py` retains all five baseline tests, adds a
+durable subcase to the trusted workflow/public Project/Responses/Blob-reader
+join, checks independent anchors and actual stop-204 accounting, and preserves
+`SPECIALIST_EMPTY` and pre-send rejection. Synthetic public transports only.
+
+The actual selected-lab `ReleaseRoots.select(...).runtime_files()` wildcard
+includes the new demo module: **17 demo modules / 22 runtime inputs**, with
+reader, live runner and tests still excluded. No lab edit or dependency change
+is required. Exact check results and source-map digests accompany the owner
+commit/report; a source mapping is **not** a package/build/publication receipt.
+
+Final local checks: focused consumer **15 tests / 1.450 s**, joined integration
+**5 tests / 1.961 s**, and documented `Test-Demo.ps1` with existing explicit
+Python/selected-lab root **359 tests / 57.506 s**, all exit zero. Repository
+checks passed against the preserved unowned specification/index overlay, not
+a clean checkout. Initial fixture import/empty-output/pre-consumed-stream
+mistakes were corrected without changing accepted runtime behavior. A focused
+stderr assertion under parallel load also captured an asyncio slow-task warning;
+it now checks private sentinels while preserving those warnings, not suppressing
+them. Final focused and full runs passed. No dependency installation or retained
+suite/Linux rerun occurred because manifests and retained tooling are unchanged.
+
+### Remaining original-owner obligations
+
+Original E2E/DevOps must qualify only affected new-source proofs, establish a
+supported private hosted destination and caller ownership, install before the
+actual execution/background interval, prove quiescence/anchor provenance and
+owned cleanup, and bind actual state/stop receipts independently. No writable
+hosted path or automatic activation is guessed. This API reads back the owning
+process's injected handle; no crash-recovery reader, remote durability or
+complete multi-process collector is asserted. Pre-install, terminal-parent,
+SDK-internal/platform and consumed-model-history coverage remains absent.
+Typed original-encoding aggregate/checkpoint limitations are unchanged.
+
+The exact prior late-inherited-capture disposition remains satisfied only in
+its accepted bridge boundary; this consumer does not reopen or waive it.
+Original `RELEASE-COMMON-PACKAGE-PUBLICATION` and `RELEASE-LIVE-ACCEPTANCE`
+references below remain required. No native-denial retry, packaging, publication,
+live send/retrieval/stop, cleanup operation or push occurs in this task.
+COMMON rollback provenance remains **WAIVED**, never PASS; all partial sprints,
+actual AC1-AC9/G1-G8 and original review/retro/closeout remain incomplete.
+
 ## IP-S2 continuation-1 observation integration
 
 October 22, 2026; **IP-S2-C1-OBSERVATION-INTEGRATION**, a bounded

@@ -2,11 +2,14 @@
 from __future__ import annotations
 
 from contextlib import AsyncExitStack, asynccontextmanager
+from dataclasses import replace
+import hashlib
 import importlib.util
 import json
 import os
 from pathlib import Path
 import sys
+import tempfile
 from types import SimpleNamespace
 import unittest
 from unittest.mock import AsyncMock, patch
@@ -21,11 +24,13 @@ os.environ.update({
 
 from demo import diagnostics as d
 from demo import effect_observation as effects
+from demo.private_effect_capture import OperationAnchor, PrivateEffectCapture, StopAnchor
 from demo.architect_agent import ArchitectAgent
 from demo.reviewer_agent import ReviewerAgent
 from demo.artifacts import ArtifactError, canonical_bytes
+from demo.contracts import AGENTS, PROJECT
 from demo.foundry import OriginTransport, ProjectClient, RemoteAgents
-from demo.workflow import WorkflowRuntime, create_artifact_store
+from demo.workflow import WorkflowRuntime, create_artifact_store, operation_id
 from test_effect_observation import ProjectWire, RawBytes, credential
 from test_identity_handoff import parent
 from test_scenario_state_reader import CONTAINERS, Transport as ReaderWire
@@ -151,6 +156,7 @@ class PackageClosureTests(unittest.TestCase):
         self.assertIn("COPY demo demo", (ROOT / "Dockerfile").read_text().splitlines())
         self.assertTrue((ROOT / "demo/diagnostics.py").is_file())
         self.assertTrue((ROOT / "demo/effect_observation.py").is_file())
+        self.assertTrue((ROOT / "demo/private_effect_capture.py").is_file())
 
     def test_actual_selected_lab_runtime_closure_includes_all_application_modules(self):
         tools = os.environ.get("AZURE_LAB_SOURCE_ROOT")
@@ -169,6 +175,7 @@ class PackageClosureTests(unittest.TestCase):
             self.assertTrue(expected <= closure)
             self.assertIn("demo/diagnostics.py", closure)
             self.assertIn("demo/effect_observation.py", closure)
+            self.assertIn("demo/private_effect_capture.py", closure)
             self.assertNotIn("scenario_state_reader.py", closure)
             self.assertNotIn("live_acceptance.py", closure)
             self.assertFalse(any(path.startswith("tests/") for path in closure))
@@ -181,10 +188,11 @@ class PackageClosureTests(unittest.TestCase):
 class ObservationJoinTests(unittest.IsolatedAsyncioTestCase):
     async def test_trusted_workflow_dispatch_public_wires_and_injected_reader_join(self):
         """Real execute/create/send paths; an HTTP 200 still leaves a held turn."""
-        for sink_mode in ("retained", "broken", "absent"):
+        for sink_mode in ("retained", "broken", "absent", "durable"):
             with self.subTest(sink=sink_mode):
                 receipts, seen, backend = [], [], MemoryBackend()
                 wire = ProjectWire()
+                durable = None
 
                 def handle(request):
                     seen.append(request)
@@ -202,6 +210,8 @@ class ObservationJoinTests(unittest.IsolatedAsyncioTestCase):
 
                 def sink(receipt):
                     receipts.append(receipt)
+                    if durable is not None:
+                        durable(receipt)
                     if sink_mode == "broken":
                         raise OSError("synthetic-private-sink-error")
 
@@ -224,6 +234,20 @@ class ObservationJoinTests(unittest.IsolatedAsyncioTestCase):
                             await runtime.begin("Synthetic join requirements.")
                             action, result = await runtime.route(runtime.response_id)
                             self.assertEqual((action, result), ("ask_architect", None))
+                            if sink_mode == "durable":
+                                # Expected bindings come from trusted routed source,
+                                # not learned from the callback being measured.
+                                selected = await remote.prepare("architect")
+                                remote.prepare = AsyncMock(return_value=selected)
+                                routed = await make_store(backend, runtime.scope, runtime.role).read_manifest()
+                                bindings = tuple(effects.Binding(
+                                    operation_id(runtime.scope, routed.routing_operation_id, suffix),
+                                    "architect", selected.hosted_id, selected.version, verb,
+                                ) for suffix, verb in (("create", "create"), ("call", "send")))
+                                private_file = self.enterContext(tempfile.TemporaryFile("w+b"))
+                                durable = PrivateEffectCapture(
+                                    private_file, expected=bindings, new_exclusive=True,
+                                )
                             with effects.private_sink(sink if sink_mode != "absent" else None):
                                 call_op = await runtime.execute(action)
                         store = make_store(backend, runtime.scope, runtime.role)
@@ -293,6 +317,76 @@ class ObservationJoinTests(unittest.IsolatedAsyncioTestCase):
                     self.assertEqual(head.status, "SPECIALIST_EMPTY")
                     self.assertFalse(hasattr(capture, "sends"))
                     self.assertGreater(len(capture.operations), len(attempts))
+                    if durable is not None:
+                        anchor = durable.checkpoint(quiescence_receipt=options["quiescence_receipt"])
+                        readback = durable.readback(anchor)
+                        self.assertTrue(readback.complete, readback.issues)
+                        self.assertEqual(readback.receipts, tuple(receipts))
+                        operation_anchors = []
+                        for b in bindings:
+                            # Raw journal name/digest originates in the separately
+                            # read scoped window; request counts never come from it.
+                            record = next(r for r in capture.operations
+                                          if f"/{b.operation}/dispatched.json" in r.name)
+                            operation_anchors.append(OperationAnchor(b, record.name, record.sha256))
+                        join_options = dict(
+                            state=capture, manifest_sha256=capture.manifest.sha256,
+                            manifest_etag=capture.manifest.etag, operations=operation_anchors,
+                        )
+                        accounting = durable.reconcile(anchor, **join_options)
+                        self.assertTrue(accounting.complete, accounting.issues)
+                        self.assertEqual(accounting.creations, (bindings[0].operation,))
+                        self.assertEqual(accounting.sends, (call_op,))
+                        self.assertEqual(accounting.stops, ())
+                        self.assertEqual(head.status, "SPECIALIST_EMPTY")  # not execution success
+                        for changed in (
+                            {"state": replace(capture, complete=False)},
+                            {"state": replace(capture, quiescence_receipt="foreign-window")},
+                            {"manifest_sha256": "0" * 64},
+                            {"manifest_etag": "foreign-etag"},
+                            {"operations": operation_anchors[:1]},
+                            {"operations": [replace(operation_anchors[0], sha256="0" * 64),
+                                            operation_anchors[1]]},
+                            {"operations": [replace(operation_anchors[0], binding=replace(
+                                bindings[0], target="foreign-child")), operation_anchors[1]]},
+                        ):
+                            failed = durable.reconcile(anchor, **(join_options | changed))
+                            self.assertFalse(failed.complete)
+                            self.assertEqual((failed.creations, failed.sends, failed.stops), ((), (), ()))
+                            self.assertEqual(failed.capture.raw, readback.raw)
+                        self.assertEqual(hashlib.sha256(readback.raw).hexdigest(), anchor.sha256)
+                        # Independent stop binding/intent and actual public POST;
+                        # idle alone or HTTP 200 cannot manufacture confirmation.
+                        stop_binding = effects.Binding(
+                            "f" * 32, "coordinator", runtime.scope.parent_session,
+                            head.coordinator_version, "stop",
+                        )
+                        with tempfile.TemporaryFile("w+b") as stop_file:
+                            stop_capture = PrivateEffectCapture(
+                                stop_file, expected=[stop_binding], new_exclusive=True,
+                            )
+                            async with httpx2.AsyncClient(transport=OriginTransport(httpx2.MockTransport(
+                                lambda request: httpx2.Response(204, stream=RawBytes(b"")),
+                            ))) as stop_http:
+                                with effects.private_sink(stop_capture), effects.dispatch(stop_binding):
+                                    await stop_http.post(
+                                        PROJECT + f"/agents/{AGENTS['coordinator']}/endpoint/sessions/"
+                                        + runtime.scope.parent_session + ":stop",
+                                    )
+                            stop_anchor = stop_capture.checkpoint(
+                                quiescence_receipt=options["quiescence_receipt"])
+                            stop_options = dict(
+                                state=capture, manifest_sha256=capture.manifest.sha256,
+                                manifest_etag=capture.manifest.etag,
+                                stops=[StopAnchor(stop_binding, "idle")],
+                            )
+                            stopped = stop_capture.reconcile(stop_anchor, **stop_options)
+                            self.assertTrue(stopped.complete, stopped.issues)
+                            self.assertEqual(stopped.stops, (runtime.scope.parent_session,))
+                            unknown = stop_capture.reconcile(stop_anchor, **(stop_options | {
+                                "stops": [StopAnchor(stop_binding, "unknown")],
+                            }))
+                            self.assertFalse(unknown.complete)
                     request_count = len(reader_wire.requests)
                     with self.assertRaisesRegex(ValueError, "READER_BINDING"):
                         await read_scoped_state(service=service, **(options | {"refs": []}))

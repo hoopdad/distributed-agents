@@ -423,19 +423,20 @@ class EffectObservationTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual([r.status for r in receipts if r.phase == "headers"], [302])
 
     async def test_broken_private_sink_never_changes_send_or_origin_rejection(self):
-        def broken(receipt):
-            raise OSError("synthetic sink failure")
+        for failure in (OSError("synthetic sink failure"), asyncio.CancelledError()):
+            def broken(receipt):
+                raise failure
 
-        seen = []
-        async with httpx2.AsyncClient(transport=OriginTransport(httpx2.MockTransport(
-                lambda req: seen.append(req) or httpx2.Response(200, stream=RawBytes(b"ok"))))) as http:
-            with e.private_sink(broken), e.dispatch(binding()) as window:
-                self.assertEqual((await http.post(response_path())).status_code, 200)
-                with self.assertRaisesRegex(DemoError, "UNAUTHORIZED_ORIGIN"):
-                    await http.post("https://untrusted.example/responses")
-        self.assertFalse(window.capture_complete)
-        self.assertTrue(window.sink_failed)
-        self.assertEqual(len(seen), 1)
+            seen = []
+            async with httpx2.AsyncClient(transport=OriginTransport(httpx2.MockTransport(
+                    lambda req: seen.append(req) or httpx2.Response(200, stream=RawBytes(b"ok"))))) as http:
+                with e.private_sink(broken), e.dispatch(binding()) as window:
+                    self.assertEqual((await http.post(response_path())).status_code, 200)
+                    with self.assertRaisesRegex(DemoError, "UNAUTHORIZED_ORIGIN"):
+                        await http.post("https://untrusted.example/responses")
+            self.assertFalse(window.capture_complete)
+            self.assertTrue(window.sink_failed)
+            self.assertEqual(len(seen), 1)
 
     async def test_actual_stop_boundary_once_only_and_unknown_hold(self):
         for uncertain in (False, True):

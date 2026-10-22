@@ -83,7 +83,10 @@ class CaptureWindow:
     def emit(self, occurrence, transport, phase, status=None, category=None):
         try:
             self.sink(Receipt(self.binding, occurrence, transport, phase, status, category))
-        except Exception:
+        except (Exception, asyncio.CancelledError):
+            # A synchronous observer's own cancellation is not cancellation of
+            # the awaited wire operation. Actual task cancellation still passes
+            # unchanged through the transport/stream handlers below.
             self.sink_failed = True
 
     def matches(self, method, url, transport):

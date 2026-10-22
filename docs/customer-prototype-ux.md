@@ -1,5 +1,127 @@
 # Customer hosted-session prototype: user experience
 
+## Native-readiness resumption: show the next proven boundary (October 22, 2026)
+
+Consumes accepted Architecture `fe8d6432b66bcce396bb200d547fa0ca2ac32926`,
+[native-authentication resumption architecture](customer-prototype-architecture.md#native-authentication-resumption-architecture-october-22-2026).
+Designer inspected current ArchitectureLoop audit
+`f17ebc19120d48f40b84f02827b16ba04662af513cccc319c2ee0d84521fc60a.json`
+in run `86584995-9703-4052-a927-cef4a1cface1/context`: original Product Owner,
+Red Team and Critic agree/taskComplete, with no unmet architecture criteria.
+Those votes do not accept this UX or the release. Both supplied
+priorDispositions arrays and current feedback are empty.
+
+This bounded overlay governs current readiness and next-action wording over
+dated entries below. Preserve the full-scope six principles, tools/framework,
+five canonical journeys/eighteen steps and Screens A-G; no accepted design is
+rebuilt. No architecture, public schema, terminal control or theme is added.
+The prototype evaluator still sees the synthetic application design/review
+and continuity story; the lab operator sees attributed operational boundaries.
+
+### Retained layout, toolset and screen direction
+
+Use the existing Python/argparse plain-text terminal, opt-in human stderr,
+unchanged machine stdout/parser, PowerShell and Markdown/ASCII handoffs with
+pinned MAF/Foundry. Keep goal -> reached boundary -> evidence -> uncertainty ->
+owner/next action reading order. Use short wrapped labeled blocks, terminal
+default light/dark colors and explicit status words, never color-only badges.
+Retain generated-text prefixes/control-character neutralization and safe
+aliases; no raw private identities, paths, headers, tokens or customer text.
+No browser UI, renderer dependency, logging secret or fourth hosted role.
+
+| Existing screen | Current direction and safe action |
+| --- | --- |
+| A: README opening | Keep goal, three-role diagram and two-turn invariant first. A dated current-status summary must distinguish changed native readiness from incomplete release/live proof; do not carry forward an unconditional instruction to resolve the historical denial. README implementation remains a downstream scoped handoff, not changed here. |
+| B/C: initial collaboration and follow-up | Preserve ordered remote calls and useful current candidate/review. Show finalized acceptance only after coordinator finalization; allow queue follow-up only after completed non-held initial collaboration. Safe aliases alone cannot establish exact continuity or child creation counts. |
+| D: failure/recovery | HELD/UNKNOWN overrides successful-looking prose/status. Preserve the historical parent and responses. Known-response retrieval is recovery/no resend; it is not a fresh invocation or permission to replay an uncertain stop/send. |
+| E: separate-parent comparison | Retain distinct private state and independently compared child/artifact bindings. Final-release prerequisites apply; successful recovery of the first parent is not an additional prerequisite. |
+| F: private operator report | Show the qualification subject and evidence level explicitly. Native preflight is an attributed upstream observation, not this Designer's execution, private-connectivity proof or a diagnosis of the old denial. |
+| G: publication/closeout | Report fresh common-package bindings and each role's actual outcome separately from genuine collaboration, continuity, recovery, isolation and cleanup. Historical rollback provenance remains WAIVED, never PASS. |
+
+Screen F/G layout below is design direction, not emitted output, new parser
+fields or a claim that these observations have been collected:
+
+```text
+Goal: complete the existing three-role synthetic demonstration
+Source: accepted observation runtime; affected formal qualification pending
+Native readiness: upstream preflight passed; historical denial cause unknown
+Package: fresh exact-source stage required; older preparation retained
+Hosted observations: installation / retention / anchors / quiescence unproven
+Live acceptance: initial / continuity / once-only recovery / isolation incomplete
+Cleanup: newly owned effects reported separately from historical uncertainty
+Next: original owner and smallest evidence-backed action
+```
+
+Do not collapse these rows into a single green "ready." Attribute accepted
+source/delivery to runtime `f9fcd9cf4f04075e609196ebb90b30e09a91dd98` with
+selected lab `9b4919d8bcdbf07203f32657936c27328ea6ccc1`. The accepted older
+E2E qualifies `c52786b7`, not the later reader/bridge/consumer runtime.
+The older private package stage is neither a current bundle nor disposable
+failed work. Keep implemented, locally verified, packaged, deployed and
+independently live-accepted evidence distinct; unavailable is not observed
+absence. HTTP headers, stream completion and execution completion remain
+different milestones.
+
+### Existing journeys and original-owner handoff
+
+**Exact-source guarded release** (`release-join`, `release-package`,
+`release-discriminate`, `release-close`) uses **Guarded lab release toolchain**.
+Original E2E qualifies the actual later runtime through the existing checks
+and explicit roots; do not replay the accepted early join or create a
+documentation-only substitute. Original DevOps owns fresh private staging,
+wrapper-owned azd bridge/beta.18/status/account validation, current Linux/image/
+dependency/package/host/effect checks and serialized common-three-role release.
+The operator report should identify a missing prerequisite without displaying
+private configuration or requesting routine approval already supplied.
+A new actual denial remains binding; no alternate-route bypass is offered.
+
+**Remote design and review** (`collaboration-bind` through
+`collaboration-return`) still traverses **Terminal client**, **Hosted
+coordinator**, **Hosted architect** and **Hosted reviewer**. **Trusted identity
+and private transport** diagnostics cannot authorize requests. Original E2E/
+DevOps must prove actual caller-owned private capture before inherited tasks,
+exclusive retention, independent anchors and quiescence before relying on
+hosted aggregates. Fixtures do not prove that installation or consumed model
+history. Missing capture is localized to its collection/comparison steps,
+not a reason to reconstruct the accepted consumer.
+
+**Same-parent specialist continuation** (`continuity-revise`,
+`continuity-invoke`, `continuity-verify`), **Supported compute stop and resume**
+(`recovery-stop`, `recovery-resume`, `recovery-verify`) and **Separate-parent
+isolation** (`isolation-bind`, `isolation-execute`, `isolation-verify`) retain
+their existing triggers and private evidence comparisons. **Parent and
+specialist conversation state**, **MAF workflow checkpoints**, and **Private
+Blob artifacts and effect journal** remain distinct supporting mechanisms.
+No matching alias, receipt aggregate or SDK-completed envelope proves all
+three. New diagnostic traffic needs a distinct synthetic purpose/effect intent
+and current-effect readiness; it cannot repair historical missing observations.
+
+Scrum Master owns remaining-delta decomposition and explicit-path Git
+reconciliation. Keep the user's deployment-skill review/delivery lane
+independent of live success; preserve unowned specification/index overlays.
+Preserve IP-S1/IP-S2/IP-S3 as partial and every AC1-AC9/G1-G8 obligation.
+If collection or live verification blocks, continue independent authorized
+checks, genuine corrections and scoped skill delivery through original owners.
+No new permission, external upload, infrastructure change, execution cap or
+approval stage is introduced. Original review/retro/closeout and attributable
+process/listener cleanup remain required.
+
+Designer accepts this retained full-scope UX plus bounded resumption direction
+for original Product Owner/Critic review. This amendment changes only this
+design document, not README, terminal/runtime, skill, release tooling or private
+evidence; it establishes no package, deployment or live PASS.
+
+Validation: `scripts/Test-Repository.ps1` passed using the existing explicit
+lab Python (137 public files; index, public boundary, JSON, PowerShell,
+frontmatter and whitespace). Focused assertions passed for unchanged historical
+UX, retained ten-component/five-flow/eighteen-step architecture, valid step
+references, architecture target and fixed source pair. The first literal
+flow-name assertion failed on Markdown line wrapping; normalization passed
+without changing design requirements. No files or architecture boundaries were
+added, so no index regeneration/adoption was needed. Application/Linux tests,
+authentication, packaging, publication and live scenarios were not run for
+this documentation-only amendment.
+
 ## Identity-profiling correction: evidence without false reassurance (October 21, 2026)
 
 Consumes Architecture commit `e247969942a343c9b1662a59a54ef47c3c714386`,

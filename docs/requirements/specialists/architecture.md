@@ -1,5 +1,20 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## IP-S2 continuation 1: preserve remote execution while binding receipts
+
+Apply the [current IP-S2 amendment](../../customer-prototype-sprint-architecture.md#ip-s2-continuation-1-construct-the-missing-private-observation-adapters).
+Hosted architect/reviewer, conversation, artifact and identity IDs/supports
+remain unchanged. New private create/send observation must join trusted
+dispatch with actual supported transport boundaries, never aliases or timing.
+Preserve both remote specialists and exact immutable prerequisites. No
+specialist source correction, arbitrary header substitution or model-history
+patch is justified by the accepted qualification. Pending-operation snapshots,
+service continuation IDs and final prose do not prove consumed model history;
+retain that unavailable interval until a supported actual seam proves it.
+Typed checkpoint export qualification and Blob reader construction proceed
+independently. Fixtures cannot establish deployed continuity/isolation or
+native execution approval. All held/UNKNOWN effects remain untouched.
+
 ## Identity-profiling continuation 1: qualify independently attributable evidence
 
 Apply the [current continuation assessment](../../customer-prototype-sprint-architecture.md#identity-profiling-continuation-1-independent-evidence-qualification-and-delivery)

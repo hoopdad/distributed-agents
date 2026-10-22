@@ -1,5 +1,20 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## IP-S2 continuation 1: private state and actual effect observations
+
+Apply the [current IP-S2 amendment](../../customer-prototype-sprint-architecture.md#ip-s2-continuation-1-construct-the-missing-private-observation-adapters).
+Keep canonical model IDs/supports and accepted runtime intact. Accepted
+`6e639517` qualification is consumed, not repeated. Build a separate scoped
+private Blob reader; coordinate trusted dispatch/actual transport receipt
+bindings in `demo/workflow.py` and `demo/foundry.py` independently of typed
+checkpoint export qualification. These address `continuity-verify` and
+`recovery-verify`, not a new product flow or trusted identity repair.
+No receipt authorizes work or proves execution success. Keep UNKNOWN holds,
+known-response GET-only recovery, zero automatic retries and background/
+stream/cancellation semantics. Actual typed checkpoint equality must survive
+any public round-trip; no private codec, lossy projection or guessed context.
+No native approval resolution, publication or live acceptance is established.
+
 ## Identity-profiling continuation 1: qualify observation without changing execution
 
 Apply the [current continuation assessment](../../customer-prototype-sprint-architecture.md#identity-profiling-continuation-1-independent-evidence-qualification-and-delivery)

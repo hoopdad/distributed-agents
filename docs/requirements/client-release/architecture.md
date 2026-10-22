@@ -1,5 +1,24 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## IP-S2 continuation 1: build adapters without replaying release effects
+
+Apply the [current IP-S2 amendment](../../customer-prototype-sprint-architecture.md#ip-s2-continuation-1-construct-the-missing-private-observation-adapters).
+Canonical Terminal client / Guarded lab release toolchain IDs and steps remain
+unchanged. Accepted `fed8eed3` records exact reviewed application `de2deae`
+and selected-lab `9b4919d8` delivery/readback; do not push again for planning
+ancestry. New source-local private reader, independent request receipts and
+typed-only export qualification are candidate Developer work, not DevOps
+execution. Existing aggregate/stdout/parser contracts remain unchanged.
+Stop observation composes with original once-only intent/204 logic; an idle
+readback cannot replace a missing 204 or authorize another stop.
+Runtime changes require package closure and original exact-source review/E2E.
+This documentation amendment emits no resume or recheck: native approval
+resolution is unproven and its exact missing permission remains unidentified.
+Original DevOps still owns final common three-role publication, separately
+intended live scenarios, actual cloud pass and attributable cleanup.
+Historical rollback provenance stays WAIVED, never PASS. Isolation keeps its
+own final-binding/safe-scope prerequisites, not recovery success.
+
 ## Identity-profiling continuation 1: independent qualification and reviewed delivery
 
 Apply the [current continuation assessment](../../customer-prototype-sprint-architecture.md#identity-profiling-continuation-1-independent-evidence-qualification-and-delivery)

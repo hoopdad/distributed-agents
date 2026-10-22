@@ -1,5 +1,57 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## IP-S2 continuation 1: construct the missing private observation adapters
+
+October 22, 2026. The [separate IP-S2 amendment](customer-prototype-profiling-s2-continuation-1-architecture.json)
+consumes accepted collection qualification `6e639517` (audit `91007b1b`) and
+accepted exact-ref delivery (audit `fed8eed3`). Original Architect/Critic votes
+in both audits are agree/complete with no unmet criteria. Earlier candidate
+work below is retained history, not an instruction to repeat those tasks.
+The canonical solutionModel's ten components, five flows, eighteen steps and
+support links remain unchanged; all three tier overlays apply this refinement.
+
+### Construction is not blocked by native execution approval
+
+Original IP-S2 DevOps audit `dfd47372` still records three incomplete votes:
+the actual noninteractive native-preflight denial has no demonstrated resolution,
+and its exact missing permission remains unidentified. No retry or alternate
+route is proposed. This gates native packaging/publication and dependent live
+traffic, not the following smallest approved source-local handoffs:
+
+| Component / step / approved criterion | Actual module and missing construction | Decision and verification boundary |
+| --- | --- | --- |
+| Private Blob artifacts and effect journal; `continuity-verify`, `recovery-verify`, `isolation-verify`; IP-S3 AC2/AC4/G5-G7 and closeout | `BlobArtifacts.read_manifest/read_artifact/write_operation` exist; cumulative operation enumeration does not. Public paged Blob list/download remains source-only qualification. | Build a private injected-client reader with exact trusted scope, exhaustive pages, immutable receipts and quiescent head/ETag rechecks. Reject gaps, duplicates, changed/disappeared records and cross-scope data. No atomic snapshot guarantee, credentials, remote probing or mutation. |
+| Trusted identity and private transport / Guarded lab release toolchain; `continuity-verify`, `recovery-stop/verify`; IP-S3 AC2/AC4 | `RemoteAgents.create/invoke`, `WorkflowRemoteAgents` and actual Project/httpx2 transports lack independent operation attribution. `stop_hosting_for_acceptance` retains once-only intent/204 but not aggregate boundary capture. | Compose trusted source-owned dispatch bindings and an optional private receipt sink at actual public transport seams. Retain every attempt and incomplete window, including duplicates. Journal states are compared afterward, not counted as sends. Preserve streaming, cancellation, retries, origin/TLS and rejection. No effect replay or public identity logging. |
+| MAF workflow checkpoints; `recovery-verify`; IP-S3 AC4/G6 | Accepted actual-host fixture reaches typed `WorkflowInvocationKwargs`; shallow `to_dict` raises JSON TypeError. Plain-JSON fixtures do not close this gap. | Qualify a lossless public typed checkpoint round-trip, or return exact actionable unsupported findings. Do not approve lossy projection, private codecs, guessed store/context hashes, new schema or validator waiver. |
+
+These three candidates are independent, with normal bounded Developer review;
+Scrum Master owns decomposition, shared-path/index coordination and reconciliation.
+They consume the accepted negative qualification rather than reopening it.
+Private receipt bindings are not trusted context or a general public logging
+contract. Raw identities, headers, tokens, bodies and settings remain excluded.
+Model consumed-history provenance remains explicitly unproven unless an actual
+supported model request seam establishes it; a pending store or continuation ID
+alone cannot. A demonstrated additional specialist hook or comparison-contract
+change returns to existing Architect/Scrum scope, not a hidden runtime patch.
+
+The accepted changed-join audit `4797ab07` remains valid only for its unchanged
+runtime/lab boundary. This amendment changes documentation only and emits no
+DevOps resume/E2E recheck. Subsequent runtime adapters need affected tests,
+package closure, original review/integration and necessary exact-source E2E
+before original DevOps. New adapter acceptance cannot resolve the native denial.
+No global exhaustion is asserted; the final aggregate still needs real inputs.
+
+Original common publication/live acceptance dispositions remain required by
+their exact references in the amendment; historical COMMON rollback provenance
+remains **WAIVED, never PASS**. Keep exactly three hosted roles, remote specialists,
+deterministic gates, trusted binding, immutable refs, ETags, MAF checkpoints,
+write-ahead UNKNOWN holds and original review/retro/closeout. Independent
+isolation depends on final bindings and safe scope, not recovery success.
+Implemented/local/deployed/live states remain separate: these adapters are
+not implemented; final correction-package publication/live acceptance is unproven.
+This is an Architect deliverable for original Product Owner/Critic/Red Team
+review, not release acceptance or unattended-readiness certification.
+
 ## Identity-profiling continuation 1: independent evidence qualification and delivery
 
 October 22, 2026. The separate

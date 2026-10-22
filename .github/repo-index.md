@@ -1830,6 +1830,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-post-delivery-exhaustion-architecture.json`
 - `docs\customer-prototype-profiling-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

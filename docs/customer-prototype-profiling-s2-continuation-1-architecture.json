@@ -1,0 +1,261 @@
+{
+  "kind": "SprintArchitectureContinuation",
+  "sprintId": "IP-S2",
+  "round": 1,
+  "owner": "Architect",
+  "reviewers": ["Product Owner", "Critic", "Red Team"],
+  "scope": "Construction amendment consuming accepted collection qualification; not release acceptance, a replacement ReleasePlan or a native execution retry.",
+  "source": {
+    "branch": "feature/customer-hosted-session-prototype",
+    "applicationHead": "6e63951790af3d4b199e15f97fa1891eef4550c5",
+    "runtime": "c52786b7dd1595f3048a78061f893dc79635069f",
+    "selectedLab": "9b4919d8bcdbf07203f32657936c27328ea6ccc1",
+    "deliveredApplication": "de2deaeaddf0509116d8f45d2a3ae73419dd11f3",
+    "deliveryEvidence": "Accepted exact-ref delivery audit fed8eed3b05f7622180a57b7e6809d4de5127bc6c1125191b73dcdffd81ab8cc; not a new remote observation."
+  },
+  "solutionModel": {
+    "path": "docs/customer-prototype-architecture.md#solutionmodel",
+    "mode": "Incorporate the complete canonical components, flows, steps and supports unchanged. No new component, resource, persona or flow.",
+    "affectedComponents": ["release-toolchain", "artifact-plane", "workflow-checkpoints", "conversation-state", "identity-boundary", "coordinator", "architect", "reviewer"],
+    "affectedSteps": ["continuity-verify", "recovery-stop", "recovery-verify", "isolation-verify", "release-join", "release-close"],
+    "authority": "Current correction authority overrides historical finite A/B/manual-check wording only in its originating scope. Historical rollback provenance is WAIVED, never PASS."
+  },
+  "evidence": [
+    {
+      "reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/91007b1bf7e28ab1ab8fa9dcf0a9db9a4da5e6c394f78b1073dd1bf9fb0db8f3.json",
+      "finding": "Architect/Critic agree:true, taskComplete:true, unmetCriteria:[] for IP-C1-COLLECTION-SEAMS at 6e639517. Accept the qualification, including its negative findings; do not repeat its inventory or call it a collector."
+    },
+    {
+      "reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/fed8eed3b05f7622180a57b7e6809d4de5127bc6c1125191b73dcdffd81ab8cc.json",
+      "finding": "Architect/Critic agree:true, taskComplete:true, unmetCriteria:[] for exact non-force application de2deae and selected-lab 9b4919d8 delivery/readback. This gap is closed within that task; no repeat push or planning-ancestry delivery task."
+    },
+    {
+      "reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/dfd473725551074526ddec41e0dbc23a0ca81a6d7d265e89dbf8a669004f8a3f.json",
+      "finding": "Original Architect/Critic/Developer agree with the partial report but all retain taskComplete:false. Native pinned-tool/dedicated-authentication readiness, final package/publication and cloud acceptance are incomplete. Missing native permission is not identified and no resolution evidence is supplied."
+    },
+    {
+      "reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/4797ab07efa9ab46e5f8882caa9f7b3957910cec20b4c9ed5ec3574bbed1c8d2.json",
+      "finding": "Original Architect/Critic/Product Owner accepted bounded changed-join E2E. Retain that exact unchanged-runtime/lab boundary and all Windows/Linux exclusions; no E2E recheck for this documentation amendment."
+    },
+    {
+      "reference": "docs/identity-scenario-collection-qualification.md; tests/test_scenario_collection_seams.py:327-429",
+      "finding": "Actual local public options/provider hooks bind background response, trusted scope and opaque store context. Actual typed checkpoint to_dict is shallow and JSON serialization raises TypeError. Native export is not solved by the plain-JSON fixture."
+    },
+    {
+      "reference": "demo/artifact_store.py:366-391; demo/foundry.py:191-275,411-518; demo/workflow.py:100-140; live_acceptance.py:183-233",
+      "finding": "Scoped manifest reading and immutable transition writing exist, but not cumulative operation collection. Real create and Responses send boundaries lack exact operation bridges. Retained stop code has once-only intent and 204 validation but not independent aggregate boundary capture. These are source-local construction seams, not native permission prerequisites."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "private-scoped-reader",
+      "decision": "Build a private in-process reader using an already authorized injected Blob client and exact trusted ScopeBinding. No new CLI, credential factory, resource or remote discovery. Exhaust public pages, retain all named immutable transitions and exact bytes, and recheck an attributed quiescent manifest head/ETag before accepting a capture. Non-atomic listing remains a limitation, not a snapshot guarantee.",
+      "implemented": false,
+      "locallyVerified": false,
+      "deployed": false,
+      "independentlyLiveVerified": false
+    },
+    {
+      "id": "boundary-bridge",
+      "decision": "Compose optional private receipt observation at trusted application dispatch and actual application-owned transports, including the retained stop client. One operation may have multiple observed requests; keep all attempts and incomplete windows. Receipts must never become authorization or effect completion. Keep private exact operation/target bindings separate from existing redacted public diagnostics. Model consumed-history provenance remains unavailable unless the actual supported request boundary proves it.",
+      "implemented": false,
+      "locallyVerified": false,
+      "deployed": false,
+      "independentlyLiveVerified": false
+    },
+    {
+      "id": "typed-export",
+      "decision": "Do not approve a lossy checkpoint projection, private codec, str conversion or validator change. Qualify a public round-trip of actual typed checkpoints with comparison-state equality and exact persisted hash, or return the precise unsupported export interval. This bounded technical decision does not require user permission or reopen the accepted negative qualification.",
+      "implemented": false,
+      "locallyVerified": false,
+      "deployed": false,
+      "independentlyLiveVerified": false
+    }
+  ],
+  "blastRadius": [
+    {
+      "blocker": "Recorded native-preflight denial lacks demonstrated supported resolution",
+      "affected": ["release-package native execution", "release-discriminate publication", "Dependent final-package live scenarios"],
+      "unaffected": ["Three offline construction/qualification candidates below", "Existing Scrum review/retro preparation", "Independent isolation planning"],
+      "closingAction": "Supported operator controls resolve that actual denial with observable evidence; original DevOps then verifies native tools and dedicated authentication. No retry, alternate route or speculative permission diagnosis here."
+    },
+    {
+      "blocker": "Missing cumulative state and independent effect-boundary collection",
+      "affected": ["continuity-verify", "recovery-verify", "isolation-verify", "release-close"],
+      "unaffected": ["Scoped Blob reader construction", "Trusted dispatch/transport observation construction", "Separate typed-export qualification"],
+      "closingAction": "Original Developer implements and tests only supported adapters; original E2E/DevOps later binds and collects actual private evidence after all effect gates. Neither fixtures nor journal states substitute for independent sends or model history."
+    },
+    {
+      "blocker": "Typed native checkpoint export cannot attach directly to aggregate JSON",
+      "affected": ["Checkpoint state equality in recovery-verify"],
+      "unaffected": ["Blob reader", "Create/send/stop bridge", "Independent isolation after its own final-binding/safe-scope gates"],
+      "closingAction": "Bounded public serialization round-trip qualification or exact unsupported SDK handoff. Do not gate unrelated adapters or invent a schema waiver."
+    }
+  ],
+  "priorDispositions": {
+    "satisfiedWithinOriginatingBoundary": [
+      "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-CREDENTIAL-TIMEOUT-PRESERVATION\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-TIMEOUT-REGRESSION-EVIDENCE\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-CHANGED-JOIN-HANDOFF\"]",
+      "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-NORMALIZED-PLAN-HANDOFF\"]",
+      "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-OBSERVED-PARALLEL-DISPATCH\"]"
+    ],
+    "remainingRequired": [
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-COMMON-PACKAGE-PUBLICATION\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-LIVE-ACCEPTANCE\"]"
+    ],
+    "superseded": [],
+    "application": "No prior demand is reopened or superseded. New source will need its own affected tests, original review and exact-source handoff; accepted old evidence never certifies changed code."
+  },
+  "SprintPlan": {
+    "sprintId": "IP-S2",
+    "featureBranch": "feature/customer-hosted-session-prototype",
+    "planningOwner": "Scrum Master",
+    "architectureWorkCandidates": true,
+    "dispatchOwner": "Existing YAML orchestrator after original Scrum Master decomposition and shared-path coordination",
+    "tasks": [
+      {
+        "id": "IP-S2-C1-SCOPED-STATE-READER",
+        "sourceSprintId": "IP-S3",
+        "sourceCriterion": "docs/customer-prototype-release-plan.md IP-S3 acceptanceCriteria[0,1,2,5]: actual continuity/recovery/isolation and attributable closeout; specification Required acceptance[7].",
+        "title": "Build the private scoped scenario state reader",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": [],
+        "ownedPaths": ["scenario_state_reader.py", "tests/test_scenario_state_reader.py"],
+        "consumes": ["Accepted IP-C1-COLLECTION-SEAMS at 6e639517, operation/manifest rows", "Existing ScopeBinding, Manifest and aggregate input contract"],
+        "acceptanceCriteria": [
+          "Implement a private library adapter consuming an existing authorized client, exact trusted scope and owned-turn head/ref bindings. Use public Blob list/download interfaces only; no settings import, credential acquisition, store creation or guessed scope discovery.",
+          "Exercise real public paginated SDK surfaces with synthetic transport, including multiple pages, empty terminal page, missing/truncated cursor, duplicate name, disappeared/changed blob, cross-scope record and UNKNOWN/failed transition. Retain source receipts and every distinct named transition; do not infer sends from these documents.",
+          "Recheck current manifest generation/head/ETag and exact immutable refs, fail incomplete on movement/gaps, and freeze retained private bytes. State explicitly that Blob reads are not an atomic multi-object snapshot.",
+          "No aggregate schema/stdout/validator change, public evidence disclosure, write API or permission expansion. Run focused and documented checks with existing absolute Python/explicit lab root; dependencies only after manifest change or missing-tool failure."
+        ],
+        "doneWhen": "Original Architect/Critic accept a source-bound private reader with passing paginated positive/negative fixtures and explicit consistency limits; no live completeness is claimed.",
+        "exclusions": ["No network, token acquisition, live export or native-preflight retry.", "No checkpoint codec, operation writer, diagnostic log change, new CLI or schema."],
+        "handoff": "Reviewed reader commit, exact injected-client/scope contract, fixture results and incomplete-window rules to original integration/E2E and DevOps evidence owners.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Build the private scoped scenario state reader",
+          "goal": "Collect existing manifest, immutable artifact and cumulative operation observations without manufacturing effect counts.",
+          "components": ["Private Blob artifacts and effect journal", "Guarded lab release toolchain"],
+          "flows": ["Same-parent specialist continuation", "Supported compute stop and resume", "Separate-parent isolation", "Exact-source guarded release"],
+          "flowSteps": ["continuity-verify", "recovery-verify", "isolation-verify", "release-close"],
+          "doneWhen": "Original Architect/Critic accept a source-bound private reader with passing paginated positive/negative fixtures and explicit consistency limits; no live completeness is claimed.",
+          "failureCategories": [],
+          "mustAct": "Developer",
+          "locations": ["scenario_state_reader.py", "tests/test_scenario_state_reader.py"],
+          "evidence": "Accepted qualification identifies public Blob page/download candidates but no implemented cumulative reader.",
+          "cause": "Missing construction at an authorized source-local seam, not a proven service or identity failure.",
+          "verification": {"status": "not-yet-verified", "evidence": "Architecture candidate only; implementation and live collection have not occurred."},
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      },
+      {
+        "id": "IP-S2-C1-EFFECT-BOUNDARY-BRIDGE",
+        "sourceSprintId": "IP-S3",
+        "sourceCriterion": "docs/customer-prototype-release-plan.md IP-S3 acceptanceCriteria[0,1,5]: exactly-two creation/continuity, once-only stop/no duplicate effects and attributable closeout; IP-S1 acceptanceCriteria[0,4,5] behavior-preserving private transport observation.",
+        "title": "Bind private effect receipts to actual application transports",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": [],
+        "ownedPaths": ["demo/effect_observation.py", "demo/foundry.py", "demo/workflow.py", "live_acceptance.py", "tests/test_effect_observation.py"],
+        "consumes": ["Accepted collection qualification create/send/stop and model-history rows", "Existing trusted AssignmentLocator/write-ahead effects and actual application-owned transports"],
+        "acceptanceCriteria": [
+          "Carry trusted operation/role/target/version from actual dispatch to application-owned Project Azure Core and Responses httpx2 request boundaries through supported public hooks. Create lacks operation in its wire body; supply source-owned association, never infer it from timing/session aliases.",
+          "Optional private sink captures every matching actual create/send/stop request occurrence and response/error independently of journal intentions. Preserve duplicate attempts, incomplete windows and status vs execution distinction. Stop observation composes with original once-only intent/204 logic and cannot resend an uncertain stop.",
+          "Keep exact permitted operation/target bindings in private receipts, never public diagnostics or Git. No raw identity/hash, bearer/header collection, body dump, query, private settings or raw exception message. Diagnostic receipt failure leaves evidence incomplete without authorizing/retrying/suppressing original rejection.",
+          "Fixture actual public SDK transports and concurrent/background request isolation, duplicate/missing captures, redaction, errors, unchanged streaming/cancellation/close, original credential timeout behavior and known-response-only GET recovery. Preserve zero automatic retries, HTTPS origin, TLS and no redirects.",
+          "Explicitly report any model consumed-history interval this bridge cannot observe; pending-store snapshots and previous response IDs alone are not proof of consumed input. Do not claim a generic wire interceptor, patch SDK internals, add model body logging or weaken aggregate validation.",
+          "Run affected retained baseline and documented application/repository checks. Any runtime module needs package-closure inventory and exact-source integration handoff before packaging; do not modify selected-lab allowlists without an evidenced necessary handoff."
+        ],
+        "doneWhen": "Original Architect/Critic accept the exact trusted dispatch-to-boundary bridge and passing preservation/provenance fixtures, with every unsupported history or observation interval explicit; no deployment or live acceptance is claimed.",
+        "exclusions": ["No actual create/send/stop, publication, permission change, native-denial retry or uncertain-effect replay.", "No new public schema, generic event ledger, diagnostic identity values, SDK private patch or loss of existing gates.", "Do not edit specialist agents to guess model history; route a demonstrated additional seam through original Architect/Scrum scope."],
+        "handoff": "Reviewed bridge/source/package-closure refs, transport fixtures, private sink contract and precise uncovered intervals to original integration/E2E then DevOps; new runtime source invalidates only affected exact-source proofs, not accepted work.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Bind private effect receipts to actual application transports",
+          "goal": "Make actual effect attempts independently attributable without altering authorization, streaming or recovery.",
+          "components": ["Trusted identity and private transport", "Hosted coordinator", "Parent and specialist conversation state", "Guarded lab release toolchain"],
+          "flows": ["Same-parent specialist continuation", "Supported compute stop and resume", "Separate-parent isolation", "Exact-source guarded release"],
+          "flowSteps": ["continuity-verify", "recovery-stop", "recovery-verify", "isolation-verify", "release-join"],
+          "doneWhen": "Original Architect/Critic accept the exact trusted dispatch-to-boundary bridge and passing preservation/provenance fixtures, with every unsupported history or observation interval explicit; no deployment or live acceptance is claimed.",
+          "failureCategories": [],
+          "mustAct": "Developer",
+          "locations": ["demo/foundry.py", "demo/workflow.py", "live_acceptance.py", "tests/test_effect_observation.py"],
+          "evidence": "Accepted fixtures establish target/version at creation, not exact operation attribution; inspected transports lack independent create/send/stop receipt bridges.",
+          "cause": "Existing diagnostic aliases and journal intentions are not independent boundary evidence.",
+          "verification": {"status": "not-yet-verified", "evidence": "Supported-hook construction assigned as a candidate; no actual bridge or live receipts yet."},
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      },
+      {
+        "id": "IP-S2-C1-TYPED-CHECKPOINT-EXPORT",
+        "sourceSprintId": "IP-S3",
+        "sourceCriterion": "docs/customer-prototype-release-plan.md IP-S3 acceptanceCriteria[1,5]: actual retained checkpoint state comparison and attributable recovery/closeout; specification Required acceptance[7].",
+        "title": "Qualify lossless public typed checkpoint export",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": [],
+        "ownedPaths": ["docs/identity-typed-checkpoint-export.md", "tests/test_typed_checkpoint_export.py"],
+        "consumes": ["Accepted 6e639517 actual typed-checkpoint negative result and response/scope/context fixture", "Pinned public checkpoint/session serialization exports and unchanged aggregate comparison contract"],
+        "acceptanceCriteria": [
+          "Extend only the unresolved actual typed export interval: inspect supported public serialization/round-trip seams for WorkflowInvocationKwargs and real local native checkpoints. Do not repeat the accepted generic SDK inventory or plain-JSON success.",
+          "Execute a synthetic actual-host typed-checkpoint public round-trip preserving comparison state, graph/ID, scope association and persisted encoding hash, or retain a reproducible negative fixture and exact smallest SDK public-export handoff.",
+          "No default=str, dropped typed fields, private encoders, guessed context/store hashes or validator projection change. Local persistence uses explicitly owned temporary state only; public load/list may create stores remotely, so no remote probing.",
+          "Record source/version and exact supported/unsupported interval. Run focused/documented checks with existing Python and linked lab root; no dependency/pin change without a separate justified scope decision."
+        ],
+        "doneWhen": "Original Architect/Critic accept a tested lossless public export contract or actionable exact negative result for typed checkpoints; neither outcome waives real checkpoint comparison.",
+        "exclusions": ["No live store access, credential acquisition, SDK private patch, schema/pin change or lossy projection.", "No runtime collector implementation or re-review of accepted IP-C1 qualification."],
+        "handoff": "Exact reviewed fixture/decision commit and supported export semantics or smallest missing public capability to original Architect/Scrum, then existing E2E/DevOps; unsupported architecture/contract changes require needs-replan, not a fabricated pass.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Qualify lossless public typed checkpoint export",
+          "goal": "Resolve actual native checkpoint serialization without hiding typed state or weakening recovery equality.",
+          "components": ["MAF workflow checkpoints", "Guarded lab release toolchain"],
+          "flows": ["Supported compute stop and resume"],
+          "flowSteps": ["recovery-verify"],
+          "doneWhen": "Original Architect/Critic accept a tested lossless public export contract or actionable exact negative result for typed checkpoints; neither outcome waives real checkpoint comparison.",
+          "failureCategories": [],
+          "mustAct": "Developer",
+          "locations": ["docs/identity-typed-checkpoint-export.md", "tests/test_typed_checkpoint_export.py"],
+          "evidence": "Accepted actual local host fixture retains TypeError for shallow typed checkpoint JSON export.",
+          "cause": "Public lossless export is unqualified, not proven impossible; no accepted projection decision exists.",
+          "verification": {"status": "not-yet-verified", "evidence": "New bounded typed-only public round-trip investigation has not executed."},
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      }
+    ]
+  },
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "Three independent approved construction/qualification slices remain after accepted collection qualification and reviewed-ref delivery. No global exhaustion, unchanged denial retry or DevOps resume.",
+    "evidence": [
+      "Accepted 91007b1b explicitly hands off a paginated scoped Blob reader, independent boundary adapter and unresolved typed export.",
+      "Inspected actual application source exposes supported client/dispatch seams without executing native WSL or any cloud effect.",
+      "Accepted fed8eed3 closes exact reviewed-ref delivery; no duplicate push task is needed.",
+      "No newly observed native permission-resolution evidence exists, so no current blocked DevOps condition has materially changed."
+    ],
+    "resumes": []
+  },
+  "verificationThisTurn": {
+    "application": "Test-Demo.ps1 with existing absolute Python and explicit selected-lab root passed dependency checking, 291 tests in 52.087 seconds and compilation; exit 0.",
+    "repository": "Deterministic index refresh and Test-Repository.ps1 passed current index, 118 public files, public/private boundary, JSON, PowerShell, frontmatter and whitespace; exit 0. Includes preserved unowned specification/index overlay, not clean-checkout certification.",
+    "directAssertions": "Passed independent candidate contracts/source criteria, exact audit existence, unchanged canonical model and four complete historical document suffixes, source ancestry and empty staging. An initial assertion used Windows default text decoding; explicit UTF-8 corrected the probe, not document history.",
+    "limitations": [
+      "No dependency installation, runtime change or selected-lab source change.",
+      "No native-preflight retry, authentication test, package creation, publication, live invocation, retrieval, stop/resume, live cleanup or push.",
+      "New adapters are design candidates only; application checks cover retained behavior, not unimplemented construction or cloud acceptance.",
+      "Original Product Owner/Critic/Red Team review of this amendment is pending."
+    ]
+  },
+  "handoff": {
+    "receivingOwner": "Scrum Master",
+    "planning": "Decompose/assign through existing planning and original Architect/Critic Developer review. Prioritize the boundary bridge and scoped reader concurrently; typed-only qualification is independent. Coordinate index/package/shared-file ownership explicitly; no whole-sprint dependencies.",
+    "integration": "Original integration owner joins only accepted source and preserves unowned work. Only subsequent changed-source evidence can schedule the supplied same-sprint original E2E prerequisite before original DevOps; this document emits no resume, recheck or e2eSubject.",
+    "live": "Original DevOps retains native readiness, current source/package/version/trusted-host/effect bindings, newly identified common three-role package, separately intended diagnostic/live scenarios and cleanup. Completed non-held initial collaboration gates follow-up/recovery; isolation needs final bindings/safe scope, not recovery success.",
+    "states": "Accepted profiling is implemented and locally verified at the retained runtime boundary. Collection qualification is accepted offline, adapters are not implemented, final correction publication and independent live AC1-AC9/G1-G8 remain unproven. Partial IP-S1/IP-S2/IP-S3, held parents and UNKNOWN effects remain."
+  }
+}

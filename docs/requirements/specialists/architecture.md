@@ -1,5 +1,34 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current IP-S3: remote history continuity and separate-parent evidence
+
+Apply the [current IP-S3 cumulative architecture](../../customer-prototype-sprint-architecture.md#current-ip-s3-continuity-once-only-recovery-and-independent-isolation);
+retain canonical Hosted architect/Hosted reviewer and shared conversation,
+identity and artifact IDs. Exactly two remote specialists remain, without a
+hidden local fallback. Original changed-join E2E is now accepted; latest
+native-preflight permission denial and missing publication still block live
+effects, not offline contract/evidence preparation.
+
+`demo/architect_agent.py`, `demo/reviewer_agent.py`, `demo/foundry.py`,
+`demo/artifacts.py` and `tests/test_specialist_continuity.py` retain separate
+remote session restore and persisted model-history continuation. For
+`continuity-invoke/verify`, compare both hosted/framework child identities and
+pins while histories/responses and exact candidate/review refs advance. Retain
+reject/revise/review as controlled offline AC3 evidence, not a deployed loop.
+For `recovery-resume`, reconcile known responses/outputs without resend; hold
+unobserved effects. For `isolation-execute/verify`, compare separate child and
+artifact namespaces and no content leakage; final bindings/comparison scope,
+not recovery success, is the actual prerequisite.
+
+Accepted tests establish implementation/local behavior, not final-package live
+G5-G7. No new specialist correction or identity remedy is established. Retain
+pure-ASGI/public-hook context diagnostics, early rejection, immutable role
+outputs, exact prerequisites and trusted assignment checks. Raw ingress lacks
+a guaranteed SDK-response/cross-container association; absent public delegation
+header alone does not establish platform loss. Never copy inbound values into
+trusted context for a pass. Blob isolation remains application-enforced, not
+malicious-host/storage-RBAC isolation; historical held/UNKNOWNs stay preserved.
+
 ## Current IP-S2: attributable remote ingress without speculative trust repair
 
 Apply the [current cumulative IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-exact-changed-join-guarded-publication-and-live-localization).

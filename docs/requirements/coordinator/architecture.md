@@ -1,5 +1,33 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current IP-S3: preserve exact parent continuity and checkpoint recovery
+
+Apply the [current IP-S3 cumulative architecture](../../customer-prototype-sprint-architecture.md#current-ip-s3-continuity-once-only-recovery-and-independent-isolation).
+Its canonical solutionModel is incorporated unchanged. Earlier missing
+changed-join statements are historical: original changed-join E2E is accepted;
+the current native-preflight denial blocks dependent release/live operations,
+not independent comparison/closeout preparation.
+
+Hosted coordinator, Parent and specialist conversation state, MAF workflow
+checkpoints, Private Blob artifacts and effect journal, Trusted identity and
+private transport and Decision-1 routing and admission keep their IDs/supports.
+`demo/workflow.py`, `demo/foundry.py`, `demo/artifacts.py` and
+`live_acceptance.py::_evidence_continuation` implement the retained
+`continuity-revise/invoke/verify` contract: completed non-held initial parent,
+same parent/both hosted-framework children/pins, fresh invocation responses,
+retained requirements, current immutable refs and no extra child creations.
+Accepted scenario/workflow/history tests are offline evidence, not live G5.
+
+`recovery-stop/resume/verify` consumes completed two-turn proof and confirmed
+once-only stop/idle evidence; checkpoints and write-ahead journal reconciliation
+remain distinct from conversation history. UNKNOWN stop/send effects stay held;
+known-response retrieval is not another send. `isolation-bind/execute/verify`
+needs final deployed bindings and safe comparison scope, not recovery success.
+All require original DevOps live proof; no coordinator source defect or new
+implementation task is established here. Retain deterministic gates, trusted
+parent/assignment checks, exact prerequisites, ETag/fencing and early rejection.
+Common rollback provenance remains WAIVED; current package/effect gates remain.
+
 ## Current IP-S2: retain verified coordinator source, prove new live binding
 
 Apply the [current cumulative IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-exact-changed-join-guarded-publication-and-live-localization).

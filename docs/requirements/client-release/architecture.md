@@ -1,5 +1,40 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current IP-S3: independent evidence lanes and measured release closure
+
+Apply the [current IP-S3 cumulative architecture](../../customer-prototype-sprint-architecture.md#current-ip-s3-continuity-once-only-recovery-and-independent-isolation)
+and accepted SprintDesign H/I/J/K. Terminal client and Guarded lab release
+toolchain keep canonical IDs and `release-join/package/discriminate/close`.
+Changed-join E2E audit `4797ab07` accepts application `13aecc39` retaining
+runtime/tests `c52786b7` with selected-lab `9b4919d8`. Do not reopen it for
+unchanged runtime documentation ancestry. Latest DevOps audit `dfd47372`
+retains actual incomplete native preflight/package/publication/cloud criteria;
+report agreement is not completion.
+
+Operator resolves the exact denied native-preflight approval through supported
+interactive controls; the missing permission is unidentified. Do not retry or
+route around it here. Original DevOps validates native tools/authentication,
+continues the prepared stage through the retained interface, checks current
+bindings/effects and serializes the existing three-role common publisher.
+Historical rollback provenance remains WAIVED, never PASS. No new gate,
+manual checksum sign-off or duplicate publisher is added.
+
+Continuity consumes completed non-held initial parent/both-child bindings;
+once-only stop/resume consumes completed two-turn proof; independent isolation
+consumes final deployed bindings and safe comparison scope, not recovery
+success. The existing all-scenario `validate_scenario_evidence` join requires
+all real captures for final acceptance, but does not serialize isolation
+execution behind recovery. Partial evidence is retained, never filled with
+synthetic restart captures. Offline validation cannot authenticate observations.
+
+Prepare the concise receipt/comparison/closeout companion independently using
+`live_acceptance.py`, retained tests and reviewed handoffs. No new terminal
+renderer or parser API is assigned; machine stdout/exit/parser and opt-in human
+stderr stay unchanged. Original closeout needs real AC1-AC9/G1-G8, exact
+reviewed feature delivery/readback, original review/retro and attributable new
+cleanup, with separate implemented/local/deployed/live states. Preserve private
+evidence boundaries, held operations and historical cleanup uncertainty.
+
 ## Current IP-S2: changed-source prerequisite and serialized common release
 
 Apply the [current cumulative IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-exact-changed-join-guarded-publication-and-live-localization)

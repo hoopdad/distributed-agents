@@ -1,5 +1,18 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## IP-S1 continuation 2: retain accepted observation behavior
+
+Apply the [current cumulative assessment](../../customer-prototype-sprint-architecture.md#ip-s1-continuation-2-deliver-newly-accepted-observation-source).
+Canonical coordinator/state/identity/artifact/checkpoint IDs and support links
+are unchanged. Reader/bridge/consumer source through `f9fcd9cf` is accepted
+within its local task boundaries, not deployed/live verified. Preserve trusted
+bindings, late receipt retention, unknown holds, streaming and rejection.
+No coordinator edit or capture auto-activation is assigned. Caller-owned
+private storage, independent quiescence/anchors and actual hosted coverage
+remain unproven original DevOps handoffs. Exact reviewed Git delivery is
+independent of native readiness, not evidence that either readiness or actual
+initial collaboration has passed.
+
 ## IP-S3 continuation 1: consume accepted observations without changing trust
 
 Apply the [current cumulative amendment](../../customer-prototype-sprint-architecture.md#ip-s3-continuation-1-retain-actual-private-occurrence-receipts).

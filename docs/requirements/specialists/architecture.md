@@ -1,5 +1,17 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## IP-S1 continuation 2: preserve accepted specialists and missing live proof
+
+Apply the [current cumulative assessment](../../customer-prototype-sprint-architecture.md#ip-s1-continuation-2-deliver-newly-accepted-observation-source).
+Hosted architect/reviewer, canonical IDs/supports, immutable prerequisites and
+trusted identity contracts stay unchanged. Accepted private occurrence retention
+does not establish consumed model history or actual specialist completion.
+No header substitution, history repair, codec/pin change or hidden local agent
+is justified. Typed original-encoding and model-history negative handoffs are
+not redispatched. Both remote specialists still require final common-package
+bindings and independently live-verified continuity/isolation; Git delivery
+through fixed reviewed `f9fcd9cf` cannot supply those observations.
+
 ## IP-S3 continuation 1: preserve specialist behavior and observation limits
 
 Apply the [current cumulative amendment](../../customer-prototype-sprint-architecture.md#ip-s3-continuation-1-retain-actual-private-occurrence-receipts).

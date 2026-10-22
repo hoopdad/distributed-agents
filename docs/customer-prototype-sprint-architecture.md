@@ -1,5 +1,66 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## IP-S1 continuation 2: deliver newly accepted observation source
+
+October 22, 2026. The [separate continuation assessment](customer-prototype-profiling-continuation-2-architecture.json)
+updates all prior sprint states without changing the canonical ten-component,
+five-flow, eighteen-step solutionModel or original ReleasePlan. Opened original
+consumer audit `0e118edd`: Architect/Critic agree and complete bounded code
+`bafa3d6a` plus attribution clarification `f9fcd9cf`. The opt-in
+`demo/private_effect_capture.py` is now implemented and locally verified,
+**not deployed or independently live verified**. Earlier candidate descriptions
+below remain history, not instructions to rebuild the reader/bridge/consumer.
+Its injected exclusive-handle, existing `private_sink`, checkpoint/readback and
+conditional reconciliation contracts remain unchanged. Independent trusted
+anchors, quiescence, hosted installation/coverage and live cleanup remain
+caller/original DevOps obligations; fsync is not an observation certificate.
+
+One useful independent IP-S3 AC7/AC8 slice remains: this turn's actual
+`git ls-remote` returns application feature `de2deae`, an ancestor of reviewed
+`f9fcd9cf`. Opened earlier delivery audit `fed8eed3`: it accepted exactly
+`de2deae`/lab `9b4919d8`, not the subsequently accepted substantive observation
+source. One original Developer closeout candidate may deliver/read back the
+**fixed** `f9fcd9cf` target after checking original review coverage and fresh
+fast-forward safety. Never push moving HEAD, this amendment or later planning
+ancestry. Do not repeat unchanged lab delivery or turn documentation-only
+ancestry into another activity carousel. Scrum owns decomposition/dispatch,
+Git reconciliation and the original review/retro/closeout handoff.
+
+Opened original changed-join E2E `4797ab07`: that bounded source pair remains
+accepted, not reopened merely because the old blocker packet still cites it.
+New reader/bridge/consumer runtime is different and still needs affected
+original source/package qualification. No eligible `continuation.sourceSubjects`
+is supplied here; do not invent one or substitute a new Developer test task for
+original E2E. Opened original DevOps `f7b942e9`/`ae0bade0`: cloud criteria remain
+incomplete. The native denial is unchanged, exact missing permission unidentified;
+Git delivery does not resolve it. No DevOps resume/recheck is emitted.
+
+Actual `demo/host.py:main` does not install capture; the accepted pinned local
+fixture installs it with an explicitly owned temporary file before background
+creation. No supported private hosted destination/ownership or cross-process
+coverage has been demonstrated. Do not invent an automatic capture registry,
+path/configuration or another wrapper to claim that interval. Accepted typed
+original-encoding attachment and consumed-model-history negatives are preserved;
+no repeated inventory, private codec, schema/pin change or guessed history proof.
+Independent isolation remains schedulable after final bindings and safe scope,
+not after recovery success. No global exhaustion or unattended-readiness claim.
+
+Exact prior disposition references are retained in the amendment. Historical
+COMMON rollback provenance remains **WAIVED, never PASS**. Publication and
+actual AC1-AC9/G1-G8, held/UNKNOWN preservation, attributable cleanup and original
+review/retro/closeout remain required. This turn changes architecture only;
+the remote read is not a push, deployment or live observation.
+
+This architecture turn ran documented `Test-Demo.ps1` with the existing absolute
+Python and explicit selected-lab root: dependency checking, **359 tests in
+60.462 seconds** and compilation passed; exit zero. `Test-Repository.ps1`
+passed current inventory, **130 public files**, boundary/JSON/PowerShell/
+frontmatter/whitespace checks. Direct assertions preserved canonical graph,
+original plans, all four historical document suffixes after LF normalization
+and unowned specification bytes. These shared-checkout checks include the
+preserved unowned index/specification overlay and do not replace formal
+new-runtime original E2E or hosting/Linux/live qualification.
+
 ## IP-S3 continuation 1: retain actual private occurrence receipts
 
 October 22, 2026. The [separate architecture amendment](customer-prototype-profiling-s3-continuation-1-architecture.json)

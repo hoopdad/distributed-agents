@@ -1,5 +1,21 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## IP-S1 continuation 2: close only the new reviewed-ref delivery gap
+
+Apply the [current cumulative assessment](../../customer-prototype-sprint-architecture.md#ip-s1-continuation-2-deliver-newly-accepted-observation-source).
+Terminal/release canonical IDs, flows, parser and stdout remain unchanged.
+Fresh application remote `de2deae` predates accepted substantive reader/bridge/
+consumer source through `f9fcd9cf`. The earlier exact-ref delivery is complete
+within that older boundary. One new existing-closeout slice may non-force push
+and read back only fixed reviewed `f9fcd9cf`, after original review/ancestry
+checks. Exclude this amendment/later planning and unchanged lab delivery.
+New runtime needs affected original E2E/package qualification, never automatic
+promotion of old source proofs. No eligible new original E2E subject or native
+approval resolution is supplied; no unchanged DevOps resume/recheck. Actual
+hosted capture ownership/coverage, independent anchors/quiescence, final common
+publication, cloud scenarios and attributable cleanup remain unproven.
+Historical COMMON rollback provenance stays WAIVED, never PASS.
+
 ## IP-S3 continuation 1: private retention is not release readiness
 
 Apply the [current cumulative amendment](../../customer-prototype-sprint-architecture.md#ip-s3-continuation-1-retain-actual-private-occurrence-receipts).

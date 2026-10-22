@@ -1,5 +1,17 @@
 # Repository index
 
+IP-S1 continuation-2 architecture at accepted observation target `f9fcd9cf`:
+`docs/customer-prototype-profiling-continuation-2-architecture.json` and current
+sprint/tier openings reconcile implemented/local reader/bridge/consumer work,
+not deployed/live proof. Fresh feature remote is still `de2deae`; one original
+closeout candidate delivers only the fixed newly reviewed substantive source
+through `f9fcd9cf`, never moving HEAD, this amendment or unchanged lab source.
+Earlier exact-ref delivery is accepted within its older boundary. Canonical
+graph, runtime, original plans and negative typed/model-history handoffs remain
+unchanged. No native denial retry, DevOps resume/recheck, duplicate construction
+or global exhaustion. Original Scrum owns dispatch/Git coordination; affected
+original source/package qualification and actual hosted/live coverage remain.
+
 IP-S3 continuation-1 receiving consumer (against planning `f4dc71b3`):
 `demo/private_effect_capture.py` accepts only a caller-owned new exclusive
 private handle and trusted bindings. Navigate
@@ -1888,6 +1900,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-post-delivery-exhaustion-architecture.json`
 - `docs\customer-prototype-profiling-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-profiling-continuation-2-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-architecture.json`

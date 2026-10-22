@@ -1959,6 +1959,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-linux-clock-architecture-amendment.json`
 - `docs\customer-prototype-linux-inventory-sprint-plan.json`
 - `docs\customer-prototype-network-recovery-continuation-1-architecture.json`
+- `docs\customer-prototype-network-recovery-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-operational-context-amendment.json`
 - `docs\customer-prototype-post-delivery-exhaustion-architecture.json`
 - `docs\customer-prototype-profiling-continuation-1-architecture.json`

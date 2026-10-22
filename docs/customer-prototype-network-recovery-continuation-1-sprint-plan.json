@@ -1,0 +1,154 @@
+{
+  "kind": "SprintPlanContinuation",
+  "sprintId": "IP-S1",
+  "round": 1,
+  "owner": "Scrum Master",
+  "reviewers": ["Product Owner", "Architect", "Critic"],
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "scope": "Separate bounded continuation amendment; original SprintPlan and ReleasePlan remain unchanged. Exhaustion is not sprint or release acceptance.",
+  "acceptedInputs": {
+    "SprintArchitecture": {
+      "path": "docs/customer-prototype-network-recovery-continuation-1-architecture.json",
+      "commit": "65b3cda354ff872872ba6a9327dd470e7edeb466",
+      "audit": "7c203cd958ab8825c0ce5d034aa1e34096962e08b4117fe89ddb635b6bd01856.json",
+      "votesObserved": "Product Owner, Critic and Red Team: agree=true, taskComplete=true."
+    },
+    "ReleasePlan": {
+      "path": "docs/customer-prototype-release-plan.md",
+      "commit": "01f0cd55a4c55608152c94185c89e5e5b5a58b9e",
+      "scope": "First JSON block: all approved IP-S1/IP-S2/IP-S3 criteria; no implicit whole-sprint dependency."
+    },
+    "qualifiedRuntime": "f9fcd9cf4f04075e609196ebb90b30e09a91dd98",
+    "selectedLab": "ceaba6eea5b0f6bf3c4e265f7fde40bb177aae6e",
+    "auditRoot": "gh-dynamic-workflows/.delivery-runs/76e49846-d1f2-4c9d-86ff-ee268dd47c2c/context/"
+  },
+  "tasks": [],
+  "AssignedWorkUIDeveloper": [],
+  "AssignedWorkDeveloper": [],
+  "AssignedWorkDevOpsEngineer": [],
+  "AssignedWorkDesigner": [],
+  "taskCards": [],
+  "queueAudit": {
+    "ready": [],
+    "executing": [],
+    "observationScope": "Supplied delivery/continuation packet and opened direct outcome audits; not a global process-health observation.",
+    "scheduledTaskIdsPreserved": ["IP-S1-SKILL-REVIEW", "IP-S1-SKILL-DELIVER", "IP-S1-SKILL-INTEGRATE", "IP-S1-SKILL-PUBLISH"],
+    "dispatch": "No new assignments to dispatch. Original orchestrator retains dependency-ready dispatch and reviewer collection; no substitute agent or out-of-band stage execution."
+  },
+  "workExhaustionAudit": [
+    {
+      "sourceSprintId": "IP-S1",
+      "sourceCriterion": "Current ReleasePlan IP-S1 acceptanceCriteria[0-3]",
+      "components": ["Guarded lab release toolchain", "Trusted identity and private transport"],
+      "flowSteps": ["release-join", "release-package"],
+      "locations": ["Test-Demo.ps1", "scripts/Test-Repository.ps1", ".github/skills/lab-deployment/SKILL.md"],
+      "finding": "Current affected E2E and retained fixture correction have original acceptance. Skill-only integration/publication has original Architect/Critic acceptance. No new source failure or delivery assignment remains.",
+      "evidence": [
+        "45e3e909f87d67d66a5f40c089068c667a9d37399febf8cf21864975ea1866d6.json: Architect/Critic/Product Owner agree=true, taskComplete=true; attributed 359 application passes and 236 retained passes with four skips.",
+        "737459e8124be0e6a2b7e036fbbdfdda708e912dee07b9f2c717c3598437cbcb.json: substantive ceaba6ee correction accepted; overall DevOps taskComplete=false.",
+        "47b2b4ffc34b3d98ca7ad65dd42c1d0794851a9c52fcc0cf711b6e641b3fc307.json: Architect/Critic agree=true, taskComplete=true for skill-only publication 14ee132e6c5145122759bec857811b655b371849."
+      ],
+      "splitDecision": "Do not duplicate accepted tests, skill delivery, fixture correction or source-input closure. These handoffs do not resolve the later exact approval denial."
+    },
+    {
+      "sourceSprintId": "IP-S2",
+      "sourceCriterion": "Current ReleasePlan IP-S2 acceptanceCriteria[0-6]",
+      "components": ["Guarded lab release toolchain", "Trusted identity and private transport", "Hosted coordinator", "Hosted architect", "Hosted reviewer"],
+      "flowSteps": ["release-package", "release-discriminate", "collaboration-bind", "collaboration-design", "collaboration-review", "collaboration-return"],
+      "locations": ["demo/host.py", "demo/private_effect_capture.py", "scenario_state_reader.py"],
+      "retainedLabLocations": ["foundry-tf/multi-agent/Build-BundledCodePackage.ps1", "foundry-tf/multi-agent/bundle_package.py", "foundry-tf/multi-agent/wsl_release.py"],
+      "finding": "The exact private handoff records a mixed dedicated-account/native-WSL inspection denial, no established partial results and no identified missing permission. Retained wrapper source selects output-owned azd-wsl-config and the bundle calls require_azd_prerequisites. No code defect or new supported alternative removes that required operation.",
+      "evidence": [
+        "Opened exact original devops-20261022-8b84e9eecb2148c1b03551e9372dc239/handoff.json named by 0bc89e8cee824666e0fa6823338ba5957bc74a8d48749f4f8162cf01b963f524.json; finalCommonBundle/uploaded/deployed=false.",
+        "0bc89e8cee824666e0fa6823338ba5957bc74a8d48749f4f8162cf01b963f524.json and 737459e8124be0e6a2b7e036fbbdfdda708e912dee07b9f2c717c3598437cbcb.json: original Architect/Critic/Developer agree with partial reports but retain taskComplete=false.",
+        "demo/private_effect_capture.py explicitly requires a caller-owned new exclusive private file, trusted bindings, installation before inherited tasks and independently attributed quiescence. It opens no path and activates no host hook."
+      ],
+      "splitDecision": "Archive/dependency preparation and source fixtures already exist. Do not repeat them, manufacture another wrapper, split the denied call to evade approval, guess hosted storage/lifetime ownership or reinterpret initial network recovery as resolution of a later permission denial. Original DevOps owns actual native/package/publication and hosted-capture qualification. A newly demonstrated supported integration defect would return to existing Scrum coordination."
+    },
+    {
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "Current ReleasePlan IP-S3 acceptanceCriteria[0-5]",
+      "components": ["Hosted coordinator", "Hosted architect", "Hosted reviewer", "MAF workflow checkpoints", "Private Blob artifacts and effect journal", "Guarded lab release toolchain"],
+      "flowSteps": ["continuity-verify", "recovery-stop", "recovery-resume", "recovery-verify", "isolation-verify", "release-close"],
+      "locations": ["live_acceptance.py", "scenario_state_reader.py", "demo/private_effect_capture.py", "docs/identity-typed-checkpoint-export.md"],
+      "finding": "Source already checks exact continuation bindings, fresh responses, preserved requirements/artifacts and no extra creations. Stop intent is durable before the send and uncertain stops are observed, never resent. Comparison validates supplied observations but does not authenticate provenance. Typed original encoding and consumed-history provenance remain unproven, with no newly supplied supported export seam.",
+      "evidence": [
+        "Inspected live_acceptance.py::_evidence_continuation, stop_hosting_for_acceptance and validate_scenario_evidence, plus the caller-owned reader/capture contracts and retained negative typed-export handoff.",
+        "03f4b570042da7534c716ad4f55fbe4d4d09d35af798d9f2014be7815974ba47.json: original Architect/Critic/Developer retain taskComplete=false; current E2E assessment accepted, native approval boundary unchanged.",
+        "Accepted continuation architecture maps existing isolation, terminal/status, reader and capture preparation to these same criteria; no new implementation defect or approved unbuilt branch was established."
+      ],
+      "splitDecision": "Isolation does not depend on successful recovery, but its final-release/readiness/comparison prerequisites are absent. Continuity needs completed non-held initial collaboration; recovery needs genuine completed continuity. No source/fixture split replaces actual live evidence, attributable cleanup or original review/retro/closeout. Do not repeat exhausted export research or add a speculative codec."
+    }
+  ],
+  "criticalPath": {
+    "firstUnmetHandoff": "Observed supported resolution of the exact scoped CLI inspection approval, not fresh deployment authorization.",
+    "sequence": [
+      "Original DevOps reassesses only the exact affected route after concrete changed evidence; verify retained-stage inputs and output-owned native CLI bridge/beta.18/account.",
+      "Original DevOps completes current Linux/image/dependency/package, trusted-host/connectivity/effect-readiness gates and serialized common three-role publication.",
+      "Prove hosted capture ownership, independent anchors, completeness and quiescence before relying on observations; execute a separately identified synthetic initial collaboration.",
+      "After genuine initial completion, prove continuity, then supported once-only recovery. Run separate-parent isolation independently when its own final-release/readiness prerequisites exist.",
+      "Original owners/reviewers complete actual acceptance, attributable owned cleanup, review, retrospective and closeout."
+    ],
+    "estimatedMinutes": {
+      "implementation": 0,
+      "review": 15,
+      "integration": 0
+    },
+    "estimateScope": "Bounded empty-graph planning amendment only; not an execution cap or an estimate of permission resolution or remaining live delivery.",
+    "noGlobalBarrier": "No skill-delivery or whole-sprint acceptance barrier is introduced. Missing evidence remains local to the operations and criteria that consume it."
+  },
+  "gitReconciliation": {
+    "accountableRole": "Scrum Master",
+    "featureBranch": "feature/customer-hosted-session-prototype",
+    "newTaskCode": "None; no task branches or abandoned new code require integration.",
+    "retainedAcceptedSkill": {
+      "originalCommit": "5c94f1f302c76f9f4222ee569b1e8aee2fcc4d59",
+      "retentionBranch": "retained/ip-s1-skill-original-20261022",
+      "reviewedPublishedIntegration": "14ee132e6c5145122759bec857811b655b371849",
+      "disposition": "Consume accepted durable provenance and readback; do not merge excluded planning ancestry, repush or rewrite shared divergent history."
+    },
+    "amendmentOnly": "Commit only this separate amendment and its owned generated inventory entry. Preserve the unowned index overlay and specification. No branch switch, force push, history rewrite, lock removal or historical evidence edit."
+  },
+  "priorDispositions": [
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SKILL-DELIVER/AssignedWorkDeveloperLoop\",\"SKILL-REMOTE-VERIFICATION\"]",
+      "application": "Required independent commit/blob readback satisfied through accepted skill publication audit 47b2b4ffc34b3d98ca7ad65dd42c1d0794851a9c52fcc0cf711b6e641b3fc307.json; not reopened."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SKILL-DELIVER/AssignedWorkDeveloperLoop\",\"SKILL-DELIVERY-IDENTITY-CONFLICT\"]",
+      "application": "Consume the accepted skill-only integration identity and retained original commit within that exact delivery boundary. No runtime permission, release or live criterion is waived or added."
+    }
+  ],
+  "Continuation": {
+    "disposition": "exhausted",
+    "summary": "No ready new source task, feasible substantial construction split, independent unbuilt approved backlog or new bounded unlocking investigation was established across IP-S1/IP-S2/IP-S3. No concrete changed evidence permits an exact blocker resume. Delivery remains incomplete.",
+    "evidence": [
+      "Accepted continuation architecture 65b3cda3 and original Product Owner/Critic/Red Team affirmative completion votes were opened, together with current ReleasePlan criteria for all three partial sprints.",
+      "Opened original current E2E, all three DevOps blocker audits, accepted skill publication and exact private denial handoff. Accepted offline work and substantive correction are preserved; overall DevOps completion remains false.",
+      "Direct Git inspection at 65b3cda3 found no committed change from f9fcd9cf in runtime, tests, manifests or entrypoint/scripts paths; selected lab is clean at ceaba6ee. No changed source invalidates accepted qualification.",
+      "Inspected capture/host/reader, continuation/stop/comparison and typed-export contracts plus retained package/CLI prerequisite wiring. Existing source preparation supplies no demonstrated missing construction or supported new route around the operation prerequisites.",
+      "Separate-parent isolation is independently schedulable after its own final bindings/readiness, not after recovery acceptance; those live prerequisites are still missing. No fixture or planning report may substitute.",
+      "No new approval-resolution receipt, hosted ownership/export contract or demonstrated source defect was supplied. Initial restored DNS predates the later scoped approval denial and does not resolve it. No denied inspection, uncertain effect, unchanged test suite or exhausted research was replayed."
+    ],
+    "resumes": []
+  },
+  "preservation": {
+    "partialSprints": ["IP-S1", "IP-S2", "IP-S3"],
+    "commonRollbackProvenance": "WAIVED, never PASS",
+    "unchanged": "Actual AC1-AC9/G1-G8; exactly three remote roles; trusted parent/exact assignments; deterministic gates before Decision-1; immutable role outputs/prerequisites; ETag publication; MAF checkpoints; held parents, known response IDs, UNKNOWN effects and historical seals.",
+    "noNewOperationalEffects": "No authentication/config inspection, denied-command retry, infrastructure/RBAC/quota/network/DNS/registry/VPN change, package/publication, hosted invocation, external submission, remote push or process cleanup."
+  },
+  "validation": {
+    "repositoryChecks": "Documented scripts/Test-Repository.ps1 passed with the existing explicit Python, current generated inventory and 139-file public boundary; JSON, PowerShell, frontmatter and whitespace checks passed.",
+    "attribution": "Application/retained test counts above are attributed to original accepted audits. No runtime suite, native CLI, Linux/package or live check was repeated for this planning amendment.",
+    "reviewStatus": "Owner accepts the bounded amendment. Original Product Owner/Architect/Critic planning reviews remain for orchestrator collection."
+  },
+  "handoff": {
+    "receiver": "Original Product Owner, Architect and Critic planning reviewers, then existing orchestrator",
+    "scope": "Review this bounded exhaustion amendment only, not original sprint/release completion. Empty tasks mean no new work to dispatch.",
+    "unblockOwner": "Operator",
+    "unblock": "Resolve the exact dedicated-account/native-WSL inspection tool approval using supported interactive controls and retain observed resolution evidence, without global policy changes or new deployment authorization.",
+    "afterChangedEvidence": "Existing Scrum coordination selects only the exact affected blocker for original DevOps owner/reviewer reassessment. No automatic multi-stage resume, E2E recheck or e2eSubject is justified now.",
+    "remaining": "Current native/final package/common publication, hosted provenance, non-held initial collaboration, continuity, supported recovery, isolation, attributable cleanup and original review/retro/closeout."
+  }
+}

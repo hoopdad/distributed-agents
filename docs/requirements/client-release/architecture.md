@@ -1,5 +1,32 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## IP-S1 scoped amendment: preserve skill content, reconcile delivery identity
+
+Apply the [scoped integration disposition](../../customer-prototype-sprint-architecture.md#ip-s1-scoped-amendment-skill-only-integration-identity)
+only to `IP-S1-SKILL-DELIVER`. Required decisions
+`SKILL-DELIVERY-IDENTITY-CONFLICT` and `SKILL-REMOTE-VERIFICATION` originate at
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SKILL-DELIVER/AssignedWorkDeveloperLoop`,
+reconciled audit `7b79d02c58a5d25175297ec2b8cd8085714adce4f62cc4157c3943f2387a8484.json`.
+Canonical **Guarded lab release toolchain** / **Exact-source guarded release**
+steps `release-join` and `release-close` remain unchanged.
+
+Preserve accepted skill source `5c94f1f302c76f9f4222ee569b1e8aee2fcc4d59`
+and blob `ac10b0395a5ae034735d46210f7310b8ac5de7a1`. Permit only a separately
+reviewed skill-only integration commit based on a freshly verified authorized
+remote feature tip, without excluded planning ancestry. Scrum Master assigns
+isolated integration to the existing Developer; preserve the shared checkout
+and record named original-commit retention/provenance/reason in the integration
+commit message. Original Architect/Critic verify the integration delta and
+ancestry without repeating accepted documentation validation. Explicit reviewed
+non-force publication plus independent remote commit/blob readback are still
+required, not completed here. Incompatible concurrent movement returns to Scrum
+Master; no force or moving-HEAD substitution.
+
+This is a delivery-identity amendment, not a runtime, authentication, deployment
+or acceptance waiver. Skill delivery does not gate independent original E2E or
+eligible DevOps execution. All existing runtime/live criteria, private-state
+boundaries and COMMON rollback provenance **WAIVED, never PASS** remain intact.
+
 ## Current IP-S1: separate source qualification and requested skill delivery
 
 Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-ip-s1-qualify-retained-observation-source-after-transport-recovery),

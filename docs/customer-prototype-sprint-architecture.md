@@ -1,5 +1,82 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## IP-S1 scoped amendment: skill-only integration identity
+
+October 22, 2026. This disposition changes only `IP-S1-SKILL-DELIVER`.
+Apply the two required decisions at exact origin
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SKILL-DELIVER/AssignedWorkDeveloperLoop`:
+`SKILL-DELIVERY-IDENTITY-CONFLICT` and `SKILL-REMOTE-VERIFICATION`.
+Their reconciled source is current-run context audit
+`7b79d02c58a5d25175297ec2b8cd8085714adce4f62cc4157c3943f2387a8484.json`.
+This is the authorized bounded identity amendment, not permission to publish
+excluded planning ancestry or reopen accepted skill documentation.
+
+### Affected model and contract
+
+The canonical solutionModel referenced below stays unchanged: component
+**Guarded lab release toolchain**, flow **Exact-source guarded release**,
+steps `release-join` and `release-close`. Actual changed content remains solely
+`.github/skills/lab-deployment/SKILL.md`. Original documentation acceptance is
+retained from audit
+`dead28119b47d7edf0da2ab8fce9d21557af27622f14addad4d2637570a2c055.json`,
+with affirmative Architect/Critic votes for source commit
+`5c94f1f302c76f9f4222ee569b1e8aee2fcc4d59` and skill blob
+`ac10b0395a5ae034735d46210f7310b8ac5de7a1`.
+
+Inspection confirms 13 planning-only ancestors between delivered observation
+`f9fcd9cf4f04075e609196ebb90b30e09a91dd98` and that skill commit's parent.
+Consequently exact original-commit publication conflicts with the assignment's
+ancestry exclusion. That exclusion remains binding. Replace only the required
+delivery identity with a separately reviewed skill-only integration identity;
+the accepted content identity remains unchanged.
+
+### Smallest receiving handoff
+
+Scrum Master supplies a self-contained scoped replacement graph to the existing
+Developer, preserving the outer SprintPlan. Integration must use a freshly
+verified authorized remote feature tip in an isolated worktree or equivalent
+isolated integration context; never switch the shared checkout. Retain the
+original commit on a named branch. The integration commit message must durably
+identify task `IP-S1-SKILL-DELIVER`, the original full commit, the actual retained
+branch and the reason direct publication was rejected (excluded planning-only
+ancestry). Record original and integration identities; do not invent a branch
+or receipt before it exists.
+
+Before delivery, original Architect/Critic review verifies only the integration
+delta, outgoing ancestry, provenance and identical skill blob. No repeat of
+accepted documentation validation is needed. Publish only the explicit reviewed
+integration commit, non-force, to `feature/customer-hosted-session-prototype`;
+independently query the remote commit and read back its skill blob. Incompatible
+concurrent ref movement returns to Scrum Master without overwrite or automatic
+moving-HEAD substitution. Preserve all existing history and index/specification
+overlays. No history rewrite, deletion, additional publication scope,
+authentication, deployment or operational mutation is introduced.
+
+### Evidence state and blast radius
+
+The skill is implemented and locally documentation-validated/reviewed. The
+existing delivery audit reports remote `f9fcd9cf`; this architecture turn does
+not refresh or assert current remote state. Integration construction, integration
+review, remote delivery and independent commit/blob readback remain pending.
+Only those skill-delivery criteria are affected; they are not waived by this
+accepted architecture disposition.
+
+Original later-runtime E2E qualification and eligible original DevOps work remain
+independent, with their smallest genuine prerequisites and original reviewers.
+This amendment changes neither canonical runtime modules nor deployed/live
+states. Actual AC1-AC9/G1-G8, held/UNKNOWN effects, attributable cleanup and
+original review/retro/closeout remain required. COMMON rollback provenance
+remains **WAIVED, never PASS**. Coordinator/specialist tier contracts are
+unaffected; the client-release tier carries this same scoped disposition.
+
+Scoped checks passed: both prior document suffixes are unchanged, accepted
+commit/blob references match Git, and the two-path whitespace check is clean.
+Original sprint architecture and skill acceptance votes, and the reconciled
+governance instructions, were opened from their exact current-run audits.
+No runtime or repository-wide suite was run for this documentation-only
+amendment; the earlier reported repository-check denial was not retried.
+These checks verify the disposition, not integration or live capability.
+
 ## Current IP-S1: qualify retained observation source after transport recovery
 
 October 22, 2026. Apply accepted Architecture `fe8d6432b66bcce396bb200d547fa0ca2ac32926`,

@@ -1,5 +1,20 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current IP-S3 recovery: retain completed-parent and checkpoint contracts
+
+Consume the [IP-S3 recovery refinement](../../customer-prototype-sprint-architecture.md#current-ip-s3-recovery-consume-accepted-qualification-preserve-live-handoffs).
+Canonical Hosted coordinator and shared support IDs stay unchanged.
+`demo/workflow.py`, `demo/foundry.py` and `live_acceptance.py` bind continuity
+to a completed NON-HELD initial parent and unchanged child identities/pins,
+fresh responses, current artifacts and no extra creations. Recovery consumes
+actual two-turn proof, once-only confirmed stop and retained checkpoints/effects;
+known-response retrieval is not a new invocation. Accepted offline runtime
+qualification does not establish hosted capture installation, independent
+anchors, quiescence, typed encoding or consumed-history provenance.
+Preserve deterministic gates, ETags, exact assignments and UNKNOWN holds.
+No new coordinator repair is established; independent preparation remains
+eligible without native approval. Actual live criteria stay incomplete.
+
 ## Current IP-S2 recovery: qualified diagnostics are not initial collaboration
 
 Consume the [current IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-recovery-current-package-and-observable-initial-collaboration).

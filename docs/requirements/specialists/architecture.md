@@ -1,5 +1,19 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current IP-S3 recovery: preserve pinned remote histories and isolation
+
+Consume the [IP-S3 recovery refinement](../../customer-prototype-sprint-architecture.md#current-ip-s3-recovery-consume-accepted-qualification-preserve-live-handoffs).
+Canonical Hosted architect / Hosted reviewer and shared supports remain.
+`demo/architect_agent.py`, `demo/reviewer_agent.py`, `demo/foundry.py` and
+`demo/host.py` retain exactly two remote specialists, immutable outputs and
+exact prerequisites. Same-parent continuity/recovery keeps hosted/framework
+identities and versions while actual responses/artifacts advance; isolation
+uses distinct children/namespaces under final common-package bindings.
+Accepted `f9fcd9cf` offline qualification is not consumed-history or trusted
+ingress proof. No guessed header mapping, local replacement, uncertain replay
+or automatic capture installation is justified. Independent isolation does
+not require recovery success; original DevOps supplies real observations.
+
 ## Current IP-S2 recovery: preserve trusted remote specialist observations
 
 Consume the [current IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-recovery-current-package-and-observable-initial-collaboration).

@@ -1,5 +1,20 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current IP-S3 recovery: independent execution, joined final acceptance
+
+Consume the [IP-S3 recovery refinement](../../customer-prototype-sprint-architecture.md#current-ip-s3-recovery-consume-accepted-qualification-preserve-live-handoffs).
+Canonical Terminal client / Guarded lab release toolchain and all IDs remain.
+`f9fcd9cf`/`ceaba6ee` affected offline qualification and the tooling correction
+are now accepted; do not repeat them as missing reviews. Final native readiness,
+common package/publication and live evidence remain incomplete. Continuity
+needs completed initial collaboration; supported recovery needs genuine two-turn
+proof. Isolation needs final bindings/safe scope, not recovery success.
+`live_acceptance.py::validate_scenario_evidence` remains a final all-scenario
+join, not an isolation execution gate. Preserve partial observations, existing
+H/I/J/K screens, stdout/parser, exact reviewed delivery and attributable cleanup.
+Scrum Master owns scheduling/Git reconciliation; original DevOps owns effects.
+No unchanged denied inspection retry. Rollback provenance is WAIVED, never PASS.
+
 ## Current IP-S2 recovery: preserve qualification and localize native readiness
 
 Consume the [current IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-recovery-current-package-and-observable-initial-collaboration).

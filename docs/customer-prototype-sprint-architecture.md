@@ -1,5 +1,97 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Current IP-S3 recovery: consume accepted qualification, preserve live handoffs
+
+October 22, 2026. This refinement consumes the accepted IP-S3 design at
+`c5c40239b342bfd40be3d2ff3c448d90bc7833e5` and cumulative IP-S2 architecture at
+`243ccdfba48172171fab1f7532633fdcce524888`. Retain Architecture `fe8d6432`,
+UX `c087b95d` and ReleasePlan `01f0cd55`. It updates evidence readiness only;
+the historical IP-S3 source pairs and preparation candidates below are not
+current dispatch instructions. No new source defect, interface, SDK hook,
+resource, UI feature or implementation task is established.
+
+### Current accepted handoffs
+
+Opened original outcomes in
+`gh-dynamic-workflows/.delivery-runs/76e49846-d1f2-4c9d-86ff-ee268dd47c2c/context/`:
+
+- `4131bfbf1e2a6647161f67ba82011dfd7304da6309d0736b1b3a5493811a6f16.json`:
+  IP-S3 design agreed; Product Owner/Critic both agree/taskComplete. Reuse
+  H/I/J/K and supporting F/G; no new UI implementation.
+- `45e3e909f87d67d66a5f40c089068c667a9d37399febf8cf21864975ea1866d6.json`:
+  affected offline E2E agreed by Architect/Critic/Product Owner with
+  taskComplete. Actual qualified runtime is `f9fcd9cf`, selected lab `ceaba6ee`;
+  attributed Windows checks report 359 application passes and 236 retained
+  passes/four skips. This is source-input qualification, not a current archive,
+  fresh Linux execution, native-amd64 certification or deployed/live proof.
+- `737459e8124be0e6a2b7e036fbbdfdda708e912dee07b9f2c717c3598437cbcb.json`:
+  original DevOps and Architect/Critic/Developer explicitly consume substantive
+  acceptance of correction `ceaba6ee` and the affected E2E. Do not recollect
+  either as missing. Overall DevOps remains incomplete: retained-stage integrity
+  and exact-image dependency evidence do not establish native readiness, final
+  common packaging, publication or initial collaboration. The historical scoped
+  CLI denial lacks changed approval-resolution evidence; its exact missing
+  permission is unidentified, not diagnosed authentication/RBAC/network failure.
+
+### solutionModel and smallest IP-S3 dependencies
+
+The canonical [solutionModel](customer-prototype-architecture.md#solutionmodel)
+at `fe8d6432` remains incorporated by reference: ten components, five triggered
+flows, eighteen steps, unchanged IDs/supports/personas. These mappings refine
+its existing flow steps, not a second graph or replacement public evidence API.
+
+| Approved criteria / canonical steps | Components and actual source | Smallest handoff and verification state |
+| --- | --- | --- |
+| AC2/G5; `continuity-revise`, `continuity-invoke`, `continuity-verify` | Terminal client; Hosted coordinator; Hosted architect; Hosted reviewer; Parent and specialist conversation state; Private Blob artifacts and effect journal. `demo/terminal.py`, `demo/foundry.py`, `demo/workflow.py`, `live_acceptance.py::_evidence_continuation`; `tests/test_specialist_continuity.py`, `tests/test_scenario_evidence.py`. | Implemented/offline-qualified, not current deployed/live-verified. Original DevOps supplies final common source/package/version bindings and completed NON-HELD initial parent, both hosted/framework child identities, independent create/send observations and current immutable artifacts. Then follow up on that same parent: unchanged identities/pins, fresh invocation responses, retained earlier requirements and no extra child creations. |
+| AC4/G6; `recovery-stop`, `recovery-resume`, `recovery-verify` | Guarded lab release toolchain; MAF workflow checkpoints; conversation/artifact components and all three hosted roles. `live_acceptance.py::stop_hosting_for_acceptance`, `validate_scenario_evidence`, `demo/workflow.py`, `demo/foundry.py`; existing scenario/workflow regressions. | Genuine completed two-turn proof precedes durable once-only stop intent. Require actual 204 plus independently observed stopped/idle state, retained checkpoint equality and complete effect accounting. Resume/retrieve only through supported known-response/checkpoint paths; an uncertain stop/send stays held. No hard-crash exactly-once guarantee. |
+| AC4/G7; `isolation-bind`, `isolation-execute`, `isolation-verify` | Terminal client; all three hosted roles; Trusted identity and private transport; conversation/artifact components. `demo/artifact_store.py`, `demo/artifacts.py`, `demo/workflow.py`, `live_acceptance.py`, `tests/test_scenario_evidence.py`. | Final deployed bindings, safe comparison scope and current-effect readiness permit independent distinct-parent execution; recovery success and whole-sprint acceptance are not prerequisites. Compare real child identities, namespaces, effects and requirement exclusion, retaining cross-scope rejection. Application Blob isolation is not storage-RBAC isolation. |
+| Profiling 5-7, AC3/AC6-AC9/G8; `release-close` | Terminal client; Guarded lab release toolchain; Private Blob artifacts and effect journal. `demo/private_effect_capture.py`, `demo/effect_observation.py`, `scenario_state_reader.py`, `live_acceptance.py`, README and release notes. | Existing caller-owned capture/comparison source is locally qualified, not installed hosted coverage. Original DevOps proves installation before inherited tasks, exclusive retention, independent manifest/operation anchors, coverage and actual quiescence. Typed original checkpoint encoding and consumed-history provenance remain unproven. Original review/retro/closeout joins actual receipts, final source/package/readback and attributable owned cleanup; offline AC3 fixtures and stdout/parser remain unchanged. |
+
+`validate_scenario_evidence` still joins all four scenarios and stopped-session
+evidence at final acceptance; that aggregate signature must not gate independent
+isolation execution or turn missing recovery into fabricated live input.
+Package drift cannot silently migrate saved parents or mix evidence versions.
+
+### Work-conserving handoff and boundaries
+
+Scrum Master owns the existing IP-S3 decomposition and Git reconciliation.
+Reuse accepted companion/status/reader/bridge/consumer, fixture and negative
+research handoffs; do not redispatch them or invent a new qualification subject.
+Offline planning and comparison preparation do not depend on resolving native
+approval. The inspected sources establish no new missing construction; if the
+actual retained hosting/collection route exposes missing supported wiring,
+split only that demonstrated integration with original Developer/E2E review.
+No automatic host activation or alternate publisher is authorized here.
+
+The exact denial gates its inspection and dependent native readiness, publication
+and traffic, not independent source work. Reassess only after concrete supported
+approval-resolution evidence, never an unchanged retry or alternate-tool bypass.
+Original DevOps consumes the retained exclusive stage, verifies actual current
+bindings and per-output azd bridge/beta.18/account readiness, and creates another
+stage only for changed inputs. Historical seals stay unchanged. Before new
+synthetic traffic record distinct purpose, operation identity, effect intent,
+release bindings and owned cleanup plan. No held-parent replay or trust repair.
+
+Required dispositions at exact origin
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SKILL-DELIVER/AssignedWorkDeveloperLoop`,
+`SKILL-REMOTE-VERIFICATION` and `SKILL-DELIVERY-IDENTITY-CONFLICT`, remain
+satisfied only within their accepted delivery boundary through publication
+audit `47b2b4ffc34b3d98ca7ad65dd42c1d0794851a9c52fcc0cf711b6e641b3fc307.json`.
+No skill redelivery or broader waiver follows. Preserve all partial sprints,
+AC1-AC9/G1-G8, deterministic Decision-1 gates, exact trusted assignments,
+immutable prerequisites, ETag publication, MAF checkpoints and UNKNOWN holds.
+COMMON rollback provenance remains **WAIVED, never PASS**. This architecture
+does not establish global exhaustion, release readiness or live acceptance.
+Original Product Owner/Critic/Red Team assess this bounded refinement.
+
+Verification: documented `scripts/Test-Repository.ps1` passed with existing
+explicit Python: current index, 137-file public boundary, JSON/PowerShell/
+frontmatter and whitespace checks. Four Git-filtered addition-only overlays,
+canonical graph/support/step references, mapped source paths and unchanged
+unowned index/specification hashes were checked. No structural/model change
+requires an index refresh. No application tests, authentication, denied
+inspection, package/publication, live traffic or cleanup ran in this turn.
+
 ## Current IP-S2 recovery: current package and observable initial collaboration
 
 October 22, 2026. This overlay consumes accepted Architecture `fe8d6432`,

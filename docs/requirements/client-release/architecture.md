@@ -1,5 +1,33 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current IP-S2: changed-source prerequisite and serialized common release
+
+Apply the [current cumulative IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-exact-changed-join-guarded-publication-and-live-localization)
+and current IP-S2 SprintDesign. Terminal client / Guarded lab release toolchain
+and stable `release-join/package/discriminate/close` IDs remain unchanged.
+The accepted application baseline is `c52786b7`; selected-lab correction
+`9b4919d8` adds three named read-only public test inputs to Build-Demo, not
+runtime/auth changes. Original Architect/Critic/Developer agreed with that
+bounded correction/report, each explicitly retaining incomplete cloud tests.
+
+Scrum Master routes the existing IP-S1 original E2E prerequisite reassessment;
+E2E assesses/reuses applicable Windows/Linux captures with exclusions, verifies
+only necessary changed-join bindings and issues an updated original handoff.
+No blanket rerun, accepted-source reconstruction or extra approval stage.
+The original DevOps publisher then owns final package/hosting gates, automated
+current source/version/package/trusted-host/effect checks and guarded publication
+of the same newly identified package to all three roles. Historical rollback
+provenance is WAIVED, never PASS; no manual checksum approval is added.
+
+`live_acceptance.py`, retained scenario tooling and private intent/receipts
+must distinguish send, headers, stream and actual execution success; preserve
+`demo/terminal.py` machine stdout/parser and human stderr behavior. No UI work
+is added. New live diagnostic identity/intent precedes send; held/unknown
+operations cannot be replayed. G1-G4, later G5-G8/AC1-AC9, attributable cleanup
+and original review/retro/closeout remain actual tests, not report agreement.
+Independent later-sprint fixture/comparison preparation continues while the
+changed-join handoff is missing. No new publication/live pass is asserted.
+
 ## Current IP-S1: exact profiling-source handoff, unchanged customer output
 
 Apply the [IP-S1 sprint architecture](../../customer-prototype-sprint-architecture.md#ip-s1-paired-transport-ingress-and-sdk-context-construction-october-21-2026)

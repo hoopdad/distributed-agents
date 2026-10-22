@@ -1,5 +1,145 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Current IP-S2: exact changed join, guarded publication and live localization
+
+October 22, 2026. This is the current **SprintArchitecture** overlay and
+applies to all three tier documents. The IP-S1 sections below are retained
+history, including their then-missing construction and permission observations,
+not directions to repeat accepted work. Consume current SprintDesign
+`6aaf96018ab5c5f2b7ab8a74eceaf1fc09638ab5` and retained Architecture,
+UX and ReleasePlan references below. No new role, infrastructure, SDK pin,
+identity authority, UI contract or product acceptance is introduced.
+
+### Exact-source reconciliation and original evidence
+
+The reviewed runtime/test baseline is application
+`c52786b7dd1595f3048a78061f893dc79635069f`; its accepted original E2E audit is
+`da4425177dd7b48116a3b6eb9aa04742eb2f0cb3d4d4196494c5a4416c2e34a0.json`.
+The changed selected-lab source is
+`9b4919d8bcdbf07203f32657936c27328ea6ccc1`, replacing
+`1e9ddb8560a5637d639f4657111f3bca49d38d78` in the release join. Both use
+`feature/customer-hosted-session-prototype`. Later application planning commits
+are not new runtime bytes or an excuse to replay application construction.
+Original E2E must explicitly bind the actual candidate source and loaded roots,
+account for documentation-only ancestry and preserve unowned working overlays;
+do not silently equate moving HEAD with the accepted runtime baseline.
+
+Opened original DevOps audit
+`f7b942e94652c10a41c6e32a96cef0d447c00995ec1fbcd2a35cb65a28677dec.json`
+in the same current-run context directory named below. Architect, Critic and
+Developer each record `agree:true`, `taskComplete:false`. Their agreement
+accepts the bounded correction/report, not publication or cloud tests.
+Original E2E reviewers Architect/Critic/Product Owner recorded agreement and
+completion for the earlier join. IP-S2 SprintDesign audit
+`12edb53e8280ea614239d71ecd83c7e33a4a0d6628981387dc54014cb181cc6f.json`
+records Product Owner/Critic agreement and completion for design only.
+
+Inspected the lab correction diff: `foundry-tf/multi-agent/Build-Demo.ps1`
+adds individual read-only `.agentignore`, `.dockerignore`, `Dockerfile`
+mounts only to the application test invocation; retained regressions assert
+exact mount count, no broad/writable overlay and failure propagation.
+The missing `/app/.agentignore` failure is a confirmed test-input closure
+defect, not an identity defect. No runtime image construction, auth, network
+isolation or accepted application fixture was changed.
+
+Opened the referenced private DevOps `verification.json`. It attributes
+278 Windows application passes and 236/240 retained passes (four exclusions);
+Linux has 270/278 application and 197/240 retained passes (eight and 43
+exclusions). Both corrected wrappers exited zero; exclusions are not passes.
+The Linux selected-lab closure case was excluded without an explicit linked
+checkout and passed in the linked Windows wrapper. The image was linux/amd64
+on an arm64 host; no native-amd64-host claim follows. Captured streams are
+combined tool output, not independently separated OS streams. These are
+inspected prior execution results, not new Architect-run tests. Original E2E
+assesses applicability and performs only necessary changed-join verification.
+No final bundled package, current publication or new live pass is evidenced.
+
+### solutionModel and criterion-to-source readiness
+
+The machine-readable `solutionModel` remains incorporated from
+[Architecture](customer-prototype-architecture.md#solutionmodel): ten components,
+five triggered flows, eighteen stable steps and unchanged support links.
+All IDs/names persist; no implementation child or additional flow is needed.
+For this invocation, `release-package` excludes the historical rollback
+prerequisite (WAIVED, never PASS), and `release-discriminate` means
+evidence-supported localization, not a finite A/B trial or guessed identity
+selection. Those dated canonical descriptions cannot override current authority.
+
+| Approved criterion / canonical steps and components | Actual source and accepted contract | Current state / smallest missing handoff |
+| --- | --- | --- |
+| Profiling acceptance 1-3; `collaboration-bind/design/review`, `continuity-invoke`, `recovery-resume`, `isolation-execute`; Trusted identity and private transport and hosted roles | `demo/diagnostics.py`, `demo/foundry.py`, `demo/host.py`, `demo/workflow.py`, `demo/routing.py`, `demo/artifact_store.py`, specialist agent factories; `docs/identity-profiling-coverage.md` and focused tests | Implemented and locally verified at application baseline; retain accepted event API, public hooks, timeout preservation and gaps. No new source fix assigned. Deployment and independently live-verified identity behavior remain unproven. |
+| Profiling acceptance 2-4; `release-join`, `release-package`; Guarded lab release toolchain | `package_guard.py`, `Test-Demo.ps1`, `scripts/Test-Repository.ps1`, selected-lab Build-Demo and `tests/test_release_native_settings.py` | Closure correction implemented with attributed Windows/Linux evidence. Original same-sprint E2E must issue updated exact-pair handoff; then original DevOps completes package/hosting gates and one serialized publication. |
+| Profiling acceptance 5-6; `release-discriminate`, `collaboration-design/review`; Trusted identity and private transport, Hosted coordinator/architect/reviewer | OriginTransport final send, pure-ASGI ingress and reachable SDK/background events; coverage matrix; `live_acceptance.py` and retained guarded release tooling | New diagnostic only after current-effect readiness and privately recorded distinct intent/identity. Associate observations by safe supported bindings, not timing; localize interval, not an assumed principal/platform cause. Any supported remedy goes through affected original construction/review/E2E and new common package. |
+| IP-S2 G1-G4 and retained AC1-AC9/G1-G8; `collaboration-return`, `continuity-*`, `recovery-*`, `isolation-*`, `release-close`; state, artifact and checkpoint components plus Terminal client | `demo/artifacts.py`, workflow/effect journal, remote specialist history, `live_acceptance.py`, retained scenario checks; accepted Screen F/G and B/C/H-K contracts | No new completed non-held parent or both-child final-package binding supplied. IP-S3 can prepare fixtures/evidence comparisons independently; actual follow-up and stop/resume consume completed non-held parent, while isolation needs final deployment/comparison evidence, not recovery success. Original review/retro/closeout and cleanup stay required. |
+
+### Bounded dispositions and continuation routing
+
+Apply exact reference
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","RELEASE-CHANGED-JOIN-HANDOFF"]`:
+this amendment records the pair and original reviews. Scrum Master owns the
+existing continuation amendment and Git reconciliation assignment; use the
+supported same-sprint prerequisite recheck for
+`sprint/1/IP-S1/EndToEndTestLoop` before the original blocked
+`sprint/1/IP-S1/DevOpsWorkLoop`, when exposed in `continuation.recheckable`.
+Do not edit runtime state or launch duplicate loops. Original E2E consumes
+captured evidence, verifies changed bindings/exclusions as necessary, and issues
+the updated handoff through Architect/Critic/Product Owner review. This is the
+existing prerequisite, not another approval stage or blanket rerun.
+
+Apply exact references at that same DevOps origin:
+`RELEASE-COMMON-PACKAGE-PUBLICATION` and `RELEASE-LIVE-ACCEPTANCE`.
+After accepted changed-join E2E, the single original DevOps owner continues
+native common-package creation, automated current source/package/version/
+trusted-host/effect checks and guarded all-three-role publication. Preserve
+exact package and individual role/version receipts privately. A successful
+publication, HTTP status, exhausted stream or SDK envelope is not G1-G4.
+Do not consume this still-missing handoff merely because this architecture
+is accepted, or relabel unfinished IP-S1 DevOps as completed IP-S2 work.
+
+The exact references at
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop`,
+`SDK-CREDENTIAL-TIMEOUT-PRESERVATION` and `SDK-TIMEOUT-REGRESSION-EVIDENCE`,
+remain satisfied within their accepted implementation/test boundary as
+recorded in original E2E/coverage. Preserve the raw-hook limitation (credential
+transport failures, cancellation and cache hits are not covered); SDK-owned
+stores and Foundry platform resolution remain outside documented coverage.
+Do not reopen those accepted tasks or claim universal transport interception.
+
+### Diagnostic decision and localized downstream boundaries
+
+Record a new synthetic diagnostic's purpose, unique operation identity, exact
+bindings, effect intent and attributable process/listener ownership privately
+before send. Preserve the held original parent, known responses and UNKNOWN
+effects; retrieval is not a new invocation. Observe actual final outbound
+presence -> raw ingress presence -> SDK/request context -> reachable resilient
+background/preparation checkpoints, distinguishing unavailable/not-reached
+coverage from absent/empty/nonempty values. Diagnostics never supply trusted
+identity or suppress a rejection. Missing public delegation header at ingress
+alone establishes neither loss nor translation; formats need not match.
+
+Only attributable evidence plus supported pinned contracts justify a remedy.
+No call-ID substitution, guessed header mapping, private SDK patch, new RBAC,
+infrastructure/network/DNS/quota/registry/VPN mutation, production profile,
+secret retrieval, external upload or uncertain-effect replay is authorized.
+If observations leave the platform interval unresolved, prepare a private
+bounded external-tracing handoff without sending it; continue independent
+approved construction. Report authenticated principal and platform resolution
+as unproven until observed. Actual tool denial remains binding.
+
+The missing changed-join handoff blocks dependent publication/live effects,
+not accepted source, current design, independent IP-S3 preparation or bounded
+evidence review. Scrum Master can schedule those through existing planning
+without a whole-sprint dependency; shared files require explicit ownership.
+No sprint/attempt/time/credit cap or new release gate is added. Waiting requires
+the existing work-exhaustion audit, not merely this local prerequisite gap.
+IP-S1 stays partial; no IP-S2 or release completion is asserted here.
+
+Architect owns this bounded cumulative design; original Product Owner, Critic
+and Red Team reviews are pending. Documentation/model checks for this turn
+are reported in the owner handoff, separately from prior runtime evidence.
+No new package, deployment, live request or cleanup action is performed by
+this architecture amendment.
+
 ## IP-S1: paired transport, ingress and SDK-context construction (October 21, 2026)
 
 This is the current **SprintArchitecture** for the identity-profiling increment.

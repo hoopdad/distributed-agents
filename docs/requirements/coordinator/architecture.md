@@ -1,5 +1,28 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current IP-S2: retain verified coordinator source, prove new live binding
+
+Apply the [current cumulative IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-exact-changed-join-guarded-publication-and-live-localization).
+Its exact application `c52786b7` / selected-lab `9b4919d8` handoff and
+same-sprint original E2E reassessment precede publication, not independent
+construction. Earlier missing-instrumentation statements are dated history.
+Canonical coordinator/identity/state/checkpoint/artifact/routing components
+and all IDs remain unchanged.
+
+`demo/foundry.py`, `demo/workflow.py`, `demo/routing.py`,
+`demo/artifact_store.py` and shared `demo/diagnostics.py` are implemented and
+locally verified through accepted IP-S1 E2E. This is not deployed/live proof.
+Preserve deterministic gates before Decision-1, trusted scope/parent binding,
+immutable exact prerequisites, ETag/fencing, checkpoints and write-ahead holds.
+Only attributable new final-package observations can justify supported identity
+remediation; no new coordinator correction is established by the lab test mount.
+
+Original DevOps owns new intent-bound traffic and actual non-held G1-G4
+`collaboration-bind/route/design/review/return` evidence. Completed parent and
+both-child/version/response/artifact bindings hand off to continuity/recovery;
+independent isolation preparation need not wait. Held/unknown operations stay
+untouched. COMMON rollback provenance remains WAIVED, never PASS.
+
 ## Current IP-S1: coordinator transport and request-context diagnostics
 
 Apply the [IP-S1 sprint architecture](../../customer-prototype-sprint-architecture.md#ip-s1-paired-transport-ingress-and-sdk-context-construction-october-21-2026)

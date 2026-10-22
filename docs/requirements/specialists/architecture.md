@@ -1,5 +1,31 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current IP-S2: attributable remote ingress without speculative trust repair
+
+Apply the [current cumulative IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-exact-changed-join-guarded-publication-and-live-localization).
+The release join pairs application `c52786b7` with selected-lab `9b4919d8`;
+original changed-join E2E still precedes publication.
+Hosted architect/reviewer and shared identity/state/artifact components retain
+their stable IDs; exactly two remote specialists, no hidden local instance.
+Accepted IP-S1 `demo/host.py`/`demo/workflow.py` public-hook diagnostics and
+specialist factory instrumentation are implemented/locally verified, not
+independently live verified. Retain early rejection, actual resilient-background
+context, immutable outputs, exact prerequisites and remote history/version pins.
+
+After changed-join E2E and common-package publication, original DevOps pairs
+actual final outbound observations with raw ASGI ingress and reachable SDK
+context for a separately identified intent-recorded diagnostic. Distinguish
+absence from unavailable hooks; x-agent-user-id parsing is not permission to
+copy arbitrary headers into trusted context. Public x-ms-user-identity absence
+alone diagnoses neither platform loss nor translation. The lab test-input
+mount correction establishes no specialist identity remedy.
+
+Keep `collaboration-design/review`, `continuity-invoke`, `recovery-resume`
+and `isolation-execute` live conditions distinct. New completed parent/both-child
+bindings gate actual follow-up/recovery; final deployed scope comparison gates
+isolation, not recovery success. Preserve held parents, UNKNOWNs and supported
+known-response-only recovery. COMMON rollback provenance remains WAIVED.
+
 ## Current IP-S1: paired raw ingress and reachable specialist context
 
 Apply the [IP-S1 sprint architecture](../../customer-prototype-sprint-architecture.md#ip-s1-paired-transport-ingress-and-sdk-context-construction-october-21-2026).

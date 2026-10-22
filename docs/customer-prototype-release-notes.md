@@ -1,5 +1,69 @@
 # Customer hosted-session prototype: blocked release notes
 
+## Exact reviewed-source delivery receipt — October 22, 2026
+
+Task `IP-S1-DELIVER-RECONCILED-REF` delivered only the immutable candidate
+`b7671214dfd68025517ce57f12a3cfaaaffa1912`, not moving HEAD. Its original
+Architect and Critic both recorded agreement, `taskComplete=true` and no unmet
+criteria in application-relative prerequisite audit
+`gh-dynamic-workflows/.delivery-runs/f7011883-a3c7-4dae-b00a-6472b985901f/context/bf5dc86426e1918a04f7692c74f033804152926680812282956741006921ca86.json`.
+Those final votes supersede the pending-review wording in the historical
+reconciliation handoff below; its fixed candidate and coverage remain unchanged.
+This delivery receipt awaits its own original work-loop reviews.
+
+### Observed integration and delivery
+
+- Authorized shared branch: `feature/customer-hosted-session-prototype`.
+- Local feature before integration / accepted coverage ledger:
+  `f4653693e4df9cef6bdb6738ffb3b8d3d9dd6ef6`.
+- Local integration commit: `eca8d0ecde65bdce7505b422990e4e1083851979`,
+  with parents `f4653693e4df9cef6bdb6738ffb3b8d3d9dd6ef6` and
+  `b7671214dfd68025517ce57f12a3cfaaaffa1912`.
+- Integration tree: `652562623d2fe0e9e50a5f30906d14acceee7614`,
+  identical to the pre-integration feature tree. The ancestry-only merge had
+  no conflicts, file changes or content resolutions.
+- Retained candidate branch:
+  `integration/ip-s1-reviewed-reconciliation-20261022`; its exact tip remains
+  `b7671214dfd68025517ce57f12a3cfaaaffa1912`. No task code was abandoned.
+- Fresh remote before integration and again immediately before push:
+  `14ee132e6c5145122759bec857811b655b371849`, verified as a candidate ancestor.
+- Executed non-force command:
+  `git push --porcelain origin b7671214dfd68025517ce57f12a3cfaaaffa1912:refs/heads/feature/customer-hosted-session-prototype`.
+  It exited zero and reported `14ee132..b767121`.
+- A separate subsequent `git ls-remote --exit-code origin refs/heads/feature/customer-hosted-session-prototype`
+  returned exactly `b7671214dfd68025517ce57f12a3cfaaaffa1912`.
+  The observation completed at `2026-10-22T17:41:00.5374752-04:00`.
+
+### Preservation, exclusions and receiving owners
+
+Bounded Git checks passed: prerequisite votes and fixed branch tip, candidate
+whitespace, unchanged integration tree, candidate ancestry, empty staging,
+authorized branch, fresh remote and independent readback. Unowned bytes were
+unchanged before and after integration/push:
+
+- `.github/repo-index.md` SHA256:
+  `790412ac66951f5e259c278656fbe755ed0f7d42f3a8bbfadffc4994113b4223`.
+- `docs/identity-profiling-workflow.md` SHA256:
+  `1122cdc8a82979151728b7f29d054610919247890b779dc31830b0e847aadc80`.
+
+No branch switch, stash, reset, force operation or lock removal occurred.
+The unowned modified index and untracked specification remain outside this
+task's commits. Current-run planning, the coverage ledger, local integration
+commit and this later receipt were **not** pushed. The original coverage and
+exclusion ledger below continues to identify the candidate's exact source.
+No structural change warrants taking ownership of the unowned repository index.
+
+Handoff to original Scrum Master and review/retro/closeout owners: source
+delivery is independently verified at the exact reviewed ref above; local
+bookkeeping is separate and is not automatically authorized for later delivery.
+No selected-lab delivery, application-suite replay, dependency installation,
+package, publication, inference or cloud mutation was performed. This task
+started no listener or hosted process requiring cleanup and does not resolve
+historical cleanup uncertainty. AC1-AC9/G1-G8, actual collaboration, continuity,
+once-only recovery, independent isolation, hosted provenance, attributable
+cleanup and original review/retro/closeout remain incomplete. Held/UNKNOWN
+effects are preserved; COMMON rollback provenance remains **WAIVED**, not PASS.
+
 ## Fixed reviewed-source reconciliation handoff — October 22, 2026
 
 **Developer handoff for original Architect/Critic review; NOT pushed.**

@@ -1,5 +1,15 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Telemetry continuation 1: localized execution handoffs
+
+Consume the [separate bounded amendment](../../customer-prototype-telemetry-continuation-1-architecture.json).
+Canonical coordinator/state/checkpoint contracts remain unchanged; no supported
+source defect is demonstrated. Platform mapping/semantics block the affected
+identity operation, not independent construction. Existing capture consumers
+do not establish hosted ownership or a completed comparison. Isolation remains
+independent of recovery, subject to its own exact handoffs. No new adapter,
+trust repair, task or unchanged-stage resume is justified.
+
 ## IP-S3: consume completed emitter and POST qualification
 
 Consume the [current sprint refinement](../../customer-prototype-sprint-architecture.md#ip-s3-qualified-telemetry-boundary-and-remaining-execution-contracts).

@@ -1,5 +1,14 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Telemetry continuation 1: retained delivery and incomplete closeout
+
+Consume the [separate bounded amendment](../../customer-prototype-telemetry-continuation-1-architecture.json).
+Canonical components/flows and original plans remain unchanged. Accepted fixed
+source delivery, readiness and common publication are not new tasks. Four
+construction-queue checks establish no new task/resume in inspected handoffs,
+not runtime quiescence or live release success. Original Scrum validates
+dispatch; original review/retro/closeout retain actual live and cleanup gates.
+
 ## IP-S3: consume qualified lineage and retained source delivery
 
 Consume the [current sprint refinement](../../customer-prototype-sprint-architecture.md#ip-s3-qualified-telemetry-boundary-and-remaining-execution-contracts).

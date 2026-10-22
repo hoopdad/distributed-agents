@@ -1,5 +1,28 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## IP-S1 telemetry continuation 1: bounded construction checkpoint
+
+The separate [continuation amendment](customer-prototype-telemetry-continuation-1-architecture.json)
+consumes the completed original IP-S2 qualification and accepted IP-S3
+comparison/capture readiness, rather than dispatching either again.
+It incorporates the canonical solutionModel unchanged and maps all approved
+IP-S1/IP-S2/IP-S3 criteria to actual modules and minimum receiving handoffs.
+Four explicit work-exhaustion checks find no new construction task or changed
+exact-stage resume within the inspected state. Empty tasks/resumes are an
+incomplete checkpoint, not cloud acceptance or controller/process quiescence.
+Original Scrum validates dispatch state and owns the existing planning handoff;
+Product Owner/Critic/Red Team assess this bounded architecture.
+
+Exact platform POST mapping/caller semantics remain missing. Independent
+isolation separately lacks completed comparison and supported hosted capture
+ownership; recovery success is not its prerequisite. No source defect or new
+capture contract is invented. Preserve accepted fixed-ref delivery, readiness,
+common publication, partial sprints, UNSENT attestation, held/UNKNOWN effects,
+historical cleanup uncertainty and COMMON rollback provenance **WAIVED**.
+No accepted E2E, investigation, suite, publisher or live operation is reopened.
+This documentation-only amendment leaves the unowned index/specification
+untouched; original Scrum retains index/Git reconciliation, not a new work item.
+
 ## IP-S3: qualified telemetry boundary and remaining execution contracts
 
 October 22, 2026. This refinement consumes completed IP-S2 qualification and

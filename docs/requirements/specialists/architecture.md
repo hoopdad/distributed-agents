@@ -1,5 +1,15 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Telemetry continuation 1: preserve qualified rejection boundary
+
+Consume the [separate bounded amendment](../../customer-prototype-telemetry-continuation-1-architecture.json).
+Canonical specialist components, fail-closed preparation and immutable
+prerequisites remain unchanged. Completed emitter/link qualification is not
+authenticated caller evidence. No new supported source correction or receiving
+request mapping exists in inspected handoffs; do not replay qualification,
+held operations or publication. UNSENT attestation and unknown delegation
+remain explicit; empty continuation tasks/resumes do not establish live success.
+
 ## IP-S3: retain trusted-user rejection after qualified lineage
 
 Consume the [current sprint refinement](../../customer-prototype-sprint-architecture.md#ip-s3-qualified-telemetry-boundary-and-remaining-execution-contracts).

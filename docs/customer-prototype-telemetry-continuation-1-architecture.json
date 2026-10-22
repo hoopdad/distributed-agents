@@ -1,0 +1,139 @@
+{
+  "kind": "SprintArchitecture",
+  "sprintId": "IP-S1",
+  "round": 1,
+  "owner": "Architect",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "inspectedHead": "8abdc610db90fa9a2dd2117c257e3ffb8c21d123",
+  "scope": "Existing-telemetry continuation assessment of approved IP-S1/IP-S2/IP-S3 construction; not release acceptance or runtime-quiescence certification.",
+  "solutionModel": {
+    "reference": "docs/customer-prototype-architecture.md#solutionmodel",
+    "baselineCommit": "f0d0e74c010366cae3d0936d2851ea7bd4defa8a",
+    "state": "Canonical components, flows and step IDs incorporated unchanged. No topology, public schema, trust boundary, entry point or capture destination change."
+  },
+  "evidence": {
+    "auditDirectory": "gh-dynamic-workflows/.delivery-runs/f7011883-a3c7-4dae-b00a-6472b985901f/context",
+    "inspectedAudits": [
+      "f5af82d90a4b5283ce35e54da14867992a09f1bd1af52623f973b4eff1810049.json",
+      "750a1f5238c2af4cf11c1c6f40dd0c7df19ac9e7486a029bdd0cb9753e10dbc1.json",
+      "ffaed3d517f6d14c81ef60f1d49f1ea0660d7be9b70e3a29d535a44c85e8aa9b.json",
+      "26cbac5fe5110343e7367bd88d53a8267caf103e42bf4422f38aa370551936f9.json",
+      "04b0e6218fce2a44a9fa49993856a70662c506db30e7dc14229baa29655e432a.json",
+      "61811f8aa1a8af78868ff7047dfba9d1875bc78a6d129f5af5550e473b6b0aa5.json",
+      "afbcfe03b7f20862442623afc04d450393cd66a9e45bfd8ca688ac9fc90c0158.json",
+      "ec9fc39038b4e938e504ee3faf7cf8825d9027f7e55cb8d81d5fd37e04d49282.json"
+    ],
+    "privateHandoff": "telemetry-recovery-evidence:devops-qualification-20261022-1756-v2/review-handoff.json",
+    "privateInspection": "Read exact unresolvedBoundary, lineageQualification and receiving handoff. Existing POST lacks a qualified server-issued gateway link; caller and effective delegation remain UNKNOWN. No new queries or historical resealing.",
+    "acceptedIsolation": "7a2f1862943876daaeaf6c0491b7bb23dd2c91c7:docs/identity-scenario-collection-qualification.md#current-release-isolation-readiness-audit--october-22-2026",
+    "approvedBacklog": "docs/customer-prototype-release-plan.md#existing-telemetry-remaining-delta-release-plan-october-22-2026"
+  },
+  "boundaries": [
+    {
+      "sourceSprintId": "IP-S1",
+      "sourceCriterion": "Current ReleasePlan IP-S1 acceptanceCriteria[0-2]",
+      "components": ["release-toolchain"],
+      "flowSteps": ["release-join", "release-package", "release-close"],
+      "locations": ["docs/customer-prototype-release-notes.md"],
+      "state": "Fixed candidate b7671214dfd68025517ce57f12a3cfaaaffa1912 delivery/readback accepted; named integration branch retained. Integration eca8d0ec and receipt 08d1bda0 are local, not automatically deliverable planning HEAD.",
+      "missingConstruction": "None demonstrated. No task code is abandoned by this amendment.",
+      "smallestHandoff": "Only a genuinely new reviewed substantive source correction warrants affected checks and exact-ref delivery. Current partial cloud closeout is not a reason to redeliver accepted source."
+    },
+    {
+      "sourceSprintId": "IP-S2",
+      "sourceCriterion": "Current ReleasePlan IP-S2 acceptanceCriteria[0-6]",
+      "components": ["identity-boundary", "coordinator", "architect", "reviewer", "artifact-plane", "release-toolchain"],
+      "flowSteps": ["collaboration-design", "collaboration-review", "collaboration-return", "release-discriminate"],
+      "locations": ["demo/foundry.py", "demo/host.py", "demo/diagnostics.py", "demo/workflow.py"],
+      "state": "Diagnostic/runtime source implemented, locally qualified and retained as published; telemetry assignment completed with affirmative original task reviews. No completed non-held collaboration or authenticated caller attribution.",
+      "missingConstruction": "No supported source defect established. More fixtures cannot supply missing platform-owned semantics or retrospectively observe ingress.",
+      "smallestHandoff": "Exact platform-owned mapping from observed POST/retained response to server-issued receiving request/span and gateway RequestResponse, plus authoritative objectId/callerObjectId and delegated-user semantics. Original Scrum/Architect receive a concrete authorized handoff; DevOps reassesses only its affected operation. No external submission authority follows.",
+      "blastRadius": "Unresolved platform identity interval and downstream initial-collaboration acceptance, not independent local construction or isolation readiness."
+    },
+    {
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "Current ReleasePlan IP-S3 acceptanceCriteria[0-1]",
+      "components": ["terminal-client", "coordinator", "architect", "reviewer", "conversation-state", "workflow-checkpoints", "artifact-plane", "release-toolchain"],
+      "flowSteps": ["continuity-revise", "continuity-invoke", "continuity-verify", "recovery-stop", "recovery-resume", "recovery-verify"],
+      "locations": ["demo/terminal.py", "demo/foundry.py", "demo/workflow.py", "demo/artifacts.py", "live_acceptance.py"],
+      "state": "Existing implementation and accepted offline regression subjects retained; live continuity and recovery not verified.",
+      "missingConstruction": "No demonstrated reader, workflow or fixture gap. Accepted typed/history negative findings remain limitations, not a new research assignment.",
+      "smallestHandoff": "Completed non-held initial parent/both-child/artifact/effect evidence unlocks follow-up. Genuine completed two-turn evidence plus once-only current-effect readiness unlocks stop/resume. Require durable intent, actual 204 and independent stopped/idle evidence; uncertain effects stay HELD."
+    },
+    {
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "Current ReleasePlan IP-S3 acceptanceCriteria[2]",
+      "components": ["identity-boundary", "coordinator", "artifact-plane", "release-toolchain"],
+      "flowSteps": ["isolation-bind", "isolation-execute", "isolation-verify"],
+      "locations": ["live_acceptance.py", "scenario_state_reader.py", "demo/effect_observation.py", "demo/private_effect_capture.py"],
+      "state": "Existing independent scenario, scoped reader, observation bridge and private receiving consumer are implemented/offline-qualified. No supported hosted installation or completed comparison is supplied.",
+      "missingConstruction": "A second sink/reader or speculative host adapter would duplicate accepted contracts or require a material capture ownership/lifecycle decision. Existing PrivateEffectCapture opens no path and activates no host hook; terminal capture does not install a remote sink.",
+      "smallestHandoff": "Completed safe comparison plus existing supported hosted destination/context owner, exclusive handle/lifetime, installation before background work, trusted anchors, coverage, quiescence, readback and cleanup ownership. DevOps then executes independently of recovery success or telemetry completion. Material contract changes go through Architect-advised Product Owner coordination, not invented authority.",
+      "blastRadius": "Isolation effects and proof only; no whole-IP-S2 or recovery dependency is introduced."
+    },
+    {
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "Current ReleasePlan IP-S3 acceptanceCriteria[3-4]",
+      "components": ["terminal-client", "release-toolchain", "artifact-plane"],
+      "flowSteps": ["release-close"],
+      "locations": ["live_acceptance.py", "docs/customer-prototype-release-notes.md"],
+      "state": "Offline revision/history and terminal contracts retained; original live scenarios, provenance, attributable cleanup and review/retro/closeout remain incomplete.",
+      "missingConstruction": "No new generic instructions, output contract or integration defect identified. Another status report cannot manufacture live proof.",
+      "smallestHandoff": "Actual scenario/provenance/owned-cleanup evidence to original review, retrospective and closeout. Retain criterion-by-criterion incomplete status until then."
+    }
+  ],
+  "workExhaustionChecks": {
+    "readyOrExecuting": "Supplied delivery state contains no remaining assignments. IP-S1's two tasks are agreed; IP-S2's sole qualification task is complete by original reviews; agreed IP-S3 plan has empty assignments. No runtime/process-quiescence claim: original Scrum validates actual dispatch state before waiting.",
+    "feasibleSplits": "Read actual host diagnostic hook and private receiving-consumer contract; compared demo to f9fcd9cf and tests/entrypoints/readers to 622c1607 with empty diffs. No supported defect or missing contract-backed consumer remains to split. Changing trust or auto-installing an unspecified hosted sink is not an authorized corrective split.",
+    "independentApprovedBacklog": "Inspected all current ReleasePlan criteria across IP-S1/IP-S2/IP-S3 and original IP-S3 planning handoffs. Isolation remains independent but lacks its own completed comparison and hosted capture ownership. Accepted terminal/offline fixtures, source delivery, readiness and common publication are not repeat backlog.",
+    "boundedUnlockingInvestigation": "Accepted qualification accounts for all emitters and nineteen dependency spans, with twelve internal links but no gateway seam. Exact private handoff and accepted isolation readiness identify no unperformed supported query, available comparison or hosted destination. No new evidence justifies repeating exhausted joins, accepted negative audits, publication or inference."
+  },
+  "priorDispositions": [
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"ROUTE-TELEMETRY-QUALIFICATION\"]",
+      "application": "Original dispatch and bounded qualification are fulfilled at their task boundary, not the cloud-pass condition."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"ADVANCE-INDEPENDENT-ISOLATION-READINESS\"]",
+      "application": "Consume accepted 7a2f1862 readiness and agreed IP-S3 planning; preserve missing comparison/capture ownership and independence. Do not repeat their negative audit."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/2/IP-S2/DevOpsWorkLoop\",\"CLOSE-QUALIFICATION-PRESERVE-CLOUD-GATE\"]",
+      "application": "Close qualification; preserve partial DevOps and UNSENT attestation. No supersession, unchanged research or automatic cloud resume."
+    }
+  ],
+  "SprintPlan": {
+    "tasks": [],
+    "AssignedWorkUIDeveloper": [],
+    "AssignedWorkDeveloper": [],
+    "AssignedWorkDevOpsEngineer": [],
+    "AssignedWorkDesigner": []
+  },
+  "Continuation": {
+    "disposition": "exhausted",
+    "summary": "No new executable construction or exact-stage resume is established within the inspected approved handoffs. This is a bounded incomplete checkpoint for original Scrum/review, not release completion, global runtime quiescence or permission for external action.",
+    "evidence": [
+      "workExhaustionChecks records each of the four required checks with exact original audit, source and approved-backlog references.",
+      "Qualification is accepted and complete; the missing platform mapping/semantics remains different from observational correlation.",
+      "Independent isolation's existing consumers cannot replace its missing completed comparison and hosted ownership handoffs.",
+      "No source changed and no authoritative new unblock was obtained; accepted IP-S1 E2E remains scoped to fixed-source delivery."
+    ],
+    "resumes": []
+  },
+  "verification": {
+    "scope": "Documentation contract assertions only; not application or cloud qualification.",
+    "checks": "Canonical model equality to f0d0e74c, component/step/source/audit references, four exhaustion-check keys, empty task/resume graph, tier links, explicit owned whitespace, authorized branch and unowned-file hashes.",
+    "initialValidationIssue": "First PowerShell assertion used collection member Count without array materialization for PSObject.Properties. The harness assertion, not the amendment, required correction to @(...).Count.",
+    "runtimeComparison": "Read-only Git diffs of demo against runtime f9fcd9cf and tests/entrypoints/acceptance readers against qualification 622c1607 were empty.",
+    "notRepeated": "No unchanged application/full repository suite or cloud operation. Existing unowned index overlay intentionally not rewritten or claimed clean."
+  },
+  "preservation": {
+    "originalPlans": "Unmodified; this separate amendment does not replace ReleasePlan or SprintPlan.",
+    "partialSprints": ["IP-S1", "IP-S2", "IP-S3"],
+    "attestation": "UNSENT",
+    "heldAndUnknownEffects": "Unchanged; never replayed.",
+    "rollbackProvenance": "WAIVED, never PASS",
+    "indexAndSpecification": "Pre-existing unowned files preserved byte-for-byte. Do not run an index writer over that overlay; original Scrum retains index/Git reconciliation.",
+    "execution": "No application suite, telemetry query, authentication, package, publication, inference, stop/resume, hosted activation or cleanup executed. No persistent process/listener created. No push."
+  }
+}

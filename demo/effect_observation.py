@@ -4,8 +4,10 @@ Install ``private_sink(callable)`` in the owning execution context (before
 background task creation), then let trusted source dispatches bind operations.
 The callable must synchronously retain immutable Receipt objects in private
 storage; this module has no logger, file writer, credentials or remote exporter.
-Missing window closure, zero requests, sink failure or unfinished streams means
-incomplete evidence. A receipt/HTTP status never establishes execution success.
+Missing window closure, zero requests, sink failure, unfinished streams or late
+inherited requests means incomplete evidence. Late requests retain their binding
+and emit request_late/incomplete before their ordinary occurrence receipts.
+A receipt/HTTP status never establishes execution success.
 
 Only application-owned Project, Responses and stop transports are covered.
 No bodies, queries, headers, identity values/hashes or exception messages are
@@ -90,7 +92,7 @@ class CaptureWindow:
             self.sink_failed = True
 
     def matches(self, method, url, transport):
-        if not self.active or method != "POST":
+        if method != "POST":
             return False
         base, actual = urlsplit(PROJECT), urlsplit(str(url))
         if actual.scheme != "https" or actual.netloc != base.netloc:
@@ -111,8 +113,9 @@ def dispatch(binding: Binding):
 
     Creation has no wire operation field: this source-owned context associates
     it without reading its body. ContextVar inheritance covers awaited SDK and
-    background tasks. A task outliving this window cannot acquire a new binding;
-    an already-started occurrence retains its original window.
+    background tasks. A task outliving this window retains its original binding;
+    a late start is still observed and permanently invalidates completeness.
+    Window closure is not a final certificate: sinks must retain late markers.
     """
     sink = _sink.get()
     window = CaptureWindow(binding, sink) if sink is not None else None
@@ -147,6 +150,9 @@ class Attempt:
         self.terminal = False
         window.requests += 1
         window.pending += 1
+        if not window.active:
+            window.truncated = True
+            self.emit("request_late", category="incomplete")
         self.emit("request")
 
     def emit(self, phase, status=None, category=None):

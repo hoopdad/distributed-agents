@@ -301,7 +301,7 @@ class EffectObservationTests(unittest.IsolatedAsyncioTestCase):
                 self.assertTrue(window.capture_complete)
             self.assertNotIn("private-error", repr(receipts))
 
-    async def test_missing_sink_mismatch_and_late_background_never_create_evidence(self):
+    async def test_missing_sink_mismatch_and_late_background_capture_is_incomplete(self):
         self.assertIsNone(e.request_attempt("POST", response_path(), "responses"))
         receipts = []
         with e.private_sink(receipts.append):
@@ -318,10 +318,76 @@ class EffectObservationTests(unittest.IsolatedAsyncioTestCase):
                 ):
                     self.assertIsNone(e.request_attempt(method, url, "responses"))
             ready.set()
-            self.assertIsNone(await task)
+            attempt = await task
+            self.assertIsNotNone(attempt)
+            attempt.finish("stream_complete", 200)
         self.assertFalse(window.capture_complete)
-        self.assertEqual([r.phase for r in receipts], ["window_open", "window_closed"])
-        self.assertEqual(receipts[-1].category, "incomplete")
+        self.assertEqual(window.requests, 1)
+        self.assertEqual(window.pending, 0)
+        self.assertEqual([r.phase for r in receipts], [
+            "window_open", "window_closed", "request_late", "request", "stream_complete",
+        ])
+        self.assertEqual(receipts[1].category, "incomplete")
+        self.assertEqual(receipts[2].category, "incomplete")
+
+    async def test_public_transports_keep_completed_then_late_inherited_occurrences(self):
+        for action in ("create", "send"):
+            with self.subTest(action=action):
+                receipts, seen, wire, ready = [], [], ProjectWire(), asyncio.Event()
+
+                def handle(request):
+                    seen.append(request)
+                    return httpx2.Response(200, stream=RawBytes(json.dumps({
+                        "id": "resp_synthetic", "object": "response", "created_at": 1,
+                        "model": "", "status": "completed", "output": [],
+                    }).encode()))
+
+                async with httpx2.AsyncClient(transport=OriginTransport(
+                        httpx2.MockTransport(handle))) as http:
+                    async with ProjectClient(credential(), http, {}, transport=wire) as project:
+                        client = project.get_openai_client(agent_name=AGENTS["architect"])
+
+                        async def send():
+                            if action == "create":
+                                await RemoteAgents(project, {}).create(child())
+                            else:
+                                await client.responses.create(input="private-input")
+
+                        async def late():
+                            await ready.wait()
+                            await send()
+
+                        with e.private_sink(receipts.append):
+                            with e.dispatch(binding(action)) as window:
+                                await send()
+                                task = asyncio.create_task(late())
+                            self.assertTrue(window.capture_complete)
+                            closed = next(r for r in receipts if r.phase == "window_closed")
+                            self.assertIsNone(closed.category)
+                            # A different caller context must not rebind the
+                            # inherited task or absorb its late occurrence.
+                            with e.dispatch(binding(action, operation="unrelated")) as other:
+                                ready.set()
+                                await task
+                            self.assertEqual(other.requests, 0)
+                            self.assertFalse(window.capture_complete)
+
+                self.assertEqual(len(wire.requests if action == "create" else seen), 2)
+                self.assertEqual((window.requests, window.pending), (2, 0))
+                self.assertTrue(window.truncated)
+                requests = [r for r in receipts if r.phase == "request"]
+                self.assertEqual(len(requests), 2)
+                self.assertEqual(len({r.occurrence for r in requests}), 2)
+                self.assertTrue(all(r.binding == binding(action) for r in requests))
+                late_marker, = [r for r in receipts if r.phase == "request_late"]
+                self.assertEqual(late_marker.occurrence, requests[1].occurrence)
+                self.assertEqual(late_marker.category, "incomplete")
+                self.assertLess(receipts.index(closed), receipts.index(late_marker))
+                terminals = [r for r in receipts if r.phase == (
+                    "headers" if action == "create" else "stream_complete")]
+                self.assertEqual([r.occurrence for r in terminals],
+                                 [r.occurrence for r in requests])
+                self.assertNotIn("private-input", repr(receipts))
 
     async def test_actual_openai_concurrent_and_duplicate_sends_keep_all_occurrences(self):
         receipts, seen = [], []

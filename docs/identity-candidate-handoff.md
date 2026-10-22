@@ -1,4 +1,274 @@
-# RP-S1-ID-HANDOFF: offline identity candidates, live selection unresolved
+# Identity evidence handoff: prospective profiling and retained candidate history
+
+## IP-S2 prospective diagnostic evidence overlay — October 22, 2026
+
+**Preparation only: NOT SENT, NOT LIVE-READY, no identity remedy selected.**
+Developer task `IP-S2-DIAGNOSTIC-EVIDENCE` owns this overlay, not publication,
+live diagnosis or formal E2E. The RP-S1 content below is unchanged history;
+its A/B trial suggestions, historical permissions and finite sequence are
+not the current execution plan. Current authority prohibits new RBAC or
+infrastructure changes and replay of held/UNKNOWN operations.
+This checklist introduces no extra publication approval gate.
+
+### Applicable source and original decisions
+
+Read against application runtime/test baseline
+`c52786b7dd1595f3048a78061f893dc79635069f`, SprintArchitecture
+`833b4ad90a8429cc6b1453abf5ece22eb54c51d1` and SprintDesign
+`6aaf96018ab5c5f2b7ab8a74eceaf1fc09638ab5`, on
+`feature/customer-hosted-session-prototype`. The changed release pair names
+selected-lab `9b4919d8bcdbf07203f32657936c27328ea6ccc1`; this is not a
+deployed package/version claim. The separate JOIN-HANDOFF task and original
+same-sprint E2E own its exact-byte/loaded-root reconciliation.
+
+Opened current architecture/design audits
+`26adb308b85ae4732ca698f4dcdd8985c3c1096516154c481dad23e63ee9282f.json` and
+`12edb53e8280ea614239d71ecd83c7e33a4a0d6628981387dc54014cb181cc6f.json`
+under `gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/`:
+both record `agreed`, all original
+reviewers `agree:true`, `taskComplete:true`, no unmet criteria. These votes
+accept those bounded documents, not this overlay or cloud execution.
+Use the [current sprint architecture](customer-prototype-sprint-architecture.md#current-ip-s2-exact-changed-join-guarded-publication-and-live-localization),
+[Screen F/G design](customer-prototype-sprint-design.md#screen-fg-reading-order-and-state-layout)
+and [finalized coverage](identity-profiling-coverage.md#ip-s1-integration-join).
+
+Apply the provenance-qualified decisions at
+`yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop`:
+`RELEASE-CHANGED-JOIN-HANDOFF` retains original E2E before DevOps;
+`RELEASE-COMMON-PACKAGE-PUBLICATION` requires the new common package and all
+three role bindings; `RELEASE-LIVE-ACCEPTANCE` retains real cloud acceptance.
+At `yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop`,
+`SDK-CREDENTIAL-TIMEOUT-PRESERVATION` and `SDK-TIMEOUT-REGRESSION-EVIDENCE`
+remain within their accepted SDK source/test boundary. No task is reopened
+and no criterion is waived here. Historical COMMON rollback ZIP/build
+provenance remains **WAIVED, never PASS**.
+
+### Private pre-send checklist — original DevOps must populate, not this task
+
+Keep actual values and receipts exclusively in new private execution evidence,
+outside public Git. Every field below is prospective/unpopulated here:
+
+1. **Intent before effect:** record a distinct new diagnostic operation identity,
+   timestamp, synthetic purpose, intended parent creation and remote specialist
+   collaboration, expected writes/sends, owning run and execution owner.
+   Distinguish this intent identity from the application's subsequently derived
+   `operation_id(scope, response_id, step)` and each write-ahead effect.
+   Do not reserve or reuse the historical held parent's identity/session file.
+   List protected held/UNKNOWN operations privately, without resending them.
+2. **Exact release bindings:** actual reviewed application/lab source pair and
+   accepted changed-join E2E reference; common package content hash/identity,
+   dependency/hosting gates, and separate coordinator/architect/reviewer active
+   version and package readbacks. All three must bind the same new package.
+   Planning commits, local hashes and declared versions are not publication.
+3. **Current-effect readiness:** retained authorized release/connectivity route,
+   trusted-host evidence, dedicated nonproduction authentication/context and
+   current operation/effect reconciliation receipts. Preserve existing safety
+   budgets. Verify no unresolved effect is being retried; do not treat the
+   rollback waiver as current source/package/trust/effect readiness.
+   Missing accepted changed-join evidence blocks dependent effects only.
+4. **Capture plan:** source/version-labeled private streams, exact new parent and
+   both child response/session associations when available, bounded diagnostic
+   events and existing acceptance captures. Mark historical/local/new-live
+   evidence separately. Record log time/byte truncation and unavailable joins;
+   `emit()` success is not durable delivery. Do not enable raw SDK debug logging
+   to obtain complete headers, token/credential responses, bodies or settings.
+5. **Owned effects and cleanup:** before launch record baseline listener/process
+   ownership and any newly created process PID, start identity, parent/run,
+   command purpose and listener endpoint privately. Track handles/resources
+   created by this operation, including retained tooling's temporary resources.
+   On exit use supported scoped cleanup of attributable newly owned resources;
+   confirm the exact process/listener is gone and preserve receipts. Never kill
+   by name or remove another owner's listener. Classify cleanup as confirmed,
+   incomplete or not applicable; stop invoking if ownership/effects are uncertain.
+   A preexisting tunnel is not newly owned merely because this diagnostic used it.
+
+Only original DevOps, after accepted gates and actual readiness, records intent
+and sends necessary new synthetic traffic. This document creates no operation,
+readiness receipt, process or listener.
+
+### Screen F: observable intervals and association limits
+
+`demo/diagnostics.py` defines schema version 1 and bounded `Event`,
+`Observation`, `Binding`, `Coverage`, `Presence`, `Match` and `event_fields`.
+Record coverage independently from presence: `observed` can be `absent`,
+`empty`, `nonempty` or `malformed/duplicate`. `unavailable` and `not reached`
+have no presence value; an omitted slot is not an absent identity.
+Missing logs alone cannot prove a checkpoint was not reached: distinguish
+supported control-flow evidence from capture loss/unavailable coverage.
+`compare_values(..., same_representation=True)` reports true/false only for
+nonempty valid exact builtins of the same type; otherwise `not-comparable`.
+Never compare public delegation with platform identity as interchangeable values.
+
+| Interval / source hook | Actual observable evidence | Association and unavailable observations |
+| --- | --- | --- |
+| Coordinator trusted preparation/resources: `demo/workflow.py:create_workflow`, `parse_turn`, `WorkflowRuntime.resources`; `demo/host.py:context_checkpoint`, `execution_checkpoint` | Scope and `get_request_context()` user presence, call presence and safe scope/request equality at preparation, request/background and executor/resource entry. | Hooks observe, never populate identity or authorize a request. Recovery can skip parser; executor/resource hooks still observe. No request object means scope user unavailable. Missing/empty trusted context may reject before public hooks. |
+| Actual outbound: `demo/foundry.py:OriginTransport.handle_async_request`, `_observation`, `_ObservedStream` | Final HTTP header presence for delegation, platform user and call; bounded role/method/route/status/timing/category, send/headers/error/cancel/stream-complete/stream-closed. | One local observation alias pairs a send with its response/stream events. Role is the emitting process role, not necessarily the specialist destination. Exact endpoint is intentionally reduced to a route template. Neither header presence nor response status identifies the bearer principal. |
+| Platform interval between actual outbound and container ingress | No application-controlled platform identity resolver checkpoint. | **Unavailable** authenticated outbound principal, effective impersonation resolution and platform mapping. Missing `x-ms-user-identity` at ingress alone proves neither translation nor loss; platform-delivered `x-agent-user-id` is a separate observation. |
+| Raw receiving host: `demo/host.py:IngressDiagnostics`, public `add_middleware()` before `run()` | Case-insensitive raw multivalue header presence before SDK parsing; ingress send/response-headers/final-body/disconnect/error/cancel. Receive/send bodies and authorization are unchanged. | New request-local observation alias is not a wire trace or response ID. Inherited context can pair reachable in-process checkpoints with this alias; it does not itself connect caller and callee. ASGI final body can precede resilient background work. |
+| Pinned SDK preparation/options/parser/execution: `prepare_diagnostic_options`, `WorkflowPreparationDiagnostics`, workflow hooks above | `background` stage means the request's background option at the hook, not proof that HTTP already exited. Exact pinned preparation rejection yields `execution_rejected` with request-context presence; scope may remain unavailable. | `NATIVE_HOST_PRINCIPAL` identifies a missing resolved trusted context at that boundary, not its upstream cause. Pinned endpoint normalizes empty user to absent in ambient context. Background tasks inherit immutable local aliases in tested paths; crash reconstruction may have no original alias or raw ingress. |
+| Other SDK HTTP: `demo/artifact_store.py:SDKDiagnosticsPolicy`, supported Blob transport and credential options; `demo/foundry.py:ProjectClient` | Bounded session/storage/credential events through the accepted supported seams, separately from httpx2. | Credential raw hooks do not observe transport errors/cancellation/cache hits; untested branches stay unverified. SDK-owned history/session/checkpoint/workflow-binding/response-store HTTP and CLI internals remain outside coverage. See coverage matrix, not a universal interceptor claim. |
+
+**Private association procedure and hard limit:** retain the outbound fixed
+`Diagnostic response_alias=... Native outbound context response_binding=...`
+record with its local lifecycle events. `WorkflowRuntime.resources` supplies
+its current **parent execution response** to the transport; the retained
+response binding is a digest of that response ID, not an identity hash.
+`live_acceptance.py:outbound_identity` verifies that exact response digest and
+role/presence booleans. Its parser does not expose the new local alias.
+This binds caller observations to an execution response, not automatically
+to an individual specialist operation or the specialist response.
+
+On the receiver, `ingress_identity` recognizes only the pinned SDK's
+`Creating response <exact response ID>` flags. Those are SDK context flags,
+not raw-ASGI header presence. Pair an inherited raw-ingress alias with
+reachable context events only where actually present; use private known
+response/child/journal records for the separate response association.
+The current code supplies **no guaranteed exact raw-ASGI-alias to SDK-response
+or cross-container wire join**. Operation/response aliases are optional local
+UUID aliases, not actual journal IDs; their type alone establishes no join.
+Do not fill gaps using timestamps, role order, formatted IDs, identity values
+or hashes. Any allowlisted external request/trace metadata must have observed,
+supported provenance; this event schema does not promise a gateway trace ID.
+
+`observe_host_failure` extracts only the retained fixed failure, storage-code,
+ingress and outbound records. It does **not** collect/project the new structured
+event schema into an acceptance report. Original DevOps may retain available
+bounded private log records using the authorized route, without changing
+machine stdout or inventing an aggregator. Unsupported associations remain
+explicitly unavailable. If a stronger association becomes essential, return
+the concrete missing criterion to existing Architect/Scrum coordination,
+not speculative runtime instrumentation in this documentation task.
+
+### Screen G: milestones are not execution acceptance
+
+| Milestone | Existing source/assertions to consume | What it cannot establish |
+| --- | --- | --- |
+| Request send | OriginTransport `send`; private write-ahead prepared/dispatched effect plus independently observed boundary sends/creations | Intent is not an observed send; a send is not a response or accepted effect. |
+| HTTP headers | `response_headers`, HTTP status and exact source/version capture | HTTP 2xx is not a completed specialist or successful turn. |
+| Stream/ASGI outcome | `_ObservedStream` outcomes, ASGI final body/disconnect/cancel; retained host and transport tests | Exhaustion/close/final-body is not accepted collaboration, even if an SDK envelope says completed. Enumerated `execution_complete` is not a guaranteed emitted completion hook. |
+| Actual non-held initial outcome | `live_acceptance.py:events`, `validate_artifact_evidence`, `validate_exercised_versions`, `_evidence_turn`, and `run` | Validators check supplied records, not their live origin, transport authentication, private Blob network provenance or cleanup. Independently attributable captures remain necessary. |
+
+For G1-G4, original DevOps must provide final-package proof for all three roles,
+genuine Decision-1 choices after deterministic gates, remote architect then
+reviewer, and managed-identity/private Blob provenance. Existing assertions
+require matching parent scope/hosted and framework session, coordinator version,
+active response and manifest `ACCEPTED_ADVISORY`, no pending/unreconciled effect,
+and both distinct bound specialist sessions/framework IDs/versions.
+Requirements/candidate/review must match current manifest refs, accepted
+producer role/name/session/version/response and content. Reviewer inputs must
+be the exact current requirements and candidate refs, not an earlier candidate.
+Decision refs/content/producers and prerequisite scopes must also agree.
+
+`_evidence_turn` additionally checks immutable operation transitions, prepared
+intent, dispatched create/call, accepted effects, exactly two child creations,
+unique responses, independently captured send/create counts and delegation to
+operation/output-response association. A held parent, `SPECIALIST_INCOMPLETE`,
+unknown effect or merely plausible useful prose is not this handoff.
+Retain private capture provenance and attribution; do not paste real bindings
+or private logs into this document.
+
+### Supported-remedy decision and private external handoff
+
+State the last attributable successful boundary, first failed/missing boundary,
+coverage gaps and alternative explanations separately. Evidence of outbound
+presence plus missing resolved scope only localizes the **observable interval**;
+it proves neither missing RBAC nor a platform defect or caller principal.
+Do not substitute a header, call ID or arbitrary inbound identity, remove
+`Assignment.validate_receiver` equality, or suppress an existing rejection.
+
+A supported source/configuration remedy needs actual attributable observations,
+matching pinned SDK/public contract, exact affected factory/configuration owner
+and a regression that reproduces the demonstrated defect. Existing
+Architect/Scrum roles route any material contract/scope decision with
+Architect-advised Product Owner; scoped supported corrections receive original
+review, affected checks and a new exact common package before live reassessment.
+No live defect or remedy is established by this preparation.
+
+If the unresolved interval genuinely needs platform tracing, prepare privately:
+new diagnostic intent/effect and package/three-version receipt references;
+minimal exact caller/receiver response associations and available allowlisted
+request IDs; last/first observable boundaries with coverage/truncation labels;
+the pinned SDK/header contract and precise unresolved question (authenticated
+caller principal and platform delegation resolution for that new request).
+Exclude bearer tokens, identity values/hashes, credential responses, bodies,
+complete headers and private settings. Keep source records private, do not
+submit/upload logs or open a provider case. External tracing/access requiring
+new authority is a bounded external handoff, not permission to replay.
+Continue independent approved construction through existing planning.
+
+### Smallest IP-S3 handoffs and retained offline evidence
+
+- **Follow-up:** needs a completed non-held initial parent, both child bindings,
+  final package/versions and accepted artifacts. `_evidence_continuation`
+  checks same scope/parent/framework/both children/pinned versions, fresh parent
+  response and child calls, advanced turn/generation, unchanged prior journal,
+  no extra creations and updated requirements/current approvals.
+- **Once-only supported stop/resume:** execution consumes that completed chain
+  (the retained full scenario uses initial then follow-up), idle/no-pending
+  effect and exact coordinator target. `stop_hosting_for_acceptance` plus
+  `validate_scenario_evidence` require confirmed 204/idle/new stopped timestamp,
+  exactly one observed stop POST and scoped retained/advancing MAF checkpoints.
+  Restarted terminal alone is not stopped/recovered hosting. Prepare comparisons
+  offline now; do not execute stop or resume in this task.
+- **Separate-parent isolation:** independent of recovery success; can prepare
+  and schedule against final deployment and an actual comparison parent scope,
+  both-child/version/artifact/effect evidence. `_evidence_turn` validates its
+  standalone accepted turn; the full `validate_scenario_evidence` additionally
+  compares the completed chain for distinct parent/child/framework/prefix/effect
+  identities, no leaked requirements/content and no release drift. Its combined
+  signature requires all four captures; do not call that a standalone live
+  isolation pass or fabricate missing recovery captures to satisfy it.
+- **Known-response recovery:** exact retrieval only; it is neither a new
+  invocation nor another POST/create. Preserve all historical held operations
+  and uncertain sends. Never clear pending state to manufacture a new send.
+
+Source-bound retained fixtures include
+`tests/test_host_diagnostics.py` (actual pinned resilient nonstream after HTTP
+exit, missing/empty principal rejection before hooks, stream disconnect,
+cancellation and failed sink);
+`tests/test_transport_diagnostics.py` (final-header, stream and recovery);
+`tests/test_scenario_evidence.py` (actual offline graph, identities/versions,
+extra creations/duplicate sends/unreconciled effects, exact reviewer inputs,
+stale approval, once-only stop/checkpoints, isolation/content/release drift).
+These are synthetic regression evidence, never deployed observations.
+
+Original Architect/Critic review this overlay. Original DevOps receives only
+this prospective checklist after its actual release prerequisites; original
+IP-S3 planning receives only the completed-parent/final-binding dependencies
+above. No UI/schema/CLI/service, settings, dependencies, live invocation,
+publication, stop/resume or cleanup action is added here. Machine stdout and
+private stderr evidence boundaries remain unchanged. Original AC1-AC9/G1-G8,
+live attribution, cleanup, review/retro and release closeout stay incomplete.
+
+### Developer verification for this overlay
+
+Executed from the application root using the existing absolute Python
+`<linked-lab-root>/.venv/Scripts/python.exe` and explicit
+`-LabRepositoryRoot <selected-feature-lab-root>`:
+
+- `./Test-Demo.ps1 -Python <absolute-python> -LabRepositoryRoot <explicit-root>`:
+  exit 0, **278 tests PASS in 41.222 seconds**, dependency check and compilation
+  passed. These rerun synthetic application checks support source references,
+  not formal changed-join E2E or a new Linux/cloud result.
+- `./scripts/Test-Repository.ps1 -Python <absolute-python>`: exit 0,
+  current index, **113 public files**, public/private boundary, JSON, PowerShell,
+  frontmatter and whitespace passed. The pre-existing unowned specification
+  inventory overlay was present; this is not clean-checkout certification.
+- Direct assertions passed: the retained historical body is unchanged, overlay
+  local links/anchors resolve, and cited application runtime/tests still match
+  `c52786b7`. During final checking one repository run stopped at
+  `REPOSITORY_INDEX_STALE` while the shared checkout advanced to concurrent
+  JOIN-HANDOFF commit `8b6092a5b6dc228e51245990043f2382b4f26984`. A subsequent
+  read-only comparison found actual/expected index identical; rerunning the
+  normal repository entry point passed without editing the index. The transient
+  mismatch's exact cause was not established; no failure is converted to PASS.
+
+No runtime/test/lab paths were edited. No new path or architecture change
+requires an index refresh; preserve the unrelated index/specification overlay.
+No dependency installation, authentication, settings import or network/cloud
+execution was needed. Original reviewers still assess this deliverable.
+
+## Retained RP-S1-ID-HANDOFF: offline identity candidates, live selection unresolved
 
 ## Boundary and result
 

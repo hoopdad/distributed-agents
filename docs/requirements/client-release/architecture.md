@@ -1,5 +1,38 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current IP-S1: exact profiling-source handoff, unchanged customer output
+
+Apply the [IP-S1 sprint architecture](../../customer-prototype-sprint-architecture.md#ip-s1-paired-transport-ingress-and-sdk-context-construction-october-21-2026)
+and [current SprintDesign](../../customer-prototype-sprint-design.md#current-ip-s1-paired-diagnostic-evidence-unchanged-customer-screens-october-21-2026).
+These supersede dated execution-only/rollback-investigation directions below
+within this correction. Historical COMMON rollback provenance is WAIVED,
+never PASS; source/package/version/trusted-host/current-effect checks remain.
+Routine authorized checks need no new manual sign-off; actual denial is binding.
+
+Canonical Terminal client / Guarded lab release toolchain / `release-join`
+receives reviewed profiling source, shared event contract, factory/hook coverage
+matrix, gaps and test provenance. If a helper module is added, verify actual
+package closure in `package_guard.py` and retained tooling; do not presume a
+tooling edit. Original E2E runs `Test-Demo.ps1` with existing absolute Python
+and explicit selected lab root, plus `scripts/Test-Repository.ps1`. Changed lab
+tooling requires retained regressions. Original DevOps retains actual Linux/
+hosting/package gates, one serialized publisher and all-three-role new common
+package/source/version proof. No unchanged redeployment for activity.
+
+Keep `demo/terminal.py` stdout/parser/exit and opt-in human stderr unchanged;
+private diagnostics do not become customer output or a new dashboard. Screen F
+labels observed/unavailable/not-reached, evidence level and milestone separately.
+No diagnostic success or HTTP/SDK envelope certifies completed execution.
+Before necessary new traffic, original DevOps persists distinct synthetic
+operation identity, purpose, effect intent, bindings and owned cleanup privately;
+never resend the held original or call retrieval a new send.
+
+Independent inventory/fixtures, package closure and approved later offline
+acceptance preparation continue despite a missing live observation. G1-G8 and
+AC1-AC9, original review/retro/closeout, reviewed exact-ref delivery and cleanup
+remain unmet until actual evidence closes them; this architecture asserts no
+new deployment or live acceptance.
+
 ## Accepted customer-status delivery after continuation 1
 
 The [second architecture amendment](../../customer-prototype-repaired-join-continuation-2-architecture.json)

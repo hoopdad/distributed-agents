@@ -1,5 +1,35 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current IP-S1: paired raw ingress and reachable specialist context
+
+Apply the [IP-S1 sprint architecture](../../customer-prototype-sprint-architecture.md#ip-s1-paired-transport-ingress-and-sdk-context-construction-october-21-2026).
+It supersedes this invocation's dated no-construction/rollback directions below,
+not accepted history fixtures or unmet live criteria. COMMON rollback provenance
+is WAIVED; automated current bindings and next-operation readiness remain.
+
+Keep canonical Hosted architect, Hosted reviewer and shared identity/state/
+artifact components. For `collaboration-design/review`, `continuity-invoke`,
+`recovery-resume` and `isolation-execute`, Developer adds `demo/host.py`
+pure-ASGI middleware through public add_middleware before run and safe
+`demo/workflow.py` preparation/request/background checkpoints. Retain existing
+WorkflowPreparationDiagnostics early rejection codes; a hook not reached is a
+gap, not an absent user. Test actual pinned resilient background behavior.
+
+Inspect raw header presence/casing/duplicates without copying headers to trusted
+context. The SDK parser consumes x-agent-user-id; public delegation header
+absence at ingress alone proves neither loss nor platform translation. Pair
+only attributable safe observations, never identities/hashes/bodies or timing
+alone. Preserve receive/send, streaming, disconnect/cancellation, remote model
+history, pins, exact prerequisites and immutable outputs. No fourth role or
+hidden local specialist. Diagnostics cannot authorize work or suppress rejection.
+
+Reviewed coverage/negative/stream/context fixtures hand off independently of
+new live traffic. Actual trusted architect-before-reviewer collaboration,
+both-child same-parent continuity, once-only recovery and separate-parent scope
+still require final-package live evidence through original E2E/DevOps/reviews.
+The original held parent and unknown effects are not retried. No supported
+identity remedy or RBAC/platform cause is established by this refinement.
+
 ## Current remaining execution: retained history, actual remote proof outstanding
 
 Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#repaired-join-remaining-execution-original-execution-of-the-accepted-repair).

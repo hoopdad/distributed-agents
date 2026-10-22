@@ -1,5 +1,34 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current IP-S1: coordinator transport and request-context diagnostics
+
+Apply the [IP-S1 sprint architecture](../../customer-prototype-sprint-architecture.md#ip-s1-paired-transport-ingress-and-sdk-context-construction-october-21-2026)
+and accepted [identity-profiling Architecture](../../customer-prototype-architecture.md#identity-profiling-correction-architecture-october-21-2026).
+They govern this correction over historical no-construction/denial/rollback
+instructions below. COMMON rollback provenance is WAIVED; current effect,
+source/package/version/trusted-host gates remain required.
+
+Keep canonical Hosted coordinator, Trusted identity and private transport,
+Decision-1 routing and admission, Parent and specialist conversation state,
+MAF workflow checkpoints and Private Blob artifacts and effect journal.
+For `collaboration-bind/route/design/review/return`, `continuity-invoke` and
+`recovery-resume`, Developer extends `demo/foundry.py` OriginTransport and
+ProjectClient coverage; `demo/workflow.py` preparation/parse/executor/resource
+checkpoints; and `demo/artifact_store.py` supported policy hooks. Shared
+diagnostic events follow the sprint contract; actual SDK-owned checkpoint,
+session/history/response and credential gaps are explicit, not claimed covered.
+
+Missing/empty/nonempty presence and same-format equality never grant identity.
+Retain deterministic gates before Decision-1, trusted parent/assignment checks,
+immutable outputs, ETag/fencing, checkpoint recovery and write-ahead UNKNOWN
+holds. Use reachable pinned request/background hooks; preserve early rejection,
+streaming/cancellation and known-response-only retrieval without another send.
+Transport/SDK inventory and isolation/redaction fixtures need no live parent.
+Reviewed source, coverage and actual checks go to original E2E/DevOps; nothing
+here proves a newly deployed or completed non-held initial turn. The historical
+held parent remains preserved, and actual follow-up/recovery/isolation gates
+are unchanged. No speculative identity correction or permission mutation.
+
 ## Current remaining execution: retain coordinator contracts and actual gates
 
 Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#repaired-join-remaining-execution-original-execution-of-the-accepted-repair).

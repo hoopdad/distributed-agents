@@ -1,5 +1,13 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Permission-recovery continuation 1
+
+Consume the [bounded continuation amendment](../../customer-prototype-permission-recovery-continuation-1-architecture.json).
+Canonical remote specialist and trusted identity contracts are unchanged.
+Supported context diagnostics cannot attest the platform caller/resolution;
+no new evidence-supported source repair is established. Preserve fail-closed
+identity checks, held parents and UNKNOWN effects; live criteria remain unmet.
+
 ## Current IP-S3: retain remote trust and explicit missing evidence
 
 Consume the [current IP-S3 disposition](../../customer-prototype-sprint-architecture.md#current-ip-s3-comparison-and-hosted-capture-disposition).

@@ -1,5 +1,23 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Permission-recovery continuation 1: bounded current construction assessment
+
+The separate [continuation amendment](customer-prototype-permission-recovery-continuation-1-architecture.json)
+maps the approved IP-S1/IP-S2/IP-S3 criteria to retained source, missing handoffs
+and independently executable boundaries. It incorporates the canonical
+solutionModel unchanged. No new task or exact-stage resume is established:
+the readable-script correction has already been consumed by later DevOps,
+while current caller attestation, completed comparison and hosted capture
+ownership remain unavailable in accepted handoffs. This is bounded construction
+exhaustion for the inspected queue, not release acceptance or a fresh denial.
+Original Scrum Master and reviewers assess the amendment; only concrete changed
+evidence or an Architect-advised Product Owner contract decision unlocks new
+work. Isolation is independent of recovery success, not of its own readiness.
+Retain required dispositions at their exact original references, satisfied
+unchanged publication, partial sprints and incomplete cloud verification.
+Held/UNKNOWN effects remain unchanged; rollback provenance remains WAIVED.
+No new runtime execution or live evidence is claimed.
+
 ## Current IP-S3: comparison and hosted capture disposition
 
 October 22, 2026. Receiving architecture decision for the two handoffs in

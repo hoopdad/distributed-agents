@@ -1,0 +1,120 @@
+{
+  "kind": "SprintArchitectureContinuation",
+  "sprintId": "IP-S1",
+  "round": 1,
+  "owner": "Architect",
+  "scope": "Bounded assessment of the current permission-recovery continuation, not the earlier unchanged permission denial and not release acceptance.",
+  "inspectedHead": "166fac6ebc491a46b6c812da821a314a5dcde318",
+  "featureBranch": "feature/customer-hosted-session-prototype",
+  "solutionModel": {
+    "path": "docs/customer-prototype-architecture.md#solutionmodel",
+    "disposition": "Incorporate the accepted canonical components, supports, triggers and steps unchanged. No new resource, interface or trust contract.",
+    "tierFiles": [
+      "docs/requirements/client-release/architecture.md",
+      "docs/requirements/coordinator/architecture.md",
+      "docs/requirements/specialists/architecture.md"
+    ]
+  },
+  "audits": {
+    "root": "gh-dynamic-workflows/.delivery-runs/c40bef06-de14-4df7-865f-4d4dfb8815a9/context/",
+    "blockedDevOps": "737b7366fc475690a04e6cc625e32ae572d089217605d26a9a5d154e1053fa0f.json",
+    "acceptedArchitecture": "89c54e761e65e3d78beb896237dc25de10734fe46692d39eb71cedf96da0555d.json",
+    "acceptedLaterPlan": "a288c9516d82d01c6d8ed6a019c6b49fd7883a4ab5639e2e680680822a327765.json",
+    "laterDevOps": "17ac2d78fd8c40ac2f03b86ac92dfa38846f1bedc1cdc20e807a7872d50ad35d.json",
+    "inspection": "Opened original outcomes, reviewer votes and final governance instructions. Architecture votes are complete; DevOps votes agree with incomplete cloud delivery, not task completion."
+  },
+  "readiness": [
+    {
+      "sourceSprintId": "IP-S1",
+      "sourceCriterion": "ReleasePlan acceptanceCriteria[0-3]; profiling acceptance 1-3; AC7/AC8",
+      "components": ["Guarded lab release toolchain", "Trusted identity and private transport"],
+      "steps": ["release-join", "release-package"],
+      "modules": ["Test-Demo.ps1", "scripts/Test-Repository.ps1", "tests/test_workflow.py"],
+      "finding": "Accepted qualification and skill delivery are retained. Direct Git comparisons show hosted runtime unchanged from f9fcd9cf and tests/scripts/live reader inputs unchanged from 622c1607. Selected lab is clean at ceaba6ee. No new correction or qualification task is established.",
+      "state": "Retained local qualification; no new test execution."
+    },
+    {
+      "sourceSprintId": "IP-S2",
+      "sourceCriterion": "ReleasePlan acceptanceCriteria[0-3]; profiling acceptance 4-5",
+      "components": ["Guarded lab release toolchain"],
+      "steps": ["release-package", "release-discriminate"],
+      "modules": ["package_guard.py", "docs/customer-prototype-release-notes.md"],
+      "finding": "The readable-script permission change has already been consumed by subsequent original DevOps work. Later inspected outcomes retain common package/publication satisfaction, versions 19/17/25. This is not newly obtained readiness evidence and cannot justify another publisher or a resume of the current blocker.",
+      "state": "Retained deployed publication evidence; not fresh service verification."
+    },
+    {
+      "sourceSprintId": "IP-S2",
+      "sourceCriterion": "ReleasePlan acceptanceCriteria[4-6]; profiling acceptance 6; AC1/AC5/AC7",
+      "components": ["Trusted identity and private transport", "Hosted coordinator", "Hosted architect", "Hosted reviewer"],
+      "steps": ["collaboration-design", "collaboration-review", "release-discriminate"],
+      "modules": ["demo/host.py", "demo/foundry.py", "demo/workflow.py"],
+      "finding": "Accepted attestation design documents the unavailable request-correlated authenticated caller/resolution seam and private UNSENT handoff. Inspected host hooks observe context without resolving opaque platform identity. No supported source repair or new authoritative evidence is supplied. Another credential fixture, log read, SDK upgrade or identity echo would not close this gap.",
+      "closingHandoff": "Authoritative current-pair request correlation, effective authenticated caller and delegation/resolution outcome, or a demonstrated supported source defect. Keep external submission excluded.",
+      "state": "Diagnostics implemented/local-qualified and published; independent platform identity verification absent."
+    },
+    {
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "ReleasePlan acceptanceCriteria[0-1]; AC2/G5 and AC4/G6",
+      "components": ["Parent and specialist conversation state", "MAF workflow checkpoints", "Private Blob artifacts and effect journal"],
+      "steps": ["continuity-revise", "continuity-invoke", "continuity-verify", "recovery-stop", "recovery-resume", "recovery-verify"],
+      "modules": ["demo/workflow.py", "demo/foundry.py", "live_acceptance.py"],
+      "finding": "Continuity construction and supported recovery contracts are retained. A completed non-held initial parent is absent; recovery additionally needs genuine two-turn proof and once-only stop readiness. Accepted typed/history negative findings are not new investigations. Fixtures cannot manufacture live prerequisites.",
+      "closingHandoff": "Completed initial collaboration to original continuity execution; genuine two-turn and durable stop readiness to original recovery execution.",
+      "state": "Implemented/offline-qualified within retained limits; live criteria incomplete."
+    },
+    {
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "ReleasePlan acceptanceCriteria[2]; AC4/G7",
+      "components": ["Parent and specialist conversation state", "Private Blob artifacts and effect journal"],
+      "steps": ["isolation-bind", "isolation-execute", "isolation-verify"],
+      "modules": ["live_acceptance.py", "scenario_state_reader.py", "demo/effect_observation.py", "demo/private_effect_capture.py", "demo/host.py"],
+      "finding": "Independent isolated scenario execution exists. Inspected private_sink and PrivateEffectCapture require a caller-owned context, exclusive handle, trusted expected bindings, independent anchors and quiescence; host construction does not install them. Accepted current-readiness assessment supplies neither completed comparison nor hosted capture ownership. Another adapter cannot establish these inputs. Successful recovery and a platform attestation answer are not isolation prerequisites.",
+      "closingHandoff": "Exact authorized completed comparison scope plus supported existing hosted private capture destination, responsible owner, installation/lifetime, trusted bindings, independent anchors, quiescence and readback/cleanup ownership. A new destination/lifecycle/trust proposal requires Architect-advised Product Owner scope resolution, not automatic implementation.",
+      "state": "Source and fixtures retained; hosted installation/provenance and actual isolation absent."
+    },
+    {
+      "sourceSprintId": "IP-S3",
+      "sourceCriterion": "ReleasePlan acceptanceCriteria[3-5]; AC3/AC6/AC7/AC8/AC9/G8",
+      "components": ["Terminal client", "Guarded lab release toolchain"],
+      "steps": ["release-close"],
+      "modules": ["README.md", "docs/customer-prototype-release-notes.md", "docs/identity-scenario-collection-qualification.md"],
+      "finding": "Accepted terminal/fixture/source-delivery work is retained. No new executable closeout or source integration correction is demonstrated. Final review, retro, reproducibility, delivery and attributable cleanup must consume actual final evidence; inaccurate historical status is not live acceptance.",
+      "state": "Partial; original later closeout ownership retained."
+    }
+  ],
+  "SprintPlan": {
+    "tasks": [],
+    "reason": "No unperformed supported construction slice or independent approved assignment is established by the inspected current all-sprint backlog and accepted handoffs. Preserve original plans; Scrum Master retains decomposition and Git reconciliation."
+  },
+  "Continuation": {
+    "disposition": "exhausted",
+    "summary": "Bounded current construction queue is exhausted, not the product accepted. The newly corrected invocation condition was already consumed; current blockers require different concrete evidence or a scoped material contract decision. Do not replay earlier denial, accepted negative research, unchanged publication or uncertain effects.",
+    "evidence": [
+      "Current blocked IP-S1 DevOps outcome identifies unproven hosted principal after accepted credential-fixture correction; no runtime change is demonstrated.",
+      "Accepted IP-S3 architecture and plan identify missing comparison/capture inputs rather than missing implementation; current source confirms the caller-owned contracts.",
+      "All approved IP-S1/IP-S2/IP-S3 criteria are mapped above, including independent isolation and later closeout. No new ready task or bounded unperformed technical hypothesis is established.",
+      "No new authoritative changed handoff exists to resume the exact current blocked stage. Earlier permission correction and publication are already consumed, not new evidence."
+    ],
+    "resumes": []
+  },
+  "priorDispositions": [
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"release-current-common-package\"]",
+      "application": "Required, not waived; retain satisfaction explicitly recorded in later accepted architecture/reviews and DevOps outcomes. No unchanged repackaging."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"release-guarded-publication\"]",
+      "application": "Required, not waived; retain the same inspected satisfaction. No unchanged publisher replay."
+    },
+    {
+      "reference": "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"release-cloud-verification\"]",
+      "application": "Required and incomplete. No disposition is superseded by bounded exhaustion."
+    }
+  ],
+  "verification": {
+    "performed": "Read-only source, original votes/governance and Git applicability inspection; amendment JSON/model/source-reference assertions and owned whitespace checks.",
+    "notPerformed": "No runtime suite, native authentication, service readback, package, publisher, new inference, stop, capture activation or external submission. Previously denied full repository check is not retried.",
+    "ownership": "Preserve unowned index and specification overlays. No branch switch, push, integration or abandoned task branch."
+  },
+  "preservation": "All three sprints remain partial and AC1-AC9/G1-G8 remain binding. Original owners/reviewers assess this bounded amendment. Held/UNKNOWN effects and historical seals stay unchanged; COMMON rollback provenance remains WAIVED, never PASS."
+}

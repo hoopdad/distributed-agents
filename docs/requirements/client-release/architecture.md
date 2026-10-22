@@ -1,5 +1,13 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Permission-recovery continuation 1
+
+Consume the [bounded continuation amendment](../../customer-prototype-permission-recovery-continuation-1-architecture.json).
+Canonical client/release components and contracts are unchanged. Earlier
+permission correction and successful publication are already consumed, not
+grounds for unchanged retries. No ready construction task or resume is
+established; actual cloud verification and original closeout remain incomplete.
+
 ## Current IP-S3: consume unavailable comparison and capture handoffs
 
 Consume the [current IP-S3 disposition](../../customer-prototype-sprint-architecture.md#current-ip-s3-comparison-and-hosted-capture-disposition).

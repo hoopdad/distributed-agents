@@ -1,5 +1,13 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Permission-recovery continuation 1
+
+Consume the [bounded continuation amendment](../../customer-prototype-permission-recovery-continuation-1-architecture.json).
+Canonical coordinator/state/checkpoint contracts are unchanged. Caller-owned
+capture construction does not establish hosted installation, destination or
+lifetime. No new supported integration input is supplied; no speculative
+activation is assigned. Isolation remains independent of recovery success.
+
 ## Current IP-S3: separate capture ownership from coordinator correctness
 
 Consume the [current IP-S3 disposition](../../customer-prototype-sprint-architecture.md#current-ip-s3-comparison-and-hosted-capture-disposition).

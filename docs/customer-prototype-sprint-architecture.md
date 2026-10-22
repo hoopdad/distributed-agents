@@ -1,5 +1,16 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## IP-S2 telemetry continuation 1: consume accepted exhaustion
+
+The [separate IP-S2 amendment](customer-prototype-telemetry-s2-continuation-1-architecture.json)
+consumes completed qualification and agreed IP-S1 continuation architecture/planning.
+It retains the canonical solutionModel and all three tier files unchanged.
+All four work-graph checks identify no new executable task or changed-condition
+resume. This is an incomplete checkpoint for original Scrum and reviewers,
+not new substantive progress, cloud acceptance or a reason to poll unchanged
+conditions. Exact platform mapping/caller semantics and independent isolation
+comparison/hosted ownership remain separate missing handoffs.
+
 ## IP-S1 telemetry continuation 1: bounded construction checkpoint
 
 The separate [continuation amendment](customer-prototype-telemetry-continuation-1-architecture.json)

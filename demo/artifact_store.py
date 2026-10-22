@@ -124,6 +124,12 @@ class SDKDiagnosticsTransport(AsyncHttpTransport):
     def __init__(self, inner, *, stage, route, role=None):
         self.inner, self.stage, self.route, self.role = inner, stage, route, role
 
+    @property
+    def connection_config(self):
+        # Azure Core retry deadlines consult the selected transport's config.
+        # Preserve AttributeError for transports without this optional interface.
+        return self.inner.connection_config
+
     async def open(self):
         return await self.inner.open()
 
@@ -153,12 +159,35 @@ class SDKDiagnosticsTransport(AsyncHttpTransport):
         return response
 
 
-def credential_diagnostics_transport(*, role=None):
-    """Match Identity's default AioHttpTransport; do not change its policies."""
-    return SDKDiagnosticsTransport(
-        AioHttpTransport(), stage=diagnostic.Stage.CREDENTIAL,
-        route=diagnostic.Route.TOKEN, role=role,
-    )
+def credential_diagnostics_options(*, role=None):
+    """Public hooks leave branch-specific transport construction to Identity.
+
+    These hooks cannot observe transport exceptions/cancellation or cache hits.
+    Per-attempt state lives only in the public pipeline request context.
+    """
+    key = "demo.credential_diagnostics"
+
+    def on_request(request):
+        try:
+            event = _sdk_observation(
+                request.http_request, diagnostic.Stage.CREDENTIAL,
+                diagnostic.Route.TOKEN, role,
+            )
+            started = time.perf_counter()
+            request.context[key] = (event, started)
+            _sdk_event(event, started, diagnostic.Kind.SEND)
+        except Exception:
+            pass
+
+    def on_response(response):
+        try:
+            event, started = response.context.pop(key)
+            _sdk_event(event, started, diagnostic.Kind.RESPONSE_HEADERS,
+                       status=response.http_response.status_code)
+        except Exception:
+            pass
+
+    return {"raw_request_hook": on_request, "raw_response_hook": on_response}
 
 
 def blob_diagnostics_transport(*, role):

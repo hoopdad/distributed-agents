@@ -26,7 +26,7 @@ from azure.identity.aio import ManagedIdentityCredential
 
 from .config import required
 from . import diagnostics as diagnostic
-from .artifact_store import SDKDiagnosticsPolicy, credential_diagnostics_transport
+from .artifact_store import SDKDiagnosticsPolicy, credential_diagnostics_options
 from .contracts import (
     AGENTS, LEDGER_KEY, ORIGIN, PROJECT,
     Action, Child, DemoError, Ledger, Role, read_choice,
@@ -589,7 +589,7 @@ async def create_hosted_agent():
     stack = AsyncExitStack()
     try:
         credential = await stack.enter_async_context(ManagedIdentityCredential(
-            transport=credential_diagnostics_transport(role=role),
+            **credential_diagnostics_options(role=role),
         ))
         http = await stack.enter_async_context(data_client())
         headers = platform_identity_headers(context)

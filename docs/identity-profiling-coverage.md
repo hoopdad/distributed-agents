@@ -149,8 +149,9 @@ owners' work. The held parent and unknown effects are untouched.
 Consumes accepted EVENT-CONTRACT `20c315e`, SDK-INVENTORY `b7b4e0e` and
 TRANSPORT `9c8dfdf` on the established feature branch. Their original
 Architect/Critic agreement audits are respectively `49fb735d`, `8224c1af` and
-`b5e33586` in the current IP-S1 run context. No prior disposition or reconciled
-rework was supplied. This delta changes only `demo/foundry.py`,
+`b5e33586` in the current IP-S1 run context. The original implementation was
+`87de392`; the timeout-preservation correction below applies the reconciled
+required dispositions from the same SDK-POLICIES loop. This delta changes only `demo/foundry.py`,
 `demo/artifact_store.py`, this matrix and `tests/test_sdk_diagnostics.py`.
 Previously reviewed transport code is preserved.
 
@@ -160,12 +161,13 @@ Previously reviewed transport code is preserved.
 | --- | --- | --- |
 | All application `ProjectClient` instances, including specialist session create/lookup and metadata calls | `SDKDiagnosticsPolicy` is an additive **per-call** `AsyncHTTPPolicy`. `ProjectClient` retains its default pipeline/auth, zero retries and original timeouts; optional keyword-only `transport` forwards the public test/transport seam without changing the default. | Actual pinned `agents.create_session`, `get_session` and `get` operations pass through a synthetic Azure Core transport, with default authentication still acquiring a synthetic bearer. Session routes are closed templates; metadata remains `other`. Logical send/response/error are observed; send is before downstream authentication/retry, and response is when the downstream policy chain returns, **not the instant wire headers arrive**. It is not a final-header principal observation. |
 | `BlobArtifacts`' application-owned default service factory | `blob_diagnostics_transport(role=...)` wraps the existing explicit `AioHttpTransport(use_env_settings=False)` using the public `transport` option. No custom policy list or private insertion. Existing `retry_total=0`, size/timeouts, auth, ETag, leases and application scope checks remain unchanged. | Actual pinned Blob `get_blob_properties` and `upload_blob` traverse the default factory and emit per-attempt send/response; failed sends emit error and rethrow. Tests preserve request/response identity and original send options, without body reads or stream wrappers. A successful status is only HTTP evidence. |
-| `foundry.create_hosted_agent` application credential factory | `ManagedIdentityCredential(transport=credential_diagnostics_transport(role=...))` decorates a default `AioHttpTransport()`; no policy replacement, environment selection change or retry option change. | Synthetic IMDS and App Service branches execute the actual pinned credential pipeline with no network or real token acquisition. Synthetic token bodies/endpoint-specific secret headers are never observed by diagnostics. A synthetic 500/200 sequence proves Identity's existing retry chain remains active, with separate attempt aliases. Cache hits emit no send. Other environment-selected implementations remain unverified, not implicitly covered. |
-| Reusable public decorator `SDKDiagnosticsTransport` in `artifact_store.py` | Delegates `open`, `close`, `__aenter__`, `__aexit__`, `send(**kwargs)` and `sleep` to the original transport. Exceptions and cancellation propagate; diagnostic sink/schema failure cannot replace outcomes. | Covers transport send failure, not failures in subsequent SDK decoding, body iteration, authentication outside this pipeline, or execution. It neither buffers nor replaces the response and emits no stream/execution-completion event. Header presence for Project/Blob comes from the SDK mapping at that checkpoint, not raw duplicate-preserving wire headers. Credential header coverage is explicitly unavailable. |
+| `foundry.create_hosted_agent` application credential factory | `ManagedIdentityCredential(**credential_diagnostics_options(role=...))` uses public raw request/response hooks, leaving transport construction, environment selection, branch defaults and retries entirely with Identity. The original eagerly supplied transport was incorrect and has been removed. | Synthetic IMDS and App Service branches execute the actual pinned credential pipeline with no network or real token acquisition. Paired request/response hooks emit per-attempt events without inspecting credential headers or payloads. IMDS retains its two-second connection default; App Service retains 300 seconds. Baseline/instrumented retry-budget fixtures verify equal configurations and a one-second budget clamped to 1 then 0.75 seconds. Cache hits emit no send. **No transport-error/cancellation hook is available through these callbacks**: a send without response is incomplete, not an inferred error or success. Other environment-selected implementations remain unverified. |
+| Reusable public decorator `SDKDiagnosticsTransport` in `artifact_store.py` | Delegates `open`, `close`, `__aenter__`, `__aexit__`, `send(**kwargs)`, `sleep` and the inner optional `connection_config` to the original transport. Exceptions and cancellation propagate; diagnostic sink/schema failure cannot replace outcomes. | Blob transport-send failures remain covered, not failures in subsequent SDK decoding, body iteration, authentication outside this pipeline, or execution. Retry deadline fixtures prove the decorator exposes the original configuration and preserves connection-timeout clamping. It neither buffers nor replaces the response and emits no stream/execution-completion event. Project/Blob header presence comes from the SDK mapping, not raw duplicate-preserving wire headers. Credential factories no longer use this decorator. |
 
 Each request/attempt takes an immutable local observation alias and inherits
 only existing safe operation/response aliases. Policy state is local to its
-`send` coroutine, not the client. Synthetic overlapping requests verify
+`send` coroutine; credential-hook state uses the public per-request pipeline
+context, not a shared client/global identity. Synthetic overlapping requests verify
 separate bindings. An alias does not establish a private join or identity.
 Only method, fixed route/stage/role, presence, status, elapsed milliseconds and
 fixed category reach the closed event projection. No exception text, concrete
@@ -188,8 +190,8 @@ architecture or permission to silently expand any task's owned paths:
   two injected services are **uncovered**, not PASS.
 * `WorkflowRuntime._resources` in `workflow.py`, plus the specialist resource
   factories, still construct their own `ManagedIdentityCredential()`. Wire the
-  reviewed `credential_diagnostics_transport(role=...)` through the public
-  credential option with the same defaults; preserve the existing factory
+  reviewed `credential_diagnostics_options(role=...)` as public credential
+  keyword options, **not a preconstructed transport**; preserve the existing factory
   ownership/lifecycle. Only `foundry.create_hosted_agent` is wired by this
   assignment. Do not label all application token acquisition covered.
 * The SDK-owned session/history/checkpoint/workflow-binding/response stores
@@ -230,3 +232,46 @@ Original Architect/Critic review of this implementation remains pending.
 All remaining application call-site gaps above are explicit construction
 handoffs; the original live identity interval and release conditions remain
 unproven. No HTTP or SDK envelope result closes AC1-AC9/G1-G8.
+
+### Timeout-preservation correction
+
+Applies the exact originating required references
+`["yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop","SDK-CREDENTIAL-TIMEOUT-PRESERVATION"]`
+and
+`["yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop","SDK-TIMEOUT-REGRESSION-EVIDENCE"]`.
+The original tests above remain historical results, not proof of preserved
+timeouts. Critic's source finding confirmed that supplying an eagerly constructed
+transport skipped Identity's branch-specific construction. The decorator also
+hid `connection_config` from Azure Core's retry deadline calculation.
+
+The correction uses the already inventoried public raw hooks rather than
+replicating environment selection or applying IMDS settings to all credentials.
+Pinned references: Identity `aio/_credentials/imds.py:45-60` and
+`_internal/pipeline.py:69-96`; Azure Core
+`pipeline/policies/_custom_hook.py` (`CustomHookPolicy`) and
+`pipeline/policies/_retry.py:359-390` (`_configure_timeout`).
+No SDK/private patch, branch-selection replacement or dependency change is used.
+Raw hooks have no send-error/cancellation callback. This explicit uncovered
+credential interval replaces the former decorator's error coverage; the Blob
+decorator and Project policy still observe their respective errors.
+An incomplete credential pair must never authorize, retry, or infer an outcome.
+
+Offline regressions compare uninstrumented/instrumented IMDS and App Service
+factory configuration and actual synthetic retry attempts, including remaining
+budget clamping. They retain synthetic cache, redaction, failure containment and
+concurrent binding cases, plus propagation of cancellation with no invented
+completion/error event. Test fixtures replace only network I/O and use no real
+credential acquisition. Integration must consume the corrected options API.
+
+Correction checks (existing absolute linked-lab Python; explicit selected-feature
+lab root for `Test-Demo.ps1`):
+
+| Check | Observed correction result |
+| --- | --- |
+| `python -m unittest discover -s tests -p test_sdk_diagnostics.py -v` with `OTEL_SDK_DISABLED=true` | **20 tests PASS in 0.459 seconds**. Initial 19-test iteration failed because the fixture passed the operation budget via `get_token`, which IMDS does not forward. The fixture now supplies the supported credential constructor timeout to both baseline and instrumented cases; both prove 1 then 0.75-second clamping. No runtime contract was relaxed. |
+| `./Test-Demo.ps1 -Python <linked-lab-root>/.venv/Scripts/python.exe -LabRepositoryRoot <selected-feature-lab-root>` | Exit 0: **274 tests PASS in 46.620 seconds**, dependency check and compilation passed. Shared-checkout result, not final integration/E2E certification. |
+| `./scripts/Test-Repository.ps1 -Python <linked-lab-root>/.venv/Scripts/python.exe` | **FAIL** at `REPOSITORY_INDEX_STALE`; subsequent stages did not run. Existing shared index edits remain untouched; INTEGRATE owns refresh and exact-join rerun. |
+| Owned whitespace check | PASS. |
+
+Return this correction to the original Architect/Critic reviewers. Their prior
+votes on `87de392` are not collective acceptance of the new correction.

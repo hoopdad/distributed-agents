@@ -8,6 +8,7 @@ import os
 import time
 import unittest
 from unittest.mock import patch
+from types import SimpleNamespace
 from uuid import uuid4
 
 os.environ.setdefault("FOUNDRY_PROJECT_ENDPOINT", "https://example.services.ai.azure.com/api/projects/example-project")
@@ -19,13 +20,14 @@ from azure.ai.projects.models import VersionRefIndicator
 from azure.core.credentials import AccessToken
 from azure.core.exceptions import ServiceRequestError, HttpResponseError
 from azure.core.pipeline import AsyncPipeline
-from azure.core.pipeline.transport import AsyncHttpTransport, AsyncHttpResponse, HttpRequest
+from azure.core.pipeline.transport import AioHttpTransport, AsyncHttpTransport, AsyncHttpResponse, HttpRequest
+from azure.core.pipeline.policies import AsyncRetryPolicy
 from azure.identity.aio import ManagedIdentityCredential
 
 from demo import diagnostics as d
 from demo.artifact_store import (
     BlobArtifacts, SDKDiagnosticsPolicy, SDKDiagnosticsTransport,
-    blob_diagnostics_transport, credential_diagnostics_transport,
+    blob_diagnostics_transport, credential_diagnostics_options,
 )
 from demo.foundry import ProjectClient
 from demo.contracts import AGENTS
@@ -109,6 +111,17 @@ class Credential:
     async def get_token(self, *args, **kwargs):
         self.calls += 1
         return AccessToken("synthetic-bearer-secret", int(time.time()) + 3600)
+
+
+class ConfiguredTransport(Transport):
+    """Synthetic sends with the real pinned AioHttpTransport configuration."""
+
+    def __init__(self, **kwargs):
+        super().__init__(statuses=[500, 200], payload={
+            "access_token": "synthetic-token-response-secret",
+            "expires_in": 3600, "resource": "https://management.azure.com",
+        })
+        self.connection_config = AioHttpTransport(**kwargs).connection_config
 
 
 class SDKDiagnosticTests(unittest.IsolatedAsyncioTestCase):
@@ -210,22 +223,23 @@ class SDKDiagnosticTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.kinds(), ["send", "error"])
         self.assertEqual(len(inner.requests), 1)
 
-    async def test_identity_public_transport_imds_and_appservice_and_cache_gap(self):
+    async def test_identity_public_hooks_imds_and_appservice_and_cache_gap(self):
         for environment in ({}, {"IDENTITY_ENDPOINT": "https://synthetic.invalid/token",
                                  "IDENTITY_HEADER": "synthetic-identity-header-secret"}):
             self.events.clear()
             inner = Transport(payload={"access_token": "synthetic-token-response-secret",
                                        "expires_in": 3600, "resource": "https://management.azure.com"})
             with patch.dict(os.environ, environment, clear=True), patch(
-                "demo.artifact_store.AioHttpTransport", return_value=inner
+                "azure.core.pipeline.transport.AioHttpTransport", return_value=inner
             ) as factory:
                 async with ManagedIdentityCredential(
-                    transport=credential_diagnostics_transport(role="architect")
+                    **credential_diagnostics_options(role="architect")
                 ) as credential:
                     result = await credential.get_token("https://management.azure.com/.default")
                     count = len(inner.requests)
                     await credential.get_token("https://management.azure.com/.default")
-            factory.assert_called_once_with()
+            self.assertEqual(factory.call_count, 1)
+            self.assertNotIn("transport", factory.call_args.kwargs)
             self.assertEqual(result.token, "synthetic-token-response-secret")
             self.assertEqual(len(inner.requests), count, "cache hit must not create fake send event")
             self.assertGreater(count, 0)
@@ -261,15 +275,128 @@ class SDKDiagnosticTests(unittest.IsolatedAsyncioTestCase):
         environment = {"IDENTITY_ENDPOINT": "https://synthetic.invalid/token",
                        "IDENTITY_HEADER": "synthetic-identity-header-secret"}
         with patch.dict(os.environ, environment, clear=True):
-            async with ManagedIdentityCredential(transport=self.wrapped(
-                inner, d.Stage.CREDENTIAL, d.Route.TOKEN
-            )) as credential:
-                await credential.get_token("https://management.azure.com/.default")
+            with patch("azure.core.pipeline.transport.AioHttpTransport", return_value=inner):
+                async with ManagedIdentityCredential(
+                    **credential_diagnostics_options(role="coordinator")
+                ) as credential:
+                    await credential.get_token("https://management.azure.com/.default")
         self.assertEqual(len(inner.requests), 2)
         self.assertEqual(self.kinds(), ["send", "response_headers"] * 2)
         self.assertEqual([e["status"] for e in self.events if e["kind"] == "response_headers"],
                          [500, 200])
         self.assertEqual(len({e["binding"]["observation"] for e in self.events}), 2)
+
+    async def test_identity_hooks_preserve_branch_configuration_and_retry_deadlines(self):
+        for environment, expected_timeout in (
+            ({}, 2),
+            ({"IDENTITY_ENDPOINT": "https://synthetic.invalid/token",
+              "IDENTITY_HEADER": "synthetic-header"}, 300),
+        ):
+            observed = []
+            for instrumented in (False, True):
+                transports = []
+
+                def factory(**kwargs):
+                    inner = ConfiguredTransport(**kwargs)
+                    transports.append(inner)
+                    return inner
+
+                self.events.clear()
+                # Patch the retry module's clock object, not global time.time.
+                # First attempt consumes 0.25s from the one-second budget.
+                clock = SimpleNamespace(time=iter((10.0, 10.25, 10.25, 10.5)).__next__)
+                options = credential_diagnostics_options(role="architect") if instrumented else {}
+                with patch.dict(os.environ, environment, clear=True), patch(
+                    "azure.core.pipeline.transport.AioHttpTransport", side_effect=factory
+                ), patch("azure.core.pipeline.policies._retry_async.time", clock):
+                    async with ManagedIdentityCredential(timeout=1, **options) as credential:
+                        await credential.get_token("https://management.azure.com/.default")
+                self.assertEqual(len(transports), 1)
+                inner = transports[0]
+                self.assertEqual(inner.connection_config.timeout, expected_timeout)
+                self.assertEqual(len(inner.requests), 2)
+                self.assertEqual([o["connection_timeout"] for o in inner.options], [1, 0.75])
+                observed.append((vars(inner.connection_config), inner.options, inner.lifecycle))
+                self.assertEqual(self.kinds(), ["send", "response_headers"] * 2 if instrumented else [])
+            self.assertEqual(observed[0], observed[1])
+
+    async def test_transport_decorator_preserves_retry_configuration_interface(self):
+        for wrapped in (False, True):
+            inner = ConfiguredTransport(connection_timeout=2)
+            transport = self.wrapped(inner) if wrapped else inner
+            self.assertIs(transport.connection_config, inner.connection_config)
+            clock = SimpleNamespace(time=iter((10.0, 10.25, 10.25, 10.5)).__next__)
+            with patch("azure.core.pipeline.policies._retry_async.time", clock):
+                async with AsyncPipeline(transport, [AsyncRetryPolicy()]) as pipeline:
+                    await pipeline.run(HttpRequest("GET", "https://synthetic.invalid"), timeout=1)
+            self.assertEqual([o["connection_timeout"] for o in inner.options], [1, 0.75])
+        self.assertFalse(hasattr(self.wrapped(Transport()), "connection_config"))
+
+    async def test_credential_hook_failure_and_unobserved_errors_preserve_outcome(self):
+        for failure in (None, ServiceRequestError("synthetic-original-failure")):
+            inner = Transport(failure=failure, payload={
+                "access_token": "synthetic-secret", "expires_in": 3600,
+                "resource": "https://management.azure.com",
+            })
+            environment = {"IDENTITY_ENDPOINT": "https://synthetic.invalid/token",
+                           "IDENTITY_HEADER": "synthetic-header"}
+            with patch.dict(os.environ, environment, clear=True), patch(
+                "azure.core.pipeline.transport.AioHttpTransport", return_value=inner
+            ), patch.object(d, "emit", side_effect=RuntimeError("synthetic-sink-failure")):
+                async with ManagedIdentityCredential(
+                    **credential_diagnostics_options(role="architect")
+                ) as credential:
+                    if failure:
+                        # App Service propagates transport failure; hooks do not
+                        # invent an error callback or suppress the original.
+                        with self.assertRaises(ServiceRequestError) as caught:
+                            await credential.get_token("https://management.azure.com/.default",
+                                                       retry_total=0)
+                        self.assertIs(caught.exception, failure)
+                    else:
+                        result = await credential.get_token("https://management.azure.com/.default")
+                        self.assertEqual(result.token, "synthetic-secret")
+
+    async def test_credential_hooks_concurrent_bindings_and_cancellation_gap(self):
+        inner = Transport(pause=True, payload={
+            "access_token": "synthetic-secret", "expires_in": 3600,
+            "resource": "https://management.azure.com",
+        })
+        environment = {"IDENTITY_ENDPOINT": "https://synthetic.invalid/token",
+                       "IDENTITY_HEADER": "synthetic-header"}
+        with patch.dict(os.environ, environment, clear=True), patch(
+            "azure.core.pipeline.transport.AioHttpTransport", return_value=inner
+        ):
+            async with ManagedIdentityCredential(
+                **credential_diagnostics_options(role="architect")
+            ) as credential:
+                async def acquire():
+                    binding = d.new_binding(operation=uuid4())
+                    with d.bind(binding):
+                        await credential.get_token("https://management.azure.com/.default")
+                    return binding
+                bindings = await asyncio.gather(acquire(), acquire())
+                for binding in bindings:
+                    pair = [e for e in self.events if e["binding"]["operation"] == str(binding.operation)]
+                    self.assertEqual([e["kind"] for e in pair], ["send", "response_headers"])
+                    self.assertEqual(pair[0]["binding"], pair[1]["binding"])
+                self.assertEqual(len({e["binding"]["observation"] for e in self.events}), 2)
+                self.assertIsNone(d.current_binding())
+
+        self.events.clear()
+        inner = Transport(block=True)
+        with patch.dict(os.environ, environment, clear=True), patch(
+            "azure.core.pipeline.transport.AioHttpTransport", return_value=inner
+        ):
+            async with ManagedIdentityCredential(
+                **credential_diagnostics_options(role="architect")
+            ) as credential:
+                task = asyncio.create_task(credential.get_token("https://management.azure.com/.default"))
+                await inner.entered.wait()
+                task.cancel()
+                with self.assertRaises(asyncio.CancelledError):
+                    await task
+        self.assertEqual(self.kinds(), ["send"], "public hooks have no cancellation callback")
 
     async def test_invalid_diagnostic_role_cannot_stop_sdk_operation(self):
         inner = Transport()

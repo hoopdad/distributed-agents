@@ -1,5 +1,16 @@
 # Repository index
 
+IP-S3 continuation-2 Scrum assessment at architecture `2343445b`:
+`docs/customer-prototype-profiling-s3-continuation-2-sprint-plan.json` preserves
+the separate original plan and records an empty task/assignment/resume graph
+after original handoff, source-contract and all-sprint backlog inspection.
+Accepted consumer, companion/status/join and fixed-ref delivery are consumed.
+No new supported split or changed exact native-denial condition is established;
+original qualification, hosted capture/provenance, common publication, actual
+cloud scenarios, cleanup and review/retro/closeout remain incomplete.
+Existing original planning reviewers assess bounded exhaustion, not delivery
+success. No substitute dispatch, unchanged retry or planning-only push.
+
 IP-S3 continuation-2 architecture at `eac8f2f6`:
 `docs/customer-prototype-profiling-s3-continuation-2-architecture.json` and
 current sprint/tier openings map continuity/recovery/isolation/delivery to the
@@ -1940,6 +1951,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-profiling-s3-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-s3-continuation-2-architecture.json`
+- `docs\customer-prototype-profiling-s3-continuation-2-sprint-plan.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

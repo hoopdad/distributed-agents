@@ -1,5 +1,16 @@
 # Repository index
 
+Collection qualification at application baseline `ef6cbc4d`:
+`docs/identity-scenario-collection-qualification.md` and
+`tests/test_scenario_collection_seams.py` map the retained aggregate to public
+pinned seams. Real local background host options/provider hooks can associate
+responses with opaque scoped checkpoint stores; actual typed checkpoint state
+does not directly serialize to aggregate JSON. Independent wire-to-operation,
+complete operation enumeration and model-history provenance remain unqualified.
+These are offline fixtures/actionable negative findings, not a runtime collector
+or live acceptance. Accepted companion, validator and runtime remain unchanged.
+Original Architect/Scrum coordinates any necessary scoped follow-on work.
+
 Profiling continuation-1 Scrum dispatch: inspect
 `docs/customer-prototype-profiling-continuation-1-sprint-plan.json` directly.
 Its two independent tasks qualify missing public scenario-collection seams and
@@ -1847,6 +1858,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\identity-candidate-handoff.md`
 - `docs\identity-profiling-coverage.md`
 - `docs\identity-recovery-plan.md`
+- `docs\identity-scenario-collection-qualification.md`
 - `docs\implementation-workflow.md`
 - `docs\migration-map.json`
 - `docs\migration-plan.md`
@@ -1877,6 +1889,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `tests\test_isolated_client.py`
 - `tests\test_profiling_integration.py`
 - `tests\test_routing.py`
+- `tests\test_scenario_collection_seams.py`
 - `tests\test_scenario_evidence.py`
 - `tests\test_sdk_diagnostics.py`
 - `tests\test_specialist_continuity.py`

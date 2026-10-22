@@ -1,5 +1,10 @@
 # Identity profiling: pinned SDK coverage inventory
 
+The original inventory below retains its research baseline and negative probes.
+The [SDK-POLICIES implementation delta](#sdk-policies-implementation-delta)
+records the subsequent bounded application attachments and remaining call-site
+handoffs. Neither section is a universal coverage or live acceptance claim.
+
 ## Scope and evidence
 
 Developer inventory for IP-S1-SDK-INVENTORY, against application baseline
@@ -138,3 +143,90 @@ Original Architect/Critic review remains downstream of this inventory commit.
 Exact-source E2E, newly identified common-package publication, synthetic intent
 recording, live AC1-AC9/G1-G8 and attributable cleanup remain their original
 owners' work. The held parent and unknown effects are untouched.
+
+## SDK-POLICIES implementation delta
+
+Consumes accepted EVENT-CONTRACT `20c315e`, SDK-INVENTORY `b7b4e0e` and
+TRANSPORT `9c8dfdf` on the established feature branch. Their original
+Architect/Critic agreement audits are respectively `49fb735d`, `8224c1af` and
+`b5e33586` in the current IP-S1 run context. No prior disposition or reconciled
+rework was supplied. This delta changes only `demo/foundry.py`,
+`demo/artifact_store.py`, this matrix and `tests/test_sdk_diagnostics.py`.
+Previously reviewed transport code is preserved.
+
+### Public attachments and exact coverage
+
+| Application path | Implemented public seam / retained behavior | Proven offline coverage and explicit limits |
+| --- | --- | --- |
+| All application `ProjectClient` instances, including specialist session create/lookup and metadata calls | `SDKDiagnosticsPolicy` is an additive **per-call** `AsyncHTTPPolicy`. `ProjectClient` retains its default pipeline/auth, zero retries and original timeouts; optional keyword-only `transport` forwards the public test/transport seam without changing the default. | Actual pinned `agents.create_session`, `get_session` and `get` operations pass through a synthetic Azure Core transport, with default authentication still acquiring a synthetic bearer. Session routes are closed templates; metadata remains `other`. Logical send/response/error are observed; send is before downstream authentication/retry, and response is when the downstream policy chain returns, **not the instant wire headers arrive**. It is not a final-header principal observation. |
+| `BlobArtifacts`' application-owned default service factory | `blob_diagnostics_transport(role=...)` wraps the existing explicit `AioHttpTransport(use_env_settings=False)` using the public `transport` option. No custom policy list or private insertion. Existing `retry_total=0`, size/timeouts, auth, ETag, leases and application scope checks remain unchanged. | Actual pinned Blob `get_blob_properties` and `upload_blob` traverse the default factory and emit per-attempt send/response; failed sends emit error and rethrow. Tests preserve request/response identity and original send options, without body reads or stream wrappers. A successful status is only HTTP evidence. |
+| `foundry.create_hosted_agent` application credential factory | `ManagedIdentityCredential(transport=credential_diagnostics_transport(role=...))` decorates a default `AioHttpTransport()`; no policy replacement, environment selection change or retry option change. | Synthetic IMDS and App Service branches execute the actual pinned credential pipeline with no network or real token acquisition. Synthetic token bodies/endpoint-specific secret headers are never observed by diagnostics. A synthetic 500/200 sequence proves Identity's existing retry chain remains active, with separate attempt aliases. Cache hits emit no send. Other environment-selected implementations remain unverified, not implicitly covered. |
+| Reusable public decorator `SDKDiagnosticsTransport` in `artifact_store.py` | Delegates `open`, `close`, `__aenter__`, `__aexit__`, `send(**kwargs)` and `sleep` to the original transport. Exceptions and cancellation propagate; diagnostic sink/schema failure cannot replace outcomes. | Covers transport send failure, not failures in subsequent SDK decoding, body iteration, authentication outside this pipeline, or execution. It neither buffers nor replaces the response and emits no stream/execution-completion event. Header presence for Project/Blob comes from the SDK mapping at that checkpoint, not raw duplicate-preserving wire headers. Credential header coverage is explicitly unavailable. |
+
+Each request/attempt takes an immutable local observation alias and inherits
+only existing safe operation/response aliases. Policy state is local to its
+`send` coroutine, not the client. Synthetic overlapping requests verify
+separate bindings. An alias does not establish a private join or identity.
+Only method, fixed route/stage/role, presence, status, elapsed milliseconds and
+fixed category reach the closed event projection. No exception text, concrete
+URL/query/resource name, bearer/credential payload, user identity or hash is
+logged. HTTP errors still reject normally; neither policy nor transport
+authorizes anything or changes trusted context.
+
+### Explicit integration handoffs and uncovered intervals
+
+INTEGRATE/Scrum coordinates the remaining **application call-site wiring**
+through the original Developer ownership. The accepted inventory already
+identified these out-of-task factories; this is not a new diagnostic
+architecture or permission to silently expand any task's owned paths:
+
+* `architect_agent.py` and `reviewer_agent.py` create and inject separate Blob
+  services. They still bypass the `BlobArtifacts` default factory. Select the
+  public `blob_diagnostics_transport(role=...)` for each existing explicit
+  transport, preserving that factory's exact options, and retain constructor/
+  pipeline regressions. Until that handoff is implemented and tested these
+  two injected services are **uncovered**, not PASS.
+* `WorkflowRuntime._resources` in `workflow.py`, plus the specialist resource
+  factories, still construct their own `ManagedIdentityCredential()`. Wire the
+  reviewed `credential_diagnostics_transport(role=...)` through the public
+  credential option with the same defaults; preserve the existing factory
+  ownership/lifecycle. Only `foundry.create_hosted_agent` is wired by this
+  assignment. Do not label all application token acquisition covered.
+* The SDK-owned session/history/checkpoint/workflow-binding/response stores
+  in T/U/V remain uncovered at internal HTTP boundaries: their stock callers
+  do not forward the application policies/transports. The original pinned
+  source evidence above remains applicable. No private SDK edit/provider
+  replacement has been introduced. Azure CLI subprocess internals, credential
+  cache hits/unverified branches and Foundry platform resolution remain outside
+  coverage. The authenticated outbound principal remains unproven.
+* Refresh the shared repository index after integrating the new tests/module
+  paths, preserving its pre-existing notes/edits. Original E2E still owns the
+  final exact-join full checks; original DevOps owns Linux/package/publication,
+  synthetic intent, live acceptance and attributable cleanup. No lab release
+  tooling changed here. Historical rollback provenance remains WAIVED.
+
+The retained `tests/test_sdk_diagnostics.py` fixtures exercise constructor
+attachments through real pinned public SDK pipelines, not merely private
+policy-list inspection. They include HTTP rejection, send failures, default
+Identity retries, cache non-observation, concurrent policy/transport isolation,
+context reset, cancellation, response/body ownership, private redaction,
+machine-stdout isolation and diagnostic-failure containment. All credentials,
+responses, identities and endpoints in these fixtures are synthetic.
+
+### Executed SDK-POLICIES checks
+
+Commands used the existing absolute linked-lab Python and, for the documented
+application entry point, the explicit selected-feature lab root. No dependency
+installation, live call, secret acquisition or lab tooling edit occurred.
+
+| Check | Observed result |
+| --- | --- |
+| `python -m unittest discover -s tests -p test_sdk_diagnostics.py -v` (`OTEL_SDK_DISABLED=true`) | Final **16 tests PASS in 0.464 seconds**. The initial 13-test iteration had one fixture error: the synthetic Project session used `id`, while the pinned model exposes `agent_session_id`. The fixture was corrected to the actual model and public `VersionRefIndicator` contract. No runtime contract was weakened. |
+| `./Test-Demo.ps1 -Python <linked-lab-root>/.venv/Scripts/python.exe -LabRepositoryRoot <selected-feature-lab-root>` | Final exit 0: **270 tests PASS in 60.749 seconds**, dependency check and compilation passed. An earlier run before three additional test cases passed 267 tests in 64.323 seconds. These are shared-checkout observations including concurrent host work, not final exact-source integration certification. |
+| `./scripts/Test-Repository.ps1 -Python <linked-lab-root>/.venv/Scripts/python.exe` | **FAIL**, exit 1 at `REPOSITORY_INDEX_STALE`; later parser/public-boundary stages did not run. The already dirty shared index is outside this task's owned paths. INTEGRATE retains refresh/preservation and rerun, not a waived gate. |
+| Owned `py_compile` and `git diff --check` | PASS for the SDK source/tests and owned documentation (compilation applies to Python only). |
+
+Original Architect/Critic review of this implementation remains pending.
+All remaining application call-site gaps above are explicit construction
+handoffs; the original live identity interval and release conditions remain
+unproven. No HTTP or SDK envelope result closes AC1-AC9/G1-G8.

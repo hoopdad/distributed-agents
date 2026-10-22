@@ -26,6 +26,7 @@ from azure.identity.aio import ManagedIdentityCredential
 
 from .config import required
 from . import diagnostics as diagnostic
+from .artifact_store import SDKDiagnosticsPolicy, credential_diagnostics_transport
 from .contracts import (
     AGENTS, LEDGER_KEY, ORIGIN, PROJECT,
     Action, Child, DemoError, Ledger, Role, read_choice,
@@ -296,10 +297,12 @@ def data_client(
 
 
 class ProjectClient(AIProjectClient):
-    def __init__(self, credential, http: httpx2.AsyncClient, headers: dict[str, str]):
+    def __init__(self, credential, http: httpx2.AsyncClient, headers: dict[str, str], *, transport=None):
         super().__init__(
             PROJECT, credential, allow_preview=True,
             retry_total=0, connection_timeout=10, read_timeout=120,
+            per_call_policies=[SDKDiagnosticsPolicy()],
+            **({"transport": transport} if transport is not None else {}),
         )
         self.http = http
         self.call_headers = headers
@@ -585,7 +588,9 @@ async def create_hosted_agent():
         raise DemoError("HOST_SCOPE")
     stack = AsyncExitStack()
     try:
-        credential = await stack.enter_async_context(ManagedIdentityCredential())
+        credential = await stack.enter_async_context(ManagedIdentityCredential(
+            transport=credential_diagnostics_transport(role=role),
+        ))
         http = await stack.enter_async_context(data_client())
         headers = platform_identity_headers(context)
         project = await stack.enter_async_context(ProjectClient(credential, http, headers))

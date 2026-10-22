@@ -2,18 +2,22 @@ from __future__ import annotations
 
 import asyncio
 import ipaddress
+import os
 import re
+import time
 from contextlib import asynccontextmanager, suppress
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Any
 from urllib.parse import urlsplit
 
 from azure.core import MatchConditions
 from azure.core.exceptions import HttpResponseError, ResourceExistsError, ResourceNotFoundError
-from azure.core.pipeline.transport import AioHttpTransport
+from azure.core.pipeline.policies import AsyncHTTPPolicy
+from azure.core.pipeline.transport import AioHttpTransport, AsyncHttpTransport
 from azure.storage.blob import ContentSettings
 from azure.storage.blob.aio import BlobServiceClient
 
+from . import diagnostics as diagnostic
 from .artifacts import (
     Artifact,
     ArtifactError,
@@ -34,6 +38,134 @@ READ_ACCESS = {
     "reviewer": frozenset(("control", "candidates", "reviews")),
 }
 WRITE_ACCESS = {"coordinator": "control", "architect": "candidates", "reviewer": "reviews"}
+
+
+def _sdk_observation(request, stage, route, role=None):
+    """Select only templates and presence. Never retain an SDK object in events."""
+    try:
+        parent = diagnostic.current_binding()
+        # Credential headers contain endpoint-specific secrets, not delegation.
+        headers = None if stage is diagnostic.Stage.CREDENTIAL else list(request.headers.items())
+        return diagnostic.Event(
+            diagnostic.Role(role or os.environ.get("DEMO_ROLE", "coordinator")),
+            stage, diagnostic.Kind.SEND,
+            method=next((m for m in diagnostic.Method if m.value == request.method),
+                        diagnostic.Method.OTHER),
+            route=route,
+            binding=diagnostic.new_binding(
+                operation=parent.operation if parent else None,
+                response=parent.response if parent else None,
+            ),
+            delegation=diagnostic.observe_header(headers, "delegation"),
+            platform=diagnostic.observe_header(headers, "platform"),
+            call=diagnostic.observe_header(headers, "call"),
+        )
+    except Exception:
+        return None
+
+
+def _sdk_event(event, started, kind, *, status=None, category=diagnostic.Category.NONE):
+    try:
+        if event is not None:
+            diagnostic.emit(replace(
+                event, kind=kind, status=status, category=category,
+                duration_ms=min(86_400_000, max(0, (time.perf_counter() - started) * 1000)),
+            ))
+    except Exception:
+        pass
+
+
+def _sdk_failure(event, started, exc):
+    cancelled = isinstance(exc, asyncio.CancelledError)
+    _sdk_event(
+        event, started, diagnostic.Kind.CANCELLED if cancelled else diagnostic.Kind.ERROR,
+        category=diagnostic.Category.CANCELLED if cancelled else diagnostic.Category.SDK,
+    )
+
+
+class SDKDiagnosticsPolicy(AsyncHTTPPolicy):
+    """Additive Project per-call policy: logical operation, BEFORE auth.
+
+    This is not a final-wire-header or authenticated-principal checkpoint.
+    Default auth/retry policies remain in their original positions.
+    """
+
+    async def send(self, request):
+        route = diagnostic.Route.OTHER
+        try:
+            path = urlsplit(request.http_request.url).path.rstrip("/")
+            if path.endswith("/sessions"):
+                route = diagnostic.Route.SESSIONS
+            elif "/sessions/" in path:
+                route = diagnostic.Route.SESSION
+        except Exception:
+            pass
+        event = _sdk_observation(request.http_request, diagnostic.Stage.SESSION, route)
+        started = time.perf_counter()
+        _sdk_event(event, started, diagnostic.Kind.SEND)
+        try:
+            response = await self.next.send(request)
+        except BaseException as exc:
+            _sdk_failure(event, started, exc)
+            raise
+        _sdk_event(event, started, diagnostic.Kind.RESPONSE_HEADERS,
+                   status=response.http_response.status_code)
+        return response
+
+
+class SDKDiagnosticsTransport(AsyncHttpTransport):
+    """Public transport decorator for Blob/Identity's independent pipelines.
+
+    Observe each actual transport attempt, not cache hits or logical completion.
+    Return the original response without reading/wrapping its body or stream.
+    All transport lifecycle, send options and retry sleep ownership are delegated.
+    """
+
+    def __init__(self, inner, *, stage, route, role=None):
+        self.inner, self.stage, self.route, self.role = inner, stage, route, role
+
+    async def open(self):
+        return await self.inner.open()
+
+    async def close(self):
+        return await self.inner.close()
+
+    async def __aenter__(self):
+        await self.inner.__aenter__()
+        return self
+
+    async def __aexit__(self, *args):
+        return await self.inner.__aexit__(*args)
+
+    async def sleep(self, duration):
+        return await self.inner.sleep(duration)
+
+    async def send(self, request, **kwargs):
+        event = _sdk_observation(request, self.stage, self.route, self.role)
+        started = time.perf_counter()
+        _sdk_event(event, started, diagnostic.Kind.SEND)
+        try:
+            response = await self.inner.send(request, **kwargs)
+        except BaseException as exc:
+            _sdk_failure(event, started, exc)
+            raise
+        _sdk_event(event, started, diagnostic.Kind.RESPONSE_HEADERS, status=response.status_code)
+        return response
+
+
+def credential_diagnostics_transport(*, role=None):
+    """Match Identity's default AioHttpTransport; do not change its policies."""
+    return SDKDiagnosticsTransport(
+        AioHttpTransport(), stage=diagnostic.Stage.CREDENTIAL,
+        route=diagnostic.Route.TOKEN, role=role,
+    )
+
+
+def blob_diagnostics_transport(*, role):
+    return SDKDiagnosticsTransport(
+        AioHttpTransport(use_env_settings=False), stage=diagnostic.Stage.STORAGE,
+        route=diagnostic.Route.BLOB, role=role,
+    )
 
 
 def validate_storage_configuration(endpoint: str, containers: dict[Container, str]) -> None:
@@ -98,7 +230,7 @@ class BlobArtifacts:
             endpoint.rstrip("/"), credential=credential,
             retry_total=0, connection_timeout=10, read_timeout=30,
             logging_enable=False, max_single_get_size=131072,
-            transport=AioHttpTransport(use_env_settings=False),
+            transport=blob_diagnostics_transport(role=role),
         )
 
     async def __aenter__(self):

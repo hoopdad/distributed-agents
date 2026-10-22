@@ -1,5 +1,28 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current IP-S2 recovery: qualified diagnostics are not initial collaboration
+
+Consume the [current IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-recovery-current-package-and-observable-initial-collaboration).
+Keep canonical **Hosted coordinator**, supporting identity/artifact/checkpoint/
+conversation/routing components and `collaboration-bind` through
+`collaboration-return`. Original E2E accepts later `f9fcd9cf` with lab
+`9b4919d8`; lab `ceaba6ee` changes only Linux test mounting/provenance and
+needs original affected review/qualification, not coordinator reconstruction.
+`demo/workflow.py`, `demo/foundry.py`, `demo/host.py`, `demo/diagnostics.py`
+retain supported hooks, deterministic gates before Decision-1, ETag publication,
+exact trusted assignment, immutable prerequisites and write-ahead holds.
+
+Before a fresh synthetic invocation, original DevOps needs current common-package
+bindings, effect readiness and recorded purpose/intent. Keep send, HTTP headers,
+stream completion and execution completion distinct. Caller-owned capture in
+`demo/private_effect_capture.py` is not automatically installed hosted coverage;
+ownership, background coverage, anchors/quiescence and consumed-history evidence
+remain unproven. Hand completed non-held initial bindings/artifacts to IP-S3;
+diagnostic success never satisfies that handoff or authorizes identity mapping.
+Native CLI approval blocks dependent effects only; independent preparation and
+original reviews continue. Preserve held/UNKNOWN parents and known-response-only
+recovery; no trust relaxation or live capability is claimed.
+
 ## Current IP-S1: qualify existing trusted observation paths
 
 Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-ip-s1-qualify-retained-observation-source-after-transport-recovery)

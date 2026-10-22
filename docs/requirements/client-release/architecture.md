@@ -1,5 +1,27 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current IP-S2 recovery: preserve qualification and localize native readiness
+
+Consume the [current IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-recovery-current-package-and-observable-initial-collaboration).
+Canonical **Terminal client**, **Guarded lab release toolchain** and
+**Exact-source guarded release** IDs/steps remain unchanged. Original E2E
+accepts `f9fcd9cf`/`9b4919d8`; selected-lab `ceaba6ee` is the actual subsequent
+test-only reader mount/provenance correction, not a hosted-runtime addition.
+Original correction review and affected qualification precede dependent effects.
+The actual CLI approval denial blocks native readiness/publication/traffic,
+not independent review or approved IP-S3 preparation. No unchanged retry.
+
+`release-package` still needs a final common bundle and exact current bindings;
+`release-discriminate` needs changed permission evidence, per-output isolated
+azd bridge/beta.18/account, trusted-host/connectivity/effect checks and one
+serialized three-role publisher. `release-close` retains all actual live gates
+and attributable cleanup. Preserve stdout/parser and existing truthful screens.
+Consumed skill dispositions apply only at their exact originating delivery
+task: accepted `14ee132e` readback is not reopened or a runtime prerequisite.
+COMMON rollback provenance is **WAIVED, never PASS**; held/UNKNOWN effects
+remain held. No packaging, authentication, publication or live success is
+established by this architecture.
+
 ## IP-S1 scoped amendment: preserve skill content, reconcile delivery identity
 
 Apply the [scoped integration disposition](../../customer-prototype-sprint-architecture.md#ip-s1-scoped-amendment-skill-only-integration-identity)

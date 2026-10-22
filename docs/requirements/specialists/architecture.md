@@ -1,5 +1,26 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current IP-S2 recovery: preserve trusted remote specialist observations
+
+Consume the [current IP-S2 architecture](../../customer-prototype-sprint-architecture.md#current-ip-s2-recovery-current-package-and-observable-initial-collaboration).
+Canonical **Hosted architect**, **Hosted reviewer**, shared identity/conversation/
+artifact components and `collaboration-design`/`collaboration-review` are
+unchanged. `demo/host.py`, `demo/foundry.py`, `demo/architect_agent.py` and
+`demo/reviewer_agent.py` retain pinned supported SDK/background hooks, exact
+assignments and immutable role outputs. Original later-runtime offline E2E
+is accepted, not actual trusted ingress, history consumption or live completion.
+
+Both specialists and coordinator must bind to the same new reviewed common
+package before current acceptance. After readiness and distinct synthetic
+intent, paired outbound/ingress/SDK observations localize only their observable
+interval. Missing public delegation header does not prove platform loss;
+never substitute a guessed header or populate trust from arbitrary ingress.
+No evidenced specialist correction is established by the CLI denial or
+test-only lab mount repair. Hosted capture/provenance, exact histories and
+actual continuity/isolation stay explicit live obligations. Keep remote roles,
+same-parent hosted/framework pins, fresh responses and immutable prerequisites;
+no hidden local specialist, uncertain replay or inferred live PASS.
+
 ## Current IP-S1: retain remote specialist trust during qualification
 
 Apply the [current sprint overlay](../../customer-prototype-sprint-architecture.md#current-ip-s1-qualify-retained-observation-source-after-transport-recovery)

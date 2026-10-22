@@ -1,0 +1,169 @@
+{
+  "kind": "SprintArchitectureContinuation",
+  "sprintId": "IP-S3",
+  "round": 2,
+  "owner": "Architect",
+  "reviewers": ["Product Owner", "Critic", "Red Team"],
+  "scope": "Assess continuity, supported recovery, independent isolation and measured delivery after accepted private receipt retention and fixed-ref delivery. Preserve all prior sprint contracts and partial states.",
+  "source": {
+    "branch": "feature/customer-hosted-session-prototype",
+    "inspectedApplicationHead": "eac8f2f6942f9d2baeaaf7c9889878577adac3ff",
+    "acceptedDeliveredObservationRef": "f9fcd9cf4f04075e609196ebb90b30e09a91dd98",
+    "selectedLabAcceptedReference": "9b4919d8bcdbf07203f32657936c27328ea6ccc1",
+    "qualification": "Selected-lab and remote delivery are attributed accepted references, not fresh readbacks. Git advancement from the delivered observation ref lists nine architecture/planning/index paths only. The older de2deae E2E does not qualify later observation runtime."
+  },
+  "solutionModel": {
+    "path": "docs/customer-prototype-architecture.md#solutionmodel",
+    "mode": "Retain canonical components, support links, triggers, flows and step IDs unchanged; this amendment maps only affected scope.",
+    "canonicalGraphSHA256": "6c0b12ea78c7ea96f8a9c01b334426487af24c3a6ab5fc53f8e69a281d34b3bd",
+    "counts": {"components": 10, "flows": 5, "steps": 18},
+    "implementationMapping": [
+      {
+        "components": ["coordinator", "architect", "reviewer", "conversation-state", "artifact-plane", "terminal-client"],
+        "flow": "two-turn-continuity",
+        "steps": ["continuity-revise", "continuity-invoke", "continuity-verify"],
+        "sourceCriterion": "ReleasePlan IP-S3 acceptanceCriteria[0,3]; AC2/G5 and retained offline AC3/AC6",
+        "modules": ["demo/workflow.py", "demo/foundry.py", "demo/architect_agent.py", "demo/reviewer_agent.py", "live_acceptance.py", "docs/identity-candidate-handoff.md"],
+        "implemented": "Retained workflow, specialist history, scenario assertions and accepted prospective companion.",
+        "locallyVerified": "Accepted offline task/E2E evidence only; no new runtime suite in this architecture turn.",
+        "deployed": "Final correction-package bindings unproven.",
+        "independentlyLiveVerified": false,
+        "missingConstruction": "No newly demonstrated source defect or supported missing adapter. Pending state/response IDs do not prove consumed model history.",
+        "smallestLiveHandoff": "Completed NON-HELD initial parent, both hosted/framework child bindings and pins, exact immutable inputs/outputs, independently observed exactly two child creations and new response/send occurrences across the follow-up."
+      },
+      {
+        "components": ["workflow-checkpoints", "conversation-state", "artifact-plane", "identity-boundary", "release-toolchain"],
+        "flow": "supported-recovery",
+        "steps": ["recovery-stop", "recovery-resume", "recovery-verify"],
+        "sourceCriterion": "ReleasePlan IP-S3 acceptanceCriteria[1]; AC4/G6",
+        "modules": ["live_acceptance.py", "scenario_state_reader.py", "demo/effect_observation.py", "demo/private_effect_capture.py", "docs/identity-typed-checkpoint-export.md"],
+        "implemented": "Accepted scoped reader, trusted occurrence bridge and opt-in durable consumer; retained once-only stop and checkpoint comparison contracts.",
+        "locallyVerified": "Accepted local typed round-trip and receipt/preservation fixtures; these do not export original persisted encoding or establish live provenance.",
+        "deployed": "Owned hosted capture installation, destination, coverage and anchors unproven.",
+        "independentlyLiveVerified": false,
+        "missingConstruction": "Accepted typed-export negative remains: no newly supported original-encoding attachment seam or approved comparison-contract change. No private codec, lossy projection or second collector is justified.",
+        "smallestLiveHandoff": "Completed two-turn proof, exact once-only durable stop intent, actual HTTP 204 and independently confirmed stopped/idle state, original checkpoint/graph/record equality and cumulative journal/boundary observations. Unknown stop stays held; idle readback alone cannot replace 204."
+      },
+      {
+        "components": ["coordinator", "architect", "reviewer", "conversation-state", "artifact-plane", "identity-boundary", "release-toolchain"],
+        "flow": "parent-isolation",
+        "steps": ["isolation-bind", "isolation-execute", "isolation-verify"],
+        "sourceCriterion": "ReleasePlan IP-S3 acceptanceCriteria[2]; AC4/G7",
+        "modules": ["live_acceptance.py", "scenario_state_reader.py", "tests/test_scenario_evidence.py", "tests/test_private_effect_capture.py"],
+        "implemented": "Retained cross-scope rejection and independent occurrence/state comparison contracts.",
+        "locallyVerified": "Accepted fixtures, not an authenticated separate-parent run.",
+        "deployed": "Final three-role bindings unavailable.",
+        "independentlyLiveVerified": false,
+        "missingConstruction": "No new isolation feature is justified. Final aggregate input requirements are not an execution dependency on successful recovery.",
+        "smallestLiveHandoff": "Final deployed bindings plus safe completed comparison scope, distinct synthetic intent/parent/children/artifact scope, exclusion of first-parent requirements, independent provenance and attributable cleanup. Recovery success is not a prerequisite."
+      },
+      {
+        "components": ["terminal-client", "release-toolchain", "identity-boundary"],
+        "flow": "guarded-release",
+        "steps": ["release-join", "release-package", "release-discriminate", "release-close"],
+        "sourceCriterion": "ReleasePlan IP-S3 acceptanceCriteria[4,5]; IP-S2 acceptanceCriteria[0-5]; AC7-AC9/G8",
+        "modules": ["package_guard.py", "docs/customer-prototype-release-notes.md", "docs/customer-prototype-sprint-plan.json", "demo/host.py", "demo/private_effect_capture.py"],
+        "implemented": "Accepted source/package closure preparation, companion/status/integration and fixed reviewed observation-ref delivery.",
+        "locallyVerified": "Original source-task results and old bounded E2E retained with their exact boundaries and exclusions.",
+        "deployed": "No final correction common bundle or three-role publication proof.",
+        "independentlyLiveVerified": false,
+        "missingConstruction": "No duplicate push, planning-only delivery cycle, automatic capture installation or unchanged preflight retry. Later observation runtime still requires affected original E2E/package qualification.",
+        "smallestLiveHandoff": "Supported resolution evidence for exact native denial, native pinned-tool/dedicated-auth readiness, current automated package/source/version/host/effect checks, serialized three-role publication, separately intended traffic, actual scenarios and owned cleanup to original review/retro/closeout."
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/ae0bade07582d467826277da2ca92c61252811c39543d8d40cd8b85272a7dd1c.json",
+      "finding": "Opened exact IP-S3 blocked outcome and final Architect/Critic/Developer reviews: each agree:true but taskComplete:false. All retain native readiness, final common publication and actual live acceptance as unmet. No authoritative approval-resolution evidence is supplied."
+    },
+    {
+      "reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/14197a785c30ee74b647e418120b16daa28f83c84c199e9776a068c754e52e7e.json; de1de398d509d394290cffb2235c97d935641c8b6d88f0478a1387c45c9848d5.json",
+      "finding": "Opened preceding IP-S2 continuation-2 architecture/planning and all original final votes. Reviewers agree and complete those bounded exhaustion assessments. They do not waive this sprint's original criteria or establish a supported new operation."
+    },
+    {
+      "reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/0e118edd3d85f96b6ff15fbd7786a6d1ada936584045a3f25c2168638fec24bd.json; b542da129063c9de7bcb1ee685ff3fb179be80fbc56e229f494169184ae257ce.json",
+      "finding": "Opened final original consumer and fixed-ref delivery votes: Architect/Critic agree:true, taskComplete:true, unmetCriteria:[]. Delivery/readback through f9fcd9cf and consumer construction are accepted, not new backlog."
+    },
+    {
+      "reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/4d29a86101220f877a5a4462a2169032ab3c033e4ebf6a6ba6a1814d527411ae.json; docs/customer-prototype-profiling-s2-continuation-2-sprint-plan.json",
+      "finding": "Opened IP-S3 E2E original Architect/Critic/Product Owner votes: all complete the de2deae documentation-only/offline join. Preceding accepted plan records final completion votes for companion/status/integration and normalization/parallel dispatch. Do not redispatch or reopen them; later observation runtime is outside that E2E boundary."
+    },
+    {
+      "reference": "demo/host.py:main; demo/private_effect_capture.py; tests/test_private_effect_capture.py:PinnedBackgroundConsumerTests",
+      "finding": "Read actual host and accepted consumer. main installs ingress diagnostics, not private capture. Consumer requires trusted expected bindings, caller-owned exclusive file and installation before background creation; checkpoint/readback requires independently attested quiescence. Actual pinned fixture supplies an owned temporary handle and synthetic business work. It is not a deployed destination/coverage certificate."
+    },
+    {
+      "reference": "live_acceptance.py:_evidence_continuation and validate_scenario_evidence; docs/identity-typed-checkpoint-export.md; docs/identity-scenario-collection-qualification.md",
+      "finding": "Read unchanged full-record, stop-204, fresh-response, immutable journal and isolation comparisons. Validator authenticates no input provenance and final joining needs all scenarios. Accepted local typed round-trip is not original-encoding export; actual consumed model-history provenance remains unqualified. No new public seam or explicit contract decision is supplied."
+    }
+  ],
+  "blastRadius": {
+    "blockerKey": "sprint/3/IP-S3/DevOpsWorkLoop",
+    "nativeCondition": "Recorded noninteractive native-preflight denial remains unresolved; exact missing permission unidentified. This is not a diagnosed native authentication failure, missing RBAC or platform defect.",
+    "directlyAffected": ["release-package", "release-discriminate"],
+    "dependentLiveConditions": ["Completed non-held collaboration", "continuity-invoke", "recovery-stop", "isolation-execute", "release-close"],
+    "unaffected": "Authorized source/fixture/review/controlled Git construction; accepted branches have already been drained. Independent isolation is not recovery-gated but still needs real final bindings and safe scope.",
+    "closingAction": "Operator provides supported observable resolution of the recorded approval; original DevOps then proves native tools/authentication and current bindings. Original qualification and real private capture/provenance handoffs remain separate. Do not retry unchanged denial or manufacture a resume."
+  },
+  "workExhaustionAudit": {
+    "readyOrExecuting": "Packet has no remainingWork or pendingSprints; scheduled IP-S3 companion/status/join/consumer and final independent delivery have accepted handoffs. This is a packet-scoped audit, not a global process/Studio census.",
+    "feasibleSplits": "Reader, trusted attempt bridge, typed qualification, integration, durable consumer and fixed-ref delivery have already been split and accepted. Existing host/consumer contract exposes missing operational proof, not a newly supported source-local installation route. Another wrapper cannot prove ownership or remote coverage.",
+    "independentApprovedBacklog": "Read current ReleasePlan IP-S1/IP-S2/IP-S3 criteria and readiness graph. Retained offline AC3/AC6, companion, measured status and exact substantive Git delivery are consumed. Isolation can run without recovery success only after its missing final bindings/safe scope. No new UI, parser, schema, SDK pin or speculative identity correction is approved.",
+    "boundedUnlockingInvestigation": "Read actual host/consumer/fixture and aggregate contracts and accepted typed/history negative handoffs. Current advancement is documentation/index only; no changed permission evidence, newly supported export/history seam or explicit Architect-advised Product Owner comparison decision. Repeating negative research or unchanged tests creates no new unlock.",
+    "originalQualification": "Later accepted observation runtime still needs affected original E2E/package qualification. continuation.sourceSubjects is empty. Do not invent an e2eSubject or use the old documentation-only E2E as new-runtime certification. No changed condition unlocks the exact native-blocked DevOps stage; resumes and recheck remain empty.",
+    "conclusion": "No new useful authorized construction candidate in this bounded assessment. All three sprints remain partial; source exhaustion is neither cloud acceptance nor a verdict that no future supported solution can exist."
+  },
+  "priorDispositions": {
+    "retainedSatisfiedWithinOriginatingBoundaries": [
+      "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-CREDENTIAL-TIMEOUT-PRESERVATION\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-TIMEOUT-REGRESSION-EVIDENCE\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-CHANGED-JOIN-HANDOFF\"]",
+      "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-NORMALIZED-PLAN-HANDOFF\"]",
+      "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-OBSERVED-PARALLEL-DISPATCH\"]",
+      "[\"yaml-loops-v1:sprint/2/IP-S2/continuation/1/task/IP-S2-C1-EFFECT-BOUNDARY-BRIDGE/AssignedWorkDeveloperLoop\",\"EFFECT-LATE-INHERITED-CAPTURE\"]"
+    ],
+    "remainingRequired": [
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-COMMON-PACKAGE-PUBLICATION\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-LIVE-ACCEPTANCE\"]"
+    ],
+    "superseded": [],
+    "rollback": "Historical COMMON rollback ZIP/build provenance remains WAIVED, never PASS. Current automated bindings/effect checks remain required."
+  },
+  "SprintPlan": {
+    "kind": "SprintPlan",
+    "sprintId": "IP-S3",
+    "featureBranch": "feature/customer-hosted-session-prototype",
+    "planningOwner": "Scrum Master",
+    "architectureWorkCandidates": true,
+    "tasks": [],
+    "AssignedWorkDeveloper": [],
+    "AssignedWorkUIDeveloper": [],
+    "AssignedWorkDevOpsEngineer": [],
+    "AssignedWorkDesigner": []
+  },
+  "Continuation": {
+    "disposition": "exhausted",
+    "summary": "Accepted receipt retention and fixed-ref delivery close the prior independent candidates. No new supported construction or materially changed condition permits reassessing this exact blocked stage. Preserve incomplete IP-S1/IP-S2/IP-S3 and all original live criteria.",
+    "evidence": [
+      "Opened ae0bade0 final partial DevOps reviews; native/package/live criteria remain unmet.",
+      "Opened accepted 0e118edd consumer and b542da12 delivery; no duplicate task or planning-only push.",
+      "Opened accepted de1de398/14197a78 architecture/planning and 4d29a861 old bounded E2E. Current source adds only architecture/planning/index paths.",
+      "Read current ReleasePlan, actual host/consumer/background fixture and unchanged aggregate comparisons. No new supported export/history seam or approval-resolution evidence; independent isolation still lacks final bindings/safe scope."
+    ],
+    "resumes": []
+  },
+  "verification": {
+    "repositoryCommand": "scripts/Test-Repository.ps1 with existing explicit Python",
+    "repositoryResult": "PASS: current inventory, 134 public files, public/private boundary, JSON, PowerShell, frontmatter and whitespace; exit 0.",
+    "preservationResult": "PASS: four historical sprint/tier suffixes preserved after LF normalization; five original contracts/plans unchanged; canonical graph SHA256 unchanged; all mapped component/flow/step IDs and modules valid; nine-path documentation-only ancestry; empty tasks/resumes, unchanged specification SHA256 and empty staging.",
+    "qualification": "Architecture/index documentation only. Application/retained/Linux suites were not replayed for unchanged source; prior results remain attributed. Repository checks include unowned specification/index overlay, not clean-checkout certification.",
+    "notPerformed": ["Dependency installation", "Native-denial retry", "Credential acquisition", "Package creation", "Publication", "Live invocation or retrieval", "Stop/resume", "Live cleanup", "Push"]
+  },
+  "handoff": {
+    "receivingOwner": "Scrum Master",
+    "reviewers": ["Product Owner", "Critic", "Red Team"],
+    "next": "Use existing continuation planning/review, then original sprint review/retro/closeout. Retain bounded incomplete checkpoint. Reassess only on concrete supported permission resolution, eligible original qualification handoffs, a newly supported seam or explicit Architect-advised Product Owner scope decision. Do not poll unchanged blockers.",
+    "releaseState": "Implemented/local evidence is retained; final common publication, independently verified AC1-AC9/G1-G8, attributable live cleanup and original closeout remain incomplete. Held parents and UNKNOWN effects are unchanged."
+  }
+}

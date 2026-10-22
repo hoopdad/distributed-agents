@@ -1,5 +1,15 @@
 # Repository index
 
+IP-S3 continuation-2 architecture at `eac8f2f6`:
+`docs/customer-prototype-profiling-s3-continuation-2-architecture.json` and
+current sprint/tier openings map continuity/recovery/isolation/delivery to the
+unchanged canonical graph, approved criteria and actual source. Accepted private
+consumer and fixed-ref delivery are consumed. Empty candidate tasks/resumes
+retain bounded exhaustion, not release success. Exact native denial, affected
+original qualification, hosted ownership/coverage, typed/history limits and
+all actual cloud/cleanup/closeout obligations remain. No duplicate construction,
+planning-only push, unchanged denied operation or accepted-work replay.
+
 IP-S2 continuation-2 bounded architecture at `709c4a0f`, consuming original
 accepted delivery/readback of substantive observation source `f9fcd9cf`:
 `docs/customer-prototype-profiling-s2-continuation-2-architecture.json` and
@@ -1929,6 +1939,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-profiling-s2-continuation-2-sprint-plan.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-profiling-s3-continuation-2-architecture.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

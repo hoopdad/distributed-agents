@@ -1,5 +1,18 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## IP-S3 continuation 2: preserve remote history and comparison requirements
+
+Apply the [IP-S3 assessment](../../customer-prototype-profiling-s3-continuation-2-architecture.json).
+Canonical architect/reviewer IDs/supports and accepted source are unchanged.
+No newly supported history/export seam or demonstrated specialist defect
+justifies construction. Retain both hosted/framework child identities and pins
+while new response IDs, exact prerequisite refs and immutable outputs advance.
+Local typed persistence and private occurrence accounting do not prove original
+checkpoint encoding, consumed model history or authenticated identity resolution.
+Both remote roles still require final common-package bindings and actual
+continuity/isolation evidence. Do not replay accepted research, invent a codec,
+substitute headers, weaken trust or hide a local specialist.
+
 ## IP-S2 continuation 2: retain unsupported intervals without repeated research
 
 Apply the [bounded assessment](../../customer-prototype-profiling-s2-continuation-2-architecture.json).

@@ -1,5 +1,18 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## IP-S3 continuation 2: preserve the accepted coordinator and missing live handoffs
+
+Apply the [IP-S3 assessment](../../customer-prototype-profiling-s3-continuation-2-architecture.json).
+Canonical components/supports/steps and coordinator source remain unchanged.
+Accepted receipt retention/delivery closes the prior source candidates, not
+initial collaboration or continuity. Keep exact trusted parent/child binding,
+immutable prerequisites, ETag publication, checkpoint/journal reconciliation,
+late incomplete receipts and held/UNKNOWN behavior. No arbitrary header-to-
+trusted-context mapping or automatic capture activation is justified.
+Completed NON-HELD initial evidence still gates follow-up; completed two-turn
+proof gates supported stop. Actual hosted ownership/coverage and independent
+anchors are unproven. No new construction or unchanged DevOps resume is emitted.
+
 ## IP-S2 continuation 2: retain the delivered local observation boundary
 
 Apply the [bounded assessment](../../customer-prototype-profiling-s2-continuation-2-architecture.json).

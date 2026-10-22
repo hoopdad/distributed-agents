@@ -1,5 +1,40 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## IP-S3 continuation 2: retain the incomplete live comparison boundary
+
+October 22, 2026. The [separate IP-S3 assessment](customer-prototype-profiling-s3-continuation-2-architecture.json)
+maps continuity, once-only recovery, independent isolation and measured delivery
+to unchanged canonical components/steps, approved criteria and actual modules.
+Current `eac8f2f6` adds only architecture/planning/index ancestry after accepted
+observation ref `f9fcd9cf`. Opened original consumer/delivery final votes
+`0e118edd`/`b542da12` and preceding architecture/planning `de1de398`/`14197a78`;
+those bounded handoffs are accepted, not work to redispatch.
+
+Opened exact blocked `ae0bade0`: original reviewers agree with its partial
+report but all retain **taskComplete:false**. Native approval resolution is
+absent, exact missing permission unidentified. Final package/publication and
+live conditions remain unmet. Old accepted `4d29a861` qualifies the `de2deae`
+documentation-only/offline join, not later observation runtime. Affected
+original E2E/package qualification remains required; no eligible new source
+subject or changed native condition is supplied, so no resume/recheck is emitted.
+
+Actual host/consumer/background fixture and unchanged aggregate comparisons
+confirm the remaining boundaries: opt-in receipt retention needs a caller-owned
+exclusive destination, installation before background creation, independent
+anchors/quiescence and actual hosted coverage. Typed local persistence is not
+original-encoding export; pending state and response IDs are not consumed
+model-history proof. No new supported seam, source defect or comparison-contract
+decision justifies another adapter, codec, automatic activation or research loop.
+
+Audited all approved sprints and already accepted companion/status/fixture/Git
+preparation. No new useful source candidate remains in this packet. Return
+**exhausted** with empty tasks/resumes for original Scrum coordination, not
+release success. Isolation remains independent of recovery success after its
+own final-binding/safe-scope handoff; aggregate joining does not serialize it.
+All three sprints remain partial. Preserve held/UNKNOWN effects, actual
+AC1-AC9/G1-G8, attributable cleanup and original review/retro/closeout.
+Historical COMMON rollback provenance remains **WAIVED, never PASS**.
+
 ## IP-S2 continuation 2: assess the drained construction boundary
 
 October 22, 2026. The [separate bounded assessment](customer-prototype-profiling-s2-continuation-2-architecture.json)

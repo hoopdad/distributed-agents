@@ -1,5 +1,21 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## IP-S3 continuation 2: keep operational prerequisites separate from construction
+
+Apply the [IP-S3 assessment](../../customer-prototype-profiling-s3-continuation-2-architecture.json).
+Canonical terminal/release IDs, stdout/parser and comparison contracts remain
+unchanged. Accepted `f9fcd9cf` delivery is not another push assignment. Old
+`de2deae` E2E is not later-runtime qualification; necessary original E2E/package
+checks remain. Exact native-preflight denial is unresolved, missing permission
+unidentified; no unchanged retry, alternate route or resume is emitted.
+Original DevOps retains native readiness, automated current bindings, serialized
+three-role common publication and real private capture/cleanup obligations.
+Once-only stop needs intent, actual 204 and stopped/idle proof; uncertain stop
+cannot be resent. Isolation needs final bindings/safe scope, not recovery
+success. Empty new tasks/resumes record bounded exhaustion only. All partial
+sprints, actual AC1-AC9/G1-G8 and original review/retro/closeout remain incomplete.
+Historical COMMON rollback provenance remains WAIVED, never PASS.
+
 ## IP-S2 continuation 2: delivered source is not native or live readiness
 
 Apply the [bounded assessment](../../customer-prototype-profiling-s2-continuation-2-architecture.json).

@@ -1858,10 +1858,10 @@ class LiveObservationTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(observe.await_count, 2)
         self.assertEqual(observe.await_args_list[0].args[2:], ("known-child-session", "17"))
         self.assertEqual(observe.await_args_list[0].kwargs,
-                         {"role": "architect", "response_id": "known-child-response"})
+                         {"role": "architect", "response_id": "known-child-response", "structured": True})
         self.assertEqual(observe.await_args_list[1].args[2:], ("known-parent-session", "22"))
         self.assertEqual(observe.await_args_list[1].kwargs,
-                         {"response_id": "known-parent-response"})
+                         {"response_id": "known-parent-response", "structured": True})
         self.assertIn("parent_host_diagnostics", json.loads(output.getvalue()))
         client.responses.retrieve.assert_awaited_once_with(
             "known-parent-response", extra_query={"agent_session_id": "known-parent-session"},

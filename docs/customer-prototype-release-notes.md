@@ -1,5 +1,84 @@
 # Customer hosted-session prototype: blocked release notes
 
+## Hosted structured identity interval — October 22, 2026
+
+**PARTIAL; cloud acceptance remains incomplete.** This continues
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-cloud-verification"]`.
+The same origin's accepted common package and guarded publication remain
+satisfied for versions **19 / 17 / 25**; no package, deployment or inference
+was repeated.
+
+The retained observer previously discarded the structured profiling events.
+`live_acceptance.py` now strictly projects the existing emitter's closed
+schema, including wrapped logstream messages. It rejects extra/private fields,
+wrong roles and malformed values, preserves occurrences without deduplication,
+and bounds each session stream to 30 seconds, 2 MiB and 512 profile records.
+Legacy diagnostic-only callers keep their original byte limit. This changes
+the local read-only observer, not hosted runtime, authentication or trust.
+
+An exclusive prospective intent preceded one retained **Observe** execution
+against the newly held parent and known child. Receipt
+`live-current-common-20261022-DevOps/connectivity-073124da375449f4abdb760a2848dd4f-receipt.json`
+has SHA256
+`7aef63470037dc5c724f57392640d16908d262112051a0b226f6ae3fc1337979`.
+All private paths here are relative to the authorized permission-recovery root.
+
+- Collection exited zero with **zero inference**, unchanged held-parent bytes,
+  and proven closure of its owned jobs and listeners.
+- Architect session/version collection retained **23** structured events.
+  A POST `/responses` ingress event observes delegation **absent**, platform
+  `x-agent-user-id` **absent**, and call **nonempty**. A preparation rejection
+  shares its local observation alias: request user **absent**, scope user
+  **unavailable**, call **nonempty**. Response-bound legacy diagnostics still
+  identify `NATIVE_HOST_PRINCIPAL`. A 200 response-header event is not execution
+  success.
+- Coordinator session/version collection retained **109** structured events.
+  Its actual outbound POST transport checkpoint observes delegation **nonempty**,
+  platform user **absent**, call **nonempty**; headers and stream-completion
+  checkpoints also survive. This advances beyond merely observing client
+  context before transport. It does not identify the bearer principal.
+- Both streams ended at their time bound. Session URLs/version bindings and
+  local aliases are retained, but aliases do not independently prove a
+  cross-process response/operation join. The parent stream lacks some early
+  ingress/context checkpoints. No complete historical log, complete occurrence
+  accounting, authenticated-principal measurement or platform translation
+  diagnosis is claimed. Public delegation-header absence alone proves no loss.
+
+Four added observer regressions cover strict redaction, malformed/extra data,
+fragmented SSE, occurrence preservation and record/byte bounds. The existing
+known-response/no-resend regression now explicitly requires structured capture.
+Initial focused execution exposed its old keyword-argument expectation; that
+assertion was updated, not removed. A full changed-observer application run
+passed **363 tests / 77.422 seconds** with explicit existing Python and linked
+lab. Final consolidated-source execution also passed **363 / 59.220 seconds**;
+repository checks passed the current index and **139-file** public boundary.
+No manifest change, dependency installation or retained-tool modification.
+
+Executed pre-consolidation observer sources are exclusively retained in
+`profile-monitor-source/`; their bytes independently match the *pre-execution*
+intent hashes. The parser and four fixtures were subsequently consolidated
+into existing files to preserve the unowned index/specification overlay.
+Historical intent, receipt and source hashes were not resealed.
+
+**Receiving owners — Architect / Scrum Master:** select the smallest supported
+identity discriminator/correction and any necessary hosted capture integration
+against this new measured interval, then route source changes through original
+Developer/E2E reviews. No supported application fix follows from header presence
+alone; do not substitute IDs, remove trust gates or infer RBAC failure.
+The current host installs diagnostics but not the opt-in caller-owned durable
+effect consumer. A supported private destination, installation before inherited
+tasks, independent state anchors and quiescence remain required for hosted
+provenance; session logs do not supply them.
+
+Independent isolation is not made dependent on recovery: its implemented fresh
+parent path is available, but needs its own final readiness and safe comparison
+bindings/capture. This round did not send it or claim aggregate validation as
+its execution prerequisite. Continuity still requires a completed non-held
+initial turn; once-only stop/resume requires genuine two-turn evidence.
+No global exhaustion, user-only action, new approval stage or release PASS is
+asserted. Preserve all held/UNKNOWN effects and original downstream reviews,
+retro/closeout. COMMON rollback provenance remains **WAIVED, never PASS**.
+
 ## Guarded common publication and actual initial failure — October 22, 2026
 
 **DEPLOYED; cloud acceptance FAILED, not complete.** This advances the required

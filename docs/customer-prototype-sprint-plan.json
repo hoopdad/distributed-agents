@@ -1,4 +1,194 @@
 {
+  "identityProfilingCorrection": {
+    "kind": "SprintPlan",
+    "sprintId": "IP-S1",
+    "goal": "Construct paired outbound, raw ASGI ingress and reachable SDK/background diagnostics without changing trusted execution.",
+    "featureBranch": "feature/customer-hosted-session-prototype",
+    "baseline": "936793977bae0d59e13bbec3860025ff51404809",
+    "currentPlanSelector": "/identityProfilingCorrection",
+    "dispatchSerialization": "Return the selected SprintPlan object inline, with its six tasks. Do not return this historical container as a bare path: a consumer that ignores the JSON selector could dispatch old RP-S1 tasks.",
+    "historicalBoundary": "This property is the current IP-S1 plan. Other root properties remain the historical RP-S1 plan, unchanged and not concurrently executable. Dispatch the selected object, never the historical root tasks.",
+    "acceptedInputs": {
+      "Architecture": "e247969942a343c9b1662a59a54ef47c3c714386",
+      "UserExperience": "56076795b4524e82ab4beb2b1f1ff958c26c7eac",
+      "ReleasePlan": "4999ce5817a1714c6c2dc65ebbecb933bf49ecb4",
+      "SprintDesign": "84bacadf163a5f8a0397078961bf4fd16401810e",
+      "SprintArchitecture": "936793977bae0d59e13bbec3860025ff51404809"
+    },
+    "governance": {
+      "priorDispositions": [],
+      "feedback": null,
+      "reviewers": ["Product Owner", "Architect", "Critic"],
+      "implementationReviewers": ["Architect", "Critic"],
+      "dispatch": "Existing orchestrator dispatches dependency-ready original Developer loops in parallel before planning review. Scrum launches no substitute agents. Complete means owner dispatch-readiness, not observed dispatch or collective agreement.",
+      "observedDispatchedTaskIds": [],
+      "readyInParallel": ["IP-S1-EVENT-CONTRACT", "IP-S1-SDK-INVENTORY"],
+      "branchAndReconciliation": "Application checkout is already on the authorized feature branch. All tasks write scoped paths there without branch switching; IP-S1-INTEGRATE owns reconciliation and exact-source handoff. Each owner commits explicit owned paths with git commit --only before original review, inspects fresh staging/status, and retries ordinary transient contention without deleting locks. Never stage unrelated work. Integration records each task/branch/commit and ancestry, or retains a named branch with task/commit/abandonment reason recorded in a feature-branch commit. Keep abandoned branches; no force, reset, stash or history amendment.",
+      "preExistingWork": "Preserve the modified .github/repo-index.md and untracked docs/identity-profiling-workflow.md. They are not accepted task commits. This plan extends an existing JSON document at an explicit selector, adds no file and does not modify the canonical architecture or inventory. Historical root plan and its dispositions remain bounded historical evidence.",
+      "sharedFiles": "EVENT-CONTRACT owns demo/diagnostics.py and tests/test_diagnostics.py until its reviewed handoff; thereafter they transfer to INTEGRATE. TRANSPORT owns demo/foundry.py and demo/routing.py; SDK-POLICIES also needs demo/foundry.py, so both hold the identical application-foundry-source resource, including reviews. INGRESS-CONTEXT owns demo/host.py, demo/workflow.py and new focused host tests. SDK-INVENTORY owns its coverage document; SDK-POLICIES takes it after acceptance. INTEGRATE takes all finished paths, package closure and shared tests/index. Other tasks must report cross-owned fixes, not edit those paths.",
+      "resources": "Matching exclusiveResources serialize shared source including reviews, not unrelated subsystems. No global Git resource is held for whole assignments; ordinary short Git operations must tolerate index contention. No task uses live CLI sessions, network listeners, publication, ports or cloud mutations. Tests use in-process fakes or individually owned ephemeral resources, with attributable cleanup.",
+      "authority": "Only the current October 21 correction authority applies. Historical COMMON rollback ZIP/build-provenance is WAIVED, not PASS. Current package/source/version/trusted-host/effect checks remain automated gates. No infrastructure/RBAC/quota/network/DNS/registry/VPN mutation, secrets, external upload, production profile, denial bypass or uncertain-effect replay. Preserve the held original parent and known response IDs. No guessed identity remedy.",
+      "checks": "Use an existing absolute validated Python and explicit selected lab root. Install dependencies only after manifest change or missing-tool failure. Original E2E owns documented Test-Demo.ps1 and scripts/Test-Repository.ps1, not a substitute validator. If a required current command is denied, preserve that exact boundary without alternate-tool retry and continue independent source work. Historical check denial is not a blanket new approval requirement. Changed retained tooling requires its actual retained regressions.",
+      "laterStages": "Original EndToEndTestLoop follows reviewed integration; original DevOpsWorkLoop retains Linux/hosting/package checks, a new common package, all-three-role guarded serialized publication and later live evidence/cleanup. No devops, UI or designer construction task is necessary for IP-S1. No accepted renderer or fixtures are rebuilt. IP-S2/IP-S3 have no whole-sprint dependency; their independent approved preparation may continue through their existing planning, while effects consume only real reviewed prerequisites.",
+      "auditEvidence": [
+        "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/0ce2eb36318f8583f59e58ce5afac4b1b6edd92b02df6ff1d3db9af2211c17db.json",
+        "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/38e57ebfe79756be28cddd9e1ed30056ab753777175ff5c1d85af5dd90211f22.json",
+        "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/0c2598dcfa07a6e154b8452a4baf4387d8d2dc0f4f6356193eb919c3f8181f67.json"
+      ],
+      "inspectedVotes": "All original reviewers in each of the three named audits recorded agree=true, taskComplete=true and no unmet criteria. These accept their documents only, not implementation, this SprintPlan or live capability."
+    },
+    "criticalPath": {
+      "estimatedMinutesScope": "Rough scheduling estimates only, not limits or acceptance promises; implementation/review/integration units are minutes.",
+      "path": ["IP-S1-EVENT-CONTRACT", "IP-S1-TRANSPORT", "IP-S1-SDK-POLICIES", "IP-S1-INTEGRATE", "original EndToEndTestLoop", "original DevOpsWorkLoop"],
+      "reason": "Contract unlocks independent transport and ingress/context implementation. Inventory runs immediately beside it. Transport and SDK attachment share foundry.py and serialize through one resource; prefer transport first when both become ready. Host/background construction overlaps both. Join waits only for reviewed construction handoffs. Later E2E and cloud durations are unknown, not invented estimates.",
+      "resourceOrderPreference": ["IP-S1-TRANSPORT", "IP-S1-SDK-POLICIES"],
+      "parallelWaves": [["IP-S1-EVENT-CONTRACT", "IP-S1-SDK-INVENTORY"], ["IP-S1-TRANSPORT", "IP-S1-INGRESS-CONTEXT"], ["IP-S1-SDK-POLICIES", "IP-S1-INGRESS-CONTEXT"], ["IP-S1-INTEGRATE"]],
+      "nonBlocking": "A missing supported SDK injection point completes the bounded inventory with actionable uncovered-path evidence and limits SDK attachment, not transport/ingress construction. An actual failing supported implementation remains failure. A live tracing/authentication boundary affects later live verification, never grants local acceptance or stops unrelated approved construction."
+    },
+    "tasks": [
+      {
+        "id": "IP-S1-EVENT-CONTRACT",
+        "title": "Build the trusted transport diagnostic event contract",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": [],
+        "exclusiveResources": ["application-diagnostic-contract"],
+        "estimatedMinutes": {"implementation": 30, "review": 15, "integration": 5},
+        "produces": ["Reviewed bounded event helper/interface and synthetic lifecycle/header fixtures usable by both transports and host hooks."],
+        "consumes": ["Accepted SprintArchitecture shared event and lifecycle contract; current SprintDesign Screen F semantics."],
+        "ownedPaths": ["demo/diagnostics.py", "tests/test_diagnostics.py"],
+        "acceptanceCriteria": ["Explicit bounded schema: role/stage/method/route template/status/duration/category and safe attributable correlation; no arbitrary SDK objects or raw secrets.", "Distinguish coverage from presence; absent/empty/nonempty/duplicate/malformed and comparable equality semantics match accepted design.", "Redaction/logger-failure tests prove no identity values/hashes, bodies, URLs/queries, tokens or exception messages escape; helper failures do not alter authorization or rejection.", "Request-local/reset ContextVars or immutable snapshots; private logging cannot change machine stdout."],
+        "doneWhen": "A reviewed safe-event helper and fixtures establish bounded presence, coverage, correlation and lifecycle semantics with passing focused redaction and failure-isolation tests.",
+        "exclusions": ["No network invocation, trusted identity population, UI change or universal coverage claim.", "Do not implement or own transport/host hooks or package publication."],
+        "handoff": "Exact reviewed commit, helper API, fixture examples, focused command/results and known gaps to TRANSPORT, INGRESS-CONTEXT, SDK-POLICIES and INTEGRATE; transfer helper ownership to INTEGRATE after acceptance.",
+        "workCard": {
+          "role": "Developer", "action": "Build the trusted transport diagnostic event contract", "goal": "Provide a shared bounded event helper before parallel boundary instrumentation.",
+          "components": ["Trusted identity and private transport"], "flows": ["Remote design and review"], "flowSteps": ["collaboration-bind", "collaboration-design", "collaboration-review"],
+          "doneWhen": "A reviewed safe-event helper and fixtures establish bounded presence, coverage, correlation and lifecycle semantics with passing focused redaction and failure-isolation tests.",
+          "failureCategories": [], "mustAct": "Developer", "locations": ["demo/diagnostics.py", "tests/test_diagnostics.py"], "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+        }
+      },
+      {
+        "id": "IP-S1-SDK-INVENTORY",
+        "title": "Map supported SDK transport and context observation seams",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": [],
+        "exclusiveResources": ["application-sdk-coverage-document"],
+        "estimatedMinutes": {"implementation": 35, "review": 15, "integration": 5},
+        "produces": ["Factory/transport/supported-hook coverage matrix with exact pinned-source references and actionable unavailable intervals."],
+        "consumes": ["Accepted SprintArchitecture source seams and pinned dependencies; read only actual application factories and matching installed SDK source."],
+        "ownedPaths": ["docs/identity-profiling-coverage.md"],
+        "acceptanceCriteria": ["Inventory ProjectClient session creation/lookup, Responses/model and Decision httpx2, Blob/checkpoints, credentials and SDK-owned session/history/response stores separately.", "For each path identify owning factory, actual transport, supported injection option, observable events, safe bindings, gaps and proposed retained tests.", "Check actual pinned host preparation/resilient-background supported hooks; identify early rejection and unreachable context without private monkeypatches.", "Actionable unresolved or unsupported findings with exact source evidence complete this bounded inventory; they never prove a working hook or excuse another task's failure."],
+        "doneWhen": "A reviewed factory/transport/hook matrix identifies supported attachment seams and explicitly evidenced uncovered SDK-internal or platform paths, including actionable unresolved findings.",
+        "exclusions": ["No runtime edits, dependency installation absent justification, cloud calls, credential retrieval or guessed identity remediation.", "No claim that a single policy covers httpx2, SDK internals or Foundry platform resolution."],
+        "handoff": "Exact reviewed matrix commit, constructor/hook references and minimal supported attachment decisions to SDK-POLICIES and INGRESS-CONTEXT; no full implementation prerequisite for independent transport work.",
+        "workCard": {
+          "role": "Developer", "action": "Map supported SDK transport and context observation seams", "goal": "Identify actual application-controlled hooks and explicitly uncovered paths without cloud effects.",
+          "components": ["Trusted identity and private transport", "Parent and specialist conversation state", "MAF workflow checkpoints", "Private Blob artifacts and effect journal"], "flows": ["Remote design and review", "Supported compute stop and resume"], "flowSteps": ["collaboration-bind", "collaboration-route", "recovery-resume"],
+          "doneWhen": "A reviewed factory/transport/hook matrix identifies supported attachment seams and explicitly evidenced uncovered SDK-internal or platform paths, including actionable unresolved findings.",
+          "failureCategories": [], "mustAct": "Developer", "locations": ["docs/identity-profiling-coverage.md"], "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+        }
+      },
+      {
+        "id": "IP-S1-TRANSPORT",
+        "title": "Profile Foundry outbound requests and unbuffered stream outcomes",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": ["IP-S1-EVENT-CONTRACT"],
+        "exclusiveResources": ["application-foundry-source", "application-routing-source"],
+        "estimatedMinutes": {"implementation": 60, "review": 20, "integration": 10},
+        "produces": ["Paired actual-final-header transport observations and preserved streaming/recovery regression results."],
+        "consumes": ["Reviewed EVENT-CONTRACT helper and fixtures, not full SDK inventory or host implementation."],
+        "ownedPaths": ["demo/foundry.py", "demo/routing.py", "tests/test_transport_diagnostics.py"],
+        "acceptanceCriteria": ["Extend OriginTransport at actual send, response headers, error and stream outcome; profile relevant application-controlled Decision/model httpx2 paths without claiming Azure Core coverage.", "Retain exact HTTPS origin, TLS, no redirect, zero automatic retry, original chunk flow, close ownership and exception/cancellation propagation; never buffer/read ahead.", "Missing/empty/casing/duplicate header, concurrency and redaction sentinels exercise actual final outbound headers.", "Known-response-only recovery never sends again; failed transport/logger cannot suppress existing rejection or reinterpret HTTP status as successful execution."],
+        "doneWhen": "Reviewed httpx2 instrumentation emits paired send, headers, error and stream events with passing focused origin, redaction, concurrency, cancellation, close and no-second-send recovery regressions.",
+        "exclusions": ["No host/workflow/shared-helper edits; report requested contract fixes to its integration owner.", "No new synthetic live request, retry, held-operation replay or identity header substitution."],
+        "handoff": "Exact reviewed commit, event samples and focused test provenance to SDK-POLICIES and INTEGRATE; release foundry source ownership after original review.",
+        "workCard": {
+          "role": "Developer", "action": "Profile Foundry outbound requests and unbuffered stream outcomes", "goal": "Observe actual outbound HTTP boundaries without changing remote invocation or streaming semantics.",
+          "components": ["Trusted identity and private transport", "Hosted coordinator", "Decision-1 routing and admission"], "flows": ["Remote design and review", "Same-parent specialist continuation", "Supported compute stop and resume"], "flowSteps": ["collaboration-design", "collaboration-review", "continuity-invoke", "recovery-resume"],
+          "doneWhen": "Reviewed httpx2 instrumentation emits paired send, headers, error and stream events with passing focused origin, redaction, concurrency, cancellation, close and no-second-send recovery regressions.",
+          "failureCategories": [], "mustAct": "Developer", "locations": ["demo/foundry.py", "demo/routing.py", "tests/test_transport_diagnostics.py"], "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+        }
+      },
+      {
+        "id": "IP-S1-INGRESS-CONTEXT",
+        "title": "Observe Responses host ingress and resilient execution context",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": ["IP-S1-EVENT-CONTRACT"],
+        "exclusiveResources": ["application-host-source", "application-workflow-source"],
+        "estimatedMinutes": {"implementation": 80, "review": 25, "integration": 10},
+        "produces": ["Pure-ASGI public-hook instrumentation and actual pinned-host request/background/preparation rejection regressions."],
+        "consumes": ["Reviewed EVENT-CONTRACT helper; accepted SprintArchitecture pinned-hook constraints. Inventory is advisory as it arrives, not a blocking whole-subsystem prerequisite."],
+        "ownedPaths": ["demo/host.py", "demo/workflow.py", "tests/test_host_diagnostics.py"],
+        "acceptanceCriteria": ["Register pure-ASGI middleware with ResponsesHostServer.add_middleware before run; raw header observations preserve case/duplicates and never mutate scope, headers, body, receive/send or authorization.", "Use reachable public preparation/request-aware execution hooks; retain WorkflowPreparationDiagnostics and early rejection. No SDK private patch, process-global identity or arbitrary header-to-context population.", "Exercise actual pinned resilient-background path after request exit, concurrent isolation, absent/empty values, comparable scope/request-context equality, logger failure and original rejection.", "Tests preserve chunk/message, disconnect, cancellation and background semantics; distinguish final ASGI body from actual execution outcome; name unreachable hooks explicitly."],
+        "doneWhen": "Reviewed pure-ASGI and supported context checkpoints pass focused actual pinned-host tests for raw ingress, preparation rejection, request/background isolation and unchanged streaming, disconnect and cancellation.",
+        "exclusions": ["No inferred platform identity translation, trusted context repair, private SDK patch or cloud invocation.", "No changes to transport, package tooling, public output or existing deterministic authorization gates."],
+        "handoff": "Exact reviewed host/workflow commit, pinned hook references, actual background/rejection test evidence and unavailable checkpoint list to INTEGRATE and original E2E.",
+        "workCard": {
+          "role": "Developer", "action": "Observe Responses host ingress and resilient execution context", "goal": "Pair raw ASGI observations with reachable SDK and background context while preserving rejection and execution semantics.",
+          "components": ["Trusted identity and private transport", "Hosted coordinator", "Hosted architect", "Hosted reviewer", "MAF workflow checkpoints"], "flows": ["Remote design and review", "Supported compute stop and resume", "Separate-parent isolation"], "flowSteps": ["collaboration-bind", "collaboration-design", "collaboration-review", "recovery-resume", "isolation-execute"],
+          "doneWhen": "Reviewed pure-ASGI and supported context checkpoints pass focused actual pinned-host tests for raw ingress, preparation rejection, request/background isolation and unchanged streaming, disconnect and cancellation.",
+          "failureCategories": [], "mustAct": "Developer", "locations": ["demo/host.py", "demo/workflow.py", "tests/test_host_diagnostics.py"], "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+        }
+      },
+      {
+        "id": "IP-S1-SDK-POLICIES",
+        "title": "Attach supported SDK policies to owned session and Blob clients",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": ["IP-S1-EVENT-CONTRACT", "IP-S1-SDK-INVENTORY"],
+        "exclusiveResources": ["application-foundry-source", "application-sdk-coverage-document", "application-artifact-store-source"],
+        "estimatedMinutes": {"implementation": 45, "review": 20, "integration": 10},
+        "produces": ["Supported application-owned Azure Core policy attachments, constructor/pipeline tests and completed coverage rows."],
+        "consumes": ["Reviewed inventory decisions and shared helper; current reviewed foundry source after exclusive-resource acquisition."],
+        "ownedPaths": ["demo/foundry.py", "demo/artifact_store.py", "docs/identity-profiling-coverage.md", "tests/test_sdk_diagnostics.py"],
+        "acceptanceCriteria": ["Attach diagnostics only through proven pinned public application-controlled ProjectClient, Blob and credential options where supported; preserve original auth and retry behavior.", "Use constructor/transport fixtures to prove each claimed covered path actually emits bounded send/response/error diagnostics without logging credential responses.", "Document SDK-owned checkpoint/session/history/response and credential internals separately; unsupported injection remains explicitly uncovered with exact evidence, not implemented by private monkeypatch.", "No viable supported attachment may be silently omitted; observed failures remain failures. All-unavailable evidence may complete only this bounded attachment/inventory scope, never the broader paired profiling or live acceptance."],
+        "doneWhen": "Reviewed supported application-owned SDK policy attachments pass focused constructor, pipeline and redaction tests, with evidenced unsupported paths explicitly retained as uncovered in the coverage matrix.",
+        "exclusions": ["No policy insertion into httpx2, SDK private methods, site-packages or platform gateway.", "No auth/retry change, permission mutation, raw credential observation or shared host/workflow edits."],
+        "handoff": "Exact reviewed policy/matrix commits, supported options, coverage/test references and remaining SDK-internal gaps to INTEGRATE; preserve prior transport changes in shared foundry.py.",
+        "workCard": {
+          "role": "Developer", "action": "Attach supported SDK policies to owned session and Blob clients", "goal": "Cover application-controlled Azure Core clients without claiming unsupported SDK or gateway visibility.",
+          "components": ["Trusted identity and private transport", "Parent and specialist conversation state", "Private Blob artifacts and effect journal"], "flows": ["Remote design and review", "Supported compute stop and resume"], "flowSteps": ["collaboration-bind", "collaboration-return", "recovery-resume"],
+          "doneWhen": "Reviewed supported application-owned SDK policy attachments pass focused constructor, pipeline and redaction tests, with evidenced unsupported paths explicitly retained as uncovered in the coverage matrix.",
+          "failureCategories": [], "mustAct": "Developer", "locations": ["demo/foundry.py", "demo/artifact_store.py", "docs/identity-profiling-coverage.md", "tests/test_sdk_diagnostics.py"], "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+        }
+      },
+      {
+        "id": "IP-S1-INTEGRATE",
+        "title": "Join profiling source, package closure and retained regression evidence",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": ["IP-S1-TRANSPORT", "IP-S1-INGRESS-CONTEXT", "IP-S1-SDK-POLICIES"],
+        "exclusiveResources": ["application-foundry-source", "application-host-source", "application-workflow-source", "application-diagnostic-contract", "application-artifact-store-source", "application-sdk-coverage-document", "application-routing-source", "application-package-closure", "application-repository-index"],
+        "estimatedMinutes": {"implementation": 45, "review": 20, "integration": 15},
+        "produces": ["Exact reviewed feature-branch source join, package closure, regression provenance and original E2E/DevOps handoff."],
+        "consumes": ["All reviewed implementation handoffs, including transitive contract and inventory commits; accepted retained regressions, not reconstructed history."],
+        "ownedPaths": ["demo/diagnostics.py", "demo/foundry.py", "demo/host.py", "demo/workflow.py", "demo/artifact_store.py", "demo/routing.py", "package_guard.py", "tests", "docs/identity-profiling-coverage.md", ".github/repo-index.md"],
+        "acceptanceCriteria": ["Reconcile task commit ancestry onto the authorized feature branch; do not push moving unreviewed HEAD or absorb existing user work. Record any retained branch/commit/abandonment in a feature-branch commit message.", "Verify actual package closure includes any new module, amend only necessary application allowlists and tests; retained lab tooling change requires separately scoped original construction/review and affected retained checks, not guessed edits.", "Run combined focused redaction, case/duplicate, concurrent/background, stream/disconnect/cancel/close, early rejection and known-response-only regressions; preserve baseline parser/stdout, deterministic gates, immutable artifacts, exact refs, ETag, checkpoints and write-ahead holds.", "Refresh inventory after new paths while preserving pre-existing index notes/edits and specification ownership; commit only own intended changes.", "Handoff exact source/module/coverage/test bindings, actual commands/results and limitations to original E2E for documented full checks, then original DevOps for actual Linux/package/publication/live work. No local result closes cloud criteria."],
+        "doneWhen": "All reviewed task commits are reconciled or durably accounted for on the feature branch, profiling package closure and combined focused regressions pass, and an exact-source coverage/test handoff reaches original E2E and DevOps without claiming live acceptance.",
+        "exclusions": ["No package publication, synthetic live traffic, identity remediation without evidence or rewrite of the held/unknown history.", "No substitute E2E/cloud stage, baseline test removal, speculative lab release edits or accepted UI reconstruction."],
+        "handoff": "Reviewed feature-branch commit ledger, event API, finalized coverage matrix, package closure, exact focused-check commands/results and remaining observation gaps to original EndToEndTestLoop, then original DevOpsWorkLoop; retain original review/retro/release closeout.",
+        "workCard": {
+          "role": "Developer", "action": "Join profiling source, package closure and retained regression evidence", "goal": "Reconcile parallel profiling work into an exact reviewed source handoff for original E2E and guarded release.",
+          "components": ["Trusted identity and private transport", "Guarded lab release toolchain"], "flows": ["Exact-source guarded release"], "flowSteps": ["release-join"],
+          "doneWhen": "All reviewed task commits are reconciled or durably accounted for on the feature branch, profiling package closure and combined focused regressions pass, and an exact-source coverage/test handoff reaches original E2E and DevOps without claiming live acceptance.",
+          "failureCategories": [], "mustAct": "Developer", "locations": ["demo", "tests", "package_guard.py", "docs/identity-profiling-coverage.md", ".github/repo-index.md"], "evidence": "", "cause": "", "verification": {"status": "not-yet-verified", "evidence": ""}, "humanAction": "", "humanActionEvidence": ""
+        }
+      }
+    ],
+    "assignments": {
+      "AssignedWorkDeveloper": ["IP-S1-EVENT-CONTRACT", "IP-S1-SDK-INVENTORY", "IP-S1-TRANSPORT", "IP-S1-INGRESS-CONTEXT", "IP-S1-SDK-POLICIES", "IP-S1-INTEGRATE"],
+      "AssignedWorkUIDeveloper": [],
+      "AssignedWorkDevOpsEngineer": [],
+      "AssignedWorkDesigner": []
+    },
+    "handoff": "Dispatch selected tasks through existing original Developer loops. After reviewed integration, original E2E verifies the exact join with documented checks and original DevOps retains package/publication/live ownership. Reviewer votes and actual dispatch remain to be observed.",
+    "planningVerification": {"status": "partial", "evidence": "Git status and owned diff inspection succeeded: current feature branch, one additive existing-plan change and preserved unowned index/specification. The requested Python graph/history/card assertions, git diff --check and documented repository check did not execute: their combined tool call was denied because no interactive user response was available. No alternate-tool or constituent-check retry was made; underlying permission is not identified. No new path or architecture change requires an inventory refresh in this planning turn."},
+    "verification": {"status": "not-yet-verified", "evidence": "Implementation, runtime tests, new publication and live acceptance have not been performed by this planning turn."}
+  },
   "sprintId": "RP-S1",
   "goal": "Preserve evidence-ready source, offline continuity proof and customer clarity; carry unresolved identity selection downstream.",
   "featureBranch": "feature/customer-hosted-session-prototype",

@@ -1,5 +1,15 @@
 # Repository index
 
+IP-S1 continuation-3 Scrum assessment at accepted architecture `da8432d4`:
+`docs/customer-prototype-profiling-continuation-3-sprint-plan.json` consumes
+accepted fixed observation-source delivery and IP-S2/IP-S3 exhaustion reviews.
+The selected amendment has empty tasks, assignments and resumes after checking
+approved criteria, source contracts and original votes. No duplicate work,
+invented E2E subject, unchanged native-denial retry or planning-only push.
+Original qualification, native readiness, final common publication, hosted
+capture/provenance, actual cloud scenarios, cleanup and review/retro/closeout
+remain incomplete. Original planning reviewers assess bounded exhaustion only.
+
 IP-S1 continuation-3 architecture at inspected `716cfd4f`:
 `docs/customer-prototype-profiling-continuation-3-architecture.json` and newest
 cumulative/tier openings consume accepted substantive `f9fcd9cf` delivery and
@@ -1955,6 +1965,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-profiling-continuation-2-architecture.json`
 - `docs\customer-prototype-profiling-continuation-2-sprint-plan.json`
 - `docs\customer-prototype-profiling-continuation-3-architecture.json`
+- `docs\customer-prototype-profiling-continuation-3-sprint-plan.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-s2-continuation-2-architecture.json`

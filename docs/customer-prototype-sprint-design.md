@@ -1,5 +1,127 @@
 # Sprint design: understandable, evidence-ready continuity
 
+## Current IP-S2: guarded publication and attributable live diagnosis (October 22, 2026)
+
+This **SprintDesign** refines the accepted Screen F/G and A-D/H-K experience
+for IP-S2. It adds no UI implementation assignment, renderer, public output
+field, CLI flag, dashboard or hosted role. The IP-S1 section below remains its
+accepted construction design, not a current request to rebuild diagnostics.
+Consume Architecture `e247969942a343c9b1662a59a54ef47c3c714386`, UX
+`56076795b4524e82ab4beb2b1f1ff958c26c7eac`, ReleasePlan
+`4999ce5817a1714c6c2dc65ebbecb933bf49ecb4` and SprintArchitecture
+`936793977bae0d59e13bbec3860025ff51404809`. Current application baseline is
+`c52786b7dd1595f3048a78061f893dc79635069f` on
+`feature/customer-hosted-session-prototype`.
+
+Designer opened Architecture, UX and IP-S1 SprintDesign audits
+`4241c18ddb85c123bb3e4d00c3c38658def66dd3fe04d77a6604f1d8056410a3`,
+`33b776afca6daafd69eee5bcf54a17ffd50ddda99fe1ab479ef0c10d3e4d1b32`
+and `38e57ebfe79756be28cddd9e1ed30056ab753777175ff5c1d85af5dd90211f22`
+in the supplied current-run context directory (each `.json`). They record
+original reviewer agreement/taskComplete with no unmet criteria. Designer also
+opened DevOps audit
+`f7b942e94652c10a41c6e32a96cef0d447c00995ec1fbcd2a35cb65a28677dec`:
+Architect, Critic and Developer agree with the bounded report, but each records
+taskComplete false. No vote there certifies publication or cloud acceptance.
+
+### Localized release boundary and prior dispositions
+
+The DevOps audit binds application `c52786b7` to selected-lab correction
+`9b4919d8bcdbf07203f32657936c27328ea6ccc1`: missing public test-container
+inputs were corrected. Its attributed Windows/Linux results passed with
+explicit exclusions; exclusions are not passes. Its new source pair still
+needs the existing changed-join E2E handoff before publication. This is not a
+Designer-run test or new live observation.
+
+Apply the exact originating references, not short IDs or a new approval stage:
+
+- `["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","RELEASE-CHANGED-JOIN-HANDOFF"]`:
+  Screen F names this source pair and the outstanding original Architect/Scrum
+  coordination/E2E handoff. Reuse applicable captured evidence; do not reopen
+  accepted application work or request blanket reruns.
+- `["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","RELEASE-COMMON-PACKAGE-PUBLICATION"]`:
+  Screen G separates a tested join from a newly identified common package and
+  three proven role bindings. Publication remains unperformed in that audit.
+- `["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","RELEASE-LIVE-ACCEPTANCE"]`:
+  Screens D/F/G preserve live unknowns and held history. Original DevOps keeps
+  cloud-test ownership; accurate reporting is not completion.
+
+The two SDK timeout dispositions at
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop`
+(`SDK-CREDENTIAL-TIMEOUT-PRESERVATION`, `SDK-TIMEOUT-REGRESSION-EVIDENCE`)
+remain within their accepted SDK implementation/test boundary. They neither
+create Designer work nor authorize reopening that accepted handoff.
+No reconciled feedback or separate blocked UI decision is supplied.
+
+### Sprint flows, screens and smallest handoffs
+
+| Trigger and canonical flow / steps | Existing surface and behavior | Source / receiving owner |
+| --- | --- | --- |
+| Operator prepares the reviewed release: Exact-source guarded release / `release-join`, `release-package` | F shows the changed-join prerequisite; G then shows actual package and individual coordinator/architect/reviewer publication outcomes. A partial or uncertain role outcome leads with INCOMPLETE/UNKNOWN, not an aggregate green badge. | Coverage document and application package closure; selected-lab `foundry-tf/multi-agent/Build-Demo.ps1`. Architect/Scrum coordinate the existing IP-S1 reassessment; original E2E issues its handoff; one original DevOps publisher performs effects. |
+| Current-effect readiness permits necessary new traffic: Exact-source guarded release / `release-discriminate`; Remote design and review / `collaboration-bind`, `collaboration-route`, `collaboration-design`, `collaboration-review`, `collaboration-return` | F records a distinct synthetic diagnostic intent before send, then attributable outbound -> ingress -> SDK/background observations. B/C show useful remote architect/reviewer output only when actually produced; D leads with a rejection/hold. G distinguishes HTTP/stream milestones from completed non-held collaboration. | `demo/diagnostics.py`, `demo/foundry.py`, `demo/host.py`, `demo/workflow.py`, `docs/identity-profiling-coverage.md`, `live_acceptance.py`; original DevOps collects private evidence, original Developer addresses only an evidenced supported defect through review. |
+| A supported correction is justified by observations: same release and collaboration steps | F states confirmed interval, supported remedy and exact reviewed source; G records a new common package before affected live reassessment. If no remedy is established, show the precise unknown and bounded next action, not a selected identity workaround. | Original Architect/Developer and existing reviews/checks, then original DevOps. No new trust path or automatic diagnostic retry. |
+| Completed non-held initial turn is available: return to evaluator and later continuity/recovery/isolation | B/C/H retain useful initial output and conditional follow-up. D/I/J/K retain their accepted later acceptance layouts; this sprint does not claim those journeys complete. | Completed parent/both-child/version/response/artifact bindings to original IP-S3 live acceptance; fixture evidence never substitutes. |
+
+Use the unchanged canonical components: **Guarded lab release toolchain**,
+**Trusted identity and private transport**, **Terminal client**, **Hosted
+coordinator**, **Hosted architect**, **Hosted reviewer**, **Parent and
+specialist conversation state**, **Private Blob artifacts and effect journal**
+and **MAF workflow checkpoints**. Shared diagnostics remain one supporting
+boundary, not another service. These mappings schedule no duplicate UI work.
+The missing changed-join handoff blocks dependent release effects, not this
+design or independent approved IP-S3 preparation.
+
+### Screen F/G reading order and state layout
+
+The following is a private report template, not captured output or a required
+new aggregator. Populate only from actual receipts; absent receipts stay
+NOT VERIFIED. Keep each evidence row labeled historical/local/new live.
+
+```text
+Current outcome: <reached boundary; incomplete / rejected / held / completed>
+Source join: <application + selected-lab references; original E2E handoff state>
+Package: <new common-package binding or not created>
+Roles: coordinator <state>; architect <state>; reviewer <state>
+Historical rollback provenance: WAIVED
+Current trusted-host/effect readiness: <observed state; not inferred>
+New diagnostic intent: <private reference recorded before send, or not sent>
+Boundary observations: <Screen F coverage/presence/association rows>
+Milestones: send / headers / stream outcome / actual execution outcome
+Initial collaboration G1-G4: <independent evidence or NOT VERIFIED>
+Later continuity / recovery / isolation / closeout: <separate actual states>
+Owned cleanup: <attributable receipts / incomplete / not applicable>
+Next: <existing owner + concrete supported action>
+```
+
+Retain IP-S1's coverage versus presence distinctions, safe same-format equality,
+association requirements and redaction rules. Never infer platform identity
+loss from a missing public delegation header alone. Neither HTTP 2xx, exhausted
+stream, SDK completion nor successful publication establishes G1-G4. Completed
+non-held collaboration needs final common-package role/version bindings,
+trusted remote architect-before-reviewer execution, exact accepted artifacts,
+managed-identity private Blob provenance and genuine Decision-1 after gates.
+
+Keep exact joins, operation intent and process/listener ownership in private
+evidence; customer-facing text uses safe aliases and useful finalized outputs.
+No identity values/hashes, raw private logs or full bindings go into public Git.
+Existing stderr human mode, machine stdout/parser, line-prefix protection,
+wrapping, terminal-default light/dark colors and non-color status words stay
+unchanged. Diagnostic intent is not permission to replay the held parent.
+Known-response retrieval is labeled retrieval; unknown effects remain held.
+
+### Review and execution handoff
+
+Designer accepts this bounded layout/flow refinement for original Product
+Owner/Critic review; their votes are pending. No implementation, package,
+deployment, synthetic send, cleanup or live success is claimed by this design.
+Architect/Scrum retain changed-join coordination in the originating IP-S1
+boundary, without relabeling it as completed IP-S2 work. Original DevOps
+consumes only accepted prerequisites and proves live outcomes; any supported
+remedy follows existing construction/review and exact-new-package gates.
+Historical COMMON rollback provenance remains WAIVED, never PASS.
+No manual checksum approval, infrastructure/RBAC change, new cap, policy
+bypass, secret access or external evidence upload is introduced.
+
 ## Current IP-S1: paired diagnostic evidence, unchanged customer screens (October 21, 2026)
 
 This is the **SprintDesign** for IP-S1, not a replacement for accepted UX or a

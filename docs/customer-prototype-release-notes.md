@@ -22,6 +22,8 @@ repeated.
   contiguous sequence numbers, three successful service outcomes, successful
   publication and proven inner/outer cleanup. Slow stage verification/copying
   was monitored through the exact owner, not mistaken for inactivity or retried.
+  Publication elapsed **3,601.871 seconds**, measured from durable intent UTC
+  to final receipt filesystem UTC; this is not a sum of per-role CLI durations.
 - A separately identified synthetic Harbor initial invocation then ran once
   through retained Acceptance with its own durable purpose/effect intent.
   It checked the deployed package, created a new parent and sent the initial

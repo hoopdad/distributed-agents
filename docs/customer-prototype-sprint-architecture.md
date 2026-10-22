@@ -1,5 +1,47 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## IP-S2 continuation 2: assess the drained construction boundary
+
+October 22, 2026. The [separate bounded assessment](customer-prototype-profiling-s2-continuation-2-architecture.json)
+supersedes the earlier **pending delivery state**, not any accepted source or
+criterion. Opened final audit `b542da12`: original Architect/Critic both agree
+and complete fixed-ref delivery/readback of `f9fcd9cf`. Current `709c4a0f`
+adds only architecture/planning/index ancestry. Do not assign another push for
+documentation ancestry or rebuild accepted reader/bridge/consumer work.
+
+The canonical ten-component/five-flow/eighteen-step solutionModel remains
+unchanged, with criterion/module/state mappings in the assessment. Accepted
+local profiling/observation and substantive Git delivery are distinct from
+changed-runtime original E2E/package qualification, hosted capture installation,
+independent anchors/quiescence and cloud acceptance. Current host does not
+auto-install the opt-in private consumer. Its caller-owned handle contract is
+not a supported remote destination or ownership proof.
+
+Audited all three approved sprint contracts, final companion/status/integration
+votes, accepted collection/typed-export negatives and original DevOps audits
+`dfd47372`/`ae0bade0`. No new supported pure-source gap or permission-resolution
+evidence is supplied. Exact native denial remains local to native readiness/
+packaging/publication and dependent live operations; its missing permission
+is unidentified. Source-only branches were independent and have been drained.
+Original-encoding attachment and consumed model-history gaps stay explicit,
+without private codecs, comparison waivers or repeated negative research.
+Isolation still does not depend on recovery success.
+
+This bounded continuation returns **exhausted**, empty candidate tasks and
+empty resumes, for existing Scrum coordination and original architecture
+review. No eligible new E2E subject is supplied; do not invent one or reopen
+accepted construction. Necessary changed-runtime original qualification remains
+required and cannot alone resolve native approval. Supported operator
+resolution evidence, a newly supported seam or an explicitly reviewed scope
+decision can justify future reassessment; unchanged waiting cannot.
+
+IP-S1/IP-S2/IP-S3 remain **partial**. Final common-package publication,
+non-held collaboration, same-parent continuity, once-only supported recovery,
+separate-parent isolation, attributable cleanup and original review/retro/
+closeout remain required. Historical COMMON rollback provenance stays
+**WAIVED, never PASS**. No denied command, live operation or historical
+held/UNKNOWN effect was replayed by this architecture assessment.
+
 ## IP-S1 continuation 2: deliver newly accepted observation source
 
 October 22, 2026. The [separate continuation assessment](customer-prototype-profiling-continuation-2-architecture.json)

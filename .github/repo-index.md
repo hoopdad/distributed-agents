@@ -1,5 +1,16 @@
 # Repository index
 
+IP-S2 continuation-2 bounded architecture at `709c4a0f`, consuming original
+accepted delivery/readback of substantive observation source `f9fcd9cf`:
+`docs/customer-prototype-profiling-s2-continuation-2-architecture.json` and
+the newest cumulative sprint/tier sections. Canonical solutionModel unchanged.
+All approved construction/companion/status/ref-delivery branches have accepted
+handoffs; empty tasks/resumes record exhaustion, not release acceptance.
+Retain affected original E2E/package qualification, unresolved exact native
+denial, hosted ownership/coverage, typed/history limits and all actual live
+criteria. No duplicate push, speculative wrapper, unchanged denial retry or
+planning-only activity carousel.
+
 IP-S1 continuation-2 Scrum dispatch at architecture `c8dc0454`:
 `docs/customer-prototype-profiling-continuation-2-sprint-plan.json` assigns one
 original Developer closeout task to deliver only fixed reviewed observation
@@ -1914,6 +1925,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-profiling-continuation-2-sprint-plan.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-profiling-s2-continuation-2-architecture.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`

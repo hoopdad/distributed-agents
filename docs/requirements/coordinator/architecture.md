@@ -1,5 +1,17 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## IP-S2 continuation 2: retain the delivered local observation boundary
+
+Apply the [bounded assessment](../../customer-prototype-profiling-s2-continuation-2-architecture.json).
+Canonical components, support links and flow steps remain unchanged. Original
+delivery audit `b542da12` accepts substantive observation ref `f9fcd9cf`;
+it does not establish hosted collector installation, independent anchors or
+quiescence. No new coordinator correction or source-local adapter is justified.
+Keep trusted preparation/rejection, ETag publication, checkpoints, late receipt
+retention, streaming/cancellation and UNKNOWN holds intact. Initial completed
+non-held collaboration remains unverified. Empty new work is an assessment
+boundary, not coordinator acceptance or permission to resend a held operation.
+
 ## IP-S1 continuation 2: retain accepted observation behavior
 
 Apply the [current cumulative assessment](../../customer-prototype-sprint-architecture.md#ip-s1-continuation-2-deliver-newly-accepted-observation-source).

@@ -1,5 +1,17 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## IP-S2 continuation 2: retain unsupported intervals without repeated research
+
+Apply the [bounded assessment](../../customer-prototype-profiling-s2-continuation-2-architecture.json).
+Canonical architect/reviewer IDs and their shared supports remain unchanged.
+Delivered accepted source does not establish authenticated principal resolution,
+consumed model history or specialist completion. Accepted typed round-trip
+qualification still does not export original persisted encoding into the
+unchanged aggregate. No new supported seam or approved contract change is
+supplied; no duplicate inventory, codec/history patch, header substitution,
+hidden local specialist or new SDK pin is assigned. Both remote roles still
+need the final common package and actual continuity/isolation evidence.
+
 ## IP-S1 continuation 2: preserve accepted specialists and missing live proof
 
 Apply the [current cumulative assessment](../../customer-prototype-sprint-architecture.md#ip-s1-continuation-2-deliver-newly-accepted-observation-source).

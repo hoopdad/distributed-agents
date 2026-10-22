@@ -1,5 +1,25 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## IP-S2 continuation 2: delivered source is not native or live readiness
+
+Apply the [bounded assessment](../../customer-prototype-profiling-s2-continuation-2-architecture.json).
+Original final audit `b542da12` accepts fixed reviewed `f9fcd9cf` delivery and
+readback. Earlier pending-ref entries are history, not new push assignments.
+Canonical model, terminal/stdout/parser and original release contracts remain
+unchanged. All approved source-local branches and later status/companion work
+have accepted handoffs; no new task or DevOps resume is emitted.
+
+Affected new-runtime original E2E/package qualification remains required;
+the packet supplies no eligible new source subject. Actual native-preflight
+denial remains unresolved, exact permission unidentified. Do not retry it or
+route around it. Original DevOps must eventually establish native readiness,
+current automated source/package/version/host/effect bindings, owned hosted
+capture/cleanup and one serialized common three-role publication. Independent
+isolation needs final bindings and safe scope, not recovery success. Empty new
+tasks/resumes certify only bounded work exhaustion. All three sprints, actual
+AC1-AC9/G1-G8 and original review/retro/closeout remain incomplete. Historical
+COMMON rollback provenance remains WAIVED, never PASS.
+
 ## IP-S1 continuation 2: close only the new reviewed-ref delivery gap
 
 Apply the [current cumulative assessment](../../customer-prototype-sprint-architecture.md#ip-s1-continuation-2-deliver-newly-accepted-observation-source).

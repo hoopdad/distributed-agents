@@ -228,7 +228,78 @@
       "directAssertions": "Historical plan objects unchanged; three complete task cards, acyclic graph, two dependency-ready independent tasks, distinct owned paths/resources, canonical component/flow/step references, exact disposition references and original upstream votes verified. Committed runtime/test/manifests remain unchanged against c52786b7.",
       "limitations": "No selected-lab source change or retained-suite rerun; no dependency installation, denied-call retry, native authentication check, final bundle, publication, live invocation, lifecycle action, cleanup or push. Pre-existing specification/index changes preserved. Dispatch and this plan's original reviewer votes occur after this owner report."
     },
-    "planningCompletion": "Scrum Master accepts this bounded dispatch-ready plan for original Product Owner/Architect/Critic review. The orchestrator dispatches both dependency-ready Developer tasks in parallel before collecting planning votes; downstream tasks and all cloud criteria remain unperformed."
+    "planningCompletion": "Scrum Master accepts this bounded dispatch-ready plan for original Product Owner/Architect/Critic review. The orchestrator dispatches both dependency-ready Developer tasks in parallel before collecting planning votes; downstream tasks and all cloud criteria remain unperformed.",
+    "reconciledDelivery": {
+      "task": "IP-S3-DELIVERY-JOIN",
+      "date": "2026-10-22",
+      "scope": "Documentation-only integration of two reviewed handoffs; not sprint completion, remote delivery, package publication or live acceptance.",
+      "branch": "feature/customer-hosted-session-prototype",
+      "inspectedApplicationHead": "1d6f88308cadeb120bef0f19eac7101a2859caa4",
+      "auditDirectory": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/",
+      "reviewedTasks": [
+        {
+          "task": "IP-S3-ACCEPTANCE-COMPANION",
+          "branch": "feature/customer-hosted-session-prototype",
+          "commit": "1d6f88308cadeb120bef0f19eac7101a2859caa4",
+          "path": "docs/identity-candidate-handoff.md",
+          "anchor": "ip-s3-prospective-acceptance-companion--october-22-2026",
+          "reviewKey": "sprint/3/IP-S3/task/IP-S3-ACCEPTANCE-COMPANION/plan-round/2/AssignedWorkDeveloperLoop",
+          "audit": "840944fb5b24b2469ada0c3d4f50b88871e28a2ceea99150fec5b36ccc00be23.json",
+          "observedVotes": "Independently opened original audit: agreed; Architect and Critic each agree:true, taskComplete:true, unmetCriteria:[].",
+          "containment": "Exact reviewed commit is an ancestor of the inspected feature HEAD; its only changed path is the companion. No branch reconciliation needed."
+        },
+        {
+          "task": "IP-S3-MEASURED-STATUS",
+          "branch": "feature/customer-hosted-session-prototype",
+          "commit": "edb0e7a081f12a28039e7b66319f42bc0fe5d461",
+          "paths": ["README.md", "docs/customer-prototype-release-notes.md"],
+          "anchor": "docs/customer-prototype-release-notes.md#current-measured-correction-status--october-22-2026",
+          "reviewKey": "sprint/3/IP-S3/task/IP-S3-MEASURED-STATUS/plan-round/2/AssignedWorkDeveloperLoop",
+          "audit": "10544854fcc4df728cb8bc4d5c9e40e5d2a659dc602882142a4648f2e05a9096.json",
+          "observedVotes": "Independently opened original audit: agreed; Architect and Critic each agree:true, taskComplete:true, unmetCriteria:[].",
+          "containment": "Exact reviewed commit is an ancestor of the inspected feature HEAD; only README and release notes changed. Their reviewed bytes remain current."
+        }
+      ],
+      "acceptedDeliveryRefs": [
+        {"repository": "application", "commit": "13aecc39fba90d1475de057db07566c69b4ffc27", "slice": "Accepted application/diagnostic handoff; runtime/tests c52786b7dd1595f3048a78061f893dc79635069f.", "audits": ["4797ab07efa9ab46e5f8882caa9f7b3957910cec20b4c9ed5ec3574bbed1c8d2.json", "9bc452275610e015f8ec3f0ad3af80a637966fcbe0c98d9b4a9e1bb541673794.json"]},
+        {"repository": "selected-lab", "commit": "9b4919d8bcdbf07203f32657936c27328ea6ccc1", "slice": "Separate-repository accepted tooling boundary, not an application ref.", "audits": ["4797ab07efa9ab46e5f8882caa9f7b3957910cec20b4c9ed5ec3574bbed1c8d2.json"]},
+        {"repository": "application", "commit": "8b6092a5b6dc228e51245990043f2382b4f26984", "slice": "Accepted source-join handoff.", "audits": ["af53a98a252f98bc0c25c7b6d700712017caee532f0a1444e1ca0fc8cdb40685.json"]},
+        {"repository": "application", "commit": "c544588b570a2e5ae9f6d5a88f2e96a32cc3ec77", "slice": "Accepted IP-S3 design.", "audits": ["cb73116068dae88e649376c587fa360cd2f56a6b5b3b09a06e73065be7d14602.json"]},
+        {"repository": "application", "commit": "8f5da03931e4ad13fe1bd1166a8b7f6bb3c7c7ac", "slice": "Accepted IP-S3 architecture and tiers.", "audits": ["6c19a86535b0b0b133a52e31ee77f89fdb90370742805ac6eeac25811bd499ee.json"]},
+        {"repository": "application", "commit": "e9d0b059c44a4cd7e701960bc4f200b9a82f9e29", "slice": "Accepted normalized IP-S3 planning handoff; original audit records dispatched tasks and Product Owner/Architect/Critic completion votes.", "audits": ["c07f32c175087bbabfd6c194a9936d3d4246b7b7dd208295c0d9cb5a5aebec1f.json"]},
+        {"repository": "application", "commit": "edb0e7a081f12a28039e7b66319f42bc0fe5d461", "slice": "Reviewed measured status.", "audits": ["10544854fcc4df728cb8bc4d5c9e40e5d2a659dc602882142a4648f2e05a9096.json"]},
+        {"repository": "application", "commit": "1d6f88308cadeb120bef0f19eac7101a2859caa4", "slice": "Reviewed acceptance companion; exact reviewed application delivery candidate, not moving HEAD.", "audits": ["840944fb5b24b2469ada0c3d4f50b88871e28a2ceea99150fec5b36ccc00be23.json"]}
+      ],
+      "gitReconciliation": {
+        "result": "Both task commits and all listed application refs are ancestors on the authorized feature branch. No merge, branch switch, abandoned task code or retained task branch is needed.",
+        "retainedOrAbandonedTasks": [],
+        "preservedUnownedPaths": [".github/repo-index.md", "docs/identity-profiling-workflow.md"],
+        "stagingAtInspection": "Empty; no other work is included in this path-only plan commit.",
+        "delivery": "No push or remote readback performed. Original closeout consumes these exact reviewed refs and applicable ancestry for authorized non-force delivery/readback, excluding unowned working overlays. The commit carrying this additive ledger awaits its own original Architect/Critic review; its exact ID is returned in DeveloperWork. Existing closeout may include it after review without creating another task solely to ship planning ancestry."
+      },
+      "sourceDriftAssessment": {
+        "application": "All committed changes from c52786b7 through inspected HEAD are documentation/index only. Independently compared 57 tracked non-documentation/non-index working inputs to baseline committed bytes after CRLF normalization: unchanged, including runtime, tests, manifests, configuration and check entrypoints.",
+        "selectedLab": "Observed HEAD 9b4919d8bcdbf07203f32657936c27328ea6ccc1 with clean Git status. No retained source changes or retained-suite rerun in this integration.",
+        "historyAndContracts": "Reviewed document bytes, complete historical release-note suffix and accepted IP-S2/historical companion suffix are preserved. Canonical component/flow/step names, three task-card action/doneWhen pairs and the dependency graph match the accepted plan. Current local links and anchors resolve.",
+        "packageBoundary": "Documentation ancestry is neither deployed provenance nor a reason to reopen unchanged accepted SDK/E2E work. Original package construction must automatically bind actual current source/package/version/trusted-host/effect facts; historical planning hashes are not manual approval gates."
+      },
+      "checks": [
+        {"command": "Test-Demo.ps1 -Python <existing-absolute-python> -LabRepositoryRoot <explicit-selected-lab-root>", "result": "PASS: dependency checking, 278 tests in 52.083 seconds and compilation; exit zero. Used the existing validated Python and selected feature lab, not implicit roots or restored dependencies."},
+        {"command": "scripts/Test-Repository.ps1 -Python <existing-absolute-python>", "result": "PASS: current index, 113 public files, public/private boundary, JSON, PowerShell, frontmatter and whitespace. Includes preserved unowned specification/index overlay; not clean-checkout certification."},
+        {"command": "Direct integration assertions", "result": "PASS: original dependency/upstream votes, exact-ref ancestry and owned paths; 57 unchanged normalized source inputs; reviewed document and historical suffix preservation; 30 current local links/anchors; canonical cards and task dependencies. No application/repository concurrency failure observed."}
+      ],
+      "remainingOriginalHandoff": {
+        "implementedAndLocal": "Profiling and retained scenario controls remain implemented with accepted offline evidence. Companion and measured status are independently reviewed documentation; this additive integration has owner verification, pending original reviewers.",
+        "preparedNotPublished": "Original DevOps audit dfd473725551074526ddec41e0dbc23a0ca81a6d7d265e89dbf8a669004f8a3f.json remains needs-input; Architect/Critic/Developer agree on the report but all retain taskComplete:false. Prepared runtime/dependency stages are not a final common bundle.",
+        "nativeUnblock": "Original DevOps/operator must resolve the exact recorded native WSL approval through supported interactive controls, then prove native pinned tools/dedicated authentication and prepared-stage freshness. Exact missing permission remains unidentified. This task retries neither the denial nor an alternate route and requests no new routine deployment authority.",
+        "deployedAndLive": "Final common package and all-three-role source/version/readback/effect bindings remain missing. Original DevOps retains separately intended new diagnostic traffic after current-effect readiness, completed non-held initial collaboration, same-parent continuity and once-only supported stop/resume. Isolation needs final bindings and safe completed comparison scope, not recovery success. Aggregate validation needs all scenarios only for the final evidence join.",
+        "comparisonLimits": "Original E2E/DevOps receive the companion's exact missing aggregate collection, model-history provenance, independent creation/send/stop accounting, stop-204 and checkpoint/artifact receipts. Known-response retrieval is not a new invocation; idle after uncertain stop cannot manufacture a missing 204. Essential unsupported comparisons or demonstrated source defects go to original Architect/Scrum scoped replanning, not guessed remediation.",
+        "closeout": "Original Scrum review/retro/closeout retains AC1-AC9/G1-G8, exact reviewed feature delivery/readback, attributable newly owned process/listener cleanup and honest historical UNKNOWN/unproven cleanup accounting. Preserve the held original parent and all unknown effects. No release, DevOps or sprint completion follows from this ledger.",
+        "dispositions": "The five provenance-qualified dispositions already recorded in this selected plan retain their original boundaries: accepted SDK regressions and changed-join handoff are not reopened; original common-package publication and live acceptance remain required. The originating IP-S3 planning audit now records the normalized plan, dispatched tasks and original planning completion votes; this integration does not redispatch them.",
+        "rollbackProvenance": "Historical COMMON rollback ZIP/build provenance remains WAIVED, never PASS; current automated bindings and effect checks remain required.",
+        "operationsThisTask": "No runtime/test/manifest/lab changes, dependency installation, native preflight, package creation, publication, live send/retrieval, stop/resume, cleanup operation or push."
+      }
+    }
   },
   "identityProfilingPublication": {
     "kind": "SprintPlan",

@@ -1,5 +1,15 @@
 # Repository index
 
+IP-S1 continuation-2 Scrum dispatch at architecture `c8dc0454`:
+`docs/customer-prototype-profiling-continuation-2-sprint-plan.json` assigns one
+original Developer closeout task to deliver only fixed reviewed observation
+source `f9fcd9cf`, with complete original review coverage and independent remote
+readback. Planning observed remote `de2deae`; no push occurred. No artificial
+parallel task, duplicate receiving consumer, moving-HEAD delivery or unchanged
+DevOps resume. Original YAML dispatch/review owns execution; affected original
+E2E/package qualification, native-denial resolution and actual live criteria
+remain separate. Original plans, unowned overlay and partial sprints persist.
+
 IP-S1 continuation-2 architecture at accepted observation target `f9fcd9cf`:
 `docs/customer-prototype-profiling-continuation-2-architecture.json` and current
 sprint/tier openings reconcile implemented/local reader/bridge/consumer work,
@@ -1901,6 +1911,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-profiling-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-continuation-2-architecture.json`
+- `docs\customer-prototype-profiling-continuation-2-sprint-plan.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-architecture.json`

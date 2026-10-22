@@ -1,5 +1,26 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Identity-profiling continuation 1: independent qualification and reviewed delivery
+
+Apply the [current continuation assessment](../../customer-prototype-sprint-architecture.md#identity-profiling-continuation-1-independent-evidence-qualification-and-delivery)
+and its separate amendment. Terminal client / Guarded lab release toolchain
+and canonical `release-join/close` IDs remain unchanged. There is no terminal,
+stdout, parser, validator or public evidence-schema change. Collection-seam
+qualification consumes the accepted IP-S3 companion, not a duplicate rewrite:
+test supported private observation seams offline and name unsupported intervals.
+Only subsequent justified construction can claim an implemented adapter.
+
+Existing closeout can independently deliver exact reviewed application
+`de2deaeaddf0509116d8f45d2a3ae73419dd11f3` and selected-lab
+`9b4919d8bcdbf07203f32657936c27328ea6ccc1` by non-force explicit refs after
+review/ancestry checks, with actual remote readback. Do not push moving HEAD
+or this unreviewed planning, or create a delivery carousel for planning ancestry.
+The native-preflight denial remains unresolved and is not retried; neither
+candidate unlocks package/publication/live effects. No resume/recheck is emitted.
+Original DevOps retains actual cloud-pass criteria and attributable cleanup.
+Historical COMMON rollback provenance remains WAIVED, never PASS; existing
+prepared stages, held parents and UNKNOWN effects remain intact.
+
 ## Current IP-S3: independent evidence lanes and measured release closure
 
 Apply the [current IP-S3 cumulative architecture](../../customer-prototype-sprint-architecture.md#current-ip-s3-continuity-once-only-recovery-and-independent-isolation)

@@ -1,5 +1,20 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Identity-profiling continuation 1: qualify observation without changing execution
+
+Apply the [current continuation assessment](../../customer-prototype-sprint-architecture.md#identity-profiling-continuation-1-independent-evidence-qualification-and-delivery)
+and its separate JSON amendment. Canonical coordinator, conversation,
+checkpoint, identity, artifact and routing IDs/supports stay unchanged.
+`demo/workflow.py`, `demo/foundry.py`, `demo/artifact_store.py` and
+`demo/host.py` are inspected inputs, not newly assigned runtime edits.
+Bounded collection qualification examines supported manifest/immutable
+operation/checkpoint seams for `continuity-verify` and `recovery-verify`.
+Journal intent is not an observed send; checkpoint graph state alone does
+not bind its parent. Synthetic seam fixtures cannot prove deployed provenance.
+The accepted changed-join handoff is retained. Native approval, final package
+and actual cloud acceptance remain incomplete; no denied operation is retried.
+No trusted context repair, private SDK patch, retry or effect replay is added.
+
 ## Current IP-S3: preserve exact parent continuity and checkpoint recovery
 
 Apply the [current IP-S3 cumulative architecture](../../customer-prototype-sprint-architecture.md#current-ip-s3-continuity-once-only-recovery-and-independent-isolation).

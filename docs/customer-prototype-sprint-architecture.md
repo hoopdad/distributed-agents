@@ -1,5 +1,51 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Identity-profiling continuation 1: independent evidence qualification and delivery
+
+October 22, 2026. The separate
+[continuation amendment](customer-prototype-profiling-continuation-1-architecture.json)
+is the current work-conservation assessment for the partial IP-S1/IP-S2/IP-S3
+release, not a replacement SprintPlan, ReleasePlan or accepted implementation.
+The canonical [solutionModel](customer-prototype-architecture.md#solutionmodel)
+and all ten component, five flow and eighteen step IDs/support links remain
+unchanged. The three tier openings below apply this amendment.
+
+Opened original IP-S1 DevOps audit `f7b942e9`, accepted changed-join E2E
+`4797ab07`, latest DevOps `ae0bade0` and IP-S3 E2E `4d29a861` in the current
+run context. The changed-join obligation is satisfied within its accepted
+unchanged runtime/selected-lab boundary; do not repeat it. Native-preflight
+approval resolution, pinned native tools/dedicated authentication, final common
+bundle/publication and all live criteria remain unproven. No unchanged DevOps
+resume, E2E recheck or alternative execution route is proposed.
+
+### Concrete work remaining outside the denied operation
+
+| Approved source criterion / components and steps | Actual inspected gap and smallest handoff | Acceptance boundary |
+| --- | --- | --- |
+| IP-S3 AC2/AC4/G5-G7 and closeout; Guarded lab release toolchain, Private Blob artifacts and effect journal, MAF workflow checkpoints, Parent and specialist conversation state; `continuity-verify`, `recovery-verify`, `isolation-verify`, `release-close` | `live_acceptance.py:run` emits per-turn proof/readbacks but not aggregate manifests, cumulative operation documents, independent boundary counts or checkpoint exports. `tests/test_scenario_evidence.py:capture` uses synthetic in-memory stores. `BlobArtifacts` has scoped `read_manifest`/`read_artifact`, not operation enumeration; `demo/host.py` installs SDK `CheckpointStoreProvider`. Qualify the missing public collection seams against matching pinned source and executable synthetic fixtures, including completeness, scope and independent operation association. | This is new bounded collection feasibility work, not another transport inventory or companion rewrite. Exact actionable unsupported findings may complete qualification; they cannot certify a collector or waive live comparisons. No cloud call, private SDK patch or new public evidence API is assigned. Runtime/adapter construction follows only a concrete supported handoff through original roles. |
+| IP-S3 AC7/AC8 exact delivery; Guarded lab release toolchain; `release-close` | Fresh `git ls-remote` observes application feature `200f2ff04f88e0990816058b6a5d49070425e028` and selected-lab feature `1e9ddb8560a5637d639f4657111f3bca49d38d78`. Reviewed targets are application `de2deaeaddf0509116d8f45d2a3ae73419dd11f3` and lab `9b4919d8bcdbf07203f32657936c27328ea6ccc1`. Existing closeout can deliver those explicit refs and read them back independently of native release approval. | Verify original reviews and current ancestry before non-force explicit-ref pushes. Do not deliver this unreviewed amendment or moving HEAD, recreate accepted work, or seed another task merely for later planning-only ancestry. No push occurred in this architecture turn. |
+
+Scrum Master retains task decomposition, priority, Git reconciliation and
+existing orchestrator dispatch. These two candidate work contracts are
+independent; no full-sprint dependency or new review stage is imposed.
+The denial gates native package/publication and dependent live operations,
+not either candidate. Its exact missing permission remains unidentified.
+Only supported operator resolution evidence permits reassessment; neither
+candidate resolves that denial. `Continuation.resumes` is deliberately empty.
+Independent isolation still waits for final bindings and safe comparison
+scope, not recovery success. The final aggregate validator still needs all
+real scenario inputs; missing data cannot be synthesized from intentions.
+
+Exact provenance-qualified disposition applicability and original audit
+references are in the amendment. SDK timeout preservation/evidence and IP-S3
+normalized planning/dispatch remain satisfied only within their originating
+accepted boundaries. Common publication and live acceptance remain required;
+historical COMMON rollback provenance stays **WAIVED, never PASS**. No
+disposition is superseded. Preserve held parents, UNKNOWN effects, original
+reviews/retro/closeout, current automated material bindings and attributable
+cleanup. This assessment is ready for original Product Owner/Critic/Red Team
+review, not release acceptance, global exhaustion or unattended-readiness proof.
+
 ## Current IP-S3: continuity, once-only recovery and independent isolation
 
 October 22, 2026. This current **SprintArchitecture** refines the retained

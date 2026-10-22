@@ -1,5 +1,20 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Identity-profiling continuation 1: qualify independently attributable evidence
+
+Apply the [current continuation assessment](../../customer-prototype-sprint-architecture.md#identity-profiling-continuation-1-independent-evidence-qualification-and-delivery)
+and separate amendment; retain all canonical specialist/state/identity/artifact
+IDs and exactly two remote specialists. `demo/architect_agent.py`,
+`demo/reviewer_agent.py` and retained specialist history tests are read-only
+qualification references. Missing independent create/send-to-operation and
+model-history evidence is not supplied by diagnostic aliases, timing or
+plausible memory prose. Qualify supported public collection seams and retain
+explicit unavailable intervals; no header or trust change is justified.
+`continuity-verify`, `recovery-verify` and `isolation-verify` still need actual
+final-package observations. Native denial and unknown effects are untouched.
+Separate-parent isolation retains its own safe-scope/final-binding prerequisites,
+not recovery success. No specialist implementation or live remedy is claimed.
+
 ## Current IP-S3: remote history continuity and separate-parent evidence
 
 Apply the [current IP-S3 cumulative architecture](../../customer-prototype-sprint-architecture.md#current-ip-s3-continuity-once-only-recovery-and-independent-isolation);

@@ -1,5 +1,17 @@
 # Repository index
 
+Identity-profiling continuation 1: inspected application `de2deae` and selected
+lab `9b4919d8`; adds only
+`docs/customer-prototype-profiling-continuation-1-architecture.json`.
+Navigate that separate amendment and sprint/tier openings for two independent
+existing-scope candidates: pinned public scenario-collection seam qualification
+with synthetic fixtures, and exact already-reviewed feature delivery/readback.
+Fresh remotes are application `200f2ff0` and selected lab `1e9ddb85`, not the
+reviewed targets. Accepted companion/SDK/source joins are not redispatched.
+Native approval remains unresolved; no unchanged DevOps resume or E2E recheck
+is emitted. Canonical model, runtime, validator and partial live gates remain
+unchanged. This architecture is not execution progress or global exhaustion.
+
 Current IP-S2 changed-join Developer ledger:
 `docs/identity-profiling-coverage.md#ip-s2-changed-source-handoff-to-original-e2e`.
 Application candidate `4b30297d` retains runtime/test baseline `c52786b7`;
@@ -1796,6 +1808,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-linux-inventory-sprint-plan.json`
 - `docs\customer-prototype-operational-context-amendment.json`
 - `docs\customer-prototype-post-delivery-exhaustion-architecture.json`
+- `docs\customer-prototype-profiling-continuation-1-architecture.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

@@ -1,5 +1,23 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current IP-S2: retain publication and route unavailable attestation
+
+Consume the [current attestation refinement](../../customer-prototype-sprint-architecture.md#current-ip-s2-server-side-attestation-boundary-after-guarded-publication).
+Canonical Terminal client / Guarded lab release toolchain and `guarded-release`
+steps are unchanged. Accepted common package/publication binds versions
+19/17/25; later `622c160` is test/documentation-only, not a reason to republish.
+The exact DevOps outcome retains partial cloud acceptance. Original Scrum
+Master/DevOps receive a private unsent current-pair tracing handoff: local
+correlation aliases do not attest the server-side caller/resolution.
+No supported public attestation seam or source repair is established.
+Do not repeat log collection, denied inspection or inference absent changed
+evidence. Isolation remains independently schedulable against its own final
+readiness and safe comparison/capture scope; held parents are not completed
+comparison scopes. Hosted provenance, actual live scenarios, cleanup and
+original review/retro/closeout remain required. External submission is excluded;
+COMMON rollback provenance remains WAIVED, never PASS. Historical status below
+does not reset satisfied package/publication or the resolved permission change.
+
 ## Current IP-S3 recovery: independent execution, joined final acceptance
 
 Consume the [IP-S3 recovery refinement](../../customer-prototype-sprint-architecture.md#current-ip-s3-recovery-consume-accepted-qualification-preserve-live-handoffs).

@@ -1,5 +1,23 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current IP-S2: distinguish outbound observation from caller attestation
+
+Consume the [current attestation refinement](../../customer-prototype-sprint-architecture.md#current-ip-s2-server-side-attestation-boundary-after-guarded-publication).
+Canonical Hosted coordinator, shared supports and collaboration/continuity/
+recovery steps remain unchanged. `demo/workflow.py` and `demo/foundry.py`
+retain resource-owned credentials, opaque context and exact trusted assignments.
+The deployed runtime has an observed outbound delegation/call presence, not an
+independently attested authenticated principal or cross-process join.
+`622c160` qualifies a synthetic credential fixture only. The supported SDK
+hooks do not resolve the opaque call on behalf of the platform; no guessed
+header, token parsing or trust bypass is authorized. Existing diagnostics/
+caller-owned capture are not a platform attestation service. Original Scrum
+Master/DevOps receive the private current-pair tracing handoff. Preserve
+UNKNOWN effects/held parents, genuine completed-initial/two-turn prerequisites
+and once-only stop semantics. Independent isolation does not wait for recovery
+success. Published versions are not successful collaboration or hosted provenance.
+Historical unpublished/permission status below is not current readiness.
+
 ## Current IP-S3 recovery: retain completed-parent and checkpoint contracts
 
 Consume the [IP-S3 recovery refinement](../../customer-prototype-sprint-architecture.md#current-ip-s3-recovery-consume-accepted-qualification-preserve-live-handoffs).

@@ -1,5 +1,24 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current IP-S2: keep the missing trusted-user boundary fail closed
+
+Consume the [current attestation refinement](../../customer-prototype-sprint-architecture.md#current-ip-s2-server-side-attestation-boundary-after-guarded-publication).
+Canonical Hosted architect / Hosted reviewer, identity support and remote
+design/review steps remain unchanged. `demo/host.py` observes raw ingress before
+SDK parsing and request/background/executor context without establishing trust.
+Architect call-present/user-absent ingress and preparation rejection are
+locally joined, not independently joined to the coordinator's actual send.
+`NATIVE_HOST_PRINCIPAL` remains a truthful rejection, not a permission diagnosis.
+The pinned public hooks provide no server-side caller/resolution attestation.
+Preserve immutable role outputs, exact prerequisites, two remote specialists
+and trusted parent binding. No header substitution, SDK upgrade, identity echo
+or populating trusted context from arbitrary ingress is justified.
+The private current-pair handoff requests an authoritative discriminator,
+not another unchanged invocation. Preserve held/UNKNOWN work; independent
+isolation still needs its own current bindings and safe comparison/provenance.
+Published common versions 19/17/25 do not establish completed live work.
+Historical permission/unpublished assessments below remain historical.
+
 ## Current IP-S3 recovery: preserve pinned remote histories and isolation
 
 Consume the [IP-S3 recovery refinement](../../customer-prototype-sprint-architecture.md#current-ip-s3-recovery-consume-accepted-qualification-preserve-live-handoffs).

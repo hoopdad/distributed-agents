@@ -1,5 +1,147 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Current IP-S2: server-side attestation boundary after guarded publication
+
+October 22, 2026. This is the current refinement for IP-S2 and its IP-S1/IP-S3
+handoffs. The older exhaustion, permission and unpublished-package assessments
+below remain historical, not current dispatch instructions. Retain accepted
+Architecture `fe8d6432`, design `c5c40239` and canonical
+[solutionModel](customer-prototype-architecture.md#solutionmodel) by reference:
+ten components, five flows, eighteen steps, unchanged IDs, names and supports.
+No new component, identity service, capture infrastructure or trust contract is
+introduced. All three tier files consume this refinement.
+
+### Evidence and decision
+
+Opened current DevOps outcome
+`gh-dynamic-workflows/.delivery-runs/c40bef06-de14-4df7-865f-4d4dfb8815a9/context/737b7366fc475690a04e6cc625e32ae572d089217605d26a9a5d154e1053fa0f.json`:
+Architect/Critic/Developer agree with the partial report, all taskComplete=false.
+Its reconciled governance retains packaging/publication as satisfied and calls
+for this bounded design decision, not another unchanged publisher. Also opened
+the IP-S2 design outcome `ab629fa5f418defc6ed1fe3f1c38cece27bf2d7a355bdd1c63d85fa6f4cb2c24.json`
+in that directory: agreed, Product Owner/Critic taskComplete=true.
+
+Independently hash-matched the exact private publication and Observe receipts
+listed in [release notes](customer-prototype-release-notes.md#guarded-common-publication-and-actual-initial-failure--october-22-2026):
+publication `dd7184cb39ce3caa148d98720f2e1a2c0f755820ae510e3851262ea60bd80c65`,
+Observe `7aef63470037dc5c724f57392640d16908d262112051a0b226f6ae3fc1337979`.
+Observe records zero inference and proven owned job/listener closure.
+The accepted publication outcome records architect/reviewer/coordinator
+versions **19/17/25**, common package
+`cb506ae15a8942d5dd6a8570cf5b29533e0d744621c4eb1b8d9b69cf1656b2f8`.
+This inspection is not a new authenticated deployed-version readback.
+
+`622c1607a4e501e40bed1e7bf6226240cce49777` corrects a credential fixture and
+adds tests/documentation only. Original execution reports 364 passing tests;
+this architecture turn did not rerun them. Git comparison of hosted `demo/`,
+requirements and Dockerfile against accepted runtime `f9fcd9cf` is empty.
+The later local observer change is not new hosted runtime. Selected-tooling
+`ceaba6ee` remains the accepted handoff, not newly qualified here.
+
+**Decision: no supported request-correlated caller/resolution attestation seam
+is established in the inspected application and pinned public contracts.**
+This is a bounded negative finding, not proof that the platform has no internal
+trace or that every possible service interface was searched. Reuse, rather than
+reopen, the [accepted supported-remedy research](identity-recovery-plan.md#rp-s1-supported-remedy-handoff-2026-10-19-s1-remedy).
+Its old parent locators must not be substituted for this new held pair.
+
+The inspected public [runtime contract][s2-runtime-contract] still specifies
+opaque unchanged call forwarding and container-only user delivery; the
+[delegation contract][s2-delegation-contract] documents a distinct impersonation
+permission and HTTP 403 on missing permission. These are constraints, not a
+new research milestone or evidence that RBAC is missing here.
+
+| Existing seam and source | What it can establish; what it cannot |
+| --- | --- |
+| Resource-owned credential / public OpenAI transport, `demo/workflow.py`, `demo/foundry.py`; synthetic regression in `tests/test_workflow.py` | Fixture proves selected bearer/scope and zero-send acquisition failure, not the authenticated principal of a historical hosted request. Do not retrieve/decode tokens or add an identity echo endpoint. |
+| `OriginTransport`, `demo/foundry.py` | Actual outbound header presence, route, status and stream outcome. Neither header presence nor HTTP 200 attests caller identity or execution success. |
+| `IngressDiagnostics`, context/options/executor hooks, `demo/host.py` | Raw ingress presence before SDK parsing, request/scope presence and safe equality through supported hooks. The preparation failure retains missing trusted user; no public hook resolves an opaque call into an authenticated user. |
+| Closed event schema/bindings, `demo/diagnostics.py`; strict reader in `live_acceptance.py` | Bounded private records and local observation/operation/response aliases. The ASGI-created alias is not independently a cross-process join. Repeated session log reads cannot create missing historical correlation. |
+| Public token-info/session readback, as inspected in `622c160` | Token lifetime and session lifecycle are not principal attestation. Configured agent identity metadata is not the effective caller for the measured send. |
+
+The observed coordinator send has nonempty delegation/call; the observed
+architect ingress has absent platform-user and nonempty call; its locally
+joined preparation checkpoint has absent request user. However the two streams
+lack an independently proven cross-process request join. Therefore the
+**candidate interval** is outbound authentication/platform resolution through
+specialist ingress, not a proven transformation/loss of the same request.
+Neither a platform defect nor missing RBAC is diagnosed. No guessed header,
+call-ID-as-user, trust-gate removal, SDK upgrade or speculative source repair
+follows. Capture installation cannot recover that missing platform fact.
+
+### Smallest handoff and executable branches
+
+A new exclusive **private, unsent** handoff is prepared under the authorized
+permission-recovery evidence root:
+`architect-attestation-20261022-1949/handoff.json`. It binds the exact current
+receipt hashes, source/review references and existing response/session locator
+fields without copying tokens, raw identities, bodies or complete headers.
+It is an output-owned evidence artifact, not a new repository API or historical
+reseal. The receiving original Scrum Master/DevOps must retain it privately.
+No external destination is selected or contacted.
+
+The closing answer must independently bind the current parent/child, deployed
+versions, UTC interval and server request correlation; identify the actual
+authenticated caller and delegation/resolution outcome at that boundary; and
+name the authoritative supported remedy, affected versions/state implications
+and non-replaying verification. Local aliases alone, an unrelated trace,
+generic grant advice or successful session GET do not satisfy that contract.
+If those historical correlators were not retained, return explicit unavailable
+coverage, not an inferred join or a new inference to recreate it.
+
+| Approved criteria and canonical flow steps | Construction, verification and receiving-owner boundary |
+| --- | --- |
+| Profiling 1-3/6; AC1/AC5/AC7; `release-discriminate`, `collaboration-design`, `collaboration-review` | Trusted identity and private transport; Hosted coordinator/architect/reviewer. Existing diagnostics and credential fixtures are implemented/local-qualified; runtime is published, actual authenticated caller/resolution is unproven. Original Scrum Master routes the prepared negative design handoff to original DevOps. Only a supported authoritative finding or demonstrated defect reopens a source correction; original Developer, affected E2E and original reviews then apply. |
+| Profiling 4-5; AC7; `release-package`, `release-discriminate` | Guarded lab release toolchain. Preserve satisfied current packaging/publication at the exact prior origin below. Documentation/test-only changes do not require republishing unchanged runtime. Any actual runtime correction later requires current package/source/version/trusted-host/effect bindings and one serialized publisher. |
+| Profiling 5/7; AC2-AC5/G1-G8; `collaboration-return`, `continuity-verify`, `recovery-verify`, `isolation-verify` | Private Blob artifacts and effect journal; Parent and specialist conversation state; MAF workflow checkpoints. Opt-in capture source exists, but hosted installation, private destination/owner, pre-background coverage, independent anchors, quiescence and consumed-history provenance remain unproven. Do not assign speculative capture infrastructure or repeat accepted typed/history research. A concrete supported destination/ownership handoff is the minimum for an integration task; it is not a replacement for platform attestation. |
+| AC2/G5; `continuity-revise`, `continuity-invoke`; AC4/G6; `recovery-stop`, `recovery-resume` | Same-parent specialist continuation needs completed NON-HELD initial collaboration. Supported compute stop and resume additionally needs genuine two-turn evidence and durable once-only stop/readiness. Both remain incomplete; preserve existing held parents/UNKNOWN effects and use known-response recovery only. |
+| AC4/G7; `isolation-bind`, `isolation-execute`, `isolation-verify` | Separate-parent isolation is independent of successful recovery and this attestation answer. Original Scrum Master/DevOps assess its own final readiness, supported capture/comparison scope and effect intent. The newly held parent is not a completed comparison scope. Schedule ready portions independently; do not send without those actual prerequisites or make aggregate all-scenario validation an execution gate. |
+| AC1-AC9/G1-G8; `release-close` | Original DevOps, reviews/retro/closeout join actual evidence and attributable owned cleanup. Nothing in this architecture accepts the release or converts offline/SDK/HTTP success into live acceptance. |
+
+This resolves the architecture decision requested by the blocked IP-S1 DevOps
+handoff within the existing IP-S2 owner loop; it does not create an approval
+stage. Original Scrum Master owns decomposition, exact-ref Git reconciliation
+and independent approved IP-S3 readiness audit. No blanket exhaustion is
+declared: the packet's empty assignment list is not evidence that all useful
+approved work is exhausted. No new construction defect or supported capture
+contract is demonstrated here, so no speculative implementation is dispatched.
+No native authentication, publication, new inference, stop or cleanup process
+was started by this turn.
+
+The three prior dispositions remain bound to their exact original task:
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-current-common-package"]`
+and `["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-guarded-publication"]`
+are retained as satisfied by the later inspected outcome, not waived;
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-cloud-verification"]`
+is still required and incomplete. All partial sprints, original reviewers and
+AC1-AC9/G1-G8 persist. COMMON rollback provenance remains **WAIVED, never PASS**.
+External tracing submission would require a named destination/disclosure
+authorization; preparing this private handoff requires no new user action.
+
+### Architecture verification and execution limitation
+
+Standard-library validation compared the parsed canonical model to `fe8d6432`:
+unchanged ten components, five flows and eighteen steps; component supports,
+flow-step references, named source files and all three tier links resolve.
+Both private receipt hashes and all six exact locator pointers in the new
+handoff validate. Repository-local `git diff --check` passed (line-ending
+normalization warnings only). No runtime tests were repeated for these
+documentation-only changes.
+
+The attempted documented `scripts/Test-Repository.ps1` command with explicit
+existing Python was denied: **"Permission denied because no interactive user
+response was available."** The mixed request also contained Git stat/whitespace
+commands; no partial execution is claimed. A separate repository-local Git
+inspection succeeded. The denied check was not retried through another entry
+point/tool; its exact request/decision is retained in the private handoff.
+The precise missing permission is unidentified, not an Azure authentication,
+RBAC or application diagnosis. The full repository check is not claimed PASS.
+This local verification limitation does not establish global work exhaustion
+or authorize a permission bypass.
+
+[s2-runtime-contract]: https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agent-contract#platform-request-headers-container-protocol-200
+[s2-delegation-contract]: https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agent-permissions#delegate-the-end-user-identity
+
 ## Network-recovery continuation: bounded construction exhaustion
 
 The separate [current continuation amendment](customer-prototype-network-recovery-continuation-1-architecture.json)

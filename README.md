@@ -20,36 +20,43 @@ session IDs, framework session IDs and pinned deployed versions. New
 invocations get new response IDs and produce current design/review artifacts.
 A separate parent gets its own child bindings and artifact scope.
 
-**Release status — blocked, not customer-ready (October 21, 2026):**
-original repaired-join E2E executed against application `b42ab2f8` and lab
-`88580156`: 206 application tests passed; the retained wrapper passed another
-206 application tests and 230 of 233 retained tests, with three native-Linux
-exclusions. Original Architect/Critic/Product Owner agreed to the bounded
-**predeployment FAIL** report, not release readiness. Required repository
-validation remains unexecuted because its exact interactive execution was
-denied when no user response was available; this is not an executed test
-failure. No retry before affirmative approval, alternate-path bypass or
-constituent-check substitute is permitted.
+**Release status — partial correction; blocked, not customer-ready (October 22, 2026):**
+the original changed-join E2E reassessment is accepted for application
+`13aecc39` (runtime/tests `c52786b7`) and selected lab `9b4919d8`.
+Original Architect/Critic/Product Owner agreed to the bounded **offline PASS**,
+not a release PASS. Repository validation passed. Attributed corrected captures
+report 278 Windows application passes and 236/240 retained passes (four
+exclusions); Linux reports 270/278 application passes (eight exclusions) and
+197/240 retained passes (43 exclusions), on an arm64 host running linux/amd64.
+The reassessment verified applicable captures and ran focused join checks;
+these are not newly repeated full suites or native-amd64-host certification.
 
-Original DevOps entered, but deployment and cloud-pass remain incomplete.
-Its diagnostic-only provenance finding does not verify common rollback ZIP
-bytes or reconcile unresolved effects. Existing DevOps/Scrum record-locator
-coordination remains independent work. Dependent Linux/hosting/package
-execution and publication still wait for passing required source checks;
-both actual package readiness and rollback/effect readiness must pass before
-one serialized publisher. No engine-startup or uncertain-effect replay.
+Original DevOps prepared and verified a runtime ZIP and Linux dependency stage,
+**not a final common bundle**. Native WSL pinned-tool/dedicated-authentication
+preflight received a noninteractive tool-permission denial. Its exact missing
+permission and native readiness remain unproven; do not retry or bypass that
+denial. The operator resolves that specific approval through supported
+interactive controls, then original DevOps continues the existing prepared
+stage and automated current source/package/version/trusted-host/effect checks.
+Routine guarded three-role publication is already authorized, not awaiting a
+new project sign-off. Historical COMMON rollback ZIP/build provenance is
+**WAIVED, never PASS**; the old repository-check denial and rollback
+investigation are dated history, not current prerequisites.
 
-Offline results are not live proof: neither identity path is live-selected;
-final common-bundle collaboration, two-turn continuity, supported compute
-stop/resume and separate-parent isolation remain unverified. Reviewed source
-delivery through application `8b50f343` / lab `88580156` is retained; later
-documentation has separate reviewed-delivery ownership, not an automatic
-moving-HEAD push. See [current evidence and remaining gates](docs/customer-prototype-release-notes.md)
-and the [remaining execution plan](docs/customer-prototype-repaired-join-remaining-release-plan.json).
-The [recovery chronology](docs/identity-recovery-plan.md) preserves earlier
-Linux failures, the historical `NATIVE_HOST_PRINCIPAL` failure, publication
-**UNKNOWN**, held parents and unproven cleanup. Final deployed/rollback
-bindings remain unverified; none of that history is closed by offline passes.
+Final correction-package publication and current deployed bindings, non-held
+initial collaboration, same-parent continuity, once-only supported stop/resume,
+independent separate-parent isolation, attributable cleanup and original
+review/retro/closeout remain incomplete. Authenticated outbound principal,
+platform identity resolution and a supported identity remedy remain unproven.
+Preserve the held original parent, all **UNKNOWN** effects and historical
+unproven cleanup; no uncertain operation may be replayed. Independent IP-S3
+evidence/status preparation continues without consuming missing live handoffs.
+See [current measured evidence and exact reviewed refs](docs/customer-prototype-release-notes.md#current-measured-correction-status--october-22-2026)
+and [current sprint handoffs](docs/customer-prototype-sprint-architecture.md#current-ip-s3-continuity-once-only-recovery-and-independent-isolation).
+Historical reviewed delivery through application `8b50f343` / lab `88580156`
+is retained, not proof of remote delivery of later correction commits.
+The original closeout owner must deliver/read back exact reviewed refs, never
+an automatic moving-HEAD push.
 
 **Read the source:** [workflow](demo/workflow.py) (`begin` -> `route` ->
 `execute` -> `publish`) -> [remote session restore/invoke](demo/foundry.py)

@@ -1,5 +1,150 @@
 # Customer hosted-session prototype: blocked release notes
 
+## Current measured correction status — October 22, 2026
+
+**PARTIAL; BLOCKED, not customer-ready. No release PASS.** Exactly three
+remote hosted roles remain: coordinator, architect and reviewer. Machine
+delegation/result output and the opt-in human stderr presentation are unchanged.
+The new identity-profiling construction and accepted offline join do not prove
+authenticated outbound principal, platform identity resolution or a supported
+identity remedy. No such remedy is live-selected.
+
+This status correction independently opened the original outcomes and votes in
+delivery run `eef04e5c-c5ab-4b88-90f6-4a99dd4692ed`, under
+`gh-dynamic-workflows/.delivery-runs/<run>/context/`:
+
+- Changed-join E2E audit
+  `4797ab07efa9ab46e5f8882caa9f7b3957910cec20b4c9ed5ec3574bbed1c8d2.json`:
+  **agreed**, Architect/Critic/Product Owner each `agree:true`,
+  `taskComplete:true`, no unmet criteria for the bounded offline reassessment.
+  It accepts application `13aecc39fba90d1475de057db07566c69b4ffc27`, retaining
+  runtime/tests `c52786b7dd1595f3048a78061f893dc79635069f`, with selected lab
+  `9b4919d8bcdbf07203f32657936c27328ea6ccc1`. It does not accept publication
+  or a deployed turn.
+- Latest original DevOps audit
+  `dfd473725551074526ddec41e0dbc23a0ca81a6d7d265e89dbf8a669004f8a3f.json`:
+  **needs-input**, Architect/Critic/Developer agree with the partial report
+  but each retains `taskComplete:false`. Native preflight, final common bundle,
+  publication, cloud acceptance and live cleanup remain unmet.
+
+### Implemented, locally checked, prepared, deployed and live are separate
+
+| Boundary | Measured state and evidence limits |
+| --- | --- |
+| Construction | Profiling source and retained continuity/recovery/isolation controls are implemented. The accepted source pair above is not a deployed package/version inventory. Trusted parent binding, immutable role outputs, exact prerequisites, ETag publication, MAF checkpoints and write-ahead unknown-effect holds remain required. |
+| Local verification | The E2E audit records four focused application integration passes, two selected-lab mount/hash regression passes and successful `Test-Repository.ps1` validation (113 public files). It independently checked applicable capture hashes/source bindings, not another full Linux build. |
+| Attributed Windows captures | Corrected application: 278 passes; retained: 236 of 240 passes, four exclusions. Dependency and compilation checks passed. |
+| Attributed Linux captures | Corrected application: 270 of 278 passes, eight exclusions; retained: 197 of 240 passes, 43 exclusions; corrected wrapper exit zero. Initial missing-`.agentignore` failure remains history. These linux/amd64 executions ran on an arm64 host, not native-amd64-host certification. |
+| Coverage exclusions | The linked-lab closure fixture passed with explicit Windows linkage but was excluded in the Linux capture; the positive exact-clean-commit entrypoint remains excluded/unproven. Captures are combined tool output, not separate OS streams. The accepted ledger retains individual exclusions; no aggregate count waives them. |
+| Prepared, not published | DevOps reports verified runtime archive membership (20 files), 23 source bindings, 5,595 staged files and 108 locked distributions, with calibration/dependency/wheel/ELF checks. Runtime ZIP plus dependency stage is not the final bundled ZIP; none was created or published in that stage. |
+| Current deployment | Final correction-package source/package/version/three-role readbacks are unverified. Earlier publication history is not current-binding proof. |
+| Cleanup | DevOps independently confirmed removal of its exact owned extraction container and reported no new tunnel/listener. That local cleanup does not reconcile historical UNKNOWN effects or prove historical/live release cleanup. |
+
+These are independently inspected **audit-attributed results**, not full suites
+or private receipt/provenance checks rerun by this documentation task.
+Repository validation includes the preserved unowned specification/index
+overlay; it is not clean-checkout inventory certification.
+
+### Current owners and localized remaining gates
+
+1. **Operator and original DevOps:** resolve only the recorded native WSL
+   preflight approval through supported interactive controls. The actual tool
+   returned that no interactive user response was available; the exact missing
+   permission is unidentified. Native pinned-extension and dedicated
+   authentication readiness remain unproven, not diagnosed authentication
+   failures. Desktop extension drift does not establish native drift. No
+   alternate-route retry or policy bypass is permitted.
+2. **Original DevOps:** after that unblock, verify native tools/authentication
+   and freshness, then use the retained package interface with the existing
+   prepared stage. Complete automatic current source/package/version,
+   trusted-host and next-operation effect bindings before one serialized
+   publisher releases the same new common package to all three roles. Routine
+   scoped guarded publication is already authorized. Historical COMMON rollback
+   ZIP/build provenance is **WAIVED, never PASS**, not another investigation or
+   manual checksum sign-off. Current effect reconciliation is still required.
+3. **Original live evidence owners:** record distinct synthetic purpose/intent
+   before new traffic after current-effect readiness; never resend the held
+   original operation. Complete the live ledger below and collect private
+   attributable cleanup. No HTTP 200, stream end or SDK-completed envelope
+   substitutes for accepted artifacts and non-held execution.
+4. **Independent IP-S3 preparation and original closeout:** the acceptance
+   companion and this measured status work do not depend on native preflight
+   success. `IP-S3-DELIVERY-JOIN` consumes both reviewed document handoffs; it
+   does not consume an invented completed parent. Original E2E/DevOps and Scrum
+   review/retro/closeout retain actual live verification and exact reviewed-ref
+   delivery/readback. Documentation-only ancestry is not a new release.
+
+The historical repository-check denial and COMMON rollback investigation below
+are **not current prerequisites**. New authority and subsequent actual passing
+repository checks do not erase the denial or authorize bypass of the different,
+currently denied native operation. Partial IP-S1/IP-S2/IP-S3 and the cloud-pass
+completion condition remain intact.
+
+### Current acceptance and closeout ledger
+
+| Criteria | Current state / smallest remaining original-owner handoff |
+| --- | --- |
+| AC1 / G1-G4 | Unverified on the final correction package: healthy exact three-role common bindings, completed non-held remote collaboration, private Blob immutable provenance and genuine Decision-1 after deterministic gates. Original DevOps supplies current readbacks and accepted initial artifacts. |
+| AC2 / G5 | Same-parent follow-up unverified. Requires completed initial parent, both child hosted/framework identities and pins, exactly two child creations across both turns, fresh response IDs for new invocations and advancing exact artifacts; retain prior requirements and invalidate stale approval. Aliases are not proof. |
+| AC3 | Repeated orchestration and both-specialist history fixtures retained offline; no new live orchestration PASS. |
+| AC4 / G6 | Once-only supported stop/resume unverified. Requires completed two-turn state, durable exact stop intent, confirmed stopped/idle state, checkpoint/journal reconciliation and no duplicates; retrieval is not a new send, uncertain stops remain held. No hard-crash claim. |
+| AC4 / G7 | Separate-parent isolation unverified. Final deployed bindings and safe completed comparison scope suffice to schedule it independently of recovery success; actual distinct bindings, scope and content/effect exclusion remain required. |
+| AC5 | Aggregate G1-G8 not passed; local agreement cannot replace cloud tests. |
+| AC6 | Customer-first README/default machine and opt-in human presentation implemented and offline covered; actual two-turn live demonstration missing. |
+| AC7 | Changed-join offline E2E accepted, repository checks passed and attributed corrected Linux proofs exist with explicit exclusions; native preflight/final package/publication and actual deployed verification incomplete. |
+| AC8 | Earlier reviewed delivery retained; later exact correction/document refs need original closeout delivery/readback and scoped Git accounting. No push occurs in this assignment. |
+| AC9 / G8 | Measured partial status supplied; current final bindings, attributable live cleanup and original review/retro/closeout remain unverified. Preserve held parents, UNKNOWN publications/effects and historical cleanup uncertainty. |
+
+### Exact reviewed-ref delivery preparation
+
+All application refs below are on `feature/customer-hosted-session-prototype`;
+their ancestry was checked locally, not against a fresh remote. Full review
+filenames refer to the current-run context directory above.
+
+| Accepted slice | Exact ref and original acceptance evidence |
+| --- | --- |
+| Application source boundary | `13aecc39fba90d1475de057db07566c69b4ffc27`, runtime/tests `c52786b7dd1595f3048a78061f893dc79635069f`; accepted changed-join audit `4797ab07efa9ab46e5f8882caa9f7b3957910cec20b4c9ed5ec3574bbed1c8d2.json`. |
+| Selected-lab source boundary (separate repository) | `9b4919d8bcdbf07203f32657936c27328ea6ccc1`; same accepted changed-join audit. This is not an application Git ref or permission to publish stale bytes. |
+| Source-join document | `8b6092a5b6dc228e51245990043f2382b4f26984`; Architect/Critic completion in `af53a98a252f98bc0c25c7b6d700712017caee532f0a1444e1ca0fc8cdb40685.json`. |
+| Prospective diagnostic handoff | `13aecc39fba90d1475de057db07566c69b4ffc27`; Architect/Critic completion in `9bc452275610e015f8ec3f0ad3af80a637966fcbe0c98d9b4a9e1bb541673794.json`. |
+| IP-S3 design | `c544588b570a2e5ae9f6d5a88f2e96a32cc3ec77`; Product Owner/Critic completion in `cb73116068dae88e649376c587fa360cd2f56a6b5b3b09a06e73065be7d14602.json`. |
+| IP-S3 architecture and tiers | `8f5da03931e4ad13fe1bd1166a8b7f6bb3c7c7ac`; Product Owner/Critic/Red Team completion in `6c19a86535b0b0b133a52e31ee77f89fdb90370742805ac6eeac25811bd499ee.json`. |
+
+These are accepted handoff refs eligible for original closeout reconciliation,
+not a blanket claim that every intervening commit is reviewed or remote-delivered.
+The **new README/release-note status commit is pending its own Architect/Critic
+review**; its exact hash is returned in DeveloperWork, not self-referenced here.
+The parallel companion also needs its own exact commit/votes. Original
+`IP-S3-DELIVERY-JOIN` records both reviewed refs and checks; original closeout
+then performs authorized non-force delivery/readback of exact reviewed ancestry,
+not moving HEAD. No planning-only ledger creates another task solely to ship it.
+Unowned `.github/repo-index.md` and `docs/identity-profiling-workflow.md`
+working overlays are excluded from this status commit and its delivery slice.
+
+Disposition boundaries are unchanged:
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","RELEASE-CHANGED-JOIN-HANDOFF"]`
+is satisfied for the accepted unchanged source pair; at that same origin,
+`RELEASE-COMMON-PACKAGE-PUBLICATION` and `RELEASE-LIVE-ACCEPTANCE` remain
+required. `SDK-CREDENTIAL-TIMEOUT-PRESERVATION` and
+`SDK-TIMEOUT-REGRESSION-EVIDENCE` at
+`yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop`
+remain accepted only within their original SDK/test boundary, not reopened.
+No disposition is superseded by this status document.
+
+Current navigation: [sprint architecture](customer-prototype-sprint-architecture.md#current-ip-s3-continuity-once-only-recovery-and-independent-isolation),
+[source coverage ledger](identity-profiling-coverage.md#ip-s2-changed-source-handoff-to-original-e2e),
+[diagnostic handoff](identity-candidate-handoff.md#ip-s2-prospective-diagnostic-evidence-overlay--october-22-2026)
+and [correction release plan](customer-prototype-release-plan.md#identity-profiling-correction-release-plan-october-21-2026).
+Original delivery/join owners receive these anchors and exact reviewed refs;
+local preparation is not live acceptance.
+
+## Historical release notes through October 21, 2026 — preserved
+
+Everything below is the dated pre-correction record, including its then-current
+headings, owners, repository denial and rollback-investigation direction.
+Use the October 22 overlay above for current status and routing; no historical
+test, deployment, hold, UNKNOWN or cleanup record is rewritten as success.
+
 ## Release decision
 
 **October 21, 2026 — BLOCKED; not customer-ready. No release PASS.**

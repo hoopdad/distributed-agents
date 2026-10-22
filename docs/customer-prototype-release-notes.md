@@ -1,5 +1,90 @@
 # Customer hosted-session prototype: blocked release notes
 
+## Credential-route discriminator and receiving design boundary — October 22, 2026
+
+**OFFLINE ONLY; needs original Architect/Scrum coordination, not cloud PASS.**
+This addresses the next discriminator for
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-cloud-verification"]`.
+Retain satisfied `release-current-common-package` and
+`release-guarded-publication` at that exact origin: no runtime, package,
+deployment, authentication, inference or held-state operation was changed.
+The prior profile receipt was independently hash-matched to
+`7aef63470037dc5c724f57392640d16908d262112051a0b226f6ae3fc1337979`.
+
+The strengthened existing resource regression now observes **synthetic bearer
+equality at the actual public OpenAI/httpx2 boundary**, not just delegation
+headers. It checks the same resource-owned credential, the SDK-requested
+`https://ai.azure.com/.default` scope and independence from an unrelated
+`OPENAI_API_KEY`. A new negative control makes credential acquisition fail:
+the public SDK propagates `CredentialUnavailableError`, makes zero transport
+sends and does not fall back to the environment key.
+
+This exposed a **fixture issue**, not a demonstrated hosted authentication
+defect: the old unrestricted credential `MagicMock` implicitly supplied
+`get_token_info`, so its configured `get_token` result was not the bearer
+provider's selected path. The fixture now explicitly supplies synthetic
+`AccessTokenInfo` and verifies `get_token_info` is awaited exactly once and
+legacy `get_token` is not awaited. No real token is requested, decoded or logged.
+The first focused launch also inherited a nonsynthetic project environment and
+was rejected before sending by `CANDIDATE_PARENT_BINDING`; subsequent checks
+set the synthetic project/model values explicitly. No trust gate was weakened.
+
+Inspection of the installed public SDK surface narrows the next seam:
+
+- `AIProjectClient.get_openai_client` uses the supplied credential's bearer
+  provider at the scope above. The measured local route rules out an implicit
+  environment-key substitution **in this fixture**, not in an unobserved
+  historical deployed request.
+- Public `AccessTokenInfo` exposes token, expiry, token type and refresh time,
+  **not an independently authenticated principal identifier**. Do not parse its
+  token or mistake acquisition success for principal attestation.
+- Public `AgentSessionResource` exposes session, version, status and lifecycle
+  timestamps, **not the caller principal**. Configured agent identity metadata
+  or another successful session GET cannot fill that gap.
+- The public request context documents call-ID server-side resolution and
+  container-only `x-agent-user-id`; it supplies no client-side resolution API.
+  Keep the opaque call ID opaque and the receiver's trust checks unchanged.
+
+The already-cited public [delegation contract][credential-delegation] still
+requires the explicit impersonation action and describes missing permission as
+HTTP 403. It does not explain the retained HTTP-200/rejected-execution interval
+or establish a missing assignment here. No RBAC mutation or permission diagnosis
+follows. Public documentation was reread for constraints, not claimed as a new
+research milestone.
+
+**Smallest receiving decision — original Architect / Scrum Master:** select
+and scope a supported, request-correlated **server-side caller/identity-resolution
+attestation seam**, or record that seam unavailable and prepare the private
+bounded tracing handoff. Current public credential/session readbacks cannot
+supply it. Any hosted capture integration must name its supported private
+destination, ownership and independent anchors before installation; this
+round does not invent that contract or reopen accepted consumer research.
+Route a demonstrated source defect through the original Developer and affected
+E2E reviews. Do not republish this test/documentation-only change or send another
+synthetic collaboration merely to reproduce the unchanged failure.
+
+This is a localized design/evidence handoff, **not global work exhaustion or
+a user-only approval request**. Independently scheduled isolation still needs
+its own final bindings and a safe completed comparison scope, as specified by
+the accepted IP-S3 companion; recovery success is not its prerequisite.
+The current held initial parent does not supply that completed comparison.
+Continuity, genuine once-only recovery, hosted provenance, original downstream
+reviews/retro/closeout and AC1–AC9/G1–G8 remain incomplete. No owned cloud
+process/listener was started this round. Held/UNKNOWN effects and historical
+seals are untouched; COMMON rollback provenance remains **WAIVED, never PASS**.
+
+Verification: the two affected focused cases passed in **0.351 seconds**.
+The documented application entry point, with explicit existing lab Python,
+selected-lab root and synthetic project/model environment, passed dependency
+checking, **364 tests / 74.878 seconds** and compilation. Repository checks
+passed the current index and **139-file** public boundary. An initial repository
+check omitted its mandatory `-Python` argument and did not run; the corrected
+explicit invocation passed. Selected tooling remains clean at `ceaba6ee`; no
+retained suite rerun or dependency installation was needed. These are affected
+local checks, not final-package, native-amd64-host or hosted-principal proofs.
+
+[credential-delegation]: https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agent-permissions#delegate-the-end-user-identity
+
 ## Hosted structured identity interval — October 22, 2026
 
 **PARTIAL; cloud acceptance remains incomplete.** This continues

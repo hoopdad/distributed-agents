@@ -1,5 +1,14 @@
 # Repository index
 
+IP-S3 continuation-1 architecture consumes accepted observation integration
+`91758971`: `docs/customer-prototype-profiling-s3-continuation-1-architecture.json`
+and the current opening of `docs/customer-prototype-sprint-architecture.md`
+define one missing private occurrence-retention/readback consumer, not another
+bridge, public schema or automatic hosted collector. Existing canonical graph
+and all tier architecture suffixes remain unchanged. Native denial is localized
+and not retried; typed original-encoding and model-history negatives remain.
+Scrum Master owns decomposition/index coordination; no DevOps resume or live pass.
+
 IP-S2 continuation-1 joined observation source at bridge `e377a323` and
 selected lab `9b4919d8`: navigate
 `docs/identity-profiling-coverage.md#ip-s2-continuation-1-observation-integration`
@@ -1859,6 +1868,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-profiling-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-profiling-s3-continuation-1-architecture.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

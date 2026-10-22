@@ -1,5 +1,24 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## IP-S3 continuation 1: private retention is not release readiness
+
+Apply the [current cumulative amendment](../../customer-prototype-sprint-architecture.md#ip-s3-continuation-1-retain-actual-private-occurrence-receipts).
+Terminal/release canonical IDs remain unchanged. One new source-local private
+receipt consumer supplies durable readback and strict accounting of existing
+occurrences; no public aggregate/stdout/parser/validator change or duplicate
+accepted delivery task. Every late marker or duplicate attempt remains evidence,
+never deduplicated to manufacture creations/sends/stops equality. Existing
+stop intent, HTTP 204 and stopped/idle readback requirements stay separate.
+No source success demonstrates supported hosted installation or private owned
+storage/cleanup; original DevOps must prove that actual interval before relying
+on live receipts. Typed checkpoint attachment/model-history negatives remain.
+Original `ae0bade0` denial is unchanged, exact permission unidentified; no
+resume/recheck, alternate route or automatic host activation. Future changed
+source needs affected original E2E qualification and package closure, not a
+blanket repeat of accepted work. Final common three-role publication, actual
+AC1-AC9/G1-G8 and original review/retro/closeout remain incomplete. Historical
+COMMON rollback provenance stays WAIVED, never PASS.
+
 ## IP-S2 continuation 1: build adapters without replaying release effects
 
 Apply the [current IP-S2 amendment](../../customer-prototype-sprint-architecture.md#ip-s2-continuation-1-construct-the-missing-private-observation-adapters).

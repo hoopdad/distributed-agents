@@ -1,5 +1,21 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## IP-S3 continuation 1: consume accepted observations without changing trust
+
+Apply the [current cumulative amendment](../../customer-prototype-sprint-architecture.md#ip-s3-continuation-1-retain-actual-private-occurrence-receipts).
+Canonical coordinator/state/identity/artifact/checkpoint IDs and supports stay
+unchanged. Reader/bridge integration `91758971` is accepted source/local
+evidence, not an installed durable collector or final-package/live proof.
+The new opt-in private receipt consumer preserves exact existing bindings,
+all request occurrences and late incompleteness; journal transitions never
+become sends. Inject an explicitly owned private handle before background
+creation; do not acquire settings/credentials or auto-enable host collection.
+Keep streaming/cancellation, UNKNOWN holds and existing deterministic rejection.
+Typed original-encoding attachment remains unsupported and no codec/schema
+change is approved. Native approval remains unresolved, not a construction
+gate or permission diagnosis. Original E2E/DevOps still own source qualification,
+common publication, actual live comparisons and attributable cleanup.
+
 ## IP-S2 continuation 1: private state and actual effect observations
 
 Apply the [current IP-S2 amendment](../../customer-prototype-sprint-architecture.md#ip-s2-continuation-1-construct-the-missing-private-observation-adapters).

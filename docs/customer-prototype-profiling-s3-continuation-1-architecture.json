@@ -1,0 +1,156 @@
+{
+  "kind": "SprintArchitectureContinuation",
+  "sprintId": "IP-S3",
+  "round": 1,
+  "owner": "Architect",
+  "reviewers": ["Product Owner", "Critic", "Red Team"],
+  "scope": "Retain accepted observation adapters and construct their missing private receipt-retention consumer. Not release acceptance, a replacement ReleasePlan, a typed checkpoint contract change or a native execution retry.",
+  "source": {
+    "branch": "feature/customer-hosted-session-prototype",
+    "inspectedApplicationHead": "91758971d6ab0c1579c6701fbfdb4bbb3d242571",
+    "selectedLabHandoff": "9b4919d8bcdbf07203f32657936c27328ea6ccc1",
+    "acceptedReader": "fa3937bdb7df9d831d6335ca66d9248fc9fee49e",
+    "acceptedBridgeCorrection": "e377a32372f2f8e1a74c6e1c8c50323654da752c",
+    "acceptedTypedQualification": "fcf301ee6e14d67e3cb94d58910de4a59a2a844d",
+    "qualification": "Application HEAD observed directly; selected-lab reference consumed from accepted integration, not a new lab or remote readback."
+  },
+  "solutionModel": {
+    "path": "docs/customer-prototype-architecture.md#solutionmodel",
+    "mode": "Incorporate the complete canonical components, triggered flows, steps and supports unchanged.",
+    "canonicalGraphSHA256": "6c0b12ea78c7ea96f8a9c01b334426487af24c3a6ab5fc53f8e69a281d34b3bd",
+    "counts": {"components": 10, "flows": 5, "steps": 18},
+    "affectedComponents": ["release-toolchain", "identity-boundary", "artifact-plane", "conversation-state", "workflow-checkpoints", "coordinator", "architect", "reviewer"],
+    "affectedSteps": ["continuity-verify", "recovery-stop", "recovery-verify", "isolation-verify", "release-join", "release-close"],
+    "implementationMapping": [
+      {"components": ["identity-boundary", "release-toolchain"], "steps": ["continuity-verify", "recovery-stop", "recovery-verify", "isolation-verify"], "modules": ["demo/effect_observation.py", "demo/foundry.py", "demo/workflow.py", "live_acceptance.py"], "finding": "Accepted optional private_sink observes attributed transport occurrences, including late inherited requests. No private durable sink or retained-receipt accounting consumer is installed."},
+      {"components": ["artifact-plane", "release-toolchain"], "steps": ["continuity-verify", "recovery-verify", "isolation-verify"], "modules": ["scenario_state_reader.py", "tests/test_scenario_state_reader.py"], "finding": "Accepted injected-client read-only reader retains conditionally complete manifest/artifact/operation windows. Journal transitions are not independent effect occurrences; non-atomic and historical-completeness limits remain."},
+      {"components": ["workflow-checkpoints"], "steps": ["recovery-verify"], "modules": ["demo/host.py", "tests/test_typed_checkpoint_export.py", "docs/identity-typed-checkpoint-export.md"], "finding": "Full typed local persistence round-trip works; original persisted encoding plus supported restoration into the unchanged aggregate remains unsupported. No new bridge, codec, projection, schema or pin change is authorized by this amendment."},
+      {"components": ["conversation-state", "coordinator", "architect", "reviewer"], "steps": ["continuity-verify", "isolation-verify"], "modules": ["demo/architect_agent.py", "demo/reviewer_agent.py", "live_acceptance.py"], "finding": "Consumed model-history provenance remains unobserved. Previous response IDs, pending stores and retained effect receipts do not establish consumed input. No speculative specialist correction or repeated negative inventory."}
+    ]
+  },
+  "evidence": [
+    {"reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/694f192f29204eec312e17eb223d571120da9ee969f786809821ce64a6817e76.json", "finding": "Independently opened: original Architect/Critic agree:true, taskComplete:true, unmetCriteria:[] for integration 91758971. Its five joined tests, 344 application tests and repository pass are attributed prior evidence, not rerun results or formal new-runtime E2E."},
+    {"reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/04e3e134c35df1bedab5acd8931d7434e2023fe62230ea048bff8bba5d140eb5.json", "finding": "Independently opened current Architect/Critic completion votes, retaining historical negative governance. Accepted late-request correction preserves original binding and distinct occurrences and permanently invalidates completeness; it does not implement receiving durability."},
+    {"reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/a2b5fd546b4d4d3a9e714f0ae1e74a90cf83e2429af1f278375d5c59ab112a91.json", "finding": "Independently opened Architect/Critic agreement/completion on bounded typed qualification, including actionable unsupported original-encoding/aggregate interval. Do not reopen qualification or infer a runtime export."},
+    {"reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/ae0bade07582d467826277da2ca92c61252811c39543d8d40cd8b85272a7dd1c.json", "finding": "Independently opened: Architect/Critic/Developer agree with the partial report but all retain taskComplete:false. Native denial resolution, tools/authentication, final package/publication and cloud tests remain unmet. No new resolution evidence."},
+    {"reference": "gh-dynamic-workflows/.delivery-runs/eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context/0c2598dcfa07a6e154b8452a4baf4387d8d2dc0f4f6356193eb919c3f8181f67.json", "finding": "Independently opened original ReleasePlan agreement/completion votes. IP-S3 continuity, no-duplicate recovery, independent isolation and attributable closeout provide the approved source criteria for receiving actual effect observations."},
+    {"reference": "demo/effect_observation.py:private_sink,CaptureWindow,dispatch,Attempt; docs/identity-profiling-coverage.md#ip-s2-continuation-1-observation-integration", "finding": "The callable is explicitly responsible for synchronous retention; current integration uses memory/broken/absent sinks. window_closed can be followed by request_late and is not a final certificate. A purpose-specific retention/reconciliation consumer is missing useful construction, not another bridge or qualification."},
+    {"reference": "live_acceptance.py:_evidence_turn,validate_scenario_evidence; tests/test_scenario_evidence.py:CapturedRemote", "finding": "Existing aggregate creations/sends/stops require independent occurrence accounting. Duplicate actual attempts must reject, not be deduplicated to satisfy journal-derived sets. Aggregate authentication and full input collection remain external obligations."}
+  ],
+  "decisions": [
+    {
+      "id": "private-receipt-retention-consumer",
+      "decision": "Construct a purpose-specific private consumer of the existing immutable Binding/Receipt contract, not another transport bridge or generic event ledger. An explicit owning caller supplies a new exclusive private capture handle and trusted expected operation/role/target/version bindings; the module acquires no path, credential, settings, network client or resource. Retain ordered occurrences and every phase, durably acknowledge writes using supported local file operations, and read them back strictly. Never serialize arbitrary objects or complete headers/bodies. Late markers invalidate earlier closure and all derived accounting; no deduplication of actual requests.",
+      "completeness": "A readable prefix or successful fsync is not a complete observation interval. Require caller-attributed quiescence plus externally retained capture length/digest and binding anchors; detect missing/truncated/changed records, unhealthy sinks, missing closure, late/pending/error/early-close phases and duplicate attempts. Make conditional evidence completeness explicit. No claims of atomic service snapshots, historical absence, unobserved sends or remote durability.",
+      "attachment": "Only a conditionally complete capture can supply the existing creations/sends/stops lists, checked against separately captured trusted journal/manifest bindings. Preserve all raw private occurrence receipts even on rejection. Never generate successful operation IDs or stop confirmation from intentions, call aliases, HTTP 200 or an idle readback.",
+      "installation": "Exercise private_sink installation before actual pinned local background creation in fixtures. Source includes an opt-in injected consumer; it does not turn on hosted file collection, add a private setting or assert an authorized writable hosted location exists. Original DevOps must bind a supported private execution-local destination and prove actual coverage/owned cleanup before using live receipts. If unavailable, return the exact interval, not a logging service or infrastructure request.",
+      "implemented": false,
+      "locallyVerified": false,
+      "deployed": false,
+      "independentlyLiveVerified": false
+    },
+    {
+      "id": "preserve-negative-capabilities",
+      "decision": "Consume accepted typed-export and model-history negatives as precise remaining limitations. A fail-closed re-encoding experiment is not approved here: observed matching samples do not close the original-encoding/aggregate contract. Essential comparison-contract or SDK changes need explicit original Architect-advised Product Owner scope decision, not hidden Developer implementation or repeated exhausted research."
+    }
+  ],
+  "blastRadius": [
+    {"blocker": "Native WSL preflight was actually denied; exact missing permission unidentified; supported resolution unproven", "affected": ["Native release-package", "Final common three-role publication", "Dependent final-package live scenarios"], "unaffected": ["Private receipt consumer construction and local host/transport fixtures", "Existing original review/retro preparation"], "closingAction": "Operator resolves the exact denied operation through supported controls with observable evidence; original DevOps then proves native pinned tools/dedicated authentication and current source/package/effect readiness. No unchanged retry or alternate route."},
+    {"blocker": "Optional receipt callback has no durable retention/accounting consumer", "affected": ["Independent actual occurrence comparisons in continuity-verify, recovery-verify and isolation-verify"], "unaffected": ["Accepted bridge/reader/typed qualification", "New private consumer construction"], "closingAction": "Bounded Developer task below builds and tests the receiving consumer. Its acceptance does not close the native denial, actual hosted installation or live comparison."},
+    {"blocker": "Typed original-encoding aggregate attachment and consumed-model-history provenance remain unsupported", "affected": ["Actual recovery checkpoint equality attachment", "Claims of consumed specialist model input"], "unaffected": ["Receipt retention", "Independent isolation after final deployed bindings and safe completed scope"], "closingAction": "Retain exact accepted negative handoffs; do not invent a fix or waiver. An essential contract change returns to existing Architect/Product Owner/Scrum coordination. No external upload, SDK patch or repeated qualification is assigned."}
+  ],
+  "priorDispositions": {
+    "satisfiedWithinOriginatingBoundary": [
+      "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-CREDENTIAL-TIMEOUT-PRESERVATION\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/task/IP-S1-SDK-POLICIES/AssignedWorkDeveloperLoop\",\"SDK-TIMEOUT-REGRESSION-EVIDENCE\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-CHANGED-JOIN-HANDOFF\"]",
+      "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-NORMALIZED-PLAN-HANDOFF\"]",
+      "[\"yaml-loops-v1:sprint/3/IP-S3/SprintPlanLoop\",\"IP-S3-OBSERVED-PARALLEL-DISPATCH\"]",
+      "[\"yaml-loops-v1:sprint/2/IP-S2/continuation/1/task/IP-S2-C1-EFFECT-BOUNDARY-BRIDGE/AssignedWorkDeveloperLoop\",\"EFFECT-LATE-INHERITED-CAPTURE\"]"
+    ],
+    "remainingRequired": [
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-COMMON-PACKAGE-PUBLICATION\"]",
+      "[\"yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop\",\"RELEASE-LIVE-ACCEPTANCE\"]"
+    ],
+    "superseded": [],
+    "application": "Earlier accepted source and exact-ref delivery are retained, not redispatched. New consumer acceptance cannot certify changed-runtime E2E, publication, model input or checkpoint recovery. Historical COMMON rollback provenance is WAIVED, never PASS."
+  },
+  "SprintPlan": {
+    "kind": "SprintPlan",
+    "sprintId": "IP-S3",
+    "featureBranch": "feature/customer-hosted-session-prototype",
+    "architectureWorkCandidates": true,
+    "planningOwner": "Scrum Master",
+    "tasks": [
+      {
+        "id": "IP-S3-C1-PRIVATE-RECEIPT-RETENTION",
+        "sourceSprintId": "IP-S3",
+        "sourceCriterion": "docs/customer-prototype-release-plan.md current IP-S3 acceptanceCriteria[0,1,2,5]: continuity creation/invocation comparisons, no-duplicate supported recovery, independent isolation and attributable closeout; specification Required acceptance[1,5,7].",
+        "title": "Retain and reconcile private transport occurrence receipts",
+        "kind": "developer",
+        "owner": "Developer",
+        "dependsOn": [],
+        "ownedPaths": ["demo/private_effect_capture.py", "tests/test_private_effect_capture.py"],
+        "consumes": ["Accepted immutable Binding/Receipt and private_sink interface at e377a323, integrated by 91758971", "Accepted scoped reader fa3937bd and exact immutable operation/manifest bindings", "Unchanged live_acceptance creations/sends/stops input semantics and retained scenario fixtures"],
+        "produces": ["Opt-in injected private local-file retention/readback consumer with strict occurrence accounting", "Actual public transport/background fixtures and exact package-input handoff; no live activation"],
+        "acceptanceCriteria": [
+          "Implement the private-receipt-retention-consumer decision without modifying accepted bridge/reader/aggregate contracts. Accept a caller-owned new exclusive private handle and expected trusted bindings, not a guessed path or arbitrary model/caller values. Own no client/settings/credential factory and log no private values.",
+          "Strictly retain and read back every existing Receipt phase in order, with distinct occurrence IDs and bounded explicit storage format. Preserve duplicate actual attempts and late inherited receipts under original bindings. Reject extra fields, invalid phase/binding/occurrence associations, gaps, truncation, altered records, failed durability and incomplete tails. Keep retained partial evidence; never authorize, resend or suppress a rejection on observer failure.",
+          "Reconcile actual create/send/stop request occurrences against independently supplied trusted operation/target/version bindings and existing scoped state captures. Successful accounting may supply existing aggregate list fields only after attributed quiescence and exact retained readback anchors. Duplicate attempts, late markers and unfinished/error/early-close windows remain incomplete, not deduplicated successes. Stop confirmation still requires original 204 and stopped/idle evidence.",
+          "Exercise real public Project/Responses transports and pinned resilient local background setup with installation before task creation. Cover concurrent captures, one completed in-window request followed by late inherited matching traffic, missing/broken/cancelled sink, partial writes/readback corruption, cancellation/stream-close parity, known-response-only recovery and redaction. Reuse accepted fixtures; do not rewrite their accepted behavior or add real network/effects.",
+          "Run affected focused and documented Test-Demo/Test-Repository checks using the existing explicit Python and selected-lab root. Verify the new demo module is included by existing runtime wildcard closure; coordinate the generated index with Scrum Master rather than adopting its unowned specification line. No lab edit or dependency install without demonstrated need.",
+          "Report exact source/fixture/closure refs and distinguish implemented local consumer from uninstalled hosted collection. Identify supported live installation and private ownership/cleanup handoff without inventing writable platform paths, new settings/infrastructure, model-history provenance or typed checkpoint capability. Existing original E2E/DevOps retain actual source qualification, publication and cloud-pass ownership."
+        ],
+        "doneWhen": "A committed opt-in private receipt retention/readback and accounting consumer passes affected durability, late-occurrence, isolation, preservation and package-closure fixtures for original Architect/Critic review, with hosted installation and real evidence explicitly unproven.",
+        "exclusions": ["No native denial retry or alternate execution route, token/settings retrieval, publication, invocation, stop/resume, uncertain replay or live cleanup.", "No new public schema/stdout/parser/validator, generic ledger, automatic host activation, SDK patch, checkpoint codec, pin change or guessed model-history proof.", "No accepted bridge/reader reimplementation, selected-lab edit or duplicate exact-ref delivery task."],
+        "handoff": "Reviewed consumer commit, injected-handle/sink/readback contract, exact inclusion/fixture refs and remaining live installation/comparison limits to Scrum Master and original E2E/DevOps. Scrum coordinates index ownership and affected exact-source qualification; no unchanged DevOps resume.",
+        "workCard": {
+          "role": "Developer",
+          "action": "Retain and reconcile private transport occurrence receipts",
+          "goal": "Make existing attributed create/send/stop observations durably inspectable without promoting intentions or partial capture to successful effects.",
+          "components": ["Trusted identity and private transport", "Guarded lab release toolchain", "Private Blob artifacts and effect journal"],
+          "flows": ["Same-parent specialist continuation", "Supported compute stop and resume", "Separate-parent isolation", "Exact-source guarded release"],
+          "flowSteps": ["continuity-verify", "recovery-stop", "recovery-verify", "isolation-verify", "release-join"],
+          "doneWhen": "A committed opt-in private receipt retention/readback and accounting consumer passes affected durability, late-occurrence, isolation, preservation and package-closure fixtures for original Architect/Critic review, with hosted installation and real evidence explicitly unproven.",
+          "failureCategories": [],
+          "mustAct": "Developer",
+          "locations": ["demo/private_effect_capture.py", "tests/test_private_effect_capture.py"],
+          "evidence": "Accepted bridge/integration expose an optional synchronous private callback, but explicitly do not install durable retention or aggregate collection.",
+          "cause": "Missing receiving construction, not an observed platform, identity or permission diagnosis.",
+          "verification": {"status": "not-yet-verified", "evidence": "Architecture candidate only; new consumer and actual hosted collection do not exist yet."},
+          "humanAction": "",
+          "humanActionEvidence": ""
+        }
+      }
+    ]
+  },
+  "Continuation": {
+    "disposition": "continue",
+    "summary": "One substantive private receiving-consumer split remains feasible independently of native release approval. Accepted adapters, qualification and delivery are not repeated. Original Scrum Master owns final task decomposition, Git/index reconciliation and dispatch through existing roles.",
+    "evidence": [
+      "demo/effect_observation.py explicitly delegates durable retention to an optional caller callback; accepted integration uses memory, absent and broken sinks.",
+      "live_acceptance.py compares independent creation/send/stop occurrence lists; no durable callback readback/accounting adapter supplies them.",
+      "Accepted typed original-encoding and model-history negatives are retained, not retried. Earlier companion/status/delivery and observation work are already accepted.",
+      "Native denial remains unchanged; no resume or original E2E recheck is requested. New source later needs only affected original qualification using an actually supplied canonical handoff; do not invent e2eSubject while sourceSubjects is empty.",
+      "Independent isolation retains final deployed binding and safe completed comparison prerequisites, not recovery success. All sprints remain partial."
+    ],
+    "resumes": []
+  },
+  "verificationThisTurn": {
+    "application": "Test-Demo.ps1 with existing absolute Python and explicit selected-lab root passed dependency checking, 344 tests in 51.093 seconds and compilation; exit 0. This verifies retained behavior, not the unimplemented consumer.",
+    "repository": "Test-Repository.ps1 passed current index, 126 public files, public/private boundary, JSON, PowerShell, frontmatter and whitespace; exit 0.",
+    "directAssertions": "Passed byte-preservation checks for all four historical architecture suffixes after LF normalization, unchanged canonical model hash/10 components/5 flows/18 steps, candidate/card equality and references, original plan/ReleasePlan preservation, empty resumes and unchanged unowned specification SHA256. Initial text-mode suffix assertion used the interpreter default encoding and failed; binary LF-normalized comparison corrected that verification error without changing historical content.",
+    "limitations": [
+      "Shared-checkout checks include the preserved unowned specification/index overlay, not clean-checkout certification.",
+      "No new consumer, runtime/test/manifests or lab source was changed; no retained suite or Linux build was repeated.",
+      "No dependency installation, native denial retry, credential acquisition, package creation, publication, live operation, attributable live cleanup or push occurred.",
+      "Current architecture reviewer votes, downstream Scrum planning/dispatch and all new implementation are still pending."
+    ]
+  },
+  "handoff": {
+    "reviewers": ["Product Owner", "Critic", "Red Team"],
+    "receivingOwner": "Scrum Master",
+    "next": "Review this bounded architecture, then use the existing SprintPlan loop to decompose/assign the consumer, coordinate any shared index change and dispatch through original Developer review. No new approval stage, native retry or DevOps-only restart.",
+    "releaseState": "Accepted source/local fixtures exist; new consumer is unimplemented. Final corrected common package/publication, supported live identity remedy, full AC1-AC9/G1-G8, attributable cleanup and original review/retro/closeout remain incomplete."
+  }
+}

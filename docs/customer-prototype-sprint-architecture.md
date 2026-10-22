@@ -1,5 +1,89 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## IP-S3 continuation 1: retain actual private occurrence receipts
+
+October 22, 2026. The [separate architecture amendment](customer-prototype-profiling-s3-continuation-1-architecture.json)
+consumes accepted integration `91758971`, reader `fa3937bd`, corrected bridge
+`e377a323` and typed qualification `fcf301ee`. Independently opened original
+integration/bridge/typed audits `694f192f` / `04e3e134` / `a2b5fd54`: current
+Architect/Critic votes agree and complete those bounded tasks with no unmet
+criteria. Do not rebuild them. The earlier IP-S2 candidate text below is history:
+its reader/bridge are implemented and locally verified, not deployed/live proven.
+The canonical solutionModel remains ten components, five flows, eighteen steps
+and unchanged IDs/supports, incorporated by reference in the amendment.
+
+### Smallest useful construction outside the native denial
+
+`demo/effect_observation.py` supplies immutable trusted Binding/Receipt objects
+through `private_sink(callable)`; the caller must retain them synchronously.
+`tests/test_profiling_integration.py` uses in-memory/broken/absent callbacks.
+No durable receiving consumer exists. `live_acceptance.py` still needs actual
+independent creations/sends/stops, not journal intentions. Build an opt-in,
+purpose-specific private retention/readback/accounting consumer in
+`demo/private_effect_capture.py` with a caller-owned exclusive private handle
+and exact trusted binding/closure anchors. This is neither a generic ledger
+nor a new public evidence API. No settings, resource, client or path discovery.
+
+For IP-S3 continuity, no-duplicate recovery, independent isolation and closeout,
+retain ordered phases and all occurrences, including late inherited requests.
+Do not deduplicate attempts or certify a closed window before later markers.
+Reject incomplete/altered/truncated captures and bind successful readback to
+separately attributed quiescence and retained length/digest anchors. File
+durability is not proof of an entire remote observation interval. Preserve
+private partial evidence without authorizing/retrying effects or changing
+streaming, cancellation, trust gates or existing rejection. Actual public
+transport and pinned local background fixtures must exercise installation
+before task creation, sink failure, late traffic and readback integrity.
+
+The consumer is new source work, not an installed hosted collector. Live
+installation needs a supported execution-local private destination/ownership
+and attributable cleanup, demonstrated by original DevOps; no writable hosted
+path, setting or deployment capability is assumed here. Source inclusion by
+existing `demo/*.py` closure requires verification, not a guessed lab edit.
+Scrum Master owns task decomposition, shared index ownership and Git
+reconciliation. One useful candidate is supplied, not artificial parallel tasks.
+
+### Precise remaining boundaries
+
+- Opened original IP-S3 DevOps `ae0bade0`: all reviewers retain incomplete
+  native readiness, final common package/publication and cloud tests. Its
+  actual native WSL denial has no demonstrated supported resolution; exact
+  missing permission is unidentified. This gates those operations, not the
+  consumer. No unchanged denial retry, alternate route or resume/recheck.
+- Accepted typed local round-trip is not original persisted-encoding export
+  into the unchanged aggregate. No lossy projection, private codec, file
+  re-encoding bridge or schema/pin change is approved here. Keep its exact
+  actionable unsupported handoff; do not repeat exhausted qualification.
+- Consumed model-history provenance remains unobserved. Neither receipts,
+  pending snapshots nor previous response IDs fill that interval. No guessed
+  specialist correction or repeated inventory.
+- Reader windows are conditional/non-atomic and require external historical
+  anchors; the new consumer cannot convert them to historical completeness.
+  Isolation still needs final deployed bindings and safe completed comparison
+  scope, not recovery success or all aggregate inputs before scheduling.
+
+The amendment records exact prior disposition references, including accepted
+`EFFECT-LATE-INHERITED-CAPTURE` only in its original bridge boundary. Common
+publication and live acceptance remain required; historical COMMON rollback
+provenance stays **WAIVED, never PASS**. New runtime requires affected original
+source qualification after review, not reopening accepted construction or
+inventing `e2eSubject` when none is supplied. Held parents, UNKNOWN effects,
+three remote roles, exact refs, ETags, MAF checkpoints and original
+review/retro/closeout remain intact. This architecture is ready for original
+Product Owner/Critic/Red Team review, not release completion, exhaustion or
+unattended-readiness certification.
+
+This architecture turn's documented `Test-Demo.ps1` with existing absolute
+Python and explicit selected-lab root passed dependency checking, **344 tests
+in 51.093 seconds** and compilation; exit zero. `Test-Repository.ps1` passed
+the current index, **126 public files**, boundary/JSON/PowerShell/frontmatter/
+whitespace checks. Direct binary/LF-normalized assertions preserve all four
+historical suffixes, original plan/ReleasePlan, canonical graph and unowned
+specification bytes. These shared-checkout checks include the preserved
+unowned specification/index overlay; they neither test the new consumer nor
+certify a clean checkout, Linux build, deployment or live flow. No runtime,
+test, dependency or lab edit, install, native retry, cloud effect or push.
+
 ## IP-S2 continuation 1: construct the missing private observation adapters
 
 October 22, 2026. The [separate IP-S2 amendment](customer-prototype-profiling-s2-continuation-1-architecture.json)

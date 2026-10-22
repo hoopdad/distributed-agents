@@ -1,5 +1,19 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## IP-S3 continuation 1: preserve specialist behavior and observation limits
+
+Apply the [current cumulative amendment](../../customer-prototype-sprint-architecture.md#ip-s3-continuation-1-retain-actual-private-occurrence-receipts).
+Both hosted specialists, canonical IDs/supports and exact prerequisite/output
+contracts remain unchanged. The accepted bridge is not redispatched. Its
+new private receiving consumer retains every attributed occurrence and late
+marker without logging identity/header/body values or authorizing an invocation.
+No specialist code, trusted-header substitution, history patch or hidden local
+agent is assigned. Actual consumed model-history provenance remains unobserved;
+receipt retention, pending state and response IDs are not a substitute.
+Keep typed export's accepted negative interval and remote/live verification
+requirements. Independent isolation needs final bindings and safe completed
+comparison scope, not recovery success. No publication or cloud pass is claimed.
+
 ## IP-S2 continuation 1: preserve remote execution while binding receipts
 
 Apply the [current IP-S2 amendment](../../customer-prototype-sprint-architecture.md#ip-s2-continuation-1-construct-the-missing-private-observation-adapters).

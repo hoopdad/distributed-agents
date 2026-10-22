@@ -1,5 +1,19 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## IP-S1 continuation 3: consume substantive delivery and retain native boundary
+
+Apply the [round-3 assessment](../../customer-prototype-profiling-continuation-3-architecture.json).
+Original fixed `f9fcd9cf` delivery/readback is accepted; no duplicate or
+planning-only push is assigned. The old `c52786b7`/`9b4919d8` changed join stays
+accepted within its boundary, not qualification of later observation runtime.
+Native preflight approval remains unresolved with the exact permission
+unidentified. No denied call is retried, no eligible new sourceSubject exists
+and no unchanged DevOps resume/recheck is emitted. The caller-owned private
+consumer is not an automatic hosted installer or complete evidence collector.
+Keep terminal stdout/parser unchanged, automated current bindings and original
+qualification/publication/live stages, independent isolation and owned cleanup.
+Historical COMMON rollback provenance remains **WAIVED, never PASS**.
+
 ## IP-S3 continuation 2: keep operational prerequisites separate from construction
 
 Apply the [IP-S3 assessment](../../customer-prototype-profiling-s3-continuation-2-architecture.json).

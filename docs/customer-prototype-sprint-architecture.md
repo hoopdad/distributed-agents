@@ -1,5 +1,31 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## IP-S1 continuation 3: reconcile accepted delivery without replaying release
+
+October 22, 2026. The [separate round-3 assessment](customer-prototype-profiling-continuation-3-architecture.json)
+consumes accepted fixed observation-ref delivery `f9fcd9cf` and the subsequent
+original IP-S2/IP-S3 exhaustion reviews. All eleven tracked paths after that
+delivered ref are architecture/planning/index only. The canonical ten-component,
+five-flow model, prior contracts and accepted construction remain unchanged.
+Its per-flow source/criterion mapping separates implementation/local fixtures
+from missing final deployed bindings and independently verified cloud results.
+
+The historical Linux closure repair and old changed-join handoff are accepted;
+do not rebuild them. Later observation runtime still requires affected original
+E2E/package qualification. No eligible `sourceSubjects` or new exact native
+approval-resolution evidence is supplied, so tasks/resumes/rechecks are empty.
+Host ownership, capture installation/coverage/anchors, original-encoding export
+and consumed model-history provenance remain unproven; another wrapper is not
+proof. Isolation remains recovery-independent after its own final bindings and
+safe comparison scope. No unchanged denial retry or planning-only push.
+
+This bounded architecture assessment is ready for original review, not release
+acceptance. Original Scrum Master carries the incomplete checkpoint through
+existing review/retro/closeout. All three sprints remain partial; actual common
+publication, AC1-AC9/G1-G8 and attributable cleanup remain required. Historical
+COMMON rollback provenance remains **WAIVED, never PASS**. Held parents and
+UNKNOWN effects remain unchanged.
+
 ## IP-S3 continuation 2: retain the incomplete live comparison boundary
 
 October 22, 2026. The [separate IP-S3 assessment](customer-prototype-profiling-s3-continuation-2-architecture.json)

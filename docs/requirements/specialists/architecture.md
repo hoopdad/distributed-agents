@@ -1,5 +1,17 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## IP-S1 continuation 3: preserve the observable identity interval
+
+Apply the [round-3 assessment](../../customer-prototype-profiling-continuation-3-architecture.json).
+Keep exactly two remote specialists and their canonical IDs, supported ingress
+hooks, immutable role outputs and exact prerequisites. Accepted source delivery
+does not establish current trusted identity or model-history consumption.
+Absence of the public delegation header at ingress alone does not prove platform
+loss; actual outbound principal and resolved SDK identity remain unproven.
+No new supported source seam or evidenced specialist correction is supplied.
+Retain accepted typed/history limitations and all real continuity/recovery/
+isolation requirements; no held-parent replay or trusted-context repair.
+
 ## IP-S3 continuation 2: preserve remote history and comparison requirements
 
 Apply the [IP-S3 assessment](../../customer-prototype-profiling-s3-continuation-2-architecture.json).

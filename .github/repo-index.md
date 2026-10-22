@@ -1,5 +1,15 @@
 # Repository index
 
+IP-S1 continuation-3 architecture at inspected `716cfd4f`:
+`docs/customer-prototype-profiling-continuation-3-architecture.json` and newest
+cumulative/tier openings consume accepted substantive `f9fcd9cf` delivery and
+subsequent IP-S2/IP-S3 exhaustion handoffs. Canonical graph unchanged; per-flow
+criteria/source/evidence mapping distinguishes local construction from missing
+hosted capture/provenance, qualification, common publication and actual live
+acceptance. Empty tasks/resumes retain bounded incomplete exhaustion, not release
+success. No duplicate delivery, unchanged denial retry, invented E2E subject or
+planning-only push; original Scrum/review/retro/closeout retain ownership.
+
 IP-S3 continuation-2 Scrum assessment at architecture `2343445b`:
 `docs/customer-prototype-profiling-s3-continuation-2-sprint-plan.json` preserves
 the separate original plan and records an empty task/assignment/resume graph
@@ -1944,6 +1954,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-profiling-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-continuation-2-architecture.json`
 - `docs\customer-prototype-profiling-continuation-2-sprint-plan.json`
+- `docs\customer-prototype-profiling-continuation-3-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-s2-continuation-2-architecture.json`

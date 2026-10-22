@@ -1,5 +1,16 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## IP-S1 continuation 3: retain paired diagnostics and trusted dispatch
+
+Apply the [round-3 assessment](../../customer-prototype-profiling-continuation-3-architecture.json).
+Accepted profiling, scoped reader, late-preserving bridge and private consumer
+remain source/local capabilities, not hosted capture or consumed model-history
+proof. `demo/host.py`, `demo/workflow.py` and `demo/foundry.py` retain supported
+hooks, deterministic gates and trusted parent binding. No new supported repair
+or identity substitution is justified. No new coordinator construction task
+is identified; affected original qualification and actual non-held collaboration
+remain incomplete. Canonical component/step IDs and prior suffixes are retained.
+
 ## IP-S3 continuation 2: preserve the accepted coordinator and missing live handoffs
 
 Apply the [IP-S3 assessment](../../customer-prototype-profiling-s3-continuation-2-architecture.json).

@@ -1,12 +1,15 @@
 from __future__ import annotations
 
+import asyncio
 import hashlib
 import json
 import logging
 import os
 import re
+import time
 import uuid
 from contextlib import AsyncExitStack
+from dataclasses import replace
 from typing import Any
 from urllib.parse import urlsplit
 
@@ -22,6 +25,7 @@ from azure.core.exceptions import ResourceNotFoundError
 from azure.identity.aio import ManagedIdentityCredential
 
 from .config import required
+from . import diagnostics as diagnostic
 from .contracts import (
     AGENTS, LEDGER_KEY, ORIGIN, PROJECT,
     Action, Child, DemoError, Ledger, Role, read_choice,
@@ -34,6 +38,97 @@ SPECIALIST_MODE_ENV = "DEMO_SPECIALIST_MODE"
 SPECIALIST_MODES = {"hosted", "in_process"}
 OUTBOUND_CONTEXT_LOGGER = logging.getLogger(__name__ + ".outbound_context")
 OUTBOUND_CONTEXT_LOGGER.setLevel(logging.INFO)
+OUTBOUND_CONTEXT_LOGGER.propagate = False
+
+
+class _PrivateContextHandler(logging.StreamHandler):
+    def handleError(self, record):
+        pass
+
+
+if not OUTBOUND_CONTEXT_LOGGER.handlers:
+    OUTBOUND_CONTEXT_LOGGER.addHandler(_PrivateContextHandler())
+
+
+def _transport_category(exc: BaseException) -> diagnostic.Category:
+    if isinstance(exc, asyncio.CancelledError):
+        return diagnostic.Category.CANCELLED
+    if isinstance(exc, httpx2.TimeoutException):
+        return diagnostic.Category.TIMEOUT
+    return diagnostic.Category.TRANSPORT
+
+
+def _transport_event(event, started, kind, *, status=None, category=diagnostic.Category.NONE):
+    # Even an unavailable/broken diagnostic sink must preserve the wire outcome.
+    try:
+        diagnostic.emit(replace(
+            event, kind=kind, status=status, category=category,
+            duration_ms=min(86_400_000, max(0, (time.perf_counter() - started) * 1000)),
+        ))
+    except Exception:
+        pass
+
+
+class _ObservedStream(httpx2.AsyncByteStream):
+    """No read-ahead or replacement task; the consumer still owns closure."""
+
+    def __init__(self, inner, event, started, status):
+        self.inner, self.event, self.started, self.status = inner, event, started, status
+        self.terminal = False
+        self.closed = False
+
+    def outcome(self, kind, category=diagnostic.Category.NONE):
+        if not self.terminal:
+            self.terminal = True
+            _transport_event(self.event, self.started, kind, status=self.status, category=category)
+
+    async def __aiter__(self):
+        try:
+            async for chunk in self.inner:
+                yield chunk
+        except BaseException as exc:
+            self.outcome(
+                diagnostic.Kind.CANCELLED if isinstance(exc, asyncio.CancelledError)
+                else diagnostic.Kind.STREAM_CLOSED if isinstance(exc, GeneratorExit)
+                else diagnostic.Kind.ERROR,
+                diagnostic.Category.NONE if isinstance(exc, GeneratorExit) else _transport_category(exc),
+            )
+            raise
+        else:
+            self.outcome(diagnostic.Kind.STREAM_COMPLETE)
+
+    async def aclose(self):
+        if self.closed:
+            return
+        self.closed = True
+        try:
+            await self.inner.aclose()
+        except BaseException as exc:
+            self.outcome(
+                diagnostic.Kind.CANCELLED if isinstance(exc, asyncio.CancelledError)
+                else diagnostic.Kind.ERROR, _transport_category(exc),
+            )
+            raise
+        else:
+            self.outcome(diagnostic.Kind.STREAM_CLOSED)
+
+
+def _outbound_route(path: str) -> diagnostic.Route:
+    # Classify only; never retain concrete resource/response names in events.
+    project_path = urlsplit(PROJECT).path
+    for name in AGENTS.values():
+        base = project_path + f"/agents/{name}/endpoint/protocols/openai/responses"
+        if path == base:
+            return diagnostic.Route.AGENT_RESPONSES
+        if path.startswith(base + "/"):
+            return diagnostic.Route.RESPONSE
+    if path == "/providers/microsoft/v1/systemone":
+        return diagnostic.Route.DECISION
+    if path == project_path + "/openai/v1/responses":
+        return diagnostic.Route.MODEL
+    if path.startswith(project_path + "/openai/v1/responses/"):
+        return diagnostic.Route.RESPONSE
+    return diagnostic.Route.OTHER
 
 
 def platform_identity_headers(context) -> dict[str, str]:
@@ -106,6 +201,29 @@ class OriginTransport(httpx2.AsyncBaseTransport):
         self.inner = inner
         self.expected_call_id = expected_call_id
         self.response_binding = hashlib.sha256(response_id.encode()).hexdigest() if response_id else None
+        # Local alias only, never a user/response value or identity hash.
+        self.diagnostic_response_alias = uuid.uuid4() if response_id else None
+
+    def _observation(self, request):
+        try:
+            role = diagnostic.Role(os.environ.get("DEMO_ROLE", "coordinator"))
+            parent = diagnostic.current_binding()
+            binding = diagnostic.new_binding(
+                operation=parent.operation if parent else None,
+                response=(parent.response if parent and parent.response
+                          else self.diagnostic_response_alias),
+            )
+            return diagnostic.Event(
+                role, diagnostic.Stage.OUTBOUND, diagnostic.Kind.SEND,
+                method=next((method for method in diagnostic.Method if method.value == request.method),
+                            diagnostic.Method.OTHER),
+                route=_outbound_route(request.url.path), binding=binding,
+                delegation=diagnostic.observe_header(request.headers.raw, "delegation"),
+                platform=diagnostic.observe_header(request.headers.raw, "platform"),
+                call=diagnostic.observe_header(request.headers.raw, "call"),
+            )
+        except Exception:
+            return None
 
     async def handle_async_request(self, request):
         if (
@@ -114,19 +232,42 @@ class OriginTransport(httpx2.AsyncBaseTransport):
             or request.url.port not in (None, 443)
         ):
             raise DemoError("UNAUTHORIZED_ORIGIN")
+        started = time.perf_counter()
+        event = self._observation(request)
         if self.response_binding and request.method == "POST":
             role = next((role for role, name in AGENTS.items() if request.url.path ==
                          urlsplit(PROJECT).path + f"/agents/{name}/endpoint/protocols/openai/responses"), None)
             if role is not None:
                 call_id = request.headers.get("x-agent-foundry-call-id")
-                OUTBOUND_CONTEXT_LOGGER.info(
-                    "Native outbound context response_binding=%s role=%s has_call_id=%s "
-                    "call_matches_context=%s has_delegated_user=%s has_container_user=%s.",
-                    self.response_binding, role, bool(call_id), call_id == self.expected_call_id,
-                    bool(request.headers.get(TRUSTED_USER_ID_HEADER)),
-                    bool(request.headers.get(LEGACY_USER_ID_HEADER)),
+                # Retained parser-compatible response binding, not an identity
+                # hash. New lifecycle events never hash or emit header values.
+                try:
+                    OUTBOUND_CONTEXT_LOGGER.info(
+                        "Diagnostic response_alias=%s Native outbound context response_binding=%s role=%s has_call_id=%s "
+                        "call_matches_context=%s has_delegated_user=%s has_container_user=%s.",
+                        event.binding.response if event is not None else self.diagnostic_response_alias,
+                        self.response_binding, role, bool(call_id),
+                        call_id == self.expected_call_id,
+                        bool(request.headers.get(TRUSTED_USER_ID_HEADER)),
+                        bool(request.headers.get(LEGACY_USER_ID_HEADER)),
+                    )
+                except Exception:
+                    pass
+        if event is not None:
+            _transport_event(event, started, diagnostic.Kind.SEND)
+        try:
+            response = await self.inner.handle_async_request(request)
+        except BaseException as exc:
+            if event is not None:
+                _transport_event(
+                    event, started, diagnostic.Kind.CANCELLED if isinstance(exc, asyncio.CancelledError)
+                    else diagnostic.Kind.ERROR, category=_transport_category(exc),
                 )
-        return await self.inner.handle_async_request(request)
+            raise
+        if event is not None:
+            _transport_event(event, started, diagnostic.Kind.RESPONSE_HEADERS, status=response.status_code)
+            response.stream = _ObservedStream(response.stream, event, started, response.status_code)
+        return response
 
     async def aclose(self):
         await self.inner.aclose()

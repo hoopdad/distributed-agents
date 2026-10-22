@@ -1,5 +1,14 @@
 # Repository index
 
+IP-S3 continuation-1 Scrum dispatch at architecture `3a49de99`:
+`docs/customer-prototype-profiling-s3-continuation-1-sprint-plan.json`
+assigns the missing private receiving consumer with its focused/joined fixtures,
+coverage, runtime closure and index reconciliation to one original Developer.
+Existing immutable bridge/reader contracts are sufficient; no artificial
+parallel tasks, accepted-work replay, native retry or premature DevOps resume.
+Hosted installation and live comparison remain unproven. This separate
+amendment preserves the original plan and all partial sprint acceptance.
+
 IP-S3 continuation-1 architecture consumes accepted observation integration
 `91758971`: `docs/customer-prototype-profiling-s3-continuation-1-architecture.json`
 and the current opening of `docs/customer-prototype-sprint-architecture.md`
@@ -1869,6 +1878,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-profiling-s2-continuation-1-architecture.json`
 - `docs\customer-prototype-profiling-s2-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-profiling-s3-continuation-1-architecture.json`
+- `docs\customer-prototype-profiling-s3-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-recovery-sprint-plan.json`
 - `docs\customer-prototype-release-notes.md`
 - `docs\customer-prototype-release-plan.md`

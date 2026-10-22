@@ -1,5 +1,181 @@
 # Customer hosted-session prototype: user experience
 
+## Identity-profiling correction: evidence without false reassurance (October 21, 2026)
+
+Consumes Architecture commit `e247969942a343c9b1662a59a54ef47c3c714386`,
+[identity-profiling correction architecture](customer-prototype-architecture.md#identity-profiling-correction-architecture-october-21-2026)
+and [the current execution specification](identity-profiling-workflow.md).
+Designer opened ArchitectureLoop audit
+`4241c18ddb85c123bb3e4d00c3c38658def66dd3fe04d77a6604f1d8056410a3.json`
+in run `eef04e5c-c5ab-4b88-90f6-4a99dd4692ed/context`: Product Owner,
+Red Team and Critic each recorded agree/taskComplete with no unmet criteria.
+Those votes accept architecture, not this UX, implementation or live acceptance.
+Both supplied priorDispositions arrays and reconciled feedback are empty.
+
+This overlay supersedes older current-state and execution-authority direction
+below only for this material correction. In particular, historical denied/
+one-shot checks are not a new manual approval requirement, and the historical
+COMMON rollback ZIP/build-provenance prerequisite is **WAIVED**, never PASS.
+Do not present rollback investigation as a current unlock action. Automated
+current source/package/version/trusted-host/effect checks remain required.
+Historical records and held/UNKNOWN effects are not rewritten.
+
+### Retained experience and design system
+
+Retain the [six UX principles, tools and framework](#ux-principles-tools-and-framework),
+all five [canonical journeys and eighteen steps](#canonical-journey-to-screen-map),
+and the existing [screen direction](#user-journeys-and-screen-direction).
+The ten Architecture components and stable IDs are unchanged. Profiling belongs
+to **Trusted identity and private transport**, not a new product flow or service.
+The prototype evaluator still receives useful design/review output and the
+two-turn continuity invariant; the lab operator receives a private, attributed
+boundary report. Diagnostics must not displace the customer goal with log noise.
+
+Use existing Python/plain-text terminal, argparse, structured logging,
+PowerShell and Markdown/ASCII documentation with the pinned MAF/Foundry stack.
+No browser/dashboard, renderer dependency, new terminal option, logging secret,
+public evidence field, session store or fourth hosted role is required.
+Human mode remains opt-in stderr; machine stdout, acceptance parsing and
+chronological repeated specialist calls remain unchanged. The private event
+schema belongs to Architecture/Developer, not the customer presentation.
+
+Reading order is goal -> reached boundary -> attributed evidence -> uncertainty
+-> existing owner/next action. Use short labeled blocks and wrapped text at
+narrow widths, terminal-default light/dark colors and explicit words rather
+than color-only badges. Generated agent text remains line-prefixed and control
+characters neutralized; it cannot impersonate a diagnostic or accepted status.
+Keep safe aliases for customer presentation, not full private bindings or
+identity hashes. A matching alias is never continuity or authorization proof.
+
+### Screen direction and affected journeys
+
+| Existing surface | Current direction | Boundary |
+| --- | --- | --- |
+| Screen A: README opening | Goal, three-role diagram and initial/follow-up invariant first; then a dated blocked status linking current detail. | Latest publication succeeded, but initial architect preparation failed with `NATIVE_HOST_PRINCIPAL`; parent held at `SPECIALIST_INCOMPLETE`. Attribute this to Architecture's inspected terminal/receipt evidence, not a Designer cloud observation. |
+| Screens B/C: initial and same-parent follow-up | Show ordered remote calls, useful current candidate/review and finalized coordinator result. Keep follow-up conditional on a completed non-held initial turn. | New instrumentation does not complete the held parent or establish continuity. Fresh responses must accompany independently verified parent/child/framework/version continuity. |
+| Screen D: failure/recovery | HELD/UNKNOWN precedes success-looking model text or HTTP status. Preserve state; explain exact known-response retrieval as recovery/no resend. | No retry/delete-state action, identity substitution or new parent to evade the original hold. A separately justified diagnostic operation is not recovery of that parent. |
+| Screen F: private operator boundary report | Separate construction, local checks, current package publication, paired live observations and remaining acceptance. Show unavailable coverage explicitly. | Missing ingress/context association is not an empty identity, and a logging gap is not proof of platform loss. |
+| Screen G: publication/closeout | Report actual common-package role outcomes and current effect readiness separately from live collaboration, continuity, recovery, isolation and cleanup. | The historical rollback prerequisite reads WAIVED. Neither publication, diagnostics nor an SDK-completed envelope means AC1-AC9/G1-G8 PASS. |
+
+The correction affects **Remote design and review**
+(`collaboration-bind`, `collaboration-design`, `collaboration-review`),
+**Same-parent specialist continuation** (`continuity-invoke`),
+**Supported compute stop and resume** (`recovery-resume`),
+**Separate-parent isolation** (`isolation-execute`) and
+**Exact-source guarded release** (`release-join`, `release-package`,
+`release-discriminate`, `release-close`). These remain existing journeys:
+instrumentation does not add a user-visible diagnostic command or compute
+restart control. Isolation still needs final deployed bindings, not recovery
+success; the completed non-held initial parent gates follow-up and stop/resume.
+
+### Screen F: diagnostic hierarchy and interpretation
+
+The following is a layout specification, not observed output or new parser
+fields. Use existing private reports/log evidence; do not add an automatic
+provider call to populate a screen.
+
+```text
+Boundary: architect preparation rejected; initial collaboration incomplete
+Evidence level: attributed historical observation / local fixture / new live
+Coverage: outbound -> ingress -> SDK request -> workflow/background
+  State: observed / unavailable / not reached; safe association proven or not
+  Identity presence: absent / empty / nonempty / malformed-or-duplicate
+  Same-format context match: true / false / not-comparable
+Milestones: request sent; response headers; stream outcome; execution outcome
+Uncertainty: exact unobserved interval; cause not established
+Next: existing owner and smallest justified closing action
+```
+
+Every actual report uses its observed states, not all example values at once.
+Distinguish absent, explicitly empty and nonempty; retain duplicate/ambiguous
+headers and case-insensitive names without presenting their values. Compare
+scope/request-context values only where representations are expected to match.
+Do not label the public delegation header and platform-delivered user value
+as mismatched merely because the platform may translate them. An unavailable
+checkpoint, an unreached workflow hook and an observed absent value are three
+different conditions.
+
+Show request send, HTTP response headers, stream exhausted/closed-early/failed/
+cancelled and actual execution completion separately. An ASGI handler returning
+does not prove resilient background completion. A checkpoint after successful
+scope creation cannot explain an earlier scope-construction rejection; identify
+the pinned-log-dependent early failure observation and disclose if unavailable.
+Background association and cross-boundary correlation require attributable
+safe bindings; timestamp proximity alone is not proof. Show coverage gaps for
+SDK-owned stores/credentials and the gateway, not a universal "profiling on."
+
+| Paired observation, only when safely associated | Interpretation and existing closing action |
+| --- | --- |
+| Nonempty actual outbound delegation; absent platform user at raw ingress | Localize uncertainty to outbound-to-ingress. Authenticated principal/platform resolution remain unproven; no RBAC/platform diagnosis or guessed replacement header. |
+| Nonempty platform-delivered user at raw ingress; missing SDK request identity | Investigate the pinned parser/context boundary through supported hooks; preserve original rejection. |
+| Nonempty SDK request identity; missing workflow/background scope identity | Investigate supported lifecycle/context propagation; do not populate trusted context from headers or cache a request-global identity. |
+| One boundary unavailable or bindings not proven | Report the exact coverage gap; complete authorized fixtures/inventory independently. Do not infer identity loss or resend historical traffic. |
+| Context present and matching, but turn incomplete | Report only the proven context checkpoint; continue investigation of the actual failing gate. Presence/equality does not authorize or finalize work. |
+
+Only allowlisted bounded role/stage/method/route-template/status/timing/category
+and safe correlation metadata belong in these private diagnostics. No raw
+identities, identity hashes, tokens, credential responses, header dumps, bodies,
+query strings, private URLs/settings or exception messages in customer output,
+Git or external uploads. Missing detail is explained as deliberately redacted
+or unavailable, not exposed through a verbose-mode workaround.
+
+### Original-owner handoff and bounded acceptance
+
+Existing ReleasePlan/Scrum Master assigns source work from Architecture's
+component/criteria table: `demo/foundry.py` transport/SDK inventory;
+`demo/host.py` ingress/early failure; `demo/workflow.py` preparation/background;
+`demo/artifact_store.py` actual storage-policy paths. Agree the smallest shared
+safe-event contract before parallel shared-file edits; raw-ASGI, transport,
+context/recovery and redaction fixtures can otherwise progress independently.
+This UX introduces no duplicate construction or new approval stage.
+
+Developer retains absent/empty/casing/duplicate/concurrency/redaction tests,
+actual pinned resilient-path checks, known-response-only recovery and unchanged
+authorization/streaming/cancellation regressions. Presentation checks preserve
+stdout/parser parity, no accepted output after failed finalization, correct
+milestone labels and no diagnostic sentinel leakage. These are scoped checks
+within original implementation/E2E, not a new UI project or live substitute.
+
+Original E2E verifies the changed join using documented checks and explicit
+Python/lab roots. Original DevOps then performs current readiness checks,
+builds/publishes the reviewed new common package to all three existing roles
+and records actual role outcomes. Before necessary fresh diagnostic traffic,
+persist its distinct identity, purpose, effect intent, package bindings and
+attributable cleanup plan privately. Preserve the held original parent and
+unknown effects. Report owned cleanup separately from historical uncertainties.
+Supported evidence-based remediation requires affected checks/review and a new
+exact common package, not deployment of unchanged bytes to manufacture progress.
+
+Keep implemented, locally verified, deployed and live-accepted results separate.
+Do not call the session unattended-ready from check-only configuration or this
+design: actual permission/authentication/launcher/Studio preflight and one exact
+run monitor remain existing operational responsibilities. If authoritative
+external tracing is necessary, prepare the bounded private handoff without
+uploading logs; continue independent authorized construction through existing
+owners. No extra routine user sign-off or invented execution cap is introduced.
+
+Designer acceptance is this full-scope retained UX plus the bounded diagnostic
+direction, for original Product Owner/Critic review. No runtime, terminal,
+README, cloud, release tooling or private evidence is changed here. Architecture
+agreement and this design do not establish implementation, current deployment,
+unattended readiness or AC1-AC9/G1-G8 completion.
+
+Validation of this amendment: Designer read the current architecture, its
+original three review votes, the three requirements tiers and retained canonical
+UX map; affected component/flow/step names are reused rather than replaced.
+`git diff --check` passed. Both documented script invocations were attempted
+with the existing absolute Python 3.12 x64 executable; `Test-Demo.ps1` also
+specified the selected-feature lab root. Each was denied because no interactive
+user response was available; neither executed. The missing permission is not
+identified by that message. No retry, alternate execution route, dependency
+installation or substitute constituent-check run was used. This is a local
+execution-access limitation, not missing project authority or an executed test
+failure. Full application/repository verification remains unexecuted for this
+UX amendment; no suite, profiling-runtime, Linux/package or live PASS is claimed.
+The existing uncommitted index/specification changes remain outside ownership.
+No files were added or deleted, nor were architecture boundaries changed, so
+this amendment does not regenerate or adopt that pre-existing index edit.
+
 ## Current recovery traversal: source acceptance is not execution (October 21, 2026)
 
 Consumes accepted Architecture `a6443b6ccc52175140f0a304605a96c3fca2c666`,

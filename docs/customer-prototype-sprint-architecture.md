@@ -1,5 +1,94 @@
 # Cumulative sprint architecture: evidence-ready source through live delivery
 
+## Current IP-S3: comparison and hosted capture disposition
+
+October 22, 2026. Receiving architecture decision for the two handoffs in
+IP-S2 DevOps outcome `d0ae0d1469ea7ae627c2b93eeffc8bc45e1b345fa33eb3d7eb8ef71f674a7cd6.json`,
+under `gh-dynamic-workflows/.delivery-runs/c40bef06-de14-4df7-865f-4d4dfb8815a9/context/`.
+Original Architect/Critic/Developer agree with that partial report, each with
+taskComplete=false. Consume, do not redispatch, the accepted isolation audit
+`91e08648bf8ed10af6f298829496baedd1facc0842c078e51b4cca0fb13ef4fd.json`
+(Architect/Critic agree and taskComplete=true) at application `7a2f186`.
+The accepted IP-S2 architecture outcome `e4799f7f` and IP-S3 design outcome
+`3034ac1d` retain their original votes and bounded scope.
+
+The canonical [solutionModel](customer-prototype-architecture.md#solutionmodel)
+is incorporated unchanged: ten components, five flows, eighteen steps.
+This refinement introduces no component, public contract, infrastructure,
+capture activation or additional approval stage. The IP-S2 attestation decision
+below and its private UNSENT handoff remain accepted within their own scope.
+
+### Resolve the two returned handoffs
+
+**Completed comparison: unavailable in the supplied exact handoffs.** A source
+change cannot manufacture an accepted historical parent. The retained held
+parent, successful publication and completed SDK envelope are not substitutes.
+The existing comparison contract remains `_evidence_turn` and
+`validate_scenario_evidence` in `live_acceptance.py`: trusted scope, completed
+non-held artifacts/journal, actual parent and both hosted/framework child
+bindings, exact release metadata and independently accounted effects.
+Original DevOps can consume an exact already-authorized completed scope if
+one is supplied; no private-store discovery or unchanged new initial inference
+is assigned to search for one. Otherwise this remains an unavailable live
+prerequisite, not missing comparison implementation.
+
+**Hosted capture: no supported installation/ownership handoff is established.**
+The accepted audit and inspected `demo/effect_observation.py`,
+`demo/private_effect_capture.py` and `demo/host.py` establish a caller-owned
+opt-in source interface, not a configured remote destination. A terminal sink
+does not reach the hosted coordinator's execution context. Do not activate a
+new host-wide logger, expose an export endpoint, select arbitrary container
+storage or assume local fsync is remote durable retention.
+
+The smallest integration handoff must name an existing authorized private
+destination, its responsible hosted execution-context owner, exclusive handle
+and lifetime/permission controls, trusted expected operation bindings, and
+supported installation before relevant background creation. It must also
+provide quiescence, independent operation anchors, readback/cleanup ownership
+and explicit uncovered traffic. These are inputs to existing capture interfaces,
+not a newly approved wire schema or proof of consumed model history. Without
+those concrete inputs, no contract-backed capture implementation task is ready.
+Any proposed new destination/lifecycle or trust contract returns to original
+Architect-advised Product Owner scope review and Scrum decomposition; it is
+not implicitly authorized by this refinement.
+
+### Localized readiness graph and original-owner handoff
+
+| Approved criterion / canonical steps | Retained source and state | Closing action and blast radius |
+| --- | --- | --- |
+| AC4/G7; `isolation-bind`, `isolation-execute`, `isolation-verify` | `live_acceptance.py`, `scenario_state_reader.py`, `demo/effect_observation.py`, `demo/private_effect_capture.py`: implemented and locally qualified in retained handoffs; no completed comparison or hosted capture proof. | Scrum Master records the two unavailable prerequisites above, without redispatching accepted negative audits. Original DevOps executes only when exact comparison, hosted capture and operation-specific current bindings/readiness are supplied. Recovery success and platform attestation are not added isolation prerequisites. |
+| AC1/AC5/AC7; `collaboration-design`, `collaboration-review`, `release-discriminate` | `demo/host.py`, `demo/foundry.py`, `demo/workflow.py`: published diagnostics, but actual authenticated caller and independent cross-process correlation remain unknown. | Consume the existing UNSENT private attestation handoff. Only authoritative changed evidence or a demonstrated supported defect reopens correction through original Developer/E2E/DevOps stages. Capture installation alone does not close this identity boundary. |
+| AC2/G5; `continuity-revise`, `continuity-invoke`, `continuity-verify` | Same source plus `live_acceptance.py`: existing continuity construction; live prerequisite absent. | Completed non-held initial collaboration is the smallest required handoff. Do not use a held parent or weaken continuity checks. |
+| AC4/G6; `recovery-stop`, `recovery-resume`, `recovery-verify` | `demo/workflow.py`, `demo/foundry.py`, `demo/private_effect_capture.py`: retained checkpoint/effect and known-response recovery contracts. | Genuine two-turn evidence, durable once-only stop readiness and supported checkpoint evidence remain recovery-specific. Do not make their absence a dependency of isolation construction. |
+| Profiling 4-5; `release-package`, `release-discriminate`; AC1-AC9/G1-G8; `release-close` | Retained common package/version publication, not a fresh readback or cloud PASS. | Required current package/publication criteria remain binding at their exact origin; retain their inspected satisfaction for unchanged runtime. A demonstrated runtime correction needs affected qualification and one current-bound serialized publisher. Original reviews, attributable cleanup, retro and closeout still require actual live evidence. |
+
+Scrum Master owns the next readiness/assignment decision and Git reconciliation;
+DevOps owns supported current-state checks, collection and effects. Do not bounce
+the same two negative findings back as a new research assignment. No new
+construction gap or executable live operation is established by this refinement.
+This does not declare release-wide exhaustion: retain partial IP-S1/IP-S2/IP-S3,
+and assess any independent approved work on its own concrete handoff.
+
+Apply the exact original references
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-current-common-package"]`,
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-guarded-publication"]`
+and
+`["yaml-loops-v1:sprint/1/IP-S1/DevOpsWorkLoop","release-cloud-verification"]`.
+The first two remain required, with retained satisfaction established in the
+accepted IP-S2 architecture, not waived or superseded by this decision.
+Cloud verification remains incomplete. Preserve held/UNKNOWN effects and all
+historical seals. COMMON rollback provenance remains **WAIVED, never PASS**.
+No external submission or new user action is requested.
+
+Verification for this documentation-only refinement: standard-library assertions
+confirm the canonical model equals accepted `fe8d6432`, component/step references,
+named source paths and all three current tier links resolve. Owned-path
+`git diff --check` passes. No application suite, authentication, service readback,
+publication or live scenario was run. The previously denied full repository
+check was not retried; no full repository PASS is claimed. No file inventory,
+entry point, topology or public contract changed; preserve the unowned index
+overlay and specification.
+
 ## Current IP-S2: server-side attestation boundary after guarded publication
 
 October 22, 2026. This is the current refinement for IP-S2 and its IP-S1/IP-S3

@@ -1,5 +1,17 @@
 # Coordinator tier: cumulative RP-S1/RP-S2/RP-S3 acceptance architecture
 
+## Current IP-S3: separate capture ownership from coordinator correctness
+
+Consume the [current IP-S3 disposition](../../customer-prototype-sprint-architecture.md#current-ip-s3-comparison-and-hosted-capture-disposition).
+Hosted coordinator and shared support IDs are unchanged. Existing caller-owned
+`private_sink` / `PrivateEffectCapture` are not installed hosted collection.
+Do not invent a destination or activate a logger to close missing ownership;
+the concrete supported host-context/lifetime handoff precedes integration.
+A sink cannot attest platform caller resolution or consumed model history.
+Continuity needs completed initial collaboration; recovery needs genuine
+two-turn/once-only prerequisites; isolation does not depend on recovery.
+No runtime defect or new coordinator implementation is established.
+
 ## Current IP-S2: distinguish outbound observation from caller attestation
 
 Consume the [current attestation refinement](../../customer-prototype-sprint-architecture.md#current-ip-s2-server-side-attestation-boundary-after-guarded-publication).

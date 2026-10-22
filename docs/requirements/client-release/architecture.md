@@ -1,5 +1,17 @@
 # Client and release boundary: cumulative RP-S1/RP-S2/RP-S3 evidence architecture
 
+## Current IP-S3: consume unavailable comparison and capture handoffs
+
+Consume the [current IP-S3 disposition](../../customer-prototype-sprint-architecture.md#current-ip-s3-comparison-and-hosted-capture-disposition).
+Terminal client / Guarded lab release toolchain and canonical IDs are unchanged.
+Retain accepted isolation audit `91e08648` at `7a2f186`; do not redispatch it.
+No completed comparison or supported hosted capture owner/destination is supplied.
+The final all-scenario validator is not an isolation execution gate, but actual
+comparison/capture and current-effect prerequisites still are. Scrum Master
+coordinates concrete handoffs; original DevOps owns effects. No new collector,
+unchanged publication or cloud PASS follows. Original live criteria/closeout,
+held/UNKNOWN effects and rollback provenance WAIVED remain unchanged.
+
 ## Current IP-S2: retain publication and route unavailable attestation
 
 Consume the [current attestation refinement](../../customer-prototype-sprint-architecture.md#current-ip-s2-server-side-attestation-boundary-after-guarded-publication).

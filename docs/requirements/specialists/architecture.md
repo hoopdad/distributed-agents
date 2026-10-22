@@ -1,5 +1,16 @@
 # Specialist tier: cumulative RP-S1/RP-S2/RP-S3 history and ingress architecture
 
+## Current IP-S3: retain remote trust and explicit missing evidence
+
+Consume the [current IP-S3 disposition](../../customer-prototype-sprint-architecture.md#current-ip-s3-comparison-and-hosted-capture-disposition).
+Hosted architect / Hosted reviewer and canonical support IDs remain unchanged.
+Preserve immutable outputs, exact prerequisite refs and fail-closed trusted
+parent checks. A held specialist or an SDK-completed parent is not a completed
+comparison scope. Hosted capture ownership is separate from server-side caller
+attestation and cannot establish consumed history. Do not repeat unchanged
+inference, substitute headers or add local specialists. Only a demonstrated
+supported correction returns through original implementation and release gates.
+
 ## Current IP-S2: keep the missing trusted-user boundary fail closed
 
 Consume the [current attestation refinement](../../customer-prototype-sprint-architecture.md#current-ip-s2-server-side-attestation-boundary-after-guarded-publication).

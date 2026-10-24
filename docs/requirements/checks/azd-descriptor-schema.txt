@@ -1,0 +1,9 @@
+LOCAL ONLY; no deployed acceptance.
+UTC: 2026-10-24T23:45:30.483715+00:00
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python313\python.exe -c "import hashlib,json,urllib.request,yaml,jsonschema; from pathlib import Path; u=\"https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json\"; b=urllib.request.urlopen(u).read(); jsonschema.validate(yaml.safe_load(Path(\"azure.yaml\").read_text()),json.loads(b)); print(\"Descriptor validated against \"+u); print(\"Schema SHA256: \"+hashlib.sha256(b).hexdigest()); print(\"Cloud operations: none\")"
+Descriptor validated against https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+Schema SHA256: f6420248d72df541d841c72f96bd7d7f0608cd98860e8e42ab81736dfb93eebf
+Cloud operations: none
+
+exitCode: 0
+elapsedSeconds: 1.052

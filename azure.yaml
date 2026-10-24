@@ -22,8 +22,12 @@ services:
     name: multi-agent-architect
     hooks:
       predeploy:
-        shell: sh
-        run: python3 package_guard.py
+        windows:
+          shell: pwsh
+          run: python scripts/check_azd_source.py; exit $LASTEXITCODE
+        posix:
+          shell: sh
+          run: python3 scripts/check_azd_source.py
     protocols:
       - protocol: responses
         version: "2.0.0"
@@ -56,8 +60,12 @@ services:
     name: multi-agent-reviewer
     hooks:
       predeploy:
-        shell: sh
-        run: python3 package_guard.py
+        windows:
+          shell: pwsh
+          run: python scripts/check_azd_source.py; exit $LASTEXITCODE
+        posix:
+          shell: sh
+          run: python3 scripts/check_azd_source.py
     protocols:
       - protocol: responses
         version: "2.0.0"
@@ -90,8 +98,12 @@ services:
     name: multi-agent-coordinator
     hooks:
       predeploy:
-        shell: sh
-        run: python3 package_guard.py
+        windows:
+          shell: pwsh
+          run: python scripts/check_azd_source.py; exit $LASTEXITCODE
+        posix:
+          shell: sh
+          run: python3 scripts/check_azd_source.py
     protocols:
       - protocol: responses
         version: "2.0.0"

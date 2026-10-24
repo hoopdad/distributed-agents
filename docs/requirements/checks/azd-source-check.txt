@@ -1,0 +1,37 @@
+LOCAL ONLY; no deployment or remote acceptance.
+UTC: 2026-10-24T23:43:16.653457+00:00
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python313\python.exe scripts/check_azd_source.py
+Execution base HEAD: 7fb5eef8f527ab6ac51819c9f63064d74e678a2e
+{
+  "check": "azd-source",
+  "dependencyMode": "remote_build",
+  "files": {
+    "config/routing-calibration.json": "4094ce4f5b856a3ba87efc087e16b75e68523e28474d7edad09b53568ce318e5",
+    "config/routing-corpus.json": "19272dba19c3bb227d8af6771cc0438e90c5396ad0a2c4974d5523298945ddf4",
+    "demo/__init__.py": "d61e211e90d720f734e3c4d57a78da188e01ea71cb5ba8153fc790fa8215df8f",
+    "demo/architect_agent.py": "b868937fdf2d0ff12d14597f48a30b2afbf32e9fe300e2c6daa64d2edd2ffab3",
+    "demo/artifact_store.py": "9336714bbf8f6a352db374bfdd000d8fb466d0455d7cc1816ee32f767ea962a0",
+    "demo/artifacts.py": "f3df8c00f3c52b68a9885d0c4c199e2f849064f47f02279b82380ccd45c2e676",
+    "demo/config.py": "85415d885d0db77c6dceeda117609f4fba50e6e7fafaecbcfbc31f7e34be8db0",
+    "demo/contracts.py": "46abec18492dff04defdc7821d7d458b8c3d9805e8557e309559f27e1c5d1736",
+    "demo/coordinator_agent.py": "837408c6996fc8decc6b240ecccc83e7447a8c12503db66e15dfa7581f797d37",
+    "demo/diagnostics.py": "4729355d46606d54226f878bc01ac55e9670219cf525793a8a96d3115ea93e14",
+    "demo/effect_observation.py": "aeb5ab9f3bc8df500fd46c8e13ed31cd8e77e872790452a65a171d814a6dc622",
+    "demo/foundry.py": "118bdd34ef601afe7c97b3beb468dc040aeeadfa1c4e724f9071fb96beabdc13",
+    "demo/host.py": "c2a1c29023e433218170eb26a961b6ef027daf2742f36d66fcd9ea6b3589db3c",
+    "demo/private_effect_capture.py": "8b41a74d2c59c36468610aaff09da76be2b8ddd65ffb015c907e59d787bf345b",
+    "demo/reviewer_agent.py": "bbcc057c4a1080f5c15481ce39ca0abb28abfac36a1e271f55d885ec697e831c",
+    "demo/routing.py": "0bbfcf1710f0543c5684da6ddd1beb89aa4d108958852a36131d80f19ba8be08",
+    "demo/specialist.py": "335cfafc04da349f58daa051ed840cf57bc3a0459a45d99ed49125810cf0b31a",
+    "demo/terminal.py": "6fd65e53187751a4324c7651f6c4a440ed5c0c883cd4f31ab122d396ef5340cd",
+    "demo/workflow.py": "256258924771ae6e01e4bf739041b8b6870271d7b8a3125ff3bd27aa301b636f",
+    "main.py": "0af756b198ebdcf494c9c8df825a7c707350f1654ac38376d729026f96e78901",
+    "requirements.lock.txt": "a750a7046f1e0f48eb80f7cf19974073f158b62bc4e79c5ae381ba870a2beef2",
+    "requirements.txt": "a7d7485339f4f2b3457a40a8615c2ebe21bc7e02659ce4e744d5206e34f238a3"
+  },
+  "lockedDependencies": 109,
+  "scope": "Offline allowlist, direct/lock pins, source compilation and JSON; not a Linux build or deployment"
+}
+
+exitCode: 0
+elapsedSeconds: 0.169

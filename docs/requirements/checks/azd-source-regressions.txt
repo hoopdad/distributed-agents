@@ -1,0 +1,22 @@
+LOCAL ONLY; no deployed acceptance.
+UTC: 2026-10-24T23:45:29.431798+00:00
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python313\python.exe -m unittest discover -s tests -p test_azd_source.py -v
+test_current_source_and_pins_pass_without_approval_environment (test_azd_source.AzdSourceTests.test_current_source_and_pins_pass_without_approval_environment) ... ok
+test_descriptor_change_does_not_modify_legacy_package_guard (test_azd_source.AzdSourceTests.test_descriptor_change_does_not_modify_legacy_package_guard) ... ok
+test_expanded_allowlist_rejected_without_reading_private_files (test_azd_source.AzdSourceTests.test_expanded_allowlist_rejected_without_reading_private_files) ... ok
+test_gitignore_semantics_exclude_private_and_bundled_dependencies (test_azd_source.AzdSourceTests.test_gitignore_semantics_exclude_private_and_bundled_dependencies) ... ok
+test_invalid_source_and_json_rejected (test_azd_source.AzdSourceTests.test_invalid_source_and_json_rejected) ... ok
+test_link_and_windows_reparse_rejected_before_read (test_azd_source.AzdSourceTests.test_link_and_windows_reparse_rejected_before_read) ... ok
+test_linked_source_rejected (test_azd_source.AzdSourceTests.test_linked_source_rejected) ... skipped 'Symlinks unavailable to this Windows identity'
+test_missing_entrypoint_rejected (test_azd_source.AzdSourceTests.test_missing_entrypoint_rejected) ... ok
+test_missing_or_changed_lock_rejected (test_azd_source.AzdSourceTests.test_missing_or_changed_lock_rejected) ... ok
+test_three_existing_roles_use_platform_hooks_and_remote_build (test_azd_source.AzdSourceTests.test_three_existing_roles_use_platform_hooks_and_remote_build) ... ok
+test_windows_hook_propagates_real_python_failure (test_azd_source.AzdSourceTests.test_windows_hook_propagates_real_python_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.114s
+
+OK (skipped=1)
+
+exitCode: 0
+elapsedSeconds: 2.303

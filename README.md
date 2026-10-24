@@ -23,11 +23,12 @@ operation outcomes determine status. Unexecuted live checks are unverified,
 not failed. Prior failures, denials and planning handoffs are opt-in
 [historical context](.github/repo-history-index.md), not current blockers.
 
-The deployment descriptor already has the existing project and three
-Responses 2.0.0 remote-build services. Its current `package_guard.py` hooks still
-require a preapproved ZIP/hash/private receipt: implementing a safe normal
-`azd deploy` path is real mission work, not merely adding a README command.
-Preserve exact-package lab release safeguards and all held/unknown effects.
+The deployment descriptor has the existing project and three Responses 2.0.0
+remote-build services. Normal `azd deploy` now uses
+[bounded source/pin checks](docs/requirements/azd-walking-skeleton.md) and
+`.agentignore`, without a preapproved ZIP/hash/private receipt. Actual deployment
+and separate exact-candidate probes remain required; offline checks are not a
+deployed pass. Exact-package lab safeguards and all held/unknown effects remain.
 
 **Continuity invariant:** the parent and both specialists keep their hosted
 session IDs, framework session IDs and pinned deployed versions. New
@@ -213,7 +214,7 @@ cannot establish them. Known-response retrieval is labeled as recovery, not a
 new invocation. Offline capture tests cover these behaviors, not live success.
 
 Normal existing-service `azd deploy` is the next invocation's application scope,
-after the mission's predeploy-contract implementation/tests. `azd up` or
+with source checks and actual deployed verification. `azd up` or
 `azd provision` require separate exact provisioning authority, not a permanent
 tool ban. No infrastructure/RBAC/network/DNS/quota/VM-power/secret/VPN changes
 are authorized by generic delivery. Before any separately authorized retained

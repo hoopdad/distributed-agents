@@ -1,0 +1,34 @@
+Current local deployment-context observation, not an Azure deployment attempt.
+UTC: 2026-10-24T23:43:38.400838+00:00
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python313\python.exe -c "import json, os, sys
+from pathlib import Path
+names = (\"FOUNDRY_PROJECT_ENDPOINT\", \"SPECIALIST_MODEL_DEPLOYMENT\", \"DECISION_MODEL_DEPLOYMENT\", \"EXPECTED_AZURE_TENANT_ID\", \"EXPECTED_AZURE_SUBSCRIPTION_ID\", \"AZURE_CONFIG_DIR\", \"LAB_REPOSITORY_ROOT\", \"ARTIFACT_STORAGE_ENDPOINT\", \"ARTIFACT_CONTROL_CONTAINER\", \"ARTIFACT_CANDIDATES_CONTAINER\", \"ARTIFACT_REVIEWS_CONTAINER\", \"ARTIFACT_PRIVATE_IPS\", \"DECISION_REQUESTS_PER_MINUTE\", \"DEMO_FACT_SHEET\")
+missing = [name for name in names if not os.environ.get(name)]
+print(json.dumps({\"missingProcessSettings\": missing, \"projectLocalSettingsDirectoryExists\": Path(\".local\").is_dir(), \"credentialCacheInspected\": False, \"authenticationChecked\": False, \"deploymentAttempted\": False, \"explanation\": \"No validated settings path supplied to this task or populated deployment context; identify the authoritative allowlisted settings file. No conclusion about credential existence.\"}, indent=2))
+sys.exit(2 if missing else 0)
+"
+{
+  "missingProcessSettings": [
+    "FOUNDRY_PROJECT_ENDPOINT",
+    "SPECIALIST_MODEL_DEPLOYMENT",
+    "DECISION_MODEL_DEPLOYMENT",
+    "EXPECTED_AZURE_TENANT_ID",
+    "EXPECTED_AZURE_SUBSCRIPTION_ID",
+    "AZURE_CONFIG_DIR",
+    "LAB_REPOSITORY_ROOT",
+    "ARTIFACT_STORAGE_ENDPOINT",
+    "ARTIFACT_CONTROL_CONTAINER",
+    "ARTIFACT_CANDIDATES_CONTAINER",
+    "ARTIFACT_REVIEWS_CONTAINER",
+    "ARTIFACT_PRIVATE_IPS",
+    "DECISION_REQUESTS_PER_MINUTE",
+    "DEMO_FACT_SHEET"
+  ],
+  "projectLocalSettingsDirectoryExists": false,
+  "credentialCacheInspected": false,
+  "authenticationChecked": false,
+  "deploymentAttempted": false,
+  "explanation": "No validated settings path supplied to this task or populated deployment context; identify the authoritative allowlisted settings file. No conclusion about credential existence."
+}
+
+exitCode: 2

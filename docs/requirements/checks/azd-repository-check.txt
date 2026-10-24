@@ -1,0 +1,11 @@
+LOCAL ONLY; no cloud deployment or acceptance.
+UTC: 2026-10-24T23:46:31.691716+00:00
+Command: pwsh -NoProfile -File scripts/Test-Repository.ps1 -Python C:\Users\mike\AppData\Local\Programs\Python\Python313\python.exe
+Execution base HEAD: 7fb5eef8f527ab6ac51819c9f63064d74e678a2e
+Repository indexes are current.
+{"public_files_checked": 243}
+Public boundary, index, JSON, PowerShell, context frontmatter and whitespace checks passed.
+warning: in the working copy of 'docs/implementation-workflow.md', CRLF will be replaced by LF the next time Git touches it
+
+exitCode: 0
+elapsedSeconds: 1.176

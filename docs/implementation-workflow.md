@@ -71,12 +71,13 @@ a new send or specialist invocation.
 Sprint 1 starts with a dependency-free DevOps `walkingSkeleton:true` azd
 deployment and a real deployed probe. Other assignments preserve genuine
 skeleton prerequisites. Existing `azure.yaml` defines an existing project and
-three remote-build Responses 2.0.0 hosted services; its `package_guard.py` hooks
-expect a preapproved ZIP/hash/private receipt.
-**Replace and test that incompatible predeploy contract** with ordinary azd
-source/package exclusions, dependency and build checks. No preapproved ZIP/hash
-or private approval receipt is required for this path. Verify the actual
-deployed candidate and outcome. Leave unused legacy lab release tools intact,
+three remote-build Responses 2.0.0 hosted services.
+The [normal-azd source contract](requirements/azd-walking-skeleton.md) replaces
+the incompatible preapproved ZIP/hash/private-receipt hooks with bounded
+source/package exclusions, dependency pins and local compilation checks.
+No preapproved ZIP/hash or private approval receipt is required for this path.
+Remote Linux builds and separate deployed probes still must verify the actual
+candidate and outcome. Unused legacy lab release tools remain intact,
 without imposing their ceremony on normal azd delivery.
 
 Construction owners may work concurrently on independent authorized tasks,

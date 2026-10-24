@@ -1,0 +1,15 @@
+LOCAL ONLY; no deployment or remote acceptance.
+UTC: 2026-10-24T23:43:18.075286+00:00
+Command: pwsh -NoProfile -File Test-Demo.ps1 -Python C:\Users\mike\AppData\Local\Programs\Python\Python313\python.exe
+Execution base HEAD: 7fb5eef8f527ab6ac51819c9f63064d74e678a2e
+jetset-bank-demo-agents 0.1.0 has requirement agent-framework-core==1.8.1, but you have agent-framework-core 1.21.0.
+jetset-bank-demo-agents 0.1.0 has requirement agent-framework-foundry==1.8.1, but you have agent-framework-foundry 1.14.0.
+jetset-bank-demo-agents 0.1.0 has requirement agent-framework-openai==1.8.1, but you have agent-framework-openai 1.15.0.
+[31;1mException: [0mC:\Users\mike\source\distributed-agents\Test-Demo.ps1:25[0m
+[31;1m[0m[36;1mLine |[0m
+[31;1m[0m[36;1m[36;1m  25 | [0m â€¦ STEXITCODE -ne 0) { [36;1mthrow 'Pinned runtime dependency check failed.'[0m }[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mPinned runtime dependency check failed.[0m
+
+exitCode: 1
+elapsedSeconds: 1.415

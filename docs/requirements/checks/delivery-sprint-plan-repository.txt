@@ -1,0 +1,7 @@
+Command: pwsh -NoProfile -File scripts/Test-Repository.ps1 -Python C:\Users\mike\AppData\Local\Programs\Python\Python310\python.exe
+Repository indexes are current.
+{"public_files_checked": 232}
+Public boundary, index, JSON, PowerShell, context frontmatter and whitespace checks passed.
+
+elapsedSeconds: 1.078
+exitCode: 0

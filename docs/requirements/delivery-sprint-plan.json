@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "authority": "docs/requirements/delivery-mission.md",
+  "releasePlan": "docs/requirements/delivery-release-plan.json",
+  "sprintArchitecture": "docs/requirements/delivery-sprint-architecture.json",
+  "sprintDesign": "docs/requirements/delivery-sprint-design.json",
+  "design": "docs/requirements/delivery-sprint-plan.md",
+  "observedSource": "3df446cd4468822c32dfe755451a3c4f7155caf4",
+  "featureBranch": "feature/azd-demo-delivery",
+  "sprint": "three-role-delivery",
+  "scope": "dispatch-ready-planning-not-implementation-or-deployed-acceptance",
+  "environment": "existing-validated-nonproduction-dev-lab-project",
+  "exclusiveResources": [
+    "existing-nonproduction-project-deployment-and-verification",
+    "existing-nonproduction-project-deployment-configuration"
+  ],
+  "deliveryContract": {
+    "candidate": "exact-committed-revision-or-immutable-artifact",
+    "construction": "local-checks-no-shared-environment-mutation",
+    "verification": [
+      "DevOpsWorkLoop",
+      "EndToEndTestLoop"
+    ],
+    "lock": "held-across-exact-candidate-deployment-and-E2E",
+    "dependencyRelease": "only-after-deployed-pass-and-original-assignment-review",
+    "evidence": [
+      "actual-command",
+      "actual-exitCode",
+      "nonempty-repository-relative-result",
+      "candidate",
+      "run",
+      "observed-environment-and-versions"
+    ],
+    "blockers": "current-evidenced-criterion-only-continue-independent-approved-work",
+    "unknownEffects": "preserve-holds-no-replay",
+    "replan": "material-contract-dependency-or-scope-change-through-existing-roles",
+    "gitReconciliationOwner": "Scrum Master",
+    "gitReconciliation": "SprintReview-SprintRetro-ReleaseCloseout-feature-commit-or-retained-named-branch-with-commit-and-abandonment-reason-in-feature-commit"
+  },
+  "exclusions": [
+    "azd-up-or-provision-without-separate-exact-authority",
+    "infrastructure-RBAC-network-DNS-quota-VM-power",
+    "secret-retrieval-VPN-private-lab-edits-production-profiles",
+    "fourth-role-hidden-local-specialists-principal-substitution",
+    "authorization-weakening-unknown-effect-replay-held-state-clearing",
+    "SDK-journal-or-database-edits",
+    "Git-push-provider-submission",
+    "new-approval-stages-disposition-ledgers-invented-limits"
+  ],
+  "estimates": {
+    "units": "minutes",
+    "meaning": "rough-effort-not-limits-or-timeouts",
+    "criticalPath": [
+      "azd-walking-skeleton",
+      "coordinator-blob-contract",
+      "continuity-recovery-isolation",
+      "integrated-terminal-acceptance"
+    ],
+    "tiedCriticalPath": [
+      "azd-walking-skeleton",
+      "remote-specialist-revision",
+      "continuity-recovery-isolation",
+      "integrated-terminal-acceptance"
+    ],
+    "dependencyLowerBoundMinutes": 410,
+    "sharedVerificationContention": "additional-queue-time-not-in-DAG-lower-bound"
+  },
+  "dispatch": {
+    "executor": "existing-SprintPlanLoop-dispatch-callback",
+    "initialReady": [
+      "azd-walking-skeleton"
+    ],
+    "parallelAfterSkeleton": [
+      "coordinator-blob-contract",
+      "remote-specialist-revision",
+      "terminal-evidence-surface"
+    ],
+    "releaseGate": "deployed-pass-and-original-assignment-review",
+    "constructionResources": [],
+    "verificationResources": [
+      "existing-nonproduction-project-deployment-and-verification",
+      "existing-nonproduction-project-deployment-configuration"
+    ],
+    "noNestedWorkflowOrDuplicateDispatch": true
+  },
+  "assignments": {
+    "AssignedWorkUIDeveloper": [],
+    "AssignedWorkDeveloper": [
+      "coordinator-blob-contract",
+      "remote-specialist-revision",
+      "terminal-evidence-surface",
+      "continuity-recovery-isolation"
+    ],
+    "AssignedWorkDevOpsEngineer": [
+      "azd-walking-skeleton",
+      "integrated-terminal-acceptance"
+    ],
+    "AssignedWorkDesigner": []
+  },
+  "tasks": [
+    {
+      "id": "azd-walking-skeleton",
+      "title": "Replace incompatible hooks and deploy the existing three-role skeleton",
+      "kind": "devops",
+      "owner": "DevOps Engineer",
+      "walkingSkeleton": true,
+      "dependsOn": [],
+      "requirements": [
+        "D1"
+      ],
+      "components": [
+        "deployment"
+      ],
+      "flows": [
+        "exact-candidate-delivery"
+      ],
+      "exclusiveResources": [
+        "existing-nonproduction-project-deployment-and-verification",
+        "existing-nonproduction-project-deployment-configuration"
+      ],
+      "doneWhen": "Affected packaging/descriptor regressions pass; ordinary source exclusions, dependency and supported build checks replace the normal-azd approval ZIP/hash/receipt contract without changing unused lab safeguards. The committed skeleton passes in the deployed environment through actual azd deploy and separate deployed probes confirming all three existing role bindings, observed versions, candidate identity and operation outcome.",
+      "exclusions": [
+        "No azd up/provision or infrastructure mutation.",
+        "No bypass of package exclusions, dependency checks or authorization.",
+        "No modification of unused legacy lab release tooling."
+      ],
+      "handoff": "Emit exact committed revision/artifact, actual azd deploy command/exit evidence and a separate successful deployed-probe check. DevOpsWorkLoop then EndToEndTestLoop hold the shared environment/configuration resources across deployment and verification before original review or dependent release.",
+      "estimatedMinutes": {
+        "implementation": 60,
+        "review": 15,
+        "integration": 30
+      },
+      "source": [
+        "azure.yaml",
+        "package_guard.py",
+        ".dockerignore",
+        ".agentignore",
+        "requirements.txt",
+        "requirements.lock.txt"
+      ],
+      "localTests": [
+        "tests/test_demo.py"
+      ],
+      "screens": [
+        "component-report"
+      ],
+      "construction": "Replace incompatible predeploy hooks using supported normal-azd exclusions/dependency/build checks; preserve unused legacy package_guard tooling. Do not select an unverified extension packaging API.",
+      "workCard": {
+        "role": "DevOps Engineer",
+        "action": "Replace incompatible hooks and deploy the existing three-role skeleton",
+        "goal": "Enable ordinary azd delivery and prove the early existing three-role skeleton.",
+        "components": [
+          "deployment"
+        ],
+        "flows": [
+          "exact-candidate-delivery"
+        ],
+        "flowSteps": [
+          "select-and-check",
+          "deploy-under-lock",
+          "verify-before-release"
+        ],
+        "doneWhen": "Affected packaging/descriptor regressions pass; ordinary source exclusions, dependency and supported build checks replace the normal-azd approval ZIP/hash/receipt contract without changing unused lab safeguards. The committed skeleton passes in the deployed environment through actual azd deploy and separate deployed probes confirming all three existing role bindings, observed versions, candidate identity and operation outcome.",
+        "failureCategories": [],
+        "mustAct": "DevOps Engineer",
+        "locations": [
+          "azure.yaml",
+          "package_guard.py",
+          ".dockerignore",
+          ".agentignore",
+          "requirements.txt",
+          "requirements.lock.txt"
+        ],
+        "evidence": "",
+        "cause": "",
+        "verification": {
+          "status": "not-yet-verified",
+          "evidence": ""
+        },
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "coordinator-blob-contract",
+      "title": "Verify and remediate gated routing and exact shared-artifact publication",
+      "kind": "developer",
+      "owner": "Developer",
+      "walkingSkeleton": false,
+      "dependsOn": [
+        "azd-walking-skeleton"
+      ],
+      "requirements": [
+        "D2",
+        "D5"
+      ],
+      "components": [
+        "coordinator-routing",
+        "blob-shared-context"
+      ],
+      "flows": [
+        "design-review-revision"
+      ],
+      "exclusiveResources": [],
+      "doneWhen": "Affected local gate/provenance tests pass and the exact committed candidate passes in the deployed environment: trusted identity/prerequisites/finish and write-ahead gates precede genuine validated Decision-1 semantic choices; private MI Blob exchange and coordinator ETag publication preserve hashes, immutable outputs, producer bindings and explicit holds.",
+      "exclusions": [
+        "No assumed historical identity remedy, principal substitution or guard disablement.",
+        "No RBAC/network changes or claim of storage-enforced per-role isolation."
+      ],
+      "handoff": "Construction emits local checks and exact committed candidate only; DevOpsWorkLoop then EndToEndTestLoop deploy/probe that candidate under the environment lock before original review and dependent release.",
+      "estimatedMinutes": {
+        "implementation": 60,
+        "review": 15,
+        "integration": 30
+      },
+      "source": [
+        "demo/host.py",
+        "demo/workflow.py",
+        "demo/routing.py",
+        "demo/artifact_store.py",
+        "demo/artifacts.py",
+        "demo/config.py"
+      ],
+      "localTests": [
+        "tests/test_workflow.py",
+        "tests/test_routing.py",
+        "tests/test_artifacts.py",
+        "tests/test_config.py"
+      ],
+      "screens": [
+        "terminal-turn",
+        "terminal-exception",
+        "component-report"
+      ],
+      "construction": "Verify existing gate, admission, provenance and fenced publication paths; remediate only a demonstrated current D2/D5 failure. Genuine user propagation remains mandatory.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Verify and remediate gated routing and exact shared-artifact publication",
+        "goal": "Verify trusted routing and private shared-artifact provenance; fix only demonstrated D2/D5 defects.",
+        "components": [
+          "coordinator-routing",
+          "blob-shared-context"
+        ],
+        "flows": [
+          "design-review-revision"
+        ],
+        "flowSteps": [
+          "submit-and-bind",
+          "gate-and-choose",
+          "design-and-publish",
+          "review-and-revise",
+          "accept-and-return"
+        ],
+        "doneWhen": "Affected local gate/provenance tests pass and the exact committed candidate passes in the deployed environment: trusted identity/prerequisites/finish and write-ahead gates precede genuine validated Decision-1 semantic choices; private MI Blob exchange and coordinator ETag publication preserve hashes, immutable outputs, producer bindings and explicit holds.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": [
+          "demo/host.py",
+          "demo/workflow.py",
+          "demo/routing.py",
+          "demo/artifact_store.py",
+          "demo/artifacts.py",
+          "demo/config.py"
+        ],
+        "evidence": "",
+        "cause": "",
+        "verification": {
+          "status": "not-yet-verified",
+          "evidence": ""
+        },
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "remote-specialist-revision",
+      "title": "Verify and remediate real remote design, findings and changed-candidate review",
+      "kind": "developer",
+      "owner": "Developer",
+      "walkingSkeleton": false,
+      "dependsOn": [
+        "azd-walking-skeleton"
+      ],
+      "requirements": [
+        "D3",
+        "D4"
+      ],
+      "components": [
+        "architect",
+        "reviewer"
+      ],
+      "flows": [
+        "design-review-revision"
+      ],
+      "exclusiveResources": [],
+      "doneWhen": "Affected local specialist regressions pass and the exact committed candidate passes in the deployed environment: independent remote architect/reviewer conversations consume exact assigned refs, actual first findings cause a changed immutable design, and review of that exact revision gates final advisory acceptance.",
+      "exclusions": [
+        "No manufactured findings/approvals, no-op revision or local production specialists.",
+        "No weakening assignment principal or producer/version checks."
+      ],
+      "handoff": "Emit local checks plus exact committed candidate and synthetic requirements; existing DevOpsWorkLoop then EndToEndTestLoop verify actual remote artifact/response bindings under the environment lock before original review and dependent release.",
+      "estimatedMinutes": {
+        "implementation": 60,
+        "review": 15,
+        "integration": 30
+      },
+      "source": [
+        "demo/architect_agent.py",
+        "demo/reviewer_agent.py",
+        "demo/specialist.py",
+        "demo/foundry.py",
+        "demo/artifacts.py"
+      ],
+      "localTests": [
+        "tests/test_specialist_continuity.py",
+        "tests/test_workflow.py",
+        "tests/test_artifacts.py"
+      ],
+      "screens": [
+        "terminal-turn",
+        "component-report"
+      ],
+      "construction": "Verify exact assignment readers, independent remote histories and immutable output producers; actual initial findings must drive a changed design and exact revised-candidate review.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Verify and remediate real remote design, findings and changed-candidate review",
+        "goal": "Verify independent remote design and real findings-driven revision with exact-candidate review.",
+        "components": [
+          "architect",
+          "reviewer"
+        ],
+        "flows": [
+          "design-review-revision"
+        ],
+        "flowSteps": [
+          "design-and-publish",
+          "review-and-revise",
+          "accept-and-return"
+        ],
+        "doneWhen": "Affected local specialist regressions pass and the exact committed candidate passes in the deployed environment: independent remote architect/reviewer conversations consume exact assigned refs, actual first findings cause a changed immutable design, and review of that exact revision gates final advisory acceptance.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": [
+          "demo/architect_agent.py",
+          "demo/reviewer_agent.py",
+          "demo/specialist.py",
+          "demo/foundry.py",
+          "demo/artifacts.py"
+        ],
+        "evidence": "",
+        "cause": "",
+        "verification": {
+          "status": "not-yet-verified",
+          "evidence": ""
+        },
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "terminal-evidence-surface",
+      "title": "Verify and remediate the terminal evidence and safe next-action surface",
+      "kind": "developer",
+      "owner": "Developer",
+      "walkingSkeleton": false,
+      "dependsOn": [
+        "azd-walking-skeleton"
+      ],
+      "requirements": [
+        "D7"
+      ],
+      "components": [
+        "terminal-demo"
+      ],
+      "flows": [
+        "design-review-revision",
+        "followup-and-recovery"
+      ],
+      "exclusiveResources": [],
+      "doneWhen": "Affected parser/human-view regressions pass and the exact committed candidate passes in the deployed environment: actual completed remote records expose accepted artifacts/decisions, preserve machine stdout, safe data rendering and held/pending no-resend behavior, and report all seven components with evidence-based RAG rather than a release claim.",
+      "exclusions": [
+        "No web UI, fourth service, new stdout protocol or fabricated phase dashboard.",
+        "No disclosure of private refs/identities in default public summaries."
+      ],
+      "handoff": "Use accepted UX direction; emit actual local checks and exact committed candidate. DevOpsWorkLoop then EndToEndTestLoop exercise the real terminal surface under the environment lock before original review and dependent release.",
+      "estimatedMinutes": {
+        "implementation": 40,
+        "review": 10,
+        "integration": 30
+      },
+      "source": [
+        "demo/terminal.py",
+        "native_proxy.py",
+        "live_acceptance.py"
+      ],
+      "localTests": [
+        "tests/test_demo.py",
+        "tests/test_scenario_evidence.py"
+      ],
+      "screens": [
+        "terminal-turn",
+        "terminal-exception",
+        "component-report"
+      ],
+      "construction": "Inherit accepted sprint terminal screens/state actions; preserve machine stdout, opt-in stderr, data-safe rendering and no acceptance before persisted finalization.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Verify and remediate the terminal evidence and safe next-action surface",
+        "goal": "Verify the existing terminal evidence surface against the accepted sprint design without changing stdout.",
+        "components": [
+          "terminal-demo"
+        ],
+        "flows": [
+          "design-review-revision",
+          "followup-and-recovery"
+        ],
+        "flowSteps": [
+          "submit-and-bind",
+          "accept-and-return",
+          "append-and-invalidate"
+        ],
+        "doneWhen": "Affected parser/human-view regressions pass and the exact committed candidate passes in the deployed environment: actual completed remote records expose accepted artifacts/decisions, preserve machine stdout, safe data rendering and held/pending no-resend behavior, and report all seven components with evidence-based RAG rather than a release claim.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": [
+          "demo/terminal.py",
+          "native_proxy.py",
+          "live_acceptance.py"
+        ],
+        "evidence": "",
+        "cause": "",
+        "verification": {
+          "status": "not-yet-verified",
+          "evidence": ""
+        },
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "continuity-recovery-isolation",
+      "title": "Prove retained parent context, supported recovery and independent-parent isolation",
+      "kind": "developer",
+      "owner": "Developer",
+      "walkingSkeleton": false,
+      "dependsOn": [
+        "coordinator-blob-contract",
+        "remote-specialist-revision"
+      ],
+      "requirements": [
+        "D6"
+      ],
+      "components": [
+        "session-continuity-recovery-isolation"
+      ],
+      "flows": [
+        "followup-and-recovery",
+        "independent-parent-isolation"
+      ],
+      "exclusiveResources": [],
+      "doneWhen": "Affected local continuity/recovery/isolation tests pass and the exact candidate passes in the deployed environment: same-parent follow-up retains independent child bindings/history and invalidates stale refs; known response/checkpoint recovery has no duplicate effects; supported hosted-session compute stop/resume retains compatible state; a second synthetic parent cannot acquire the first parent's context/artifacts; uncertain effects stay held.",
+      "exclusions": [
+        "No VM power or hard-crash proof claim.",
+        "No old-session forced migration, journal/database edits, uncertain replay or held-parent replacement."
+      ],
+      "handoff": "Emit local checks plus exact committed candidate and source-bound capture needs. DevOpsWorkLoop then EndToEndTestLoop alone perform scoped deployed stop/resume and scenario probes under the environment lock, preserving private raw evidence and holds before original review/dependent release.",
+      "estimatedMinutes": {
+        "implementation": 60,
+        "review": 15,
+        "integration": 45
+      },
+      "source": [
+        "demo/workflow.py",
+        "demo/foundry.py",
+        "demo/terminal.py",
+        "live_acceptance.py"
+      ],
+      "localTests": [
+        "tests/test_specialist_continuity.py",
+        "tests/test_scenario_evidence.py",
+        "tests/test_isolated_client.py"
+      ],
+      "screens": [
+        "terminal-turn",
+        "terminal-exception",
+        "component-report"
+      ],
+      "construction": "Preserve independent pinned parent/child histories, compatible native checkpoints and write-ahead effects; unknown effects remain held. Stop/resume is hosted-session compute only.",
+      "workCard": {
+        "role": "Developer",
+        "action": "Prove retained parent context, supported recovery and independent-parent isolation",
+        "goal": "Prove same-parent continuity, no-resend recovery and independent-parent isolation.",
+        "components": [
+          "session-continuity-recovery-isolation"
+        ],
+        "flows": [
+          "followup-and-recovery",
+          "independent-parent-isolation"
+        ],
+        "flowSteps": [
+          "append-and-invalidate",
+          "reconcile-without-resend",
+          "stop-resume-and-prove",
+          "bind-separate-parent",
+          "verify-no-cross-parent-context"
+        ],
+        "doneWhen": "Affected local continuity/recovery/isolation tests pass and the exact candidate passes in the deployed environment: same-parent follow-up retains independent child bindings/history and invalidates stale refs; known response/checkpoint recovery has no duplicate effects; supported hosted-session compute stop/resume retains compatible state; a second synthetic parent cannot acquire the first parent's context/artifacts; uncertain effects stay held.",
+        "failureCategories": [],
+        "mustAct": "Developer",
+        "locations": [
+          "demo/workflow.py",
+          "demo/foundry.py",
+          "demo/terminal.py",
+          "live_acceptance.py"
+        ],
+        "evidence": "",
+        "cause": "",
+        "verification": {
+          "status": "not-yet-verified",
+          "evidence": ""
+        },
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    },
+    {
+      "id": "integrated-terminal-acceptance",
+      "title": "Deploy and demonstrate the integrated three-role release candidate",
+      "kind": "devops",
+      "owner": "DevOps Engineer",
+      "walkingSkeleton": false,
+      "dependsOn": [
+        "coordinator-blob-contract",
+        "remote-specialist-revision",
+        "terminal-evidence-surface",
+        "continuity-recovery-isolation"
+      ],
+      "requirements": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7"
+      ],
+      "components": [
+        "deployment",
+        "coordinator-routing",
+        "architect",
+        "reviewer",
+        "blob-shared-context",
+        "session-continuity-recovery-isolation",
+        "terminal-demo"
+      ],
+      "flows": [
+        "exact-candidate-delivery",
+        "design-review-revision",
+        "followup-and-recovery",
+        "independent-parent-isolation"
+      ],
+      "exclusiveResources": [
+        "existing-nonproduction-project-deployment-and-verification",
+        "existing-nonproduction-project-deployment-configuration"
+      ],
+      "doneWhen": "The final integrated committed candidate passes in the deployed environment through normal azd deploy and fresh synthetic design-review-revision, same-parent follow-up, supported recovery/stop-resume and independent-parent isolation checks. Exact revisions/versions, MI/private-path provenance, genuine Decision-1 and remote artifacts support D1-D7; no required criterion is inferred from offline tests, healthy hosts or SDK completion.",
+      "exclusions": [
+        "No release claim on partial/unverified criteria.",
+        "No unrelated mutable checkout deployment or repeated uncertain effect.",
+        "No new approval or exhaustion stage."
+      ],
+      "handoff": "DevOpsWorkLoop then EndToEndTestLoop retain the shared lock across exact-candidate deployment and probes; return actual commands/exits, sanitized inspectable repository-relative evidence, private evidence references, runtime/run outcome, observed environment/versions and all seven RAG rows to original reviewers and existing sprint review/retro/release closeout.",
+      "estimatedMinutes": {
+        "implementation": 20,
+        "review": 15,
+        "integration": 45
+      },
+      "source": [
+        "azure.yaml",
+        "demo/workflow.py",
+        "demo/artifact_store.py",
+        "demo/architect_agent.py",
+        "demo/reviewer_agent.py",
+        "demo/terminal.py",
+        "live_acceptance.py"
+      ],
+      "localTests": [
+        "tests/test_demo.py",
+        "tests/test_workflow.py",
+        "tests/test_routing.py",
+        "tests/test_artifacts.py",
+        "tests/test_scenario_evidence.py",
+        "tests/test_specialist_continuity.py",
+        "tests/test_isolated_client.py"
+      ],
+      "screens": [
+        "terminal-turn",
+        "terminal-exception",
+        "component-report"
+      ],
+      "construction": "Integrate the approved task candidates without adding services, changing trust/transport contracts or waiving any D1-D7 criterion.",
+      "workCard": {
+        "role": "DevOps Engineer",
+        "action": "Deploy and demonstrate the integrated three-role release candidate",
+        "goal": "Integrate the accepted candidates and demonstrate fresh deployed D1-D7 on the exact final revision.",
+        "components": [
+          "deployment",
+          "coordinator-routing",
+          "architect",
+          "reviewer",
+          "blob-shared-context",
+          "session-continuity-recovery-isolation",
+          "terminal-demo"
+        ],
+        "flows": [
+          "exact-candidate-delivery",
+          "design-review-revision",
+          "followup-and-recovery",
+          "independent-parent-isolation"
+        ],
+        "flowSteps": [
+          "select-and-check",
+          "deploy-under-lock",
+          "verify-before-release",
+          "submit-and-bind",
+          "gate-and-choose",
+          "design-and-publish",
+          "review-and-revise",
+          "accept-and-return",
+          "append-and-invalidate",
+          "reconcile-without-resend",
+          "stop-resume-and-prove",
+          "bind-separate-parent",
+          "verify-no-cross-parent-context"
+        ],
+        "doneWhen": "The final integrated committed candidate passes in the deployed environment through normal azd deploy and fresh synthetic design-review-revision, same-parent follow-up, supported recovery/stop-resume and independent-parent isolation checks. Exact revisions/versions, MI/private-path provenance, genuine Decision-1 and remote artifacts support D1-D7; no required criterion is inferred from offline tests, healthy hosts or SDK completion.",
+        "failureCategories": [],
+        "mustAct": "DevOps Engineer",
+        "locations": [
+          "azure.yaml",
+          "demo/workflow.py",
+          "demo/artifact_store.py",
+          "demo/architect_agent.py",
+          "demo/reviewer_agent.py",
+          "demo/terminal.py",
+          "live_acceptance.py"
+        ],
+        "evidence": "",
+        "cause": "",
+        "verification": {
+          "status": "not-yet-verified",
+          "evidence": ""
+        },
+        "humanAction": "",
+        "humanActionEvidence": ""
+      }
+    }
+  ]
+}

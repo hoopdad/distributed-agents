@@ -48,6 +48,7 @@ History may explain a finding but never creates a current blocker by itself.
 | Release planning | `docs\requirements\delivery-release-plan.md`, `docs\requirements\delivery-release-plan.json`, `tests\test_delivery_release_plan.py` | D1-D7 sprint goals, deployed-first skeleton, dependency/resource contracts and exact-candidate DevOps/E2E handoffs; planning validation is not live acceptance |
 | Sprint terminal design | `docs\requirements\delivery-sprint-design.md`, `docs\requirements\delivery-sprint-design.json`, `tests\test_delivery_sprint_design.py` | Current sprint task-to-screen joins, terminal wireframes, private revision trail and inherited safe actions; contract checks do not establish deployed acceptance |
 | Sprint architecture | `docs\requirements\delivery-sprint-architecture.md`, `docs\requirements\delivery-sprint-architecture.json`, `tests\test_delivery_sprint_architecture.py` | Holistic solution-model reuse, four tier designs, six approved task/source/test/flow joins and unchanged exact-candidate verification handoffs; no runtime or deployed acceptance |
+| Sprint dispatch planning | `docs\requirements\delivery-sprint-plan.md`, `docs\requirements\delivery-sprint-plan.json`, `scripts\build_sprint_plan.py`, `tests\test_delivery_sprint_plan.py`, `tests\test_delivery_sprint_dispatch.mjs` | Six approved owner/card assignments, critical-path estimates and deployed-first dependency fan-out; local schema/synthetic scheduler checks are not implementation dispatch or deployed acceptance |
 | Local configuration/checks | `scripts\Use-Settings.ps1`, `scripts\Test-Repository.ps1`, `scripts\repo_index.py` | Allowlisted private configuration, public boundary checks and current/history search partition |
 | CLI delivery workflow | `gh-dynamic-workflows`, `.github\extensions\autonomous-delivery\extension.mjs` | Registered lab-delivery runtime, distinct from the application's MAF graph |
 
@@ -117,6 +118,9 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `docs\requirements\checks\delivery-sprint-design-repository.txt`
 - `docs\requirements\checks\delivery-sprint-design-terminal.txt`
 - `docs\requirements\checks\delivery-sprint-design.txt`
+- `docs\requirements\checks\delivery-sprint-plan-regressions.txt`
+- `docs\requirements\checks\delivery-sprint-plan-repository.txt`
+- `docs\requirements\checks\delivery-sprint-plan.txt`
 - `docs\requirements\checks\delivery-user-experience-regressions.txt`
 - `docs\requirements\checks\delivery-user-experience.txt`
 - `docs\requirements\client-release\delivery-sprint-architecture.md`
@@ -130,6 +134,8 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `docs\requirements\delivery-sprint-architecture.md`
 - `docs\requirements\delivery-sprint-design.json`
 - `docs\requirements\delivery-sprint-design.md`
+- `docs\requirements\delivery-sprint-plan.json`
+- `docs\requirements\delivery-sprint-plan.md`
 - `docs\requirements\delivery-user-experience.json`
 - `docs\requirements\delivery-user-experience.md`
 - `docs\requirements\shared-artifacts\delivery-sprint-architecture.md`
@@ -179,6 +185,7 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `scripts\Initialize-LabSettings.ps1`
 - `scripts\Test-Repository.ps1`
 - `scripts\Use-Settings.ps1`
+- `scripts\build_sprint_plan.py`
 - `scripts\calibrate_routing.py`
 - `scripts\diagnose_identity.py`
 - `scripts\identity_handoff.py`
@@ -191,6 +198,8 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `tests\test_delivery_release_plan.py`
 - `tests\test_delivery_sprint_architecture.py`
 - `tests\test_delivery_sprint_design.py`
+- `tests\test_delivery_sprint_dispatch.mjs`
+- `tests\test_delivery_sprint_plan.py`
 - `tests\test_delivery_user_experience.py`
 - `tests\test_demo.py`
 - `tests\test_diagnose_identity.py`

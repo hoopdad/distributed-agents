@@ -1,0 +1,37 @@
+Planning/schema and synthetic dispatch only; no cloud or implementation acceptance.
+Command: python tests/test_delivery_sprint_plan.py --evidence docs/requirements/checks/delivery-sprint-plan.txt
+UTC: 2026-10-24T23:37:04.554663+00:00
+Artifact normalized UTF-8 SHA256: 17798d699a7582f0b6c483cd4131364074a1832925936b73dff1cb2eabda6bad
+test_actual_runtime_schema_and_synthetic_parallel_dispatch (__main__.SprintPlanTests) ... Synthetic exact-plan dispatch: all 6 callbacks ran; max concurrent construction=3.
+start:azd-walking-skeleton
+accepted:azd-walking-skeleton
+start:coordinator-blob-contract
+start:remote-specialist-revision
+start:terminal-evidence-surface
+accepted:coordinator-blob-contract
+accepted:remote-specialist-revision
+accepted:terminal-evidence-surface
+start:continuity-recovery-isolation
+accepted:continuity-recovery-isolation
+start:integrated-terminal-acceptance
+accepted:integrated-terminal-acceptance
+Synthetic failed skeleton: all 5 dependents remained not-run.
+Synthetic localized failure: independent work continued; actual dependents held.
+Synthetic shared-resource verification: max concurrency=1; lock spans DevOps then E2E.
+Runtime schema/card/dependency checks passed; no real assignments or deployment performed.
+
+ok
+test_narrative_scope_and_status_coverage (__main__.SprintPlanTests) ... ok
+test_negative_card_drift_fabricated_observation_or_scope (__main__.SprintPlanTests) ... ok
+test_negative_estimates_are_not_limits (__main__.SprintPlanTests) ... ok
+test_negative_lock_candidate_and_dependency_release_bypass (__main__.SprintPlanTests) ... ok
+test_negative_skeleton_bypass_cycle_and_unknown_dependency (__main__.SprintPlanTests) ... ok
+test_negative_unassigned_wrong_owner_and_duplicate_assignment (__main__.SprintPlanTests) ... ok
+test_schema_approved_scope_assignment_and_dependency_contract (__main__.SprintPlanTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.142s
+
+OK
+elapsedSeconds: 0.156
+exitCode: 0

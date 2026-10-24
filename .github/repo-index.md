@@ -43,7 +43,7 @@ History may explain a finding but never creates a current blocker by itself.
 | Terminal/acceptance | `demo\terminal.py`, `native_proxy.py`, `live_acceptance.py` | Terminal flow, exact-origin transport and actual remote continuity/recovery/isolation checks |
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline regressions and build/package validation, not live acceptance |
 | Current delivery | `delivery-input.json`, `docs\requirements\delivery-mission.md`, `docs\NEXT-SESSION-PROMPT.md`, `docs\implementation-workflow.md` | Authorized azd delivery and seven-component acceptance based on fresh observations |
-| Design | `docs\design.md` | Current source lifecycle, conversations, state planes and correctness invariants |
+| Design | `docs\design.md`, `docs\requirements\delivery-architecture.md`, `docs\requirements\delivery-architecture.json` | Current source lifecycle plus D1-D7 solution model, state-plane contracts, source/test joins and exact-candidate delivery handoff; architecture checks are not live acceptance |
 | Local configuration/checks | `scripts\Use-Settings.ps1`, `scripts\Test-Repository.ps1`, `scripts\repo_index.py` | Allowlisted private configuration, public boundary checks and current/history search partition |
 | CLI delivery workflow | `gh-dynamic-workflows`, `.github\extensions\autonomous-delivery\extension.mjs` | Registered lab-delivery runtime, distinct from the application's MAF graph |
 
@@ -101,6 +101,10 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `docs\NEXT-SESSION-PROMPT.md`
 - `docs\design.md`
 - `docs\implementation-workflow.md`
+- `docs\requirements\checks\delivery-architecture-regressions.txt`
+- `docs\requirements\checks\delivery-architecture.txt`
+- `docs\requirements\delivery-architecture.json`
+- `docs\requirements\delivery-architecture.md`
 - `docs\requirements\delivery-mission.md`
 - `gh-dynamic-workflows\.gitignore`
 - `gh-dynamic-workflows\DELIVERY-PRINCIPLES.md`
@@ -154,6 +158,7 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `scripts\repo_index.py`
 - `tests\test_artifacts.py`
 - `tests\test_config.py`
+- `tests\test_delivery_architecture.py`
 - `tests\test_delivery_input.py`
 - `tests\test_demo.py`
 - `tests\test_diagnose_identity.py`

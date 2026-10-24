@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "authority": "docs/requirements/delivery-mission.md",
+  "design": "docs/requirements/delivery-architecture.md",
+  "observedSource": "ee88507b2723851f3a99cb97161356bca8e68569",
+  "principles": [
+    "Exactly three existing hosted roles; remote specialists, never production local fallbacks.",
+    "Deterministic authorization, prerequisite and finish gates precede semantic Microsoft-Decision-1 choices.",
+    "Independent conversations, MAF checkpoints and Blob effects/artifacts are distinct state planes.",
+    "Only exact immutable inputs and current approving review can authorize accepted advisory output.",
+    "Current observations establish blockers; local checks never establish deployed acceptance.",
+    "Preserve pinned sessions and unknown-effect holds; never resend merely because logs or a process are absent."
+  ],
+  "toolsets": [
+    {"name": "MAF and Foundry Responses hosting", "source": "requirements.txt", "purpose": "Pinned graph, remote AgentSession and supported hosting APIs; Linux amd64 Python 3.13 remote build."},
+    {"name": "Azure Identity and Blob SDK", "source": "requirements.lock.txt", "purpose": "Managed identity, private-path artifact exchange, immutable upload and lease/ETag publication."},
+    {"name": "Pydantic contracts and exact-origin HTTP transport", "source": "demo/artifacts.py", "purpose": "Strict typed documents, hashes, assignments, principal provenance and no implicit cross-origin retry."},
+    {"name": "Azure Developer CLI", "source": "azure.yaml", "purpose": "Normal azd deploy to existing Responses 2.0.0 roles; no infrastructure provisioning."},
+    {"name": "Terminal and executable acceptance", "source": "live_acceptance.py", "purpose": "Synthetic remote revision, follow-up, recovery and isolation evidence; not SDK-envelope acceptance."}
+  ],
+  "solutionModel": {
+    "components": [
+      {
+        "id": "deployment", "name": "Existing-project azd delivery",
+        "supports": ["coordinator-routing", "architect", "reviewer", "terminal-demo"],
+        "requirements": ["D1"], "source": ["azure.yaml", "package_guard.py", ".dockerignore", ".agentignore", "requirements.txt", "requirements.lock.txt"],
+        "localTests": ["tests/test_demo.py"],
+        "state": "change-required",
+        "remaining": "Replace the three incompatible predeploy hooks with ordinary exclusion/dependency/build checks; retain unused legacy package_guard safeguards. Deploy and verify exact revisions under the shared environment lock."
+      },
+      {
+        "id": "coordinator-routing", "name": "MAF coordinator and gated routing",
+        "supports": ["architect", "reviewer"],
+        "requirements": ["D2"], "source": ["demo/host.py", "demo/workflow.py", "demo/routing.py", "config/routing-corpus.json", "config/routing-calibration.json"],
+        "localTests": ["tests/test_workflow.py", "tests/test_routing.py"],
+        "state": "source-present-live-unverified",
+        "remaining": "Exercise genuine Decision-1 alternatives after deterministic gates; verify current exact producer/prerequisite bindings and finish semantics."
+      },
+      {
+        "id": "architect", "name": "Remote design and revision agent",
+        "supports": [],
+        "requirements": ["D3"], "source": ["demo/architect_agent.py", "demo/specialist.py", "demo/foundry.py"],
+        "localTests": ["tests/test_specialist_continuity.py", "tests/test_workflow.py"],
+        "state": "source-present-live-unverified",
+        "remaining": "Collect a real first candidate and a changed immutable candidate responding to actual reviewer findings from the same remote child."
+      },
+      {
+        "id": "reviewer", "name": "Remote exact-candidate review agent",
+        "supports": [],
+        "requirements": ["D4"], "source": ["demo/reviewer_agent.py", "demo/specialist.py", "demo/artifacts.py"],
+        "localTests": ["tests/test_artifacts.py", "tests/test_workflow.py"],
+        "state": "source-present-live-unverified",
+        "remaining": "Collect first findings and a fresh review of the exact revised candidate; approval cannot coexist with blockers or unresolved requirements."
+      },
+      {
+        "id": "blob-shared-context", "name": "Private shared artifact plane",
+        "supports": ["coordinator-routing", "architect", "reviewer", "session-continuity-recovery-isolation"],
+        "requirements": ["D5"], "source": ["demo/artifact_store.py", "demo/artifacts.py", "demo/config.py"],
+        "localTests": ["tests/test_artifacts.py", "tests/test_config.py"],
+        "state": "source-present-live-unverified",
+        "remaining": "Verify private DNS/path, actual MI reads/writes, immutable provenance and fenced coordinator publication in the existing environment."
+      },
+      {
+        "id": "session-continuity-recovery-isolation", "name": "Parent-bound continuity and safe recovery",
+        "supports": ["coordinator-routing", "architect", "reviewer", "terminal-demo"],
+        "requirements": ["D6"], "source": ["demo/workflow.py", "demo/foundry.py", "demo/terminal.py", "live_acceptance.py"],
+        "localTests": ["tests/test_specialist_continuity.py", "tests/test_scenario_evidence.py", "tests/test_isolated_client.py"],
+        "state": "source-present-live-unverified",
+        "remaining": "Verify same-parent history/checkpoints and known-response recovery without duplicate sends, supported hosted-session stop/resume, and a second isolated parent. Preserve unknown effects."
+      },
+      {
+        "id": "terminal-demo", "name": "Synthetic terminal acceptance surface",
+        "supports": [],
+        "requirements": ["D7"], "source": ["demo/terminal.py", "native_proxy.py", "live_acceptance.py"],
+        "localTests": ["tests/test_demo.py", "tests/test_scenario_evidence.py"],
+        "state": "source-present-live-unverified",
+        "remaining": "Run the fresh design-review-revision and completed same-parent follow-up; expose actual accepted artifact/decision evidence with canonical component RAG."
+      }
+    ],
+    "flows": [
+      {
+        "id": "design-review-revision", "name": "Synthetic design, review and revision",
+        "persona": "Terminal demonstrator", "trigger": "A new authenticated synthetic request in the existing nonproduction project.",
+        "steps": [
+          {"id": "submit-and-bind", "description": "Terminal sends stored background input to the pinned coordinator; trusted hosting context binds principal/project/tenant/parent and publishes immutable requirements.", "components": ["terminal-demo", "coordinator-routing", "blob-shared-context"], "requirements": ["D2", "D5", "D7"]},
+          {"id": "gate-and-choose", "description": "MAF begin/route checks current refs and deterministic gates; journal and validate a calibrated Decision-1 choice between the permitted specialist action and request_input. Low confidence holds.", "components": ["coordinator-routing", "blob-shared-context"], "requirements": ["D2", "D5"]},
+          {"id": "design-and-publish", "description": "Create or restore the independently bound architect child; write intent/assignment before dispatch. Architect reads exact requirements, writes immutable design, and coordinator validates provenance before ETag publication.", "components": ["coordinator-routing", "architect", "blob-shared-context", "session-continuity-recovery-isolation"], "requirements": ["D2", "D3", "D5", "D6"]},
+          {"id": "review-and-revise", "description": "Remote reviewer reads exact requirements/design and returns real findings. Architect receives that prior design/review and emits a new candidate; reviewer reviews that exact revision. Repeat only through valid gates.", "components": ["coordinator-routing", "architect", "reviewer", "blob-shared-context"], "requirements": ["D2", "D3", "D4", "D5"]},
+          {"id": "accept-and-return", "description": "Only current approving review with no blockers/unresolved requirements finishes; terminal exposes accepted refs, decisions and truthful component status. Advisory design acceptance is not application release approval.", "components": ["coordinator-routing", "reviewer", "terminal-demo"], "requirements": ["D2", "D4", "D7"]}
+        ]
+      },
+      {
+        "id": "followup-and-recovery", "name": "Same-parent follow-up and supported recovery",
+        "persona": "Terminal demonstrator", "trigger": "A completed parent's follow-up, or recovery of its persisted pending response.",
+        "steps": [
+          {"id": "append-and-invalidate", "description": "Reuse the pinned parent and both child identities/model histories; append changed requirements, invalidate stale candidate/review, and run design-review-revision again. Do not follow up a held turn.", "components": ["terminal-demo", "coordinator-routing", "blob-shared-context", "session-continuity-recovery-isolation"], "requirements": ["D3", "D4", "D5", "D6", "D7"]},
+          {"id": "reconcile-without-resend", "description": "Retrieve known responses, restore native graph checkpoints and reconcile journal/output/manifest. Unknown external effects stay held; missing observations are not never-sent proof.", "components": ["coordinator-routing", "blob-shared-context", "session-continuity-recovery-isolation"], "requirements": ["D2", "D5", "D6"]},
+          {"id": "stop-resume-and-prove", "description": "Use only the supported scoped hosted-session compute stop/resume acceptance and durable marker; compare retained volume/checkpoints, pinned bindings and independently captured sends. This is not infrastructure VM power or hard-crash proof.", "components": ["session-continuity-recovery-isolation", "terminal-demo"], "requirements": ["D6", "D7"]}
+        ]
+      },
+      {
+        "id": "independent-parent-isolation", "name": "Independent synthetic parent isolation",
+        "persona": "Terminal demonstrator", "trigger": "A second independently authenticated synthetic parent requests a different design.",
+        "steps": [
+          {"id": "bind-separate-parent", "description": "Derive a distinct trusted-parent namespace and separate child conversations; never accept supplied session IDs as access grants.", "components": ["coordinator-routing", "blob-shared-context", "session-continuity-recovery-isolation"], "requirements": ["D2", "D5", "D6"]},
+          {"id": "verify-no-cross-parent-context", "description": "Compare exact artifacts, prerequisites and child bindings and test rejection of cross-parent access plus absence of the first parent's synthetic context.", "components": ["architect", "reviewer", "blob-shared-context", "session-continuity-recovery-isolation"], "requirements": ["D3", "D4", "D5", "D6"]}
+        ]
+      },
+      {
+        "id": "exact-candidate-delivery", "name": "Walking skeleton and exact candidate deployment",
+        "trigger": "The DevOps owner receives a committed candidate for existing-environment verification.",
+        "steps": [
+          {"id": "select-and-check", "description": "Pin the feature-branch commit or immutable artifact, validate settings/authentication and ordinary package/dependency/build exclusions without reading secrets or requiring legacy approval receipts.", "components": ["deployment"], "requirements": ["D1"]},
+          {"id": "deploy-under-lock", "description": "DevOps holds the shared environment lock and runs normal azd deploy to exactly three existing roles, recording actual operation outcomes and deployed versions.", "components": ["deployment"], "requirements": ["D1"]},
+          {"id": "verify-before-release", "description": "E2E verifies that exact candidate while the lock is held, joins private source-bound observations, and returns deployed results before original assignment review/acceptance and dependent release.", "components": ["deployment", "coordinator-routing", "architect", "reviewer", "blob-shared-context", "session-continuity-recovery-isolation", "terminal-demo"], "requirements": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"]}
+        ]
+      }
+    ]
+  },
+  "contracts": {
+    "roles": ["coordinator", "architect", "reviewer"],
+    "productionSpecialists": "remote-only",
+    "scopeAuthority": "trusted-hosting-context-with-genuine-end-user",
+    "manifestWriter": "coordinator",
+    "manifestConcurrency": "lease-etag-fenced",
+    "outputs": "per-role-immutable",
+    "finish": "exact-current-approving-review-without-blockers",
+    "unknownEffects": "hold-no-replay",
+    "storageIsolation": "application-enforced-not-per-role-rbac",
+    "statePlanes": [
+      {"name": "Conversations", "source": "demo/foundry.py", "contract": "Parent, both hosted/framework child bindings and each specialist model history remain independent; versions pin within a parent, response IDs advance."},
+      {"name": "MAF checkpoints", "source": "demo/host.py", "contract": "Restore supported graph/executor state, never infer external exactly-once effects from checkpoint completion."},
+      {"name": "Blob artifacts and write-ahead effects", "source": "demo/artifacts.py", "contract": "ScopeBinding(project,tenant,principal,parent); ArtifactRef(container,name,sha256,type,revisions); producer(role,name,version,session,response); exact input refs; assignment operation/hash; effect transitions and fenced accepted manifest."}
+    ],
+    "containers": [
+      {"logicalName": "control", "writer": "coordinator", "purpose": "Requirements, decisions, assignments, child refs, operation journal and manifest; separate coordinator admission control."},
+      {"logicalName": "candidates", "writer": "architect", "purpose": "Immutable candidate designs scoped to exact requirements and previous accepted review."},
+      {"logicalName": "reviews", "writer": "reviewer", "purpose": "Immutable findings and approval for the exact requirements/candidate revision."}
+    ],
+    "identityAndNetwork": "Managed identity accesses Blob over verified private DNS/IP bindings. Hosting propagates the genuine user; assignment receiver validates principal, child, pinned version, exact refs, active operation and deadline. Exact-origin transport never substitutes a principal. Existing account-wide Blob Contributor means app-enforced ownership, not per-role storage isolation. No RBAC/network changes.",
+    "compatibility": "Keep Responses 2.0.0 and requirements/lock pins authoritative. Inspect a current failed boundary before selecting a supported remedy. Major host/transport changes require an explicit scoped requirements decision and compatibility tests; old sessions stay pinned or use an explicit migration. Never edit SDK journals."
+  },
+  "deliveryHandoff": {
+    "planningOwner": "Scrum Master",
+    "firstSprint": {"walkingSkeleton": true, "kind": "devops", "owner": "DevOps Engineer", "dependsOn": [], "otherTasksTransitivelyDependOnSkeleton": true},
+    "deploymentCommand": "azd deploy",
+    "exclusiveResources": ["existing-nonproduction-project-deployment-and-verification"],
+    "candidate": "Exact committed feature/azd-demo-delivery revision or immutable artifact, not a mutable checkout.",
+    "acceptance": "Every assignment requires passing deployed verification: DevOps then E2E under one lock before original reviewers/acceptance/dependent release. Construction emits local checks and exact revision, never mutates the shared environment.",
+    "continuation": "Localize failed criteria; continue independent approved work without releasing failed prerequisites. Replan material dependency/contract/scope changes only through existing roles. No new audit or disposition stage.",
+    "exclusions": ["infrastructure-provisioning", "rbac-network-dns-quota-mutation", "vm-power", "secret-retrieval", "vpn-operations", "private-lab-edits", "fourth-role", "production-local-fallback", "unknown-effect-replay", "git-push"]
+  },
+  "verification": [
+    {"requirement": "D1", "component": "deployment", "localTests": ["tests/test_demo.py"], "deployedProof": "Separate actual azd command outcome and successful deployed probe for early skeleton and exact integrated candidate; join revision/artifact to all three versions.", "status": "not-executed"},
+    {"requirement": "D2", "component": "coordinator-routing", "localTests": ["tests/test_workflow.py", "tests/test_routing.py"], "deployedProof": "Genuine Decision-1 response/probabilities/calibration/input refs after deterministic gates; trusted scope and current approved finish plus negative stale/principal checks.", "status": "not-executed"},
+    {"requirement": "D3", "component": "architect", "localTests": ["tests/test_specialist_continuity.py", "tests/test_workflow.py"], "deployedProof": "Real remote first design and changed revised candidate bound to exact assigned requirements/prior findings and the same architect child.", "status": "not-executed"},
+    {"requirement": "D4", "component": "reviewer", "localTests": ["tests/test_artifacts.py", "tests/test_workflow.py"], "deployedProof": "Real first findings, revised exact-candidate review, and current approving review without blockers/unresolved requirements; no fabricated approval.", "status": "not-executed"},
+    {"requirement": "D5", "component": "blob-shared-context", "localTests": ["tests/test_artifacts.py"], "deployedProof": "Actual private MI Blob exchange, content hashes, exact refs/producer bindings, immutable role output and coordinator lease/ETag results; honest account-wide RBAC limitation.", "status": "not-executed"},
+    {"requirement": "D6", "component": "session-continuity-recovery-isolation", "localTests": ["tests/test_scenario_evidence.py", "tests/test_specialist_continuity.py", "tests/test_isolated_client.py"], "deployedProof": "Source-bound initial/followup/restart/isolated observations plus stopped_session joined by validate_scenario_evidence; direct history controls, known-response recovery and no extra creates/sends. Unknown effects remain held.", "status": "not-executed"},
+    {"requirement": "D7", "component": "terminal-demo", "localTests": ["tests/test_demo.py", "tests/test_scenario_evidence.py"], "deployedProof": "Fresh terminal design-review-revision and same-parent follow-up expose accepted exact artifacts/decisions and seven-component RAG; SDK completion is insufficient.", "status": "not-executed"}
+  ]
+}

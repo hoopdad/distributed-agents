@@ -1,0 +1,18 @@
+Architecture contract checks only; no cloud operations or live acceptance.
+UTC: 2026-10-24T23:13:38.359517+00:00
+Artifact normalized UTF-8 (LF) SHA256: 97117754176afa744f4ec02a8dda97dd6586905f386e9973dbcd19cb504320fb
+test_full_architecture_contract_and_mission_coverage (__main__.DeliveryArchitectureTests) ... ok
+test_narrative_links_model_and_preserves_acceptance_limitations (__main__.DeliveryArchitectureTests) ... ok
+test_rejects_dangling_support_and_flow_references (__main__.DeliveryArchitectureTests) ... ok
+test_rejects_missing_checks_wrong_requirement_bindings_and_invented_live_pass (__main__.DeliveryArchitectureTests) ... ok
+test_rejects_missing_duplicate_or_invented_components (__main__.DeliveryArchitectureTests) ... ok
+test_rejects_missing_sources_and_private_or_traversal_paths (__main__.DeliveryArchitectureTests) ... ok
+test_rejects_provisioning_missing_lock_and_broken_skeleton_handoff (__main__.DeliveryArchitectureTests) ... ok
+test_rejects_unknown_schema_fields (__main__.DeliveryArchitectureTests) ... ok
+test_rejects_waived_identity_ownership_recovery_or_finish_contracts (__main__.DeliveryArchitectureTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.044s
+
+OK
+exitCode: 0

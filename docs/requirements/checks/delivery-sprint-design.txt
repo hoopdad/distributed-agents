@@ -1,7 +1,7 @@
 Sprint design contract only; no deployed behavior or usability acceptance.
 Command: C:\Users\mike\AppData\Local\Programs\Python\Python310\python.exe tests/test_delivery_sprint_design.py --evidence docs/requirements/checks/delivery-sprint-design.txt
-UTC: 2026-10-24T23:26:31.564698+00:00
-Execution base HEAD (may precede committed design): 9b937cc3a4ab075cb174044f56f8e715f4ab309c
+UTC: 2026-10-24T23:28:23.012875+00:00
+Execution base HEAD (may precede committed design): 32dc3d91f7191c62b3277f1ca2f7264b544e7cf3
 Artifact normalized UTF-8 LF SHA256: 0530e0cd9cf6c476828074d34e068e9a594168c1af35627c6d142d346ac3dfbb
 test_narrative_has_layouts_flow_joins_and_honest_limitations (__main__.DeliverySprintDesignTests) ... ok
 test_rejects_changed_flows_order_and_new_screens (__main__.DeliverySprintDesignTests) ... ok
@@ -14,7 +14,7 @@ test_rejects_stdout_theme_privacy_and_false_acceptance_changes (__main__.Deliver
 test_schema_and_exact_sprint_architecture_UX_joins (__main__.DeliverySprintDesignTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.028s
+Ran 9 tests in 0.030s
 
 OK
 exitCode: 0

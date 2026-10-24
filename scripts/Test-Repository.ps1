@@ -2,6 +2,15 @@
 [CmdletBinding()]
 param([Parameter(Mandatory)][string]$Python)
 $ErrorActionPreference = 'Stop'
+function Test-ContextFrontmatter {
+    param([string]$Text, [switch]$Agent)
+    $header = '\A---\r?\nname: [a-z0-9-]+\r?\ndescription: [^\r\n]+\r?\n'
+    if ($Agent) {
+        $tool = '(?:"[a-z0-9_*/.-]+"|''[a-z0-9_*/.-]+''|[a-z0-9_*/.-]+)'
+        $header += "(?:tools: \[[ \t]*(?:$tool(?:[ \t]*,[ \t]*$tool)*)?[ \t]*\]\r?\n)?"
+    }
+    return $Text -match ($header + '---\r?\n')
+}
 $root = Split-Path $PSScriptRoot -Parent
 & $Python (Join-Path $PSScriptRoot 'repo_index.py') --check
 if ($LASTEXITCODE -ne 0) { throw 'Repository index check failed.' }
@@ -18,12 +27,12 @@ foreach ($relative in ($files | Sort-Object -Unique)) {
         if ($errors.Count) { throw "PowerShell syntax failed: $relative" }
     }
     if ($relative.EndsWith('.json')) {
-        Get-Content -LiteralPath $path -Raw | ConvertFrom-Json | Out-Null
+        Get-Content -LiteralPath $path -Raw | ConvertFrom-Json -AsHashtable | Out-Null
     }
     if ($relative -like '.github/agents/*.agent.md' -or
         $relative -like '.github/skills/*/SKILL.md') {
         $text = Get-Content -LiteralPath $path -Raw
-        if ($text -notmatch '\A---\r?\nname: [a-z0-9-]+\r?\ndescription: [^\r\n]+\r?\n---\r?\n') {
+        if (-not (Test-ContextFrontmatter -Text $text -Agent:($relative -like '.github/agents/*.agent.md'))) {
             throw "Invalid agent/skill frontmatter: $relative"
         }
     }

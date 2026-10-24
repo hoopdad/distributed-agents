@@ -15,6 +15,31 @@ User -> coordinator (MAF workflow)
 1. **Initial turn:** Design a synthetic application with private ingress only.
 2. **Follow-up:** Add an asynchronous queue; keep private ingress and all earlier requirements.
 
+**Current mission:** deliver the
+[three-role azd demo](docs/requirements/delivery-mission.md), not another
+exhausted diagnostic plan. Native MAF workflow and Blob artifact-plane source
+are largely implemented; the handwritten/in-process adapter remains an explicit
+offline regression path, never a hidden production fallback.
+
+**Latest recorded status, not fresh cloud verification:** main historically
+records architect 17 / reviewer 15 / coordinator 23; the later reviewed
+`origin/feature/customer-hosted-session-prototype` at `329eab9` records
+19 / 17 / 25. Prior Windows suites recorded main 159 tests (2 skips), feature
+364 tests (3 skips); these are not new checks in this preparation.
+Live acceptance remains blocked on trusted-user propagation
+(`NATIVE_HOST_PRINCIPAL` / `SPECIALIST_INCOMPLETE`). Explicit delegation and an
+existing impersonation permission have not established a fix. No platform
+cause is proven. Completed remote work, MI Blob provenance, follow-up,
+recovery and parent isolation are not freshly verified.
+
+The deployment descriptor already has the existing project and three
+Responses 2.0.0 remote-build services. Its current `package_guard.py` hooks still
+require a preapproved ZIP/hash/private receipt: implementing a safe normal
+`azd deploy` path is real mission work, not merely adding a README command.
+Preserve exact-package lab release safeguards and all held/unknown effects.
+Historical diagnostics and the consumed exception remain in
+[identity-recovery-plan.md](docs/identity-recovery-plan.md) and Git.
+
 **Continuity invariant:** the parent and both specialists keep their hosted
 session IDs, framework session IDs and pinned deployed versions. New
 invocations get new response IDs and produce current design/review artifacts.
@@ -63,6 +88,27 @@ an automatic moving-HEAD push.
 -> [architect](demo/architect_agent.py) / [reviewer](demo/reviewer_agent.py)
 model-history stages. [State and source map](docs/design.md#how-the-same-specialist-session-is-reused).
 
+## Authorized delivery invocation
+
+Open this repository in Copilot and submit the invocation in
+[docs/NEXT-SESSION-PROMPT.md](docs/NEXT-SESSION-PROMPT.md). It explicitly
+authorizes scoped implementation/tests/commits, reviewed `lab-delivery` launch,
+normal azd deployment and synthetic acceptance for the three existing roles
+in the validated nonproduction project. Reading it is not authorization;
+**this preparation session performs no launch, cloud call, commit or deployment**.
+
+The actual input is `delivery-input.json`; the
+[mission](docs/requirements/delivery-mission.md) is authoritative for components,
+flows, source integration and consistent RAG reports. Integrate scoped preparation
+onto `feature/azd-demo-delivery` based on the latest reviewed customer-hosted-session
+feature before launching; do not run old main because JSON names a branch.
+Before each launch review the sibling framework origin's latest revision,
+upgrade only while inactive and confirm registrations/`work-conserving-v1`.
+The CLI delivery workflow is distinct from the application's native MAF graph.
+Monitor actual durable outcomes, causally fix/validate failures and safely
+resume/relaunch while retaining accepted work and exact unmet criteria.
+`--check-only`, SDK completion, healthy hosts and offline tests are not acceptance.
+
 ## Setup and offline checks
 
 This repository owns portable application code, contracts, tests and generic
@@ -101,6 +147,13 @@ Copy `config\settings.example.json` to ignored `.local\settings.json` and replac
 the placeholders with verified configuration. Use a dedicated Azure CLI profile,
 never a production profile. Import only through the allowlisted loader:
 
+`scripts\Test-Repository.ps1 -Python <absolute-python-path>` checks the public
+boundary, index, syntax and whitespace. Its bounded context-frontmatter check
+requires the existing `name`/`description` header; agents may additionally use
+an optional `tools` YAML flow list of tool identifiers (plain, single-quoted or
+double-quoted). Skill headers remain unchanged; this is not a general YAML parser.
+
+
 ```powershell
 .\scripts\Use-Settings.ps1 -Path .\.local\settings.json
 ```
@@ -129,6 +182,43 @@ session lease. It requires compatible deployed agents and an already established
 owned SOCKS tunnel to the configured project. `--socks` is mandatory; substitute
 the verified local port from the retained lab connectivity tooling, not a new
 public route or an ad hoc tunnel.
+
+Add `--native` only for a verified native deployment. A client state's recorded
+runtime and versions cannot be silently migrated. `--recover-only` retrieves
+the exact persisted pending parent response instead of sending another request.
+Native checkpoints restore the graph, while the fenced write-ahead journal
+reconciles known response IDs and explicitly holds unknown effects.
+The acceptance utility's `observe` scenario retrieves only the preserved pending
+response. For a failed response it reads at most 30 seconds/128 KiB of the pinned
+hosted-session log stream through the same exact-origin transport, exposing only
+allowlisted workflow phase/exception classifications, not arbitrary log content.
+Diagnostic-enabled native versions additionally log an allowlisted failing
+preparation check, never the rejected identity, endpoint, value or exception text.
+This is diagnosis, not retry permission or a hosting restart test.
+Historical reconciliation and diagnostic attempts, including the consumed
+exception, are retained in the [recovery plan](docs/identity-recovery-plan.md).
+Do not turn them into new publication/inference authority, replay a held
+operation or infer never-sent from HTTP404, empty logs or an absent PID.
+For repeatable identity triage, run
+`<absolute-python-path> scripts\diagnose_identity.py` with the existing pinned
+environment. It checks all applicable dependency-lock pins and runs five
+synthetic, mocked SDK/HTTP-boundary probes without cloud access. Optional
+`--trace <private-sanitized-trace.json>` analyzes exact-response ingress and
+outbound presence flags; it never consumes raw logs or session state.
+The report distinguishes local contract verification from missing live evidence:
+exit 1 means offline verification failed, and exit 2 means the live cause remains
+unresolved or input inspection failed. Offline success never grants retry,
+identity-substitution or permission-change authority.
+The historical 2026-10-15 triage matched 109 lock pins and passed five offline
+probes; later exact-response diagnostics captured matching outbound call context
+but no trusted user at architect ingress. These are not fresh cloud checks or
+an established platform/header/RBAC fix.
+The lab wrapper's explicit `recover` scenario retrieves only a known pending
+response. Known-parent `followup` and opt-in `restart` scenarios do not create a
+replacement parent. `-Mode Acceptance -HostingRestart` additionally tests the
+supported hosted-session compute stop/resume API with a durable no-resend
+marker. This preserves the session volume and is not a hard-crash recovery test.
+These expanded live gates have not yet been run successfully.
 
 Run from the application root after loading settings and authenticating:
 
@@ -169,6 +259,15 @@ stdout and the acceptance parser are unchanged. The summary labels exact
 continuity and child creation counts as unverified/not observed because aliases
 cannot establish them. Known-response retrieval is labeled as recovery, not a
 new invocation. Offline capture tests cover these behaviors, not live success.
+
+Normal existing-service `azd deploy` is the next invocation's application scope,
+after the mission's predeploy-contract implementation/tests. `azd up` or
+`azd provision` require separate exact provisioning authority, not a permanent
+tool ban. No infrastructure/RBAC/network/DNS/quota/VM-power/secret/VPN changes
+are authorized by generic delivery. Before any separately authorized retained
+lab release, verify explicit cross-repository roots and all source/package,
+Linux/WSL, trust-receipt and cleanup safeguards. An azd environment copy alone
+establishes neither those checks nor deployment permission.
 
 ## What is preserved, and what changes?
 
@@ -212,9 +311,10 @@ do not replace the fenced write-ahead journal.
   nonempty calibrated `DEMO_FACT_SHEET`, forwarded to all roles. The offline
   `scripts\calibrate_routing.py --validate-runtime` check validates loaded
   settings without model calls; never edit observations/hashes to pass it.
-- Use only the retained lab packaging/preflight/WSL publication chain with
-  explicit application/lab roots and current user authority. No `azd up`,
-  `azd provision`, speculative identity headers/grants or unknown-effect replay.
+- Use the mission's normal azd path for current delivery; leave retained lab
+  exact-package tools and safeguards intact. `azd up`/`azd provision` require
+  separate provisioning authority. No speculative identity headers/grants or
+  unknown-effect replay.
 
 For engineering/release gates, read the [implementation workflow](docs/implementation-workflow.md).
 The [recovery plan](docs/identity-recovery-plan.md) owns detailed diagnostic

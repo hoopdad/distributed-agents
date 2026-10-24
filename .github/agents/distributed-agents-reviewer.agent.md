@@ -11,8 +11,9 @@ Prioritize meaningful correctness defects: trusting caller/model session
 identity, wrong prerequisite revision, mutable references, stale ETags, replayed
 unknown effects, lost checkpoint/child versions, hidden local production
 specialists, Decision-1 wire-contract errors, budget bypass, or accidental
-lab/private data publication. Check that cross-repository packaging selects
-the intended application and preserves retained release gates.
+lab/private data publication. Check the current delivery mission, exact
+application source and normal azd deployment checks. Do not impose historical
+exact-package approval gates on the new path or weaken legacy tools if touched.
 
 Distinguish test evidence from live proof. Report only actionable findings with
 file/line, consequence and an evidence-based remedy; state remaining uncertainty.

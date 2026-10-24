@@ -1,16 +1,53 @@
-# Implementation and lab deployment workflow
+# Application delivery and lab deployment workflow
 
-This is a checked-in gated engineering process, not a registered dynamic
-multi-agent workflow. The MAF/Foundry workflow described in `design.md` is the
-application being built. Do not launch a large agent orchestration merely
-because this document says "workflow."
+The current objective and user amendments are authoritative in
+[requirements/delivery-mission.md](requirements/delivery-mission.md).
+Use `delivery-input.json` with the submitted
+[next-session invocation](NEXT-SESSION-PROMPT.md), not the exhausted diagnostic
+invocation. Historical single-attempt exceptions remain consumed; details stay
+in [identity-recovery-plan.md](identity-recovery-plan.md) and Git.
 
-For the current live identity blocker, use
-[identity-recovery-plan.md](identity-recovery-plan.md) for the measured baseline,
-publication/inference separation, dependency-ready parallel lanes and G1-G8
-completion gates. It specializes this workflow without granting new authority.
+The CLI **`lab-delivery` workflow delivers the application**. The application's
+**MAF workflow coordinates remote architect/reviewer calls**. They are different
+systems; neither SDK completion nor completed delivery cards proves the
+application works. File presence alone supplies no launch or deployment authority.
 
-## Customer continuity and implementation handoff
+## Source-correct launch
+
+Read README, repository instructions/index, the mission, design and migration
+plan/map before implementation. Preserve unrelated dirty files and retained
+lab safeguards. Main `1dfb7fe` is not the latest implementation: the reviewed
+feature baseline was `origin/feature/customer-hosted-session-prototype` at
+`329eab9`. Under the submitted invocation's authority, integrate scoped preparation
+commits onto `feature/azd-demo-delivery` based on the latest reviewed feature
+revision. Do not reset, overwrite or indiscriminately stash shared dirty work.
+
+Mission citations must match committed HEAD before runtime evaluation. Inspect
+the staging list and commit only authorized paths with required trailers;
+no push. Run from the integrated delivery root. `git.featureBranch` in the
+input is context, not an automatic branch switch.
+
+Before each launch, check the sibling framework origin's latest revision and
+review changes against the installed runtime. Upgrade only when inactive and
+within explicit scope; never replace an active runtime. Preserve old run
+histories. Verify `autonomous-delivery` and `lab-delivery` registrations and
+the `yaml-loops-v2`, `requirement-grounded-v1`, `work-conserving-v1` contracts.
+Incompatible histories are not resumable through the new engine.
+
+After the user submits the invocation and establishes ordinary scoped
+permissions, use the supported launcher:
+
+```powershell
+node .\gh-dynamic-workflows\run.mjs --workflow lab-delivery --input delivery-input.json --check-only
+node .\gh-dynamic-workflows\run.mjs --workflow lab-delivery --input delivery-input.json --add-dir ..\enterprise-copilot-fleet-controller
+```
+
+The first command only reads configuration; it does not prove execution.
+Registration/loading grants no cloud or blanket tool permission. Do not invent
+round/sprint/concurrency/time/spend/stagnation limits; use only user-configured
+limits.
+
+## Preserve customer continuity
 
 Start with the [two-turn example](../README.md#two-turn-terminal-demonstration)
 and [create-or-reuse source path](design.md#how-the-same-specialist-session-is-reused).
@@ -21,233 +58,149 @@ links in that chain. Conversations retain history; MAF checkpoints resume graph
 position; immutable artifacts and the fenced effect journal establish accepted
 work and reconcile side effects. None replaces another.
 
-For documentation/terminal work, keep the baseline CLI runnable and machine
-delegation/result output and acceptance parsing unchanged. Human summaries are
-an opt-in stderr projection, not a new evidence contract. Exact continuity needs
-actual binding checks, not alias equality. The integrated README commands use
-the implemented `--native --view human` option; omitting `--view human` retains
-the default presentation. Capture tests verify identical stdout and unchanged
-acceptance parsing, including fragmented streams and known-response recovery.
-These are offline checks, not final-package or live certification.
-A follow-up is allowed only after
-a completed, non-held initial turn. A known-response retrieval is not a new send
-and must not be counted as a new specialist invocation.
+Keep baseline machine delegation/result output and acceptance parsing unchanged.
+The implemented `--native --view human` summary is an opt-in stderr projection.
+Exact continuity needs actual binding checks, not alias equality. Existing capture
+tests cover unchanged stdout/parser, fragmented streams and known-response
+recovery; these offline checks are not live certification. A follow-up is allowed
+only after a completed, non-held initial turn. Known-response retrieval is not
+a new send or specialist invocation.
 
-**Current authority:** the October 19 invocation permits scoped application
-corrections and guarded repeated releases for the three existing roles.
-Historical single-attempt limitations below are not blanket prohibitions on
-that newly authorized work. They never allow replay of uncertain effects.
-DevOps retains deployment/cloud-pass ownership and the E2E loop retains formal
-integration validation. The additional October 19 approval permits necessary
-scoped RBAC/permission changes for either supported authentication correction or
-`x-ms-user-identity` delegation, with bounded scripted decision tests during
-architecture/planning. Follow the current
-[identity selection contract](customer-prototype-architecture.md#supported-identity-alternatives-and-selection-contract).
-No new infrastructure, speculative identity workaround, call-ID-as-user
-substitution or provider submission is included. Execute E2E and DevOps through
-local repository scripts, never GitHub Actions.
+## Deliver the smallest working flow early
 
-Each gate self-approves only when its objective evidence passes. Use explicit
-inputs and deterministic checked-in scripts for repeated validation, build,
-comparison, preflight and release steps. No routine approval pauses between
-gates. Stop for a material unresolved decision, secret boundary, ambiguous
-destructive scope, failed gate with no justified remedy, user authentication,
-VPN-server execution, or unapproved mutation.
+Sprint 1 starts with a dependency-free DevOps `walkingSkeleton:true` azd
+deployment and a real deployed probe. Other assignments preserve genuine
+skeleton prerequisites. Existing `azure.yaml` defines an existing project and
+three remote-build Responses 2.0.0 hosted services; its `package_guard.py` hooks
+expect a preapproved ZIP/hash/private receipt.
+**Replace and test that incompatible predeploy contract** with ordinary azd
+source/package exclusions, dependency and build checks. No preapproved ZIP/hash
+or private approval receipt is required for this path. Verify the actual
+deployed candidate and outcome. Leave unused legacy lab release tools intact,
+without imposing their ceremony on normal azd delivery.
 
-## Gate 1: Scope and baseline
+Construction owners may work concurrently on independent authorized tasks,
+providing actual local checks plus the exact committed revision/immutable build
+candidate, without mutating the shared environment. Existing DevOps-then-E2E
+loops deploy and verify that candidate under one shared environment lock before
+assignment acceptance and dependent release. Never deploy an unrelated mutable
+checkout. A localized failure does not stop unrelated authorized construction,
+but offline work cannot satisfy deployed acceptance or release blocked
+dependents. Replan material contract/dependency changes through existing roles;
+add no continuation amendments, exhaustion audits or new review stages.
 
-Read README, Copilot instructions, index, design, migration map/plan and this
-workflow. Load ignored private settings without displaying their values.
-Resolve the external lab repository; read its startup, infrastructure workflow,
-registry, network design and affected roots before changing it.
+Keep exactly the three roles, MAF, gated Microsoft-Decision-1 routing,
+remote specialists and private managed-identity Blob exchange. Exercise actual
+design-review-revision, same-parent follow-up, independent parent isolation
+and supported recovery. Keep trusted parent binding, immutable role outputs,
+exact refs, coordinator ETag publication, MAF checkpoints and write-ahead
+effects/unknown holds. See D1-D7/F1-F4 in the mission for falsifiable criteria.
 
-Pass: cleanly distinguish existing baseline from planned behavior; account for
-every retained capability and relevant dirty change; validate configured
-project/region/aliases; establish existing offline test results. Preserve
-source snapshots, old sessions and unrelated changes.
+## Validate the candidate, not an assumed baseline
 
-## Gate 2: Application contracts and MAF workflow
-
-Implement strict versioned artifact/assignment/manifest/operation schemas,
-typed Blob adapters, identity binding and per-role access; checkpointed
-MAF orchestration; remote Responses specialists; Decision-1 contract validation
-and bounded routing/admission control. Preserve the recoverable write-ahead
-effects journal. Model outputs cannot grant authority or publish themselves.
-
-Pass: focused tests cover publication crash boundaries, ETag/fencing conflicts,
-immutable duplicates, parent isolation, malformed/stale output, response
-recovery, unknown-effect holds, MAF checkpoint resume, routing prerequisites
-and provider errors; the complete application suite passes with existing pins
-or a documented compatible update. Three production deployments use remote
-mode with no silent local fallback. Session compatibility policy is explicit.
-
-## Gate 3: External lab infrastructure
-
-Any infrastructure/network/DNS/monitoring/region change follows the external
-lab's `docs\infrastructure-change-workflow.md` in full. Use AVM-first Terraform,
-private connectivity and managed identities. Keep Terraform and environment
-resource definitions in the lab, not here. Derive region/subscription/address
-allocations from `ip-registry.json`, register VNets before planning, validate
-and perform fail-on-stale pruning; never automatically delete stale entries.
-
-Pass: lab design/registry/implementation/security/cost gates pass; private
-Blob identity/network permissions and hosted compute reachability are proven
-in design and preflight, not assumed. Private DNS additions include both
-private/public-equivalent VPN forwarding entries in the same change. Update
-lab `docs\network-design.md` for topology/operational-boundary changes.
-
-Commit and push only scoped non-secret changes after repository checks and
-the required review. Inspect the exact staging list. This does not deploy the
-VPN-server configuration and does not authorize unrelated changes.
-
-## Gate 4: Verified Terraform execution
-
-Run these commands **from the external lab root** for the registered region:
+Use the existing pinned environment; install/restore dependencies only after a
+manifest change or an actual missing-tool/package failure. Start with affected
+tests, then the applicable application gate:
 
 ```powershell
-.\scripts\Connect-LabAzure.ps1 -Region <region-key>
-.\scripts\Invoke-HubDeployment.ps1 -Region <region-key>
+.\Test-Demo.ps1 -Python <absolute-python-path>
+.\scripts\Test-Repository.ps1 -Python <absolute-python-path>
 ```
 
-The first command uses the repository-local `.azure-cli` profile and
-`az login --tenant <registered-tenant-id> --use-device-code`. Communicate the
-displayed device URL/code and continue after the user completes authentication.
-Verify selected tenant/subscription before resource queries. Do not use normal
-production credentials, browser login or cached context as a substitute.
+Include `-LabRepositoryRoot <explicit-root>` for external Windows wrapper
+regressions. Resolve that root privately; do not publish it. Run retained lab
+tests after authorized release-tool changes. Preserve original tests, package
+allowlists, lock provenance, Linux checks, strict host fingerprints, private
+evidence and owned process/mount cleanup. Do not reseal historical migration
+hashes to hide drift. Refresh the public index after file additions/deletions.
 
-The deployment wrapper enforces registry validation and monitors Terraform
-init, fmt/check, validate, plan and apply. Default: apply the **exact saved plan**
-immediately after successful plan. Pause between plan/apply only if the user
-explicitly requested plan approval. Never bypass the wrapper to execute another
-root or unverified context.
+Before cloud operations, import only allowlisted private settings using
+`scripts\Use-Settings.ps1`; never display copied `.azure` values, token caches,
+keys or connection strings. Require matching existing project/region/tenant/
+subscription/profile/model aliases and artifact settings, including explicit
+nonempty calibrated `DEMO_FACT_SHEET`. Check calibration offline with
+`scripts\calibrate_routing.py --validate-runtime` in the pinned environment.
+Do not invent missing configuration or mutate calibration observations.
+A historical settings filename is not a workflow admission gate or proof that
+credentials are absent. Continue independent local work around a cloud blocker.
 
-On failure, diagnose the concrete output, make the smallest coherent fix,
-rerun affected gates, commit/push the safe fix, and retry. Stop for secret or
-material scope boundaries; do not replace Terraform with ad hoc Azure writes.
-Read-only Azure metadata queries are allowed in verified lab context, except
-secret/key/token/connection-string retrieval. Ad hoc mutating scripts require
-explicit approval of the complete script and exact resource scope.
+Use dedicated device-code authentication for `az` and `azd`, preserving the
+validated `AZURE_CONFIG_DIR` in child processes. Set `AZD_CONFIG_DIR` explicitly
+to an isolated private directory before configuring `auth.useAzCliAuth true`;
+verify `azd auth login --check-status` and separately compare `az account show`
+tenant/subscription against validated scope. Do not change global azd config
+or use the production profile. Windows and WSL have separate caches; never copy
+tokens or assume authentication transfers. Retained wrappers select their own
+`OutputDirectory\azd-wsl-config` and pinned extension; a separate preflight
+config does not configure their release context.
 
-## Gate 5: Cross-repository application release
+## Deployment authority and external lab boundary
 
-Adapt the **lab-owned** release tooling to accept explicit application and lab
-roots before invoking it. Test the original root and new root against all
-source/package/preflight/WSL paths. Preserve strict host verification, temporary
-read-only SSH mount authorization, private evidence outside both repositories,
-native Linux build/tests, package allowlists/ELF checks, pinned provenance,
-approved ZIP/hash/version/service scope and process/mount cleanup.
+The submitted invocation authorizes normal **`azd deploy` and synthetic
+acceptance only for the three existing roles in the existing validated
+nonproduction project**, including supported hosted-session compute stop/resume.
+It authorizes scoped local commits, not push. It does not authorize infrastructure,
+RBAC, network, DNS, quota, VM power, secret retrieval, VPN operations, production
+credentials, private lab edits or provider submission. Historical broader
+invocations do not expand this invocation's scope.
 
-Create the package from this repository's code, never from a stale copy in the
-lab. Include new modules and declared dependencies intentionally. Produce an
-exact hash and sanitized preview mapping the three target services to the
-approved project and expected versions. Do not run `azd up`, `azd provision`,
-or an unreviewed direct publish shortcut. The copied `.azure` directory is
-private context, not release authority.
+Infrastructure and unique registry/network/DNS/VPN/Bastion/WSL release tools
+remain in the external lab. Read its startup/infrastructure instructions before
+any separately authorized change. Such work follows its registry, authentication,
+saved-plan and release safeguards; this application workflow does not replace
+them. `azd up`/`azd provision` require separate exact provisioning authority.
 
-Pass: all applicable portable and retained release tests pass; package preview
-matches the intended source/lock/roles; the exact publication and existing
-version use are covered by the user's invocation or a new specific approval.
-If the wrapper requires an approval not supplied by that invocation, ask rather
-than bypass it. Fresh previews bind each intended exact package/version after
-source, tests and review pass; an earlier approved stage is not approval of
-changed content. Use the current invocation's existing-project authority, not
-an inferred new permission.
+The retained exact-package lab path remains available with its original
+approved ZIP/hash/receipt, source/lock, Linux, service/version, ownership and
+cleanup checks. Do not weaken it while enabling the normal-azd path.
+Load private root/scope through validated settings, never public literals or
+the production CLI profile. Never log in to or modify the VPN server.
 
-A publish timeout is not permission to resend. Inspect the existing operation/
-receipt/version and reconcile uncertain sends first. The historical prospective
-diagnostic exception is consumed and cannot authorize another operation.
-Preserve its original UNKNOWN and cleanup uncertainty as documented in the
-recovery plan. A new unknown outcome or ownership requires a hold, not a new
-stage intended to escape reconciliation.
-Record deployed versions and rollback package/versions privately.
+## Monitor, remediate, resume safely
 
-For an authorized new diagnostic or corrected release, the lab's `bundle_package.py runtime`
-mode creates an exclusive, deterministic allowlisted source archive using explicit
-application/lab roots and a private `--output`. It does not read or change an
-azd environment or upload code. `Build-BundledCodePackage.ps1 -OutputPackageName`
-selects a new basename inside the existing private output directory, preserving
-the previous ZIP, seals, receipts and pinned private azd configuration. Use a
-new staging directory for an authorized attempt, not to evade an unknown hold;
-verify its exact image, source/archive hashes, package
-closure and preview before the retained publisher. Never edit a sealed stage
-to turn a failed release into a different package.
+Use the supported launcher's actual durable results and bounded relevant logs,
+avoiding repeated empty polling. Ignored `gh-dynamic-workflows\.delivery-runs`
+retains outcomes/logs. Exit codes distinguish completion **0**, application
+stop **2**, runtime/CLI error **1**, pause **3**, cancellation **130**.
+Inspect application outcome and unresolved feedback, not the SDK envelope.
 
-Load the exact calibrated `DEMO_FACT_SHEET` with the workflow settings before
-packaging. `scripts\calibrate_routing.py --validate-runtime` is an offline,
-read-only gate; retained packaging invokes it before dependency extraction.
-Facts are allowlisted, committed into the private settings proof and forwarded
-to all roles. Historical ten-field snapshots remain verifiable but do not
-authorize a new descriptor requiring facts. Do not recalibrate or rewrite
-observations merely to bypass configuration drift.
+Localize failure to the component, flow and criterion. Diagnose its concrete
+cause, implement the smallest authorized fix and run affected validation before
+resuming compatibly or fresh launching. Retain accepted work, partial sprints,
+exact unmet criteria and unblock conditions. Reconcile known responses/receipts/
+versions through supported interfaces. Empty logs, absent PIDs and HTTP404 do
+not prove never sent. Never blindly repeat unchanged denials or unknown effects,
+clear held state, reset limits or edit SDK journals/databases.
 
-## Gate 6: Live acceptance and handoff
+The historical trusted-user propagation blocker is not a proven platform defect.
+The feature tried explicit user delegation and historically had impersonation
+permission. Headers, new RBAC and A2A are not established remedies. Investigate
+the smallest supported authenticated/state-compatible request path. Major
+host/transport changes need an explicit requirements decision. Never substitute
+a principal or disable runtime/assignment checks.
 
-Use synthetic requirements only and private evidence outside both repositories.
-Prove MAF workflow restart/resume, distinct specialist child sessions,
-remote invocation, exact artifact prerequisites/hashes, conditional coordinator
-publication, Decision-1 outcomes, private MI Blob access, and isolation between
-parents. Verify actual service versions/health and the terminal path. A live
-test must not query secrets or use real customer documents.
+Continue independent authorized work while a localized criterion remains blocked.
+Ask only when the required operation truly needs new scope, credentials or a
+material requirements decision. Normal engineering needs no ritual reapproval.
 
-The retained wrapper supports individual `-AcceptanceScenario` selections.
-`followup`, `recover` and `restart` require an existing private parent within
-the evidence directory. `recover` retrieves its known pending response only.
-`restart` requires `-HostingRestart`; full Acceptance with that switch runs
-initial/followup/restart/isolated and checks parent/child continuity and
-separation. The supported hosted-compute stop/resume API preserves the session
-volume; it does not prove hard-crash recovery. Preserve uncertain stop markers
-and pending responses rather than sending either operation again.
-Live acceptance validates returned artifact envelopes/hashes, exact reviewer
-prerequisites, accepted content, producer sessions/versions and decision records,
-not just a success-shaped final message.
+## Acceptance and handoff
 
-**Historical blocker, not a fresh observation:** the architect fails SDK
-preparation at `NATIVE_HOST_PRINCIPAL` before the application factory. The
-captured opaque outbound call matched SDK context, but the exact child received
-call identity without trusted user identity. The mixed diagnostic deployment
-does not satisfy G1-G8; follow-up, recovery and isolation remain unverified.
-The [recovery plan](identity-recovery-plan.md) owns the full chronology, exact
-historical bindings, supported-contract citations and prepared-but-unsent
-provider packet. No platform defect or missing grant is established here.
+Run synthetic live acceptance against the exact deployed candidate: remote
+architect and reviewer, actual revision, private MI Blob provenance, Decision-1,
+same-parent follow-up, checkpoint/known-response recovery and an isolated parent.
+Supported hosting stop/resume is not hard-crash proof. Preserve uncertain stop
+markers and pending responses instead of repeating operations. Validate exact
+artifact hashes/prerequisites, producer session/version bindings and decisions,
+not just a success-shaped final message. Account-wide trusted-lab Blob grants
+mean ownership is application-enforced, not storage-enforced role isolation.
 
-Keep identity troubleshooting independent of publication reconciliation.
-The offline `scripts\diagnose_identity.py` audit uses pinned SDK/mock-HTTP
-probes; optional `--trace` accepts only an explicitly sanitized, bound trace,
-never raw logs or private session state. Offline success cannot prove the live
-cause. Exact-response observation and exact-version metadata do not send
-inference, reconcile an unknown publisher's cleanup or authorize replay.
-Log only allowlisted classifications/presence flags, never header values,
-identities, tokens, raw session IDs or customer content.
+Every progress/final report uses the mission's seven components and table:
+`Component | RAG | Evidence/freshness | Remaining work/next action`.
+Green requires fresh end-to-end component acceptance; amber means partial,
+unexecuted, unverified or stale; red means an evidenced failure/blocker.
+Label historical failures/versions; unreached checks are amber. Offline tests,
+healthy hosts, uploads and SDK completion never establish green.
 
-Any supported repair must identify the exact failed condition and current
-source/deployed bindings, add a focused failing-before/passing-after regression,
-pass the required source/Linux/package gates, and use the guarded publisher.
-Verify the actual remote outcome before another external operation. If there
-is no evidenced supported correction, record the missing exact-pair
-server-side caller-resolution finding and documented platform/SDK remedy.
-Actionable negative research can complete a bounded research task, not the live
-release. Do not substitute a principal, guess headers/grants, weaken trusted
-scope checks or submit private evidence to a provider.
-
-An existing command VM may be started only through its retained approved
-mechanism when the invocation authorizes that exact VM and verified context.
-This does not authorize replacing, stopping or reconfiguring it. Serialize
-publication/private transport resources, retain strict SSH trust and the
-temporary read-only mount, and clean only positively identified newly owned
-processes/listeners/mounts. Never certify historical cleanup from a new run.
-
-Pass: all live acceptance criteria in `design.md` succeed; no pending unknown
-operation is concealed; rollback/version/session compatibility is documented.
-G8 must disclose any accepted exception and unproven historical cleanup, not
-certify original closure from a new attempt's cleanup. Diagnostic approval
-alone does not pass U or G1-G8.
-If unavailable, state exactly which condition failed. Do not label offline
-coverage or a successful ZIP upload "deployed and verified."
-
-Never connect to or change the VPN server. If configuration delivery is needed,
-provide branch/commit, `cd ~/azure-lab`, pull/diff-review instructions, exact
-installation target, expected impact, validation, restart, rollback and secret
-handling. Do not read or stage `conf\ipsec.secrets`. A Git push is delivery only;
-the VPN-server deployment remains incomplete until the user confirms install
-and verification. Such a dependency is a documented stop, not a reason to
-claim end-to-end success.
+Completion requires D1-D7 with fresh evidence. Otherwise report exact accepted
+work, source/run/environment, unmet criteria and precise next action. An empty
+exhausted plan is incomplete delivery, not success.

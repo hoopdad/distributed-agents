@@ -1,5 +1,16 @@
 # Repository index
 
+## Current delivery invocation
+
+The integrated delivery branch preserves reviewed feature `329eab9` and the
+prepared mission/runtime. `docs\requirements\delivery-mission.md`,
+`delivery-input.json` and the submitted invocation govern current delivery.
+The installed runtime matches framework `d168e7a` with `work-conserving-v1`.
+The historical continuation/exhaustion narratives below are retained evidence,
+not instructions to repeat those planning loops or proof of deployed success.
+
+## Historical feature handoffs
+
 IP-S1 continuation-3 Scrum assessment at accepted architecture `da8432d4`:
 `docs/customer-prototype-profiling-continuation-3-sprint-plan.json` consumes
 accepted fixed observation-source delivery and IP-S2/IP-S3 exhaustion reviews.
@@ -938,11 +949,18 @@ are indexed; ignored state, dependencies and external lab files are excluded.
 | Current RP-S2 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted review `1e5eb2a`: six single-round accepted boundaries versus unchanged live block; incremental application handoff consumed once, prerequisite execution owner-attributed versus inspected script scope, existing ownership/access and independent inventory closing actions; no new schema, duplicate implementation or live waiver; older overlays retained |
 | Current RP-S3 retrospective | `docs\customer-prototype-release-plan.md`, `docs\customer-prototype-architecture.md`, `docs\customer-prototype-ux.md` | Accepted review `be996f8`: retained observation map versus actual provenance/installation; independent containment-source/resource preparation and originating ownership acceptance; conditional README instructions do not close DevOps delivery. Six supplied single-round accepted boundaries are not live progress or measured latency; existing-owner actions and three sprint contracts retained |
 | Identity recovery plan | `docs\identity-recovery-plan.md`, `docs\NEXT-SESSION-PROMPT.md` | G1-G8 objective, consumed diagnostic exception retaining original UNKNOWN, executed outbound/ingress result, cited supported-remedy assessment and provider-dependent execution gate |
+| Historical identity recovery | `docs\identity-recovery-plan.md` | Retained G1-G8 evidence, consumed diagnostic exception and original UNKNOWN; historical findings do not replace the current delivery mission |
 | Local context/checks | `scripts\Use-Settings.ps1`, `Initialize-LabSettings.ps1`, `migration.py`, `Test-Repository.ps1` | Validated private linkage, deterministic preservation/public checks |
 | Identity triage | `scripts\diagnose_identity.py`, `tests\test_diagnose_identity.py` | Lock-pin audit, synthetic SDK/HTTP probes and sanitized exact-response evidence analysis; no cloud calls or retry authority |
 | Identity candidate handoff | `scripts\identity_handoff.py`, `tests\test_identity_handoff.py`, `docs\identity-candidate-handoff.md` | Offline-only A/B candidate, lifecycle header plumbing and receiver namespace negative controls; no installed runtime change or live selection |
 | Isolated runtime candidate | `demo\foundry.py:specialist_identity_headers`, `demo\workflow.py:WorkflowRuntime.resources`, `tests\test_isolated_client.py`, `docs\design.md` | B specialist-only project/header/cache; original resource tuple and opaque-only non-specialist authority retained; actual resource lifecycle/cleanup regressions, no live selection |
 | Copilot context | `.github\copilot-instructions.md`, agents and skills | Bounded implementation/review and deployment gates |
+| Delivery mission and tooling | `delivery-input.json`, `docs\requirements\delivery-mission.md`, `docs\NEXT-SESSION-PROMPT.md`, `gh-dynamic-workflows\DELIVERY-PRINCIPLES.md`, `.github\extensions\autonomous-delivery\extension.mjs` | Azd walking skeleton, three-role MAF/LLM/Blob acceptance, work-conserving delivery, safe remediation/relaunch and canonical component RAG; registration alone grants no launch/cloud authority |
+
+The current mission supersedes the historical exact-package-only delivery
+policy below; historical versions and acceptance statements are not fresh cloud
+verification. Preparation is on main; integrate the reviewed feature source
+and scoped handoff changes onto the delivery branch before launching.
 
 Operational-context sprint-plan freshness: inspected clean application feature
 baseline `5906ee3` and registered clean lab feature sibling `1842984`; no added
@@ -1915,7 +1933,10 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `.gitattributes`
 - `.github\agents\distributed-agents-builder.agent.md`
 - `.github\agents\distributed-agents-reviewer.agent.md`
+- `.github\agents\workflow-owner.agent.md`
+- `.github\agents\workflow-reviewer.agent.md`
 - `.github\copilot-instructions.md`
+- `.github\extensions\autonomous-delivery\extension.mjs`
 - `.github\repo-index.md`
 - `.github\skills\distributed-agent-implementation\SKILL.md`
 - `.github\skills\lab-deployment\SKILL.md`
@@ -1930,6 +1951,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `config\routing-calibration.json`
 - `config\routing-corpus.json`
 - `config\settings.example.json`
+- `delivery-input.json`
 - `demo\__init__.py`
 - `demo\architect_agent.py`
 - `demo\artifact_store.py`
@@ -2020,7 +2042,43 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\migration-plan.md`
 - `docs\requirements\client-release\architecture.md`
 - `docs\requirements\coordinator\architecture.md`
+- `docs\requirements\delivery-mission.md`
 - `docs\requirements\specialists\architecture.md`
+- `gh-dynamic-workflows\.gitignore`
+- `gh-dynamic-workflows\DELIVERY-PRINCIPLES.md`
+- `gh-dynamic-workflows\LAB-CONTRACT.md`
+- `gh-dynamic-workflows\LAB-DESIGN.md`
+- `gh-dynamic-workflows\QUICKSTART.md`
+- `gh-dynamic-workflows\README.md`
+- `gh-dynamic-workflows\RESEARCH.md`
+- `gh-dynamic-workflows\WORK-CARD-DEFINITIONS.md`
+- `gh-dynamic-workflows\extension.mjs`
+- `gh-dynamic-workflows\install.mjs`
+- `gh-dynamic-workflows\lab-loops.mjs`
+- `gh-dynamic-workflows\lab-workflow.mjs`
+- `gh-dynamic-workflows\loop-source.mjs`
+- `gh-dynamic-workflows\loop-workflow.mjs`
+- `gh-dynamic-workflows\loops.yml`
+- `gh-dynamic-workflows\package-lock.json`
+- `gh-dynamic-workflows\package.json`
+- `gh-dynamic-workflows\run.mjs`
+- `gh-dynamic-workflows\scheduling.mjs`
+- `gh-dynamic-workflows\task-context.mjs`
+- `gh-dynamic-workflows\templates\extension.mjs`
+- `gh-dynamic-workflows\templates\workflow-owner.agent.md`
+- `gh-dynamic-workflows\templates\workflow-reviewer.agent.md`
+- `gh-dynamic-workflows\test\evidence.fixture.mjs`
+- `gh-dynamic-workflows\test\install.test.mjs`
+- `gh-dynamic-workflows\test\lab-loops.test.mjs`
+- `gh-dynamic-workflows\test\lab-sdk.test.mjs`
+- `gh-dynamic-workflows\test\lab-workflow.test.mjs`
+- `gh-dynamic-workflows\test\run.test.mjs`
+- `gh-dynamic-workflows\test\scheduling.test.mjs`
+- `gh-dynamic-workflows\test\scope-governance.test.mjs`
+- `gh-dynamic-workflows\test\task-context.test.mjs`
+- `gh-dynamic-workflows\test\work-cards.test.mjs`
+- `gh-dynamic-workflows\work-cards.mjs`
+- `gh-dynamic-workflows\workflow.mjs`
 - `live_acceptance.py`
 - `main.py`
 - `native_proxy.py`
@@ -2038,6 +2096,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `scripts\repo_index.py`
 - `tests\test_artifacts.py`
 - `tests\test_config.py`
+- `tests\test_delivery_input.py`
 - `tests\test_demo.py`
 - `tests\test_diagnose_identity.py`
 - `tests\test_diagnostics.py`
@@ -2047,6 +2106,7 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `tests\test_isolated_client.py`
 - `tests\test_private_effect_capture.py`
 - `tests\test_profiling_integration.py`
+- `tests\test_repository.py`
 - `tests\test_routing.py`
 - `tests\test_scenario_collection_seams.py`
 - `tests\test_scenario_evidence.py`

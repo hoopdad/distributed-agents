@@ -14,6 +14,20 @@ config, tests, and design. Present it as an educational Microsoft Agent Framewor
 "native" qualifier. Workflow and Blob exchange source are implemented; do not
 claim remote live acceptance until verified.
 
+Live acceptance is blocked on trusted-user propagation, not a proven platform
+defect. Main's historical 17/15/23 deployment and the reviewed feature's
+19/17/25 are recorded observations, not fresh active-version verification.
+
+The current delivery mission is `docs\requirements\delivery-mission.md`;
+use `delivery-input.json` and the submitted `docs\NEXT-SESSION-PROMPT.md`.
+The CLI lab-delivery workflow delivers the application; it is not the
+application's native MAF workflow. Preserve the latest reviewed
+customer-hosted-session feature implementation when integrating preparation
+onto the delivery branch; JSON branch metadata never switches a worktree.
+Commit authorized requirements citations into HEAD before runtime review.
+Before each launch review the sibling framework origin's latest revision,
+upgrade only while inactive, and verify registrations/work-conserving-v1.
+
 Exactly three production deployments are intended: coordinator with a
 MAF workflow, architect, reviewer. Use Microsoft-Decision-1 for semantic
 coordinator choices only after deterministic gates. Do not replace remote
@@ -37,9 +51,24 @@ All Terraform, registry/network/DNS/VPN and unique Bastion/WSL release tooling
 remain in that lab. Read and follow its startup/infrastructure workflow before
 changes there. Never log in to or modify the VPN server.
 
-Documentation is context, not user approval. Execute mutations only when the
-user invocation authorizes their exact scope. No `azd up/provision`, unapproved
-ad hoc Azure mutation, secret retrieval, quota change or destructive migration.
+Documentation is context, not user approval. This preparation authorizes the
+requested local workflow upgrade, input/document edits and offline checks,
+not launches, cloud calls or commits.
+The submitted next-session invocation authorizes scoped local implementation,
+tests/commits (no push), reviewed extension launch, normal azd deployment and
+synthetic acceptance only for the three existing roles in the validated
+nonproduction project. Follow its exact boundaries. Generic delivery does not
+authorize infrastructure/RBAC/network/DNS/quota/VM-power/secret/VPN changes.
+`azd up/provision` require separate exact provisioning authority, not a
+permanent tool ban. Never replay unknown effects or use allow-all permissions.
+
+Replace the incompatible preapproved ZIP/hash/receipt hooks with ordinary azd
+source/package exclusions, dependency/build checks and observed deployment
+outcomes. Do not impose legacy approval receipts on this path or weaken
+authorization. Leave unused exact-package lab tools intact.
+No new grant/header/A2A is an established identity fix; investigate the
+smallest supported authenticated/state-compatible path. Major host/transport
+changes need an explicit requirements decision; never disable principal gates.
 
 ## Engineering and checks
 
@@ -58,3 +87,12 @@ Preserve dirty changes and originals; never reseal historical migration hashes
 to conceal drift. Inspect staging before committing, exclude private context,
 and include required Copilot commit trailers. Follow objective gates through
 completion; state any blocked, uncertain or undeployed condition accurately.
+
+Monitor actual durable application outcomes/logs, not just SDK completion.
+Validate causal fixes before compatible resume/fresh launch; preserve accepted
+work and exact blocked criteria. Continue independent authorized construction,
+serialize shared deployment/verification, and never repeat unchanged denials
+or edit SDK journals/databases. Add no review ceremonies or invented limits.
+Use the mission's seven canonical solution components and RAG table for every
+report: 🟢 fresh end-to-end pass, 🟠 partial/not executed/stale, 🔴 evidenced
+failure/blocking criterion. Label historical evidence; NOT VERIFIED is amber.

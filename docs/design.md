@@ -821,6 +821,13 @@ extra-create, duplicate-send/response, held-effect, stop/checkpoint, scope,
 content-leak and release-drift controls are synthetic only. They do not perform
 hosted compute stop/resume or replace live G1–G8 evidence.
 
+> **Current delivery objective:** [requirements/delivery-mission.md](requirements/delivery-mission.md)
+> records the current user amendments, source integration, normal-azd work and
+> component acceptance/RAG rules. [NEXT-SESSION-PROMPT.md](NEXT-SESSION-PROMPT.md)
+> supplies authority only when submitted. Version/diagnostic narratives below
+> are historical evidence, not fresh cloud verification or permission to repeat
+> a consumed attempt. The CLI delivery workflow is not this application's MAF workflow.
+
 ## Following a request through the source
 
 For Foundry hosting, `demo\host.py` hands request parsing and graph construction

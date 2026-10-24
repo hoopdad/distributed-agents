@@ -1,0 +1,42 @@
+{
+  "projectRoot": ".",
+  "specification": "docs\\requirements\\delivery-mission.md",
+  "repositories": [
+    {
+      "id": "application",
+      "path": ".",
+      "access": "write"
+    },
+    {
+      "id": "framework-source",
+      "path": "..\\enterprise-copilot-fleet-controller",
+      "access": "read"
+    }
+  ],
+  "git": {
+    "featureBranch": "feature/azd-demo-delivery"
+  },
+  "authority": {
+    "preparationRecord": "This input was prepared under documentation/input-only authority: no workflow, model or cloud calls, deployment, commit, branch switch or push in that preparation session.",
+    "activation": "Execution authority applies only when the user submits docs\\NEXT-SESSION-PROMPT.md. Reading these files or passing launcher --check-only does not activate it.",
+    "localExecutionWhenActivated": "Implement and test the mission in the public application repository; integrate scoped preparation onto the latest reviewed customer-hosted-session feature baseline before launch; make scoped non-secret commits without pushing; review framework source read-only and explicitly review installed runtime upgrades only while inactive.",
+    "deploymentWhenActivated": "Normal azd deploy and synthetic acceptance, including supported hosted-session compute stop/resume acceptance, for exactly the three existing roles in the existing validated nonproduction dev-lab Foundry project, using validated allowlisted settings and dedicated lab authentication. Existing infrastructure only; no infrastructure VM power changes. No invented project, region, aliases or credentials.",
+    "excluded": [
+      "Infrastructure provisioning or mutation, including azd up/provision without separate exact-scope authorization",
+      "RBAC, network, DNS, quota, VM power, secret retrieval, VPN-server access or modification",
+      "Unknown-effect replay, unchanged denied requests, clearing held state, unsupported SDK journal or database edits",
+      "A fourth deployed role, hidden local specialists, principal substitution or weakened authorization",
+      "Private lab repository edits, production profiles, blanket allow-all permissions, publication to Git remotes"
+    ]
+  },
+  "acceptance": [
+    "deployment: mission D1; deploy an azd walking skeleton and the exact integrated three-role candidate with fresh deployed verification, replacing the incompatible normal-azd predeploy package contract rather than bypassing safeguards.",
+    "coordinator-routing: mission D2; native MAF orchestration with deterministic authorization/prerequisite gates and genuine Microsoft-Decision-1 semantic choices.",
+    "architect: mission D3; a remote architect produces an immutable design from exact assigned requirements and revises it from actual reviewer findings.",
+    "reviewer: mission D4; a remote reviewer consumes the exact design and requirements, records findings, and reviews the revised candidate before final acceptance.",
+    "blob-shared-context: mission D5; private managed-identity Azure Blob exchanges requirements, designs, reviews, decisions and child-session references under coordinator ETag manifest ownership.",
+    "session-continuity-recovery-isolation: mission D6; same-parent follow-up, independent child conversations, another isolated parent, supported recovery and explicit unknown-effect holds.",
+    "terminal-demo: mission D7; a fresh synthetic terminal design-review-revision flow and same-parent follow-up expose genuine accepted artifacts and truthful component RAG results.",
+    "Apply the canonical component IDs, report schema and RAG semantics in docs\\requirements\\delivery-mission.md; local tests, exhausted tasks and SDK completion are not live acceptance."
+  ]
+}

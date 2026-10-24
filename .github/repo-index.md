@@ -2001,10 +2001,17 @@ replanning and formal E2E/DevOps release gates remain separate.
 - `docs\customer-prototype-sprint-architecture.md`
 - `docs\customer-prototype-sprint-design.md`
 - `docs\customer-prototype-sprint-plan.json`
+- `docs\customer-prototype-telemetry-continuation-1-architecture.json`
+- `docs\customer-prototype-telemetry-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-telemetry-s2-continuation-1-architecture.json`
+- `docs\customer-prototype-telemetry-s2-continuation-1-sprint-plan.json`
+- `docs\customer-prototype-telemetry-s3-continuation-1-architecture.json`
+- `docs\customer-prototype-telemetry-s3-continuation-1-sprint-plan.json`
 - `docs\customer-prototype-ux.md`
 - `docs\design.md`
 - `docs\identity-candidate-handoff.md`
 - `docs\identity-profiling-coverage.md`
+- `docs\identity-profiling-workflow.md`
 - `docs\identity-recovery-plan.md`
 - `docs\identity-scenario-collection-qualification.md`
 - `docs\identity-typed-checkpoint-export.md`

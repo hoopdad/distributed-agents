@@ -1,0 +1,18 @@
+UX contract checks only; no cloud operations or deployed acceptance.
+Command: python tests/test_delivery_user_experience.py --evidence docs/requirements/checks/delivery-user-experience.txt
+UTC: 2026-10-24T23:17:16.027873+00:00
+Artifact normalized UTF-8 (LF) SHA256: bb06dfcda4cbcaa13945a4d8141d03dd5229d289486ff3609bc4b1996c72f402
+test_full_ux_schema_and_mission_architecture_joins (__main__.DeliveryUserExperienceTests) ... ok
+test_narrative_covers_flows_states_and_truthful_existing_surface (__main__.DeliveryUserExperienceTests) ... ok
+test_rejects_missing_flows_wrong_steps_and_requirement_expansion (__main__.DeliveryUserExperienceTests) ... ok
+test_rejects_missing_invented_or_duplicate_component_rows (__main__.DeliveryUserExperienceTests) ... ok
+test_rejects_new_screens_private_paths_and_missing_sources (__main__.DeliveryUserExperienceTests) ... ok
+test_rejects_resend_uncertain_followup_and_weakened_state_gates (__main__.DeliveryUserExperienceTests) ... ok
+test_rejects_scope_changes_or_local_only_product_acceptance (__main__.DeliveryUserExperienceTests) ... ok
+test_rejects_unfounded_green_historical_red_or_protocol_changes (__main__.DeliveryUserExperienceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.045s
+
+OK
+exitCode: 0

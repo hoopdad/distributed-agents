@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "authority": "docs/requirements/delivery-mission.md",
+  "architecture": "docs/requirements/delivery-architecture.json",
+  "design": "docs/requirements/delivery-user-experience.md",
+  "observedSource": "5757a3ab791cc00ddc3b6493db12e40e7fbbf336",
+  "scope": "terminal-direction-only-not-deployed-acceptance",
+  "principles": [
+    {"name": "Evidence before confidence", "requirements": ["D1", "D7"], "direction": "Distinguish observed records, accepted advisory design and deployed product acceptance; never promote SDK completion or offline tests to green."},
+    {"name": "Show the revision, not agent busyness", "requirements": ["D2", "D3", "D4"], "direction": "Order requirements, first design, actual findings, changed candidate and exact revised review; surface genuine gated decisions without inventing model approvals."},
+    {"name": "Continuity without identity leakage", "requirements": ["D5", "D6"], "direction": "Use aliases in the human transcript; exact private bindings and hashes belong in the authorized evidence report. Aliases alone never prove continuity or access."},
+    {"name": "Safety is visible", "requirements": ["D2", "D6"], "direction": "Unknown effects stay held. Retrieve a known response without resend; never offer reset, new-parent replacement or a retry as recovery of uncertain work."},
+    {"name": "Current state, localized next action", "requirements": ["D1", "D7"], "direction": "Report seven components using fresh observations; unexecuted checks are amber. Name the unmet criterion and next owner without importing historical blockers."}
+  ],
+  "toolsets": [
+    {"name": "Existing Python terminal", "source": "demo/terminal.py", "purpose": "Keep --native --view human opt-in stderr projection and unchanged stdout records; no new GUI or service."},
+    {"name": "Existing event and artifact contracts", "source": "demo/artifacts.py", "purpose": "Use exact requirements/candidate revisions and real review findings; generated content remains data, not executable instructions."},
+    {"name": "Existing acceptance evidence", "source": "live_acceptance.py", "purpose": "Join source-bound private observations; a plausible transcript or supplied JSON is not live provenance."},
+    {"name": "Standard-library UX contract tests", "source": "tests/test_delivery_user_experience.py", "purpose": "Validate scope, coverage, references, state/action gates and negative mutations without cloud calls or extra dependencies."}
+  ],
+  "presentation": {
+    "framework": "existing-terminal-progressive-disclosure",
+    "stdout": "unchanged-machine-records",
+    "human": "opt-in-stderr",
+    "theme": "inherit-terminal-no-forced-colors",
+    "rag": {
+      "green": "fresh-component-end-to-end-pass-exact-candidate-intended-environment",
+      "amber": "partial-not-executed-not-verified-or-stale",
+      "red": "current-evidenced-failure-or-blocking-criterion"
+    },
+    "reportColumns": ["Component", "RAG", "Evidence (revision/run/environment + freshness)", "Remaining work/next action"],
+    "reportComponents": ["deployment", "coordinator-routing", "architect", "reviewer", "blob-shared-context", "session-continuity-recovery-isolation", "terminal-demo"],
+    "generatedContent": "prefixed-control-neutralized-width-wrapped-data",
+    "privacy": "aliases-in-human-view-exact-refs-in-authorized-private-evidence",
+    "releaseClaim": "none-without-fresh-D1-D7",
+    "screens": [
+      {"id": "terminal-turn", "requirements": ["D2", "D3", "D4", "D7"], "regions": ["Parent hosted/framework aliases", "Turn and requirements revision", "Ordered actual architect/reviewer delegations and pinned version/response aliases", "Current design, exact review, findings and coordinator outcome", "Explicit continuity/recovery/isolation and release-verification limitations"]},
+      {"id": "terminal-exception", "requirements": ["D2", "D6", "D7"], "regions": ["Observed error or held status without speculative cause", "Pending/known-response state and no-resend boundary", "Exact unmet criterion and supported next action; preserve private state"]},
+      {"id": "component-report", "requirements": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"], "regions": ["Exact source revision and observed runtime/run outcome", "Intended environment and actually observed three deployed versions, otherwise NOT VERIFIED", "Seven canonical component rows with evidence freshness and next action", "Accepted work versus unresolved criteria; no release claim from advisory approval"]}
+    ]
+  },
+  "flows": [
+    {
+      "id": "design-review-revision",
+      "persona": "Terminal demonstrator",
+      "trigger": "Submit a fresh synthetic private-ingress design request under genuine dedicated lab authentication.",
+      "steps": ["submit-and-bind", "gate-and-choose", "design-and-publish", "review-and-revise", "accept-and-return"],
+      "requirements": ["D2", "D3", "D4", "D5", "D6", "D7"],
+      "direction": "Show ordered real calls and current revision. The authorized report exposes exact accepted artifact and decision refs; first findings and the changed candidate must be inspectable, not fabricated to fit a storyboard.",
+      "return": "ACCEPTED_ADVISORY only for current exact approved design; otherwise show actual input/hold/failure and its next action."
+    },
+    {
+      "id": "followup-and-recovery",
+      "persona": "Terminal demonstrator",
+      "trigger": "Add an asynchronous queue to a completed same-parent request, or retrieve its persisted known pending response.",
+      "steps": ["append-and-invalidate", "reconcile-without-resend", "stop-resume-and-prove"],
+      "requirements": ["D2", "D3", "D4", "D5", "D6", "D7"],
+      "direction": "Keep private ingress and prior requirements, show new requirements/candidate/review revisions and stable alias observations without claiming exact continuity. Recovery is retrieval, not another delegation. Supported hosted-session stop/resume is acceptance-only, not a terminal reset button.",
+      "return": "Current advisory result after follow-up; recovery/stop-resume/isolation remain NOT VERIFIED until independent source-bound checks pass."
+    },
+    {
+      "id": "independent-parent-isolation",
+      "persona": "Terminal demonstrator",
+      "trigger": "Submit a distinct synthetic request as a genuinely independent second parent.",
+      "steps": ["bind-separate-parent", "verify-no-cross-parent-context"],
+      "requirements": ["D2", "D3", "D4", "D5", "D6"],
+      "direction": "Use a distinct private state file and display separate aliases. Do not copy the first parent's context, children or artifact refs into the second request. Source-bound evidence must prove isolation; different aliases alone are insufficient.",
+      "return": "Separate authorized advisory output and explicit isolation verification status; never claim per-role storage RBAC isolation."
+    },
+    {
+      "id": "exact-candidate-delivery",
+      "persona": "Delivery operator",
+      "trigger": "Receive the committed skeleton or application candidate for existing-environment DevOps then E2E verification.",
+      "steps": ["select-and-check", "deploy-under-lock", "verify-before-release"],
+      "requirements": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
+      "direction": "Identify candidate, actual azd outcome, observed three versions and separate deployed probes; show canonical component RAG. Never present uploaded code, a healthy host or local schema success as a released product.",
+      "return": "Exact candidate deployed evidence or localized unmet criteria; no dependent release on offline work."
+    }
+  ],
+  "states": [
+    {"id": "ready", "requirements": ["D7"], "display": "Synthetic request ready; no remote outcome observed.", "action": "submit", "gate": "authenticated-new-or-completed-nonheld-parent"},
+    {"id": "streaming", "requirements": ["D2", "D7"], "display": "Observed machine stream; no accepted human summary before a complete validated result and persisted finalization.", "action": "observe", "gate": "pending-no-additional-send"},
+    {"id": "accepted-advisory", "requirements": ["D4", "D7"], "display": "Current approved design and review, not release acceptance.", "action": "followup", "gate": "completed-nonheld-current-parent"},
+    {"id": "request-input", "requirements": ["D2", "D7"], "display": "REQUEST_INPUT with actual decision reason as data; only a real missing user fact calls for input.", "action": "clarify", "gate": "completed-nonheld-current-parent"},
+    {"id": "routing-hold", "requirements": ["D2"], "display": "ROUTING_HOLD: semantic choice not accepted; inspect current routing evidence, not an automatic user-approval request.", "action": "inspect", "gate": "preserve-state-no-automatic-retry"},
+    {"id": "limit-reached", "requirements": ["D2", "D7"], "display": "LIMIT_REACHED: no accepted design/release; preserve configured limits and accepted partial work.", "action": "inspect", "gate": "preserve-state-no-automatic-retry"},
+    {"id": "known-pending-response", "requirements": ["D6"], "display": "Retrieve the exact saved response; retrieval is not a new invocation.", "action": "retrieve-known", "gate": "persisted-known-response-no-resend"},
+    {"id": "unknown-effect", "requirements": ["D2", "D6"], "display": "HELD: uncertain effect; preserve private state and reconcile using supported evidence. Missing logs/404/process do not prove never sent.", "action": "reconcile", "gate": "hold-no-replay"},
+    {"id": "failed-or-invalid", "requirements": ["D2", "D7"], "display": "BLOCKED: observed code, no accepted summary; name the failed boundary and leave cause unknown unless demonstrated.", "action": "inspect", "gate": "preserve-state-no-automatic-retry"}
+  ],
+  "handoff": {
+    "scope": "design-artifacts-and-local-contract-checks-only",
+    "implementationOwner": "Developer",
+    "planningOwner": "Scrum Master",
+    "verificationOwners": ["DevOps Engineer", "End-to-End Tester"],
+    "candidate": "exact-committed-feature-revision",
+    "deployment": "existing-DevOps-then-E2E-under-environment-lock",
+    "acceptance": "schema-pass-completes-UX-direction-not-product-acceptance",
+    "exclusions": ["new-web-ui", "new-service", "theme-toggle", "stdout-protocol-change", "auth-weakening", "unknown-effect-replay", "infrastructure-mutation", "new-approval-stage"]
+  }
+}

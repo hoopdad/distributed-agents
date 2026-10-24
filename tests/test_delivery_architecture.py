@@ -50,12 +50,16 @@ def validate_architecture(value):
     """Bounded schema plus mission joins; no claims about deployed behavior."""
     fields(value, (
         "schemaVersion", "authority", "design", "observedSource", "principles", "toolsets",
-        "solutionModel", "contracts", "deliveryHandoff", "verification",
+        "solutionModel", "contracts", "deliveryHandoff", "verification", "sprintRefinement",
     ))
     require(type(value["schemaVersion"]) is int and value["schemaVersion"] == 1, "schema version")
     require(value["authority"] == "docs/requirements/delivery-mission.md", "mission authority")
     public_file(value["design"])
     require(re.fullmatch(r"[a-f0-9]{40}", value["observedSource"]) is not None, "source revision")
+    fields(value["sprintRefinement"], ("sprint", "design", "contract"))
+    require(value["sprintRefinement"]["sprint"] == "three-role-delivery", "sprint reference")
+    for key in ("design", "contract"):
+        public_file(value["sprintRefinement"][key])
     strings(value["principles"])
     require(isinstance(value["toolsets"], list) and value["toolsets"], "toolsets")
     for tool in value["toolsets"]:

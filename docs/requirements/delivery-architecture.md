@@ -7,9 +7,12 @@ This design implements D1–D7 and F1–F4 in
 permission or release ceremony. The machine-readable Architecture artifact is
 [delivery-architecture.json](delivery-architecture.json), including the stable
 `solutionModel`, source/test mappings, state-plane contracts and delivery handoff.
-The source inspected was `ee88507b2723851f3a99cb97161356bca8e68569` on
+The latest sprint source inspection was `87ad50c0405ceb5384eb71da1cc153123b16f69b` on
 `feature/azd-demo-delivery`, with a clean initial worktree. This is an
 architecture/schema handoff, not deployed application acceptance.
+The [sprint refinement](delivery-sprint-architecture.md) joins this unchanged
+solution model to the approved six-task sprint, tier-specific designs and
+exact-candidate verification handoffs. There are no completed prior sprints.
 
 ## End-to-end technical design
 
@@ -95,7 +98,8 @@ The exact supported packaging behavior must be tested, not guessed from YAML.
 
 Construction supplies local checks and an exact committed candidate, without
 deploying. DevOps deploys that exact candidate and E2E probes it while holding
-`existing-nonproduction-project-deployment-and-verification`; then original
+`existing-nonproduction-project-deployment-and-verification` and
+`existing-nonproduction-project-deployment-configuration`; then original
 reviewers assess acceptance. The skeleton requires both actual azd command
 evidence and a separate successful deployed probe. Later candidate acceptance
 requires the applicable fresh deployed criteria, not offline test results.
@@ -129,7 +133,7 @@ retain only sanitized commands/outcomes and repository-relative evidence refs.
 
 | Component | RAG | Evidence/freshness | Remaining work/next action |
 |---|---|---|---|
-| deployment | 🔴 | Current source `ee88507`: three legacy predeploy hooks and required approval environment | DevOps replace/test normal-azd path, then actual skeleton/candidate deployment and probes |
+| deployment | 🔴 | Source inspected at `87ad50c`: three legacy predeploy hooks and required approval environment | DevOps replace/test normal-azd path, then actual skeleton/candidate deployment and probes |
 | coordinator-routing | 🟠 | Current graph/routing source inspected; no fresh live result | Verify genuine gated Decision-1 and exact finish/provenance |
 | architect | 🟠 | Current remote assignment lifecycle inspected; no fresh live result | Real first design and findings-driven revision |
 | reviewer | 🟠 | Current remote assignment lifecycle inspected; no fresh live result | Actual first findings and exact revised-candidate approval |

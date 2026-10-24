@@ -1,0 +1,12 @@
+Repository validation only; no cloud operations.
+UTC: 2026-10-24T23:33:19.291760+00:00
+Command: pwsh -NoProfile -File scripts/Test-Repository.ps1 -Python C:\Users\mike\AppData\Local\Programs\Python\Python310\python.exe
+Repository indexes are current.
+{"public_files_checked": 224}
+Public boundary, index, JSON, PowerShell, context frontmatter and whitespace checks passed.
+warning: in the working copy of 'docs/requirements/delivery-architecture.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'docs/requirements/delivery-architecture.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'tests/test_delivery_architecture.py', CRLF will be replaced by LF the next time Git touches it
+
+Elapsed: 1.000 s
+exitCode: 0

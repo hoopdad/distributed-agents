@@ -2,7 +2,12 @@
   "schemaVersion": 1,
   "authority": "docs/requirements/delivery-mission.md",
   "design": "docs/requirements/delivery-architecture.md",
-  "observedSource": "ee88507b2723851f3a99cb97161356bca8e68569",
+  "observedSource": "87ad50c0405ceb5384eb71da1cc153123b16f69b",
+  "sprintRefinement": {
+    "sprint": "three-role-delivery",
+    "design": "docs/requirements/delivery-sprint-architecture.md",
+    "contract": "docs/requirements/delivery-sprint-architecture.json"
+  },
   "principles": [
     "Exactly three existing hosted roles; remote specialists, never production local fallbacks.",
     "Deterministic authorization, prerequisite and finish gates precede semantic Microsoft-Decision-1 choices.",
@@ -144,7 +149,7 @@
     "planningOwner": "Scrum Master",
     "firstSprint": {"walkingSkeleton": true, "kind": "devops", "owner": "DevOps Engineer", "dependsOn": [], "otherTasksTransitivelyDependOnSkeleton": true},
     "deploymentCommand": "azd deploy",
-    "exclusiveResources": ["existing-nonproduction-project-deployment-and-verification"],
+    "exclusiveResources": ["existing-nonproduction-project-deployment-and-verification", "existing-nonproduction-project-deployment-configuration"],
     "candidate": "Exact committed feature/azd-demo-delivery revision or immutable artifact, not a mutable checkout.",
     "acceptance": "Every assignment requires passing deployed verification: DevOps then E2E under one lock before original reviewers/acceptance/dependent release. Construction emits local checks and exact revision, never mutates the shared environment.",
     "continuation": "Localize failed criteria; continue independent approved work without releasing failed prerequisites. Replan material dependency/contract/scope changes only through existing roles. No new audit or disposition stage.",

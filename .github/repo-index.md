@@ -47,6 +47,7 @@ History may explain a finding but never creates a current blocker by itself.
 | Terminal UX | `docs\requirements\delivery-user-experience.md`, `docs\requirements\delivery-user-experience.json`, `tests\test_delivery_user_experience.py` | Mission-traceable terminal principles, all architecture journeys, screen/state direction and executable UX contracts; design/schema completion is not deployed acceptance |
 | Release planning | `docs\requirements\delivery-release-plan.md`, `docs\requirements\delivery-release-plan.json`, `tests\test_delivery_release_plan.py` | D1-D7 sprint goals, deployed-first skeleton, dependency/resource contracts and exact-candidate DevOps/E2E handoffs; planning validation is not live acceptance |
 | Sprint terminal design | `docs\requirements\delivery-sprint-design.md`, `docs\requirements\delivery-sprint-design.json`, `tests\test_delivery_sprint_design.py` | Current sprint task-to-screen joins, terminal wireframes, private revision trail and inherited safe actions; contract checks do not establish deployed acceptance |
+| Sprint architecture | `docs\requirements\delivery-sprint-architecture.md`, `docs\requirements\delivery-sprint-architecture.json`, `tests\test_delivery_sprint_architecture.py` | Holistic solution-model reuse, four tier designs, six approved task/source/test/flow joins and unchanged exact-candidate verification handoffs; no runtime or deployed acceptance |
 | Local configuration/checks | `scripts\Use-Settings.ps1`, `scripts\Test-Repository.ps1`, `scripts\repo_index.py` | Allowlisted private configuration, public boundary checks and current/history search partition |
 | CLI delivery workflow | `gh-dynamic-workflows`, `.github\extensions\autonomous-delivery\extension.mjs` | Registered lab-delivery runtime, distinct from the application's MAF graph |
 
@@ -108,6 +109,9 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `docs\requirements\checks\delivery-architecture.txt`
 - `docs\requirements\checks\delivery-release-plan-regressions.txt`
 - `docs\requirements\checks\delivery-release-plan.txt`
+- `docs\requirements\checks\delivery-sprint-architecture-initial.txt`
+- `docs\requirements\checks\delivery-sprint-architecture-repository.txt`
+- `docs\requirements\checks\delivery-sprint-architecture.txt`
 - `docs\requirements\checks\delivery-sprint-design-environment.txt`
 - `docs\requirements\checks\delivery-sprint-design-regressions.txt`
 - `docs\requirements\checks\delivery-sprint-design-repository.txt`
@@ -115,15 +119,21 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `docs\requirements\checks\delivery-sprint-design.txt`
 - `docs\requirements\checks\delivery-user-experience-regressions.txt`
 - `docs\requirements\checks\delivery-user-experience.txt`
+- `docs\requirements\client-release\delivery-sprint-architecture.md`
+- `docs\requirements\coordinator\delivery-sprint-architecture.md`
 - `docs\requirements\delivery-architecture.json`
 - `docs\requirements\delivery-architecture.md`
 - `docs\requirements\delivery-mission.md`
 - `docs\requirements\delivery-release-plan.json`
 - `docs\requirements\delivery-release-plan.md`
+- `docs\requirements\delivery-sprint-architecture.json`
+- `docs\requirements\delivery-sprint-architecture.md`
 - `docs\requirements\delivery-sprint-design.json`
 - `docs\requirements\delivery-sprint-design.md`
 - `docs\requirements\delivery-user-experience.json`
 - `docs\requirements\delivery-user-experience.md`
+- `docs\requirements\shared-artifacts\delivery-sprint-architecture.md`
+- `docs\requirements\specialists\delivery-sprint-architecture.md`
 - `gh-dynamic-workflows\.gitignore`
 - `gh-dynamic-workflows\DELIVERY-PRINCIPLES.md`
 - `gh-dynamic-workflows\LAB-CONTRACT.md`
@@ -179,6 +189,7 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `tests\test_delivery_architecture.py`
 - `tests\test_delivery_input.py`
 - `tests\test_delivery_release_plan.py`
+- `tests\test_delivery_sprint_architecture.py`
 - `tests\test_delivery_sprint_design.py`
 - `tests\test_delivery_user_experience.py`
 - `tests\test_demo.py`

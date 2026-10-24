@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "authority": "docs/requirements/delivery-mission.md",
+  "architecture": "docs/requirements/delivery-architecture.json",
+  "solutionModelRef": "docs/requirements/delivery-architecture.json#/solutionModel",
+  "design": "docs/requirements/delivery-sprint-architecture.md",
+  "releasePlan": "docs/requirements/delivery-release-plan.json",
+  "sprintDesign": "docs/requirements/delivery-sprint-design.json",
+  "observedSource": "87ad50c0405ceb5384eb71da1cc153123b16f69b",
+  "sprint": "three-role-delivery",
+  "priorSprints": [],
+  "scope": "sprint-architecture-only-no-runtime-or-transport-change",
+  "tiers": [
+    {
+      "id": "client-release",
+      "design": "docs/requirements/client-release/delivery-sprint-architecture.md",
+      "components": ["deployment", "terminal-demo"],
+      "requirements": ["D1", "D7"]
+    },
+    {
+      "id": "coordinator",
+      "design": "docs/requirements/coordinator/delivery-sprint-architecture.md",
+      "components": ["coordinator-routing", "session-continuity-recovery-isolation"],
+      "requirements": ["D2", "D6"]
+    },
+    {
+      "id": "specialists",
+      "design": "docs/requirements/specialists/delivery-sprint-architecture.md",
+      "components": ["architect", "reviewer"],
+      "requirements": ["D3", "D4"]
+    },
+    {
+      "id": "shared-artifacts",
+      "design": "docs/requirements/shared-artifacts/delivery-sprint-architecture.md",
+      "components": ["blob-shared-context"],
+      "requirements": ["D5"]
+    }
+  ],
+  "taskBindings": [
+    {
+      "task": "azd-walking-skeleton",
+      "requirements": ["D1"],
+      "components": ["deployment"],
+      "flows": ["exact-candidate-delivery"],
+      "flowSteps": ["select-and-check", "deploy-under-lock", "verify-before-release"],
+      "source": ["azure.yaml", "package_guard.py", ".dockerignore", ".agentignore", "requirements.txt", "requirements.lock.txt"],
+      "localTests": ["tests/test_demo.py"],
+      "construction": "Replace incompatible predeploy hooks using supported normal-azd exclusions/dependency/build checks; preserve unused legacy package_guard tooling. Do not select an unverified extension packaging API.",
+      "handoff": "Actual azd deploy exit plus separate deployed probe for all three bindings, exact candidate, observed versions and outcome; both shared resources held through E2E."
+    },
+    {
+      "task": "coordinator-blob-contract",
+      "requirements": ["D2", "D5"],
+      "components": ["coordinator-routing", "blob-shared-context"],
+      "flows": ["design-review-revision"],
+      "flowSteps": ["submit-and-bind", "gate-and-choose", "design-and-publish", "review-and-revise", "accept-and-return"],
+      "source": ["demo/host.py", "demo/workflow.py", "demo/routing.py", "demo/artifact_store.py", "demo/artifacts.py", "demo/config.py"],
+      "localTests": ["tests/test_workflow.py", "tests/test_routing.py", "tests/test_artifacts.py", "tests/test_config.py"],
+      "construction": "Verify existing gate, admission, provenance and fenced publication paths; remediate only a demonstrated current D2/D5 failure. Genuine user propagation remains mandatory.",
+      "handoff": "Exact committed candidate plus local checks; DevOps/E2E collect real Decision-1 and private MI Blob evidence before original review or dependency release."
+    },
+    {
+      "task": "remote-specialist-revision",
+      "requirements": ["D3", "D4"],
+      "components": ["architect", "reviewer"],
+      "flows": ["design-review-revision"],
+      "flowSteps": ["design-and-publish", "review-and-revise", "accept-and-return"],
+      "source": ["demo/architect_agent.py", "demo/reviewer_agent.py", "demo/specialist.py", "demo/foundry.py", "demo/artifacts.py"],
+      "localTests": ["tests/test_specialist_continuity.py", "tests/test_workflow.py", "tests/test_artifacts.py"],
+      "construction": "Verify exact assignment readers, independent remote histories and immutable output producers; actual initial findings must drive a changed design and exact revised-candidate review.",
+      "handoff": "Exact committed candidate, synthetic requirements and local checks; DevOps/E2E verify actual remote response/input/output joins without manufactured findings or approvals."
+    },
+    {
+      "task": "terminal-evidence-surface",
+      "requirements": ["D7"],
+      "components": ["terminal-demo"],
+      "flows": ["design-review-revision", "followup-and-recovery"],
+      "flowSteps": ["submit-and-bind", "accept-and-return", "append-and-invalidate"],
+      "source": ["demo/terminal.py", "native_proxy.py", "live_acceptance.py"],
+      "localTests": ["tests/test_demo.py", "tests/test_scenario_evidence.py"],
+      "construction": "Inherit accepted sprint terminal screens/state actions; preserve machine stdout, opt-in stderr, data-safe rendering and no acceptance before persisted finalization.",
+      "handoff": "Exact committed candidate and parser/rendering checks; DevOps/E2E exercise actual deployed terminal records and truthful seven-component reporting."
+    },
+    {
+      "task": "continuity-recovery-isolation",
+      "requirements": ["D6"],
+      "components": ["session-continuity-recovery-isolation"],
+      "flows": ["followup-and-recovery", "independent-parent-isolation"],
+      "flowSteps": ["append-and-invalidate", "reconcile-without-resend", "stop-resume-and-prove", "bind-separate-parent", "verify-no-cross-parent-context"],
+      "source": ["demo/workflow.py", "demo/foundry.py", "demo/terminal.py", "live_acceptance.py"],
+      "localTests": ["tests/test_specialist_continuity.py", "tests/test_scenario_evidence.py", "tests/test_isolated_client.py"],
+      "construction": "Preserve independent pinned parent/child histories, compatible native checkpoints and write-ahead effects; unknown effects remain held. Stop/resume is hosted-session compute only.",
+      "handoff": "Exact committed candidate and local checks; DevOps/E2E capture initial/followup/restart/isolated plus stopped_session and independent create/send observations. Missing captures never authorize resend."
+    },
+    {
+      "task": "integrated-terminal-acceptance",
+      "requirements": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
+      "components": ["deployment", "coordinator-routing", "architect", "reviewer", "blob-shared-context", "session-continuity-recovery-isolation", "terminal-demo"],
+      "flows": ["exact-candidate-delivery", "design-review-revision", "followup-and-recovery", "independent-parent-isolation"],
+      "flowSteps": ["select-and-check", "deploy-under-lock", "verify-before-release", "submit-and-bind", "gate-and-choose", "design-and-publish", "review-and-revise", "accept-and-return", "append-and-invalidate", "reconcile-without-resend", "stop-resume-and-prove", "bind-separate-parent", "verify-no-cross-parent-context"],
+      "source": ["azure.yaml", "demo/workflow.py", "demo/artifact_store.py", "demo/architect_agent.py", "demo/reviewer_agent.py", "demo/terminal.py", "live_acceptance.py"],
+      "localTests": ["tests/test_demo.py", "tests/test_workflow.py", "tests/test_routing.py", "tests/test_artifacts.py", "tests/test_scenario_evidence.py", "tests/test_specialist_continuity.py", "tests/test_isolated_client.py"],
+      "construction": "Integrate the approved task candidates without adding services, changing trust/transport contracts or waiving any D1-D7 criterion.",
+      "handoff": "DevOps deploys the exact integrated candidate; E2E verifies the same versions under both shared resources, then original reviewers and existing review/retro/closeout reconcile acceptance and Git."
+    }
+  ],
+  "evidenceState": {
+    "implementation": "source-present-except-D1-predeploy-contract-change-required",
+    "localVerification": "architecture-contract-checks-only-runtime-tests-mapped-not-executed",
+    "deployment": "not-executed",
+    "independentLiveVerification": "not-executed",
+    "acceptedAssignments": [],
+    "currentBlocker": {
+      "requirement": "D1/F1",
+      "component": "deployment",
+      "flow": "exact-candidate-delivery",
+      "step": "select-and-check",
+      "evidence": ["azure.yaml", "package_guard.py"],
+      "failure": "All three predeploy hooks require approved ZIP/hash/private receipt rather than ordinary source/package checks.",
+      "remedyOwner": "DevOps Engineer",
+      "unblock": "Replace/test normal-azd hooks; pass actual azd deploy and a separate exact-candidate deployed probe."
+    }
+  },
+  "blockedArchitectureDecisions": [],
+  "handoff": {
+    "planningOwner": "Scrum Master",
+    "verificationLoops": ["DevOpsWorkLoop", "EndToEndTestLoop"],
+    "exclusiveResources": ["existing-nonproduction-project-deployment-and-verification", "existing-nonproduction-project-deployment-configuration"],
+    "candidate": "exact-committed-revision-or-immutable-artifact",
+    "construction": "local-checks-no-shared-environment-mutation",
+    "dependencyRelease": "only-after-deployed-pass-and-original-assignment-review",
+    "unknownEffects": "preserve-holds-no-replay",
+    "replan": "material-contract-dependency-or-scope-change-through-existing-roles"
+  }
+}

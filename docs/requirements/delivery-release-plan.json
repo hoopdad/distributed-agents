@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "authority": "docs/requirements/delivery-mission.md",
+  "architecture": "docs/requirements/delivery-architecture.json",
+  "userExperience": "docs/requirements/delivery-user-experience.json",
+  "design": "docs/requirements/delivery-release-plan.md",
+  "observedSource": "830fd60e1578682e154052e0280ea1d1664d8db3",
+  "featureBranch": "feature/azd-demo-delivery",
+  "scope": "release-planning-not-deployed-acceptance",
+  "environment": "existing-validated-nonproduction-dev-lab-project",
+  "planningOwner": "Scrum Master",
+  "exclusiveResources": [
+    "existing-nonproduction-project-deployment-and-verification",
+    "existing-nonproduction-project-deployment-configuration"
+  ],
+  "deliveryContract": {
+    "candidate": "exact-committed-revision-or-immutable-artifact",
+    "construction": "local-checks-no-shared-environment-mutation",
+    "verification": ["DevOpsWorkLoop", "EndToEndTestLoop"],
+    "lock": "held-across-exact-candidate-deployment-and-E2E",
+    "dependencyRelease": "only-after-deployed-pass-and-original-assignment-review",
+    "evidence": ["actual-command", "actual-exitCode", "nonempty-repository-relative-result", "candidate", "run", "observed-environment-and-versions"],
+    "blockers": "current-evidenced-criterion-only-continue-independent-approved-work",
+    "unknownEffects": "preserve-holds-no-replay",
+    "replan": "material-contract-dependency-or-scope-change-through-existing-roles",
+    "gitReconciliationOwner": "Scrum Master",
+    "gitReconciliation": "SprintReview-SprintRetro-ReleaseCloseout-feature-commit-or-retained-named-branch-with-commit-and-abandonment-reason-in-feature-commit"
+  },
+  "exclusions": [
+    "azd-up-or-provision-without-separate-exact-authority",
+    "infrastructure-RBAC-network-DNS-quota-VM-power",
+    "secret-retrieval-VPN-private-lab-edits-production-profiles",
+    "fourth-role-hidden-local-specialists-principal-substitution",
+    "authorization-weakening-unknown-effect-replay-held-state-clearing",
+    "SDK-journal-or-database-edits",
+    "Git-push-provider-submission",
+    "new-approval-stages-disposition-ledgers-invented-limits"
+  ],
+  "sprints": [
+    {
+      "id": "three-role-delivery",
+      "title": "Deploy early, then prove the remote revision and continuity journeys",
+      "goal": "Deliver D1-D7 on the existing three roles through normal azd with fresh exact-candidate evidence.",
+      "dependsOn": [],
+      "requirements": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
+      "flows": ["exact-candidate-delivery", "design-review-revision", "followup-and-recovery", "independent-parent-isolation"],
+      "acceptanceCriteria": [
+        {"requirement": "D1", "criterion": "An early committed skeleton and final integrated candidate each pass normal azd deploy plus separate fresh deployed probes tying actual versions and outcomes to the exact candidate."},
+        {"requirement": "D2", "criterion": "Deployed MAF gates reject unauthorized/stale prerequisites and preserve write-ahead effects; genuine Decision-1 semantic choices are validated and recorded after deterministic gates."},
+        {"requirement": "D3", "criterion": "The remote architect reads exact assigned requirements and actual findings, writes an immutable first design and a genuinely changed revision."},
+        {"requirement": "D4", "criterion": "The remote reviewer reads exact requirements/design refs, emits actual initial findings and reviews the exact changed candidate; current approval without blockers gates acceptance."},
+        {"requirement": "D5", "criterion": "Private-path managed-identity Blob operations exchange exact requirements/design/review/decision/child refs with immutable producer provenance and coordinator-only ETag/fenced manifest publication."},
+        {"requirement": "D6", "criterion": "Fresh same-parent follow-up invalidates stale refs and retains child bindings; known-response/checkpoint recovery avoids duplicate effects; supported hosted-session stop/resume retains state; another parent cannot acquire the first context/artifacts."},
+        {"requirement": "D7", "criterion": "A fresh synthetic terminal design-review-revision and same-parent follow-up expose genuine accepted artifacts/decisions with truthful seven-component RAG and unchanged machine output."}
+      ],
+      "tasks": [
+        {
+          "id": "azd-walking-skeleton",
+          "title": "Replace incompatible hooks and deploy the existing three-role skeleton",
+          "kind": "devops",
+          "owner": "DevOps Engineer",
+          "walkingSkeleton": true,
+          "dependsOn": [],
+          "requirements": ["D1"],
+          "components": ["deployment"],
+          "flows": ["exact-candidate-delivery"],
+          "exclusiveResources": ["existing-nonproduction-project-deployment-and-verification", "existing-nonproduction-project-deployment-configuration"],
+          "doneWhen": "Affected packaging/descriptor regressions pass; ordinary source exclusions, dependency and supported build checks replace the normal-azd approval ZIP/hash/receipt contract without changing unused lab safeguards. The committed skeleton passes in the deployed environment through actual azd deploy and separate deployed probes confirming all three existing role bindings, observed versions, candidate identity and operation outcome.",
+          "exclusions": ["No azd up/provision or infrastructure mutation.", "No bypass of package exclusions, dependency checks or authorization.", "No modification of unused legacy lab release tooling."],
+          "handoff": "Emit exact committed revision/artifact, actual azd deploy command/exit evidence and a separate successful deployed-probe check. DevOpsWorkLoop then EndToEndTestLoop hold the shared environment/configuration resources across deployment and verification before original review or dependent release."
+        },
+        {
+          "id": "coordinator-blob-contract",
+          "title": "Verify and remediate gated routing and exact shared-artifact publication",
+          "kind": "developer",
+          "owner": "Developer",
+          "walkingSkeleton": false,
+          "dependsOn": ["azd-walking-skeleton"],
+          "requirements": ["D2", "D5"],
+          "components": ["coordinator-routing", "blob-shared-context"],
+          "flows": ["design-review-revision"],
+          "exclusiveResources": [],
+          "doneWhen": "Affected local gate/provenance tests pass and the exact committed candidate passes in the deployed environment: trusted identity/prerequisites/finish and write-ahead gates precede genuine validated Decision-1 semantic choices; private MI Blob exchange and coordinator ETag publication preserve hashes, immutable outputs, producer bindings and explicit holds.",
+          "exclusions": ["No assumed historical identity remedy, principal substitution or guard disablement.", "No RBAC/network changes or claim of storage-enforced per-role isolation."],
+          "handoff": "Construction emits local checks and exact committed candidate only; DevOpsWorkLoop then EndToEndTestLoop deploy/probe that candidate under the environment lock before original review and dependent release."
+        },
+        {
+          "id": "remote-specialist-revision",
+          "title": "Verify and remediate real remote design, findings and changed-candidate review",
+          "kind": "developer",
+          "owner": "Developer",
+          "walkingSkeleton": false,
+          "dependsOn": ["azd-walking-skeleton"],
+          "requirements": ["D3", "D4"],
+          "components": ["architect", "reviewer"],
+          "flows": ["design-review-revision"],
+          "exclusiveResources": [],
+          "doneWhen": "Affected local specialist regressions pass and the exact committed candidate passes in the deployed environment: independent remote architect/reviewer conversations consume exact assigned refs, actual first findings cause a changed immutable design, and review of that exact revision gates final advisory acceptance.",
+          "exclusions": ["No manufactured findings/approvals, no-op revision or local production specialists.", "No weakening assignment principal or producer/version checks."],
+          "handoff": "Emit local checks plus exact committed candidate and synthetic requirements; existing DevOpsWorkLoop then EndToEndTestLoop verify actual remote artifact/response bindings under the environment lock before original review and dependent release."
+        },
+        {
+          "id": "terminal-evidence-surface",
+          "title": "Verify and remediate the terminal evidence and safe next-action surface",
+          "kind": "developer",
+          "owner": "Developer",
+          "walkingSkeleton": false,
+          "dependsOn": ["azd-walking-skeleton"],
+          "requirements": ["D7"],
+          "components": ["terminal-demo"],
+          "flows": ["design-review-revision", "followup-and-recovery"],
+          "exclusiveResources": [],
+          "doneWhen": "Affected parser/human-view regressions pass and the exact committed candidate passes in the deployed environment: actual completed remote records expose accepted artifacts/decisions, preserve machine stdout, safe data rendering and held/pending no-resend behavior, and report all seven components with evidence-based RAG rather than a release claim.",
+          "exclusions": ["No web UI, fourth service, new stdout protocol or fabricated phase dashboard.", "No disclosure of private refs/identities in default public summaries."],
+          "handoff": "Use accepted UX direction; emit actual local checks and exact committed candidate. DevOpsWorkLoop then EndToEndTestLoop exercise the real terminal surface under the environment lock before original review and dependent release."
+        },
+        {
+          "id": "continuity-recovery-isolation",
+          "title": "Prove retained parent context, supported recovery and independent-parent isolation",
+          "kind": "developer",
+          "owner": "Developer",
+          "walkingSkeleton": false,
+          "dependsOn": ["coordinator-blob-contract", "remote-specialist-revision"],
+          "requirements": ["D6"],
+          "components": ["session-continuity-recovery-isolation"],
+          "flows": ["followup-and-recovery", "independent-parent-isolation"],
+          "exclusiveResources": [],
+          "doneWhen": "Affected local continuity/recovery/isolation tests pass and the exact candidate passes in the deployed environment: same-parent follow-up retains independent child bindings/history and invalidates stale refs; known response/checkpoint recovery has no duplicate effects; supported hosted-session compute stop/resume retains compatible state; a second synthetic parent cannot acquire the first parent's context/artifacts; uncertain effects stay held.",
+          "exclusions": ["No VM power or hard-crash proof claim.", "No old-session forced migration, journal/database edits, uncertain replay or held-parent replacement."],
+          "handoff": "Emit local checks plus exact committed candidate and source-bound capture needs. DevOpsWorkLoop then EndToEndTestLoop alone perform scoped deployed stop/resume and scenario probes under the environment lock, preserving private raw evidence and holds before original review/dependent release."
+        },
+        {
+          "id": "integrated-terminal-acceptance",
+          "title": "Deploy and demonstrate the integrated three-role release candidate",
+          "kind": "devops",
+          "owner": "DevOps Engineer",
+          "walkingSkeleton": false,
+          "dependsOn": ["coordinator-blob-contract", "remote-specialist-revision", "terminal-evidence-surface", "continuity-recovery-isolation"],
+          "requirements": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"],
+          "components": ["deployment", "coordinator-routing", "architect", "reviewer", "blob-shared-context", "session-continuity-recovery-isolation", "terminal-demo"],
+          "flows": ["exact-candidate-delivery", "design-review-revision", "followup-and-recovery", "independent-parent-isolation"],
+          "exclusiveResources": ["existing-nonproduction-project-deployment-and-verification", "existing-nonproduction-project-deployment-configuration"],
+          "doneWhen": "The final integrated committed candidate passes in the deployed environment through normal azd deploy and fresh synthetic design-review-revision, same-parent follow-up, supported recovery/stop-resume and independent-parent isolation checks. Exact revisions/versions, MI/private-path provenance, genuine Decision-1 and remote artifacts support D1-D7; no required criterion is inferred from offline tests, healthy hosts or SDK completion.",
+          "exclusions": ["No release claim on partial/unverified criteria.", "No unrelated mutable checkout deployment or repeated uncertain effect.", "No new approval or exhaustion stage."],
+          "handoff": "DevOpsWorkLoop then EndToEndTestLoop retain the shared lock across exact-candidate deployment and probes; return actual commands/exits, sanitized inspectable repository-relative evidence, private evidence references, runtime/run outcome, observed environment/versions and all seven RAG rows to original reviewers and existing sprint review/retro/release closeout."
+        }
+      ]
+    }
+  ]
+}

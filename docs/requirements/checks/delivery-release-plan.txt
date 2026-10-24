@@ -1,0 +1,18 @@
+Release planning checks only; no cloud operations or deployed acceptance.
+Command: python tests/test_delivery_release_plan.py --evidence docs/requirements/checks/delivery-release-plan.txt
+UTC: 2026-10-24T23:21:11.113374+00:00
+Artifact normalized UTF-8 (LF) SHA256: 24c129a61ad4ad6912113cad13e887f02d069e2271281cffdd5f09b02a313e84
+test_narrative_contains_scope_milestones_and_truthful_status (__main__.DeliveryReleasePlanTests) ... ok
+test_plan_schema_authority_and_full_coverage (__main__.DeliveryReleasePlanTests) ... ok
+test_rejects_cycles_unknown_dependencies_and_skeleton_bypass (__main__.DeliveryReleasePlanTests) ... ok
+test_rejects_local_acceptance_missing_azd_evidence_or_probe (__main__.DeliveryReleasePlanTests) ... ok
+test_rejects_missing_or_invented_requirement_component_flow (__main__.DeliveryReleasePlanTests) ... ok
+test_rejects_mutable_candidate_lock_bypass_or_sprint_end_only_E2E (__main__.DeliveryReleasePlanTests) ... ok
+test_rejects_scope_and_authority_expansion (__main__.DeliveryReleasePlanTests) ... ok
+test_requires_first_dependency_free_devops_skeleton (__main__.DeliveryReleasePlanTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.036s
+
+OK
+exitCode: 0

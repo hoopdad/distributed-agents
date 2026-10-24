@@ -1,0 +1,75 @@
+Local planning regressions only; no deployment. UTC: 2026-10-24T23:21:39.662176+00:00
+
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python310\python.exe -m unittest discover -s tests -p test_delivery_*.py -v
+test_full_architecture_contract_and_mission_coverage (test_delivery_architecture.DeliveryArchitectureTests) ... ok
+test_narrative_links_model_and_preserves_acceptance_limitations (test_delivery_architecture.DeliveryArchitectureTests) ... ok
+test_rejects_dangling_support_and_flow_references (test_delivery_architecture.DeliveryArchitectureTests) ... ok
+test_rejects_missing_checks_wrong_requirement_bindings_and_invented_live_pass (test_delivery_architecture.DeliveryArchitectureTests) ... ok
+test_rejects_missing_duplicate_or_invented_components (test_delivery_architecture.DeliveryArchitectureTests) ... ok
+test_rejects_missing_sources_and_private_or_traversal_paths (test_delivery_architecture.DeliveryArchitectureTests) ... ok
+test_rejects_provisioning_missing_lock_and_broken_skeleton_handoff (test_delivery_architecture.DeliveryArchitectureTests) ... ok
+test_rejects_unknown_schema_fields (test_delivery_architecture.DeliveryArchitectureTests) ... ok
+test_rejects_waived_identity_ownership_recovery_or_finish_contracts (test_delivery_architecture.DeliveryArchitectureTests) ... ok
+test_acceptance_uses_canonical_solution_components (test_delivery_input.DeliveryInputTests) ... ok
+test_current_state_amendment_replaces_inherited_blockers_not_safety (test_delivery_input.DeliveryInputTests) ... ok
+test_portable_project_and_specification_binding (test_delivery_input.DeliveryInputTests) ... ok
+test_narrative_contains_scope_milestones_and_truthful_status (test_delivery_release_plan.DeliveryReleasePlanTests) ... ok
+test_plan_schema_authority_and_full_coverage (test_delivery_release_plan.DeliveryReleasePlanTests) ... ok
+test_rejects_cycles_unknown_dependencies_and_skeleton_bypass (test_delivery_release_plan.DeliveryReleasePlanTests) ... ok
+test_rejects_local_acceptance_missing_azd_evidence_or_probe (test_delivery_release_plan.DeliveryReleasePlanTests) ... ok
+test_rejects_missing_or_invented_requirement_component_flow (test_delivery_release_plan.DeliveryReleasePlanTests) ... ok
+test_rejects_mutable_candidate_lock_bypass_or_sprint_end_only_E2E (test_delivery_release_plan.DeliveryReleasePlanTests) ... ok
+test_rejects_scope_and_authority_expansion (test_delivery_release_plan.DeliveryReleasePlanTests) ... ok
+test_requires_first_dependency_free_devops_skeleton (test_delivery_release_plan.DeliveryReleasePlanTests) ... ok
+test_full_ux_schema_and_mission_architecture_joins (test_delivery_user_experience.DeliveryUserExperienceTests) ... ok
+test_narrative_covers_flows_states_and_truthful_existing_surface (test_delivery_user_experience.DeliveryUserExperienceTests) ... ok
+test_rejects_missing_flows_wrong_steps_and_requirement_expansion (test_delivery_user_experience.DeliveryUserExperienceTests) ... ok
+test_rejects_missing_invented_or_duplicate_component_rows (test_delivery_user_experience.DeliveryUserExperienceTests) ... ok
+test_rejects_new_screens_private_paths_and_missing_sources (test_delivery_user_experience.DeliveryUserExperienceTests) ... ok
+test_rejects_resend_uncertain_followup_and_weakened_state_gates (test_delivery_user_experience.DeliveryUserExperienceTests) ... ok
+test_rejects_scope_changes_or_local_only_product_acceptance (test_delivery_user_experience.DeliveryUserExperienceTests) ... ok
+test_rejects_unfounded_green_historical_red_or_protocol_changes (test_delivery_user_experience.DeliveryUserExperienceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.098s
+
+OK
+
+exitCode: 0
+
+
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python310\python.exe -m unittest discover -s tests -p test_repo_index.py -v
+test_default_search_excludes_history_but_keeps_current_source (test_repo_index.RepositoryIndexTests) ... ok
+test_indexes_partition_every_public_path_without_dropping_history (test_repo_index.RepositoryIndexTests) ... ok
+test_refresh_is_idempotent_and_does_not_change_archived_narratives (test_repo_index.RepositoryIndexTests) ... ok
+test_search_exclusions_are_explicit_repository_relative_patterns (test_repo_index.RepositoryIndexTests) ... ok
+test_search_files_command_emits_only_current_paths (test_repo_index.RepositoryIndexTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.173s
+
+OK
+
+exitCode: 0
+
+
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python310\python.exe -m unittest discover -s tests -p test_repository.py -v
+test_existing_headers_and_agent_tool_flow_lists (test_repository.ContextFrontmatterTests) ... ok
+test_installed_profiles_remain_valid_without_edits (test_repository.ContextFrontmatterTests) ... ok
+test_invalid_headers_and_tool_lists_are_rejected (test_repository.ContextFrontmatterTests) ... ok
+test_json_validation_accepts_npm_package_keys_but_not_malformed_json (test_repository.ContextFrontmatterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.559s
+
+OK
+
+exitCode: 0
+
+
+Command: pwsh -NoProfile -File scripts/Test-Repository.ps1 -Python C:\Users\mike\AppData\Local\Programs\Python\Python310\python.exe
+Repository indexes are current.
+{"public_files_checked": 206}
+Public boundary, index, JSON, PowerShell, context frontmatter and whitespace checks passed.
+
+exitCode: 0

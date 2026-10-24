@@ -45,6 +45,7 @@ History may explain a finding but never creates a current blocker by itself.
 | Current delivery | `delivery-input.json`, `docs\requirements\delivery-mission.md`, `docs\NEXT-SESSION-PROMPT.md`, `docs\implementation-workflow.md` | Authorized azd delivery and seven-component acceptance based on fresh observations |
 | Design | `docs\design.md`, `docs\requirements\delivery-architecture.md`, `docs\requirements\delivery-architecture.json` | Current source lifecycle plus D1-D7 solution model, state-plane contracts, source/test joins and exact-candidate delivery handoff; architecture checks are not live acceptance |
 | Terminal UX | `docs\requirements\delivery-user-experience.md`, `docs\requirements\delivery-user-experience.json`, `tests\test_delivery_user_experience.py` | Mission-traceable terminal principles, all architecture journeys, screen/state direction and executable UX contracts; design/schema completion is not deployed acceptance |
+| Release planning | `docs\requirements\delivery-release-plan.md`, `docs\requirements\delivery-release-plan.json`, `tests\test_delivery_release_plan.py` | D1-D7 sprint goals, deployed-first skeleton, dependency/resource contracts and exact-candidate DevOps/E2E handoffs; planning validation is not live acceptance |
 | Local configuration/checks | `scripts\Use-Settings.ps1`, `scripts\Test-Repository.ps1`, `scripts\repo_index.py` | Allowlisted private configuration, public boundary checks and current/history search partition |
 | CLI delivery workflow | `gh-dynamic-workflows`, `.github\extensions\autonomous-delivery\extension.mjs` | Registered lab-delivery runtime, distinct from the application's MAF graph |
 
@@ -104,11 +105,15 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `docs\implementation-workflow.md`
 - `docs\requirements\checks\delivery-architecture-regressions.txt`
 - `docs\requirements\checks\delivery-architecture.txt`
+- `docs\requirements\checks\delivery-release-plan-regressions.txt`
+- `docs\requirements\checks\delivery-release-plan.txt`
 - `docs\requirements\checks\delivery-user-experience-regressions.txt`
 - `docs\requirements\checks\delivery-user-experience.txt`
 - `docs\requirements\delivery-architecture.json`
 - `docs\requirements\delivery-architecture.md`
 - `docs\requirements\delivery-mission.md`
+- `docs\requirements\delivery-release-plan.json`
+- `docs\requirements\delivery-release-plan.md`
 - `docs\requirements\delivery-user-experience.json`
 - `docs\requirements\delivery-user-experience.md`
 - `gh-dynamic-workflows\.gitignore`
@@ -165,6 +170,7 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `tests\test_config.py`
 - `tests\test_delivery_architecture.py`
 - `tests\test_delivery_input.py`
+- `tests\test_delivery_release_plan.py`
 - `tests\test_delivery_user_experience.py`
 - `tests\test_demo.py`
 - `tests\test_diagnose_identity.py`

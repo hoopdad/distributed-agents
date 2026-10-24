@@ -17,6 +17,7 @@
     "featureBranch": "feature/azd-demo-delivery"
   },
   "authority": {
+    "currentStateAmendment": "User amendment 2026-10-24: Let our current state be the guide to what is blocked. Unload historical blockers from default context. Historical failures, permission denials, reviewers, plans and receipts do not establish current blockers; inspect current source, configuration and actual operation outcomes. Keep history opt-in; preserve product acceptance, authorization and actual held/unknown effects.",
     "preparationRecord": "This input was prepared under documentation/input-only authority: no workflow, model or cloud calls, deployment, commit, branch switch or push in that preparation session.",
     "activation": "Execution authority applies only when the user submits docs\\NEXT-SESSION-PROMPT.md. Reading these files or passing launcher --check-only does not activate it.",
     "localExecutionWhenActivated": "Implement and test the mission in the public application repository; integrate scoped preparation onto the latest reviewed customer-hosted-session feature baseline before launch; make scoped non-secret commits without pushing; review framework source read-only and explicitly review installed runtime upgrades only while inactive.",

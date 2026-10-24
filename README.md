@@ -16,72 +16,23 @@ User -> coordinator (MAF workflow)
 2. **Follow-up:** Add an asynchronous queue; keep private ingress and all earlier requirements.
 
 **Current mission:** deliver the
-[three-role azd demo](docs/requirements/delivery-mission.md), not another
-exhausted diagnostic plan. Native MAF workflow and Blob artifact-plane source
-are largely implemented; the handwritten/in-process adapter remains an explicit
-offline regression path, never a hidden production fallback.
-
-**Latest recorded status, not fresh cloud verification:** main historically
-records architect 17 / reviewer 15 / coordinator 23; the later reviewed
-`origin/feature/customer-hosted-session-prototype` at `329eab9` records
-19 / 17 / 25. Prior Windows suites recorded main 159 tests (2 skips), feature
-364 tests (3 skips); these are not new checks in this preparation.
-Live acceptance remains blocked on trusted-user propagation
-(`NATIVE_HOST_PRINCIPAL` / `SPECIALIST_INCOMPLETE`). Explicit delegation and an
-existing impersonation permission have not established a fix. No platform
-cause is proven. Completed remote work, MI Blob provenance, follow-up,
-recovery and parent isolation are not freshly verified.
+[three-role azd demo](docs/requirements/delivery-mission.md). The MAF workflow
+and Blob artifact-plane source are implemented; offline adapters never replace
+remote production specialists. Current source, deployed bindings and actual
+operation outcomes determine status. Unexecuted live checks are unverified,
+not failed. Prior failures, denials and planning handoffs are opt-in
+[historical context](.github/repo-history-index.md), not current blockers.
 
 The deployment descriptor already has the existing project and three
 Responses 2.0.0 remote-build services. Its current `package_guard.py` hooks still
 require a preapproved ZIP/hash/private receipt: implementing a safe normal
 `azd deploy` path is real mission work, not merely adding a README command.
 Preserve exact-package lab release safeguards and all held/unknown effects.
-Historical diagnostics and the consumed exception remain in
-[identity-recovery-plan.md](docs/identity-recovery-plan.md) and Git.
 
 **Continuity invariant:** the parent and both specialists keep their hosted
 session IDs, framework session IDs and pinned deployed versions. New
 invocations get new response IDs and produce current design/review artifacts.
 A separate parent gets its own child bindings and artifact scope.
-
-**Release status — partial correction; blocked, not customer-ready (October 22, 2026):**
-the original changed-join E2E reassessment is accepted for application
-`13aecc39` (runtime/tests `c52786b7`) and selected lab `9b4919d8`.
-Original Architect/Critic/Product Owner agreed to the bounded **offline PASS**,
-not a release PASS. Repository validation passed. Attributed corrected captures
-report 278 Windows application passes and 236/240 retained passes (four
-exclusions); Linux reports 270/278 application passes (eight exclusions) and
-197/240 retained passes (43 exclusions), on an arm64 host running linux/amd64.
-The reassessment verified applicable captures and ran focused join checks;
-these are not newly repeated full suites or native-amd64-host certification.
-
-Original DevOps prepared and verified a runtime ZIP and Linux dependency stage,
-**not a final common bundle**. Native WSL pinned-tool/dedicated-authentication
-preflight received a noninteractive tool-permission denial. Its exact missing
-permission and native readiness remain unproven; do not retry or bypass that
-denial. The operator resolves that specific approval through supported
-interactive controls, then original DevOps continues the existing prepared
-stage and automated current source/package/version/trusted-host/effect checks.
-Routine guarded three-role publication is already authorized, not awaiting a
-new project sign-off. Historical COMMON rollback ZIP/build provenance is
-**WAIVED, never PASS**; the old repository-check denial and rollback
-investigation are dated history, not current prerequisites.
-
-Final correction-package publication and current deployed bindings, non-held
-initial collaboration, same-parent continuity, once-only supported stop/resume,
-independent separate-parent isolation, attributable cleanup and original
-review/retro/closeout remain incomplete. Authenticated outbound principal,
-platform identity resolution and a supported identity remedy remain unproven.
-Preserve the held original parent, all **UNKNOWN** effects and historical
-unproven cleanup; no uncertain operation may be replayed. Independent IP-S3
-evidence/status preparation continues without consuming missing live handoffs.
-See [current measured evidence and exact reviewed refs](docs/customer-prototype-release-notes.md#current-measured-correction-status--october-22-2026)
-and [current sprint handoffs](docs/customer-prototype-sprint-architecture.md#current-ip-s3-continuity-once-only-recovery-and-independent-isolation).
-Historical reviewed delivery through application `8b50f343` / lab `88580156`
-is retained, not proof of remote delivery of later correction commits.
-The original closeout owner must deliver/read back exact reviewed refs, never
-an automatic moving-HEAD push.
 
 **Read the source:** [workflow](demo/workflow.py) (`begin` -> `route` ->
 `execute` -> `publish`) -> [remote session restore/invoke](demo/foundry.py)
@@ -94,8 +45,8 @@ Open this repository in Copilot and submit the invocation in
 [docs/NEXT-SESSION-PROMPT.md](docs/NEXT-SESSION-PROMPT.md). It explicitly
 authorizes scoped implementation/tests/commits, reviewed `lab-delivery` launch,
 normal azd deployment and synthetic acceptance for the three existing roles
-in the validated nonproduction project. Reading it is not authorization;
-**this preparation session performs no launch, cloud call, commit or deployment**.
+in the validated nonproduction project. Reading it alone is not authorization;
+the current user has submitted and authorized this invocation.
 
 The actual input is `delivery-input.json`; the
 [mission](docs/requirements/delivery-mission.md) is authoritative for components,
@@ -166,9 +117,10 @@ be distinct, private IPv4 addresses must match the managed Blob private endpoint
 and the request limit must match verified Decision capacity. Do not guess
 private addresses, capacity or confidence thresholds.
 
-For this linked-lab checkout, use the existing ignored
-`.local\lab-settings-native.json` with `Use-Settings.ps1`; do not overwrite it or
-inspect copied `.azure` environment files. Validate the configured project,
+Before cloud operations, load the validated private configuration through
+`Use-Settings.ps1`; no historical settings filename is a workflow launch gate.
+Do not overwrite private settings or inspect copied `.azure` environment files.
+Validate the configured project,
 tenant/subscription, lab root and dedicated profile without displaying values.
 Do not substitute another project or CLI profile. Authenticate the dedicated
 profile using device code when needed, then verify its tenant/subscription.
@@ -176,7 +128,7 @@ The loader validates local configuration; it is not cloud authentication proof.
 
 ## Two-turn terminal demonstration
 
-This is the **implemented command shape**, not a claim the blocked live
+This is the **implemented command shape**, not a claim the live
 demonstration has passed. The Windows-only terminal uses `msvcrt` for its
 session lease. It requires compatible deployed agents and an already established
 owned SOCKS tunnel to the configured project. `--socks` is mandatory; substitute
@@ -317,13 +269,9 @@ do not replace the fenced write-ahead journal.
   unknown-effect replay.
 
 For engineering/release gates, read the [implementation workflow](docs/implementation-workflow.md).
-The [recovery plan](docs/identity-recovery-plan.md) owns detailed diagnostic
-chronology and historical version/package bindings; those are not a fresh
-deployment inventory. The [release plan](docs/customer-prototype-release-plan.md)
-maps the customer outcome to source, exact-package and live acceptance.
-The [migration plan](docs/migration-plan.md) and
-[migration map](docs/migration-map.json) retain original-source preservation
-history, not permission to reseal changed source or deploy a stale lab copy.
+The [historical index](.github/repo-history-index.md) retains prior diagnostics,
+release plans and migration context for targeted provenance questions. None is
+an active dispatch plan, release gate or current deployment inventory.
 
 License: [MIT](LICENSE). Private settings/evidence, session files, SSH identities,
 packages, infrastructure and workflow control-plane tooling do not belong in

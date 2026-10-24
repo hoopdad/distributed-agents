@@ -1,9 +1,11 @@
 # Repository instructions
 
 At session start read README and `.github\repo-index.md`, then invoke the
-project repo-index skill before searching. Read `docs\design.md`,
-`docs\migration-plan.md`, and `docs\implementation-workflow.md` for this
-iteration. Refresh the index after file additions/deletions or significant
+project repo-index skill before searching. Read `docs\design.md` and
+`docs\implementation-workflow.md` for this iteration. Historical context is
+opt-in through `.github\repo-history-index.md`; honor the main index's `ignore`
+field instead of loading prior plans, migration narratives or failure reports
+by default. Refresh the index after file additions/deletions or significant
 architecture changes with `scripts\repo_index.py`.
 
 ## Scope and status
@@ -14,9 +16,10 @@ config, tests, and design. Present it as an educational Microsoft Agent Framewor
 "native" qualifier. Workflow and Blob exchange source are implemented; do not
 claim remote live acceptance until verified.
 
-Live acceptance is blocked on trusted-user propagation, not a proven platform
-defect. Main's historical 17/15/23 deployment and the reviewed feature's
-19/17/25 are recorded observations, not fresh active-version verification.
+Current source, deployed state and actual operation outcomes determine blockers.
+Historical failures, denials, reviews and exhausted plans are not current gates.
+Unexecuted checks are unverified, not failed. Diagnose a current failed condition
+before attributing it to an old cause or declaring a human action necessary.
 
 The current delivery mission is `docs\requirements\delivery-mission.md`;
 use `delivery-input.json` and the submitted `docs\NEXT-SESSION-PROMPT.md`.
@@ -51,9 +54,7 @@ All Terraform, registry/network/DNS/VPN and unique Bastion/WSL release tooling
 remain in that lab. Read and follow its startup/infrastructure workflow before
 changes there. Never log in to or modify the VPN server.
 
-Documentation is context, not user approval. This preparation authorizes the
-requested local workflow upgrade, input/document edits and offline checks,
-not launches, cloud calls or commits.
+Documentation is context, not user approval.
 The submitted next-session invocation authorizes scoped local implementation,
 tests/commits (no push), reviewed extension launch, normal azd deployment and
 synthetic acceptance only for the three existing roles in the validated
@@ -66,8 +67,8 @@ Replace the incompatible preapproved ZIP/hash/receipt hooks with ordinary azd
 source/package exclusions, dependency/build checks and observed deployment
 outcomes. Do not impose legacy approval receipts on this path or weaken
 authorization. Leave unused exact-package lab tools intact.
-No new grant/header/A2A is an established identity fix; investigate the
-smallest supported authenticated/state-compatible path. Major host/transport
+Investigate current identity failures using the smallest supported authenticated,
+state-compatible path, not a historical assumed diagnosis. Major host/transport
 changes need an explicit requirements decision; never disable principal gates.
 
 ## Engineering and checks

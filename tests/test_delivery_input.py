@@ -39,6 +39,17 @@ class DeliveryInputTests(unittest.TestCase):
         for key in ("attempts", "maxSprints", "maxNoProgressRounds", "concurrency", "limits"):
             self.assertNotIn(key, self.input)
 
+    def test_current_state_amendment_replaces_inherited_blockers_not_safety(self):
+        amendment = self.input["authority"]["currentStateAmendment"]
+        self.assertIn("do not establish current blockers", amendment)
+        self.assertIn("actual held/unknown effects", amendment)
+        mission = (ROOT / "docs" / "requirements" / "delivery-mission.md").read_text(encoding="utf-8")
+        self.assertIn("Historical failures do not establish current blockers.", mission)
+        self.assertIn("never clear or replay uncertain effects", mission)
+        self.assertNotIn("Keep an unrepaired recorded blocker visible.", mission)
+        instructions = (ROOT / ".github" / "copilot-instructions.md").read_text(encoding="utf-8")
+        self.assertNotIn("Live acceptance is blocked on trusted-user propagation", instructions)
+
 
 if __name__ == "__main__":
     unittest.main()

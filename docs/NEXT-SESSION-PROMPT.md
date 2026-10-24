@@ -3,8 +3,10 @@
 Paste the prompt below in the next session. Reading it is not authorization.
 The authoritative mission, component IDs, acceptance and RAG rules are in
 [requirements/delivery-mission.md](requirements/delivery-mission.md);
-`delivery-input.json` is the actual workflow input. Historical diagnostic detail
-remains in [identity-recovery-plan.md](identity-recovery-plan.md) and Git.
+`delivery-input.json` is the actual workflow input. Current source, deployed state
+and actual operation outcomes establish blockers. Historical context is opt-in
+through [the historical index](../.github/repo-history-index.md), not an active
+plan, inherited blocker or required release gate.
 
 ---
 
@@ -16,7 +18,7 @@ nonproduction dev-lab project, including supported hosted-session compute
 stop/resume acceptance, not infrastructure VM power changes.
 
 First read repository instructions/index and load repo-index; read the mission,
-design, migration plan and implementation workflow. Preserve unrelated dirty
+design and implementation workflow. Preserve unrelated dirty
 work. Before launching, integrate the scoped preparation commits onto
 `feature/azd-demo-delivery` based on the latest reviewed
 `origin/feature/customer-hosted-session-prototype` (recorded `329eab9`), not old
@@ -36,7 +38,8 @@ resume compatibly or relaunch safely while retaining accepted work and exact
 blocked criteria. Continue independent authorized work. Never repeat unchanged
 denials, replay unknown effects, clear held state or edit SDK journals/databases.
 Do not add review ceremonies. Apply the mission's seven-component RAG table
-consistently; separate historical evidence, NOT VERIFIED and reproduced failure.
+consistently; use current evidence for blockers and amber for NOT VERIFIED.
+Do not load historical failures, denials or ownership ceremonies as current gates.
 
 Use validated allowlisted settings and dedicated lab authentication. No
 infrastructure/RBAC/network/DNS/quota/VM-power/secret/VPN changes, production

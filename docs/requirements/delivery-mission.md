@@ -18,14 +18,27 @@ That design is user-attributed and Copilot-coauthored in Git; it is not proof
 that its detailed prose was personally written by the user. The current request
 explicitly adopts the three-role native-MAF/remote-specialist objective and adds
 the delivery, normal-azd, monitoring and reporting amendments in this mission.
-Historical diagnostics are evidence, not continuing permission or new features.
-`docs\identity-recovery-plan.md` and Git retain their detail.
+Historical diagnostics are opt-in evidence, not current blockers, continuing
+permission or new features. `.github\repo-history-index.md` and Git retain detail.
 
-**Preparation is the only authority now.** No launch, model/cloud call,
-deployment, commit, branch switch or push is authorized by this preparation.
-Submitting `docs\NEXT-SESSION-PROMPT.md` in the next session supplies its explicit
-local implementation/test/scoped-commit and existing-project deployment scope.
-File presence, an extension registration and launcher validation are not approval.
+The user submitted `docs\NEXT-SESSION-PROMPT.md` and explicitly authorized its
+implementation, tests, scoped local commits (no push), workflow launches,
+remediation, azd deployment and synthetic acceptance within the existing
+nonproduction project. File presence alone is not authorization.
+
+### Current-state amendment (October 24, 2026)
+
+The user directs: **"Let our current state be the guide to what is blocked.
+Unload them in a literal or figurative way."**
+
+Historical failures do not establish current blockers. Use current source,
+configuration, permissions, durable operation state and actual deployed results
+to establish an exact unmet criterion. Do not require old reviewers, owners,
+receipts, exhausted plans or permission-denial resolution without a current
+operational reason. Unexecuted checks are unverified, not failed.
+Keep historical records opt-in and out of default search/context. This does not
+waive product acceptance, authorization or preservation of actual held/unknown
+operations; never clear or replay uncertain effects.
 
 ## Product, not delivery machinery
 
@@ -73,20 +86,12 @@ in JSON does not switch or merge anything. If the refs have advanced, review
 the delta and record the chosen source; do not silently run main. This is a
 source-correctness prerequisite, not another planning/review stage.
 
-## Latest recorded baseline, not fresh cloud verification
+## Current-state verification
 
-| Source | Historical observations | Meaning now |
-|---|---|---|
-| Main documentation | architect 17 / reviewer 15 / coordinator 23; prior Windows 159 tests, 2 skips | Historical mixed diagnostic deployment and offline results, not a fresh deployment read |
-| Reviewed feature `329eab9` | architect 19 / reviewer 17 / coordinator 25; prior Windows 364 tests, 3 skips | Later recorded branch evidence, not proof those versions are active now |
-| Latest IP-S3 plan | exhausted `tasks: []` | No delivery success or permission to drop unmet criteria |
-
-Most native workflow/artifact code is implemented. Live acceptance remains
-blocked on trusted-user propagation at `NATIVE_HOST_PRINCIPAL`, observed as
-`SPECIALIST_INCOMPLETE` at the coordinator. No platform cause has been proven.
-Keep held effects, accepted work and original UNKNOWN publication history intact.
-The consumed single diagnostic exception grants no repeat attempt; the next
-invocation's new bounded authority never authorizes replay of those effects.
+Inspect the integrated source and current deployed bindings rather than loading
+old release plans as prerequisites. No fresh live result is asserted by this
+document. Establish failures from current observations; retain exact operation
+holds without treating old diagnoses as a blanket stop on authorized new work.
 
 ## Acceptance requirements and canonical component IDs
 
@@ -152,11 +157,10 @@ The existing trusted-lab account-wide Blob Contributor exception means ownership
 is application-enforced, not storage-enforced per-role isolation; report that
 limitation honestly. No new RBAC grant is authorized.
 
-Both `NativeRuntime` and assignment principal checks currently require genuine
-end-user propagation. The feature already tried explicit `x-ms-user-identity`
-delegation; the explicit impersonation permission historically existed, and
-live execution still failed. Neither another grant nor a header is an
-established fix. Do not promise A2A fixes this problem.
+Runtime and assignment principal checks require genuine end-user propagation.
+If a current operation fails, establish the actual trusted-context boundary
+and supported remedy from current evidence. Do not infer a cause or fix from
+historical headers, permissions or transport experiments.
 
 Find the smallest supported request path that preserves genuine authentication,
 trusted assignment/parent binding and compatible durable state. The Invocations
@@ -252,9 +256,9 @@ Use the seven canonical component IDs above in every progress/final report:
 - **🟠** = partial, not executed, NOT VERIFIED, or stale evidence.
 - **🔴** = reproduced failure or blocking criterion, with its recorded evidence.
 
-Explicitly label historical failures as historical; do not pretend they were
-reproduced in the current session. Keep an unrepaired recorded blocker visible.
-Use amber for unreached reviewer/recovery/isolation checks, not failure red.
+Historical failures are opt-in context, not current RAG blockers. Use red only
+for a current evidenced failure or blocking criterion. Use amber for unreached
+reviewer/recovery/isolation checks and stale evidence, not failure red.
 Never show green for an SDK envelope, healthy host, uploaded bundle or offline
 tests alone. Report solution components, not agent-role activity. Final handoff
 must identify exact source revision, runtime/run outcome, deployed environment

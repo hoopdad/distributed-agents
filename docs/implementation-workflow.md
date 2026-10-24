@@ -3,9 +3,9 @@
 The current objective and user amendments are authoritative in
 [requirements/delivery-mission.md](requirements/delivery-mission.md).
 Use `delivery-input.json` with the submitted
-[next-session invocation](NEXT-SESSION-PROMPT.md), not the exhausted diagnostic
-invocation. Historical single-attempt exceptions remain consumed; details stay
-in [identity-recovery-plan.md](identity-recovery-plan.md) and Git.
+[next-session invocation](NEXT-SESSION-PROMPT.md). Current state and actual
+operation outcomes establish blockers. Historical failures, permission denials,
+owners and exhausted plans are opt-in context, not required release gates.
 
 The CLI **`lab-delivery` workflow delivers the application**. The application's
 **MAF workflow coordinates remote architect/reviewer calls**. They are different
@@ -172,10 +172,10 @@ versions through supported interfaces. Empty logs, absent PIDs and HTTP404 do
 not prove never sent. Never blindly repeat unchanged denials or unknown effects,
 clear held state, reset limits or edit SDK journals/databases.
 
-The historical trusted-user propagation blocker is not a proven platform defect.
-The feature tried explicit user delegation and historically had impersonation
-permission. Headers, new RBAC and A2A are not established remedies. Investigate
-the smallest supported authenticated/state-compatible request path. Major
+If a current operation fails trusted-user propagation, inspect the actual
+request boundary and current SDK/platform contract before choosing a remedy.
+Do not load a historical diagnosis as the current cause. Investigate the
+smallest supported authenticated/state-compatible request path. Major
 host/transport changes need an explicit requirements decision. Never substitute
 a principal or disable runtime/assignment checks.
 

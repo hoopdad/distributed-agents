@@ -1,0 +1,19 @@
+Offline HumanTerminalTests only; no deployed acceptance.
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python313\python.exe -m unittest discover -s tests -p test_demo.py -k HumanTerminalTests -v
+test_cli_human_view_requires_workflow_and_is_explicitly_opt_in (test_demo.HumanTerminalTests.test_cli_human_view_requires_workflow_and_is_explicitly_opt_in) ... ok
+test_followup_and_four_call_revision_keep_order_and_current_output (test_demo.HumanTerminalTests.test_followup_and_four_call_revision_keep_order_and_current_output) ... ok
+test_held_invalid_or_failed_finalization_never_displays_acceptance (test_demo.HumanTerminalTests.test_held_invalid_or_failed_finalization_never_displays_acceptance) ... Executing <Task finished name='Task-11' coro=<HumanTerminalTests.test_held_invalid_or_failed_finalization_never_displays_acceptance() done, defined at C:\Users\mike\source\distributed-agents\tests\test_demo.py:1304> result=None created at C:\Users\mike\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py:100> took 0.107 seconds
+ok
+test_known_response_recovery_does_not_repeat_prefix_or_send (test_demo.HumanTerminalTests.test_known_response_recovery_does_not_repeat_prefix_or_send) ... ok
+test_malformed_success_payload_cannot_become_human_success (test_demo.HumanTerminalTests.test_malformed_success_payload_cannot_become_human_success) ... Executing <Task finished name='Task-21' coro=<HumanTerminalTests.test_malformed_success_payload_cannot_become_human_success() done, defined at C:\Users\mike\source\distributed-agents\tests\test_demo.py:1324> result=None created at C:\Users\mike\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py:100> took 0.103 seconds
+ok
+test_opt_in_stdout_is_identical_and_acceptance_parser_compatible (test_demo.HumanTerminalTests.test_opt_in_stdout_is_identical_and_acceptance_parser_compatible) ... Executing <Task finished name='Task-26' coro=<HumanTerminalTests.test_opt_in_stdout_is_identical_and_acceptance_parser_compatible() done, defined at C:\Users\mike\source\distributed-agents\tests\test_demo.py:1255> result=None created at C:\Users\mike\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py:100> took 0.211 seconds
+ok
+test_safe_narrow_generated_content_and_absent_bindings (test_demo.HumanTerminalTests.test_safe_narrow_generated_content_and_absent_bindings) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.607s
+
+OK
+
+exitCode: 0

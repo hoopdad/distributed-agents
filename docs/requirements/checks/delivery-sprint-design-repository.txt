@@ -1,0 +1,34 @@
+Local repository/index validation; no cloud operations.
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python310\python.exe -m unittest discover -s tests -p test_repo_index.py -v
+test_default_search_excludes_history_but_keeps_current_source (test_repo_index.RepositoryIndexTests) ... ok
+test_indexes_partition_every_public_path_without_dropping_history (test_repo_index.RepositoryIndexTests) ... ok
+test_refresh_is_idempotent_and_does_not_change_archived_narratives (test_repo_index.RepositoryIndexTests) ... ok
+test_search_exclusions_are_explicit_repository_relative_patterns (test_repo_index.RepositoryIndexTests) ... ok
+test_search_files_command_emits_only_current_paths (test_repo_index.RepositoryIndexTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.187s
+
+OK
+
+exitCode: 0
+
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python310\python.exe -m unittest discover -s tests -p test_repository.py -v
+test_existing_headers_and_agent_tool_flow_lists (test_repository.ContextFrontmatterTests) ... ok
+test_installed_profiles_remain_valid_without_edits (test_repository.ContextFrontmatterTests) ... ok
+test_invalid_headers_and_tool_lists_are_rejected (test_repository.ContextFrontmatterTests) ... ok
+test_json_validation_accepts_npm_package_keys_but_not_malformed_json (test_repository.ContextFrontmatterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.521s
+
+OK
+
+exitCode: 0
+
+Command: pwsh -NoProfile -File scripts/Test-Repository.ps1 -Python C:\Users\mike\AppData\Local\Programs\Python\Python310\python.exe
+Repository indexes are current.
+{"public_files_checked": 214}
+Public boundary, index, JSON, PowerShell, context frontmatter and whitespace checks passed.
+
+exitCode: 0

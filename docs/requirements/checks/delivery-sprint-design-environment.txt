@@ -1,0 +1,8 @@
+Local installed Python 3.13 dependency diagnostic; no installs or manifest changes.
+Not a deployed failure or design-schema gate.
+Command: C:\Users\mike\AppData\Local\Programs\Python\Python313\python.exe -m pip check
+jetset-bank-demo-agents 0.1.0 has requirement agent-framework-core==1.8.1, but you have agent-framework-core 1.21.0.
+jetset-bank-demo-agents 0.1.0 has requirement agent-framework-foundry==1.8.1, but you have agent-framework-foundry 1.14.0.
+jetset-bank-demo-agents 0.1.0 has requirement agent-framework-openai==1.8.1, but you have agent-framework-openai 1.15.0.
+
+exitCode: 1

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "authority": "docs/requirements/delivery-mission.md",
+  "architecture": "docs/requirements/delivery-architecture.json",
+  "userExperience": "docs/requirements/delivery-user-experience.json",
+  "releasePlan": "docs/requirements/delivery-release-plan.json",
+  "design": "docs/requirements/delivery-sprint-design.md",
+  "observedSource": "9b937cc3a4ab075cb174044f56f8e715f4ab309c",
+  "sprint": "three-role-delivery",
+  "scope": "sprint-terminal-design-only-no-runtime-change",
+  "presentation": {
+    "stdout": "unchanged-machine-records",
+    "human": "opt-in-stderr",
+    "theme": "inherit-terminal-no-forced-colors",
+    "generatedContent": "prefixed-control-neutralized-width-wrapped-data",
+    "privacy": "aliases-in-human-view-exact-refs-in-authorized-private-evidence",
+    "releaseClaim": "none-without-fresh-D1-D7",
+    "readingOrder": "orientation-ordered-observations-result-limitations-next-action",
+    "ragLabels": ["GREEN", "AMBER", "RED"],
+    "narrowLayout": "linear-wrapped-regions-not-wide-TUI",
+    "fixtures": "illustrations-with-placeholders-never-live-evidence"
+  },
+  "screens": [
+    {
+      "id": "terminal-turn",
+      "surface": "existing-opt-in-human-stderr",
+      "states": ["ready", "streaming", "accepted-advisory", "request-input", "routing-hold", "limit-reached"],
+      "regions": [
+        {"id": "orientation", "fields": ["observed-records-heading", "parent-hosted-alias", "parent-framework-alias", "turn-and-requirements-revision"], "source": "demo/terminal.py", "visibility": "default-human"},
+        {"id": "ordered-calls", "fields": ["observed-role", "candidate-revision", "hosted-and-framework-aliases", "pinned-version", "response-alias"], "source": "demo/terminal.py", "visibility": "default-human"},
+        {"id": "current-result", "fields": ["current-design", "exact-current-review", "current-findings", "coordinator-status"], "source": "demo/terminal.py", "visibility": "default-human"},
+        {"id": "confidence-footer", "fields": ["exact-continuity-unverified", "model-history-restart-isolation-not-established", "release-not-certified"], "source": "demo/terminal.py", "visibility": "default-human"}
+      ],
+      "acceptanceBoundary": "validated-complete-current-result-and-successful-state-finalization",
+      "missingData": "not-observed-never-inferred",
+      "detailRoute": "authorized-private-evidence-not-new-stdout"
+    },
+    {
+      "id": "terminal-exception",
+      "surface": "existing-opt-in-human-stderr",
+      "states": ["known-pending-response", "unknown-effect", "failed-or-invalid"],
+      "regions": [
+        {"id": "observed-boundary", "fields": ["held-or-blocked-before-any-acceptance", "observed-code-not-guessed-cause"], "source": "demo/terminal.py", "visibility": "default-human"},
+        {"id": "recovery-boundary", "fields": ["known-response-retrieval-is-not-new-invocation", "preserve-pending-state", "do-not-resend-uncertain-work"], "source": "demo/terminal.py", "visibility": "default-human"}
+      ],
+      "acceptanceBoundary": "hold-or-invalid-or-unfinalized-output-never-accepted",
+      "missingData": "not-observed-never-inferred",
+      "detailRoute": "supported-private-reconciliation-not-reset-or-new-parent"
+    },
+    {
+      "id": "component-report",
+      "surface": "existing-authorized-acceptance-evidence-and-delivery-report",
+      "states": [],
+      "regions": [
+        {"id": "candidate-header", "fields": ["exact-source-or-immutable-artifact", "observed-runtime-run-outcome", "intended-environment", "observed-three-role-versions-or-not-verified"], "source": "live_acceptance.py", "visibility": "authorized-evidence"},
+        {"id": "artifact-trail", "fields": ["exact-requirements-ref", "first-design-ref", "actual-first-findings-ref", "changed-design-ref", "exact-revised-review-ref", "gated-decision-refs", "child-producer-and-prerequisite-bindings"], "source": "demo/artifacts.py", "visibility": "authorized-evidence"},
+        {"id": "verification-and-action", "fields": ["seven-canonical-component-rows", "freshness", "actual-check-results", "accepted-work-versus-unresolved-criteria", "next-owner-and-action"], "source": "live_acceptance.py", "visibility": "authorized-evidence"}
+      ],
+      "acceptanceBoundary": "fresh-source-bound-deployed-checks-not-advisory-model-approval",
+      "missingData": "not-verified-amber-not-failed",
+      "detailRoute": "private-exact-refs-sanitized-public-summary"
+    }
+  ],
+  "journeys": [
+    {"id": "design-review-revision", "screens": ["terminal-turn", "component-report"], "steps": ["submit-and-bind", "gate-and-choose", "design-and-publish", "review-and-revise", "accept-and-return"], "return": "Current advisory design only after exact revised approval; first findings and real changed candidate remain inspectable in authorized evidence."},
+    {"id": "followup-and-recovery", "screens": ["terminal-turn", "terminal-exception", "component-report"], "steps": ["append-and-invalidate", "reconcile-without-resend", "stop-resume-and-prove"], "return": "Completed same-parent queue follow-up retains private ingress; known-response retrieval does not send; unknown effects remain held; supported stop/resume is acceptance tooling only."},
+    {"id": "independent-parent-isolation", "screens": ["terminal-turn", "component-report"], "steps": ["bind-separate-parent", "verify-no-cross-parent-context"], "return": "Separate authorized result; distinct aliases are not isolation proof or permission to replace a held parent."},
+    {"id": "exact-candidate-delivery", "screens": ["component-report"], "steps": ["select-and-check", "deploy-under-lock", "verify-before-release"], "return": "Actual azd outcome plus separate exact-candidate probes; no dependent release on schema checks."}
+  ],
+  "taskDesign": [
+    {"task": "azd-walking-skeleton", "requirements": ["D1"], "components": ["deployment"], "flows": ["exact-candidate-delivery"], "screens": ["component-report"], "direction": "Distinguish packaging checks, actual azd exit and separate deployed probe; display only observed role versions and candidate identity."},
+    {"task": "coordinator-blob-contract", "requirements": ["D2", "D5"], "components": ["coordinator-routing", "blob-shared-context"], "flows": ["design-review-revision"], "screens": ["terminal-turn", "terminal-exception", "component-report"], "direction": "Treat routing reasons as data; expose genuine decisions and exact immutable producer/prerequisite refs through private evidence, never a new machine protocol."},
+    {"task": "remote-specialist-revision", "requirements": ["D3", "D4"], "components": ["architect", "reviewer"], "flows": ["design-review-revision"], "screens": ["terminal-turn", "component-report"], "direction": "Keep observed architect/reviewer call order and current revision in human summary; inspect actual first findings and changed-candidate review through authorized artifact trail."},
+    {"task": "terminal-evidence-surface", "requirements": ["D7"], "components": ["terminal-demo"], "flows": ["design-review-revision", "followup-and-recovery"], "screens": ["terminal-turn", "terminal-exception", "component-report"], "direction": "Preserve stdout byte compatibility, opt-in stderr, generated-data prefix/control neutralization/wrapping, and no success before persisted finalization."},
+    {"task": "continuity-recovery-isolation", "requirements": ["D6"], "components": ["session-continuity-recovery-isolation"], "flows": ["followup-and-recovery", "independent-parent-isolation"], "screens": ["terminal-turn", "terminal-exception", "component-report"], "direction": "Separate stable alias observations from exact binding/history/checkpoint proof; recovery is retrieval, unknown effects stay held, and a second parent is a distinct scenario."},
+    {"task": "integrated-terminal-acceptance", "requirements": ["D1", "D2", "D3", "D4", "D5", "D6", "D7"], "components": ["deployment", "coordinator-routing", "architect", "reviewer", "blob-shared-context", "session-continuity-recovery-isolation", "terminal-demo"], "flows": ["exact-candidate-delivery", "design-review-revision", "followup-and-recovery", "independent-parent-isolation"], "screens": ["terminal-turn", "terminal-exception", "component-report"], "direction": "Join actual deployment, genuine artifacts/decisions and fresh follow-up/recovery/isolation results for the same candidate; never promote advisory acceptance into release."}
+  ],
+  "stateActions": "inherit-exact-delivery-user-experience-state-action-gates",
+  "blockedDesignItems": [],
+  "handoff": {
+    "implementationOwner": "Developer",
+    "planningOwner": "Scrum Master",
+    "verificationLoops": ["DevOpsWorkLoop", "EndToEndTestLoop"],
+    "exclusiveResources": ["existing-nonproduction-project-deployment-and-verification", "existing-nonproduction-project-deployment-configuration"],
+    "candidate": "exact-committed-feature-revision-or-immutable-artifact",
+    "construction": "local-checks-no-shared-environment-mutation",
+    "dependencyRelease": "only-after-deployed-pass-and-original-assignment-review",
+    "assignedDesignImplementation": [],
+    "exclusions": ["new-web-ui", "new-service", "theme-toggle", "stdout-protocol-change", "auth-weakening", "unknown-effect-replay", "infrastructure-mutation", "new-approval-stage"]
+  }
+}

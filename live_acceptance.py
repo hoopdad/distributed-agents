@@ -725,15 +725,18 @@ def acceptance_credential(args, subscription):
 async def run_identity_probe(args, observed, tenant, subscription, user):
     from demo.identity_probe import (
         DiscoveryRequest, ProbeChild, ProbeRequest, invoke_discovery_probe, invoke_probe,
-        invoke_response_discovery_probe,
+        invoke_coordinator_response_probe,
     )
 
     path = private_state_path(args.session_file)
     evidence = private_state_path(args.evidence)
     if path.exists() or evidence.exists():
         raise RuntimeError("NEW_IDENTITY_PROBE_REQUIRED_NO_RESEND")
-    responses = getattr(args, "scenario", "identity-probe") == "delegation-discovery-responses"
-    discovery = responses or getattr(args, "scenario", "identity-probe") == "delegation-discovery"
+    scenario = getattr(args, "scenario", "identity-probe")
+    discovery = scenario in ("delegation-discovery", "delegation-discovery-responses")
+    responses = scenario == "delegation-discovery-responses" or (
+        not discovery and getattr(args, "coordinator_protocol", "invocations") == "responses"
+    )
     probe = DiscoveryRequest(
         probe_id=uuid.uuid4().hex, session_id=uuid.uuid4().hex,
         toolbox_name=args.toolbox_name, toolbox_version=args.toolbox_version,
@@ -776,7 +779,7 @@ async def run_identity_probe(args, observed, tenant, subscription, user):
                 state["response_id"] = response_id
                 write_state(path, state)
 
-            result = await invoke_response_discovery_probe(
+            result = await invoke_coordinator_response_probe(
                 http, credential, probe, on_response_id=remember_response, timeout=300,
             ) if responses else await invoke_discovery_probe(
                 http, credential, probe, timeout=300,
@@ -973,7 +976,11 @@ def main():
     parser.add_argument("--identity-forwarding", choices=("platform-and-user", "user-only"), default="platform-and-user")
     parser.add_argument("--specialist-protocol", choices=("invocations", "responses"), default="invocations")
     parser.add_argument("--session-creation", choices=("explicit", "first-response"), default="explicit")
-    asyncio.run(run(parser.parse_args()))
+    parser.add_argument("--coordinator-protocol", choices=("invocations", "responses"), default="invocations")
+    args = parser.parse_args()
+    if args.coordinator_protocol == "responses" and args.scenario != "identity-probe":
+        parser.error("--coordinator-protocol responses requires --scenario identity-probe")
+    asyncio.run(run(args))
 
 
 if __name__ == "__main__":

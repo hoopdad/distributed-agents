@@ -171,6 +171,13 @@ preview headers and zero retries. `--session-creation first-response` tests the
 documented first-Responses-call session creation instead of explicit creation.
 It is Responses-only and diagnostic-only: verify the actual created version,
 retain every reserved ID, and never change existing application bindings.
+The coordinator defaults to Invocations independently of the specialist
+protocol. Add `--coordinator-protocol responses` to an `identity-probe` case
+to compare forwarding from the actual hosted MAF Responses workflow. Both
+coordinator entry points use the same validated delegation implementation;
+the native path still requires genuine user/call/session context and exactly
+two distinct, pinned child sessions. Parent response receipts and child IDs
+are retained on uncertainty, and an existing probe is never resent.
 
 For the authorized signed-in-user A2A experiment, use the existing diagnostic
 toolbox (not a new agent) with the same dedicated azd profile:

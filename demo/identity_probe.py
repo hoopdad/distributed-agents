@@ -274,18 +274,33 @@ async def response_discovery_request(request):
 
 
 class DiscoveryExecutor(Executor):
-    def __init__(self, probe, observation):
+    def __init__(self, probe, observation, config, scope):
         super().__init__(id=probe.kind)
         self.probe = probe
         self.observation = observation
+        self.config = config
+        self.scope = scope
 
     @handler
     async def discover(self, text: str, context: WorkflowContext[None, str]):
         if text != self.probe.model_dump_json():
             raise ArtifactError("PROBE_INPUT_CHANGED")
-        result = (ProbeResult(observation=self.observation) if isinstance(self.probe, ProbeRequest)
+        result = (await identity_probe_result(
+            self.probe, self.observation, self.config, get_request_context(), self.scope,
+        ) if isinstance(self.probe, ProbeRequest)
                   else await discover_delegation(self.probe, self.observation, get_request_context()))
         await context.yield_output(result.model_dump_json())
+
+
+def probe_action_valid(probe: ProbeRequest, role):
+    return (
+        probe.action == "delegate" and role == "coordinator" and probe.expected_principal is None
+        and [child.role for child in probe.children] == ["architect", "reviewer"]
+        and len({probe.session_id, *(child.session_id for child in probe.children)}) == 3
+    ) or (
+        probe.action == "inspect" and role in ("architect", "reviewer")
+        and probe.expected_principal is not None and not probe.children
+    )
 
 
 async def create_host_workflow(request):
@@ -298,25 +313,24 @@ async def create_host_workflow(request):
     role = next((role for role, name in AGENTS.items() if config.agent_name == name), None)
     identity = isinstance(probe, ProbeRequest)
     for valid, code in (
-        ((identity and role in ("architect", "reviewer") and probe.action == "inspect"
-          and probe.expected_principal is not None and not probe.children)
+        ((identity and probe_action_valid(probe, role))
          or (not identity and role == "coordinator"), "PROBE_ACTION"),
         (config.is_hosted and request.scope.is_hosted and config.project_endpoint == PROJECT, "NATIVE_HOST_PLATFORM"),
         (bool(context.user_id) and request.scope.user_id == context.user_id, "NATIVE_HOST_PRINCIPAL"),
         (bool(context.call_id) and request.scope.call_id == context.call_id, "NATIVE_HOST_CALL"),
         (request.scope.session_id == context.session_id == config.session_id == probe.session_id, "NATIVE_HOST_SESSION"),
-        (not identity or probe.expected_principal == context.user_id, "PROBE_PRINCIPAL"),
+        (not identity or probe.action == "delegate" or probe.expected_principal == context.user_id, "PROBE_PRINCIPAL"),
     ):
         if not valid:
             raise ArtifactError(code)
-    ScopeBinding.from_platform(config, context, project=PROJECT, tenant=required("EXPECTED_AZURE_TENANT_ID"))
+    scope = ScopeBinding.from_platform(config, context, project=PROJECT, tenant=required("EXPECTED_AZURE_TENANT_ID"))
     observation = ProbeObservation(
         probe_id=probe.probe_id, role=role, version=config.agent_version,
         status="verified", has_principal=True, has_call_id=True,
-        session_matches=True, principal_matches=True if identity else None,
+        session_matches=True, principal_matches=True if identity and probe.action == "inspect" else None,
     )
     return WorkflowBuilder(
-        name=probe.kind, start_executor=DiscoveryExecutor(probe, observation),
+        name=probe.kind, start_executor=DiscoveryExecutor(probe, observation, config, scope),
     ).build()
 
 
@@ -371,13 +385,79 @@ def response_probe_result(document, request, role, model):
     return result
 
 
-async def invoke_response_discovery_probe(http, credential, request: DiscoveryRequest, *, on_response_id, timeout=180):
+async def invoke_coordinator_response_probe(
+    http, credential, request: DiscoveryRequest | ProbeRequest, *, on_response_id, timeout=180,
+):
     async with ProjectClient(credential, http, {}) as project:
         document = await post_response_probe(
             project.get_openai_client(agent_name=AGENTS["coordinator"]), request,
             on_response_id=on_response_id, headers={}, timeout=timeout,
         )
-    return response_probe_result(document, request, "coordinator", DiscoveryResult)
+    model = ProbeResult if isinstance(request, ProbeRequest) else DiscoveryResult
+    return response_probe_result(document, request, "coordinator", model)
+
+
+async def identity_probe_result(probe, observation, config, context, scope):
+    children = []
+    child_responses = []
+    if probe.action == "delegate":
+        headers = specialist_identity_headers(config=config, context=context, scope=scope)
+        if probe.identity_forwarding == "user-only":
+            headers.pop("x-agent-foundry-call-id")
+        async with ManagedIdentityCredential() as credential, data_client() as http, \
+                ProjectClient(credential, http, headers) as project:
+            for child in probe.children:
+                details = await project.agents.get(AGENTS[child.role], headers=headers)
+                if details.versions.latest.version != child.version or details.versions.latest.status != "active":
+                    raise ArtifactError("PROBE_VERSION_CHANGED")
+                # The caller records all IDs before dispatch and never
+                # repeats an uncertain probe. No create retry or adoption.
+                if probe.session_creation == "explicit":
+                    created = await project.agents.create_session(
+                        AGENTS[child.role], agent_session_id=child.session_id,
+                        version_indicator=VersionRefIndicator(agent_version=child.version),
+                        headers=headers,
+                    )
+                    if created.agent_session_id != child.session_id:
+                        raise ArtifactError("PROBE_SESSION_CHANGED")
+                child_request = ProbeRequest(
+                    probe_id=probe.probe_id, action="inspect", session_id=child.session_id,
+                    expected_principal=scope.principal,
+                )
+                if probe.specialist_protocol == "responses":
+                    async def remember_response(response_id):
+                        child_responses.append(ProbeResponseReceipt(
+                            role=child.role, requested_version=child.version,
+                            response_id=response_id, status="in_progress",
+                        ))
+                    document = await post_response_probe(
+                        project.get_openai_client(agent_name=AGENTS[child.role]), child_request,
+                        on_response_id=remember_response, headers=headers, timeout=180,
+                    )
+                    child_responses[-1] = ProbeResponseReceipt(
+                        role=child.role, requested_version=child.version,
+                        response_id=document["id"], status=document.get("status"),
+                    )
+                    if probe.session_creation == "first-response":
+                        created = await project.agents.get_session(
+                            AGENTS[child.role], child.session_id, headers=headers,
+                        )
+                        if (created.agent_session_id != child.session_id
+                                or created.version_indicator.agent_version != child.version):
+                            raise ArtifactError("PROBE_CHILD_BINDING")
+                    if document["status"] != "completed":
+                        continue
+                    result = response_probe_result(document, child_request, child.role, ProbeResult)
+                    if result.children or result.child_responses or result.observation.principal_matches is not True:
+                        raise ArtifactError("PROBE_RESPONSE_BINDING")
+                else:
+                    result = await invoke_probe(
+                        http, credential, child.role, child_request, headers=headers,
+                    )
+                if result.observation.version != child.version:
+                    raise ArtifactError("PROBE_VERSION_CHANGED")
+                children.append(result.observation)
+    return ProbeResult(observation=observation, children=children, child_responses=child_responses)
 
 
 def register_identity_probe(server):
@@ -409,13 +489,7 @@ def register_identity_probe(server):
                              and context.session_id == config.session_id == probe.session_id),
             principal_matches=(context.user_id == expected_principal if expected_principal is not None else None),
         )
-        action_valid = role == "coordinator" if isinstance(probe, DiscoveryRequest) else (
-            (probe.action == "delegate" and role == "coordinator" and probe.expected_principal is None
-             and [child.role for child in probe.children] == ["architect", "reviewer"]
-             and len({probe.session_id, *(child.session_id for child in probe.children)}) == 3)
-            or (probe.action == "inspect" and role != "coordinator"
-                and probe.expected_principal is not None and not probe.children)
-        )
+        action_valid = role == "coordinator" if isinstance(probe, DiscoveryRequest) else probe_action_valid(probe, role)
         check = next((code for valid, code in (
             (config.is_hosted and config.project_endpoint == PROJECT, "NATIVE_HOST_PLATFORM"),
             (observation.has_principal, "NATIVE_HOST_PRINCIPAL"),
@@ -439,65 +513,6 @@ def register_identity_probe(server):
         observation = observation.model_copy(update={"status": "verified"})
         if isinstance(probe, DiscoveryRequest):
             return JSONResponse((await discover_delegation(probe, observation, context)).model_dump(mode="json"))
-        children = []
-        child_responses = []
-        if probe.action == "delegate":
-            headers = specialist_identity_headers(config=config, context=context, scope=scope)
-            if probe.identity_forwarding == "user-only":
-                headers.pop("x-agent-foundry-call-id")
-            async with ManagedIdentityCredential() as credential, data_client() as http, \
-                    ProjectClient(credential, http, headers) as project:
-                for child in probe.children:
-                    details = await project.agents.get(AGENTS[child.role], headers=headers)
-                    if details.versions.latest.version != child.version or details.versions.latest.status != "active":
-                        raise ArtifactError("PROBE_VERSION_CHANGED")
-                    # The caller records all IDs before dispatch and never
-                    # repeats an uncertain probe. No create retry or adoption.
-                    if probe.session_creation == "explicit":
-                        created = await project.agents.create_session(
-                            AGENTS[child.role], agent_session_id=child.session_id,
-                            version_indicator=VersionRefIndicator(agent_version=child.version),
-                            headers=headers,
-                        )
-                        if created.agent_session_id != child.session_id:
-                            raise ArtifactError("PROBE_SESSION_CHANGED")
-                    child_request = ProbeRequest(
-                        probe_id=probe.probe_id, action="inspect", session_id=child.session_id,
-                        expected_principal=scope.principal,
-                    )
-                    if probe.specialist_protocol == "responses":
-                        async def remember_response(response_id):
-                            child_responses.append(ProbeResponseReceipt(
-                                role=child.role, requested_version=child.version,
-                                response_id=response_id, status="in_progress",
-                            ))
-                        document = await post_response_probe(
-                            project.get_openai_client(agent_name=AGENTS[child.role]), child_request,
-                            on_response_id=remember_response, headers=headers, timeout=180,
-                        )
-                        child_responses[-1] = ProbeResponseReceipt(
-                            role=child.role, requested_version=child.version,
-                            response_id=document["id"], status=document.get("status"),
-                        )
-                        if probe.session_creation == "first-response":
-                            created = await project.agents.get_session(
-                                AGENTS[child.role], child.session_id, headers=headers,
-                            )
-                            if (created.agent_session_id != child.session_id
-                                    or created.version_indicator.agent_version != child.version):
-                                raise ArtifactError("PROBE_CHILD_BINDING")
-                        if document["status"] != "completed":
-                            continue
-                        result = response_probe_result(document, child_request, child.role, ProbeResult)
-                        if result.children or result.child_responses or result.observation.principal_matches is not True:
-                            raise ArtifactError("PROBE_RESPONSE_BINDING")
-                    else:
-                        result = await invoke_probe(
-                            http, credential, child.role, child_request, headers=headers,
-                        )
-                    if result.observation.version != child.version:
-                        raise ArtifactError("PROBE_VERSION_CHANGED")
-                    children.append(result.observation)
-        return JSONResponse(ProbeResult(
-            observation=observation, children=children, child_responses=child_responses,
-        ).model_dump(mode="json"))
+        return JSONResponse((await identity_probe_result(
+            probe, observation, config, context, scope,
+        )).model_dump(mode="json"))

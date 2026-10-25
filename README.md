@@ -154,6 +154,12 @@ resends an uncertain probe. It calls no model, touches no application artifacts
 and reports only trusted-context presence/equality. Responses workflows,
 principal gates and held parents remain unchanged. Even a passing probe is not
 end-to-end acceptance or an automatic specialist-transport migration.
+`--identity-forwarding user-only` compares the
+[documented direct-call delegation header](https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/multiplex-session-users)
+with the original parent-call-plus-user header set. Only the diagnostic
+children use this selector: the trusted coordinator scope is still revalidated,
+child call context is left to the service, and application callers remain
+unchanged. Use a new private session/evidence pair; never resend an old probe.
 
 For the authorized signed-in-user A2A experiment, use the existing diagnostic
 toolbox (not a new agent) with the same dedicated azd profile:
@@ -168,6 +174,8 @@ with managed MCP discovery, and saves allowlisted HTTP status, timing and
 request IDs. It never invokes tools/models, creates sessions, changes Azure
 configuration or touches held work. Metadata/ARM reads use the existing direct
 route; `--socks` optionally replaces `--direct` for card/MCP traffic only.
+The documented service-default card policy is valid for Foundry targets;
+separate card credentials aren't required by the diagnostic configuration gate.
 Evidence must be new and outside this repository. Exit 2 means blocked,
 incomplete or failed collection; discovery success is not user propagation or
 application acceptance. A remote 403 is distinct from toolbox-entry rejection;

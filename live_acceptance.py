@@ -740,6 +740,7 @@ async def run_identity_probe(args, observed, tenant, subscription, user):
         specialist_versions={role: observed[role]["version"] for role in ("architect", "reviewer")},
     ) if discovery else ProbeRequest(
         probe_id=uuid.uuid4().hex, action="delegate", session_id=uuid.uuid4().hex,
+        identity_forwarding=getattr(args, "identity_forwarding", "platform-and-user"),
         children=[ProbeChild(
             role=role, version=observed[role]["version"], session_id=uuid.uuid4().hex,
         ) for role in ("architect", "reviewer")],
@@ -954,6 +955,7 @@ def main():
     ), required=True)
     parser.add_argument("--toolbox-name")
     parser.add_argument("--toolbox-version")
+    parser.add_argument("--identity-forwarding", choices=("platform-and-user", "user-only"), default="platform-and-user")
     asyncio.run(run(parser.parse_args()))
 
 

@@ -95,7 +95,7 @@ class DelegationDiagnosticTests(unittest.IsolatedAsyncioTestCase):
 
     async def run_collection(
         self, *, source_failure=False, entry_status=None, changed_target=False,
-        network_error=False, cancelled=False,
+        network_error=False, cancelled=False, card_credentials=True,
     ):
         requests = []
         connections = {}
@@ -106,7 +106,7 @@ class DelegationDiagnosticTests(unittest.IsolatedAsyncioTestCase):
             target = PROJECT + f"/agents/{AGENTS[role]}/endpoint/protocols/a2a"
             tools.append(A2AToolboxTool(
                 name="probe_" + role, a2a_version="1.0", project_connection_id=connection_id,
-                send_credentials_for_agent_card=True,
+                send_credentials_for_agent_card=card_credentials,
             ))
             connections[name] = SimpleNamespace(
                 id=connection_id, name=name, type="RemoteA2A", target=target,
@@ -228,6 +228,14 @@ class DelegationDiagnosticTests(unittest.IsolatedAsyncioTestCase):
             [json.loads(request.content)["method"] for request in requests if request.method == "POST"],
             ["initialize", "notifications/initialized", "ping", "tools/list"],
         )
+
+    async def test_documented_service_default_card_policy_is_not_a_configuration_failure(self):
+        for card_credentials in (None, False):
+            report, requests = await self.run_collection(card_credentials=card_credentials)
+            self.assertEqual(report["outcome"], "discovery-succeeded")
+            self.assertEqual(report["tool_count"], 2)
+            self.assertTrue(all(not row["authenticated_card_fetch"] for row in report["configuration"].values()))
+            self.assertTrue(any(request.method == "POST" for request in requests))
 
     async def test_managed_source_denial_is_distinct_from_entry_auth_denial(self):
         report, _ = await self.run_collection(source_failure=True)

@@ -34,6 +34,7 @@ class ProbeRequest(ImmutableModel):
     session_id: Identifier
     expected_principal: BoundedId | None = None
     children: list[ProbeChild] = Field(default_factory=list, max_length=2)
+    identity_forwarding: Literal["platform-and-user", "user-only"] = "platform-and-user"
 
 
 class ProbeObservation(ImmutableModel):
@@ -398,6 +399,8 @@ def register_identity_probe(server):
         children = []
         if probe.action == "delegate":
             headers = specialist_identity_headers(config=config, context=context, scope=scope)
+            if probe.identity_forwarding == "user-only":
+                headers.pop("x-agent-foundry-call-id")
             async with ManagedIdentityCredential() as credential, data_client() as http, \
                     ProjectClient(credential, http, headers) as project:
                 for child in probe.children:

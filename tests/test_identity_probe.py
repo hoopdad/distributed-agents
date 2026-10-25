@@ -226,6 +226,40 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(sent[0].headers["x-ms-user-identity"], USER)
         self.assertNotIn("x-agent-user-id", sent[0].headers)
 
+    async def test_user_only_comparison_keeps_trusted_scope_but_does_not_forward_parent_call(self):
+        probe = ProbeRequest(
+            probe_id=PROBE, action="delegate", session_id=SESSION, identity_forwarding="user-only",
+            children=[ProbeChild(role=role, version="41", session_id=value * 32)
+                      for role, value in (("architect", "c"), ("reviewer", "d"))],
+        )
+        project = MagicMock()
+        project.__aenter__ = AsyncMock(return_value=project)
+        project.__aexit__ = AsyncMock(return_value=False)
+        project.agents.get = AsyncMock(return_value=SimpleNamespace(
+            versions=SimpleNamespace(latest=SimpleNamespace(version="41", status="active")),
+        ))
+        project.agents.create_session = AsyncMock(side_effect=lambda _name, **kwargs: SimpleNamespace(
+            agent_session_id=kwargs["agent_session_id"],
+        ))
+        async def child_result(_http, _credential, role, request, *, headers):
+            self.assertEqual(headers, {"x-ms-user-identity": USER})
+            self.assertEqual(request.expected_principal, USER)
+            return ProbeResult(observation=observation(role))
+        with patch("demo.identity_probe.ManagedIdentityCredential"), patch(
+            "demo.identity_probe.data_client",
+        ), patch("demo.identity_probe.ProjectClient", return_value=project), patch(
+            "demo.identity_probe.invoke_probe", new=AsyncMock(side_effect=child_result),
+        ) as invoke:
+            response = await self.post(self.server("coordinator"), probe)
+        self.assertEqual(response.status_code, 200, response.text)
+        self.assertEqual(invoke.await_count, 2)
+        for call in project.agents.create_session.await_args_list:
+            self.assertEqual(call.kwargs["headers"], {"x-ms-user-identity": USER})
+        with patch("demo.identity_probe.ManagedIdentityCredential") as credential:
+            response = await self.post(self.server("coordinator"), probe, headers={"x-agent-foundry-call-id": "call"})
+        self.assertEqual(response.status_code, 403)
+        credential.assert_not_called()
+
     def discovery(self):
         return DiscoveryRequest(
             probe_id=PROBE, session_id=SESSION, toolbox_name="synthetic-probe", toolbox_version="2",

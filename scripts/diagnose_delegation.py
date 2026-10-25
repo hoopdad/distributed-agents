@@ -211,7 +211,7 @@ async def collect(args) -> dict:
                 except Exception as error:
                     report["errors"].append({"phase": report["phase"], "role": role, **failure(error, names)})
             if not all(all(row[field] for field in (
-                "remote_a2a", "user_entra_token", "azure_target_metadata", "authenticated_card_fetch", "a2a_version_1",
+                "remote_a2a", "user_entra_token", "azure_target_metadata", "a2a_version_1",
             )) for row in report["configuration"].values()):
                 raise DemoError("DIAGNOSTIC_DELEGATION_CONFIGURATION")
             report["phase"] = "tool-discovery"

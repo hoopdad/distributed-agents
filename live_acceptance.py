@@ -725,13 +725,15 @@ def acceptance_credential(args, subscription):
 async def run_identity_probe(args, observed, tenant, subscription, user):
     from demo.identity_probe import (
         DiscoveryRequest, ProbeChild, ProbeRequest, invoke_discovery_probe, invoke_probe,
+        invoke_response_discovery_probe,
     )
 
     path = private_state_path(args.session_file)
     evidence = private_state_path(args.evidence)
     if path.exists() or evidence.exists():
         raise RuntimeError("NEW_IDENTITY_PROBE_REQUIRED_NO_RESEND")
-    discovery = getattr(args, "scenario", "identity-probe") == "delegation-discovery"
+    responses = getattr(args, "scenario", "identity-probe") == "delegation-discovery-responses"
+    discovery = responses or getattr(args, "scenario", "identity-probe") == "delegation-discovery"
     probe = DiscoveryRequest(
         probe_id=uuid.uuid4().hex, session_id=uuid.uuid4().hex,
         toolbox_name=args.toolbox_name, toolbox_version=args.toolbox_version,
@@ -746,6 +748,7 @@ async def run_identity_probe(args, observed, tenant, subscription, user):
         "schema_version": 1, "runtime": probe.kind, "tenant": tenant, "user": user,
         "phase": "prepared", "request": probe.model_dump(mode="json"),
         "versions": {role: data["version"] for role, data in observed.items()},
+        "transport": "responses" if responses else "invocations",
     }
     write_state(path, state, new=True)
     with session_lease(path):
@@ -766,7 +769,13 @@ async def run_identity_probe(args, observed, tenant, subscription, user):
                 raise RuntimeError("PROBE_SESSION_CHANGED")
             state["phase"] = "invocation_dispatched"
             write_state(path, state)
-            result = await invoke_discovery_probe(
+            async def remember_response(response_id):
+                state["response_id"] = response_id
+                write_state(path, state)
+
+            result = await invoke_response_discovery_probe(
+                http, credential, probe, on_response_id=remember_response, timeout=300,
+            ) if responses else await invoke_discovery_probe(
                 http, credential, probe, timeout=300,
             ) if discovery else await invoke_probe(
                 http, credential, "coordinator", probe, headers={}, timeout=300,
@@ -847,7 +856,7 @@ async def run(args):
                 code["dependency_resolution"] not in ("bundled", "remote_build")):
                 raise RuntimeError(f"DEPLOYED_CODE_REQUIRED: {name}")
             observed[role] = metadata
-    if args.scenario in ("identity-probe", "delegation-discovery"):
+    if args.scenario in ("identity-probe", "delegation-discovery", "delegation-discovery-responses"):
         await run_identity_probe(args, observed, tenant, subscription, user)
         return
     path = private_state_path(args.session_file)
@@ -940,7 +949,9 @@ def main():
     parser.add_argument("--sha256", required=True)
     parser.add_argument("--session-file", required=True)
     parser.add_argument("--evidence", required=True)
-    parser.add_argument("--scenario", choices=(*SCENARIOS, "observe", "recover", "identity-probe", "delegation-discovery"), required=True)
+    parser.add_argument("--scenario", choices=(
+        *SCENARIOS, "observe", "recover", "identity-probe", "delegation-discovery", "delegation-discovery-responses",
+    ), required=True)
     parser.add_argument("--toolbox-name")
     parser.add_argument("--toolbox-version")
     asyncio.run(run(parser.parse_args()))

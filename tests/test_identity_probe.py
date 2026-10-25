@@ -15,8 +15,10 @@ os.environ.setdefault("DECISION_MODEL_DEPLOYMENT", "decision-1")
 os.environ.setdefault("EXPECTED_AZURE_TENANT_ID", "11111111-1111-1111-1111-111111111111")
 
 import httpx2
+from agent_framework import FileSessionStore, InMemoryCheckpointStorage
 from azure.ai.agentserver.core import get_request_context
 from azure.ai.agentserver.responses.store._file import FileResponseStore
+from azure.ai.agentserver.responses import ResponsesServerOptions
 from azure.ai.projects.models import A2AToolboxTool
 from mcp.shared.exceptions import McpError
 from mcp.types import ErrorData
@@ -27,6 +29,7 @@ from demo.host import ProbeResponsesHostServer
 from demo.identity_probe import (
     ProbeChild, ProbeObservation, ProbeRequest, ProbeResult, invoke_probe, register_identity_probe,
     DiscoveryFailure, DiscoveryRequest, DiscoveryResult, discover_delegation,
+    create_host_workflow, parse_host_turn, invoke_response_discovery_probe,
 )
 from demo.workflow import create_workflow, parse_turn
 
@@ -229,6 +232,152 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
             specialist_versions={"architect": "41", "reviewer": "41"},
         )
 
+    async def response_probe(self, *, role="coordinator", headers=None, changes=None):
+        headers = headers if headers is not None else {
+            "x-agent-user-id": USER, "x-agent-foundry-call-id": "synthetic-call",
+        }
+        body = {
+            "input": self.discovery().model_dump_json(), "store": True, "background": False, "stream": False,
+            "metadata": {"demo_probe_kind": "delegation-discovery-v1"},
+        }
+        body.update(changes or {})
+        items = {}
+        state_store = MagicMock()
+        state_store.__aenter__ = AsyncMock(return_value=state_store)
+        state_store.__aexit__ = AsyncMock(return_value=False)
+        async def get_item(key, **_kwargs):
+            return items.get(key)
+        async def save_item(key, value, **kwargs):
+            if kwargs.get("if_match") is not None:
+                self.assertEqual(kwargs["if_match"], items[key].etag)
+            item = SimpleNamespace(value=value, etag=str(len(items) + 1))
+            items[key] = item
+            return item
+        state_store.get_item = AsyncMock(side_effect=get_item)
+        state_store.create_item = AsyncMock(side_effect=save_item)
+        state_store.set_item = AsyncMock(side_effect=save_item)
+        with patch.dict(os.environ, {"FOUNDRY_AGENT_NAME": AGENTS[role]}), patch(
+            "azure.ai.agentserver.core.storage.FoundryStateStore.get_or_create",
+            new=AsyncMock(return_value=state_store),
+        ):
+            server = ProbeResponsesHostServer(
+                workflow=create_host_workflow, parse_response=parse_host_turn,
+                response_store=FileResponseStore(), configure_observability=None,
+                options=ResponsesServerOptions(resilient_background=True), unsupported_options="error",
+                agent_session_store_provider=SimpleNamespace(get_store=lambda **_: FileSessionStore(
+                    Path(os.environ["AGENTSERVER_STATE_ROOT"]) / "native-sessions",
+                )),
+                checkpoint_store_provider=SimpleNamespace(get_store=lambda **_: InMemoryCheckpointStorage()),
+            )
+            async with httpx2.AsyncClient(
+                transport=httpx2.ASGITransport(app=server), base_url="http://synthetic",
+            ) as client:
+                return await client.post("/responses", json=body, headers=headers)
+
+    async def test_native_responses_discovery_uses_real_scope_and_no_business_runtime(self):
+        async def discover(probe, observed, context):
+            self.assertEqual(context.user_id, USER)
+            self.assertEqual(context.call_id, "synthetic-call")
+            self.assertEqual(probe, self.discovery())
+            return DiscoveryResult(
+                observation=observed, discovery_status="blocked", phase="configuration",
+                failure=DiscoveryFailure(classes=["RuntimeError"], codes=[], mcp_code=None, sources=[]),
+            )
+
+        with patch("demo.identity_probe.discover_delegation", new=AsyncMock(side_effect=discover)) as discovery, patch(
+            "demo.workflow.WorkflowRuntime",
+        ) as business:
+            response = await self.response_probe()
+        self.assertEqual(response.status_code, 200, response.text)
+        body = response.json()
+        self.assertEqual(body["status"], "completed", body)
+        result = DiscoveryResult.model_validate_json(body["output"][0]["content"][0]["text"])
+        self.assertEqual(result.observation.status, "verified")
+        self.assertFalse(result.user_propagation_verified)
+        discovery.assert_awaited_once()
+        business.assert_not_called()
+        self.assertNotIn(USER, response.text)
+        self.assertNotIn("synthetic-call", response.text)
+        self.assertIsNone(get_request_context().user_id)
+
+    async def test_responses_diagnostic_rejects_untrusted_scope_bad_options_and_schema(self):
+        for kwargs in (
+            {"role": "architect"},
+            {"headers": {"x-agent-foundry-call-id": "synthetic-call", "x-ms-user-identity": USER}},
+            {"headers": {"x-agent-user-id": USER}},
+            {"changes": {"input": self.discovery().model_copy(update={"session_id": "f" * 32}).model_dump_json()}},
+            {"changes": {"input": '{"kind":"delegation-discovery-v1","kind":"delegation-discovery-v1"}'}},
+            {"changes": {"input": "x" * 4097}},
+            {"changes": {"store": False}},
+            {"changes": {"metadata": {"demo_probe_kind": "other"}}},
+        ):
+            with self.subTest(kwargs=kwargs), patch(
+                "demo.identity_probe.discover_delegation", new=AsyncMock(),
+            ) as discovery, patch("demo.workflow.WorkflowRuntime") as business:
+                response = await self.response_probe(**kwargs)
+                self.assertTrue(response.status_code >= 400 or response.json().get("status") == "failed", response.text)
+                discovery.assert_not_awaited()
+                business.assert_not_called()
+
+        for changes in (
+            {"background": True}, {"stream": True}, {"previous_response_id": "existing"},
+            {"conversation": "existing"},
+        ):
+            request = SimpleNamespace(
+                request={"metadata": {"demo_probe_kind": "delegation-discovery-v1"}, "store": True, **changes},
+                get_input_text=AsyncMock(),
+            )
+            for callback in (create_host_workflow, parse_host_turn):
+                with self.assertRaisesRegex(ArtifactError, "PROBE_RESPONSE_OPTIONS"):
+                    await callback(request)
+            request.get_input_text.assert_not_awaited()
+
+    async def test_ordinary_responses_delegate_to_unchanged_workflow_and_parser(self):
+        request = SimpleNamespace(request={"metadata": {"other": "value"}})
+        original = object()
+        with patch("demo.workflow.create_workflow", return_value=original) as factory, patch(
+            "demo.workflow.parse_turn", new=AsyncMock(return_value=original),
+        ) as parser, patch("demo.identity_probe.discover_delegation", new=AsyncMock()) as discovery:
+            self.assertIs(await create_host_workflow(request), original)
+            self.assertIs(await parse_host_turn(request), original)
+        factory.assert_called_once_with(request)
+        parser.assert_awaited_once_with(request)
+        discovery.assert_not_awaited()
+
+    async def test_responses_client_remembers_known_id_before_failure_and_never_retries(self):
+        sent, remembered = [], []
+        expected = DiscoveryResult(
+            observation=observation("coordinator", principal_matches=None),
+            discovery_status="blocked", phase="configuration",
+            failure=DiscoveryFailure(classes=["RuntimeError"], codes=[], mcp_code=None, sources=[]),
+        )
+        document = {
+            "id": "resp_synthetic", "agent_session_id": SESSION, "status": "completed", "output": [{
+                "type": "message", "role": "assistant",
+                "content": [{"type": "output_text", "text": expected.model_dump_json()}],
+            }],
+        }
+        async def respond(request):
+            sent.append(request)
+            return httpx2.Response(200, json=document)
+        async def remember(identifier):
+            remembered.append(identifier)
+        credential = SimpleNamespace(get_token=AsyncMock(return_value=SimpleNamespace(token="synthetic-token")))
+        async with httpx2.AsyncClient(transport=httpx2.MockTransport(respond)) as http:
+            result = await invoke_response_discovery_probe(
+                http, credential, self.discovery(), on_response_id=remember,
+            )
+            self.assertEqual(result, expected)
+            document["status"] = "failed"
+            with self.assertRaisesRegex(ArtifactError, "PROBE_RESPONSE_INCOMPLETE"):
+                await invoke_response_discovery_probe(http, credential, self.discovery(), on_response_id=remember)
+        self.assertEqual(remembered, ["resp_synthetic", "resp_synthetic"])
+        self.assertEqual(len(sent), 2)
+        self.assertTrue(sent[0].url.path.endswith("/endpoint/protocols/openai/responses"))
+        self.assertEqual(sent[0].url.params["agent_session_id"], SESSION)
+        self.assertFalse(json.loads(sent[0].content)["background"])
+        self.assertNotIn("x-agent-user-id", sent[0].headers)
+
     async def test_discovery_requires_genuine_coordinator_principal_call_and_session(self):
         for role, headers, query, check in (
             ("architect", None, None, "PROBE_ACTION"),
@@ -360,6 +509,36 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
 
 @unittest.skipUnless(os.name == "nt", "Client session leases are Windows-specific.")
 class ProbeUncertaintyTests(unittest.IsolatedAsyncioTestCase):
+    async def test_responses_timeout_preserves_known_id_and_cannot_be_resent(self):
+        from live_acceptance import run_identity_probe
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "probe.json"
+            args = SimpleNamespace(
+                scenario="delegation-discovery-responses", toolbox_name="synthetic-probe", toolbox_version="2",
+                session_file=str(path), evidence=str(Path(directory) / "evidence.json"), socks=None,
+            )
+            async def create(*_args, **_kwargs):
+                return {"agent_session_id": json.loads(path.read_text())["request"]["session_id"]}
+            async def invoke(*_args, on_response_id, **_kwargs):
+                await on_response_id("resp_synthetic")
+                raise TimeoutError
+            with patch("live_acceptance.acceptance_credential"), patch("live_acceptance.data_client"), patch(
+                "live_acceptance.rest", new=AsyncMock(side_effect=create),
+            ) as rest, patch(
+                "demo.identity_probe.invoke_response_discovery_probe", new=AsyncMock(side_effect=invoke),
+            ) as dispatched:
+                observed = {role: {"version": "41"} for role in AGENTS}
+                with self.assertRaises(TimeoutError):
+                    await run_identity_probe(args, observed, "tenant", "subscription", USER)
+                state = json.loads(path.read_text())
+                self.assertEqual(state["phase"], "invocation_dispatched")
+                self.assertEqual(state["response_id"], "resp_synthetic")
+                self.assertEqual(state["transport"], "responses")
+                with self.assertRaisesRegex(RuntimeError, "NEW_IDENTITY_PROBE_REQUIRED_NO_RESEND"):
+                    await run_identity_probe(args, observed, "tenant", "subscription", USER)
+                rest.assert_awaited_once()
+                dispatched.assert_awaited_once()
+
     async def test_discovery_timeout_cannot_be_resent_or_create_specialist_sessions(self):
         from live_acceptance import run_identity_probe
         with tempfile.TemporaryDirectory() as directory:

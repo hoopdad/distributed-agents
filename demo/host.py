@@ -154,18 +154,17 @@ def main():
     if runtime == "native":
         if os.environ.get("AGENTSERVER_TASKS_BACKEND", "hosted") != "hosted":
             raise RuntimeError("Foundry workflow hosting requires the hosted resilient task backend.")
-        from .workflow import create_workflow, parse_turn
+        from .identity_probe import create_host_workflow, parse_host_turn, register_identity_probe
         logger = logging.getLogger("agent_framework_foundry_hosting._workflow_responses")
         if not any(isinstance(item, WorkflowPreparationDiagnostics) for item in logger.filters):
             logger.addFilter(WorkflowPreparationDiagnostics(AgentConfig.from_env()))
         server = ProbeResponsesHostServer(
-            workflow=create_workflow, parse_response=parse_turn,
+            workflow=create_host_workflow, parse_response=parse_host_turn,
             checkpoint_store_provider=CheckpointStoreProvider(),
             options=ResponsesServerOptions(resilient_background=True),
             unsupported_options="error",
             prepare_options=prepare_diagnostic_options,
         )
-        from .identity_probe import register_identity_probe
         register_identity_probe(server)
         server.add_middleware(IngressDiagnostics, role=role)
         server.run()

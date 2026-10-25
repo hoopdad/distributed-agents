@@ -3,8 +3,9 @@ from __future__ import annotations
 import asyncio
 from typing import Literal
 
-from agent_framework import MCPStreamableHTTPTool
-from azure.ai.agentserver.core import get_request_context
+from agent_framework import Executor, MCPStreamableHTTPTool, WorkflowBuilder, WorkflowContext, handler
+from agent_framework_foundry_hosting import WorkflowTurn
+from azure.ai.agentserver.core import AgentConfig, get_request_context
 from azure.ai.projects.models import A2AToolboxTool, VersionRefIndicator
 from azure.identity.aio import ManagedIdentityCredential
 from pydantic import Field, ValidationError, model_validator
@@ -216,6 +217,113 @@ async def invoke_discovery_probe(http, credential, request: DiscoveryRequest, *,
     result = DiscoveryResult.model_validate(decode_document(response.content))
     if (result.observation.probe_id != request.probe_id or result.observation.role != "coordinator"
             or (response.status_code == 200) != (result.observation.status == "verified")):
+        raise ArtifactError("PROBE_RESPONSE_BINDING")
+    return result
+
+
+def response_discovery_selected(request):
+    marker = (request.request.get("metadata") or {}).get("demo_probe_kind")
+    if marker is not None and marker != "delegation-discovery-v1":
+        raise ArtifactError("PROBE_ACTION")
+    return marker is not None
+
+
+async def response_discovery_request(request):
+    if (request.request.get("background", False) is not False
+            or request.request.get("store") is not True or request.request.get("stream", False) is not False
+            or request.request.get("previous_response_id") is not None
+            or request.request.get("conversation") is not None):
+        raise ArtifactError("PROBE_RESPONSE_OPTIONS")
+    text = await request.get_input_text()
+    if not isinstance(text, str) or len(text.encode("utf-8")) > 4096:
+        raise ArtifactError("PROBE_INPUT_LIMIT")
+    return DiscoveryRequest.model_validate(decode_document(text.encode("utf-8")))
+
+
+class DiscoveryExecutor(Executor):
+    def __init__(self, probe, observation):
+        super().__init__(id="delegation-discovery-v1")
+        self.probe = probe
+        self.observation = observation
+
+    @handler
+    async def discover(self, text: str, context: WorkflowContext[None, str]):
+        if text != self.probe.model_dump_json():
+            raise ArtifactError("PROBE_INPUT_CHANGED")
+        result = await discover_delegation(self.probe, self.observation, get_request_context())
+        await context.yield_output(result.model_dump_json())
+
+
+async def create_host_workflow(request):
+    from .workflow import create_workflow
+
+    if not response_discovery_selected(request):
+        return create_workflow(request)
+    probe = await response_discovery_request(request)
+    config, context = AgentConfig.from_env(), get_request_context()
+    for valid, code in (
+        (config.agent_name == AGENTS["coordinator"], "PROBE_ACTION"),
+        (config.is_hosted and request.scope.is_hosted and config.project_endpoint == PROJECT, "NATIVE_HOST_PLATFORM"),
+        (bool(context.user_id) and request.scope.user_id == context.user_id, "NATIVE_HOST_PRINCIPAL"),
+        (bool(context.call_id) and request.scope.call_id == context.call_id, "NATIVE_HOST_CALL"),
+        (request.scope.session_id == context.session_id == config.session_id == probe.session_id, "NATIVE_HOST_SESSION"),
+    ):
+        if not valid:
+            raise ArtifactError(code)
+    ScopeBinding.from_platform(config, context, project=PROJECT, tenant=required("EXPECTED_AZURE_TENANT_ID"))
+    observation = ProbeObservation(
+        probe_id=probe.probe_id, role="coordinator", version=config.agent_version,
+        status="verified", has_principal=True, has_call_id=True,
+        session_matches=True, principal_matches=None,
+    )
+    return WorkflowBuilder(
+        name="delegation-discovery-v1", start_executor=DiscoveryExecutor(probe, observation),
+    ).build()
+
+
+async def parse_host_turn(request):
+    from .workflow import parse_turn
+
+    if not response_discovery_selected(request):
+        return await parse_turn(request)
+    return WorkflowTurn(input=(await response_discovery_request(request)).model_dump_json())
+
+
+async def invoke_response_discovery_probe(http, credential, request: DiscoveryRequest, *, on_response_id, timeout=180):
+    token = await credential.get_token("https://ai.azure.com/.default")
+    response = await http.post(
+        PROJECT + f"/agents/{AGENTS['coordinator']}/endpoint/protocols/openai/responses",
+        params={"api-version": "v1", "agent_session_id": request.session_id},
+        json={
+            "input": request.model_dump_json(), "store": True, "background": False, "stream": False,
+            "metadata": {"demo_probe_kind": "delegation-discovery-v1"},
+        },
+        headers={"Authorization": "Bearer " + token.token}, timeout=timeout,
+    )
+    if response.status_code != 200 or len(response.content) > 65536:
+        raise ArtifactError(f"PROBE_HTTP_{response.status_code}")
+    document = decode_document(response.content)
+    if not isinstance(document, dict):
+        raise ArtifactError("PROBE_RESPONSE_SCHEMA")
+    response_id = document.get("id")
+    if not isinstance(response_id, str) or not 1 <= len(response_id) <= 128:
+        raise ArtifactError("PROBE_RESPONSE_ID")
+    await on_response_id(response_id)
+    if document.get("agent_session_id") != request.session_id:
+        raise ArtifactError("PROBE_SESSION_CHANGED")
+    if document.get("status") != "completed":
+        raise ArtifactError("PROBE_RESPONSE_INCOMPLETE")
+    output = document.get("output")
+    if (not isinstance(output, list) or len(output) != 1 or not isinstance(output[0], dict)
+            or output[0].get("type") != "message" or output[0].get("role") != "assistant"):
+        raise ArtifactError("PROBE_RESPONSE_SCHEMA")
+    content = output[0].get("content")
+    if (not isinstance(content, list) or len(content) != 1 or not isinstance(content[0], dict)
+            or content[0].get("type") != "output_text" or not isinstance(content[0].get("text"), str)):
+        raise ArtifactError("PROBE_RESPONSE_SCHEMA")
+    result = DiscoveryResult.model_validate(decode_document(content[0]["text"].encode("utf-8")))
+    if (result.observation.probe_id != request.probe_id or result.observation.role != "coordinator"
+            or result.observation.status != "verified"):
         raise ArtifactError("PROBE_RESPONSE_BINDING")
     return result
 

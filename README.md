@@ -183,6 +183,13 @@ route/auth/hash/private session/evidence arguments. It reserves a fresh
 coordinator session before dispatch, verifies genuine principal/call/session
 context and the two pinned delegated sources, then forwards only the SDK's
 genuine opaque call context with managed-identity toolbox authentication.
+Use `--scenario delegation-discovery-responses` with a new private session/evidence
+pair to compare the same discovery through a foreground, stored, nonstreaming
+native Responses workflow. The explicit diagnostic metadata selector grants no
+authority: genuine hosted coordinator principal/call/session gates still apply.
+Ordinary requests retain their existing workflow/parser. This comparison runs
+no business graph and records a known response ID before interpreting its result;
+uncertain requests are never resent. It does not adopt A2A for application calls.
 Only MCP discovery runs: no specialist session creation, tool call, model or
 Blob operation. It shares the terminal diagnostic's redaction/request observer.
 Missing context/configuration, remote rejection and uncertain dispatch remain

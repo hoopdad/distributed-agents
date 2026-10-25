@@ -1476,7 +1476,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_native_host_enables_checkpoint_and_resilient_background_apis(self):
         from demo.host import main
-        from demo.workflow import create_workflow, parse_turn
+        from demo.identity_probe import create_host_workflow, parse_host_turn
         with patch.dict(os.environ, {"DEMO_ROLE": "coordinator", "DEMO_RUNTIME": "native"}):
             with patch("demo.host.ProbeResponsesHostServer") as server:
                 main()
@@ -1484,8 +1484,8 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(kwargs["options"].resilient_background)
         self.assertEqual(kwargs["unsupported_options"], "error")
         self.assertIn("workflow", kwargs)
-        self.assertIs(kwargs["workflow"], create_workflow)
-        self.assertIs(kwargs["parse_response"], parse_turn)
+        self.assertIs(kwargs["workflow"], create_host_workflow)
+        self.assertIs(kwargs["parse_response"], parse_host_turn)
         self.assertIn("checkpoint_store_provider", kwargs)
         self.assertNotIn("agent", kwargs)
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import os
 from typing import Literal
 
 from agent_framework import Executor, MCPStreamableHTTPTool, WorkflowBuilder, WorkflowContext, handler
@@ -89,6 +90,7 @@ class DiscoveryResult(ImmutableModel):
     wire_authenticated: bool = False
     wire_call_matches_context: bool = False
     wire_request_count: int = Field(default=0, ge=0)
+    platform_toolbox_features_present: bool = False
     request_ids: list[dict[str, BoundedId]] = Field(default_factory=list)
     failure: DiscoveryFailure | None = None
     user_propagation_verified: Literal[False] = False
@@ -111,6 +113,7 @@ async def discover_delegation(probe: DiscoveryRequest, observation: ProbeObserva
     phase, count, source_verified = "configuration", 0, False
     wire, names, error = {"http": []}, {}, None
     headers = dict(context.platform_headers())
+    features = os.environ.get("FOUNDRY_AGENT_TOOLSET_FEATURES", "")
     try:
         if headers != {"x-agent-foundry-call-id": context.call_id}:
             raise DemoError("DIAGNOSTIC_PLATFORM_HEADERS")
@@ -157,7 +160,10 @@ async def discover_delegation(probe: DiscoveryRequest, observation: ProbeObserva
             http.event_hooks["request"].append(observe_request)
             http.event_hooks["response"].append(capture.response)
             headers.update(Authorization="Bearer " + token.token)
-            headers["Foundry-Features"] = "Toolboxes=V1Preview"
+            headers["Foundry-Features"] = (
+                features if any(item.strip().casefold() == "toolboxes=v1preview" for item in features.split(","))
+                else "Toolboxes=V1Preview" + ("," + features if features.strip() else "")
+            )
             http.headers.update(headers)
             phase = "tool-discovery"
             async with asyncio.timeout(120):
@@ -180,6 +186,7 @@ async def discover_delegation(probe: DiscoveryRequest, observation: ProbeObserva
         wire_authenticated=bool(wire["http"]) and all(row["authorization_present"] for row in wire["http"]),
         wire_call_matches_context=bool(wire["http"]) and all(row["call_matches_context"] for row in wire["http"]),
         wire_request_count=len(wire["http"]),
+        platform_toolbox_features_present=bool(features.strip()),
         request_ids=[row.get("request_ids", {}) for row in wire["http"]], failure=error,
     )
 

@@ -415,7 +415,7 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn("synthetic-call", response.text)
         workflow.assert_not_called()
 
-    async def discovery_boundary(self, *, blocked=False, version_changed=False):
+    async def discovery_boundary(self, *, blocked=False, version_changed=False, features=""):
         project = MagicMock()
         project.__aenter__ = AsyncMock(return_value=project)
         project.__aexit__ = AsyncMock(return_value=False)
@@ -448,6 +448,11 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(request.headers["Authorization"], "Bearer private-synthetic-token")
             self.assertNotIn("x-ms-user-identity", request.headers)
             self.assertNotIn("x-agent-user-id", request.headers)
+            self.assertEqual(
+                request.headers["Foundry-Features"],
+                features if "toolboxes=v1preview" in features.lower()
+                else "Toolboxes=V1Preview" + ("," + features if features.strip() else ""),
+            )
             return httpx2.Response(200)
 
         http = httpx2.AsyncClient(transport=httpx2.MockTransport(respond))
@@ -470,7 +475,9 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
             async def __aexit__(self, *args):
                 return False
 
-        with patch("demo.identity_probe.ManagedIdentityCredential", return_value=credential), patch(
+        with patch.dict(os.environ, {"FOUNDRY_AGENT_TOOLSET_FEATURES": features}), patch(
+            "demo.identity_probe.ManagedIdentityCredential", return_value=credential,
+        ), patch(
             "demo.identity_probe.data_client", return_value=http,
         ), patch("demo.identity_probe.ProjectClient", return_value=project), patch(
             "demo.identity_probe.MCPStreamableHTTPTool", return_value=Tool(),
@@ -497,6 +504,12 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(result.source_bindings_verified)
         self.assertEqual(result.tool_count, 2)
         self.assertFalse(result.user_propagation_verified)
+
+    async def test_discovery_preserves_supported_wrapper_platform_features_without_exposing_values(self):
+        for features in ("Synthetic=1", "Synthetic=1, Toolboxes=V1Preview", "  "):
+            result = await self.discovery_boundary(features=features)
+            self.assertEqual(result.platform_toolbox_features_present, bool(features.strip()))
+            self.assertNotIn("Synthetic=1", result.model_dump_json())
 
     async def test_hosted_discovery_preserves_structured_rejection_and_version_gate(self):
         result = await self.discovery_boundary(blocked=True)

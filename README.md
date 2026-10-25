@@ -183,6 +183,8 @@ route/auth/hash/private session/evidence arguments. It reserves a fresh
 coordinator session before dispatch, verifies genuine principal/call/session
 context and the two pinned delegated sources, then forwards only the SDK's
 genuine opaque call context with managed-identity toolbox authentication.
+Platform-provided toolbox preview flags are preserved, matching the pinned
+hosted toolbox wrapper; evidence records only whether such flags were present.
 Use `--scenario delegation-discovery-responses` with a new private session/evidence
 pair to compare the same discovery through a foreground, stored, nonstreaming
 native Responses workflow. The explicit diagnostic metadata selector grants no

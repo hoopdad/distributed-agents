@@ -56,7 +56,7 @@ History may explain a finding but never creates a current blocker by itself.
 | Identity-path probe | `demo\identity_probe.py`, `demo\host.py`, `live_acceptance.py` | Explicitly authorized bounded Invocations diagnostic on the existing three hosts; no model/artifact work, automatic retry or production transport switch |
 | Delegation diagnostics | `demo\delegation_diagnostics.py`, `scripts\diagnose_delegation.py`, `demo\identity_probe.py`, `tests\test_diagnose_delegation.py`, `tests\test_identity_probe.py` | Shared redacted wire/error capture; terminal versus genuine coordinator-hosted MCP discovery, pinned delegated sources and private request correlation; no tool/model/artifact work or assumed root cause |
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline regressions and build/package validation, not live acceptance |
-| Normal azd delivery | `scripts\check_azd_source.py`, `.agentignore`, `azure.yaml`, `tests\test_azd_source.py`, `docs\requirements\azd-walking-skeleton.md` | Bounded public-source, pin and compilation checks for native remote-build packaging; legacy exact-package tools unchanged, deployed verification still required |
+| Normal azd delivery | `scripts\check_azd_source.py`, `scripts\build_azd_bundle.py`, `.agentignore`, `azure.yaml`, `tests\test_azd_source.py`, `docs\requirements\azd-walking-skeleton.md` | Bounded public-source checks and unchanged pinned Linux dependency bundles for normal azd; wheel/closure/RECORD validation before packaging, legacy exact-package tools unchanged, deployed verification still required |
 | Current delivery | `delivery-input.json`, `docs\requirements\delivery-mission.md`, `docs\NEXT-SESSION-PROMPT.md`, `docs\implementation-workflow.md` | Authorized azd delivery and seven-component acceptance based on fresh observations |
 | Design | `docs\design.md`, `docs\requirements\delivery-architecture.md`, `docs\requirements\delivery-architecture.json` | Current source lifecycle plus D1-D7 solution model, state-plane contracts, source/test joins and exact-candidate delivery handoff; architecture checks are not live acceptance |
 | Terminal UX | `docs\requirements\delivery-user-experience.md`, `docs\requirements\delivery-user-experience.json`, `tests\test_delivery_user_experience.py` | Mission-traceable terminal principles, all architecture journeys, screen/state direction and executable UX contracts; design/schema completion is not deployed acceptance |
@@ -140,6 +140,7 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `scripts\Initialize-LabSettings.ps1`
 - `scripts\Test-Repository.ps1`
 - `scripts\Use-Settings.ps1`
+- `scripts\build_azd_bundle.py`
 - `scripts\build_sprint_plan.py`
 - `scripts\calibrate_routing.py`
 - `scripts\check_azd_source.py`

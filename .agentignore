@@ -8,3 +8,5 @@
 !config/routing-corpus.json
 !config/routing-calibration.json
 demo/__pycache__/
+!packages/
+!packages/**

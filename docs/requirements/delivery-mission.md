@@ -169,7 +169,10 @@ plans, checks and every progress/final report. They are not workflow-agent roles
 ### F1: deploy the walking skeleton early
 
 `azure.yaml` references an existing project and exactly three hosted Responses
-2.0.0 services with `remote_build`. The implemented normal-azd hooks use
+2.0.0 services. Following three terminal remote dependency-build failures, normal
+azd uses `bundled` with the unchanged locked Linux dependency closure. This changes
+dependency installation location, not the runtime, transport, role count or
+authorization. The implemented normal-azd hooks use
 `scripts\check_azd_source.py` and `.agentignore`, not the legacy package guard.
 Normal azd delivery must not
 require a preapproved ZIP/hash or private approval receipt. Verify the actual

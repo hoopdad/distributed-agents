@@ -24,11 +24,17 @@ not failed. Prior failures, denials and planning handoffs are opt-in
 [historical context](.github/repo-history-index.md), not current blockers.
 
 The deployment descriptor has the existing project and three Responses 2.0.0
-remote-build services. Normal `azd deploy` now uses
+bundled-dependency services. Normal `azd deploy` uses
 [bounded source/pin checks](docs/requirements/azd-walking-skeleton.md) and
 `.agentignore`, without a preapproved ZIP/hash/private receipt. Actual deployment
 and separate exact-candidate probes remain required; offline checks are not a
 deployed pass. Exact-package lab safeguards and all held/unknown effects remain.
+After remote dependency builds failed, the same locked Linux dependencies are
+installed locally with `scripts\build_azd_bundle.py`, then checked against their
+wheel tags, dependency closure and RECORD hashes before normal azd packaging.
+Use Linux x86_64 CPython 3.13 with pip to run that script from this repository.
+It reuses a valid `packages/` tree without reinstalling and never replaces an
+existing invalid tree. Generated dependencies remain ignored by Git.
 
 **Continuity invariant:** the parent and both specialists keep their hosted
 session IDs, framework session IDs and pinned deployed versions. New

@@ -16,18 +16,18 @@ services:
     codeConfiguration:
       runtime: python_3_13
       entryPoint: main.py
-      dependencyResolution: remote_build
+      dependencyResolution: bundled
     uses: [ai-project]
     kind: hosted
     name: multi-agent-architect
     hooks:
-      predeploy:
+      prepackage:
         windows:
           shell: pwsh
-          run: python scripts/check_azd_source.py; exit $LASTEXITCODE
+          run: python scripts/check_azd_source.py --bundled; exit $LASTEXITCODE
         posix:
           shell: sh
-          run: python3 scripts/check_azd_source.py
+          run: python3 scripts/check_azd_source.py --bundled
     protocols:
       - protocol: responses
         version: "2.0.0"
@@ -56,18 +56,18 @@ services:
     codeConfiguration:
       runtime: python_3_13
       entryPoint: main.py
-      dependencyResolution: remote_build
+      dependencyResolution: bundled
     uses: [ai-project]
     kind: hosted
     name: multi-agent-reviewer
     hooks:
-      predeploy:
+      prepackage:
         windows:
           shell: pwsh
-          run: python scripts/check_azd_source.py; exit $LASTEXITCODE
+          run: python scripts/check_azd_source.py --bundled; exit $LASTEXITCODE
         posix:
           shell: sh
-          run: python3 scripts/check_azd_source.py
+          run: python3 scripts/check_azd_source.py --bundled
     protocols:
       - protocol: responses
         version: "2.0.0"
@@ -96,18 +96,18 @@ services:
     codeConfiguration:
       runtime: python_3_13
       entryPoint: main.py
-      dependencyResolution: remote_build
+      dependencyResolution: bundled
     uses: [ai-project]
     kind: hosted
     name: multi-agent-coordinator
     hooks:
-      predeploy:
+      prepackage:
         windows:
           shell: pwsh
-          run: python scripts/check_azd_source.py; exit $LASTEXITCODE
+          run: python scripts/check_azd_source.py --bundled; exit $LASTEXITCODE
         posix:
           shell: sh
-          run: python3 scripts/check_azd_source.py
+          run: python3 scripts/check_azd_source.py --bundled
     protocols:
       - protocol: responses
         version: "2.0.0"

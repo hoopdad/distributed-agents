@@ -4,21 +4,32 @@ Authority: [delivery-mission.md](delivery-mission.md) D1 and F1, and the assigne
 `azd-walking-skeleton` task. This implements the approved replacement, not new
 acceptance criteria or a waiver of deployed verification.
 
-All three existing services retain `python_3_13`, Responses `2.0.0` and
-`remote_build`. Their platform-specific predeploy hooks run
-`scripts/check_azd_source.py` with Python, without an approved ZIP/hash, private
+All three existing services retain `python_3_13`, Responses/Invocations `2.0.0`
+and the same dependency pins. After terminal remote builds failed, they use
+normal azd `bundled` dependency resolution. Their platform-specific prepackage
+hooks run `scripts/check_azd_source.py --bundled` with Python, without an approved ZIP/hash, private
 receipt or dependency on `TMPDIR`. The standard-library check verifies the
 bounded `.agentignore` allowlist, the existing verified dependency feed,
 direct-to-lock exact pins, source compilation and routing JSON syntax. It reads
-only the selected public source, rejecting linked source. It does not inspect
-private settings, authenticate, upload, install dependencies or mutate Azure.
+only the selected public source and generated dependency files, rejecting links,
+foreign binaries, unsupported wheel tags, incomplete Linux dependencies and
+missing/changed/unrecorded package files. It does not inspect private settings,
+authenticate, upload, install dependencies or mutate Azure.
 
 `.agentignore` includes only the entrypoint, manifests, flat application Python
-modules and the two routing documents. Bundled `packages/` is no longer included
-in this remote-build path. `.dockerignore`, Dockerfile, dependency manifests,
+modules, the two routing documents and checked bundled `packages/`.
+`.dockerignore`, Dockerfile, dependency manifests,
 `package_guard.py` and unused external exact-package release tools are unchanged.
-Dependency resolution and Linux build success remain the supported remote
-builder's responsibility; a local syntax check never proves them.
+Use an isolated Linux x86_64 CPython 3.13 environment with pip and run
+`scripts/build_azd_bundle.py` from the repository root before packaging.
+It installs the existing lock's Linux pins as binary wheels, without dependency
+re-resolution or compilation; optional feed metadata sidecars are not needed.
+The script validates package RECORD hashes, portable Linux wheel tags and the
+complete Linux dependency closure, then runs pip's dependency check in that
+Linux environment. A valid existing bundle is reused without reinstalling; an
+invalid existing tree fails explicitly rather than being overwritten.
+No application dependency pins, package index, TLS checks or principal gates
+are changed. Local validation is not hosted execution or product acceptance.
 
 ## Verified supported packaging interface
 
@@ -52,11 +63,11 @@ operation before any retry; a timeout is not permission to resend.
 
 Keep the lock for the separate EndToEndTestLoop probes of the same candidate:
 all three existing role bindings, actual observed versions, source/artifact
-identity, remote build outcome and supported invocation must be established.
+identity, dependency packaging outcome and supported invocation must be established.
 An azd exit, uploaded bundle, source hash or healthy host alone cannot complete
 D1. No dependent assignment is released by offline checks.
 
-## Current execution observation
+## Historical remote-build implementation observation (not current status)
 
 This turn started on `feature/azd-demo-delivery` at
 `7fb5eef8f527ab6ac51819c9f63064d74e678a2e`, with a clean checkout.

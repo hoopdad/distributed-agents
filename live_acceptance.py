@@ -723,20 +723,27 @@ def acceptance_credential(args, subscription):
 
 
 async def run_identity_probe(args, observed, tenant, subscription, user):
-    from demo.identity_probe import ProbeChild, ProbeRequest, invoke_probe
+    from demo.identity_probe import (
+        DiscoveryRequest, ProbeChild, ProbeRequest, invoke_discovery_probe, invoke_probe,
+    )
 
     path = private_state_path(args.session_file)
     evidence = private_state_path(args.evidence)
     if path.exists() or evidence.exists():
         raise RuntimeError("NEW_IDENTITY_PROBE_REQUIRED_NO_RESEND")
-    probe = ProbeRequest(
+    discovery = getattr(args, "scenario", "identity-probe") == "delegation-discovery"
+    probe = DiscoveryRequest(
+        probe_id=uuid.uuid4().hex, session_id=uuid.uuid4().hex,
+        toolbox_name=args.toolbox_name, toolbox_version=args.toolbox_version,
+        specialist_versions={role: observed[role]["version"] for role in ("architect", "reviewer")},
+    ) if discovery else ProbeRequest(
         probe_id=uuid.uuid4().hex, action="delegate", session_id=uuid.uuid4().hex,
         children=[ProbeChild(
             role=role, version=observed[role]["version"], session_id=uuid.uuid4().hex,
         ) for role in ("architect", "reviewer")],
     )
     state = {
-        "schema_version": 1, "runtime": "identity-probe-v1", "tenant": tenant, "user": user,
+        "schema_version": 1, "runtime": probe.kind, "tenant": tenant, "user": user,
         "phase": "prepared", "request": probe.model_dump(mode="json"),
         "versions": {role: data["version"] for role, data in observed.items()},
     }
@@ -759,13 +766,18 @@ async def run_identity_probe(args, observed, tenant, subscription, user):
                 raise RuntimeError("PROBE_SESSION_CHANGED")
             state["phase"] = "invocation_dispatched"
             write_state(path, state)
-            result = await invoke_probe(
+            result = await invoke_discovery_probe(
+                http, credential, probe, timeout=300,
+            ) if discovery else await invoke_probe(
                 http, credential, "coordinator", probe, headers={}, timeout=300,
             )
         if result.observation.version != observed["coordinator"]["version"]:
             raise RuntimeError("PROBE_VERSION_CHANGED")
         write_state(evidence, result.model_dump(mode="json"), new=True)
         verified = (
+            result.observation.status == "verified" and result.discovery_status == "discovered"
+            and result.source_bindings_verified and result.wire_authenticated and result.wire_call_matches_context
+        ) if discovery else (
             result.observation.status == "verified"
             and [child.role for child in result.children] == ["architect", "reviewer"]
             and all(child.status == "verified" and child.principal_matches is True
@@ -775,7 +787,7 @@ async def run_identity_probe(args, observed, tenant, subscription, user):
         write_state(path, state)
         print(result.model_dump_json())
         if not verified:
-            raise RuntimeError("INVOCATIONS_IDENTITY_PROBE_REJECTED")
+            raise RuntimeError("HOSTED_DELEGATION_DISCOVERY_BLOCKED" if discovery else "INVOCATIONS_IDENTITY_PROBE_REJECTED")
 
 
 async def run(args):
@@ -835,7 +847,7 @@ async def run(args):
                 code["dependency_resolution"] not in ("bundled", "remote_build")):
                 raise RuntimeError(f"DEPLOYED_CODE_REQUIRED: {name}")
             observed[role] = metadata
-    if args.scenario == "identity-probe":
+    if args.scenario in ("identity-probe", "delegation-discovery"):
         await run_identity_probe(args, observed, tenant, subscription, user)
         return
     path = private_state_path(args.session_file)
@@ -928,7 +940,9 @@ def main():
     parser.add_argument("--sha256", required=True)
     parser.add_argument("--session-file", required=True)
     parser.add_argument("--evidence", required=True)
-    parser.add_argument("--scenario", choices=(*SCENARIOS, "observe", "recover", "identity-probe"), required=True)
+    parser.add_argument("--scenario", choices=(*SCENARIOS, "observe", "recover", "identity-probe", "delegation-discovery"), required=True)
+    parser.add_argument("--toolbox-name")
+    parser.add_argument("--toolbox-version")
     asyncio.run(run(parser.parse_args()))
 
 

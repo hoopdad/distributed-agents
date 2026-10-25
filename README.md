@@ -171,6 +171,17 @@ Raw exception text, tokens, identities, URLs, card content and tool schemas are
 excluded; safe correlation IDs remain in private evidence. Do not repeat a
 denied discovery without a material diagnostic/configuration change.
 
+`live_acceptance.py --scenario delegation-discovery --toolbox-name <existing-name>
+--toolbox-version 2` adds a coordinator-hosted comparison using the usual
+route/auth/hash/private session/evidence arguments. It reserves a fresh
+coordinator session before dispatch, verifies genuine principal/call/session
+context and the two pinned delegated sources, then forwards only the SDK's
+genuine opaque call context with managed-identity toolbox authentication.
+Only MCP discovery runs: no specialist session creation, tool call, model or
+Blob operation. It shares the terminal diagnostic's redaction/request observer.
+Missing context/configuration, remote rejection and uncertain dispatch remain
+explicit; discovery success still does not prove downstream user propagation.
+
 Add `--native` only for a verified native deployment. A client state's recorded
 runtime and versions cannot be silently migrated. `--recover-only` retrieves
 the exact persisted pending parent response instead of sending another request.

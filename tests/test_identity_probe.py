@@ -17,12 +17,16 @@ os.environ.setdefault("EXPECTED_AZURE_TENANT_ID", "11111111-1111-1111-1111-11111
 import httpx2
 from azure.ai.agentserver.core import get_request_context
 from azure.ai.agentserver.responses.store._file import FileResponseStore
+from azure.ai.projects.models import A2AToolboxTool
+from mcp.shared.exceptions import McpError
+from mcp.types import ErrorData
 
 from demo.artifacts import ArtifactError
-from demo.contracts import AGENTS
+from demo.contracts import AGENTS, PROJECT
 from demo.host import ProbeResponsesHostServer
 from demo.identity_probe import (
     ProbeChild, ProbeObservation, ProbeRequest, ProbeResult, invoke_probe, register_identity_probe,
+    DiscoveryFailure, DiscoveryRequest, DiscoveryResult, discover_delegation,
 )
 from demo.workflow import create_workflow, parse_turn
 
@@ -219,9 +223,169 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(sent[0].headers["x-ms-user-identity"], USER)
         self.assertNotIn("x-agent-user-id", sent[0].headers)
 
+    def discovery(self):
+        return DiscoveryRequest(
+            probe_id=PROBE, session_id=SESSION, toolbox_name="synthetic-probe", toolbox_version="2",
+            specialist_versions={"architect": "41", "reviewer": "41"},
+        )
+
+    async def test_discovery_requires_genuine_coordinator_principal_call_and_session(self):
+        for role, headers, query, check in (
+            ("architect", None, None, "PROBE_ACTION"),
+            ("coordinator", {"x-agent-foundry-call-id": "synthetic-call", "x-ms-user-identity": USER}, None, "NATIVE_HOST_PRINCIPAL"),
+            ("coordinator", {"x-agent-user-id": USER}, None, "NATIVE_HOST_CALL"),
+            ("coordinator", None, {"agent_session_id": "f" * 32}, "NATIVE_HOST_SESSION"),
+        ):
+            with self.subTest(check=check), patch("demo.identity_probe.discover_delegation", new=AsyncMock()) as discover:
+                response = await self.post(self.server(role), self.discovery(), headers=headers, query=query)
+                self.assertEqual(response.status_code, 403)
+                result = DiscoveryResult.model_validate(response.json())
+                self.assertEqual(result.observation.check, check)
+                self.assertEqual(result.discovery_status, "rejected")
+                discover.assert_not_awaited()
+
+    async def test_discovery_route_captures_trusted_context_without_business_workflow(self):
+        async def discover(probe, observed, context):
+            self.assertEqual(context.user_id, USER)
+            self.assertEqual(context.platform_headers(), {"x-agent-foundry-call-id": "synthetic-call"})
+            self.assertEqual(probe, self.discovery())
+            return DiscoveryResult(
+                observation=observed, discovery_status="blocked", phase="configuration",
+                failure=DiscoveryFailure(classes=["RuntimeError"], codes=[], mcp_code=None, sources=[]),
+            )
+
+        with patch("demo.identity_probe.discover_delegation", new=AsyncMock(side_effect=discover)), patch(
+            "demo.workflow.WorkflowRuntime",
+        ) as workflow:
+            response = await self.post(self.server("coordinator"), self.discovery())
+        result = DiscoveryResult.model_validate(response.json())
+        self.assertEqual(result.observation.status, "verified")
+        self.assertFalse(result.user_propagation_verified)
+        self.assertNotIn(USER, response.text)
+        self.assertNotIn("synthetic-call", response.text)
+        workflow.assert_not_called()
+
+    async def discovery_boundary(self, *, blocked=False, version_changed=False):
+        project = MagicMock()
+        project.__aenter__ = AsyncMock(return_value=project)
+        project.__aexit__ = AsyncMock(return_value=False)
+        tools, connections = [], {}
+        for role in ("architect", "reviewer"):
+            identifier = "/synthetic/connections/" + role
+            tools.append(A2AToolboxTool(
+                name="probe_" + role, project_connection_id=identifier,
+                send_credentials_for_agent_card=True, a2a_version="1.0",
+            ))
+            connections[role] = SimpleNamespace(
+                id=identifier, name=role, type="RemoteA2A", credentials=SimpleNamespace(type="UserEntraToken"),
+                metadata={"ApiType": "Azure"}, target=PROJECT + f"/agents/{AGENTS[role]}/endpoint/protocols/a2a",
+            )
+        project.toolboxes.get_version = AsyncMock(return_value=SimpleNamespace(version="2", tools=tools))
+        project.connections.get = AsyncMock(side_effect=lambda name, **kwargs: connections[name])
+        project.agents.get = AsyncMock(return_value=SimpleNamespace(
+            versions=SimpleNamespace(latest=SimpleNamespace(version="42" if version_changed else "41", status="active")),
+        ))
+        project.agents.create_session = AsyncMock()
+        credential = MagicMock()
+        credential.__aenter__ = AsyncMock(return_value=credential)
+        credential.__aexit__ = AsyncMock(return_value=False)
+        credential.get_token = AsyncMock(return_value=SimpleNamespace(token="private-synthetic-token"))
+        sent = []
+
+        def respond(request):
+            sent.append(request)
+            self.assertEqual(request.headers["x-agent-foundry-call-id"], "synthetic-call")
+            self.assertEqual(request.headers["Authorization"], "Bearer private-synthetic-token")
+            self.assertNotIn("x-ms-user-identity", request.headers)
+            self.assertNotIn("x-agent-user-id", request.headers)
+            return httpx2.Response(200)
+
+        http = httpx2.AsyncClient(transport=httpx2.MockTransport(respond))
+
+        class Tool:
+            functions = [object(), object()]
+
+            async def __aenter__(self):
+                await http.post(
+                    PROJECT + "/toolboxes/synthetic-probe/versions/2/mcp?api-version=v1",
+                    json={"method": "tools/list"},
+                )
+                if blocked:
+                    raise McpError(ErrorData(code=-32007, message="synthetic-private-error", data={
+                        "errors": [{"name": role, "error": {"code": "PERMISSION_DENIED", "message": "403 (Forbidden)"}}
+                                   for role in ("architect", "reviewer")],
+                    }))
+                return self
+
+            async def __aexit__(self, *args):
+                return False
+
+        with patch("demo.identity_probe.ManagedIdentityCredential", return_value=credential), patch(
+            "demo.identity_probe.data_client", return_value=http,
+        ), patch("demo.identity_probe.ProjectClient", return_value=project), patch(
+            "demo.identity_probe.MCPStreamableHTTPTool", return_value=Tool(),
+        ) as tool:
+            result = await discover_delegation(
+                self.discovery(), observation("coordinator", principal_matches=None),
+                SimpleNamespace(call_id="synthetic-call", platform_headers=lambda: {"x-agent-foundry-call-id": "synthetic-call"}),
+            )
+        project.agents.create_session.assert_not_awaited()
+        project.get_openai_client.assert_not_called()
+        self.assertNotIn("private-synthetic-token", result.model_dump_json())
+        self.assertNotIn("synthetic-private-error", result.model_dump_json())
+        self.assertNotIn("synthetic-call", result.model_dump_json())
+        if version_changed:
+            tool.assert_not_called()
+            self.assertEqual(sent, [])
+        return result
+
+    async def test_hosted_discovery_forwards_only_genuine_call_and_no_user_substitution(self):
+        result = await self.discovery_boundary()
+        self.assertEqual(result.discovery_status, "discovered")
+        self.assertTrue(result.wire_authenticated)
+        self.assertTrue(result.wire_call_matches_context)
+        self.assertTrue(result.source_bindings_verified)
+        self.assertEqual(result.tool_count, 2)
+        self.assertFalse(result.user_propagation_verified)
+
+    async def test_hosted_discovery_preserves_structured_rejection_and_version_gate(self):
+        result = await self.discovery_boundary(blocked=True)
+        self.assertEqual(result.discovery_status, "blocked")
+        self.assertEqual([source.reported_http_status for source in result.failure.sources], [403, 403])
+        result = await self.discovery_boundary(version_changed=True)
+        self.assertEqual(result.discovery_status, "blocked")
+        self.assertIn("DIAGNOSTIC_SPECIALIST_VERSION_CHANGED", result.failure.codes)
+        self.assertFalse(result.wire_authenticated)
+
 
 @unittest.skipUnless(os.name == "nt", "Client session leases are Windows-specific.")
 class ProbeUncertaintyTests(unittest.IsolatedAsyncioTestCase):
+    async def test_discovery_timeout_cannot_be_resent_or_create_specialist_sessions(self):
+        from live_acceptance import run_identity_probe
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "probe.json"
+            args = SimpleNamespace(
+                scenario="delegation-discovery", toolbox_name="synthetic-probe", toolbox_version="2",
+                session_file=str(path), evidence=str(Path(directory) / "evidence.json"), socks=None,
+            )
+            async def create(*_args, **_kwargs):
+                state = json.loads(path.read_text())
+                self.assertEqual(state["phase"], "parent_create_dispatched")
+                self.assertNotIn("children", state["request"])
+                return {"agent_session_id": state["request"]["session_id"]}
+
+            with patch("live_acceptance.acceptance_credential"), patch("live_acceptance.data_client"), patch(
+                "live_acceptance.rest", new=AsyncMock(side_effect=create),
+            ) as rest, patch("demo.identity_probe.invoke_discovery_probe", new=AsyncMock(side_effect=TimeoutError)) as invoke:
+                observed = {role: {"version": "41"} for role in AGENTS}
+                with self.assertRaises(TimeoutError):
+                    await run_identity_probe(args, observed, "tenant", "subscription", USER)
+                self.assertEqual(json.loads(path.read_text())["phase"], "invocation_dispatched")
+                with self.assertRaisesRegex(RuntimeError, "NEW_IDENTITY_PROBE_REQUIRED_NO_RESEND"):
+                    await run_identity_probe(args, observed, "tenant", "subscription", USER)
+                rest.assert_awaited_once()
+                invoke.assert_awaited_once()
+
     async def test_timeout_preserves_reserved_ids_and_prevents_another_create_or_send(self):
         from live_acceptance import run_identity_probe
         with tempfile.TemporaryDirectory() as directory:

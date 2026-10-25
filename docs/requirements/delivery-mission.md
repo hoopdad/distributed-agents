@@ -89,6 +89,15 @@ before dispatch; never resend an uncertain experiment. Verify actual
 trusted-user propagation and report session/version compatibility separately.
 Neither an A2A envelope nor a passing identity probe proves full acceptance.
 
+The bounded experiment also compares terminal-only discovery with discovery
+from the genuinely authenticated coordinator's Invocations context. The latter
+uses the supported SDK's opaque call-context forwarding and managed-identity
+toolbox authentication. Validate the existing two delegated targets and pinned
+specialists first; reserve a new diagnostic coordinator session before dispatch.
+This comparison invokes no tools/models, creates no specialist sessions and
+touches no application artifacts. It is not production transport adoption or
+permission to replay earlier experiments.
+
 ## Product, not delivery machinery
 
 Deliver exactly three existing remote production roles in the validated

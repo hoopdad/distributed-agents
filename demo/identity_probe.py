@@ -1,18 +1,21 @@
 from __future__ import annotations
 
+import asyncio
 from typing import Literal
 
+from agent_framework import MCPStreamableHTTPTool
 from azure.ai.agentserver.core import get_request_context
-from azure.ai.projects.models import VersionRefIndicator
+from azure.ai.projects.models import A2AToolboxTool, VersionRefIndicator
 from azure.identity.aio import ManagedIdentityCredential
-from pydantic import Field, ValidationError
+from pydantic import Field, ValidationError, model_validator
 from starlette.responses import JSONResponse
 
 from .artifacts import (
     ArtifactError, BoundedId, Identifier, ImmutableModel, Role, ScopeBinding, decode_document,
 )
 from .config import required
-from .contracts import AGENTS, PROJECT
+from .contracts import AGENTS, PROJECT, DemoError
+from .delegation_diagnostics import WireCapture, failure
 from .foundry import ProjectClient, data_client, specialist_identity_headers
 
 
@@ -50,6 +53,136 @@ class ProbeResult(ImmutableModel):
     children: list[ProbeObservation] = Field(default_factory=list, max_length=2)
 
 
+class DiscoveryRequest(ImmutableModel):
+    kind: Literal["delegation-discovery-v1"] = "delegation-discovery-v1"
+    probe_id: Identifier
+    session_id: Identifier
+    toolbox_name: str = Field(pattern=r"^[A-Za-z0-9_-]{1,128}$")
+    toolbox_version: str = Field(pattern=r"^[1-9][0-9]{0,8}$")
+    specialist_versions: dict[Literal["architect", "reviewer"], BoundedId] = Field(min_length=2, max_length=2)
+
+
+class DiscoverySourceFailure(ImmutableModel):
+    role: Literal["architect", "reviewer", "unrecognized-source"]
+    code: BoundedId
+    reported_http_status: int | None
+
+
+class DiscoveryFailure(ImmutableModel):
+    classes: list[BoundedId]
+    codes: list[BoundedId]
+    mcp_code: int | None
+    sources: list[DiscoverySourceFailure]
+    http_status: int | None = None
+    request_ids: dict[str, BoundedId] = Field(default_factory=dict)
+
+
+class DiscoveryResult(ImmutableModel):
+    kind: Literal["delegation-discovery-v1"] = "delegation-discovery-v1"
+    diagnostic_only: Literal[True] = True
+    observation: ProbeObservation
+    discovery_status: Literal["discovered", "blocked", "rejected"]
+    phase: Literal["preparation", "configuration", "tool-discovery"]
+    tool_count: int = Field(default=0, ge=0)
+    source_bindings_verified: bool = False
+    wire_authenticated: bool = False
+    wire_call_matches_context: bool = False
+    wire_request_count: int = Field(default=0, ge=0)
+    request_ids: list[dict[str, BoundedId]] = Field(default_factory=list)
+    failure: DiscoveryFailure | None = None
+    user_propagation_verified: Literal[False] = False
+
+    @model_validator(mode="after")
+    def consistent_discovery(self):
+        if self.discovery_status == "discovered" and (
+            self.observation.status != "verified" or not self.tool_count or self.failure is not None
+            or not self.source_bindings_verified or not self.wire_authenticated or not self.wire_call_matches_context
+        ):
+            raise ValueError("Discovery requires verified scope, sources and authenticated call context.")
+        if self.discovery_status == "blocked" and (self.observation.status != "verified" or self.failure is None):
+            raise ValueError("A blocked discovery requires a verified caller and an explicit failure.")
+        if self.discovery_status == "rejected" and self.observation.status != "rejected":
+            raise ValueError("A rejected discovery cannot report a verified caller.")
+        return self
+
+
+async def discover_delegation(probe: DiscoveryRequest, observation: ProbeObservation, context):
+    phase, count, source_verified = "configuration", 0, False
+    wire, names, error = {"http": []}, {}, None
+    headers = dict(context.platform_headers())
+    try:
+        if headers != {"x-agent-foundry-call-id": context.call_id}:
+            raise DemoError("DIAGNOSTIC_PLATFORM_HEADERS")
+        async with ManagedIdentityCredential() as credential, data_client() as http, \
+                ProjectClient(credential, http, headers) as project:
+            toolbox = await project.toolboxes.get_version(
+                probe.toolbox_name, probe.toolbox_version, headers=headers,
+            )
+            if str(toolbox.version) != probe.toolbox_version or len(toolbox.tools) != 2:
+                raise DemoError("DIAGNOSTIC_TOOLBOX_CONFIGURATION")
+            roles = set()
+            for tool in toolbox.tools:
+                role = next((role for role in ("architect", "reviewer") if tool.name == "probe_" + role), None)
+                if not isinstance(tool, A2AToolboxTool) or role is None or role in roles:
+                    raise DemoError("DIAGNOSTIC_TOOLBOX_SOURCE")
+                roles.add(role)
+                connection = await project.connections.get(tool.project_connection_id.rsplit("/", 1)[-1], headers=headers)
+                target = PROJECT + f"/agents/{AGENTS[role]}/endpoint/protocols/a2a"
+                if (
+                    tool.project_connection_id not in (connection.id, connection.name)
+                    or connection.target != target or tool.base_url not in (None, target)
+                    or tool.agent_card_path is not None or connection.type != "RemoteA2A"
+                    or connection.credentials.type != "UserEntraToken"
+                    or connection.metadata.get("ApiType") != "Azure"
+                    or tool.send_credentials_for_agent_card is not True or tool.a2a_version != "1.0"
+                ):
+                    raise DemoError("DIAGNOSTIC_SOURCE_TARGET_CHANGED")
+                details = await project.agents.get(AGENTS[role], headers=headers)
+                if (details.versions.latest.version != probe.specialist_versions[role]
+                        or details.versions.latest.status != "active"):
+                    raise DemoError("DIAGNOSTIC_SPECIALIST_VERSION_CHANGED")
+                names[connection.name] = names[tool.name] = role
+            source_verified = True
+            token = await credential.get_token("https://ai.azure.com/.default")
+            url = PROJECT + f"/toolboxes/{probe.toolbox_name}/versions/{probe.toolbox_version}/mcp"
+            capture = WireCapture({url: "toolbox"}, wire, lambda: None)
+
+            async def observe_request(request):
+                await capture.request(request)
+                wire["http"][-1]["call_matches_context"] = (
+                    request.headers.get("x-agent-foundry-call-id") == context.call_id
+                )
+
+            http.event_hooks["request"].append(observe_request)
+            http.event_hooks["response"].append(capture.response)
+            headers.update(Authorization="Bearer " + token.token)
+            headers["Foundry-Features"] = "Toolboxes=V1Preview"
+            http.headers.update(headers)
+            phase = "tool-discovery"
+            async with asyncio.timeout(120):
+                async with MCPStreamableHTTPTool(
+                    name="hosted-delegation-diagnostic", url=url + "?api-version=v1",
+                    http_client=http, static_headers=headers, load_prompts=False, request_timeout=120,
+                ) as tool:
+                    count = len(tool.functions)
+                    if not count:
+                        raise DemoError("DIAGNOSTIC_NO_DISCOVERED_TOOLS")
+            if not wire["http"] or not all(
+                row["authorization_present"] and row["call_matches_context"] for row in wire["http"]
+            ):
+                raise DemoError("DIAGNOSTIC_WIRE_CONTEXT")
+    except Exception as caught:
+        error = DiscoveryFailure.model_validate(failure(caught, names))
+    return DiscoveryResult(
+        observation=observation, discovery_status="blocked" if error else "discovered", phase=phase,
+        tool_count=count, source_bindings_verified=source_verified,
+        wire_authenticated=bool(wire["http"]) and all(row["authorization_present"] for row in wire["http"]),
+        wire_call_matches_context=bool(wire["http"]) and all(row["call_matches_context"] for row in wire["http"]),
+        wire_request_count=len(wire["http"]),
+        request_ids=[row.get("request_ids", {}) for row in wire["http"]], failure=error,
+    )
+
+
 async def invoke_probe(http, credential, role, request: ProbeRequest, *, headers, timeout=120):
     token = await credential.get_token("https://ai.azure.com/.default")
     response = await http.post(
@@ -70,6 +203,23 @@ async def invoke_probe(http, credential, role, request: ProbeRequest, *, headers
     return result
 
 
+async def invoke_discovery_probe(http, credential, request: DiscoveryRequest, *, timeout=180):
+    token = await credential.get_token("https://ai.azure.com/.default")
+    response = await http.post(
+        PROJECT + f"/agents/{AGENTS['coordinator']}/endpoint/protocols/invocations",
+        params={"api-version": "v1", "agent_session_id": request.session_id},
+        json=request.model_dump(mode="json"), headers={"Authorization": "Bearer " + token.token},
+        timeout=timeout,
+    )
+    if response.status_code not in (200, 403) or len(response.content) > 32768:
+        raise ArtifactError(f"PROBE_HTTP_{response.status_code}")
+    result = DiscoveryResult.model_validate(decode_document(response.content))
+    if (result.observation.probe_id != request.probe_id or result.observation.role != "coordinator"
+            or (response.status_code == 200) != (result.observation.status == "verified")):
+        raise ArtifactError("PROBE_RESPONSE_BINDING")
+    return result
+
+
 def register_identity_probe(server):
     @server.invoke_handler
     async def inspect_identity(request):
@@ -81,36 +231,45 @@ def register_identity_probe(server):
                 return JSONResponse({"error": "PROBE_INPUT_LIMIT"}, status_code=413)
             chunks.append(chunk)
         try:
-            probe = ProbeRequest.model_validate(decode_document(b"".join(chunks)))
+            document = decode_document(b"".join(chunks))
+            probe = (DiscoveryRequest if isinstance(document, dict)
+                     and document.get("kind") == "delegation-discovery-v1" else ProbeRequest).model_validate(document)
         except (ArtifactError, ValidationError):
             return JSONResponse({"error": "PROBE_SCHEMA"}, status_code=400)
         config, context = server.config, get_request_context()
         role = next((role for role, name in AGENTS.items() if config.agent_name == name), None)
         if role is None:
             return JSONResponse({"error": "PROBE_ROLE"}, status_code=403)
+        expected_principal = probe.expected_principal if isinstance(probe, ProbeRequest) else None
         observation = ProbeObservation(
             probe_id=probe.probe_id, role=role, version=config.agent_version,
             status="rejected", has_principal=bool(context.user_id),
             has_call_id=bool(context.call_id),
             session_matches=(request.query_params.getlist("agent_session_id") in ([], [probe.session_id])
                              and context.session_id == config.session_id == probe.session_id),
-            principal_matches=(context.user_id == probe.expected_principal
-                               if probe.expected_principal is not None else None),
+            principal_matches=(context.user_id == expected_principal if expected_principal is not None else None),
+        )
+        action_valid = role == "coordinator" if isinstance(probe, DiscoveryRequest) else (
+            (probe.action == "delegate" and role == "coordinator" and probe.expected_principal is None
+             and [child.role for child in probe.children] == ["architect", "reviewer"]
+             and len({probe.session_id, *(child.session_id for child in probe.children)}) == 3)
+            or (probe.action == "inspect" and role != "coordinator"
+                and probe.expected_principal is not None and not probe.children)
         )
         check = next((code for valid, code in (
             (config.is_hosted and config.project_endpoint == PROJECT, "NATIVE_HOST_PLATFORM"),
             (observation.has_principal, "NATIVE_HOST_PRINCIPAL"),
             (observation.has_call_id, "NATIVE_HOST_CALL"),
             (observation.session_matches, "NATIVE_HOST_SESSION"),
-            (probe.expected_principal is None or observation.principal_matches, "PROBE_PRINCIPAL"),
-            ((probe.action == "delegate" and role == "coordinator"
-              and probe.expected_principal is None
-              and [child.role for child in probe.children] == ["architect", "reviewer"]
-              and len({probe.session_id, *(child.session_id for child in probe.children)}) == 3)
-             or (probe.action == "inspect" and role != "coordinator"
-                 and probe.expected_principal is not None and not probe.children), "PROBE_ACTION"),
+            (expected_principal is None or observation.principal_matches, "PROBE_PRINCIPAL"),
+            (action_valid, "PROBE_ACTION"),
         ) if not valid), None)
         if check is not None:
+            if isinstance(probe, DiscoveryRequest):
+                return JSONResponse(DiscoveryResult(
+                    observation=observation.model_copy(update={"check": check}),
+                    discovery_status="rejected", phase="preparation",
+                ).model_dump(mode="json"), status_code=403)
             return JSONResponse(ProbeResult(observation=observation.model_copy(
                 update={"check": check},
             )).model_dump(mode="json"), status_code=403)
@@ -118,6 +277,8 @@ def register_identity_probe(server):
             config, context, project=PROJECT, tenant=required("EXPECTED_AZURE_TENANT_ID"),
         )
         observation = observation.model_copy(update={"status": "verified"})
+        if isinstance(probe, DiscoveryRequest):
+            return JSONResponse((await discover_delegation(probe, observation, context)).model_dump(mode="json"))
         children = []
         if probe.action == "delegate":
             headers = specialist_identity_headers(config=config, context=context, scope=scope)

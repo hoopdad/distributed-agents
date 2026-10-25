@@ -293,9 +293,10 @@ async def invoke_response_discovery_probe(http, credential, request: DiscoveryRe
     token = await credential.get_token("https://ai.azure.com/.default")
     response = await http.post(
         PROJECT + f"/agents/{AGENTS['coordinator']}/endpoint/protocols/openai/responses",
-        params={"api-version": "v1", "agent_session_id": request.session_id},
+        params={"api-version": "v1"},
         json={
             "input": request.model_dump_json(), "store": True, "background": False, "stream": False,
+            "agent_session_id": request.session_id,
             "metadata": {"demo_probe_kind": "delegation-discovery-v1"},
         },
         headers={"Authorization": "Bearer " + token.token}, timeout=timeout,

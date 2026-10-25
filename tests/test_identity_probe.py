@@ -374,7 +374,8 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(remembered, ["resp_synthetic", "resp_synthetic"])
         self.assertEqual(len(sent), 2)
         self.assertTrue(sent[0].url.path.endswith("/endpoint/protocols/openai/responses"))
-        self.assertEqual(sent[0].url.params["agent_session_id"], SESSION)
+        self.assertNotIn("agent_session_id", sent[0].url.params)
+        self.assertEqual(json.loads(sent[0].content)["agent_session_id"], SESSION)
         self.assertFalse(json.loads(sent[0].content)["background"])
         self.assertNotIn("x-agent-user-id", sent[0].headers)
 

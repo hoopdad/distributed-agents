@@ -69,6 +69,26 @@ or migrate/replay held Responses work. Record reserved session IDs before
 dispatch and never resend an uncertain probe. A passing probe is identity-path
 evidence, not full application acceptance or automatic adoption authority.
 
+### Authorized signed-in-user delegation experiment
+
+The user requested **"use my azure identity"** and selected coordinator-to-
+specialist user delegation while retaining managed-identity Blob access.
+They subsequently authorized a bounded delegated A2A test: two
+`UserEntraToken` connections, one managed Foundry toolbox for deterministic
+calls, and incoming A2A on the existing architect/reviewer endpoints.
+Preserve their existing Entra authorization and Responses configuration.
+These are diagnostic project-configuration changes, not a fourth agent or
+automatic adoption of a new production transport.
+
+Use the existing nonproduction project and dedicated signed-in-user client.
+Do not copy login caches or user credentials into containers. Add no
+Entra/RBAC/consent, infrastructure, network or secret changes. Preserve the
+three hosted roles, native MAF application workflow, all principal/assignment
+gates, old session/version bindings and held work. Persist diagnostic intent
+before dispatch; never resend an uncertain experiment. Verify actual
+trusted-user propagation and report session/version compatibility separately.
+Neither an A2A envelope nor a passing identity probe proves full acceptance.
+
 ## Product, not delivery machinery
 
 Deliver exactly three existing remote production roles in the validated

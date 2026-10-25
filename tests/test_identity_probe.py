@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from contextlib import ExitStack
 import json
+from itertools import product
 import os
 from pathlib import Path
 import tempfile
@@ -25,6 +26,7 @@ from mcp.types import ErrorData
 
 from demo.artifacts import ArtifactError
 from demo.contracts import AGENTS, PROJECT
+from demo.foundry import ProjectClient
 from demo.host import ProbeResponsesHostServer
 from demo.identity_probe import (
     ProbeChild, ProbeObservation, ProbeRequest, ProbeResult, invoke_probe, register_identity_probe,
@@ -148,6 +150,10 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
         for raw, status in (
             (b'{"probe_id":"a","probe_id":"b"}', 400),
             (b'{"kind":"unrecognized"}', 400),
+            (json.dumps({
+                "probe_id": PROBE, "action": "delegate", "session_id": SESSION,
+                "session_creation": "first-response", "specialist_protocol": "invocations",
+            }).encode(), 400),
             (b"x" * 4097, 413),
         ):
             with self.subTest(status=status), patch("demo.identity_probe.ManagedIdentityCredential") as credential:
@@ -375,7 +381,8 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
             children=[ProbeChild(role=role, version="41", session_id=value * 32)
                       for role, value in (("architect", "c"), ("reviewer", "d"))],
         )
-        for status in ("completed", "failed", "in_progress"):
+        for status, creation in product(("completed", "failed", "in_progress"), ("explicit", "first-response")):
+            probe = probe.model_copy(update={"session_creation": creation})
             sent = []
             def respond(request):
                 sent.append(request)
@@ -386,6 +393,7 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
                 self.assertEqual(request.headers["x-ms-user-identity"], USER)
                 self.assertNotIn("x-agent-foundry-call-id", request.headers)
                 self.assertNotIn("x-agent-user-id", request.headers)
+                self.assertTrue(request.headers["Foundry-Features"])
                 self.assertEqual(body["metadata"], {"demo_probe_kind": probe.kind})
                 self.assertEqual(ProbeRequest.model_validate_json(body["input"]).expected_principal, USER)
                 return httpx2.Response(200, json={
@@ -407,17 +415,24 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
             project.agents.create_session = AsyncMock(side_effect=lambda _name, **kwargs: SimpleNamespace(
                 agent_session_id=kwargs["agent_session_id"],
             ))
+            project.agents.get_session = AsyncMock(side_effect=lambda _name, session_id, **kwargs: SimpleNamespace(
+                agent_session_id=session_id, version_indicator=SimpleNamespace(agent_version="41"),
+            ))
             credential = MagicMock()
             credential.__aenter__ = AsyncMock(return_value=credential)
             credential.__aexit__ = AsyncMock(return_value=False)
             credential.get_token = AsyncMock(return_value=SimpleNamespace(token="synthetic-token"))
-            with self.subTest(status=status), patch(
+            http = httpx2.AsyncClient(transport=httpx2.MockTransport(respond))
+            sdk_project = ProjectClient(credential, http, {"x-ms-user-identity": USER})
+            project.get_openai_client.side_effect = sdk_project.get_openai_client
+            with self.subTest(status=status, creation=creation), patch(
                 "demo.identity_probe.ManagedIdentityCredential", return_value=credential,
             ), patch("demo.identity_probe.ProjectClient", return_value=project), patch(
                 "demo.identity_probe.data_client",
-                return_value=httpx2.AsyncClient(transport=httpx2.MockTransport(respond)),
+                return_value=http,
             ):
                 response = await self.post(self.server("coordinator"), probe)
+            await sdk_project.close()
             self.assertEqual(response.status_code, 200, response.text)
             result = ProbeResult.model_validate(response.json())
             self.assertEqual(len(sent), 2)
@@ -426,6 +441,8 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(
                 [receipt.response_id for receipt in result.child_responses], ["resp_architect", "resp_reviewer"],
             )
+            self.assertEqual(project.agents.create_session.await_count, 2 if creation == "explicit" else 0)
+            self.assertEqual(project.agents.get_session.await_count, 0 if creation == "explicit" else 2)
 
     async def test_responses_diagnostic_rejects_untrusted_scope_bad_options_and_schema(self):
         for kwargs in (

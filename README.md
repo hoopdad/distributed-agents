@@ -166,6 +166,11 @@ trusted context; it does not run the design/review graph, a model or application
 artifact access. Known child response IDs/statuses are returned even when native
 preparation fails. A failed or pending response never implies absent identity
 without host evidence, and a pending response is never resent.
+Responses probes use the pinned public project/OpenAI client, including its
+preview headers and zero retries. `--session-creation first-response` tests the
+documented first-Responses-call session creation instead of explicit creation.
+It is Responses-only and diagnostic-only: verify the actual created version,
+retain every reserved ID, and never change existing application bindings.
 
 For the authorized signed-in-user A2A experiment, use the existing diagnostic
 toolbox (not a new agent) with the same dedicated azd profile:

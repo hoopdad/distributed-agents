@@ -36,6 +36,15 @@ class ProbeRequest(ImmutableModel):
     children: list[ProbeChild] = Field(default_factory=list, max_length=2)
     identity_forwarding: Literal["platform-and-user", "user-only"] = "platform-and-user"
     specialist_protocol: Literal["invocations", "responses"] = "invocations"
+    session_creation: Literal["explicit", "first-response"] = "explicit"
+
+    @model_validator(mode="after")
+    def supported_session_creation(self):
+        if self.session_creation == "first-response" and (
+            self.specialist_protocol != "responses" or self.action != "delegate"
+        ):
+            raise ValueError("First-response creation requires a Responses delegation probe.")
+        return self
 
 
 class ProbeObservation(ImmutableModel):
@@ -314,21 +323,20 @@ async def parse_host_turn(request):
     return WorkflowTurn(input=(await response_discovery_request(request)).model_dump_json())
 
 
-async def post_response_probe(http, credential, role, request, *, on_response_id, headers, timeout):
-    token = await credential.get_token("https://ai.azure.com/.default")
-    response = await http.post(
-        PROJECT + f"/agents/{AGENTS[role]}/endpoint/protocols/openai/responses",
-        params={"api-version": "v1"},
-        json={
-            "input": request.model_dump_json(), "store": True, "background": False, "stream": False,
-            "agent_session_id": request.session_id,
-            "metadata": {"demo_probe_kind": request.kind},
-        },
-        headers={**headers, "Authorization": "Bearer " + token.token}, timeout=timeout,
-    )
-    if response.status_code != 200 or len(response.content) > 65536:
-        raise ArtifactError(f"PROBE_HTTP_{response.status_code}")
-    document = decode_document(response.content)
+async def post_response_probe(client, request, *, on_response_id, headers, timeout):
+    async with client.responses.with_streaming_response.create(
+        input=request.model_dump_json(), store=True, background=False, stream=False,
+        extra_body={"agent_session_id": request.session_id},
+        metadata={"demo_probe_kind": request.kind},
+        extra_headers=headers, timeout=timeout,
+    ) as response:
+        chunks, size = [], 0
+        async for chunk in response.iter_bytes():
+            size += len(chunk)
+            if size > 65536:
+                raise ArtifactError("PROBE_RESPONSE_LIMIT")
+            chunks.append(chunk)
+    document = decode_document(b"".join(chunks))
     if not isinstance(document, dict):
         raise ArtifactError("PROBE_RESPONSE_SCHEMA")
     response_id = document.get("id")
@@ -359,9 +367,11 @@ def response_probe_result(document, request, role, model):
 
 
 async def invoke_response_discovery_probe(http, credential, request: DiscoveryRequest, *, on_response_id, timeout=180):
-    document = await post_response_probe(
-        http, credential, "coordinator", request, on_response_id=on_response_id, headers={}, timeout=timeout,
-    )
+    async with ProjectClient(credential, http, {}) as project:
+        document = await post_response_probe(
+            project.get_openai_client(agent_name=AGENTS["coordinator"]), request,
+            on_response_id=on_response_id, headers={}, timeout=timeout,
+        )
     return response_probe_result(document, request, "coordinator", DiscoveryResult)
 
 
@@ -438,13 +448,14 @@ def register_identity_probe(server):
                         raise ArtifactError("PROBE_VERSION_CHANGED")
                     # The caller records all IDs before dispatch and never
                     # repeats an uncertain probe. No create retry or adoption.
-                    created = await project.agents.create_session(
-                        AGENTS[child.role], agent_session_id=child.session_id,
-                        version_indicator=VersionRefIndicator(agent_version=child.version),
-                        headers=headers,
-                    )
-                    if created.agent_session_id != child.session_id:
-                        raise ArtifactError("PROBE_SESSION_CHANGED")
+                    if probe.session_creation == "explicit":
+                        created = await project.agents.create_session(
+                            AGENTS[child.role], agent_session_id=child.session_id,
+                            version_indicator=VersionRefIndicator(agent_version=child.version),
+                            headers=headers,
+                        )
+                        if created.agent_session_id != child.session_id:
+                            raise ArtifactError("PROBE_SESSION_CHANGED")
                     child_request = ProbeRequest(
                         probe_id=probe.probe_id, action="inspect", session_id=child.session_id,
                         expected_principal=scope.principal,
@@ -456,13 +467,20 @@ def register_identity_probe(server):
                                 response_id=response_id, status="in_progress",
                             ))
                         document = await post_response_probe(
-                            http, credential, child.role, child_request,
+                            project.get_openai_client(agent_name=AGENTS[child.role]), child_request,
                             on_response_id=remember_response, headers=headers, timeout=180,
                         )
                         child_responses[-1] = ProbeResponseReceipt(
                             role=child.role, requested_version=child.version,
                             response_id=document["id"], status=document.get("status"),
                         )
+                        if probe.session_creation == "first-response":
+                            created = await project.agents.get_session(
+                                AGENTS[child.role], child.session_id, headers=headers,
+                            )
+                            if (created.agent_session_id != child.session_id
+                                    or created.version_indicator.agent_version != child.version):
+                                raise ArtifactError("PROBE_CHILD_BINDING")
                         if document["status"] != "completed":
                             continue
                         result = response_probe_result(document, child_request, child.role, ProbeResult)

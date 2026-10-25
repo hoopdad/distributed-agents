@@ -741,6 +741,7 @@ async def run_identity_probe(args, observed, tenant, subscription, user):
     ) if discovery else ProbeRequest(
         probe_id=uuid.uuid4().hex, action="delegate", session_id=uuid.uuid4().hex,
         identity_forwarding=getattr(args, "identity_forwarding", "platform-and-user"),
+        specialist_protocol=getattr(args, "specialist_protocol", "invocations"),
         children=[ProbeChild(
             role=role, version=observed[role]["version"], session_id=uuid.uuid4().hex,
         ) for role in ("architect", "reviewer")],
@@ -792,12 +793,25 @@ async def run_identity_probe(args, observed, tenant, subscription, user):
             and [child.role for child in result.children] == ["architect", "reviewer"]
             and all(child.status == "verified" and child.principal_matches is True
                     and child.version == observed[child.role]["version"] for child in result.children)
+            and (
+                [receipt.role for receipt in result.child_responses] == ["architect", "reviewer"]
+                and all(receipt.status == "completed" and receipt.requested_version == observed[receipt.role]["version"]
+                        for receipt in result.child_responses)
+                if probe.specialist_protocol == "responses" else not result.child_responses
+            )
         )
-        state["phase"] = "verified" if verified else "rejected"
+        pending = not discovery and any(
+            receipt.status in ("queued", "in_progress") for receipt in result.child_responses
+        )
+        state["phase"] = "verified" if verified else "response_pending" if pending else "rejected"
         write_state(path, state)
         print(result.model_dump_json())
         if not verified:
-            raise RuntimeError("HOSTED_DELEGATION_DISCOVERY_BLOCKED" if discovery else "INVOCATIONS_IDENTITY_PROBE_REJECTED")
+            raise RuntimeError(
+                "HOSTED_DELEGATION_DISCOVERY_BLOCKED" if discovery else
+                "RESPONSES_IDENTITY_PROBE_REJECTED" if probe.specialist_protocol == "responses" else
+                "INVOCATIONS_IDENTITY_PROBE_REJECTED"
+            )
 
 
 async def run(args):
@@ -956,6 +970,7 @@ def main():
     parser.add_argument("--toolbox-name")
     parser.add_argument("--toolbox-version")
     parser.add_argument("--identity-forwarding", choices=("platform-and-user", "user-only"), default="platform-and-user")
+    parser.add_argument("--specialist-protocol", choices=("invocations", "responses"), default="invocations")
     asyncio.run(run(parser.parse_args()))
 
 

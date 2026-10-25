@@ -160,6 +160,12 @@ with the original parent-call-plus-user header set. Only the diagnostic
 children use this selector: the trusted coordinator scope is still revalidated,
 child call context is left to the service, and application callers remain
 unchanged. Use a new private session/evidence pair; never resend an old probe.
+Add `--specialist-protocol responses` to compare the same diagnostic through the
+application's Responses transport. Its native specialist graph only inspects
+trusted context; it does not run the design/review graph, a model or application
+artifact access. Known child response IDs/statuses are returned even when native
+preparation fails. A failed or pending response never implies absent identity
+without host evidence, and a pending response is never resent.
 
 For the authorized signed-in-user A2A experiment, use the existing diagnostic
 toolbox (not a new agent) with the same dedicated azd profile:

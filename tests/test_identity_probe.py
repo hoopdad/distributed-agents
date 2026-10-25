@@ -28,6 +28,7 @@ from demo.contracts import AGENTS, PROJECT
 from demo.host import ProbeResponsesHostServer
 from demo.identity_probe import (
     ProbeChild, ProbeObservation, ProbeRequest, ProbeResult, invoke_probe, register_identity_probe,
+    ProbeResponseReceipt,
     DiscoveryFailure, DiscoveryRequest, DiscoveryResult, discover_delegation,
     create_host_workflow, parse_host_turn, invoke_response_discovery_probe,
 )
@@ -334,6 +335,98 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn("synthetic-call", response.text)
         self.assertIsNone(get_request_context().user_id)
 
+    async def test_native_responses_inspect_both_roles_without_business_or_discovery_effects(self):
+        probe = ProbeRequest(probe_id=PROBE, action="inspect", session_id=SESSION, expected_principal=USER)
+        changes = {
+            "input": probe.model_dump_json(), "metadata": {"demo_probe_kind": probe.kind},
+        }
+        for role in ("architect", "reviewer"):
+            with self.subTest(role=role), patch("demo.workflow.WorkflowRuntime") as business, patch(
+                "demo.identity_probe.discover_delegation", new=AsyncMock(),
+            ) as discover, patch("demo.identity_probe.ManagedIdentityCredential") as credential:
+                response = await self.response_probe(role=role, changes=changes)
+                self.assertEqual(response.status_code, 200, response.text)
+                self.assertEqual(response.json()["status"], "completed", response.text)
+                result = ProbeResult.model_validate_json(response.json()["output"][0]["content"][0]["text"])
+                self.assertEqual(result.observation, observation(role))
+                business.assert_not_called()
+                discover.assert_not_awaited()
+                credential.assert_not_called()
+        for role, headers, altered in (
+            ("coordinator", None, probe),
+            ("architect", {"x-agent-foundry-call-id": "call", "x-ms-user-identity": USER}, probe),
+            ("architect", None, probe.model_copy(update={"expected_principal": "other-user"})),
+            ("architect", None, probe.model_copy(update={"action": "delegate"})),
+        ):
+            with self.subTest(role=role, headers=headers, altered=altered), patch(
+                "demo.workflow.WorkflowRuntime",
+            ) as business, patch("demo.identity_probe.ManagedIdentityCredential") as credential:
+                response = await self.response_probe(role=role, headers=headers, changes={
+                    **changes, "input": altered.model_dump_json(),
+                })
+                self.assertTrue(response.status_code >= 400 or response.json().get("status") == "failed", response.text)
+                business.assert_not_called()
+                credential.assert_not_called()
+
+    async def test_coordinator_records_responses_receipts_without_inventing_identity_or_retrying(self):
+        probe = ProbeRequest(
+            probe_id=PROBE, action="delegate", session_id=SESSION,
+            identity_forwarding="user-only", specialist_protocol="responses",
+            children=[ProbeChild(role=role, version="41", session_id=value * 32)
+                      for role, value in (("architect", "c"), ("reviewer", "d"))],
+        )
+        for status in ("completed", "failed", "in_progress"):
+            sent = []
+            def respond(request):
+                sent.append(request)
+                child = next(child for child in probe.children if AGENTS[child.role] in request.url.path)
+                body = json.loads(request.content)
+                self.assertEqual(body["agent_session_id"], child.session_id)
+                self.assertNotIn("agent_session_id", request.url.params)
+                self.assertEqual(request.headers["x-ms-user-identity"], USER)
+                self.assertNotIn("x-agent-foundry-call-id", request.headers)
+                self.assertNotIn("x-agent-user-id", request.headers)
+                self.assertEqual(body["metadata"], {"demo_probe_kind": probe.kind})
+                self.assertEqual(ProbeRequest.model_validate_json(body["input"]).expected_principal, USER)
+                return httpx2.Response(200, json={
+                    "id": "resp_" + child.role, "status": status, "agent_session_id": child.session_id,
+                    "output": [{
+                        "type": "message", "role": "assistant", "content": [{
+                            "type": "output_text", "text": ProbeResult(
+                                observation=observation(child.role),
+                            ).model_dump_json(),
+                        }],
+                    }] if status == "completed" else [],
+                })
+            project = MagicMock()
+            project.__aenter__ = AsyncMock(return_value=project)
+            project.__aexit__ = AsyncMock(return_value=False)
+            project.agents.get = AsyncMock(return_value=SimpleNamespace(
+                versions=SimpleNamespace(latest=SimpleNamespace(version="41", status="active")),
+            ))
+            project.agents.create_session = AsyncMock(side_effect=lambda _name, **kwargs: SimpleNamespace(
+                agent_session_id=kwargs["agent_session_id"],
+            ))
+            credential = MagicMock()
+            credential.__aenter__ = AsyncMock(return_value=credential)
+            credential.__aexit__ = AsyncMock(return_value=False)
+            credential.get_token = AsyncMock(return_value=SimpleNamespace(token="synthetic-token"))
+            with self.subTest(status=status), patch(
+                "demo.identity_probe.ManagedIdentityCredential", return_value=credential,
+            ), patch("demo.identity_probe.ProjectClient", return_value=project), patch(
+                "demo.identity_probe.data_client",
+                return_value=httpx2.AsyncClient(transport=httpx2.MockTransport(respond)),
+            ):
+                response = await self.post(self.server("coordinator"), probe)
+            self.assertEqual(response.status_code, 200, response.text)
+            result = ProbeResult.model_validate(response.json())
+            self.assertEqual(len(sent), 2)
+            self.assertEqual(len(result.children), 2 if status == "completed" else 0)
+            self.assertEqual([receipt.status for receipt in result.child_responses], [status, status])
+            self.assertEqual(
+                [receipt.response_id for receipt in result.child_responses], ["resp_architect", "resp_reviewer"],
+            )
+
     async def test_responses_diagnostic_rejects_untrusted_scope_bad_options_and_schema(self):
         for kwargs in (
             {"role": "architect"},
@@ -612,6 +705,46 @@ class ProbeUncertaintyTests(unittest.IsolatedAsyncioTestCase):
                     await run_identity_probe(args, observed, "tenant", "subscription", USER)
                 rest.assert_awaited_once()
                 invoke.assert_awaited_once()
+
+    async def test_responses_child_receipts_are_persisted_with_known_failed_or_pending_state_without_resend(self):
+        from live_acceptance import run_identity_probe
+        for status, phase in (("completed", "verified"), ("failed", "rejected"), ("in_progress", "response_pending")):
+            with self.subTest(status=status), tempfile.TemporaryDirectory() as directory:
+                path, evidence = Path(directory) / "probe.json", Path(directory) / "evidence.json"
+                args = SimpleNamespace(
+                    scenario="identity-probe", identity_forwarding="user-only", specialist_protocol="responses",
+                    session_file=str(path), evidence=str(evidence), socks=None,
+                )
+                async def create(*_args, **_kwargs):
+                    return {"agent_session_id": json.loads(path.read_text())["request"]["session_id"]}
+                async def invoke(_http, _credential, _role, request, **_kwargs):
+                    self.assertEqual(request.specialist_protocol, "responses")
+                    self.assertEqual(request.identity_forwarding, "user-only")
+                    return ProbeResult(
+                        observation=observation("coordinator", principal_matches=None),
+                        children=[observation(role) for role in ("architect", "reviewer")] if status == "completed" else [],
+                        child_responses=[ProbeResponseReceipt(
+                            role=role, requested_version="41", response_id="resp_" + role, status=status,
+                        ) for role in ("architect", "reviewer")],
+                    )
+                with patch("live_acceptance.acceptance_credential"), patch("live_acceptance.data_client"), patch(
+                    "live_acceptance.rest", new=AsyncMock(side_effect=create),
+                ) as rest, patch("demo.identity_probe.invoke_probe", new=AsyncMock(side_effect=invoke)) as dispatched:
+                    observed = {role: {"version": "41"} for role in AGENTS}
+                    if status == "completed":
+                        await run_identity_probe(args, observed, "tenant", "subscription", USER)
+                    else:
+                        with self.assertRaisesRegex(RuntimeError, "RESPONSES_IDENTITY_PROBE_REJECTED"):
+                            await run_identity_probe(args, observed, "tenant", "subscription", USER)
+                    self.assertEqual(json.loads(path.read_text())["phase"], phase)
+                    self.assertEqual(
+                        [item["response_id"] for item in json.loads(evidence.read_text())["child_responses"]],
+                        ["resp_architect", "resp_reviewer"],
+                    )
+                    with self.assertRaisesRegex(RuntimeError, "NEW_IDENTITY_PROBE_REQUIRED_NO_RESEND"):
+                        await run_identity_probe(args, observed, "tenant", "subscription", USER)
+                    rest.assert_awaited_once()
+                    dispatched.assert_awaited_once()
 
     async def test_timeout_preserves_reserved_ids_and_prevents_another_create_or_send(self):
         from live_acceptance import run_identity_probe

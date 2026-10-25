@@ -46,6 +46,15 @@ A separate parent gets its own child bindings and artifact scope.
 -> [architect](demo/architect_agent.py) / [reviewer](demo/reviewer_agent.py)
 model-history stages. [State and source map](docs/design.md#how-the-same-specialist-session-is-reused).
 
+For a coordinator walkthrough, start at `create_workflow()` in
+`demo\workflow.py`, then read `WorkflowRuntime.begin()`, `route()`, `execute()`,
+and `publish()` in order. `execute()` distinguishes the persisted child binding
+from the remote client's child state, shows the normal send before recovery,
+and keeps assignment and response journals beside the effects they protect.
+`result()` reads the current artifacts and reports pending work without sending
+another request. The repository's `teaching-code-refactor` skill guides
+behavior-preserving readability changes.
+
 ## Authorized delivery invocation
 
 **Design -> develop -> deploy -> test case -> remediate -> iterate.**

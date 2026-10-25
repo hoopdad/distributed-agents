@@ -65,6 +65,7 @@ History may explain a finding but never creates a current blocker by itself.
 | Sprint architecture | `docs\requirements\delivery-sprint-architecture.md`, `docs\requirements\delivery-sprint-architecture.json`, `tests\test_delivery_sprint_architecture.py` | Holistic solution-model reuse, four tier designs, six approved task/source/test/flow joins and unchanged exact-candidate verification handoffs; no runtime or deployed acceptance |
 | Sprint dispatch planning | `docs\requirements\delivery-sprint-plan.md`, `docs\requirements\delivery-sprint-plan.json`, `scripts\build_sprint_plan.py`, `tests\test_delivery_sprint_plan.py`, `tests\test_delivery_sprint_dispatch.mjs` | Six approved owner/card assignments, critical-path estimates and deployed-first dependency fan-out; local schema/synthetic scheduler checks are not implementation dispatch or deployed acceptance |
 | Local configuration/checks | `scripts\Use-Settings.ps1`, `scripts\Test-Repository.ps1`, `scripts\repo_index.py` | Allowlisted private configuration, public boundary checks and current/history search partition |
+| Teaching refactors | `.github\skills\teaching-code-refactor\SKILL.md` | Readability-first guidance copied from the supplied sibling repository; preserve interfaces, authorization, effects, resource lifetime and recovery |
 
 Authorization and unknown-effect safety are runtime invariants, not historical
 review ceremonies. Preserve actual persisted held operations; do not replay
@@ -86,6 +87,7 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `.github\skills\distributed-agent-implementation\SKILL.md`
 - `.github\skills\lab-deployment\SKILL.md`
 - `.github\skills\repo-index\SKILL.md`
+- `.github\skills\teaching-code-refactor\SKILL.md`
 - `.gitignore`
 - `Dockerfile`
 - `LICENSE`

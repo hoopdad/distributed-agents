@@ -368,61 +368,72 @@ class WorkflowRuntime:
                 self.assert_turn(manifest)
                 if manifest.next_action != action or not manifest.routing_operation_id:
                     raise ArtifactError("ROUTING_OPERATION_BINDING")
-                route_op = manifest.routing_operation_id
+                routing_operation_id = manifest.routing_operation_id
 
                 # STAGE 2: Create or recover the pinned specialist's child session.
-                child = manifest.children.get(role)
-                if child is None:
-                    prepared = await remote.prepare(role)
-                    if prepared.name != AGENTS[role] or prepared.role != role or prepared.version.startswith("in-process"):
+                child_binding = manifest.children.get(role)
+                if child_binding is None:
+                    prepared_child = await remote.prepare(role)
+                    if (
+                        prepared_child.name != AGENTS[role] or prepared_child.role != role
+                        or prepared_child.version.startswith("in-process")
+                    ):
                         raise ArtifactError("REMOTE_SPECIALIST_REQUIRED")
-                    child = ChildBinding.model_validate(prepared.model_dump(mode="json"))
-                    manifest.children[role] = child
+                    child_binding = ChildBinding.model_validate(prepared_child.model_dump(mode="json"))
+                    manifest.children[role] = child_binding
                     manifest.effect = Effect(
-                        operation_id=operation_id(self.scope, route_op, "create"),
-                        routing_operation_id=route_op, kind="create", status="prepared", role=role, input_refs=[],
+                        operation_id=operation_id(self.scope, routing_operation_id, "create"),
+                        routing_operation_id=routing_operation_id, kind="create", status="prepared",
+                        role=role, input_refs=[],
                     )
                     await self.transition(store, document, manifest, "prepared")
                 if (
-                    child.role != role or child.name != AGENTS[role]
-                    or child.framework.get("state", {}).get(FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY) != child.hosted_id
+                    child_binding.role != role or child_binding.name != AGENTS[role]
+                    or child_binding.framework.get("state", {}).get(FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY)
+                    != child_binding.hosted_id
                 ):
                     raise ArtifactError("CHILD_BINDING")
-                if not child.bound:
+                if not child_binding.bound:
                     if manifest.effect is None or manifest.effect.kind != "create" or manifest.effect.role != role:
                         raise ArtifactError("CHILD_CREATE_BINDING")
-                    target = Child.model_validate(child.model_dump(mode="json"))
+                    remote_child = Child.model_validate(child_binding.model_dump(mode="json"))
                     try:
                         if manifest.effect.status == "prepared":
                             await self.transition(store, document, manifest, "dispatched")
                             with effects.dispatch(effects.Binding(
-                                manifest.effect.operation_id, role, target.hosted_id,
-                                target.version, "create",
+                                manifest.effect.operation_id, role, remote_child.hosted_id,
+                                remote_child.version, "create",
                             )):
-                                await remote.create(target)
+                                await remote.create(remote_child)
                         else:
-                            await remote.recover_creation(target)
+                            await remote.recover_creation(remote_child)
                     except DemoError as exc:
                         await self.hold(store, document, manifest, exc.code)
                         return manifest.effect.operation_id
-                    child.bound = True
+                    child_binding.bound = True
                     await self.transition(store, document, manifest, "accepted")
 
                 # STAGE 3: Store the exact input/output assignment before any specialist call.
-                call_op = operation_id(self.scope, route_op, "call")
-                effect = manifest.effect
-                if effect is None or effect.operation_id != call_op:
-                    refs = [ref for ref in (manifest.requirements, manifest.candidate, manifest.review) if ref is not None]
+                call_operation_id = operation_id(self.scope, routing_operation_id, "call")
+                call_effect = manifest.effect
+                if call_effect is None or call_effect.operation_id != call_operation_id:
+                    input_refs = [
+                        ref for ref in (manifest.requirements, manifest.candidate, manifest.review)
+                        if ref is not None
+                    ]
                     if role == "reviewer":
-                        refs = refs[:2]
+                        # The architect also needs prior findings; the reviewer gets requirements and design.
+                        input_refs = input_refs[:2]
                     candidate_revision = manifest.candidate_revision
                     if role == "architect":
                         candidate_revision += 1
-                    producer = Producer(
-                        role=role, name=child.name, version=child.version, session_id=child.hosted_id
+                    specialist_producer = Producer(
+                        role=role, name=child_binding.name, version=child_binding.version,
+                        session_id=child_binding.hosted_id,
                     )
                     assignment = Assignment(
-                        scope_binding=self.scope, operation_id=call_op, producer=producer, input_refs=refs,
+                        scope_binding=self.scope, operation_id=call_operation_id,
+                        producer=specialist_producer, input_refs=input_refs,
                         requirements_revision=manifest.turn, candidate_revision=candidate_revision,
                         output_type=output_type,
                         deadline_epoch=manifest.deadline_epoch,
@@ -430,61 +441,64 @@ class WorkflowRuntime:
                     await store.write_assignment(assignment)
                     manifest.calls += 1
                     manifest.effect = Effect(
-                        operation_id=call_op, routing_operation_id=route_op, kind="call", status="prepared",
-                        role=role, input_refs=refs, assignment_sha256=digest(assignment),
-                        reserved_name=f"{self.scope.prefix}{output_collection}/{manifest.turn}/{call_op}.json",
+                        operation_id=call_operation_id, routing_operation_id=routing_operation_id,
+                        kind="call", status="prepared",
+                        role=role, input_refs=input_refs, assignment_sha256=digest(assignment),
+                        reserved_name=f"{self.scope.prefix}{output_collection}/{manifest.turn}/{call_operation_id}.json",
                     )
                     await self.transition(store, document, manifest, "prepared")
-                effect = manifest.effect
-                if effect.status in ("output_observed", "accepted"):
-                    return call_op
-                target = Child.model_validate(child.model_dump(mode="json"))
+                call_effect = manifest.effect
+                if call_effect.status in ("output_observed", "accepted"):
+                    return call_operation_id
+                remote_child = Child.model_validate(child_binding.model_dump(mode="json"))
 
-                # STAGE 4: Recover a known response, or dispatch once and record its ID immediately.
+                # STAGE 4: Dispatch a prepared call once; otherwise recover without sending again.
                 async def remember(response_id: str):
-                    if effect.response_id not in (None, response_id):
+                    if call_effect.response_id not in (None, response_id):
                         raise ArtifactError("REMOTE_RESPONSE_CHANGED")
-                    if effect.response_id is None:
-                        effect.response_id = response_id
+                    if call_effect.response_id is None:
+                        call_effect.response_id = response_id
                         await self.transition(store, document, manifest, "response_observed")
 
                 try:
-                    if effect.status != "prepared":
-                        if effect.response_id is None:
-                            proposal = await store.read_output(
-                                artifact_type=output_type,
-                                revision=manifest.turn, operation_id=call_op,
-                            )
-                            if proposal is None:
-                                await self.hold(store, document, manifest, "DELEGATION_UNCERTAIN")
-                                return call_op
-                            assignment = await store.read_assignment(call_op)
-                            self.verify_proposal(proposal, assignment, manifest)
-                            await remember(proposal.producer.response_id)
-                        output_text = await remote.recover(target, effect.response_id)
-                    else:
+                    if call_effect.status == "prepared":
                         await self.transition(store, document, manifest, "dispatched")
-                        locator = AssignmentLocator(
-                            schema_version=1, scope_binding=self.scope, operation_id=call_op
+                        assignment_locator = AssignmentLocator(
+                            schema_version=1, scope_binding=self.scope, operation_id=call_operation_id,
                         )
                         async with asyncio.timeout(min(120, max(0, manifest.deadline_epoch - time.time()))):
                             with effects.dispatch(effects.Binding(
-                                call_op, role, target.hosted_id, target.version, "send",
+                                call_operation_id, role, remote_child.hosted_id, remote_child.version, "send",
                             )):
-                                output_text = await remote.invoke(target, locator.model_dump(mode="json"), remember)
+                                output_text = await remote.invoke(
+                                    remote_child, assignment_locator.model_dump(mode="json"), remember,
+                                )
+                    else:
+                        if call_effect.response_id is None:
+                            proposal = await store.read_output(
+                                artifact_type=output_type,
+                                revision=manifest.turn, operation_id=call_operation_id,
+                            )
+                            if proposal is None:
+                                await self.hold(store, document, manifest, "DELEGATION_UNCERTAIN")
+                                return call_operation_id
+                            assignment = await store.read_assignment(call_operation_id)
+                            self.verify_proposal(proposal, assignment, manifest)
+                            await remember(proposal.producer.response_id)
+                        output_text = await remote.recover(remote_child, call_effect.response_id)
 
                     # STAGE 5: Record the output reference; publication validates the artifact itself.
-                    output = OutputLocator.model_validate(decode_document(output_text.encode("utf-8")))
-                    output.artifact_ref.assert_scope(self.scope)
-                    if output.artifact_ref.name != effect.reserved_name:
+                    output_locator = OutputLocator.model_validate(decode_document(output_text.encode("utf-8")))
+                    output_locator.artifact_ref.assert_scope(self.scope)
+                    if output_locator.artifact_ref.name != call_effect.reserved_name:
                         raise ArtifactError("SPECIALIST_OUTPUT_BINDING")
-                    child.framework = target.framework
-                    effect.output_ref = output.artifact_ref
+                    child_binding.framework = remote_child.framework
+                    call_effect.output_ref = output_locator.artifact_ref
                     await self.transition(store, document, manifest, "output_observed")
                 except (DemoError, ArtifactError, ValidationError, TimeoutError) as exc:
                     code = exc.code if isinstance(exc, (DemoError, ArtifactError)) else type(exc).__name__
                     await self.hold(store, document, manifest, code)
-                return call_op
+                return call_operation_id
 
     async def publish(self, call_op: str) -> tuple[bool, dict | None]:
         """Validate the specialist's immutable output and accept it into the manifest."""
@@ -698,9 +712,16 @@ class WorkflowRuntime:
         }
 
     async def result(self, store, manifest: Manifest) -> dict:
-        requirements = await store.read_artifact(manifest.requirements) if manifest.requirements else None
-        candidate = await store.read_artifact(manifest.candidate) if manifest.candidate else None
-        review = await store.read_artifact(manifest.review) if manifest.review else None
+        """Read current artifacts and report the turn without dispatching more work."""
+        requirements = None
+        if manifest.requirements:
+            requirements = await store.read_artifact(manifest.requirements)
+        candidate = None
+        if manifest.candidate:
+            candidate = await store.read_artifact(manifest.candidate)
+        review = None
+        if manifest.review:
+            review = await store.read_artifact(manifest.review)
         decision_refs = [
             ref for ref in manifest.accepted if ref.artifact_type == "decision" and ref.requirements_revision == manifest.turn
         ]
@@ -712,11 +733,20 @@ class WorkflowRuntime:
                 raise ArtifactError("DECISION_ARTIFACT_SCHEMA")
             decision_evidence.append(record.content.model_dump(mode="json"))
             decision_artifacts.append(record.model_dump(mode="json"))
+        candidate_content = None
+        if candidate:
+            candidate_content = candidate.content.model_dump(mode="json", exclude={"kind"})
+        review_content = None
+        if review:
+            review_content = review.content.model_dump(mode="json", exclude={"kind"})
+        pending_effect = None
+        if manifest.effect and manifest.effect.status not in ("accepted", "failed"):
+            pending_effect = manifest.effect.model_dump(mode="json")
         return {
             "event": "result", "status": manifest.status, "turn": manifest.turn,
             "calls": manifest.calls, "decisions": manifest.decisions,
-            "candidate": candidate.content.model_dump(mode="json", exclude={"kind"}) if candidate else None,
-            "review": review.content.model_dump(mode="json", exclude={"kind"}) if review else None,
+            "candidate": candidate_content,
+            "review": review_content,
             "artifact_refs": {
                 kind: ref.model_dump(mode="json") if ref else None
                 for kind, ref in (("requirements", manifest.requirements), ("candidate", manifest.candidate), ("review", manifest.review))
@@ -733,10 +763,7 @@ class WorkflowRuntime:
             },
             "decision_artifacts": decision_artifacts,
             "manifest_generation": manifest.generation, "native_workflow": "distributed-agents-v1",
-            "specialists": "hosted", "pending_effect": (
-                manifest.effect.model_dump(mode="json")
-                if manifest.effect and manifest.effect.status not in ("accepted", "failed") else None
-            ),
+            "specialists": "hosted", "pending_effect": pending_effect,
             "artifact_authentication": "managed_identity", "artifact_private_path_verified": True,
         }
 

@@ -933,6 +933,83 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
             with self.subTest(corruption=corruption), self.assertRaises(RuntimeError):
                 validate_artifact_evidence(changed)
 
+    async def test_result_preserves_complete_shape_read_order_and_read_only_behavior(self):
+        for scenario in ("new", "requirements-only", "accepted", "held"):
+            with self.subTest(scenario=scenario):
+                backend = MemoryBackend()
+                remote = FakeRemote(backend)
+                runtime = TestRuntime(backend, remote)
+                store = make_store(backend, runtime.scope, "coordinator")
+                if scenario == "requirements-only":
+                    await runtime.begin("Synthetic requirements.")
+                elif scenario == "accepted":
+                    await graph(runtime).run("Synthetic requirements.")
+                elif scenario == "held":
+                    await runtime.begin("Synthetic requirements.")
+                    action, _ = await runtime.route(runtime.response_id)
+                    remote.crash = "unknown_response"
+                    with self.assertRaises(ProcessCrash):
+                        await runtime.execute(action)
+                    await runtime.execute(action)
+
+                if scenario == "new":
+                    manifest = Manifest(scope_binding=runtime.scope)
+                else:
+                    manifest = await store.read_manifest()
+                artifact_refs = {
+                    "requirements": manifest.requirements,
+                    "candidate": manifest.candidate,
+                    "review": manifest.review,
+                }
+                artifacts = {}
+                for kind, ref in artifact_refs.items():
+                    artifacts[kind] = await store.read_artifact(ref) if ref else None
+                decision_refs = [
+                    ref for ref in manifest.accepted
+                    if ref.artifact_type == "decision" and ref.requirements_revision == manifest.turn
+                ]
+                decisions = [await store.read_artifact(ref) for ref in decision_refs]
+                blobs_before = dict(backend.blobs)
+                remote_counts = (remote.creates, remote.calls, remote.recoveries)
+                with patch.object(store, "read_artifact", wraps=store.read_artifact) as read_artifact:
+                    result = await runtime.result(store, manifest)
+
+                expected_pending_effect = None
+                if scenario == "held":
+                    expected_pending_effect = manifest.effect.model_dump(mode="json")
+                self.assertEqual(result, {
+                    "event": "result", "status": manifest.status, "turn": manifest.turn,
+                    "calls": manifest.calls, "decisions": manifest.decisions,
+                    "candidate": (
+                        artifacts["candidate"].content.model_dump(mode="json", exclude={"kind"})
+                        if artifacts["candidate"] else None
+                    ),
+                    "review": (
+                        artifacts["review"].content.model_dump(mode="json", exclude={"kind"})
+                        if artifacts["review"] else None
+                    ),
+                    "artifact_refs": {
+                        kind: ref.model_dump(mode="json") if ref else None
+                        for kind, ref in artifact_refs.items()
+                    },
+                    "decision_refs": [ref.model_dump(mode="json") for ref in decision_refs],
+                    "decision_evidence": [artifact.content.model_dump(mode="json") for artifact in decisions],
+                    "artifact_evidence": {
+                        kind: artifact.model_dump(mode="json") if artifact else None
+                        for kind, artifact in artifacts.items()
+                    },
+                    "decision_artifacts": [artifact.model_dump(mode="json") for artifact in decisions],
+                    "manifest_generation": manifest.generation, "native_workflow": "distributed-agents-v1",
+                    "specialists": "hosted", "pending_effect": expected_pending_effect,
+                    "artifact_authentication": "managed_identity", "artifact_private_path_verified": True,
+                })
+                self.assertEqual(
+                    [call.args[0] for call in read_artifact.await_args_list],
+                    [ref for ref in artifact_refs.values() if ref] + decision_refs,
+                )
+                self.assertEqual(backend.blobs, blobs_before)
+                self.assertEqual((remote.creates, remote.calls, remote.recoveries), remote_counts)
+
     async def test_known_response_reconciles_after_crash_without_new_remote_call(self):
         action = await self.step_to_call()
         self.remote.crash = "known_response"

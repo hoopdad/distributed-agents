@@ -20,10 +20,22 @@ History may explain a finding but never creates a current blocker by itself.
 {
   "ignore": [
     ".github\\repo-history-index.md",
+    ".github\\agents\\workflow-owner.agent.md",
+    ".github\\agents\\workflow-reviewer.agent.md",
+    "gh-dynamic-workflows/*",
     "docs\\customer-prototype-*",
     "docs\\identity-*.md",
     "docs\\migration-plan.md",
     "docs\\migration-map.json",
+    "docs\\requirements\\delivery-architecture.*",
+    "docs\\requirements\\delivery-user-experience.*",
+    "docs\\requirements\\delivery-release-plan.*",
+    "docs\\requirements\\delivery-sprint-*",
+    "docs\\requirements\\checks\\delivery-*",
+    "docs\\requirements\\client-release\\delivery-sprint-architecture.md",
+    "docs\\requirements\\coordinator\\delivery-sprint-architecture.md",
+    "docs\\requirements\\shared-context\\delivery-sprint-architecture.md",
+    "docs\\requirements\\specialists\\delivery-sprint-architecture.md",
     "docs\\requirements\\client-release\\architecture.md",
     "docs\\requirements\\coordinator\\architecture.md",
     "docs\\requirements\\specialists\\architecture.md"
@@ -51,7 +63,6 @@ History may explain a finding but never creates a current blocker by itself.
 | Sprint architecture | `docs\requirements\delivery-sprint-architecture.md`, `docs\requirements\delivery-sprint-architecture.json`, `tests\test_delivery_sprint_architecture.py` | Holistic solution-model reuse, four tier designs, six approved task/source/test/flow joins and unchanged exact-candidate verification handoffs; no runtime or deployed acceptance |
 | Sprint dispatch planning | `docs\requirements\delivery-sprint-plan.md`, `docs\requirements\delivery-sprint-plan.json`, `scripts\build_sprint_plan.py`, `tests\test_delivery_sprint_plan.py`, `tests\test_delivery_sprint_dispatch.mjs` | Six approved owner/card assignments, critical-path estimates and deployed-first dependency fan-out; local schema/synthetic scheduler checks are not implementation dispatch or deployed acceptance |
 | Local configuration/checks | `scripts\Use-Settings.ps1`, `scripts\Test-Repository.ps1`, `scripts\repo_index.py` | Allowlisted private configuration, public boundary checks and current/history search partition |
-| CLI delivery workflow | `gh-dynamic-workflows`, `.github\extensions\autonomous-delivery\extension.mjs` | Registered lab-delivery runtime, distinct from the application's MAF graph |
 
 Authorization and unknown-effect safety are runtime invariants, not historical
 review ceremonies. Preserve actual persisted held operations; do not replay
@@ -68,10 +79,7 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `.gitattributes`
 - `.github\agents\distributed-agents-builder.agent.md`
 - `.github\agents\distributed-agents-reviewer.agent.md`
-- `.github\agents\workflow-owner.agent.md`
-- `.github\agents\workflow-reviewer.agent.md`
 - `.github\copilot-instructions.md`
-- `.github\extensions\autonomous-delivery\extension.mjs`
 - `.github\repo-index.md`
 - `.github\skills\distributed-agent-implementation\SKILL.md`
 - `.github\skills\lab-deployment\SKILL.md`
@@ -116,75 +124,8 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `docs\requirements\checks\azd-repository-check.txt`
 - `docs\requirements\checks\azd-source-check.txt`
 - `docs\requirements\checks\azd-source-regressions.txt`
-- `docs\requirements\checks\delivery-architecture-regressions.txt`
-- `docs\requirements\checks\delivery-architecture.txt`
-- `docs\requirements\checks\delivery-release-plan-regressions.txt`
-- `docs\requirements\checks\delivery-release-plan.txt`
-- `docs\requirements\checks\delivery-sprint-architecture-initial.txt`
-- `docs\requirements\checks\delivery-sprint-architecture-repository.txt`
-- `docs\requirements\checks\delivery-sprint-architecture.txt`
-- `docs\requirements\checks\delivery-sprint-design-environment.txt`
-- `docs\requirements\checks\delivery-sprint-design-regressions.txt`
-- `docs\requirements\checks\delivery-sprint-design-repository.txt`
-- `docs\requirements\checks\delivery-sprint-design-terminal.txt`
-- `docs\requirements\checks\delivery-sprint-design.txt`
-- `docs\requirements\checks\delivery-sprint-plan-regressions.txt`
-- `docs\requirements\checks\delivery-sprint-plan-repository.txt`
-- `docs\requirements\checks\delivery-sprint-plan.txt`
-- `docs\requirements\checks\delivery-user-experience-regressions.txt`
-- `docs\requirements\checks\delivery-user-experience.txt`
-- `docs\requirements\client-release\delivery-sprint-architecture.md`
-- `docs\requirements\coordinator\delivery-sprint-architecture.md`
-- `docs\requirements\delivery-architecture.json`
-- `docs\requirements\delivery-architecture.md`
 - `docs\requirements\delivery-mission.md`
-- `docs\requirements\delivery-release-plan.json`
-- `docs\requirements\delivery-release-plan.md`
-- `docs\requirements\delivery-sprint-architecture.json`
-- `docs\requirements\delivery-sprint-architecture.md`
-- `docs\requirements\delivery-sprint-design.json`
-- `docs\requirements\delivery-sprint-design.md`
-- `docs\requirements\delivery-sprint-plan.json`
-- `docs\requirements\delivery-sprint-plan.md`
-- `docs\requirements\delivery-user-experience.json`
-- `docs\requirements\delivery-user-experience.md`
 - `docs\requirements\shared-artifacts\delivery-sprint-architecture.md`
-- `docs\requirements\specialists\delivery-sprint-architecture.md`
-- `gh-dynamic-workflows\.gitignore`
-- `gh-dynamic-workflows\DELIVERY-PRINCIPLES.md`
-- `gh-dynamic-workflows\LAB-CONTRACT.md`
-- `gh-dynamic-workflows\LAB-DESIGN.md`
-- `gh-dynamic-workflows\QUICKSTART.md`
-- `gh-dynamic-workflows\README.md`
-- `gh-dynamic-workflows\RESEARCH.md`
-- `gh-dynamic-workflows\WORK-CARD-DEFINITIONS.md`
-- `gh-dynamic-workflows\extension.mjs`
-- `gh-dynamic-workflows\install.mjs`
-- `gh-dynamic-workflows\lab-loops.mjs`
-- `gh-dynamic-workflows\lab-workflow.mjs`
-- `gh-dynamic-workflows\loop-source.mjs`
-- `gh-dynamic-workflows\loop-workflow.mjs`
-- `gh-dynamic-workflows\loops.yml`
-- `gh-dynamic-workflows\package-lock.json`
-- `gh-dynamic-workflows\package.json`
-- `gh-dynamic-workflows\run.mjs`
-- `gh-dynamic-workflows\scheduling.mjs`
-- `gh-dynamic-workflows\task-context.mjs`
-- `gh-dynamic-workflows\templates\extension.mjs`
-- `gh-dynamic-workflows\templates\workflow-owner.agent.md`
-- `gh-dynamic-workflows\templates\workflow-reviewer.agent.md`
-- `gh-dynamic-workflows\test\evidence.fixture.mjs`
-- `gh-dynamic-workflows\test\install.test.mjs`
-- `gh-dynamic-workflows\test\lab-loops.test.mjs`
-- `gh-dynamic-workflows\test\lab-sdk.test.mjs`
-- `gh-dynamic-workflows\test\lab-workflow.test.mjs`
-- `gh-dynamic-workflows\test\run.test.mjs`
-- `gh-dynamic-workflows\test\scheduling.test.mjs`
-- `gh-dynamic-workflows\test\scope-governance.test.mjs`
-- `gh-dynamic-workflows\test\task-context.test.mjs`
-- `gh-dynamic-workflows\test\work-cards.test.mjs`
-- `gh-dynamic-workflows\work-cards.mjs`
-- `gh-dynamic-workflows\workflow.mjs`
 - `live_acceptance.py`
 - `main.py`
 - `native_proxy.py`

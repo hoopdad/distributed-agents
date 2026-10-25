@@ -42,24 +42,17 @@ model-history stages. [State and source map](docs/design.md#how-the-same-special
 
 ## Authorized delivery invocation
 
-Open this repository in Copilot and submit the invocation in
-[docs/NEXT-SESSION-PROMPT.md](docs/NEXT-SESSION-PROMPT.md). It explicitly
-authorizes scoped implementation/tests/commits, reviewed `lab-delivery` launch,
-normal azd deployment and synthetic acceptance for the three existing roles
-in the validated nonproduction project. Reading it alone is not authorization;
-the current user has submitted and authorized this invocation.
+**Design -> develop -> deploy -> test case -> remediate -> iterate.**
+Work directly from the integrated `feature/azd-demo-delivery` source using normal
+azd. No CLI delivery workflows, planning loops, approval artifacts or role/reviewer
+orchestration. The application's MAF graph remains required.
 
-The actual input is `delivery-input.json`; the
-[mission](docs/requirements/delivery-mission.md) is authoritative for components,
-flows, source integration and consistent RAG reports. Integrate scoped preparation
-onto `feature/azd-demo-delivery` based on the latest reviewed customer-hosted-session
-feature before launching; do not run old main because JSON names a branch.
-Before each launch review the sibling framework origin's latest revision,
-upgrade only while inactive and confirm registrations/`work-conserving-v1`.
-The CLI delivery workflow is distinct from the application's native MAF graph.
-Monitor actual durable outcomes, causally fix/validate failures and safely
-resume/relaunch while retaining accepted work and exact unmet criteria.
-`--check-only`, SDK completion, healthy hosts and offline tests are not acceptance.
+The current user authorized scoped implementation/tests/commits (no push),
+existing-project azd deployment and synthetic acceptance for the three roles.
+The [mission](docs/requirements/delivery-mission.md) defines product acceptance;
+the [continuation prompt](docs/NEXT-SESSION-PROMPT.md) preserves the scope.
+Deploy working increments, test actual outcomes, fix causes and repeat.
+Offline tests, healthy hosts and SDK completion do not establish live success.
 
 ## Setup and offline checks
 

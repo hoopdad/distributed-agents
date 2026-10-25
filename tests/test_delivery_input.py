@@ -50,6 +50,14 @@ class DeliveryInputTests(unittest.TestCase):
         instructions = (ROOT / ".github" / "copilot-instructions.md").read_text(encoding="utf-8")
         self.assertNotIn("Live acceptance is blocked on trusted-user propagation", instructions)
 
+    def test_direct_delivery_keeps_product_workflow_not_cli_orchestration(self):
+        method = self.input["authority"]["deliveryMethod"]
+        self.assertIn("design -> develop -> deploy -> test case -> remediate, iterate", method)
+        self.assertIn("application's native MAF graph", method)
+        self.assertFalse(
+            (ROOT / ".github" / "extensions" / "autonomous-delivery" / "extension.mjs").exists()
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

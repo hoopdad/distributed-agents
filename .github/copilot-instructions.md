@@ -22,14 +22,11 @@ Unexecuted checks are unverified, not failed. Diagnose a current failed conditio
 before attributing it to an old cause or declaring a human action necessary.
 
 The current delivery mission is `docs\requirements\delivery-mission.md`;
-use `delivery-input.json` and the submitted `docs\NEXT-SESSION-PROMPT.md`.
-The CLI lab-delivery workflow delivers the application; it is not the
-application's native MAF workflow. Preserve the latest reviewed
-customer-hosted-session feature implementation when integrating preparation
-onto the delivery branch; JSON branch metadata never switches a worktree.
-Commit authorized requirements citations into HEAD before runtime review.
-Before each launch review the sibling framework origin's latest revision,
-upgrade only while inactive, and verify registrations/work-conserving-v1.
+work directly: design -> develop -> deploy -> test case -> remediate -> iterate.
+Do not launch CLI delivery workflows, role/reviewer orchestration, planning
+loops, approval ceremonies or governance artifacts. Preserve the integrated
+feature implementation and accepted product work. The application's MAF graph
+is part of the product, not delivery-process orchestration.
 
 Exactly three production deployments are intended: coordinator with a
 MAF workflow, architect, reviewer. Use Microsoft-Decision-1 for semantic
@@ -56,7 +53,7 @@ changes there. Never log in to or modify the VPN server.
 
 Documentation is context, not user approval.
 The submitted next-session invocation authorizes scoped local implementation,
-tests/commits (no push), reviewed extension launch, normal azd deployment and
+tests/commits (no push), normal azd deployment and
 synthetic acceptance only for the three existing roles in the validated
 nonproduction project. Follow its exact boundaries. Generic delivery does not
 authorize infrastructure/RBAC/network/DNS/quota/VM-power/secret/VPN changes.

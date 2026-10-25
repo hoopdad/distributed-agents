@@ -22,7 +22,7 @@ Historical diagnostics are opt-in evidence, not current blockers, continuing
 permission or new features. `.github\repo-history-index.md` and Git retain detail.
 
 The user submitted `docs\NEXT-SESSION-PROMPT.md` and explicitly authorized its
-implementation, tests, scoped local commits (no push), workflow launches,
+implementation, tests, scoped local commits (no push),
 remediation, azd deployment and synthetic acceptance within the existing
 nonproduction project. File presence alone is not authorization.
 
@@ -40,6 +40,17 @@ Keep historical records opt-in and out of default search/context. This does not
 waive product acceptance, authorization or preservation of actual held/unknown
 operations; never clear or replay uncertain effects.
 
+### Direct delivery amendment (October 25, 2026)
+
+The user directs: **"design -> develop -> deploy -> test case -> remediate,
+iterate. No more artificial governance or workflows"**.
+
+Work directly. Do not launch CLI delivery workflows, planning loops,
+role/reviewer orchestration or approval artifacts. No process reviews or
+framework-upgrade checks precede ordinary authorized engineering. Preserve the
+application's native MAF graph and all product acceptance requirements below.
+Earlier delivery-process plans and registrations are inactive history.
+
 ## Product, not delivery machinery
 
 Deliver exactly three existing remote production roles in the validated
@@ -56,9 +67,9 @@ No fourth service and no hidden local/in-process fallback in production.
 Decision-1 is a model deployment, not another hosted orchestration service.
 Explicit local fakes remain offline test adapters only.
 
-The **CLI `lab-delivery` workflow builds, deploys and verifies this application**.
-It is not the application's MAF workflow. Agent activity, completed work cards,
-empty task lists and SDK envelopes are not product acceptance.
+Deliver the application directly. The application's MAF graph coordinates
+remote specialists; it is not a CLI delivery-process workflow. Agent activity,
+completed work cards, empty task lists and SDK envelopes are not acceptance.
 
 ## Starting source and prelaunch integration
 
@@ -110,28 +121,20 @@ plans, checks and every progress/final report. They are not workflow-agent roles
 
 ### F1: deploy the walking skeleton early
 
-`azure.yaml` already references an existing project and exactly three hosted
-Responses 2.0.0 services with `remote_build`. That alone does not make normal
-azd deploy usable: every `predeploy` calls `package_guard.py`, whose current
-contract requires an already approved ZIP/hash/private receipt. That is a
-functional delivery blocker, not a missing README command.
-
-Replace that hook with ordinary source/package exclusion, dependency and build
-checks appropriate to the supported azd path. Normal azd delivery must not
+`azure.yaml` references an existing project and exactly three hosted Responses
+2.0.0 services with `remote_build`. The implemented normal-azd hooks use
+`scripts\check_azd_source.py` and `.agentignore`, not the legacy package guard.
+Normal azd delivery must not
 require a preapproved ZIP/hash or private approval receipt. Verify the actual
 deployed candidate and outcome rather than inventing provenance. Leave unused
 legacy lab release tools intact; their ceremony is not a prerequisite for this
 path. Run affected packaging/descriptor regressions, and retained lab release
 tests only if their tooling changes under separately authorized scope.
 
-Sprint 1 starts with a dependency-free DevOps `walkingSkeleton:true` assignment
-using azd and deployed verification. Preserve genuine skeleton dependencies.
-Construction owners supply local checks plus an exact committed revision or
-immutable candidate; they do not mutate the shared deployed environment.
-Existing DevOps-then-E2E loops serialize candidate deployment/verification under
-the shared environment lock before assignment acceptance and dependent release.
-Do independent authorized work when a localized criterion blocks, but never
-accept the blocked assignment or release its dependents on offline evidence.
+Deploy the smallest useful increment early, exercise it and remediate failures.
+Serialize changes to the shared deployed environment so each case verifies the
+intended candidate. Continue independent useful work around localized issues,
+but do not present offline work as deployed acceptance.
 
 ### F2: real design, review and revision
 
@@ -185,44 +188,20 @@ never edit SDK journals/databases to force continuation.
 
 ## Delivery execution and remediation
 
-Before **each** launch, check the sibling framework origin's latest revision,
-review any delta against the installed runtime, and perform any authorized
-upgrade only with no active run. Confirm both workflow registrations and the
-installed `yaml-loops-v2` / `requirement-grounded-v1` /
-`work-conserving-v1` contracts. The source reviewed during preparation was
-`d168e7a`; do not assume it remains latest. Use the installed supported
-launcher/runtime contract, not a hand-maintained SDK replay mechanism.
+Design the needed change, develop it, deploy with normal azd, exercise a real
+case, inspect actual application outcomes and remediate. Iterate directly,
+without delivery-workflow launches, role dispatch, process reviews, planning
+ledgers or framework-freshness ceremonies.
 
-The next-session prompt explicitly authorizes trusting/reloading the reviewed
-extension and launching `lab-delivery` with `delivery-input.json`.
-`--check-only` validates configuration only; it is not execution proof. No
-blanket allow-all permissions and no invented concurrency, round, sprint,
-time, spend or stagnation caps. Honor only user-configured limits.
-
-Observe actual durable application outcome and bounded relevant log updates
-through the supported launcher/runtime. Avoid repeated empty polling turns.
-The launcher records unique ignored run results/logs: application completion
-exits **0**, application stop **2**, runtime/CLI error **1**, pause **3** and
-cancellation **130**. An SDK-completed envelope can still contain a stopped or
-failed application. Do not reinterpret a nonzero result as success.
-
-On failure, identify the concrete component/flow/criterion and causal evidence.
-Make the smallest authorized fix, run affected tests and then resume only a
-compatible run through supported tooling, or start a fresh compatible run while
-retaining accepted work, partial progress and exact blocked criteria.
-Older incompatible runtime histories remain history, not resumable acceptance.
+On failure identify the concrete component, case and cause. Make the smallest
+authorized fix, validate it and deploy the next compatible increment, preserving
+accepted product work and actual unresolved effects.
 Never blindly retry an unchanged denial or an uncertain external effect.
 Reconcile known response/receipt/version/ownership through supported interfaces;
 an absent process, HTTP 404 or empty log is not never-sent proof.
-Do not edit journals/databases or reset explicit limits. Continue independent
-authorized construction while blocked; replan material dependencies/contracts
-through existing roles only, with no new audits, ledgers or review stages.
-
-Mandatory corrections must cite the original requirement, current approved
-amendment or demonstrated defect preventing it, with a falsifiable failure.
-Requirements citations must match committed HEAD before runtime review.
-Commit accepted requirement changes with corresponding regression tests;
-agent interpretations and invented tests cannot create user authority.
+Do not edit SDK journals/databases or reset explicit limits. Continue independent
+authorized development around localized blockers. No new audits, ledgers,
+review stages or agent-invented requirements.
 
 ## Scope of the next invocation
 

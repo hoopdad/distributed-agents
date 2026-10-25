@@ -139,6 +139,16 @@ profile. Saved parent ownership and hosting principal gates remain unchanged.
 `live_acceptance.py` supports the same explicit options and verifies the actual
 deployed archive hash for either bundled or remote-build code.
 
+The native hosts also expose a bounded `identity-probe-v1` Invocations diagnostic,
+explicitly authorized after a fresh Responses identity failure.
+`live_acceptance.py --scenario identity-probe` uses the same route/auth/hash
+options and a new private session/evidence pair. It records reserved IDs before
+dispatch, creates only diagnostic sessions on the existing roles, and never
+resends an uncertain probe. It calls no model, touches no application artifacts
+and reports only trusted-context presence/equality. Responses workflows,
+principal gates and held parents remain unchanged. Even a passing probe is not
+end-to-end acceptance or an automatic specialist-transport migration.
+
 Add `--native` only for a verified native deployment. A client state's recorded
 runtime and versions cannot be silently migrated. `--recover-only` retrieves
 the exact persisted pending parent response instead of sending another request.

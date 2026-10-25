@@ -722,6 +722,62 @@ def acceptance_credential(args, subscription):
     return client_credential(subscription, source=source)
 
 
+async def run_identity_probe(args, observed, tenant, subscription, user):
+    from demo.identity_probe import ProbeChild, ProbeRequest, invoke_probe
+
+    path = private_state_path(args.session_file)
+    evidence = private_state_path(args.evidence)
+    if path.exists() or evidence.exists():
+        raise RuntimeError("NEW_IDENTITY_PROBE_REQUIRED_NO_RESEND")
+    probe = ProbeRequest(
+        probe_id=uuid.uuid4().hex, action="delegate", session_id=uuid.uuid4().hex,
+        children=[ProbeChild(
+            role=role, version=observed[role]["version"], session_id=uuid.uuid4().hex,
+        ) for role in ("architect", "reviewer")],
+    )
+    state = {
+        "schema_version": 1, "runtime": "identity-probe-v1", "tenant": tenant, "user": user,
+        "phase": "prepared", "request": probe.model_dump(mode="json"),
+        "versions": {role: data["version"] for role, data in observed.items()},
+    }
+    write_state(path, state, new=True)
+    with session_lease(path):
+        async with acceptance_credential(args, subscription) as credential, \
+                data_client(socks=args.socks) as http:
+            state["phase"] = "parent_create_dispatched"
+            write_state(path, state)
+            created = await rest(
+                http, credential, "POST", f"/agents/{AGENTS['coordinator']}/endpoint/sessions",
+                body={
+                    "agent_session_id": probe.session_id,
+                    "version_indicator": {
+                        "type": "version_ref", "agent_version": observed["coordinator"]["version"],
+                    },
+                },
+            )
+            if created.get("agent_session_id") != probe.session_id:
+                raise RuntimeError("PROBE_SESSION_CHANGED")
+            state["phase"] = "invocation_dispatched"
+            write_state(path, state)
+            result = await invoke_probe(
+                http, credential, "coordinator", probe, headers={}, timeout=300,
+            )
+        if result.observation.version != observed["coordinator"]["version"]:
+            raise RuntimeError("PROBE_VERSION_CHANGED")
+        write_state(evidence, result.model_dump(mode="json"), new=True)
+        verified = (
+            result.observation.status == "verified"
+            and [child.role for child in result.children] == ["architect", "reviewer"]
+            and all(child.status == "verified" and child.principal_matches is True
+                    and child.version == observed[child.role]["version"] for child in result.children)
+        )
+        state["phase"] = "verified" if verified else "rejected"
+        write_state(path, state)
+        print(result.model_dump_json())
+        if not verified:
+            raise RuntimeError("INVOCATIONS_IDENTITY_PROBE_REJECTED")
+
+
 async def run(args):
     source = getattr(args, "credential_source", "azure-cli")
     tenant, subscription, user = verify_lab() if source == "azure-cli" else verify_lab(credential_source=source)
@@ -779,6 +835,9 @@ async def run(args):
                 code["dependency_resolution"] not in ("bundled", "remote_build")):
                 raise RuntimeError(f"DEPLOYED_CODE_REQUIRED: {name}")
             observed[role] = metadata
+    if args.scenario == "identity-probe":
+        await run_identity_probe(args, observed, tenant, subscription, user)
+        return
     path = private_state_path(args.session_file)
     continuation = args.scenario in ("followup", "recover", "restart")
     if not continuation and path.exists():
@@ -869,7 +928,7 @@ def main():
     parser.add_argument("--sha256", required=True)
     parser.add_argument("--session-file", required=True)
     parser.add_argument("--evidence", required=True)
-    parser.add_argument("--scenario", choices=(*SCENARIOS, "observe", "recover"), required=True)
+    parser.add_argument("--scenario", choices=(*SCENARIOS, "observe", "recover", "identity-probe"), required=True)
     asyncio.run(run(parser.parse_args()))
 
 

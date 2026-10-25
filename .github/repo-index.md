@@ -53,6 +53,7 @@ History may explain a finding but never creates a current blocker by itself.
 | Blob/routing | `demo\artifact_store.py`, `demo\routing.py`, `config\routing-corpus.json`, `config\routing-calibration.json` | Exact provenance, coordinator ETag publication, calibrated Decision-1 choices |
 | Foundry integration | `demo\foundry.py`, `agent_metadata.py`, `azure.yaml` | Host/session/provider adapters and exactly three remote services |
 | Terminal/acceptance | `demo\terminal.py`, `native_proxy.py`, `live_acceptance.py` | Terminal flow, exact-origin transport and actual remote continuity/recovery/isolation checks |
+| Identity-path probe | `demo\identity_probe.py`, `demo\host.py`, `live_acceptance.py` | Explicitly authorized bounded Invocations diagnostic on the existing three hosts; no model/artifact work, automatic retry or production transport switch |
 | Tests/package | `tests`, `Test-Demo.ps1`, `package_guard.py`, requirements and Dockerfile | Offline regressions and build/package validation, not live acceptance |
 | Normal azd delivery | `scripts\check_azd_source.py`, `.agentignore`, `azure.yaml`, `tests\test_azd_source.py`, `docs\requirements\azd-walking-skeleton.md` | Bounded public-source, pin and compilation checks for native remote-build packaging; legacy exact-package tools unchanged, deployed verification still required |
 | Current delivery | `delivery-input.json`, `docs\requirements\delivery-mission.md`, `docs\NEXT-SESSION-PROMPT.md`, `docs\implementation-workflow.md` | Authorized azd delivery and seven-component acceptance based on fresh observations |
@@ -106,6 +107,7 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `demo\effect_observation.py`
 - `demo\foundry.py`
 - `demo\host.py`
+- `demo\identity_probe.py`
 - `demo\private_effect_capture.py`
 - `demo\reviewer_agent.py`
 - `demo\routing.py`
@@ -160,6 +162,7 @@ blocked. No historical status is a substitute for inspecting the current state.
 - `tests\test_effect_observation.py`
 - `tests\test_host_diagnostics.py`
 - `tests\test_identity_handoff.py`
+- `tests\test_identity_probe.py`
 - `tests\test_isolated_client.py`
 - `tests\test_private_effect_capture.py`
 - `tests\test_profiling_integration.py`

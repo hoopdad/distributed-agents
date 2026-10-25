@@ -310,12 +310,15 @@ class MiddlewareTests(unittest.IsolatedAsyncioTestCase):
         for runtime in ("native", "legacy"):
             with patch.dict(os.environ, {
                 "DEMO_RUNTIME": runtime, "AGENTSERVER_TASKS_BACKEND": "hosted",
-            }), patch("demo.host.ResponsesHostServer") as server:
+            }), patch("demo.host.ProbeResponsesHostServer" if runtime == "native"
+                      else "demo.host.ResponsesHostServer") as server:
                 main()
                 instance = server.return_value
                 instance.add_middleware.assert_called_once_with(IngressDiagnostics, role="architect")
                 instance.run.assert_called_once_with()
-                self.assertEqual([call[0] for call in instance.mock_calls], ["add_middleware", "run"])
+                self.assertEqual([call[0] for call in instance.mock_calls],
+                                 ["invoke_handler", "add_middleware", "run"] if runtime == "native"
+                                 else ["add_middleware", "run"])
                 if runtime == "native":
                     self.assertIs(server.call_args.kwargs["prepare_options"], prepare_diagnostic_options)
 

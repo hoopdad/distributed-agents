@@ -7,9 +7,14 @@ from agent_framework_foundry_hosting import ResponsesHostServer
 from agent_framework_foundry_hosting import CheckpointStoreProvider
 from azure.ai.agentserver.responses import ResponsesServerOptions
 from azure.ai.agentserver.core import AgentConfig, get_request_context
+from azure.ai.agentserver.invocations import InvocationAgentServerHost
 
 from .foundry import create_hosted_agent
 from . import diagnostics as diag
+
+
+class ProbeResponsesHostServer(ResponsesHostServer, InvocationAgentServerHost):
+    """Compose the pinned SDK's cooperative protocol routes in one host."""
 
 
 def context_checkpoint(stage, request=None, *, kind=diag.Kind.CONTEXT):
@@ -153,13 +158,15 @@ def main():
         logger = logging.getLogger("agent_framework_foundry_hosting._workflow_responses")
         if not any(isinstance(item, WorkflowPreparationDiagnostics) for item in logger.filters):
             logger.addFilter(WorkflowPreparationDiagnostics(AgentConfig.from_env()))
-        server = ResponsesHostServer(
+        server = ProbeResponsesHostServer(
             workflow=create_workflow, parse_response=parse_turn,
             checkpoint_store_provider=CheckpointStoreProvider(),
             options=ResponsesServerOptions(resilient_background=True),
             unsupported_options="error",
             prepare_options=prepare_diagnostic_options,
         )
+        from .identity_probe import register_identity_probe
+        register_identity_probe(server)
         server.add_middleware(IngressDiagnostics, role=role)
         server.run()
         return

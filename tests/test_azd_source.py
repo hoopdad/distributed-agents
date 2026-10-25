@@ -121,7 +121,10 @@ class AzdSourceTests(unittest.TestCase):
             self.assertEqual(service["codeConfiguration"], {
                 "runtime": "python_3_13", "entryPoint": "main.py", "dependencyResolution": "remote_build",
             })
-            self.assertEqual(service["protocols"], [{"protocol": "responses", "version": "2.0.0"}])
+            self.assertEqual(service["protocols"], [
+                {"protocol": "responses", "version": "2.0.0"},
+                {"protocol": "invocations", "version": "2.0.0"},
+            ])
             self.assertEqual(service["hooks"]["predeploy"], {
                 "windows": {"shell": "pwsh", "run": "python scripts/check_azd_source.py; exit $LASTEXITCODE"},
                 "posix": {"shell": "sh", "run": "python3 scripts/check_azd_source.py"},

@@ -51,6 +51,24 @@ framework-upgrade checks precede ordinary authorized engineering. Preserve the
 application's native MAF graph and all product acceptance requirements below.
 Earlier delivery-process plans and registrations are inactive history.
 
+### Authorized identity-path experiment
+
+After a fresh normal-azd deployment, the real coordinator reached Decision-1
+and Blob but the architect's Responses request lacked a trusted user identity.
+The exact-response diagnostics verified outgoing delegation and a received call
+ID; read-only inspection confirmed an existing explicit impersonation grant.
+This is a current failed boundary, not proof of its platform cause.
+
+The user explicitly selected **"Implement, deploy and test a bounded Invocations
+probe on the existing roles"**. Add the pinned SDK's Invocations routes beside
+Responses on those same three services. The diagnostic delegates the genuinely
+authenticated coordinator context and reports presence/equality only; it runs
+no models and reads or writes no application artifacts. It does not switch
+production specialist execution, weaken principal gates, add grants/services,
+or migrate/replay held Responses work. Record reserved session IDs before
+dispatch and never resend an uncertain probe. A passing probe is identity-path
+evidence, not full application acceptance or automatic adoption authority.
+
 ## Product, not delivery machinery
 
 Deliver exactly three existing remote production roles in the validated

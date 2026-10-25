@@ -1478,7 +1478,7 @@ class NativeWorkflowTests(unittest.IsolatedAsyncioTestCase):
         from demo.host import main
         from demo.workflow import create_workflow, parse_turn
         with patch.dict(os.environ, {"DEMO_ROLE": "coordinator", "DEMO_RUNTIME": "native"}):
-            with patch("demo.host.ResponsesHostServer") as server:
+            with patch("demo.host.ProbeResponsesHostServer") as server:
                 main()
         kwargs = server.call_args.kwargs
         self.assertTrue(kwargs["options"].resilient_background)

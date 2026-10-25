@@ -31,6 +31,8 @@ services:
     protocols:
       - protocol: responses
         version: "2.0.0"
+      - protocol: invocations
+        version: "2.0.0"
     env:
       DEMO_ROLE: architect
       DEMO_RUNTIME: native
@@ -69,6 +71,8 @@ services:
     protocols:
       - protocol: responses
         version: "2.0.0"
+      - protocol: invocations
+        version: "2.0.0"
     env:
       DEMO_ROLE: reviewer
       DEMO_RUNTIME: native
@@ -106,6 +110,8 @@ services:
           run: python3 scripts/check_azd_source.py
     protocols:
       - protocol: responses
+        version: "2.0.0"
+      - protocol: invocations
         version: "2.0.0"
     env:
       DEMO_ROLE: coordinator

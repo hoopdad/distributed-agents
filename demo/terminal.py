@@ -15,11 +15,13 @@ from contextlib import contextmanager
 from pathlib import Path
 from urllib.parse import quote
 
+import httpx2
 from agent_framework import AgentSession
 from agent_framework.exceptions import ChatClientException
 from agent_framework.foundry import FoundryAgent
 from agent_framework_foundry import FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY
-from azure.identity.aio import AzureCliCredential
+from azure.identity import AzureDeveloperCliCredential as SyncDeveloperCliCredential
+from azure.identity.aio import AzureCliCredential, AzureDeveloperCliCredential
 from pydantic import ValidationError
 
 from .config import ConfigurationError, required
@@ -27,7 +29,7 @@ from .contracts import AGENTS, PROJECT, Candidate, DemoError, Review, alias
 from .foundry import ProjectClient, data_client
 
 
-def verify_lab() -> tuple[str, str, str]:
+def verify_lab(*, credential_source: str = "azure-cli") -> tuple[str, str, str]:
     try:
         tenant = str(uuid.UUID(required("EXPECTED_AZURE_TENANT_ID")))
         subscription = str(uuid.UUID(required("EXPECTED_AZURE_SUBSCRIPTION_ID")))
@@ -38,6 +40,42 @@ def verify_lab() -> tuple[str, str, str]:
         raise DemoError("CLIENT_CONFIGURATION", {"validation": str(exc)}) from exc
     os.environ["AZURE_CONFIG_DIR"] = str(profile.resolve())
     os.environ["AZURE_EXTENSION_USE_DYNAMIC_INSTALL"] = "no"
+    if credential_source == "azd":
+        try:
+            azd_profile = Path(required("AZD_CONFIG_DIR")).expanduser()
+            if not azd_profile.is_absolute() or not azd_profile.is_dir():
+                raise ConfigurationError("EXPLICIT_AZD_PROFILE_REQUIRED")
+        except ConfigurationError as exc:
+            raise DemoError("CLIENT_CONFIGURATION", {"validation": str(exc)}) from exc
+        azd = shutil.which("azd")
+        if not azd:
+            raise DemoError("AZD_MISSING")
+        result = subprocess.run(
+            [azd, "auth", "status", "--output", "json"],
+            capture_output=True, text=True, timeout=30,
+        )
+        if result.returncode:
+            raise DemoError("LAB_AUTH_REQUIRED")
+        actual = json.loads(result.stdout)
+        if (actual.get("status") != "authenticated" or actual.get("type") != "user"
+                or not isinstance(actual.get("email"), str) or not actual["email"].strip()):
+            raise DemoError("LAB_AUTH_REQUIRED")
+        with SyncDeveloperCliCredential(tenant_id=tenant, process_timeout=30) as credential:
+            token = credential.get_token("https://management.azure.com/.default")
+            with httpx2.Client(timeout=30, trust_env=False, follow_redirects=False) as http:
+                response = http.get(
+                    f"https://management.azure.com/subscriptions/{subscription}",
+                    params={"api-version": "2022-12-01"},
+                    headers={"Authorization": "Bearer " + token.token},
+                )
+        if response.status_code != 200:
+            raise DemoError(f"LAB_SUBSCRIPTION_HTTP_{response.status_code}")
+        context = response.json()
+        if context.get("subscriptionId") != subscription or context.get("tenantId") != tenant:
+            raise DemoError("LAB_SCOPE")
+        return tenant, subscription, actual["email"]
+    if credential_source != "azure-cli":
+        raise DemoError("CLIENT_CREDENTIAL_SOURCE")
     az = shutil.which("az")
     if not az:
         raise DemoError("AZURE_CLI_MISSING")
@@ -51,6 +89,16 @@ def verify_lab() -> tuple[str, str, str]:
     if actual["subscription"] != subscription or actual["tenant"] != tenant:
         raise DemoError("LAB_SCOPE")
     return tenant, subscription, actual["user"]
+
+
+def client_credential(subscription: str, *, source: str = "azure-cli"):
+    if source == "azd":
+        return AzureDeveloperCliCredential(
+            tenant_id=required("EXPECTED_AZURE_TENANT_ID"), process_timeout=30,
+        )
+    if source != "azure-cli":
+        raise DemoError("CLIENT_CREDENTIAL_SOURCE")
+    return AzureCliCredential(subscription=subscription, process_timeout=30)
 
 
 @contextmanager
@@ -258,16 +306,15 @@ async def rest(http, credential, method: str, path: str, *, body=None):
 
 
 async def chat(args):
-    tenant, subscription, user = verify_lab()
+    source = getattr(args, "credential_source", "azure-cli")
+    tenant, subscription, user = verify_lab() if source == "azure-cli" else verify_lab(credential_source=source)
     state_path = private_state_path(args.session_file)
     workflow_mode = getattr(args, "native", False)
     recover_only = getattr(args, "recover_only", False)
     view = HumanView() if getattr(args, "view", None) == "human" else None
     # CLI token acquisition forbids combining tenant and subscription selectors.
     # verify_lab checks the registered tenant before selecting its subscription.
-    async with AzureCliCredential(
-        subscription=subscription, process_timeout=30
-    ) as credential, data_client(socks=args.socks) as http:
+    async with client_credential(subscription, source=source) as credential, data_client(socks=args.socks) as http:
         async with ProjectClient(credential, http, {}) as project:
             if state_path.exists():
                 state = json.loads(state_path.read_text(encoding="utf-8"))
@@ -380,7 +427,11 @@ async def chat(args):
 
 def main():
     parser = argparse.ArgumentParser(description="Private, stateful Hosted Agent terminal.")
-    parser.add_argument("--socks", required=True, help="Owned socks5h://127.0.0.1:<port>")
+    transport = parser.add_mutually_exclusive_group(required=True)
+    transport.add_argument("--socks", help="Owned socks5h://127.0.0.1:<port>")
+    transport.add_argument("--direct", action="store_true", help="Use the existing route with exact-origin TLS; no proxy or network changes.")
+    parser.add_argument("--credential-source", choices=("azure-cli", "azd"), default="azure-cli",
+                        help="Explicit dedicated authentication profile; never falls back to another credential.")
     parser.add_argument("--session-file", required=True, help="Private file outside the repository")
     parser.add_argument("--message", help="One synthetic turn, then exit")
     parser.add_argument("--show-ids", action="store_true")

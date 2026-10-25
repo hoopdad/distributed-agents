@@ -15,7 +15,7 @@ from urllib.parse import quote
 from demo.contracts import AGENTS, PROJECT, Candidate, Review, alias
 from demo.foundry import ProjectClient, data_client
 from demo import effect_observation as effects
-from demo.terminal import chat, private_state_path, rest, session_lease, verify_lab, write_state
+from demo.terminal import chat, client_credential, private_state_path, rest, session_lease, verify_lab, write_state
 from azure.identity.aio import AzureCliCredential
 
 from agent_metadata import agent_metadata
@@ -27,13 +27,16 @@ from demo.workflow import PREPARATION_CHECKS
 
 
 SCENARIOS = {
-    "initial": "Create and review a synthetic architecture for Project Harbor. "
+    "initial": "Create and review a synthetic architecture for Project Harbor: "
+               "a private HTTPS document-submission web API that stores synthetic text documents "
+               "in Azure Blob Storage. "
                "All application ingress must remain private: no public application ingress. "
                "Use the curated lab fact sheet and do not operate on Azure resources.",
     "followup": "For the same Project Harbor design, add an asynchronous queue between document "
                 "submission and processing. Preserve every earlier requirement, especially private "
                 "application ingress. Have both specialists revise and review their previous work.",
-    "isolated": "Create and review a separate synthetic architecture for Project Cedar. "
+    "isolated": "Create and review a separate synthetic architecture for Project Cedar: "
+                "a private HTTPS image-retrieval web API serving synthetic images from Azure Blob Storage. "
                 "All application ingress must remain private: no public application ingress. "
                 "Use managed identities and private TLS endpoints, preserve the curated lab constraints, "
                 "and do not operate on Azure resources. This conversation has no Project Harbor requirements.",
@@ -712,8 +715,16 @@ async def observe_pending_child(project, response):
     }
 
 
+def acceptance_credential(args, subscription):
+    source = getattr(args, "credential_source", "azure-cli")
+    if source == "azure-cli":
+        return AzureCliCredential(subscription=subscription, process_timeout=30)
+    return client_credential(subscription, source=source)
+
+
 async def run(args):
-    tenant, subscription, user = verify_lab()
+    source = getattr(args, "credential_source", "azure-cli")
+    tenant, subscription, user = verify_lab() if source == "azure-cli" else verify_lab(credential_source=source)
     if args.scenario == "observe":
         state = json.loads(private_state_path(args.session_file).read_text())
         if state.get("schema_version") != 1 or state.get("user") != user or state.get("tenant") != tenant:
@@ -723,7 +734,7 @@ async def run(args):
         if not state.get("pending") or not state.get("pending_response"):
             raise RuntimeError("KNOWN_PENDING_RESPONSE_REQUIRED")
         hosted_id = state["framework"]["state"]["foundry_hosted_agent_session_id"]
-        async with AzureCliCredential(subscription=subscription, process_timeout=30) as credential, \
+        async with acceptance_credential(args, subscription) as credential, \
                 data_client(socks=args.socks) as http, ProjectClient(credential, http, {}) as project:
             response = await project.get_openai_client(agent_name=AGENTS["coordinator"]).responses.retrieve(
                 state["pending_response"], extra_query={"agent_session_id": hosted_id},
@@ -757,7 +768,7 @@ async def run(args):
                     )
             print(json.dumps(result))
         return
-    async with AzureCliCredential(subscription=subscription, process_timeout=30) as credential, \
+    async with acceptance_credential(args, subscription) as credential, \
             data_client(socks=args.socks) as http:
         observed = {}
         for role, name in AGENTS.items():
@@ -765,8 +776,8 @@ async def run(args):
             metadata = agent_metadata(name, body)
             code = metadata["code_configuration"]
             if (metadata["status"] != "active" or code["content_hash"] != args.sha256 or
-                code["dependency_resolution"] != "bundled"):
-                raise RuntimeError(f"DEPLOYED_BUNDLE_REQUIRED: {name}")
+                code["dependency_resolution"] not in ("bundled", "remote_build")):
+                raise RuntimeError(f"DEPLOYED_CODE_REQUIRED: {name}")
             observed[role] = metadata
     path = private_state_path(args.session_file)
     continuation = args.scenario in ("followup", "recover", "restart")
@@ -783,12 +794,13 @@ async def run(args):
     try:
         with session_lease(path), redirect_stdout(output):
             if args.scenario == "restart":
-                async with AzureCliCredential(subscription=subscription, process_timeout=30) as credential, \
+                async with acceptance_credential(args, subscription) as credential, \
                         data_client(socks=args.socks) as http:
                     restart_proof = await stop_hosting_for_acceptance(http, credential, before, path)
             await chat(SimpleNamespace(
                 socks=args.socks, session_file=str(path), message=SCENARIOS.get(args.scenario),
                 show_ids=True, native=True, recover_only=args.scenario == "recover",
+                credential_source=source,
             ))
     finally:
         private_state_path(args.evidence).write_text(output.getvalue(), encoding="utf-8")
@@ -809,7 +821,7 @@ async def run(args):
     if before and before["framework"]["session_id"] != after["framework"]["session_id"]:
         raise RuntimeError("PARENT_CONTINUITY_FAILED")
     children = {}
-    async with AzureCliCredential(subscription=subscription, process_timeout=30) as credential, \
+    async with acceptance_credential(args, subscription) as credential, \
             data_client(socks=args.socks) as http:
         for role in ("architect", "reviewer"):
             role_events = [event for event in proof["delegations"] if event["role"] == role]
@@ -850,7 +862,10 @@ async def run(args):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--socks", required=True)
+    transport = parser.add_mutually_exclusive_group(required=True)
+    transport.add_argument("--socks")
+    transport.add_argument("--direct", action="store_true")
+    parser.add_argument("--credential-source", choices=("azure-cli", "azd"), default="azure-cli")
     parser.add_argument("--sha256", required=True)
     parser.add_argument("--session-file", required=True)
     parser.add_argument("--evidence", required=True)

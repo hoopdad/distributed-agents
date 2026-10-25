@@ -11,7 +11,7 @@ from unittest.mock import AsyncMock, patch
 from pydantic import ValidationError
 
 from demo.artifacts import ArtifactError, canonical_bytes, decode_document, digest
-from demo.routing import DecisionClient, ProviderResult, calibration_state, gated_choice, reserve_decision
+from demo.routing import POLICY_VERSION, DecisionClient, ProviderResult, calibration_state, gated_choice, reserve_decision
 from scripts import calibrate_routing
 from test_workflow import MemoryBackend, TestRuntime, make_store, synthetic_calibration
 
@@ -125,6 +125,25 @@ class RoutingTests(unittest.IsolatedAsyncioTestCase):
             await client.score({"requirements": ["Synthetic."]}, ALLOWED)
         self.assertEqual(caught.exception.code, "DECISION_HTTP_429")
         http.post.assert_awaited_once()
+
+    async def test_emitted_decision_records_current_policy_without_relabeling_old_evidence(self):
+        from demo.artifacts import Decision
+        http = SimpleNamespace(post=AsyncMock(return_value=SimpleNamespace(
+            status_code=200, content=canonical_bytes(outcome()), headers={},
+        )))
+        client = DecisionClient(
+            http=http, credential=SimpleNamespace(get_token=AsyncMock(
+                return_value=SimpleNamespace(token="synthetic"),
+            )), origin="https://example.services.ai.azure.com",
+            deployment="synthetic-decision", headers={},
+        )
+        decision = await client.choose(
+            state={"requirements": ["Synthetic private web API."]},
+            allowed=ALLOWED, calibration=synthetic_calibration(),
+        )
+        self.assertEqual(decision.policy_version, POLICY_VERSION)
+        historical = decision.model_dump(mode="json") | {"policy_version": "routing-v2"}
+        self.assertEqual(Decision.model_validate(historical).policy_version, "routing-v2")
 
     async def test_invalid_provider_distributions_fail_closed(self):
         for invalid in (

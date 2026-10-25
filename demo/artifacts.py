@@ -194,7 +194,7 @@ class Review(ImmutableModel):
 
 class Decision(ImmutableModel):
     kind: Literal["decision"] = "decision"
-    policy_version: Literal["routing-v2"] = "routing-v2"
+    policy_version: Literal["routing-v2", "routing-v3"] = "routing-v2"
     input_schema_version: Literal[2] = 2
     state_sha256: Digest
     model: Literal["Microsoft-Decision-1"] = "Microsoft-Decision-1"

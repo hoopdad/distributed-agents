@@ -270,6 +270,7 @@ class DecisionClient:
         answer = value.answer(allowed)
         choice = gated_choice(answer, calibration.threshold, calibration.margin)
         return Decision(
+            policy_version=POLICY_VERSION,
             state_sha256=digest(state), deployment=self.deployment, alternatives=allowed,
             action=answer.choice, probabilities=answer.probabilities, confidence=answer.confidence,
             input_tokens=value.usage.input_tokens if value.usage else None,

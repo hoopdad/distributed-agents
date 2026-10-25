@@ -1372,6 +1372,137 @@ class HumanTerminalTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn("--view {human}", help_text.getvalue())
 
 
+class DeveloperCliTests(unittest.TestCase):
+    def probe(self, *, context=None, status=200, auth=None):
+        tenant = os.environ["EXPECTED_AZURE_TENANT_ID"]
+        subscription = os.environ["EXPECTED_AZURE_SUBSCRIPTION_ID"]
+        auth = auth if auth is not None else {
+            "status": "authenticated", "type": "user", "email": "synthetic-user",
+        }
+        with tempfile.TemporaryDirectory() as profile, patch.dict(os.environ, {
+            "AZURE_CONFIG_DIR": profile, "AZD_CONFIG_DIR": profile,
+        }), patch("demo.terminal.shutil.which", return_value="azd"), patch(
+            "demo.terminal.subprocess.run",
+            return_value=SimpleNamespace(returncode=0, stdout=json.dumps(auth)),
+        ), patch("demo.terminal.SyncDeveloperCliCredential") as credential, patch(
+            "demo.terminal.httpx2.Client"
+        ) as http:
+            credential.return_value.__enter__.return_value.get_token.return_value = AccessToken(
+                "synthetic-token", 4102444800,
+            )
+            response = http.return_value.__enter__.return_value.get.return_value
+            response.status_code = status
+            response.json.return_value = context if context is not None else {
+                "subscriptionId": subscription, "tenantId": tenant,
+            }
+            result = verify_lab(credential_source="azd")
+            credential.assert_called_once_with(tenant_id=tenant, process_timeout=30)
+            http.assert_called_once_with(timeout=30, trust_env=False, follow_redirects=False)
+            request = http.return_value.__enter__.return_value.get.call_args
+            self.assertEqual(request.args, (f"https://management.azure.com/subscriptions/{subscription}",))
+            self.assertEqual(request.kwargs["params"], {"api-version": "2022-12-01"})
+            return result
+
+    def test_existing_azd_user_and_exact_subscription_are_verified_without_cli_login(self):
+        self.assertEqual(self.probe(), (
+            os.environ["EXPECTED_AZURE_TENANT_ID"],
+            os.environ["EXPECTED_AZURE_SUBSCRIPTION_ID"], "synthetic-user",
+        ))
+
+    def test_wrong_tenant_subscription_and_http_results_never_fall_back(self):
+        for context in (
+            {"tenantId": "other", "subscriptionId": os.environ["EXPECTED_AZURE_SUBSCRIPTION_ID"]},
+            {"tenantId": os.environ["EXPECTED_AZURE_TENANT_ID"], "subscriptionId": "other"},
+        ):
+            with self.subTest(context=context), self.assertRaisesRegex(DemoError, "LAB_SCOPE"):
+                self.probe(context=context)
+        for status in (301, 401, 403, 500):
+            with self.subTest(status=status), self.assertRaisesRegex(
+                DemoError, f"LAB_SUBSCRIPTION_HTTP_{status}",
+            ):
+                self.probe(status=status)
+
+    def test_non_user_or_unauthenticated_azd_context_is_rejected(self):
+        for changes in ({"status": "unauthenticated"}, {"type": "service-principal"}, {"email": ""}):
+            with self.subTest(changes=changes), self.assertRaisesRegex(DemoError, "LAB_AUTH_REQUIRED"):
+                self.probe(auth={"status": "authenticated", "type": "user", "email": "synthetic-user"} | changes)
+
+    def test_azd_requires_an_explicit_existing_profile_before_authentication(self):
+        for profile in ("", "relative-profile", str(Path(tempfile.gettempdir()) / "missing-demo-profile")):
+            with tempfile.TemporaryDirectory() as cli, patch.dict(os.environ, {
+                "AZURE_CONFIG_DIR": cli, "AZD_CONFIG_DIR": profile,
+            }), patch("demo.terminal.subprocess.run") as command:
+                with self.subTest(profile=profile), self.assertRaisesRegex(DemoError, "CLIENT_CONFIGURATION"):
+                    verify_lab(credential_source="azd")
+                command.assert_not_called()
+
+    def test_credential_factory_is_explicit_and_tenant_bound(self):
+        from demo.terminal import client_credential
+        with patch("demo.terminal.AzureDeveloperCliCredential") as azd, patch(
+            "demo.terminal.AzureCliCredential"
+        ) as cli:
+            self.assertIs(client_credential("subscription", source="azd"), azd.return_value)
+            azd.assert_called_once_with(
+                tenant_id=os.environ["EXPECTED_AZURE_TENANT_ID"], process_timeout=30,
+            )
+            cli.assert_not_called()
+            with self.assertRaisesRegex(DemoError, "CLIENT_CREDENTIAL_SOURCE"):
+                client_credential("subscription", source="default-chain")
+            cli.assert_not_called()
+
+    def test_terminal_route_is_explicit_and_proxy_and_direct_are_mutually_exclusive(self):
+        from demo.terminal import main
+        for routes in ([], ["--direct", "--socks", "socks5h://127.0.0.1:11080"]):
+            with patch("sys.argv", ["terminal", "--session-file", "unused", *routes]), \
+                    redirect_stderr(io.StringIO()), self.assertRaises(SystemExit) as stopped:
+                main()
+            self.assertEqual(stopped.exception.code, 2)
+        with patch("sys.argv", [
+            "terminal", "--session-file", "unused", "--direct", "--credential-source", "azd",
+        ]), patch("demo.terminal.private_state_path", return_value=Path("unused")), patch(
+            "demo.terminal.session_lease"
+        ), patch("demo.terminal.chat", new=AsyncMock()) as run:
+            main()
+        self.assertIsNone(run.call_args.args[0].socks)
+        self.assertEqual(run.call_args.args[0].credential_source, "azd")
+
+
+class DeployedCodeAcceptanceTests(unittest.IsolatedAsyncioTestCase):
+    def test_initial_and_isolated_scenarios_supply_a_workload_not_only_constraints(self):
+        from live_acceptance import SCENARIOS
+        for scenario, workload in (("initial", "document-submission"), ("isolated", "image-retrieval")):
+            self.assertIn(workload, SCENARIOS[scenario])
+            self.assertIn("Azure Blob Storage", SCENARIOS[scenario])
+            self.assertIn("no public application ingress", SCENARIOS[scenario])
+
+    async def test_preflight_checks_actual_hash_and_status_for_both_dependency_modes(self):
+        from live_acceptance import run
+        for mode, digest, status, expected in (
+            ("bundled", "a" * 64, "active", "PREFLIGHT_PASSED"),
+            ("remote_build", "a" * 64, "active", "PREFLIGHT_PASSED"),
+            ("remote_build", "b" * 64, "active", "DEPLOYED_CODE_REQUIRED"),
+            ("remote_build", "a" * 64, "failed", "DEPLOYED_CODE_REQUIRED"),
+            ("unrecognized", "a" * 64, "active", "DEPLOYED_CODE_REQUIRED"),
+        ):
+            body = {"versions": {"latest": {
+                "version": "2", "status": status,
+                "definition": {"code_configuration": {
+                    "content_hash": digest, "dependency_resolution": mode,
+                }},
+            }}}
+            with self.subTest(mode=mode, digest=digest, status=status), patch(
+                "live_acceptance.verify_lab", return_value=("tenant", "subscription", "user"),
+            ), patch("live_acceptance.AzureCliCredential"), patch(
+                "live_acceptance.data_client",
+            ), patch("live_acceptance.rest", new=AsyncMock(return_value=body)) as read, patch(
+                "live_acceptance.private_state_path", side_effect=RuntimeError("PREFLIGHT_PASSED"),
+            ), patch("live_acceptance.chat", new=AsyncMock()) as send:
+                with self.assertRaisesRegex(RuntimeError, expected):
+                    await run(SimpleNamespace(scenario="initial", socks=None, sha256="a" * 64, session_file="unused"))
+                self.assertEqual(read.await_count, 3 if expected == "PREFLIGHT_PASSED" else 1)
+                send.assert_not_awaited()
+
+
 @unittest.skipUnless(os.name == "nt", "The desktop CLI and file lease are Windows-specific.")
 class TerminalTests(unittest.TestCase):
     def test_actual_cli_credential_uses_only_verified_subscription_selector(self):

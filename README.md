@@ -124,10 +124,20 @@ The loader validates local configuration; it is not cloud authentication proof.
 
 This is the **implemented command shape**, not a claim the live
 demonstration has passed. The Windows-only terminal uses `msvcrt` for its
-session lease. It requires compatible deployed agents and an already established
-owned SOCKS tunnel to the configured project. `--socks` is mandatory; substitute
-the verified local port from the retained lab connectivity tooling, not a new
-public route or an ad hoc tunnel.
+session lease. It requires compatible deployed agents and an existing route
+to the configured project. Select either `--socks` with a verified owned
+loopback tunnel or `--direct` to use the existing route without a proxy.
+Both retain exact-origin TLS, no redirects, no environment proxies and zero
+transport retries. Neither option creates or changes a network route.
+
+Authentication defaults to the dedicated Azure CLI profile. An already
+authenticated dedicated azd profile can instead use `--credential-source azd`
+with an explicit absolute `AZD_CONFIG_DIR`. This verifies an authenticated user
+and the expected tenant/subscription through ARM before using the standard
+`AzureDeveloperCliCredential`; it never copies tokens or falls back to another
+profile. Saved parent ownership and hosting principal gates remain unchanged.
+`live_acceptance.py` supports the same explicit options and verifies the actual
+deployed archive hash for either bundled or remote-build code.
 
 Add `--native` only for a verified native deployment. A client state's recorded
 runtime and versions cannot be silently migrated. `--recover-only` retrieves

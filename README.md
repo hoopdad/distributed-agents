@@ -149,6 +149,28 @@ and reports only trusted-context presence/equality. Responses workflows,
 principal gates and held parents remain unchanged. Even a passing probe is not
 end-to-end acceptance or an automatic specialist-transport migration.
 
+For the authorized signed-in-user A2A experiment, use the existing diagnostic
+toolbox (not a new agent) with the same dedicated azd profile:
+
+```powershell
+& $python scripts\diagnose_delegation.py --toolbox '<existing-diagnostic-toolbox>' --version 2 --credential-source azd --direct --evidence '<new-absolute-private-json-path>'
+```
+
+This checks the two fixed specialist sources, delegated authentication/card
+settings and account network configuration, compares direct user card access
+with managed MCP discovery, and saves allowlisted HTTP status, timing and
+request IDs. It never invokes tools/models, creates sessions, changes Azure
+configuration or touches held work. Metadata/ARM reads use the existing direct
+route; `--socks` optionally replaces `--direct` for card/MCP traffic only.
+Evidence must be new and outside this repository. Exit 2 means blocked,
+incomplete or failed collection; discovery success is not user propagation or
+application acceptance. A remote 403 is distinct from toolbox-entry rejection;
+subnet configuration is not reachability proof. Broker-to-card routing and
+correlation remain explicitly unobserved unless independently captured.
+Raw exception text, tokens, identities, URLs, card content and tool schemas are
+excluded; safe correlation IDs remain in private evidence. Do not repeat a
+denied discovery without a material diagnostic/configuration change.
+
 Add `--native` only for a verified native deployment. A client state's recorded
 runtime and versions cannot be silently migrated. `--recover-only` retrieves
 the exact persisted pending parent response instead of sending another request.

@@ -187,6 +187,12 @@ configuration or touches held work. Metadata/ARM reads use the existing direct
 route; `--socks` optionally replaces `--direct` for card/MCP traffic only.
 The documented service-default card policy is valid for Foundry targets;
 separate card credentials aren't required by the diagnostic configuration gate.
+The hosted discovery comparison also accepts the official
+[A2A 0.3 delegation sample's](https://github.com/microsoft-foundry/foundry-samples/tree/main/samples/python/hosted-agents/agent-framework/a2a/01-delegation)
+preview-tool profile with its exact `agentCard/v0.3` path. It uses the same
+two delegated connections and pinned roles, requires authenticated card fetch,
+and remains discovery-only. This is not a production transport switch; the
+terminal diagnostic command above continues to check the A2A 1.0 profile.
 Evidence must be new and outside this repository. Exit 2 means blocked,
 incomplete or failed collection; discovery success is not user propagation or
 application acceptance. A remote 403 is distinct from toolbox-entry rejection;

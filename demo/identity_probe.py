@@ -7,7 +7,7 @@ from typing import Literal
 from agent_framework import Executor, MCPStreamableHTTPTool, WorkflowBuilder, WorkflowContext, handler
 from agent_framework_foundry_hosting import WorkflowTurn
 from azure.ai.agentserver.core import AgentConfig, get_request_context
-from azure.ai.projects.models import A2AToolboxTool, VersionRefIndicator
+from azure.ai.projects.models import A2APreviewToolboxTool, A2AToolboxTool, VersionRefIndicator
 from azure.identity.aio import ManagedIdentityCredential
 from pydantic import Field, ValidationError, model_validator
 from starlette.responses import JSONResponse
@@ -146,18 +146,23 @@ async def discover_delegation(probe: DiscoveryRequest, observation: ProbeObserva
             roles = set()
             for tool in toolbox.tools:
                 role = next((role for role in ("architect", "reviewer") if tool.name == "probe_" + role), None)
-                if not isinstance(tool, A2AToolboxTool) or role is None or role in roles:
+                if not isinstance(tool, (A2AToolboxTool, A2APreviewToolboxTool)) or role is None or role in roles:
                     raise DemoError("DIAGNOSTIC_TOOLBOX_SOURCE")
                 roles.add(role)
+                card_profile_valid = (
+                    tool.agent_card_path is None and tool.a2a_version == "1.0"
+                    if isinstance(tool, A2AToolboxTool)
+                    else tool.agent_card_path == "agentCard/v0.3"
+                )
                 connection = await project.connections.get(tool.project_connection_id.rsplit("/", 1)[-1], headers=headers)
                 target = PROJECT + f"/agents/{AGENTS[role]}/endpoint/protocols/a2a"
                 if (
                     tool.project_connection_id not in (connection.id, connection.name)
                     or connection.target != target or tool.base_url not in (None, target)
-                    or tool.agent_card_path is not None or connection.type != "RemoteA2A"
+                    or not card_profile_valid or connection.type != "RemoteA2A"
                     or connection.credentials.type != "UserEntraToken"
                     or connection.metadata.get("ApiType") != "Azure"
-                    or tool.send_credentials_for_agent_card is not True or tool.a2a_version != "1.0"
+                    or tool.send_credentials_for_agent_card is not True
                 ):
                     raise DemoError("DIAGNOSTIC_SOURCE_TARGET_CHANGED")
                 details = await project.agents.get(AGENTS[role], headers=headers)

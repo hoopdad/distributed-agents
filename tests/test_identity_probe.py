@@ -20,7 +20,7 @@ from agent_framework import FileSessionStore, InMemoryCheckpointStorage
 from azure.ai.agentserver.core import get_request_context
 from azure.ai.agentserver.responses.store._file import FileResponseStore
 from azure.ai.agentserver.responses import ResponsesServerOptions
-from azure.ai.projects.models import A2AToolboxTool
+from azure.ai.projects.models import A2APreviewToolboxTool, A2AToolboxTool
 from mcp.shared.exceptions import McpError
 from mcp.types import ErrorData
 
@@ -559,16 +559,23 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn("synthetic-call", response.text)
         workflow.assert_not_called()
 
-    async def discovery_boundary(self, *, blocked=False, version_changed=False, features=""):
+    async def discovery_boundary(
+        self, *, blocked=False, version_changed=False, features="", preview=False, invalid_card=False,
+    ):
         project = MagicMock()
         project.__aenter__ = AsyncMock(return_value=project)
         project.__aexit__ = AsyncMock(return_value=False)
         tools, connections = [], {}
         for role in ("architect", "reviewer"):
             identifier = "/synthetic/connections/" + role
-            tools.append(A2AToolboxTool(
+            tool_type = A2APreviewToolboxTool if preview else A2AToolboxTool
+            profile = (
+                {"agent_card_path": None if invalid_card else "agentCard/v0.3"}
+                if preview else {"a2a_version": "1.0", **({"agent_card_path": "agentCard/v0.3"} if invalid_card else {})}
+            )
+            tools.append(tool_type(
                 name="probe_" + role, project_connection_id=identifier,
-                send_credentials_for_agent_card=True, a2a_version="1.0",
+                send_credentials_for_agent_card=True, **profile,
             ))
             connections[role] = SimpleNamespace(
                 id=identifier, name=role, type="RemoteA2A", credentials=SimpleNamespace(type="UserEntraToken"),
@@ -635,7 +642,7 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn("private-synthetic-token", result.model_dump_json())
         self.assertNotIn("synthetic-private-error", result.model_dump_json())
         self.assertNotIn("synthetic-call", result.model_dump_json())
-        if version_changed:
+        if version_changed or invalid_card:
             tool.assert_not_called()
             self.assertEqual(sent, [])
         return result
@@ -663,6 +670,24 @@ class PinnedInvocationsProbeTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result.discovery_status, "blocked")
         self.assertIn("DIAGNOSTIC_SPECIALIST_VERSION_CHANGED", result.failure.codes)
         self.assertFalse(result.wire_authenticated)
+
+    async def test_documented_preview_discovery_preserves_context_rejection_and_card_gates(self):
+        for blocked in (False, True):
+            with self.subTest(blocked=blocked):
+                result = await self.discovery_boundary(preview=True, blocked=blocked)
+                self.assertEqual(result.discovery_status, "blocked" if blocked else "discovered")
+                self.assertTrue(result.wire_authenticated)
+                self.assertTrue(result.wire_call_matches_context)
+                self.assertTrue(result.source_bindings_verified)
+                self.assertFalse(result.user_propagation_verified)
+                if blocked:
+                    self.assertEqual([source.reported_http_status for source in result.failure.sources], [403, 403])
+        for preview in (False, True):
+            with self.subTest(preview=preview):
+                result = await self.discovery_boundary(preview=preview, invalid_card=True)
+                self.assertEqual(result.discovery_status, "blocked")
+                self.assertIn("DIAGNOSTIC_SOURCE_TARGET_CHANGED", result.failure.codes)
+                self.assertFalse(result.source_bindings_verified)
 
 
 @unittest.skipUnless(os.name == "nt", "Client session leases are Windows-specific.")
